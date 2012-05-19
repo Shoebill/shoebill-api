@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,16 @@
 
 package net.gtaun.shoebill;
 
-import java.io.File;
-
 /**
  * @author MK124
  *
  */
 
-public interface IShoebill
+public interface IShoebillVersion
 {
-	ISampObjectPool getManagedObjectPool();
-	IGamemodeManager getGamemodeManager();
-	IPluginManager getPluginManager();
-	
-	IShoebillVersion getVersion();
-	
-	void changeGamemode( File file );
-	void reload();
+	String getName();
+	String getVersion();
+	String getSupport();
+	int getBuildNumber();
+	String getBuildDate();
 }
