@@ -16,19 +16,26 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.Location;
 
 /**
  * @author MK124
  *
  */
 
-public interface IPickup extends IDestroyable
+public interface Timer
 {
-	public static final int INVALID_ID =		-1;
+	public static final int COUNT_INFINITE = 0;
 	
 	
-	int getModelId();
-	int getType();
-	Location getLocation();
+	int getInterval();
+	int getCount();
+
+	boolean isRunning();
+	
+	void setInterval( int interval );
+	void setCount( int count );
+	void start();
+	void stop();
+	
+	void tick( int realint );
 }

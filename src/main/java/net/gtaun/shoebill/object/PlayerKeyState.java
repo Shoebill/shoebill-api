@@ -21,7 +21,7 @@ package net.gtaun.shoebill.object;
  *
  */
 
-public interface IPlayerKeyState
+public interface PlayerKeyState
 {
 	public enum Key
 	{
@@ -63,7 +63,7 @@ public interface IPlayerKeyState
 	public static final int KEY_RIGHT			= 128;
 	
 	
-	IPlayer getPlayer();
+	Player getPlayer();
 	int getKeys();
 	int getUpdown();
 	int getLeftright();

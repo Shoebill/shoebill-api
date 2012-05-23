@@ -16,30 +16,23 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.Vector2D;
 
 /**
  * @author MK124
  *
  */
 
-public interface IMenu extends IDestroyable
+public interface Server
 {
-	public static final int INVALID_ID =			0xFF;
+	int getServerCodepage();
+	void setServerCodepage( int codepage );
 	
+	int getMaxPlayers();
 	
-	int getId();
-	String getTitle();
-	int getColumns();
-	Vector2D getPosition();
-	float getCol1Width();
-	float getCol2Width();
-	String getColumnHeader();
+	void sendRconCommand( String command );
+	void connectNPC( String name, String script );
 	
-	void addItem( int column, String text );
-	void setColumnHeader( int column, String text );
-	void disable();
-	void disableRow( int row );
-	void show( IPlayer player );
-	void hide( IPlayer player );
+	String getServerVarAsString( String varname );
+	int getServerVarAsInt( String varname );
+	boolean getServerVarAsBool( String varname );
 }

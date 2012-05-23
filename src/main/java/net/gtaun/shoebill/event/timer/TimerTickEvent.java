@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.timer;
 
-import net.gtaun.shoebill.object.ITimer;
+import net.gtaun.shoebill.object.Timer;
 import net.gtaun.shoebill.util.event.Event;
 
 /**
@@ -26,14 +26,14 @@ import net.gtaun.shoebill.util.event.Event;
 
 public class TimerTickEvent extends Event
 {
-	private ITimer timer;
+	private Timer timer;
 	private int realInterval;
 	
-	public ITimer getTimer()			{ return timer; }
+	public Timer getTimer()			{ return timer; }
 	public int getRealInterval()		{ return realInterval; }
 	
 	
-	public TimerTickEvent( ITimer timer, int realInterval )
+	public TimerTickEvent( Timer timer, int realInterval )
 	{
 		this.timer = timer;
 		this.realInterval = realInterval;

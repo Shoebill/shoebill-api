@@ -24,7 +24,7 @@ import net.gtaun.shoebill.data.Vector3D;
  *
  */
 
-public interface IObject extends IDestroyable
+public interface IObject extends Destroyable
 {
 	public static final int INVALID_ID =				0xFFFF;
 	
@@ -34,9 +34,9 @@ public interface IObject extends IDestroyable
 	float getSpeed();
 	float getDrawDistance();
 	
-	IPlayer getAttachedPlayer();
+	Player getAttachedPlayer();
 	IObject getAttachedObject();
-	IVehicle getAttachedVehicle();
+	Vehicle getAttachedVehicle();
 	
 	Location getLocation();
 	void setLocation( Vector3D pos );
@@ -53,12 +53,12 @@ public interface IObject extends IDestroyable
 	int move( Vector3D pos, float speed, Vector3D rot );
 	void stop();
 
-	void attach( IPlayer player, float x, float y, float z, float rx, float ry, float rz );
-	void attach( IPlayer player, Vector3D offset, Vector3D rot );
+	void attach( Player player, float x, float y, float z, float rx, float ry, float rz );
+	void attach( Player player, Vector3D offset, Vector3D rot );
 	
 	void attach( IObject object, float x, float y, float z, float rx, float ry, float rz, boolean syncRotation );
 	void attach( IObject object, Vector3D offset, Vector3D rot, boolean syncRotation );
 
-	void attach( IVehicle vehicle, float x, float y, float z, float rx, float ry, float rz );
-	void attach( IVehicle vehicle, Vector3D offset, Vector3D rot );
+	void attach( Vehicle vehicle, float x, float y, float z, float rx, float ry, float rz );
+	void attach( Vehicle vehicle, Vector3D offset, Vector3D rot );
 }

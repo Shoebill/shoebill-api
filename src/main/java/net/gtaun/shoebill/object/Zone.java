@@ -16,13 +16,30 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.data.Area;
+import net.gtaun.shoebill.data.Color;
+
 /**
  * @author MK124
  *
  */
 
-public interface IDestroyable
+public interface Zone extends Destroyable
 {
-	void destroy();
-	boolean isDestroyed();
+	public static final int INVALID_ID =		-1;
+	
+	
+	int getId();
+	Area getArea();
+	
+	void show( Player player, Color color );
+	void hide( Player player );
+	void flash( Player player, Color color );
+	void stopFlash( Player player );
+	
+	void showForAll( Color color );
+	void hideForAll();
+	
+	void flashForAll( Color color );
+	void stopFlashForAll();
 }

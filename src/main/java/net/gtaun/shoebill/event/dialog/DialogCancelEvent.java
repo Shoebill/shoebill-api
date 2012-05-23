@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.dialog;
 
-import net.gtaun.shoebill.object.IDialog;
-import net.gtaun.shoebill.object.IPlayer;
+import net.gtaun.shoebill.object.Dialog;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -26,7 +26,7 @@ import net.gtaun.shoebill.object.IPlayer;
 
 public class DialogCancelEvent extends DialogEvent
 {
-	public DialogCancelEvent( IDialog dialog, IPlayer player )
+	public DialogCancelEvent( Dialog dialog, Player player )
 	{
 		super( dialog, player );
 	}

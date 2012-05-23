@@ -18,20 +18,20 @@ package net.gtaun.shoebill;
 
 import java.util.Collection;
 
-import net.gtaun.shoebill.object.IDialog;
-import net.gtaun.shoebill.object.ILabel;
-import net.gtaun.shoebill.object.IMenu;
+import net.gtaun.shoebill.object.Dialog;
+import net.gtaun.shoebill.object.Label;
+import net.gtaun.shoebill.object.Menu;
 import net.gtaun.shoebill.object.IObject;
-import net.gtaun.shoebill.object.IPickup;
-import net.gtaun.shoebill.object.IPlayer;
-import net.gtaun.shoebill.object.IPlayerLabel;
-import net.gtaun.shoebill.object.IPlayerObject;
-import net.gtaun.shoebill.object.IServer;
-import net.gtaun.shoebill.object.ITextdraw;
-import net.gtaun.shoebill.object.ITimer;
-import net.gtaun.shoebill.object.IVehicle;
-import net.gtaun.shoebill.object.IWorld;
-import net.gtaun.shoebill.object.IZone;
+import net.gtaun.shoebill.object.Pickup;
+import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.PlayerLabel;
+import net.gtaun.shoebill.object.PlayerObject;
+import net.gtaun.shoebill.object.Server;
+import net.gtaun.shoebill.object.Textdraw;
+import net.gtaun.shoebill.object.Timer;
+import net.gtaun.shoebill.object.Vehicle;
+import net.gtaun.shoebill.object.World;
+import net.gtaun.shoebill.object.Zone;
 
 /**
  * @author MK124
@@ -40,44 +40,44 @@ import net.gtaun.shoebill.object.IZone;
 
 public interface ISampObjectPool
 {
-	IServer getServer();
-	IWorld getWorld();
+	Server getServer();
+	World getWorld();
 	
-	IPlayer getPlayer( int id );
-	IVehicle getVehicle( int id );
+	Player getPlayer( int id );
+	Vehicle getVehicle( int id );
 	IObject getObject( int id );
-	IPlayerObject getPlayerObject( IPlayer player, int id );
-	IPickup getPickup( int id );
-	ILabel getLabel( int id );
-	IPlayerLabel getPlayerLabel( IPlayer player, int id );
-	ITextdraw getTextdraw( int id );
-	IZone getZone( int id );
-	IMenu getMenu( int id );
-	IDialog getDialog( int id );
+	PlayerObject getPlayerObject( Player player, int id );
+	Pickup getPickup( int id );
+	Label getLabel( int id );
+	PlayerLabel getPlayerLabel( Player player, int id );
+	Textdraw getTextdraw( int id );
+	Zone getZone( int id );
+	Menu getMenu( int id );
+	Dialog getDialog( int id );
 	
-	Collection<IPlayer> getPlayers();
-	Collection<IVehicle> getVehicles();
+	Collection<Player> getPlayers();
+	Collection<Vehicle> getVehicles();
 	Collection<IObject> getObjects();
-	Collection<IPlayerObject> getPlayerObjects( IPlayer player );
-	Collection<IPickup> getPickups();
-	Collection<ILabel> getLabels();
-	Collection<IPlayerLabel> getPlayerLabels( IPlayer player );
-	Collection<ITextdraw> getTextdraws();
-	Collection<IZone> getZones();
-	Collection<IMenu> getMenus();
-	Collection<IDialog> getDialogs();
-	Collection<ITimer> getTimers();
+	Collection<PlayerObject> getPlayerObjects( Player player );
+	Collection<Pickup> getPickups();
+	Collection<Label> getLabels();
+	Collection<PlayerLabel> getPlayerLabels( Player player );
+	Collection<Textdraw> getTextdraws();
+	Collection<Zone> getZones();
+	Collection<Menu> getMenus();
+	Collection<Dialog> getDialogs();
+	Collection<Timer> getTimers();
 
-	<T extends IPlayer> Collection<T> getPlayers( Class<T> cls );
-	<T extends IVehicle> Collection<T> getVehicles( Class<T> cls );
+	<T extends Player> Collection<T> getPlayers( Class<T> cls );
+	<T extends Vehicle> Collection<T> getVehicles( Class<T> cls );
 	<T extends IObject> Collection<T> getObjects( Class<T> cls );
-	<T extends IPlayerObject> Collection<T> getPlayerObjects( IPlayer player, Class<T> cls );
-	<T extends IPickup> Collection<T> getPickups( Class<T> cls );
-	<T extends ILabel> Collection<T> getLabels( Class<T> cls );
-	<T extends IPlayerLabel> Collection<T> getPlayerLabels( IPlayer player, Class<T> cls );
-	<T extends ITextdraw> Collection<T> getTextdraws( Class<T> cls );
-	<T extends IZone> Collection<T> getZones( Class<T> cls );
-	<T extends IMenu> Collection<T> getMenus( Class<T> cls );
-	<T extends IDialog> Collection<T> getDialogs( Class<T> cls );
-	<T extends ITimer> Collection<T> getTimers( Class<T> cls );
+	<T extends PlayerObject> Collection<T> getPlayerObjects( Player player, Class<T> cls );
+	<T extends Pickup> Collection<T> getPickups( Class<T> cls );
+	<T extends Label> Collection<T> getLabels( Class<T> cls );
+	<T extends PlayerLabel> Collection<T> getPlayerLabels( Player player, Class<T> cls );
+	<T extends Textdraw> Collection<T> getTextdraws( Class<T> cls );
+	<T extends Zone> Collection<T> getZones( Class<T> cls );
+	<T extends Menu> Collection<T> getMenus( Class<T> cls );
+	<T extends Dialog> Collection<T> getDialogs( Class<T> cls );
+	<T extends Timer> Collection<T> getTimers( Class<T> cls );
 }

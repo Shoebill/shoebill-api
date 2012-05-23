@@ -24,7 +24,7 @@ import net.gtaun.shoebill.data.Vector2D;
  *
  */
 
-public interface ITextdraw extends IDestroyable
+public interface Textdraw extends Destroyable
 {
 	public static final int INVALID_ID =		0xFFFF;
 	
@@ -49,8 +49,8 @@ public interface ITextdraw extends IDestroyable
 	void setFont( int font );
 	void setProportional( int set );
 	void setText( String text );
-	void show( IPlayer player );
-	void hide( IPlayer player );
+	void show( Player player );
+	void hide( Player player );
 	void showForAll();
 	void hideForAll();
 }

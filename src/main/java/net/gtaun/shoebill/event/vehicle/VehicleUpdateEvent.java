@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.vehicle;
 
-import net.gtaun.shoebill.object.IVehicle;
+import net.gtaun.shoebill.object.Vehicle;
 
 /**
  * @author MK124
@@ -25,7 +25,7 @@ import net.gtaun.shoebill.object.IVehicle;
 
 public class VehicleUpdateEvent extends VehicleEvent
 {
-	public VehicleUpdateEvent( IVehicle vehicle )
+	public VehicleUpdateEvent( Vehicle vehicle )
 	{
 		super( vehicle );
 	}

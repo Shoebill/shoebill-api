@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,12 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.type.WeaponSkill;
-
 /**
  * @author MK124
  *
  */
 
-public interface IPlayerWeaponSkill extends IPlayerRelated
+public interface VehicleRelated
 {
-	void set( WeaponSkill type, int level );
-	int get( WeaponSkill type );
+	Vehicle getVehicle();
 }

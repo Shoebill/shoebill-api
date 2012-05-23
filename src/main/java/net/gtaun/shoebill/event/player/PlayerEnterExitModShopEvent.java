@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.IPlayer;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -32,7 +32,7 @@ public class PlayerEnterExitModShopEvent extends PlayerEvent
 	public int getInteriorId()				{ return interiorId; }
 	
 	
-	public PlayerEnterExitModShopEvent( IPlayer player, int enterexit, int interiorId )
+	public PlayerEnterExitModShopEvent( Player player, int enterexit, int interiorId )
 	{
 		super( player );
 		this.enterexit = enterexit;

@@ -14,26 +14,34 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.event.player;
+package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.data.Color;
+import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
-import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
  *
  */
 
-public class PlayerClickMapEvent extends PlayerEvent
+public interface Label extends Destroyable
 {
-	private Vector3D position;
-	
-	public Vector3D getPosition()	{ return position.clone(); }
+	public static final int INVALID_ID =				0xFFFF;
 	
 	
-	public PlayerClickMapEvent( Player player, float x, float y, float z )
-	{
-		super( player );
-		position = new Vector3D( x, y, z );
-	}
+	int getId();
+	String getText();
+	Color getColor();
+	float getDrawDistance();
+	Location getLocation();
+	
+	Player getAttachedPlayer();
+	Vehicle getAttachedVehicle();
+
+	void attach( Player player, float x, float y, float z );
+	void attach( Player player, Vector3D offset );
+	void attach( Vehicle vehicle, float x, float y, float z );
+	void attach( Vehicle vehicle, Vector3D offset );
+	void update( Color color, String text );
 }

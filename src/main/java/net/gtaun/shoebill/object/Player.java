@@ -44,7 +44,7 @@ import net.gtaun.shoebill.exception.IllegalLengthException;
  *
  */
 
-public interface IPlayer
+public interface Player
 {
 	public static final int INVALID_ID =							0xFFFF;
 	public static final int NO_TEAM =								255;
@@ -57,9 +57,9 @@ public interface IPlayer
 	
 	int getId();
 
-	IPlayerKeyState getKeyState();
-	IPlayerAttach getPlayerAttach();
-	IPlayerWeaponSkill getWeaponSkill();
+	PlayerKeyState getKeyState();
+	PlayerAttach getPlayerAttach();
+	PlayerWeaponSkill getWeaponSkill();
 	
 	int getPing();
 	int getTeamId();
@@ -80,20 +80,20 @@ public interface IPlayer
 	int getWeatherId();
 	int getCameraMode();
 	FightStyle getFightStyle();
-	IVehicle getVehicle();
+	Vehicle getVehicle();
 	int getVehicleSeat();
 	SpecialAction getSpecialAction();
-	IPlayer getSpectatingPlayer();
-	IVehicle getSpectatingVehicle();
+	Player getSpectatingPlayer();
+	Vehicle getSpectatingVehicle();
 	
 	LocationAngle getLocation();
 	Area getWorldBound();
 	Velocity getVelocity();
 	PlayerState getState();
-	ICheckpoint getCheckpoint();
-	IRaceCheckpoint getRaceCheckpoint();
+	Checkpoint getCheckpoint();
+	RaceCheckpoint getRaceCheckpoint();
 	
-	IDialog getDialog();
+	Dialog getDialog();
 
 	boolean isStuntBonusEnabled();
 	boolean isSpectating();
@@ -119,8 +119,8 @@ public interface IPlayer
 	void setWeatherId( int weatherId );
 	void setFightStyle( FightStyle style );
 	
-	void setVehicle( IVehicle vehicle, int seat );
-	void setVehicle( IVehicle vehicle );
+	void setVehicle( Vehicle vehicle, int seat );
+	void setVehicle( Vehicle vehicle );
 	
 	void setLocation( float x, float y, float z );
 	void setLocation( Vector3D pos );
@@ -141,9 +141,9 @@ public interface IPlayer
 	void sendMessage( Color color, String message );
 	void sendMessage( Color color, String format, Object... args );
 	
-	void sendChat( IPlayer player, String message );
+	void sendChat( Player player, String message );
 	void sendChatToAll( String message );
-	void sendDeathMessage( IPlayer killer, int reason );
+	void sendDeathMessage( Player killer, int reason );
 	
 	void sendGameText( int time, int style, String text );
 	void sendGameText( int time, int style, String format, Object... args );
@@ -159,14 +159,14 @@ public interface IPlayer
 	void playSound( int sound, float x, float y, float z );
 	void playSound( int sound, Vector3D pos );
 	
-	void markerForPlayer( IPlayer player, Color color );
-	void showNameTagForPlayer( IPlayer player, boolean show );
+	void markerForPlayer( Player player, Color color );
+	void showNameTagForPlayer( Player player, boolean show );
 	
 	void kick();
 	void ban();
 	void ban( String reason );
 	
-	IMenu getMenu();
+	Menu getMenu();
 	
 	void setCameraPosition( float x, float y, float z );
 	void setCameraPosition( Vector3D pos );
@@ -179,13 +179,13 @@ public interface IPlayer
 	Vector3D getCameraFrontVector();
 	
 	boolean isInAnyVehicle();
-	boolean isInVehicle( IVehicle veh );
+	boolean isInVehicle( Vehicle veh );
 	boolean isAdmin();
-	boolean isStreamedIn( IPlayer forPlayer );
+	boolean isStreamedIn( Player forPlayer );
 	
-	void setCheckpoint( ICheckpoint checkpoint );
+	void setCheckpoint( Checkpoint checkpoint );
 	void disableCheckpoint();
-	void setRaceCheckpoint( IRaceCheckpoint checkpoint );
+	void setRaceCheckpoint( RaceCheckpoint checkpoint );
 	void disableRaceCheckpoint();
 	
 	void setTeam( int team );
@@ -209,7 +209,7 @@ public interface IPlayer
 	void playCrimeReport( int suspectId, int crimeId );
 	void setShopName( ShopName shop );
 	
-	IVehicle getSurfingVehicle();
+	Vehicle getSurfingVehicle();
 	void removeFromVehicle();
 	
 	void toggleControllable( boolean toggle );
@@ -222,8 +222,8 @@ public interface IPlayer
 	void enableStuntBonus( boolean enabled );
 	
 	void toggleSpectating( boolean toggle );
-	void spectate( IPlayer player, SpectateMode mode );
-	void spectate( IVehicle veh, SpectateMode mode );
+	void spectate( Player player, SpectateMode mode );
+	void spectate( Vehicle veh, SpectateMode mode );
 	
 	void startRecord( RecordType type, String recordName );
 	void stopRecord();
@@ -231,7 +231,7 @@ public interface IPlayer
 	IObject getSurfingObject();
 	String getNetworkStats();
 	
-	IPlayer getAimedTarget();
+	Player getAimedTarget();
 	
 	void playAudioStream( String url );
 	void playAudioStream( String url, float x, float y, float z, float distance );
@@ -243,6 +243,6 @@ public interface IPlayer
 	void removeBuilding( int modelId, Vector3D pos, float radius );
 	void removeBuilding( int modelId, LocationRadius loc );
 
-	void showDialog( IDialog dialog, DialogStyle style, String caption, String text, String button1, String button2 );
+	void showDialog( Dialog dialog, DialogStyle style, String caption, String text, String button1, String button2 );
 	void cancelDialog();
 }

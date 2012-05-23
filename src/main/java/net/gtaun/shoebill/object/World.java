@@ -25,7 +25,7 @@ import net.gtaun.shoebill.data.type.PlayerMarkerMode;
  *
  */
 
-public interface IWorld
+public interface World
 {
 	void setTeamCount( int count );
 	

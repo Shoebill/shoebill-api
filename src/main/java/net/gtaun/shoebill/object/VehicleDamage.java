@@ -16,15 +16,22 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.type.RaceCheckpointType;
-
 /**
  * @author MK124
  *
  */
 
-public interface IRaceCheckpoint extends ICheckpoint
+public interface VehicleDamage extends VehicleRelated
 {
-	RaceCheckpointType getType();
-	IRaceCheckpoint getNext();
+	int getPanels();
+	int getDoors();
+	int getLights();
+	int getTires();
+	
+	void setPanels( int panels );
+	void setDoors( int doors );
+	void setLights( int lights );
+	void setTires( int tires );
+	
+	void set( int panels, int doors, int lights, int tires );
 }

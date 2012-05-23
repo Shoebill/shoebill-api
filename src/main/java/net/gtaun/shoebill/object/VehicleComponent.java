@@ -16,30 +16,20 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.Area;
-import net.gtaun.shoebill.data.Color;
+import net.gtaun.shoebill.data.type.VehicleComponentSlot;
 
 /**
  * @author MK124
  *
  */
 
-public interface IZone extends IDestroyable
+public interface VehicleComponent extends VehicleRelated
 {
-	public static final int INVALID_ID =		-1;
+	void add( int componentId );
 	
+	void remove( int componentId );
+	void remove( VehicleComponentSlot slot );
 	
-	int getId();
-	Area getArea();
-	
-	void show( IPlayer player, Color color );
-	void hide( IPlayer player );
-	void flash( IPlayer player, Color color );
-	void stopFlash( IPlayer player );
-	
-	void showForAll( Color color );
-	void hideForAll();
-	
-	void flashForAll( Color color );
-	void stopFlashForAll();
+	int get( VehicleComponentSlot slot );
+	int[] toArray();
 }

@@ -16,12 +16,32 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.type.PlayerAttachBone;
+
 /**
  * @author MK124
  *
  */
 
-public interface IPlayerLabel extends ILabel, IPlayerRelated
+public interface PlayerAttach extends PlayerRelated
 {
-	public static final int INVALID_ID =			0xFFFF;
+	public static final int MAX_ATTACHED_OBJECTS = 5;
+	
+	
+	public interface Slot
+	{
+		public PlayerAttachBone getBone();
+		public int getModelId();
+		public Vector3D getOffset();
+		public Vector3D getRotate();
+		public Vector3D getScale();
+		
+		public boolean set( PlayerAttachBone bone, int modelId, Vector3D offset, Vector3D rotation, Vector3D scale );
+		public boolean remove();
+		public boolean isUsed( int slot );
+	}
+	
+	Slot getSlot( int slot );
+	Slot[] getSlots();
 }

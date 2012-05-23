@@ -21,28 +21,7 @@ package net.gtaun.shoebill.object;
  *
  */
 
-public interface IVehicleParam extends IVehicleRelated
+public interface PlayerLabel extends Label, PlayerRelated
 {
-	public static final int PARAM_UNSET =			-1;
-	public static final int PARAM_OFF =				0;
-	public static final int PARAM_ON =				1;
-	
-	
-	int getEngine();
-	int getLights();
-	int getAlarm();
-	int getDoors();
-	int getBonnet();
-	int getBoot();
-	int getObjective();
-	
-	void setEngine( int engine );
-	void setLights( int lights );
-	void setAlarm( int alarm );
-	void setDoors( int doors );
-	void setBonnet( int bonnet );
-	void setBoot( int boot );
-	void setObjective( int objective );
-	
-	void set( int engine, int lights, int alarm, int doors, int bonnet, int boot, int objective );
+	public static final int INVALID_ID =			0xFFFF;
 }

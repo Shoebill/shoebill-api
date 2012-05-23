@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.IPlayer;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -32,7 +32,7 @@ public class PlayerTextEvent extends PlayerEvent
 	public String getText()				{ return text; }
 	
 	
-	public PlayerTextEvent( IPlayer player, String text )
+	public PlayerTextEvent( Player player, String text )
 	{
 		super( player );
 		this.text = text;

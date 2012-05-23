@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.menu;
 
-import net.gtaun.shoebill.object.IMenu;
-import net.gtaun.shoebill.object.IPlayer;
+import net.gtaun.shoebill.object.Menu;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -26,7 +26,7 @@ import net.gtaun.shoebill.object.IPlayer;
 
 public class MenuExitedEvent extends MenuEvent
 {
-	public MenuExitedEvent( IMenu menu, IPlayer player )
+	public MenuExitedEvent( Menu menu, Player player )
 	{
 		super( menu, player );
 	}

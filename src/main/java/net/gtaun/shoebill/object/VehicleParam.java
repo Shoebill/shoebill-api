@@ -16,26 +16,33 @@
 
 package net.gtaun.shoebill.object;
 
-
 /**
  * @author MK124
  *
  */
 
-public interface ITimer
+public interface VehicleParam extends VehicleRelated
 {
-	public static final int COUNT_INFINITE = 0;
+	public static final int PARAM_UNSET =			-1;
+	public static final int PARAM_OFF =				0;
+	public static final int PARAM_ON =				1;
 	
 	
-	int getInterval();
-	int getCount();
-
-	boolean isRunning();
+	int getEngine();
+	int getLights();
+	int getAlarm();
+	int getDoors();
+	int getBonnet();
+	int getBoot();
+	int getObjective();
 	
-	void setInterval( int interval );
-	void setCount( int count );
-	void start();
-	void stop();
+	void setEngine( int engine );
+	void setLights( int lights );
+	void setAlarm( int alarm );
+	void setDoors( int doors );
+	void setBonnet( int bonnet );
+	void setBoot( int boot );
+	void setObjective( int objective );
 	
-	void tick( int realint );
+	void set( int engine, int lights, int alarm, int doors, int bonnet, int boot, int objective );
 }

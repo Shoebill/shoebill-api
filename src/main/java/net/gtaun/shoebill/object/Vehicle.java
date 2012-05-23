@@ -27,7 +27,7 @@ import net.gtaun.shoebill.data.Velocity;
  *
  */
 
-public interface IVehicle extends IDestroyable
+public interface Vehicle extends Destroyable
 {
 	public static final int INVALID_ID	=				0xFFFF;
 	
@@ -40,9 +40,9 @@ public interface IVehicle extends IDestroyable
 	int getColor2();
 	int getRespawnDelay();
 
-	IVehicleParam getState();
-	IVehicleComponent getComponent();
-	public IVehicleDamage getDamage();
+	VehicleParam getState();
+	VehicleComponent getComponent();
+	public VehicleDamage getDamage();
 	
 	LocationAngle getLocation();
 	void setLocation( float x, float y, float z );
@@ -68,16 +68,16 @@ public interface IVehicle extends IDestroyable
 	void setVelocity( Velocity velocity );
 	void setAngularVelocity( Velocity velocity );
 	
-	void putPlayer( IPlayer player, int seat );
-	boolean isPlayerIn( IPlayer player );
-	boolean isStreamedIn( IPlayer forPlayer );
-	void setParamsForPlayer( IPlayer player, boolean objective, boolean doorsLocked );
+	void putPlayer( Player player, int seat );
+	boolean isPlayerIn( Player player );
+	boolean isStreamedIn( Player forPlayer );
+	void setParamsForPlayer( Player player, boolean objective, boolean doorsLocked );
 	void respawn();
 	void setColor( int color1, int color2 );
 	void setPaintjob( int paintjobId );
 	
-	IVehicle getTrailer();
-	void attachTrailer( IVehicle trailer );
+	Vehicle getTrailer();
+	void attachTrailer( Vehicle trailer );
 	void detachTrailer();
 	
 	boolean isTrailerAttached();

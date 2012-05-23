@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.vehicle;
 
-import net.gtaun.shoebill.object.IVehicle;
+import net.gtaun.shoebill.object.Vehicle;
 import net.gtaun.shoebill.util.event.Event;
 
 /**
@@ -26,12 +26,12 @@ import net.gtaun.shoebill.util.event.Event;
 
 public abstract class VehicleEvent extends Event
 {
-	private IVehicle vehicle;
+	private Vehicle vehicle;
 	
-	public IVehicle getVehicle()		{ return vehicle; }
+	public Vehicle getVehicle()		{ return vehicle; }
 	
 	
-	protected VehicleEvent( IVehicle vehicle )
+	protected VehicleEvent( Vehicle vehicle )
 	{
 		this.vehicle = vehicle;
 	}

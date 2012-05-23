@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.menu;
 
-import net.gtaun.shoebill.object.IMenu;
-import net.gtaun.shoebill.object.IPlayer;
+import net.gtaun.shoebill.object.Menu;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -31,7 +31,7 @@ public class MenuSelectedEvent extends MenuEvent
 	public int getRow()				{ return row; }
 	
 	
-	public MenuSelectedEvent( IMenu menu, IPlayer player, int row )
+	public MenuSelectedEvent( Menu menu, Player player, int row )
 	{
 		super( menu, player );
 		this.row = row;

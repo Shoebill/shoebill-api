@@ -16,17 +16,13 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.type.DialogStyle;
-
 /**
  * @author MK124
  *
  */
 
-public interface IDialog
+public interface Destroyable
 {
-	int getId();
-	
-	void show( IPlayer player, DialogStyle style, String caption, String text, String button1, String button2 );
-	void cancel( IPlayer player );
+	void destroy();
+	boolean isDestroyed();
 }

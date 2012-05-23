@@ -16,20 +16,15 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.type.VehicleComponentSlot;
+import net.gtaun.shoebill.data.type.WeaponSkill;
 
 /**
  * @author MK124
  *
  */
 
-public interface IVehicleComponent extends IVehicleRelated
+public interface PlayerWeaponSkill extends PlayerRelated
 {
-	void add( int componentId );
-	
-	void remove( int componentId );
-	void remove( VehicleComponentSlot slot );
-	
-	int get( VehicleComponentSlot slot );
-	int[] toArray();
+	void set( WeaponSkill type, int level );
+	int get( WeaponSkill type );
 }

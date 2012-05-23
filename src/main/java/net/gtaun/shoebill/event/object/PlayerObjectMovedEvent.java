@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.object;
 
-import net.gtaun.shoebill.object.IPlayer;
-import net.gtaun.shoebill.object.IPlayerObject;
+import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.PlayerObject;
 
 /**
  * @author MK124
@@ -26,21 +26,21 @@ import net.gtaun.shoebill.object.IPlayerObject;
 
 public class PlayerObjectMovedEvent extends ObjectEvent
 {
-	private IPlayer player;
+	private Player player;
 	
 	
-	public PlayerObjectMovedEvent( IPlayer player, IPlayerObject object )
+	public PlayerObjectMovedEvent( Player player, PlayerObject object )
 	{
 		super( object );
 		this.player = player;
 	}
 
-	public IPlayer getPlayer()
+	public Player getPlayer()
 	{
 		return player;
 	}
 	
-	@Override public IPlayerObject getObject()
+	@Override public PlayerObject getObject()
 	{
 		return getObject();
 	}

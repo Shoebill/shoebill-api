@@ -16,12 +16,30 @@
 
 package net.gtaun.shoebill.object;
 
+import java.util.Collection;
+
+import net.gtaun.shoebill.data.LocationRadius;
+import net.gtaun.shoebill.data.Vector3D;
+
 /**
  * @author MK124
  *
  */
 
-public interface IPlayerObject extends IObject, IPlayerRelated
+public interface Checkpoint
 {
-	public static final int INVALID_ID =				0xFFFF;
+	LocationRadius getLocation();
+	void setLocation( float x, float y, float z );
+	void setLocation( Vector3D pos );
+	void setLocation( LocationRadius loc );
+
+	float getSize();
+	void setSize( float size );
+
+	void set( Player player );
+	void disable( Player player );
+	boolean isInCheckpoint( Player player );
+	void update();
+	
+	Collection<Player> getUsingPlayers();
 }
