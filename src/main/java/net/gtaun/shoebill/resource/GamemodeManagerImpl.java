@@ -23,8 +23,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.gtaun.shoebill.IGamemodeManager;
-import net.gtaun.shoebill.IShoebill;
+import net.gtaun.shoebill.GamemodeManager;
+import net.gtaun.shoebill.Shoebill;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,12 +37,12 @@ import org.slf4j.LoggerFactory;
  *
  */
 
-public class GamemodeManager implements IGamemodeManager
+public class GamemodeManagerImpl implements GamemodeManager
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(GamemodeManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GamemodeManagerImpl.class);
 	
 	
-	private IShoebill shoebill;
+	private Shoebill shoebill;
 	private ClassLoader classLoader;
 	private File gamemodeDir, dataDir;
 	
@@ -50,7 +50,7 @@ public class GamemodeManager implements IGamemodeManager
 	private Gamemode gamemode;
 	
 	
-	public GamemodeManager( IShoebill shoebill, ClassLoader classLoader, File gamemodeDir, File dataDir )
+	public GamemodeManagerImpl( Shoebill shoebill, ClassLoader classLoader, File gamemodeDir, File dataDir )
 	{
 		this.shoebill = shoebill;
 		this.classLoader = classLoader;

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,18 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill;
-
-import java.io.File;
+package net.gtaun.shoebill.trait;
 
 /**
  * @author MK124
  *
  */
 
-public interface IShoebill
+public interface TraitManager
 {
-	ISampObjectPool getManagedObjectPool();
-	IGamemodeManager getGamemodeManager();
-	IPluginManager getPluginManager();
+	<T extends Trait> void registerTrait( Class<T> traitType, T trait ) throws IllegalArgumentException, UnsupportedOperationException;
+	<T extends Trait> void removeTrait( Class<T> traitType ) throws UnsupportedOperationException;
 	
-	IShoebillVersion getVersion();
-	
-	void changeGamemode( File file );
-	void reload();
+	<T extends Trait> boolean checkTrait( Class<T> traitType );
+	<T extends Trait> T getTrait( Class<T> traitType );
 }

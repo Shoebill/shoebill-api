@@ -1,5 +1,6 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2011 JoJLlmAn
+ * Copyright (C) 2011 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +17,26 @@
 
 package net.gtaun.shoebill;
 
+import java.io.File;
+import java.util.Collection;
+
+import net.gtaun.shoebill.resource.Plugin;
+import net.gtaun.shoebill.resource.PluginDescription;
+
 /**
- * @author MK124
+ * @author MK124, JoJLlmAn
  *
  */
 
-public interface IShoebillVersion
+public interface PluginManager
 {
-	String getName();
-	String getVersion();
-	String getSupport();
-	int getBuildNumber();
-	String getBuildDate();
+	Plugin loadPlugin( String filename );
+	Plugin loadPlugin( File file );
+	Plugin loadPlugin( PluginDescription desc );
+	
+	void unloadPlugin( Plugin plugin );
+	
+	<T extends Plugin> T getPlugin( Class<T> cls );
+	
+	Collection<Plugin> getPlugins();
 }

@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.util.event.event;
 
 import net.gtaun.shoebill.util.event.Event;
-import net.gtaun.shoebill.util.event.IEventListener;
+import net.gtaun.shoebill.util.event.EventListener;
 import net.gtaun.shoebill.util.event.IEventManager.Entry;
 
 /**
@@ -55,7 +55,7 @@ public class EventListenerEvent extends Event
 		return entry.getRelatedClass();
 	}
 	
-	public IEventListener getListener()
+	public EventListener getListener()
 	{
 		return entry.getListener();
 	}

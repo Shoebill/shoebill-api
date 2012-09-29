@@ -16,14 +16,14 @@
 
 package net.gtaun.shoebill.util.event.event;
 
-import net.gtaun.shoebill.util.event.EventListener;
+import net.gtaun.shoebill.util.event.AbstractEventListener;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class EventListenerEventListener extends EventListener
+public abstract class EventListenerEventListener extends AbstractEventListener
 {
 	protected EventListenerEventListener()
 	{

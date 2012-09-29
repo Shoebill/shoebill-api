@@ -1,5 +1,4 @@
 /**
- * Copyright (C) 2011 JoJLlmAn
  * Copyright (C) 2011 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,28 +14,19 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill;
+package net.gtaun.shoebill.samp;
 
-import java.io.File;
-import java.util.Collection;
-
-import net.gtaun.shoebill.resource.Plugin;
-import net.gtaun.shoebill.resource.PluginDescription;
 
 /**
- * @author MK124, JoJLlmAn
+ * @author MK124
  *
  */
 
-public interface IPluginManager
+public interface SampCallbackManager
 {
-	Plugin loadPlugin( String filename );
-	Plugin loadPlugin( File file );
-	Plugin loadPlugin( PluginDescription desc );
+	void registerCallbackHandler( SampCallbackHandler handler );
+	void unregisterCallbackHandler( SampCallbackHandler handler );
+	boolean hasCallbackHandler( SampCallbackHandler handler );
 	
-	void unloadPlugin( Plugin plugin );
-	
-	<T extends Plugin> T getPlugin( Class<T> cls );
-	
-	Collection<Plugin> getPlugins();
+	SampCallbackHandler getMasterCallbackHandler();
 }

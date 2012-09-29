@@ -30,16 +30,16 @@ public interface IEventManager
 	{
 		private Class<? extends Event> type;
 		private Object relatedObject;
-		private IEventListener listener;
+		private EventListener listener;
 		private short priority;
 	
 		public Class<? extends Event> getType()			{ return type; }
 		public Object getRelatedObject()				{ return relatedObject; }
-		public IEventListener getListener()				{ return listener; }
+		public EventListener getListener()				{ return listener; }
 		public short getPriority()						{ return priority; }
 		
 		
-		public Entry( Class<? extends Event> type, Object relatedObject, IEventListener listener, short priority )
+		public Entry( Class<? extends Event> type, Object relatedObject, EventListener listener, short priority )
 		{
 			this.type = type;
 			this.relatedObject = relatedObject;
@@ -85,23 +85,23 @@ public interface IEventManager
 	}
 	
 	
-	Entry addListener( Class<? extends Event> type, IEventListener listener, Priority priority );
-	Entry addListener( Class<? extends Event> type, IEventListener listener, short priority );
-	Entry addListener( Class<? extends Event> type, Class<?> clz, IEventListener listener, Priority priority );
-	Entry addListener( Class<? extends Event> type, Class<?> clz, IEventListener listener, short priority );
-	Entry addListener( Class<? extends Event> type, Object object, IEventListener listener, Priority priority );
-	Entry addListener( Class<? extends Event> type, Object object, IEventListener listener, short priority );
+	Entry addListener( Class<? extends Event> type, EventListener listener, Priority priority );
+	Entry addListener( Class<? extends Event> type, EventListener listener, short priority );
+	Entry addListener( Class<? extends Event> type, Class<?> clz, EventListener listener, Priority priority );
+	Entry addListener( Class<? extends Event> type, Class<?> clz, EventListener listener, short priority );
+	Entry addListener( Class<? extends Event> type, Object object, EventListener listener, Priority priority );
+	Entry addListener( Class<? extends Event> type, Object object, EventListener listener, short priority );
 	Entry addListener( Entry entry );
 
-	void removeListener( Class<? extends Event> type, IEventListener listener );
-	void removeListener( Class<? extends Event> type, Class<?> clz, IEventListener listener );
-	void removeListener( Class<? extends Event> type, Object object, IEventListener listener );
+	void removeListener( Class<? extends Event> type, EventListener listener );
+	void removeListener( Class<? extends Event> type, Class<?> clz, EventListener listener );
+	void removeListener( Class<? extends Event> type, Object object, EventListener listener );
 	void removeListener( Entry entry );
 
 	boolean hasListener( Class<? extends Event> type, Class<?> clz );
-	boolean hasListener( Class<? extends Event> type, Class<?> clz, IEventListener listener );
+	boolean hasListener( Class<? extends Event> type, Class<?> clz, EventListener listener );
 	boolean hasListener( Class<? extends Event> type, Object object );
-	boolean hasListener( Class<? extends Event> type, Object object, IEventListener listener );
+	boolean hasListener( Class<? extends Event> type, Object object, EventListener listener );
 	boolean hasListener( Entry entry );
 	
 	<T extends Event> void dispatchEvent( T event, Object ...objects );

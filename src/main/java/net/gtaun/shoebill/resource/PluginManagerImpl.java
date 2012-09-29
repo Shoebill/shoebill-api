@@ -25,9 +25,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import net.gtaun.shoebill.IPluginManager;
-import net.gtaun.shoebill.IShoebill;
-import net.gtaun.shoebill.IShoebillLowLevel;
+import net.gtaun.shoebill.PluginManager;
+import net.gtaun.shoebill.Shoebill;
+import net.gtaun.shoebill.ShoebillLowLevel;
 import net.gtaun.shoebill.event.plugin.PluginLoadEvent;
 import net.gtaun.shoebill.event.plugin.PluginUnloadEvent;
 
@@ -42,20 +42,20 @@ import org.slf4j.LoggerFactory;
  *
  */
 
-public class PluginManager implements IPluginManager
+public class PluginManagerImpl implements PluginManager
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(PluginManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(PluginManagerImpl.class);
 	
 
 	private ClassLoader classLoader;
-	private IShoebill shoebill;
+	private Shoebill shoebill;
 	private File pluginDir, dataDir;
 
 	private Map<File, PluginDescription> descriptions;
 	private Map<Class<? extends Plugin>, Plugin> plugins;
 	
 	
-	public PluginManager( IShoebill shoebill, ClassLoader classLoader, File pluginDir, File dataDir )
+	public PluginManagerImpl( Shoebill shoebill, ClassLoader classLoader, File pluginDir, File dataDir )
 	{
 		plugins = new HashMap<Class<? extends Plugin>, Plugin>();
 		
@@ -159,7 +159,7 @@ public class PluginManager implements IPluginManager
 			plugins.put( clazz, plugin );
 			
 			PluginLoadEvent event = new PluginLoadEvent(plugin);
-			IShoebillLowLevel shoebillLowLevel = (IShoebillLowLevel) shoebill;
+			ShoebillLowLevel shoebillLowLevel = (ShoebillLowLevel) shoebill;
 			shoebillLowLevel.getEventManager().dispatchEvent( event, this );
 			
 			return plugin;
@@ -180,7 +180,7 @@ public class PluginManager implements IPluginManager
 			LOGGER.info("Unload plugin: " + plugin.getDescription().getClazz().getName() );
 
 			PluginUnloadEvent event = new PluginUnloadEvent(plugin);
-			IShoebillLowLevel shoebillLowLevel = (IShoebillLowLevel) shoebill;
+			ShoebillLowLevel shoebillLowLevel = (ShoebillLowLevel) shoebill;
 			shoebillLowLevel.getEventManager().dispatchEvent( event, this );
 			
 			try

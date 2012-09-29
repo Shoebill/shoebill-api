@@ -27,7 +27,7 @@ import net.gtaun.shoebill.resource.GamemodeDescription;
  *
  */
 
-public interface IGamemodeManager
+public interface GamemodeManager
 {
 	void changeMode( String filename );
 	void changeMode( File file );

@@ -80,7 +80,7 @@ public class ManagedEventManager implements IEventManager
 	
 	
 	@Override
-	public Entry addListener( Class<? extends Event> type, IEventListener listener, Priority priority )
+	public Entry addListener( Class<? extends Event> type, EventListener listener, Priority priority )
 	{
 		Entry entry = eventManager.addListener( type, listener, priority );
 		addListenerEntry( entry );
@@ -88,7 +88,7 @@ public class ManagedEventManager implements IEventManager
 	}
 
 	@Override
-	public Entry addListener( Class<? extends Event> type, IEventListener listener, short priority )
+	public Entry addListener( Class<? extends Event> type, EventListener listener, short priority )
 	{
 		Entry entry = eventManager.addListener( type, listener, priority );
 		addListenerEntry( entry );
@@ -96,7 +96,7 @@ public class ManagedEventManager implements IEventManager
 	}
 
 	@Override
-	public Entry addListener( Class<? extends Event> type, Class<?> clz, IEventListener listener, Priority priority )
+	public Entry addListener( Class<? extends Event> type, Class<?> clz, EventListener listener, Priority priority )
 	{
 		Entry entry = eventManager.addListener( type, clz, listener, priority );
 		addListenerEntry( entry );
@@ -104,7 +104,7 @@ public class ManagedEventManager implements IEventManager
 	}
 
 	@Override
-	public Entry addListener( Class<? extends Event> type, Class<?> clz, IEventListener listener, short priority )
+	public Entry addListener( Class<? extends Event> type, Class<?> clz, EventListener listener, short priority )
 	{
 		Entry entry = eventManager.addListener( type, clz, listener, priority );
 		addListenerEntry( entry );
@@ -112,7 +112,7 @@ public class ManagedEventManager implements IEventManager
 	}
 
 	@Override
-	public Entry addListener( Class<? extends Event> type, Object object, IEventListener listener, Priority priority )
+	public Entry addListener( Class<? extends Event> type, Object object, EventListener listener, Priority priority )
 	{
 		Entry entry = eventManager.addListener( type, object, listener, priority );
 		addListenerEntry( entry );
@@ -120,7 +120,7 @@ public class ManagedEventManager implements IEventManager
 	}
 
 	@Override
-	public Entry addListener( Class<? extends Event> type, Object object, IEventListener listener, short priority )
+	public Entry addListener( Class<? extends Event> type, Object object, EventListener listener, short priority )
 	{
 		Entry entry = eventManager.addListener( type, object, listener, priority );
 		addListenerEntry( entry );
@@ -136,19 +136,19 @@ public class ManagedEventManager implements IEventManager
 	}
 
 	@Override
-	public void removeListener( Class<? extends Event> type, IEventListener listener )
+	public void removeListener( Class<? extends Event> type, EventListener listener )
 	{
 		eventManager.removeListener( type, listener );
 	}
 
 	@Override
-	public void removeListener( Class<? extends Event> type, Class<?> clz, IEventListener listener )
+	public void removeListener( Class<? extends Event> type, Class<?> clz, EventListener listener )
 	{
 		eventManager.removeListener( type, clz, listener );
 	}
 
 	@Override
-	public void removeListener( Class<? extends Event> type, Object object, IEventListener listener )
+	public void removeListener( Class<? extends Event> type, Object object, EventListener listener )
 	{
 		eventManager.removeListener( type, object, listener );
 	}
@@ -166,7 +166,7 @@ public class ManagedEventManager implements IEventManager
 	}
 
 	@Override
-	public boolean hasListener( Class<? extends Event> type, Class<?> clz, IEventListener listener )
+	public boolean hasListener( Class<? extends Event> type, Class<?> clz, EventListener listener )
 	{
 		return eventManager.hasListener( type, clz, listener );
 	}
@@ -178,7 +178,7 @@ public class ManagedEventManager implements IEventManager
 	}
 
 	@Override
-	public boolean hasListener( Class<? extends Event> type, Object object, IEventListener listener )
+	public boolean hasListener( Class<? extends Event> type, Object object, EventListener listener )
 	{
 		return eventManager.hasListener( type, object, listener );
 	}

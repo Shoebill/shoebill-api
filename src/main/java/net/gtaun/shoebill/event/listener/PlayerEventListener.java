@@ -51,14 +51,14 @@ import net.gtaun.shoebill.event.vehicle.VehicleResprayEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleStreamInEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleStreamOutEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleUnoccupiedUpdateEvent;
-import net.gtaun.shoebill.util.event.EventListener;
+import net.gtaun.shoebill.util.event.AbstractEventListener;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class PlayerEventListener extends EventListener
+public abstract class PlayerEventListener extends AbstractEventListener
 {
 	protected PlayerEventListener()
 	{

@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.samp;
+package net.gtaun.shoebill;
 
+import java.io.File;
 
 /**
  * @author MK124
  *
  */
 
-public interface ISampCallbackManager
+public interface Shoebill
 {
-	void registerCallbackHandler( ISampCallbackHandler handler );
-	void unregisterCallbackHandler( ISampCallbackHandler handler );
-	boolean hasCallbackHandler( ISampCallbackHandler handler );
+	SampObjectPool getManagedObjectPool();
+	GamemodeManager getGamemodeManager();
+	PluginManager getPluginManager();
 	
-	ISampCallbackHandler getMasterCallbackHandler();
+	ShoebillVersion getVersion();
+	
+	void changeGamemode( File file );
+	void reload();
 }

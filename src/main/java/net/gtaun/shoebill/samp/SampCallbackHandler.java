@@ -21,7 +21,7 @@ package net.gtaun.shoebill.samp;
  *
  */
 
-public interface ISampCallbackHandler
+public interface SampCallbackHandler
 {
 	int onGameModeInit();
 	int onGameModeExit();

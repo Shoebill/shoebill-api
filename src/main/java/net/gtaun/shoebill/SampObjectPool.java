@@ -38,7 +38,7 @@ import net.gtaun.shoebill.object.primitive.ZonePrim;
  *
  */
 
-public interface ISampObjectPool
+public interface SampObjectPool
 {
 	ServerPrim getServer();
 	WorldPrim getWorld();

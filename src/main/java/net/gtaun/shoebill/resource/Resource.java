@@ -18,8 +18,8 @@ package net.gtaun.shoebill.resource;
 
 import java.io.File;
 
-import net.gtaun.shoebill.IShoebill;
-import net.gtaun.shoebill.IShoebillLowLevel;
+import net.gtaun.shoebill.Shoebill;
+import net.gtaun.shoebill.ShoebillLowLevel;
 import net.gtaun.shoebill.util.event.IEventManager;
 import net.gtaun.shoebill.util.event.ManagedEventManager;
 
@@ -36,7 +36,7 @@ public abstract class Resource
 	private boolean isEnabled;
 	
 	private ResourceDescription description;
-	private IShoebill shoebill;
+	private Shoebill shoebill;
 	private ManagedEventManager eventManager;
 	private File dataDirectory;
 	
@@ -46,13 +46,13 @@ public abstract class Resource
 		
 	}
 		
-	void setContext( ResourceDescription description, IShoebill shoebill, File dataDir )
+	void setContext( ResourceDescription description, Shoebill shoebill, File dataDir )
 	{
 		this.description = description;
 		this.shoebill = shoebill;
 		this.dataDirectory = dataDir;
 		
-		IShoebillLowLevel shoebillLowLevel = (IShoebillLowLevel) shoebill;
+		ShoebillLowLevel shoebillLowLevel = (ShoebillLowLevel) shoebill;
 		eventManager = new ManagedEventManager( shoebillLowLevel.getEventManager() );
 	}
 
@@ -84,7 +84,7 @@ public abstract class Resource
 		return description;
 	}
 	
-	public IShoebill getShoebill()
+	public Shoebill getShoebill()
 	{
 		return shoebill;
 	}

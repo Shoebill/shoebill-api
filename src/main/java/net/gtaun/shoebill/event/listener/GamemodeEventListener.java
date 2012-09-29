@@ -17,14 +17,14 @@
 package net.gtaun.shoebill.event.listener;
 
 import net.gtaun.shoebill.event.gamemode.GamemodeExitEvent;
-import net.gtaun.shoebill.util.event.EventListener;
+import net.gtaun.shoebill.util.event.AbstractEventListener;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class GamemodeEventListener extends EventListener
+public abstract class GamemodeEventListener extends AbstractEventListener
 {
 	protected GamemodeEventListener()
 	{

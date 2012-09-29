@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.trait;
+package net.gtaun.shoebill;
 
 /**
  * @author MK124
  *
  */
 
-public interface ITraitManager
+public interface ShoebillVersion
 {
-	<T extends Trait> void registerTrait( Class<T> traitType, T trait ) throws IllegalArgumentException, UnsupportedOperationException;
-	<T extends Trait> void removeTrait( Class<T> traitType ) throws UnsupportedOperationException;
-	
-	<T extends Trait> boolean checkTrait( Class<T> traitType );
-	<T extends Trait> T getTrait( Class<T> traitType );
+	String getName();
+	String getVersion();
+	String getSupport();
+	int getBuildNumber();
+	String getBuildDate();
 }
