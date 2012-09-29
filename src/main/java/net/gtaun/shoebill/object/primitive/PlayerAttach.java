@@ -14,32 +14,34 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
-import java.util.Collection;
-
-import net.gtaun.shoebill.data.LocationRadius;
 import net.gtaun.shoebill.data.Point3D;
+import net.gtaun.shoebill.data.constant.PlayerAttachBone;
 
 /**
  * @author MK124
  *
  */
 
-public interface Checkpoint
+public interface PlayerAttach extends PlayerRelated
 {
-	LocationRadius getLocation();
-	void setLocation( float x, float y, float z );
-	void setLocation( Point3D pos );
-	void setLocation( LocationRadius loc );
-
-	float getSize();
-	void setSize( float size );
-
-	void set( Player player );
-	void disable( Player player );
-	boolean isInCheckpoint( Player player );
-	void update();
+	public static final int MAX_ATTACHED_OBJECTS = 5;
 	
-	Collection<Player> getUsingPlayers();
+	
+	public interface Slot
+	{
+		public PlayerAttachBone getBone();
+		public int getModelId();
+		public Point3D getOffset();
+		public Point3D getRotate();
+		public Point3D getScale();
+		
+		public boolean set( PlayerAttachBone bone, int modelId, Point3D offset, Point3D rotation, Point3D scale );
+		public boolean remove();
+		public boolean isUsed( int slot );
+	}
+	
+	Slot getSlot( int slot );
+	Slot[] getSlots();
 }

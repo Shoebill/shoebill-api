@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.SpawnInfo;
@@ -25,7 +25,7 @@ import net.gtaun.shoebill.data.constant.PlayerMarkerMode;
  *
  */
 
-public interface World
+public interface WorldPrim
 {
 	void setTeamCount( int count );
 	

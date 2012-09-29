@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.LocationAngle;
@@ -27,7 +27,7 @@ import net.gtaun.shoebill.data.Velocity;
  *
  */
 
-public interface Vehicle extends Destroyable
+public interface VehiclePrim extends Destroyable
 {
 	public static final int INVALID_ID	=				0xFFFF;
 	
@@ -68,16 +68,16 @@ public interface Vehicle extends Destroyable
 	void setVelocity( Velocity velocity );
 	void setAngularVelocity( Velocity velocity );
 	
-	void putPlayer( Player player, int seat );
-	boolean isPlayerIn( Player player );
-	boolean isStreamedIn( Player forPlayer );
-	void setParamsForPlayer( Player player, boolean objective, boolean doorsLocked );
+	void putPlayer( PlayerPrim player, int seat );
+	boolean isPlayerIn( PlayerPrim player );
+	boolean isStreamedIn( PlayerPrim forPlayer );
+	void setParamsForPlayer( PlayerPrim player, boolean objective, boolean doorsLocked );
 	void respawn();
 	void setColor( int color1, int color2 );
 	void setPaintjob( int paintjobId );
 	
-	Vehicle getTrailer();
-	void attachTrailer( Vehicle trailer );
+	VehiclePrim getTrailer();
+	void attachTrailer( VehiclePrim trailer );
 	void detachTrailer();
 	
 	boolean isTrailerAttached();

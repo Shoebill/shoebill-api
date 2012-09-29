@@ -14,28 +14,17 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
+import net.gtaun.shoebill.data.constant.RaceCheckpointType;
 
 /**
  * @author MK124
  *
  */
 
-public interface Timer
+public interface RaceCheckpointPrim extends CheckpointPrim
 {
-	public static final int COUNT_INFINITE = 0;
-	
-	
-	int getInterval();
-	int getCount();
-
-	boolean isRunning();
-	
-	void setInterval( int interval );
-	void setCount( int count );
-	void start();
-	void stop();
-	
-	void tick( int realint );
+	RaceCheckpointType getType();
+	RaceCheckpointPrim getNext();
 }

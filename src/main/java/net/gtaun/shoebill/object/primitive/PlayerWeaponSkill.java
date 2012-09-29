@@ -14,25 +14,17 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
+import net.gtaun.shoebill.data.constant.WeaponSkill;
 
 /**
  * @author MK124
  *
  */
 
-public interface Server
+public interface PlayerWeaponSkill extends PlayerRelated
 {
-	int getServerCodepage();
-	void setServerCodepage( int codepage );
-	
-	int getMaxPlayers();
-	
-	void sendRconCommand( String command );
-	void connectNPC( String name, String script );
-	
-	String getServerVarAsString( String varname );
-	int getServerVarAsInt( String varname );
-	boolean getServerVarAsBool( String varname );
+	void set( WeaponSkill type, int level );
+	int get( WeaponSkill type );
 }

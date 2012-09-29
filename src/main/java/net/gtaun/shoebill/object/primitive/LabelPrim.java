@@ -14,34 +14,34 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
+import net.gtaun.shoebill.data.Color;
+import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Point3D;
-import net.gtaun.shoebill.data.constant.PlayerAttachBone;
 
 /**
  * @author MK124
  *
  */
 
-public interface PlayerAttach extends PlayerRelated
+public interface LabelPrim extends Destroyable
 {
-	public static final int MAX_ATTACHED_OBJECTS = 5;
+	public static final int INVALID_ID =				0xFFFF;
 	
 	
-	public interface Slot
-	{
-		public PlayerAttachBone getBone();
-		public int getModelId();
-		public Point3D getOffset();
-		public Point3D getRotate();
-		public Point3D getScale();
-		
-		public boolean set( PlayerAttachBone bone, int modelId, Point3D offset, Point3D rotation, Point3D scale );
-		public boolean remove();
-		public boolean isUsed( int slot );
-	}
+	int getId();
+	String getText();
+	Color getColor();
+	float getDrawDistance();
+	Location getLocation();
 	
-	Slot getSlot( int slot );
-	Slot[] getSlots();
+	PlayerPrim getAttachedPlayer();
+	VehiclePrim getAttachedVehicle();
+
+	void attach( PlayerPrim player, float x, float y, float z );
+	void attach( PlayerPrim player, Point3D offset );
+	void attach( VehiclePrim vehicle, float x, float y, float z );
+	void attach( VehiclePrim vehicle, Point3D offset );
+	void update( Color color, String text );
 }

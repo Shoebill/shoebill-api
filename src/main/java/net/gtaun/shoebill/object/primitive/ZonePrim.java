@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
@@ -24,7 +24,7 @@ import net.gtaun.shoebill.data.Color;
  *
  */
 
-public interface Zone extends Destroyable
+public interface ZonePrim extends Destroyable
 {
 	public static final int INVALID_ID =		-1;
 	
@@ -32,10 +32,10 @@ public interface Zone extends Destroyable
 	int getId();
 	Area getArea();
 	
-	void show( Player player, Color color );
-	void hide( Player player );
-	void flash( Player player, Color color );
-	void stopFlash( Player player );
+	void show( PlayerPrim player, Color color );
+	void hide( PlayerPrim player );
+	void flash( PlayerPrim player, Color color );
+	void stopFlash( PlayerPrim player );
 	
 	void showForAll( Color color );
 	void hideForAll();

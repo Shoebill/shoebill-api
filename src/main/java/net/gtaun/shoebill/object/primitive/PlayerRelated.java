@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,25 +14,15 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.event.player;
+package net.gtaun.shoebill.object.primitive;
 
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
-import net.gtaun.shoebill.util.event.Event;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class PlayerEvent extends Event
+public interface PlayerRelated
 {
-	private PlayerPrim player;
-	
-	public PlayerPrim getPlayer()		{ return player; }
-	
-	
-	protected PlayerEvent( PlayerPrim player )
-	{
-		this.player = player;
-	}
+	PlayerPrim getPlayer();
 }

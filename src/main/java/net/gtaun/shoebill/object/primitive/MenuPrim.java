@@ -14,17 +14,32 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
-import net.gtaun.shoebill.data.constant.RaceCheckpointType;
+import net.gtaun.shoebill.data.Point2D;
 
 /**
  * @author MK124
  *
  */
 
-public interface RaceCheckpoint extends Checkpoint
+public interface MenuPrim extends Destroyable
 {
-	RaceCheckpointType getType();
-	RaceCheckpoint getNext();
+	public static final int INVALID_ID =			0xFF;
+	
+	
+	int getId();
+	String getTitle();
+	int getColumns();
+	Point2D getPosition();
+	float getCol1Width();
+	float getCol2Width();
+	String getColumnHeader();
+	
+	void addItem( int column, String text );
+	void setColumnHeader( int column, String text );
+	void disable();
+	void disableRow( int row );
+	void show( PlayerPrim player );
+	void hide( PlayerPrim player );
 }

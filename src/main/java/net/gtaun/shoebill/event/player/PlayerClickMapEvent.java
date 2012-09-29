@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.data.Point3D;
-import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 /**
  * @author MK124
@@ -31,7 +31,7 @@ public class PlayerClickMapEvent extends PlayerEvent
 	public Point3D getPosition()	{ return position.clone(); }
 	
 	
-	public PlayerClickMapEvent( Player player, float x, float y, float z )
+	public PlayerClickMapEvent( PlayerPrim player, float x, float y, float z )
 	{
 		super( player );
 		position = new Point3D( x, y, z );

@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.menu;
 
-import net.gtaun.shoebill.object.Menu;
-import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.primitive.MenuPrim;
+import net.gtaun.shoebill.object.primitive.PlayerPrim;
 import net.gtaun.shoebill.util.event.Event;
 
 /**
@@ -27,14 +27,14 @@ import net.gtaun.shoebill.util.event.Event;
 
 public abstract class MenuEvent extends Event
 {
-	private Menu menu;
-	private Player player;
+	private MenuPrim menu;
+	private PlayerPrim player;
 	
-	public Menu getMenu()			{ return menu; }
-	public Player getPlayer()		{ return player; }
+	public MenuPrim getMenu()			{ return menu; }
+	public PlayerPrim getPlayer()		{ return player; }
 	
 	
-	protected MenuEvent( Menu menu, Player player )
+	protected MenuEvent( MenuPrim menu, PlayerPrim player )
 	{
 		this.menu = menu;
 		this.player = player;

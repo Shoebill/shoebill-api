@@ -14,14 +14,19 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
+
+import net.gtaun.shoebill.data.constant.DialogStyle;
 
 /**
  * @author MK124
  *
  */
 
-public interface PlayerLabel extends Label, PlayerRelated
+public interface DialogPrim
 {
-	public static final int INVALID_ID =			0xFFFF;
+	int getId();
+	
+	void show( PlayerPrim player, DialogStyle style, String caption, String text, String button1, String button2 );
+	void cancel( PlayerPrim player );
 }

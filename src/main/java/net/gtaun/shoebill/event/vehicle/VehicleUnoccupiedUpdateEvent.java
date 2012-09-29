@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.vehicle;
 
-import net.gtaun.shoebill.object.Player;
-import net.gtaun.shoebill.object.Vehicle;
+import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.primitive.VehiclePrim;
 
 /**
  * @author JoJLlmAn
@@ -26,14 +26,14 @@ import net.gtaun.shoebill.object.Vehicle;
 
 public class VehicleUnoccupiedUpdateEvent extends VehicleEvent
 {
-	private Player player;
+	private PlayerPrim player;
 	private int passengerSeat;
 	
-	public Player getPlayer()			{ return player; }
+	public PlayerPrim getPlayer()			{ return player; }
 	public int getPassengerSeat()		{ return passengerSeat; }
 	
 	
-	public VehicleUnoccupiedUpdateEvent( Vehicle vehicle, Player player, int passengeSeat )
+	public VehicleUnoccupiedUpdateEvent( VehiclePrim vehicle, PlayerPrim player, int passengeSeat )
 	{
 		super( vehicle );
 		this.player = player;

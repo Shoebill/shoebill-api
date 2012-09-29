@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 /**
  * @author MK124
@@ -25,18 +25,18 @@ import net.gtaun.shoebill.object.Player;
 
 public class PlayerDeathEvent extends PlayerEvent
 {
-	private Player killer;
+	private PlayerPrim killer;
 	private int reason;
 	
 	
-	public PlayerDeathEvent( Player player, Player killer, int reason )
+	public PlayerDeathEvent( PlayerPrim player, PlayerPrim killer, int reason )
 	{
 		super( player );
 		this.killer = killer;
 		this.reason = reason;
 	}
 	
-	public Player getKiller()
+	public PlayerPrim getKiller()
 	{
 		return killer;
 	}

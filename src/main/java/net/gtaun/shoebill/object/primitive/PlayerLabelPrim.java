@@ -14,17 +14,15 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
-import net.gtaun.shoebill.data.constant.WeaponSkill;
 
 /**
  * @author MK124
  *
  */
 
-public interface PlayerWeaponSkill extends PlayerRelated
+public interface PlayerLabelPrim extends LabelPrim, PlayerRelated
 {
-	void set( WeaponSkill type, int level );
-	int get( WeaponSkill type );
+	public static final int INVALID_ID =			0xFFFF;
 }

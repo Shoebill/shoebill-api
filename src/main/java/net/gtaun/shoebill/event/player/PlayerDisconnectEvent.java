@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 /**
  * @author MK124
@@ -30,7 +30,7 @@ public class PlayerDisconnectEvent extends PlayerEvent
 	public int getReason()			{ return reason; }
 	
 	
-	public PlayerDisconnectEvent( Player player, int reason )
+	public PlayerDisconnectEvent( PlayerPrim player, int reason )
 	{
 		super( player );
 		this.reason = reason;

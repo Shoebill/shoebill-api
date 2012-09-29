@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
@@ -44,7 +44,7 @@ import net.gtaun.shoebill.exception.IllegalLengthException;
  *
  */
 
-public interface Player
+public interface PlayerPrim
 {
 	public static final int INVALID_ID =							0xFFFF;
 	public static final int NO_TEAM =								255;
@@ -80,20 +80,20 @@ public interface Player
 	int getWeatherId();
 	int getCameraMode();
 	FightStyle getFightStyle();
-	Vehicle getVehicle();
+	VehiclePrim getVehicle();
 	int getVehicleSeat();
 	SpecialAction getSpecialAction();
-	Player getSpectatingPlayer();
-	Vehicle getSpectatingVehicle();
+	PlayerPrim getSpectatingPlayer();
+	VehiclePrim getSpectatingVehicle();
 	
 	LocationAngle getLocation();
 	Area getWorldBound();
 	Velocity getVelocity();
 	PlayerState getState();
-	Checkpoint getCheckpoint();
-	RaceCheckpoint getRaceCheckpoint();
+	CheckpointPrim getCheckpoint();
+	RaceCheckpointPrim getRaceCheckpoint();
 	
-	Dialog getDialog();
+	DialogPrim getDialog();
 
 	boolean isStuntBonusEnabled();
 	boolean isSpectating();
@@ -119,8 +119,8 @@ public interface Player
 	void setWeatherId( int weatherId );
 	void setFightStyle( FightStyle style );
 	
-	void setVehicle( Vehicle vehicle, int seat );
-	void setVehicle( Vehicle vehicle );
+	void setVehicle( VehiclePrim vehicle, int seat );
+	void setVehicle( VehiclePrim vehicle );
 	
 	void setLocation( float x, float y, float z );
 	void setLocation( Point3D pos );
@@ -141,9 +141,9 @@ public interface Player
 	void sendMessage( Color color, String message );
 	void sendMessage( Color color, String format, Object... args );
 	
-	void sendChat( Player player, String message );
+	void sendChat( PlayerPrim player, String message );
 	void sendChatToAll( String message );
-	void sendDeathMessage( Player killer, int reason );
+	void sendDeathMessage( PlayerPrim killer, int reason );
 	
 	void sendGameText( int time, int style, String text );
 	void sendGameText( int time, int style, String format, Object... args );
@@ -159,14 +159,14 @@ public interface Player
 	void playSound( int sound, float x, float y, float z );
 	void playSound( int sound, Point3D pos );
 	
-	void markerForPlayer( Player player, Color color );
-	void showNameTagForPlayer( Player player, boolean show );
+	void markerForPlayer( PlayerPrim player, Color color );
+	void showNameTagForPlayer( PlayerPrim player, boolean show );
 	
 	void kick();
 	void ban();
 	void ban( String reason );
 	
-	Menu getMenu();
+	MenuPrim getMenu();
 	
 	void setCameraPosition( float x, float y, float z );
 	void setCameraPosition( Point3D pos );
@@ -179,13 +179,13 @@ public interface Player
 	Point3D getCameraFrontVector();
 	
 	boolean isInAnyVehicle();
-	boolean isInVehicle( Vehicle veh );
+	boolean isInVehicle( VehiclePrim veh );
 	boolean isAdmin();
-	boolean isStreamedIn( Player forPlayer );
+	boolean isStreamedIn( PlayerPrim forPlayer );
 	
-	void setCheckpoint( Checkpoint checkpoint );
+	void setCheckpoint( CheckpointPrim checkpoint );
 	void disableCheckpoint();
-	void setRaceCheckpoint( RaceCheckpoint checkpoint );
+	void setRaceCheckpoint( RaceCheckpointPrim checkpoint );
 	void disableRaceCheckpoint();
 	
 	void setTeam( int team );
@@ -209,7 +209,7 @@ public interface Player
 	void playCrimeReport( int suspectId, int crimeId );
 	void setShopName( ShopName shop );
 	
-	Vehicle getSurfingVehicle();
+	VehiclePrim getSurfingVehicle();
 	void removeFromVehicle();
 	
 	void toggleControllable( boolean toggle );
@@ -222,16 +222,16 @@ public interface Player
 	void enableStuntBonus( boolean enabled );
 	
 	void toggleSpectating( boolean toggle );
-	void spectate( Player player, SpectateMode mode );
-	void spectate( Vehicle veh, SpectateMode mode );
+	void spectate( PlayerPrim player, SpectateMode mode );
+	void spectate( VehiclePrim veh, SpectateMode mode );
 	
 	void startRecord( RecordType type, String recordName );
 	void stopRecord();
 	
-	IObject getSurfingObject();
+	ObjectPrim getSurfingObject();
 	String getNetworkStats();
 	
-	Player getAimedTarget();
+	PlayerPrim getAimedTarget();
 	
 	void playAudioStream( String url );
 	void playAudioStream( String url, float x, float y, float z, float distance );
@@ -243,6 +243,6 @@ public interface Player
 	void removeBuilding( int modelId, Point3D pos, float radius );
 	void removeBuilding( int modelId, LocationRadius loc );
 
-	void showDialog( Dialog dialog, DialogStyle style, String caption, String text, String button1, String button2 );
+	void showDialog( DialogPrim dialog, DialogStyle style, String caption, String text, String button1, String button2 );
 	void cancelDialog();
 }

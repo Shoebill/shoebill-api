@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 /**
  * @author MK124
@@ -25,16 +25,16 @@ import net.gtaun.shoebill.object.Player;
 
 public class PlayerGiveDamageEvent extends PlayerEvent
 {
-	private Player victim;
+	private PlayerPrim victim;
 	private float amount;
 	private int weaponId;
 	
-	public Player getVictim()		{ return victim; }
+	public PlayerPrim getVictim()		{ return victim; }
 	public float getAmount()		{ return amount; }
 	public int getWeaponId()		{ return weaponId; }
 	
 	
-	public PlayerGiveDamageEvent( Player player, Player victim, float amount, int weaponId )
+	public PlayerGiveDamageEvent( PlayerPrim player, PlayerPrim victim, float amount, int weaponId )
 	{
 		super( player );
 		this.victim = victim;

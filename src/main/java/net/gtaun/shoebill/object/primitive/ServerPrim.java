@@ -14,24 +14,25 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
+
 
 /**
  * @author MK124
  *
  */
 
-public interface VehicleDamage extends VehicleRelated
+public interface ServerPrim
 {
-	int getPanels();
-	int getDoors();
-	int getLights();
-	int getTires();
+	int getServerCodepage();
+	void setServerCodepage( int codepage );
 	
-	void setPanels( int panels );
-	void setDoors( int doors );
-	void setLights( int lights );
-	void setTires( int tires );
+	int getMaxPlayers();
 	
-	void set( int panels, int doors, int lights, int tires );
+	void sendRconCommand( String command );
+	void connectNPC( String name, String script );
+	
+	String getServerVarAsString( String varname );
+	int getServerVarAsInt( String varname );
+	boolean getServerVarAsBool( String varname );
 }

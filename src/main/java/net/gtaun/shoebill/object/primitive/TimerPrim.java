@@ -14,14 +14,28 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
+
 
 /**
  * @author MK124
  *
  */
 
-public interface PlayerObject extends IObject, PlayerRelated
+public interface TimerPrim
 {
-	public static final int INVALID_ID =				0xFFFF;
+	public static final int COUNT_INFINITE = 0;
+	
+	
+	int getInterval();
+	int getCount();
+
+	boolean isRunning();
+	
+	void setInterval( int interval );
+	void setCount( int count );
+	void start();
+	void stop();
+	
+	void tick( int realint );
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Point2D;
@@ -24,7 +24,7 @@ import net.gtaun.shoebill.data.Point2D;
  *
  */
 
-public interface Textdraw extends Destroyable
+public interface TextdrawPrim extends Destroyable
 {
 	public static final int INVALID_ID =		0xFFFF;
 	
@@ -49,8 +49,8 @@ public interface Textdraw extends Destroyable
 	void setFont( int font );
 	void setProportional( int set );
 	void setText( String text );
-	void show( Player player );
-	void hide( Player player );
+	void show( PlayerPrim player );
+	void hide( PlayerPrim player );
 	void showForAll();
 	void hideForAll();
 }

@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.dialog;
 
-import net.gtaun.shoebill.object.Dialog;
-import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.primitive.DialogPrim;
+import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 /**
  * @author MK124
@@ -36,7 +36,7 @@ public class DialogResponseEvent extends DialogEvent
 	public String getInputText()			{ return inputText;}
 	
 	
-	public DialogResponseEvent( Dialog dialog, Player player, int response, int listitem, String inputtext )
+	public DialogResponseEvent( DialogPrim dialog, PlayerPrim player, int response, int listitem, String inputtext )
 	{
 		super( dialog, player );
 		this.response = response;

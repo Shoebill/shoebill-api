@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Point3D;
@@ -24,7 +24,7 @@ import net.gtaun.shoebill.data.Point3D;
  *
  */
 
-public interface IObject extends Destroyable
+public interface ObjectPrim extends Destroyable
 {
 	public static final int INVALID_ID =				0xFFFF;
 	
@@ -34,9 +34,9 @@ public interface IObject extends Destroyable
 	float getSpeed();
 	float getDrawDistance();
 	
-	Player getAttachedPlayer();
-	IObject getAttachedObject();
-	Vehicle getAttachedVehicle();
+	PlayerPrim getAttachedPlayer();
+	ObjectPrim getAttachedObject();
+	VehiclePrim getAttachedVehicle();
 	
 	Location getLocation();
 	void setLocation( Point3D pos );
@@ -53,12 +53,12 @@ public interface IObject extends Destroyable
 	int move( Point3D pos, float speed, Point3D rot );
 	void stop();
 
-	void attach( Player player, float x, float y, float z, float rx, float ry, float rz );
-	void attach( Player player, Point3D offset, Point3D rot );
+	void attach( PlayerPrim player, float x, float y, float z, float rx, float ry, float rz );
+	void attach( PlayerPrim player, Point3D offset, Point3D rot );
 	
-	void attach( IObject object, float x, float y, float z, float rx, float ry, float rz, boolean syncRotation );
-	void attach( IObject object, Point3D offset, Point3D rot, boolean syncRotation );
+	void attach( ObjectPrim object, float x, float y, float z, float rx, float ry, float rz, boolean syncRotation );
+	void attach( ObjectPrim object, Point3D offset, Point3D rot, boolean syncRotation );
 
-	void attach( Vehicle vehicle, float x, float y, float z, float rx, float ry, float rz );
-	void attach( Vehicle vehicle, Point3D offset, Point3D rot );
+	void attach( VehiclePrim vehicle, float x, float y, float z, float rx, float ry, float rz );
+	void attach( VehiclePrim vehicle, Point3D offset, Point3D rot );
 }

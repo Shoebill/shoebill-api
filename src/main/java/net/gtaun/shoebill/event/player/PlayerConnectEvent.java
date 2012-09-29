@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 /**
  * @author MK124
@@ -25,7 +25,7 @@ import net.gtaun.shoebill.object.Player;
 
 public class PlayerConnectEvent extends PlayerEvent
 {
-	public PlayerConnectEvent( Player player )
+	public PlayerConnectEvent( PlayerPrim player )
 	{
 		super( player );
 	}

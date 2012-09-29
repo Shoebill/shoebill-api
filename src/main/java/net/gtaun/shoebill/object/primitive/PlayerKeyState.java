@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
+
 
 /**
  * @author Kee
@@ -63,7 +64,7 @@ public interface PlayerKeyState
 	public static final int KEY_RIGHT			= 128;
 	
 	
-	Player getPlayer();
+	PlayerPrim getPlayer();
 	int getKeys();
 	int getUpdown();
 	int getLeftright();

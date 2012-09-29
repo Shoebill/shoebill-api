@@ -14,15 +14,24 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.object.primitive;
 
 /**
  * @author MK124
  *
  */
 
-public interface Destroyable
+public interface VehicleDamage extends VehicleRelated
 {
-	void destroy();
-	boolean isDestroyed();
+	int getPanels();
+	int getDoors();
+	int getLights();
+	int getTires();
+	
+	void setPanels( int panels );
+	void setDoors( int doors );
+	void setLights( int lights );
+	void setTires( int tires );
+	
+	void set( int panels, int doors, int lights, int tires );
 }
