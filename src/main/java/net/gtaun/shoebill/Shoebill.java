@@ -29,6 +29,8 @@ public interface Shoebill
 	GamemodeManager getGamemodeManager();
 	PluginManager getPluginManager();
 	
+	<T> T createTraitMixinObject(Class<T> mixinInterface, Class<?> superclass);
+	
 	ShoebillVersion getVersion();
 	
 	void changeGamemode( File file );
