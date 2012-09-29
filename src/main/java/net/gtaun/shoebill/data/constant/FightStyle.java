@@ -14,37 +14,43 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.type;
+package net.gtaun.shoebill.data.constant;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author MK124
  *
  */
 
-public enum PlayerState
+public enum FightStyle
 {
-	NONE						(0),
-	ONFOOT						(1),
-	DRIVER						(2),
-	PASSENGER					(3),
-	EXIT_VEHICLE				(4),
-	ENTER_VEHICLE_DRIVER		(5),
-	ENTER_VEHICLE_PASSENGER		(6),
-	WASTED						(7),
-	SPAWNED						(8),
-	SPECTATING					(9);
+	NORMAL			(4),
+	BOXING			(5),
+	KUNGFU			(6),
+	KNEEHEAD		(7),
+	GRABKICK		(15),
+	ELBOW			(16);
 	
 	
-	public static PlayerState get( int data )
+	private static final Map<Integer, FightStyle> VALUES = new HashMap<Integer, FightStyle>();
+	public static FightStyle get( int data )
 	{
-		return values() [data];
+		return VALUES.get(data);
+	}
+	
+	static
+	{
+		for( FightStyle style : values() ) VALUES.put( style.data, style );
 	}
 	
 	
 	private final int data;
 	
 	
-	private PlayerState( int data )
+	
+	private FightStyle( int data )
 	{
 		this.data = data;
 	}

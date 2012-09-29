@@ -14,39 +14,30 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.type;
-
-import java.util.HashMap;
-import java.util.Map;
+package net.gtaun.shoebill.data.constant;
 
 /**
  * @author MK124
  *
  */
 
-public enum SpectateMode
+public enum DialogStyle
 {
-	NORMAL		(1),
-	FIXED		(2),
-	SIDE		(3);
+	MSGBOX		(0),
+	INPUT		(1),
+	LIST		(2);
 	
 	
-	private static final Map<Integer, SpectateMode> VALUES = new HashMap<Integer, SpectateMode>();
-	public static SpectateMode get( int data )
+	public static DialogStyle get( int data )
 	{
-		return VALUES.get(data);
+		return values() [data];
 	}
 	
-	static
-	{
-		for( SpectateMode mode : values() ) VALUES.put( mode.data, mode );
-	}
 	
-
 	private final int data;
 	
 	
-	private SpectateMode( int data )
+	private DialogStyle( int data )
 	{
 		this.data = data;
 	}

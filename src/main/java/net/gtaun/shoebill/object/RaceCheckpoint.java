@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.type.RaceCheckpointType;
+import net.gtaun.shoebill.data.constant.RaceCheckpointType;
 
 /**
  * @author MK124

@@ -18,7 +18,7 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.data.type.WeaponType;
+import net.gtaun.shoebill.data.constant.WeaponType;
 import net.gtaun.shoebill.util.immutable.Immutable;
 import net.gtaun.shoebill.util.immutable.Immutably;
 import net.gtaun.shoebill.util.immutable.ImmutablyException;
@@ -70,7 +70,7 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 		this.weapon3 = new WeaponData(weapon3, ammo3);
 	}
 
-	public SpawnInfo( Vector3D vec, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3 )
+	public SpawnInfo( Point3D vec, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3 )
 	{
 		location = new LocationAngle(vec, interiorId, worldId, angle);
 		this.skinId = skin;

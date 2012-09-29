@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.type.WeaponSkill;
+import net.gtaun.shoebill.data.constant.WeaponSkill;
 
 /**
  * @author MK124

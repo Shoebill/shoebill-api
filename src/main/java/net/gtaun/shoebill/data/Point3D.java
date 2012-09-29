@@ -32,24 +32,24 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  */
 
-public class Vector3D extends Vector2D implements Cloneable, Serializable, Immutable
+public class Point3D extends Point2D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 8493095902831171278L;
 	
 
-	private static final class ImmutablyVector3D extends Vector3D implements Immutably
+	private static final class ImmutablyPoint3D extends Point3D implements Immutably
 	{
-		private static final long serialVersionUID = Vector3D.serialVersionUID;
+		private static final long serialVersionUID = Point3D.serialVersionUID;
 		
-		private ImmutablyVector3D( Vector3D vector3d )
+		private ImmutablyPoint3D( Point3D vector3d )
 		{
 			super( vector3d );
 		}
 		
 		@Override
-		public Vector3D clone()
+		public Point3D clone()
 		{
-			return new Vector3D( this );
+			return new Point3D( this );
 		}
 	}
 	
@@ -57,24 +57,24 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, Immut
 	private float z;
 	
 	
-	public Vector3D()
+	public Point3D()
 	{
 
 	}
 
-	public Vector3D( float x, float y, float z )
+	public Point3D( float x, float y, float z )
 	{
 		super( x, y );
 		this.z = z;
 	}
 
-	public Vector3D( Vector2D vec, float z )
+	public Point3D( Point2D vec, float z )
 	{
 		super( vec );
 		this.z = z;
 	}
 	
-	public Vector3D( Vector3D vec )
+	public Point3D( Point3D vec )
 	{
 		super( vec );
 		this.z = vec.getZ();
@@ -99,7 +99,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, Immut
 		setZ( z );
 	}
 	
-	public void set( Vector2D vec, float z )
+	public void set( Point2D vec, float z )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
@@ -107,7 +107,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, Immut
 		setZ( z );
 	}
 	
-	public void set( Vector3D vec )
+	public void set( Point3D vec )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
@@ -128,15 +128,15 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, Immut
 	}
 	
 	@Override
-	public Vector3D clone()
+	public Point3D clone()
 	{
-		return (Vector3D) super.clone();
+		return (Point3D) super.clone();
 	}
 	
 	@Override
-	public Vector3D immure()
+	public Point3D immure()
 	{
-		return new ImmutablyVector3D(this);
+		return new ImmutablyPoint3D(this);
 	}
 	
 	@Override

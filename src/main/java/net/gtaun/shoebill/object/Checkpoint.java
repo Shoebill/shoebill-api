@@ -19,7 +19,7 @@ package net.gtaun.shoebill.object;
 import java.util.Collection;
 
 import net.gtaun.shoebill.data.LocationRadius;
-import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.Point3D;
 
 /**
  * @author MK124
@@ -30,7 +30,7 @@ public interface Checkpoint
 {
 	LocationRadius getLocation();
 	void setLocation( float x, float y, float z );
-	void setLocation( Vector3D pos );
+	void setLocation( Point3D pos );
 	void setLocation( LocationRadius loc );
 
 	float getSize();

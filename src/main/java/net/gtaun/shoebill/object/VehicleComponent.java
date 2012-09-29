@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.type.VehicleComponentSlot;
+import net.gtaun.shoebill.data.constant.VehicleComponentSlot;
 
 /**
  * @author MK124

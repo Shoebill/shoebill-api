@@ -32,24 +32,24 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  */
 
-public class Vector2D implements Cloneable, Serializable, Immutable
+public class Point2D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 3303330394405245831L;
 	
 
-	private static final class ImmutablyVector2D extends Vector2D implements Immutably
+	private static final class ImmutablyPoint2D extends Point2D implements Immutably
 	{
-		private static final long serialVersionUID = Vector2D.serialVersionUID;
+		private static final long serialVersionUID = Point2D.serialVersionUID;
 		
-		private ImmutablyVector2D( Vector2D vector2d )
+		private ImmutablyPoint2D( Point2D vector2d )
 		{
 			super( vector2d );
 		}
 		
 		@Override
-		public Vector2D clone()
+		public Point2D clone()
 		{
-			return new Vector2D( this );
+			return new Point2D( this );
 		}
 	}
 	
@@ -57,18 +57,18 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 	private float x, y;
 	
 	
-	public Vector2D()
+	public Point2D()
 	{
 		
 	}
 	
-	public Vector2D( float x, float y )
+	public Point2D( float x, float y )
 	{
 		this.x = x;
 		this.y = y;
 	}
 	
-	public Vector2D( Vector2D vec )
+	public Point2D( Point2D vec )
 	{
 		this.x = vec.getX();
 		this.y = vec.getY();
@@ -106,7 +106,7 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 		setY( y );
 	}
 	
-	public void set( Vector2D vector )
+	public void set( Point2D vector )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
@@ -127,11 +127,11 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public Vector2D clone()
+	public Point2D clone()
 	{
 		try
 		{
-			return (Vector2D) super.clone();
+			return (Point2D) super.clone();
 		}
 		catch( CloneNotSupportedException e )
 		{
@@ -140,9 +140,9 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public Vector2D immure()
+	public Point2D immure()
 	{
-		return new ImmutablyVector2D(this);
+		return new ImmutablyPoint2D(this);
 	}
 	
 	@Override

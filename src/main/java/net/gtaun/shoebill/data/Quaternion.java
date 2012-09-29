@@ -32,24 +32,24 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  */
 
-public class Quaternions extends Vector3D implements Cloneable, Serializable, Immutable
+public class Quaternion extends Point3D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 455013800771095435L;
 	
 	
-	private static final class ImmutablyQuaternions extends Quaternions implements Immutably
+	private static final class ImmutablyQuaternions extends Quaternion implements Immutably
 	{
-		private static final long serialVersionUID = Quaternions.serialVersionUID;
+		private static final long serialVersionUID = Quaternion.serialVersionUID;
 		
-		private ImmutablyQuaternions( Quaternions quaternions )
+		private ImmutablyQuaternions( Quaternion quaternions )
 		{
 			super( quaternions );
 		}
 		
 		@Override
-		public Quaternions clone()
+		public Quaternion clone()
 		{
-			return new Quaternions( this );
+			return new Quaternion( this );
 		}
 	}
 	
@@ -57,24 +57,24 @@ public class Quaternions extends Vector3D implements Cloneable, Serializable, Im
 	private float w;
 	
 	
-	public Quaternions()
+	public Quaternion()
 	{
 		
 	}
 
-	public Quaternions( float x, float y, float z, float w )
+	public Quaternion( float x, float y, float z, float w )
 	{
 		super( x, y, z );
 		this.w = w;
 	}
 
-	public Quaternions( Vector3D vec, float w )
+	public Quaternion( Point3D vec, float w )
 	{
 		super( vec );
 		this.w = w;
 	}
 	
-	public Quaternions( Quaternions quat )
+	public Quaternion( Quaternion quat )
 	{
 		super( quat );
 		this.w = quat.getW();
@@ -98,7 +98,7 @@ public class Quaternions extends Vector3D implements Cloneable, Serializable, Im
 		setW( w );
 	}
 	
-	public void set( Vector3D vec, float w )
+	public void set( Point3D vec, float w )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
@@ -106,7 +106,7 @@ public class Quaternions extends Vector3D implements Cloneable, Serializable, Im
 		setW( w );
 	}
 	
-	public void set( Quaternions quat )
+	public void set( Quaternion quat )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
@@ -114,9 +114,9 @@ public class Quaternions extends Vector3D implements Cloneable, Serializable, Im
 		setW( quat.getW() );
 	}
 
-	public Quaternions getConjugate()
+	public Quaternion getConjugate()
 	{
-		return new Quaternions(-getX(), -getY(), -getZ(), getW());
+		return new Quaternion(-getX(), -getY(), -getZ(), getW());
 	}
 	
 	public float[][] transformMatrix()
@@ -188,13 +188,13 @@ public class Quaternions extends Vector3D implements Cloneable, Serializable, Im
 	}
 	
 	@Override
-	public Quaternions clone()
+	public Quaternion clone()
 	{
-		return (Quaternions) super.clone();
+		return (Quaternion) super.clone();
 	}
 	
 	@Override
-	public Quaternions immure()
+	public Quaternion immure()
 	{
 		return new ImmutablyQuaternions(this);
 	}

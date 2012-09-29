@@ -32,7 +32,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  */
 
-public class Location extends Vector3D implements Cloneable, Serializable, Immutable
+public class Location extends Point3D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 8895946392500802993L;
 
@@ -80,18 +80,18 @@ public class Location extends Vector3D implements Cloneable, Serializable, Immut
 		this.worldId = worldId;
 	}
 
-	public Location( Vector3D pos )
+	public Location( Point3D pos )
 	{
 		super( pos );
 	}
 	
-	public Location( Vector3D pos, int worldId )
+	public Location( Point3D pos, int worldId )
 	{
 		super( pos );
 		this.worldId = worldId;
 	}
 
-	public Location( Vector3D pos, int interiorId, int worldId )
+	public Location( Point3D pos, int interiorId, int worldId )
 	{
 		super( pos );
 		this.interiorId = interiorId;
@@ -145,7 +145,7 @@ public class Location extends Vector3D implements Cloneable, Serializable, Immut
 		setWorldId( worldId );
 	}
 
-	public void set( Vector3D pos, int worldId )
+	public void set( Point3D pos, int worldId )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
@@ -153,7 +153,7 @@ public class Location extends Vector3D implements Cloneable, Serializable, Immut
 		setWorldId( worldId );
 	}
 
-	public void set( Vector3D pos, int interiorId, int worldId )
+	public void set( Point3D pos, int interiorId, int worldId )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		

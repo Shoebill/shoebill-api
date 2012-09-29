@@ -14,46 +14,41 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.type;
+package net.gtaun.shoebill.data.constant;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author MK124
  *
  */
 
-public enum PlayerAttachBone
+public enum WeaponState
 {
-	NOT_USABLE			(0),
-	SPINE				(1),
-	HEAD				(2),
-	UPPER_ARM_LEFT		(3),
-	UPPER_ARM_RIGHT		(4),
-	HAND_LEFT			(5),
-	HAND_RIGHT			(6),
-	THIGH_LEFT			(7),
-	THIGH_RIGHT			(8),
-	FOOT_LEFT			(9),
-	FOOT_RIGHT			(10),
-	CALF_RIGHT			(11),
-	CALF_LEFT			(12),
-	FOREARM_LEFT		(13),
-	FOREARM_RIGHT		(14),
-	CLAVICLE_LEFT		(15),
-	CLAVICLE_RIGHT		(16),
-	NECK				(17),
-	JAW					(18);
+	UNKNOWN				(-1),
+	NO_BULLETS			(0),
+	LAST_BULLET			(1),
+	MORE_BULLETS		(2),
+	RELOADING			(3);
 	
 	
-	public static PlayerAttachBone get( int data )
+	private static final Map<Integer, WeaponState> VALUES = new HashMap<Integer, WeaponState>();
+	public static WeaponState get( int data )
 	{
-		return values() [data];
+		return VALUES.get(data);
+	}
+	
+	static
+	{
+		for( WeaponState state : values() ) VALUES.put( state.data, state );
 	}
 	
 	
 	private final int data;
 	
 	
-	private PlayerAttachBone( int data )
+	private WeaponState( int data )
 	{
 		this.data = data;
 	}

@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.type.DialogStyle;
+import net.gtaun.shoebill.data.constant.DialogStyle;
 
 /**
  * @author MK124

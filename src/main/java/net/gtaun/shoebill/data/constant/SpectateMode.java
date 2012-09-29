@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.type;
+package net.gtaun.shoebill.data.constant;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,43 +24,29 @@ import java.util.Map;
  *
  */
 
-public enum SpecialAction
+public enum SpectateMode
 {
-	NONE					(0),
-	DUCK					(1),
-	USEJETPACK				(2),
-	ENTER_VEHICLE			(3),
-	EXIT_VEHICLE			(4),
-	DANCE1					(5),
-	DANCE2					(6),
-	DANCE3					(7),
-	DANCE4					(8),
-	HANDSUP					(10),
-	USECELLPHONE			(11),
-	SITTING					(12),
-	STOPUSECELLPHONE		(13),
-	DRINK_BEER				(20),
-	SMOKE_CIGGY				(21),
-	DRINK_WINE				(22),
-	DRINK_SPRUNK			(23);
+	NORMAL		(1),
+	FIXED		(2),
+	SIDE		(3);
 	
 	
-	private static final Map<Integer, SpecialAction> VALUES = new HashMap<Integer, SpecialAction>();
-	public static SpecialAction get( int data )
+	private static final Map<Integer, SpectateMode> VALUES = new HashMap<Integer, SpectateMode>();
+	public static SpectateMode get( int data )
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( SpecialAction action : values() ) VALUES.put( action.data, action );
+		for( SpectateMode mode : values() ) VALUES.put( mode.data, mode );
 	}
 	
-	
+
 	private final int data;
 	
 	
-	private SpecialAction( int data )
+	private SpectateMode( int data )
 	{
 		this.data = data;
 	}

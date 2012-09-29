@@ -80,19 +80,19 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 		this.radius = radius;
 	}
 
-	public LocationRadius( Vector3D pos, float radius )
+	public LocationRadius( Point3D pos, float radius )
 	{
 		super( pos );
 		this.radius = radius;
 	}
 	
-	public LocationRadius( Vector3D pos, int worldId, float radius )
+	public LocationRadius( Point3D pos, int worldId, float radius )
 	{
 		super( pos, worldId );
 		this.radius = radius;
 	}
 	
-	public LocationRadius( Vector3D pos, int interiorId, int worldId, float radius )
+	public LocationRadius( Point3D pos, int interiorId, int worldId, float radius )
 	{
 		super( pos, interiorId, worldId );
 		this.radius = radius;
@@ -145,7 +145,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 		setRadius( radius );
 	}
 	
-	public void set( Vector3D pos, float radius )
+	public void set( Point3D pos, float radius )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 
@@ -153,7 +153,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 		setRadius( radius );
 	}
 	
-	public void set( Vector3D pos, int worldId, float radius )
+	public void set( Point3D pos, int worldId, float radius )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 
@@ -161,7 +161,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 		setRadius( radius );
 	}
 	
-	public void set( Vector3D pos, int interiorId, int worldId, float radius )
+	public void set( Point3D pos, int interiorId, int worldId, float radius )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.type;
+package net.gtaun.shoebill.data.constant;
 
 /**
  * @author MK124
  *
  */
 
-public enum DialogStyle
+public enum PlayerMarkerMode
 {
-	MSGBOX		(0),
-	INPUT		(1),
-	LIST		(2);
+	OFF				(0),
+	GLOBAL			(1),
+	STREAMED		(2);
 	
 	
-	public static DialogStyle get( int data )
+	public static PlayerMarkerMode get( int data )
 	{
 		return values() [data];
 	}
@@ -37,7 +37,7 @@ public enum DialogStyle
 	private final int data;
 	
 	
-	private DialogStyle( int data )
+	private PlayerMarkerMode( int data )
 	{
 		this.data = data;
 	}

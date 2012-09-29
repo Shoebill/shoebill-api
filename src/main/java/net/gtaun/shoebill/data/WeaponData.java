@@ -18,7 +18,7 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.data.type.WeaponType;
+import net.gtaun.shoebill.data.constant.WeaponType;
 import net.gtaun.shoebill.util.immutable.Immutable;
 import net.gtaun.shoebill.util.immutable.Immutably;
 import net.gtaun.shoebill.util.immutable.ImmutablyException;

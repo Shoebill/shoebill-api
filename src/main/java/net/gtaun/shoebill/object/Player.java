@@ -23,19 +23,19 @@ import net.gtaun.shoebill.data.LocationAngle;
 import net.gtaun.shoebill.data.LocationRadius;
 import net.gtaun.shoebill.data.SpawnInfo;
 import net.gtaun.shoebill.data.Time;
-import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.Point3D;
 import net.gtaun.shoebill.data.Velocity;
 import net.gtaun.shoebill.data.WeaponData;
-import net.gtaun.shoebill.data.type.DialogStyle;
-import net.gtaun.shoebill.data.type.FightStyle;
-import net.gtaun.shoebill.data.type.MapIconStyle;
-import net.gtaun.shoebill.data.type.PlayerState;
-import net.gtaun.shoebill.data.type.RecordType;
-import net.gtaun.shoebill.data.type.ShopName;
-import net.gtaun.shoebill.data.type.SpecialAction;
-import net.gtaun.shoebill.data.type.SpectateMode;
-import net.gtaun.shoebill.data.type.WeaponState;
-import net.gtaun.shoebill.data.type.WeaponType;
+import net.gtaun.shoebill.data.constant.DialogStyle;
+import net.gtaun.shoebill.data.constant.FightStyle;
+import net.gtaun.shoebill.data.constant.MapIconStyle;
+import net.gtaun.shoebill.data.constant.PlayerState;
+import net.gtaun.shoebill.data.constant.RecordType;
+import net.gtaun.shoebill.data.constant.ShopName;
+import net.gtaun.shoebill.data.constant.SpecialAction;
+import net.gtaun.shoebill.data.constant.SpectateMode;
+import net.gtaun.shoebill.data.constant.WeaponState;
+import net.gtaun.shoebill.data.constant.WeaponType;
 import net.gtaun.shoebill.exception.AlreadyExistException;
 import net.gtaun.shoebill.exception.IllegalLengthException;
 
@@ -104,7 +104,7 @@ public interface Player
 	void setName( String name ) throws IllegalArgumentException, IllegalLengthException, AlreadyExistException;
 
 	void setSpawnInfo( float x, float y, float z, int interiorId, int worldId, float angle, int skinId, int teamId, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3 );
-	void setSpawnInfo( Vector3D pos, int interiorId, int worldId, float angle, int skinId, int teamId, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3 );
+	void setSpawnInfo( Point3D pos, int interiorId, int worldId, float angle, int skinId, int teamId, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3 );
 	void setSpawnInfo( Location loc, float angle, int skinId, int teamId, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3 );
 	void setSpawnInfo( LocationAngle loc, int skin, int team, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3 );
 	void setSpawnInfo( SpawnInfo info );
@@ -123,12 +123,12 @@ public interface Player
 	void setVehicle( Vehicle vehicle );
 	
 	void setLocation( float x, float y, float z );
-	void setLocation( Vector3D pos );
+	void setLocation( Point3D pos );
 	void setLocation( Location loc );
 	void setLocation( LocationAngle loc );
 
 	void setLocationFindZ( float x, float y, float z );
-	void setLocationFindZ( Vector3D pos );
+	void setLocationFindZ( Point3D pos );
 	void setLocationFindZ( Location loc );
 	void setLocationFindZ( LocationAngle loc );
 	
@@ -136,7 +136,7 @@ public interface Player
 	void setInteriorId( int interiorId );
 	void setWorldId( int worldId );
 	void setWorldBound( Area bound );
-	void setVelocity( Vector3D vel );
+	void setVelocity( Point3D vel );
 
 	void sendMessage( Color color, String message );
 	void sendMessage( Color color, String format, Object... args );
@@ -157,7 +157,7 @@ public interface Player
 	int getAnimationIndex();
 	
 	void playSound( int sound, float x, float y, float z );
-	void playSound( int sound, Vector3D pos );
+	void playSound( int sound, Point3D pos );
 	
 	void markerForPlayer( Player player, Color color );
 	void showNameTagForPlayer( Player player, boolean show );
@@ -169,14 +169,14 @@ public interface Player
 	Menu getMenu();
 	
 	void setCameraPosition( float x, float y, float z );
-	void setCameraPosition( Vector3D pos );
+	void setCameraPosition( Point3D pos );
 	
 	void setCameraLookAt( float x, float y, float z );
-	void setCameraLookAt( Vector3D pos );
+	void setCameraLookAt( Point3D pos );
 	
 	void setCameraBehind();
-	Vector3D getCameraPosition();
-	Vector3D getCameraFrontVector();
+	Point3D getCameraPosition();
+	Point3D getCameraFrontVector();
 	
 	boolean isInAnyVehicle();
 	boolean isInVehicle( Vehicle veh );
@@ -216,7 +216,7 @@ public interface Player
 	void setSpecialAction( SpecialAction action );
 
 	void setMapIcon( int iconId, float x, float y, float z, int markerType, Color color, MapIconStyle style );
-	void setMapIcon( int iconId, Vector3D pos, int markerType, Color color, MapIconStyle style );
+	void setMapIcon( int iconId, Point3D pos, int markerType, Color color, MapIconStyle style );
 	
 	void removeMapIcon( int iconId );
 	void enableStuntBonus( boolean enabled );
@@ -235,12 +235,12 @@ public interface Player
 	
 	void playAudioStream( String url );
 	void playAudioStream( String url, float x, float y, float z, float distance );
-	void playAudioStream( String url, Vector3D location, float distance );
+	void playAudioStream( String url, Point3D location, float distance );
 	void playAudioStream( String url, LocationRadius loc );
 	void stopAudioStream();
 
 	void removeBuilding( int modelId, float x, float y, float z, float radius );
-	void removeBuilding( int modelId, Vector3D pos, float radius );
+	void removeBuilding( int modelId, Point3D pos, float radius );
 	void removeBuilding( int modelId, LocationRadius loc );
 
 	void showDialog( Dialog dialog, DialogStyle style, String caption, String text, String button1, String button2 );

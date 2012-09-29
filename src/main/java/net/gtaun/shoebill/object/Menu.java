@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.Vector2D;
+import net.gtaun.shoebill.data.Point2D;
 
 /**
  * @author MK124
@@ -31,7 +31,7 @@ public interface Menu extends Destroyable
 	int getId();
 	String getTitle();
 	int getColumns();
-	Vector2D getPosition();
+	Point2D getPosition();
 	float getCol1Width();
 	float getCol2Width();
 	String getColumnHeader();

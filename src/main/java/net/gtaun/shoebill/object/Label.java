@@ -18,7 +18,7 @@ package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.Point3D;
 
 /**
  * @author MK124
@@ -40,8 +40,8 @@ public interface Label extends Destroyable
 	Vehicle getAttachedVehicle();
 
 	void attach( Player player, float x, float y, float z );
-	void attach( Player player, Vector3D offset );
+	void attach( Player player, Point3D offset );
 	void attach( Vehicle vehicle, float x, float y, float z );
-	void attach( Vehicle vehicle, Vector3D offset );
+	void attach( Vehicle vehicle, Point3D offset );
 	void update( Color color, String text );
 }

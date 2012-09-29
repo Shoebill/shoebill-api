@@ -18,8 +18,8 @@ package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.LocationAngle;
-import net.gtaun.shoebill.data.Quaternions;
-import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.Quaternion;
+import net.gtaun.shoebill.data.Point3D;
 import net.gtaun.shoebill.data.Velocity;
 
 /**
@@ -46,14 +46,14 @@ public interface Vehicle extends Destroyable
 	
 	LocationAngle getLocation();
 	void setLocation( float x, float y, float z );
-	void setLocation( Vector3D pos );
+	void setLocation( Point3D pos );
 	void setLocation( Location loc );
 	void setLocation( LocationAngle loc );
 
 	float getAngle();
 	void setAngle( float angle );
 	
-	Quaternions getRotationQuat();
+	Quaternion getRotationQuat();
 
 	int getInteriorId();
 	void setInteriorId( int interiorId );

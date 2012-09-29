@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.Point3D;
 import net.gtaun.shoebill.object.Player;
 
 /**
@@ -26,14 +26,14 @@ import net.gtaun.shoebill.object.Player;
 
 public class PlayerClickMapEvent extends PlayerEvent
 {
-	private Vector3D position;
+	private Point3D position;
 	
-	public Vector3D getPosition()	{ return position.clone(); }
+	public Point3D getPosition()	{ return position.clone(); }
 	
 	
 	public PlayerClickMapEvent( Player player, float x, float y, float z )
 	{
 		super( player );
-		position = new Vector3D( x, y, z );
+		position = new Point3D( x, y, z );
 	}
 }

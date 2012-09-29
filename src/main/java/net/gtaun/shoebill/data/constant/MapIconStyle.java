@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.type;
+package net.gtaun.shoebill.data.constant;
 
 /**
  * @author MK124
  *
  */
 
-public enum PlayerMarkerMode
+public enum MapIconStyle
 {
-	OFF				(0),
-	GLOBAL			(1),
-	STREAMED		(2);
+	LOCAL					(0),
+	GLOBAL					(1),
+	LOCAL_CHECKPOINT		(2),
+	GLOBAL_CHECKPOINT		(3);
 	
 	
-	public static PlayerMarkerMode get( int data )
+	public static MapIconStyle get( int data )
 	{
 		return values() [data];
 	}
@@ -37,7 +38,7 @@ public enum PlayerMarkerMode
 	private final int data;
 	
 	
-	private PlayerMarkerMode( int data )
+	private MapIconStyle( int data )
 	{
 		this.data = data;
 	}
