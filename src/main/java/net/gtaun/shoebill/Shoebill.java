@@ -30,6 +30,7 @@ public interface Shoebill
 	PluginManager getPluginManager();
 	
 	<T> T createTraitMixinObject(Class<T> mixinInterface, Class<?> superclass);
+	<T> T createTraitMixinObject(Class<T> mixinInterface, Class<?> superclass, Class<?>[] argTypes, Object[] args);
 	
 	ShoebillVersion getVersion();
 	
