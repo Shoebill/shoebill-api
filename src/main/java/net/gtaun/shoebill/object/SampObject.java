@@ -26,7 +26,7 @@ import net.gtaun.shoebill.trait.TraitManager;
  *
  */
 
-public interface Object extends ObjectPrim, ProxyManager, TraitManager
+public interface SampObject extends ObjectPrim, ProxyManager, TraitManager
 {
 
 }
