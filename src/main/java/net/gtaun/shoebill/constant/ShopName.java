@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,34 +24,38 @@ import java.util.Map;
  *
  */
 
-public enum SpectateMode
+public enum ShopName
 {
-	NORMAL		(1),
-	FIXED		(2),
-	SIDE		(3);
+	PIZZASTACK		( "FDPIZA" ),
+	BURGERSHOT		( "FDBURG" ),
+	CLUCKINBELL		( "FDCHICK" ),
+	AMMUNATION1		( "AMMUN1" ),
+	AMMUNATION2		( "AMMUN2" ),
+	AMMUNATION3		( "AMMUN3" ),
+	AMMUNATION5		( "AMMUN5" );
 	
 	
-	private static final Map<Integer, SpectateMode> VALUES = new HashMap<Integer, SpectateMode>();
-	public static SpectateMode get( int data )
+	private static final Map<String, ShopName> VALUES = new HashMap<String, ShopName>();
+	public static ShopName get( String data )
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( SpectateMode mode : values() ) VALUES.put( mode.data, mode );
+		for( ShopName shopName : values() ) VALUES.put( shopName.data, shopName );
 	}
 	
-
-	private final int data;
+	
+	private final String data;
 	
 	
-	private SpectateMode( int data )
+	private ShopName( String data )
 	{
 		this.data = data;
 	}
 	
-	public int getData()
+	public String getData()
 	{
 		return data;
 	}

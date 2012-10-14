@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object.primitive;
 
-import net.gtaun.shoebill.data.constant.VehicleComponentSlot;
+import net.gtaun.shoebill.constant.VehicleComponentSlot;
 
 /**
  * @author MK124

@@ -14,31 +14,41 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author MK124
  *
  */
 
-public enum MapIconStyle
+public enum WeaponState
 {
-	LOCAL					(0),
-	GLOBAL					(1),
-	LOCAL_CHECKPOINT		(2),
-	GLOBAL_CHECKPOINT		(3);
+	UNKNOWN				(-1),
+	NO_BULLETS			(0),
+	LAST_BULLET			(1),
+	MORE_BULLETS		(2),
+	RELOADING			(3);
 	
 	
-	public static MapIconStyle get( int data )
+	private static final Map<Integer, WeaponState> VALUES = new HashMap<Integer, WeaponState>();
+	public static WeaponState get( int data )
 	{
-		return values() [data];
+		return VALUES.get(data);
+	}
+	
+	static
+	{
+		for( WeaponState state : values() ) VALUES.put( state.data, state );
 	}
 	
 	
 	private final int data;
 	
 	
-	private MapIconStyle( int data )
+	private WeaponState( int data )
 	{
 		this.data = data;
 	}

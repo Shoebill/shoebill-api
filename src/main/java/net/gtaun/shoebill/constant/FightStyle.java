@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,31 +24,33 @@ import java.util.Map;
  *
  */
 
-public enum WeaponState
+public enum FightStyle
 {
-	UNKNOWN				(-1),
-	NO_BULLETS			(0),
-	LAST_BULLET			(1),
-	MORE_BULLETS		(2),
-	RELOADING			(3);
+	NORMAL			(4),
+	BOXING			(5),
+	KUNGFU			(6),
+	KNEEHEAD		(7),
+	GRABKICK		(15),
+	ELBOW			(16);
 	
 	
-	private static final Map<Integer, WeaponState> VALUES = new HashMap<Integer, WeaponState>();
-	public static WeaponState get( int data )
+	private static final Map<Integer, FightStyle> VALUES = new HashMap<Integer, FightStyle>();
+	public static FightStyle get( int data )
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( WeaponState state : values() ) VALUES.put( state.data, state );
+		for( FightStyle style : values() ) VALUES.put( style.data, style );
 	}
 	
 	
 	private final int data;
 	
 	
-	private WeaponState( int data )
+	
+	private FightStyle( int data )
 	{
 		this.data = data;
 	}

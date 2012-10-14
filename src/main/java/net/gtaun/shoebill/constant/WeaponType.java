@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
 
 import java.util.HashMap;
 import java.util.Map;

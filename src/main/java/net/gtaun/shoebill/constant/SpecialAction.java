@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,33 +24,43 @@ import java.util.Map;
  *
  */
 
-public enum FightStyle
+public enum SpecialAction
 {
-	NORMAL			(4),
-	BOXING			(5),
-	KUNGFU			(6),
-	KNEEHEAD		(7),
-	GRABKICK		(15),
-	ELBOW			(16);
+	NONE					(0),
+	DUCK					(1),
+	USE_JETPACK				(2),
+	ENTER_VEHICLE			(3),
+	EXIT_VEHICLE			(4),
+	DANCE1					(5),
+	DANCE2					(6),
+	DANCE3					(7),
+	DANCE4					(8),
+	HANDSUP					(10),
+	USE_CELLPHONE			(11),
+	SITTING					(12),
+	STOP_USE_CELLPHONE		(13),
+	DRINK_BEER				(20),
+	SMOKE_CIGGY				(21),
+	DRINK_WINE				(22),
+	DRINK_SPRUNK			(23);
 	
 	
-	private static final Map<Integer, FightStyle> VALUES = new HashMap<Integer, FightStyle>();
-	public static FightStyle get( int data )
+	private static final Map<Integer, SpecialAction> VALUES = new HashMap<Integer, SpecialAction>();
+	public static SpecialAction get( int data )
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( FightStyle style : values() ) VALUES.put( style.data, style );
+		for( SpecialAction action : values() ) VALUES.put( action.data, action );
 	}
 	
 	
 	private final int data;
 	
 	
-	
-	private FightStyle( int data )
+	private SpecialAction( int data )
 	{
 		this.data = data;
 	}

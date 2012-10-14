@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
 
 /**
  * @author MK124
  *
  */
 
-public enum RaceCheckpointType
+public enum DialogStyle
 {
-	NORMAL				(0),
-	NORMAL_FINISH		(1),
-	NOTHING				(2),
-	AIR					(3),
-	AIR_FINISH			(4);
+	MSGBOX		(0),
+	INPUT		(1),
+	LIST		(2);
 	
 	
-	public static RaceCheckpointType get( int data )
+	public static DialogStyle get( int data )
 	{
 		return values() [data];
 	}
@@ -39,7 +37,7 @@ public enum RaceCheckpointType
 	private final int data;
 	
 	
-	private RaceCheckpointType( int data )
+	private DialogStyle( int data )
 	{
 		this.data = data;
 	}

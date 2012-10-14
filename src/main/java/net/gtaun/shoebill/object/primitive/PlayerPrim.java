@@ -16,6 +16,16 @@
 
 package net.gtaun.shoebill.object.primitive;
 
+import net.gtaun.shoebill.constant.DialogStyle;
+import net.gtaun.shoebill.constant.FightStyle;
+import net.gtaun.shoebill.constant.MapIconStyle;
+import net.gtaun.shoebill.constant.PlayerState;
+import net.gtaun.shoebill.constant.RecordType;
+import net.gtaun.shoebill.constant.ShopName;
+import net.gtaun.shoebill.constant.SpecialAction;
+import net.gtaun.shoebill.constant.SpectateMode;
+import net.gtaun.shoebill.constant.WeaponState;
+import net.gtaun.shoebill.constant.WeaponType;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
@@ -26,16 +36,6 @@ import net.gtaun.shoebill.data.Time;
 import net.gtaun.shoebill.data.Point3D;
 import net.gtaun.shoebill.data.Velocity;
 import net.gtaun.shoebill.data.WeaponData;
-import net.gtaun.shoebill.data.constant.DialogStyle;
-import net.gtaun.shoebill.data.constant.FightStyle;
-import net.gtaun.shoebill.data.constant.MapIconStyle;
-import net.gtaun.shoebill.data.constant.PlayerState;
-import net.gtaun.shoebill.data.constant.RecordType;
-import net.gtaun.shoebill.data.constant.ShopName;
-import net.gtaun.shoebill.data.constant.SpecialAction;
-import net.gtaun.shoebill.data.constant.SpectateMode;
-import net.gtaun.shoebill.data.constant.WeaponState;
-import net.gtaun.shoebill.data.constant.WeaponType;
 import net.gtaun.shoebill.exception.AlreadyExistException;
 import net.gtaun.shoebill.exception.IllegalLengthException;
 

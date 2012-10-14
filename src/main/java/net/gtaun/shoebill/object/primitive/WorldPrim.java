@@ -16,9 +16,9 @@
 
 package net.gtaun.shoebill.object.primitive;
 
+import net.gtaun.shoebill.constant.PlayerMarkerMode;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.SpawnInfo;
-import net.gtaun.shoebill.data.constant.PlayerMarkerMode;
 
 /**
  * @author MK124

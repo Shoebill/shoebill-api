@@ -14,28 +14,22 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
 
 /**
  * @author MK124
  *
  */
 
-public enum PlayerState
+public enum MapIconStyle
 {
-	NONE						(0),
-	ONFOOT						(1),
-	DRIVER						(2),
-	PASSENGER					(3),
-	EXIT_VEHICLE				(4),
-	ENTER_VEHICLE_DRIVER		(5),
-	ENTER_VEHICLE_PASSENGER		(6),
-	WASTED						(7),
-	SPAWNED						(8),
-	SPECTATING					(9);
+	LOCAL					(0),
+	GLOBAL					(1),
+	LOCAL_CHECKPOINT		(2),
+	GLOBAL_CHECKPOINT		(3);
 	
 	
-	public static PlayerState get( int data )
+	public static MapIconStyle get( int data )
 	{
 		return values() [data];
 	}
@@ -44,7 +38,7 @@ public enum PlayerState
 	private final int data;
 	
 	
-	private PlayerState( int data )
+	private MapIconStyle( int data )
 	{
 		this.data = data;
 	}

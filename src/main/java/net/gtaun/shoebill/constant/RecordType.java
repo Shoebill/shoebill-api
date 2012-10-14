@@ -14,48 +14,35 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
-
-import java.util.HashMap;
-import java.util.Map;
+package net.gtaun.shoebill.constant;
 
 /**
  * @author MK124
  *
  */
 
-public enum ShopName
+public enum RecordType
 {
-	PIZZASTACK		( "FDPIZA" ),
-	BURGERSHOT		( "FDBURG" ),
-	CLUCKINBELL		( "FDCHICK" ),
-	AMMUNATION1		( "AMMUN1" ),
-	AMMUNATION2		( "AMMUN2" ),
-	AMMUNATION3		( "AMMUN3" ),
-	AMMUNATION5		( "AMMUN5" );
+	NONE		(0),
+	DRIVER		(1),
+	ONFOOT		(2);
 	
 	
-	private static final Map<String, ShopName> VALUES = new HashMap<String, ShopName>();
-	public static ShopName get( String data )
+	public static RecordType get( int data )
 	{
-		return VALUES.get(data);
-	}
-	
-	static
-	{
-		for( ShopName shopName : values() ) VALUES.put( shopName.data, shopName );
+		return values() [data];
 	}
 	
 	
-	private final String data;
+	private final int data;
 	
 	
-	private ShopName( String data )
+	private RecordType( int data )
 	{
 		this.data = data;
 	}
 	
-	public String getData()
+	public int getData()
 	{
 		return data;
 	}

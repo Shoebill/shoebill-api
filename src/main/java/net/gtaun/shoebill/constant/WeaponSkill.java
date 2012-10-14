@@ -14,46 +14,38 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
 
 /**
  * @author MK124
  *
  */
 
-public enum PlayerAttachBone
+public enum WeaponSkill
 {
-	NOT_USABLE			(0),
-	SPINE				(1),
-	HEAD				(2),
-	UPPER_ARM_LEFT		(3),
-	UPPER_ARM_RIGHT		(4),
-	HAND_LEFT			(5),
-	HAND_RIGHT			(6),
-	THIGH_LEFT			(7),
-	THIGH_RIGHT			(8),
-	FOOT_LEFT			(9),
-	FOOT_RIGHT			(10),
-	CALF_RIGHT			(11),
-	CALF_LEFT			(12),
-	FOREARM_LEFT		(13),
-	FOREARM_RIGHT		(14),
-	CLAVICLE_LEFT		(15),
-	CLAVICLE_RIGHT		(16),
-	NECK				(17),
-	JAW					(18);
+	PISTOL				(0),
+	PISTOL_SILENCED		(1),
+	DESERT_EAGLE		(2),
+	SHOTGUN				(3),
+	SAWNOFF_SHOTGUN		(4),
+	SPAS12_SHOTGUN		(5),
+	MICRO_UZI			(6),
+	MP5					(7),
+	AK47				(8),
+	M4					(9),
+	SNIPERRIFLE			(10);
 	
 	
-	public static PlayerAttachBone get( int data )
+	public static WeaponSkill get( int id )
 	{
-		return values() [data];
+		return values() [id];
 	}
 	
 	
 	private final int data;
 	
 	
-	private PlayerAttachBone( int data )
+	private WeaponSkill( int data )
 	{
 		this.data = data;
 	}

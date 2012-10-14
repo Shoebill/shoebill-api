@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.object.primitive;
 
+import net.gtaun.shoebill.constant.PlayerAttachBone;
 import net.gtaun.shoebill.data.Point3D;
-import net.gtaun.shoebill.data.constant.PlayerAttachBone;
 
 /**
  * @author MK124

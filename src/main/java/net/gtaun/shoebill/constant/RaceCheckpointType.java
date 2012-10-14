@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data.constant;
+package net.gtaun.shoebill.constant;
 
 /**
  * @author MK124
  *
  */
 
-public enum RecordType
+public enum RaceCheckpointType
 {
-	NONE		(0),
-	DRIVER		(1),
-	ONFOOT		(2);
+	NORMAL				(0),
+	NORMAL_FINISH		(1),
+	NOTHING				(2),
+	AIR					(3),
+	AIR_FINISH			(4);
 	
 	
-	public static RecordType get( int data )
+	public static RaceCheckpointType get( int data )
 	{
 		return values() [data];
 	}
@@ -37,7 +39,7 @@ public enum RecordType
 	private final int data;
 	
 	
-	private RecordType( int data )
+	private RaceCheckpointType( int data )
 	{
 		this.data = data;
 	}
