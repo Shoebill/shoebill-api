@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.dialog;
 
-import net.gtaun.shoebill.object.primitive.DialogPrim;
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.Dialog;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -26,7 +26,7 @@ import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 public class DialogCancelEvent extends DialogEvent
 {
-	public DialogCancelEvent( DialogPrim dialog, PlayerPrim player )
+	public DialogCancelEvent( Dialog dialog, Player player )
 	{
 		super( dialog, player );
 	}

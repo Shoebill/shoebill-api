@@ -14,17 +14,22 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object.primitive;
+package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.constant.RaceCheckpointType;
+import net.gtaun.shoebill.constant.VehicleComponentSlot;
 
 /**
  * @author MK124
  *
  */
 
-public interface RaceCheckpointPrim extends CheckpointPrim
+public interface VehicleComponent extends VehicleRelated
 {
-	RaceCheckpointType getType();
-	RaceCheckpointPrim getNext();
+	void add( int componentId );
+	
+	void remove( int componentId );
+	void remove( VehicleComponentSlot slot );
+	
+	int get( VehicleComponentSlot slot );
+	int[] toArray();
 }

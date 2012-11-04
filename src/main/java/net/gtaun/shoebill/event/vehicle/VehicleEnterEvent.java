@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.vehicle;
 
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
-import net.gtaun.shoebill.object.primitive.VehiclePrim;
+import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.Vehicle;
 
 /**
  * @author MK124
@@ -26,14 +26,14 @@ import net.gtaun.shoebill.object.primitive.VehiclePrim;
 
 public class VehicleEnterEvent extends VehicleEvent
 {
-	private PlayerPrim player;
+	private Player player;
 	private boolean isPassenger;
 	
-	public PlayerPrim getPlayer()			{ return player; }
+	public Player getPlayer()			{ return player; }
 	public boolean isPassenger()		{ return isPassenger; }
 	
 	
-	public VehicleEnterEvent( VehiclePrim vehicle, PlayerPrim player, boolean isPassenger )
+	public VehicleEnterEvent( Vehicle vehicle, Player player, boolean isPassenger )
 	{
 		super( vehicle );
 		this.player = player;

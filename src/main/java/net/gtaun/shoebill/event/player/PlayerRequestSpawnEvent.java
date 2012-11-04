@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -30,7 +30,7 @@ public class PlayerRequestSpawnEvent extends PlayerEvent
 	public int getResult()		{ return result; }
 	
 	
-	public PlayerRequestSpawnEvent( PlayerPrim player )
+	public PlayerRequestSpawnEvent( Player player )
 	{
 		super( player );
 	}

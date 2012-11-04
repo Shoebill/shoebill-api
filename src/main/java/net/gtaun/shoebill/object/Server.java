@@ -16,17 +16,23 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.ServerPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
-
 
 /**
  * @author MK124
  *
  */
 
-public interface Server extends ServerPrim, ProxyManager, TraitManager
+public interface Server
 {
-
+	int getServerCodepage();
+	void setServerCodepage( int codepage );
+	
+	int getMaxPlayers();
+	
+	void sendRconCommand( String command );
+	void connectNPC( String name, String script );
+	
+	String getServerVarAsString( String varname );
+	int getServerVarAsInt( String varname );
+	boolean getServerVarAsBool( String varname );
 }

@@ -16,17 +16,30 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.ZonePrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
-
+import net.gtaun.shoebill.data.Area;
+import net.gtaun.shoebill.data.Color;
 
 /**
  * @author MK124
  *
  */
 
-public interface Zone extends ZonePrim, ProxyManager, TraitManager
+public interface Zone extends Destroyable
 {
-
+	public static final int INVALID_ID =		-1;
+	
+	
+	int getId();
+	Area getArea();
+	
+	void show( Player player, Color color );
+	void hide( Player player );
+	void flash( Player player, Color color );
+	void stopFlash( Player player );
+	
+	void showForAll( Color color );
+	void hideForAll();
+	
+	void flashForAll( Color color );
+	void stopFlashForAll();
 }

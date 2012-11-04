@@ -16,17 +16,13 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.PlayerObjectPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
-
 
 /**
  * @author MK124
  *
  */
 
-public interface PlayerObject extends PlayerObjectPrim, ProxyManager, TraitManager
+public interface PlayerObject extends SampObject, PlayerRelated
 {
-
+	public static final int INVALID_ID =				0xFFFF;
 }

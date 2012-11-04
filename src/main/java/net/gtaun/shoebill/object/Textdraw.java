@@ -16,17 +16,41 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.TextdrawPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
-
+import net.gtaun.shoebill.data.Color;
+import net.gtaun.shoebill.data.Point2D;
 
 /**
  * @author MK124
  *
  */
 
-public interface Textdraw extends TextdrawPrim, ProxyManager, TraitManager
+public interface Textdraw extends Destroyable
 {
+	public static final int INVALID_ID =		0xFFFF;
+	
+	
+	int getId();
+	Point2D getPosition();
+	String getText();
 
+	void setLetterSize( float x, float y );
+	void setLetterSize( Point2D vec );
+	
+	void setTextSize( float x, float y );
+	void setTextSize( Point2D vec );
+	
+	void setAlignment( int alignment );
+	void setColor( Color color );
+	void setUseBox( boolean use );
+	void setBoxColor( Color color );
+	void setShadow( int size );
+	void setOutline( int size );
+	void setBackgroundColor( Color color );
+	void setFont( int font );
+	void setProportional( int set );
+	void setText( String text );
+	void show( Player player );
+	void hide( Player player );
+	void showForAll();
+	void hideForAll();
 }

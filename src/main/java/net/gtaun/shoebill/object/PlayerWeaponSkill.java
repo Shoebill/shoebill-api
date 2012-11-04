@@ -14,22 +14,17 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object.primitive;
+package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.constant.VehicleComponentSlot;
+import net.gtaun.shoebill.constant.WeaponSkill;
 
 /**
  * @author MK124
  *
  */
 
-public interface VehicleComponent extends VehicleRelated
+public interface PlayerWeaponSkill extends PlayerRelated
 {
-	void add( int componentId );
-	
-	void remove( int componentId );
-	void remove( VehicleComponentSlot slot );
-	
-	int get( VehicleComponentSlot slot );
-	int[] toArray();
+	void set( WeaponSkill type, int level );
+	int get( WeaponSkill type );
 }

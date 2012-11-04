@@ -16,16 +16,30 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.CheckpointPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
+import java.util.Collection;
+
+import net.gtaun.shoebill.data.LocationRadius;
+import net.gtaun.shoebill.data.Point3D;
 
 /**
  * @author MK124
  *
  */
 
-public interface Checkpoint extends CheckpointPrim, ProxyManager, TraitManager
+public interface Checkpoint
 {
+	LocationRadius getLocation();
+	void setLocation( float x, float y, float z );
+	void setLocation( Point3D pos );
+	void setLocation( LocationRadius loc );
+
+	float getSize();
+	void setSize( float size );
+
+	void set( Player player );
+	void disable( Player player );
+	boolean isInCheckpoint( Player player );
+	void update();
 	
+	Collection<Player> getUsingPlayers();
 }

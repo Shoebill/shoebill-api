@@ -16,17 +16,15 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.RaceCheckpointPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
-
+import net.gtaun.shoebill.constant.RaceCheckpointType;
 
 /**
  * @author MK124
  *
  */
 
-public interface RaceCheckpoint extends RaceCheckpointPrim, ProxyManager, TraitManager
+public interface RaceCheckpoint extends Checkpoint
 {
-
+	RaceCheckpointType getType();
+	RaceCheckpoint getNext();
 }

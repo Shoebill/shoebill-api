@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.util.event.Event;
 
 /**
@@ -26,12 +26,12 @@ import net.gtaun.shoebill.util.event.Event;
 
 public abstract class PlayerEvent extends Event
 {
-	private PlayerPrim player;
+	private Player player;
 	
-	public PlayerPrim getPlayer()		{ return player; }
+	public Player getPlayer()		{ return player; }
 	
 	
-	protected PlayerEvent( PlayerPrim player )
+	protected PlayerEvent( Player player )
 	{
 		this.player = player;
 	}

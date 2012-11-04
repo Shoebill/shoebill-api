@@ -16,17 +16,19 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.PickupPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
-
+import net.gtaun.shoebill.data.Location;
 
 /**
  * @author MK124
  *
  */
 
-public interface Pickup extends PickupPrim, ProxyManager, TraitManager
+public interface Pickup extends Destroyable
 {
-
+	public static final int INVALID_ID =		-1;
+	
+	
+	int getModelId();
+	int getType();
+	Location getLocation();
 }

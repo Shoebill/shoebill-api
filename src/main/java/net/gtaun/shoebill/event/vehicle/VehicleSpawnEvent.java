@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.vehicle;
 
-import net.gtaun.shoebill.object.primitive.VehiclePrim;
+import net.gtaun.shoebill.object.Vehicle;
 
 /**
  * @author MK124
@@ -25,7 +25,7 @@ import net.gtaun.shoebill.object.primitive.VehiclePrim;
 
 public class VehicleSpawnEvent extends VehicleEvent
 {
-	public VehicleSpawnEvent( VehiclePrim vehicle )
+	public VehicleSpawnEvent( Vehicle vehicle )
 	{
 		super( vehicle );
 	}

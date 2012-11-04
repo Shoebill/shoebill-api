@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.menu;
 
-import net.gtaun.shoebill.object.primitive.MenuPrim;
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.Menu;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -26,7 +26,7 @@ import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 public class MenuExitedEvent extends MenuEvent
 {
-	public MenuExitedEvent( MenuPrim menu, PlayerPrim player )
+	public MenuExitedEvent( Menu menu, Player player )
 	{
 		super( menu, player );
 	}

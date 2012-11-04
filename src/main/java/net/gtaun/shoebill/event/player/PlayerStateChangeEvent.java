@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -30,7 +30,7 @@ public class PlayerStateChangeEvent extends PlayerEvent
 	public int getOldState()			{ return oldState; }
 	
 	
-	public PlayerStateChangeEvent( PlayerPrim player, int oldState )
+	public PlayerStateChangeEvent( Player player, int oldState )
 	{
 		super( player );
 		this.oldState = oldState;

@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.checkpoint;
 
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
-import net.gtaun.shoebill.object.primitive.RaceCheckpointPrim;
+import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.RaceCheckpoint;
 
 /**
  * @author MK124
@@ -26,12 +26,12 @@ import net.gtaun.shoebill.object.primitive.RaceCheckpointPrim;
 
 public class RaceCheckpointEnterEvent extends CheckpointEvent
 {
-	public RaceCheckpointEnterEvent( PlayerPrim player )
+	public RaceCheckpointEnterEvent( Player player )
 	{
 		super( player, player.getRaceCheckpoint() );
 	}
 	
-	@Override public RaceCheckpointPrim getCheckpoint()
+	@Override public RaceCheckpoint getCheckpoint()
 	{
 		return getCheckpoint();
 	}

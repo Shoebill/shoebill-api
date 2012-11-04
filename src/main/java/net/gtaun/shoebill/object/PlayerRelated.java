@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object.primitive;
+package net.gtaun.shoebill.object;
 
 
 /**
@@ -22,7 +22,7 @@ package net.gtaun.shoebill.object.primitive;
  *
  */
 
-public interface PlayerLabelPrim extends LabelPrim, PlayerRelated
+public interface PlayerRelated
 {
-	public static final int INVALID_ID =			0xFFFF;
+	Player getPlayer();
 }

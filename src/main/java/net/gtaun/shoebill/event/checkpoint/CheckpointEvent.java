@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.checkpoint;
 
-import net.gtaun.shoebill.object.primitive.CheckpointPrim;
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.Checkpoint;
+import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.util.event.Event;
 
 /**
@@ -27,22 +27,22 @@ import net.gtaun.shoebill.util.event.Event;
 
 public abstract class CheckpointEvent extends Event
 {
-	private PlayerPrim player;
-	private CheckpointPrim checkpoint;
+	private Player player;
+	private Checkpoint checkpoint;
 	
 	
-	protected CheckpointEvent( PlayerPrim player, CheckpointPrim checkpoint )
+	protected CheckpointEvent( Player player, Checkpoint checkpoint )
 	{
 		this.player = player;
 		this.checkpoint = checkpoint;
 	}
 	
-	public PlayerPrim getPlayer()
+	public Player getPlayer()
 	{
 		return player;
 	}
 	
-	public CheckpointPrim getCheckpoint()
+	public Checkpoint getCheckpoint()
 	{
 		return checkpoint;
 	}

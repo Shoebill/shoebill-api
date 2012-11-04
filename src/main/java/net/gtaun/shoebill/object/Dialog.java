@@ -16,16 +16,17 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.DialogPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
+import net.gtaun.shoebill.constant.DialogStyle;
 
 /**
  * @author MK124
  *
  */
 
-public interface Dialog extends DialogPrim, ProxyManager, TraitManager
+public interface Dialog
 {
-
+	int getId();
+	
+	void show( Player player, DialogStyle style, String caption, String text, String button1, String button2 );
+	void cancel( Player player );
 }

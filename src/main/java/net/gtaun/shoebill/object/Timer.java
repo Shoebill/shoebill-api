@@ -16,17 +16,26 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.TimerPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
-
 
 /**
  * @author MK124
  *
  */
 
-public interface Timer extends TimerPrim, ProxyManager, TraitManager
+public interface Timer
 {
+	public static final int COUNT_INFINITE = 0;
+	
+	
+	int getInterval();
+	int getCount();
 
+	boolean isRunning();
+	
+	void setInterval( int interval );
+	void setCount( int count );
+	void start();
+	void stop();
+	
+	void tick( int realint );
 }

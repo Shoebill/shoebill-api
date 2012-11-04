@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object.primitive;
+package net.gtaun.shoebill.object;
 
 
 /**
@@ -22,17 +22,7 @@ package net.gtaun.shoebill.object.primitive;
  *
  */
 
-public interface ServerPrim
+public interface VehicleRelated
 {
-	int getServerCodepage();
-	void setServerCodepage( int codepage );
-	
-	int getMaxPlayers();
-	
-	void sendRconCommand( String command );
-	void connectNPC( String name, String script );
-	
-	String getServerVarAsString( String varname );
-	int getServerVarAsInt( String varname );
-	boolean getServerVarAsBool( String varname );
+	Vehicle getVehicle();
 }

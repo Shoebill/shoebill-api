@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.primitive.PickupPrim;
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.Pickup;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -26,12 +26,12 @@ import net.gtaun.shoebill.object.primitive.PlayerPrim;
 
 public class PlayerPickupEvent extends PlayerEvent
 {
-	private PickupPrim pickup;
+	private Pickup pickup;
 
-	public PickupPrim getPickup()			{ return pickup; }
+	public Pickup getPickup()			{ return pickup; }
 	
 	
-	public PlayerPickupEvent( PlayerPrim player, PickupPrim pickup )
+	public PlayerPickupEvent( Player player, Pickup pickup )
 	{
 		super( player );
 		this.pickup = pickup;

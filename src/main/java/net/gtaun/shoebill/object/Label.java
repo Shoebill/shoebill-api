@@ -16,17 +16,32 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.object.primitive.LabelPrim;
-import net.gtaun.shoebill.proxy.ProxyManager;
-import net.gtaun.shoebill.trait.TraitManager;
-
+import net.gtaun.shoebill.data.Color;
+import net.gtaun.shoebill.data.Location;
+import net.gtaun.shoebill.data.Point3D;
 
 /**
  * @author MK124
  *
  */
 
-public interface Label extends LabelPrim, ProxyManager, TraitManager
+public interface Label extends Destroyable
 {
+	public static final int INVALID_ID =				0xFFFF;
+	
+	
+	int getId();
+	String getText();
+	Color getColor();
+	float getDrawDistance();
+	Location getLocation();
+	
+	Player getAttachedPlayer();
+	Vehicle getAttachedVehicle();
 
+	void attach( Player player, float x, float y, float z );
+	void attach( Player player, Point3D offset );
+	void attach( Vehicle vehicle, float x, float y, float z );
+	void attach( Vehicle vehicle, Point3D offset );
+	void update( Color color, String text );
 }

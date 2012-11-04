@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -30,7 +30,7 @@ public class PlayerInteriorChangeEvent extends PlayerEvent
 	public int getOldInteriorId()			{ return oldInteriorId; }
 	
 	
-	public PlayerInteriorChangeEvent( PlayerPrim player, int oldInteriorId )
+	public PlayerInteriorChangeEvent( Player player, int oldInteriorId )
 	{
 		super( player );
 		this.oldInteriorId = oldInteriorId;

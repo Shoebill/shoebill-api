@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.object;
 
-import net.gtaun.shoebill.object.primitive.ObjectPrim;
+import net.gtaun.shoebill.object.SampObject;
 
 /**
  * @author JoJLlmAn
@@ -25,7 +25,7 @@ import net.gtaun.shoebill.object.primitive.ObjectPrim;
 
 public class ObjectMovedEvent extends ObjectEvent
 {
-	public ObjectMovedEvent( ObjectPrim object )
+	public ObjectMovedEvent( SampObject object )
 	{
 		super( object );
 	}

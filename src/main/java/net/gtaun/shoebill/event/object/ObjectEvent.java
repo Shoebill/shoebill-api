@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.object;
 
-import net.gtaun.shoebill.object.primitive.ObjectPrim;
+import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.shoebill.util.event.Event;
 
 /**
@@ -26,12 +26,12 @@ import net.gtaun.shoebill.util.event.Event;
 
 public class ObjectEvent extends Event
 {
-	private ObjectPrim object;
+	private SampObject object;
 	
-	public ObjectPrim getObject()		{ return object; }
+	public SampObject getObject()		{ return object; }
 	
 	
-	public ObjectEvent( ObjectPrim object )
+	public ObjectEvent( SampObject object )
 	{
 		this.object = object;
 	}

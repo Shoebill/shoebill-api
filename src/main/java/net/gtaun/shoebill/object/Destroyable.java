@@ -14,28 +14,15 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object.primitive;
-
+package net.gtaun.shoebill.object;
 
 /**
  * @author MK124
  *
  */
 
-public interface TimerPrim
+public interface Destroyable
 {
-	public static final int COUNT_INFINITE = 0;
-	
-	
-	int getInterval();
-	int getCount();
-
-	boolean isRunning();
-	
-	void setInterval( int interval );
-	void setCount( int count );
-	void start();
-	void stop();
-	
-	void tick( int realint );
+	void destroy();
+	boolean isDestroyed();
 }

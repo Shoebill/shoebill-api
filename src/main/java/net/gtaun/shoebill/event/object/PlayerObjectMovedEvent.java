@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.object;
 
-import net.gtaun.shoebill.object.primitive.PlayerPrim;
-import net.gtaun.shoebill.object.primitive.PlayerObjectPrim;
+import net.gtaun.shoebill.object.PlayerObject;
+import net.gtaun.shoebill.object.Player;
 
 /**
  * @author MK124
@@ -26,21 +26,21 @@ import net.gtaun.shoebill.object.primitive.PlayerObjectPrim;
 
 public class PlayerObjectMovedEvent extends ObjectEvent
 {
-	private PlayerPrim player;
+	private Player player;
 	
 	
-	public PlayerObjectMovedEvent( PlayerPrim player, PlayerObjectPrim object )
+	public PlayerObjectMovedEvent( Player player, PlayerObject object )
 	{
 		super( object );
 		this.player = player;
 	}
 
-	public PlayerPrim getPlayer()
+	public Player getPlayer()
 	{
 		return player;
 	}
 	
-	@Override public PlayerObjectPrim getObject()
+	@Override public PlayerObject getObject()
 	{
 		return getObject();
 	}

@@ -14,17 +14,24 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object.primitive;
-
-import net.gtaun.shoebill.constant.WeaponSkill;
+package net.gtaun.shoebill.object;
 
 /**
  * @author MK124
  *
  */
 
-public interface PlayerWeaponSkill extends PlayerRelated
+public interface VehicleDamage extends VehicleRelated
 {
-	void set( WeaponSkill type, int level );
-	int get( WeaponSkill type );
+	int getPanels();
+	int getDoors();
+	int getLights();
+	int getTires();
+	
+	void setPanels( int panels );
+	void setDoors( int doors );
+	void setLights( int lights );
+	void setTires( int tires );
+	
+	void set( int panels, int doors, int lights, int tires );
 }
