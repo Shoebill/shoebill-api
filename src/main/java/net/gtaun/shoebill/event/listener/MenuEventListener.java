@@ -18,14 +18,14 @@ package net.gtaun.shoebill.event.listener;
 
 import net.gtaun.shoebill.event.menu.MenuExitedEvent;
 import net.gtaun.shoebill.event.menu.MenuSelectedEvent;
-import net.gtaun.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventHandler;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class MenuEventListener extends AbstractEventListener
+public abstract class MenuEventListener extends AbstractEventHandler
 {
 	protected MenuEventListener()
 	{

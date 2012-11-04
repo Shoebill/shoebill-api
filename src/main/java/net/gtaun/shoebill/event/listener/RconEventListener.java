@@ -18,14 +18,14 @@ package net.gtaun.shoebill.event.listener;
 
 import net.gtaun.shoebill.event.rcon.RconCommandEvent;
 import net.gtaun.shoebill.event.rcon.RconLoginEvent;
-import net.gtaun.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventHandler;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class RconEventListener extends AbstractEventListener
+public abstract class RconEventListener extends AbstractEventHandler
 {
 	protected RconEventListener()
 	{

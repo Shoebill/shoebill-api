@@ -20,14 +20,14 @@ import net.gtaun.shoebill.event.checkpoint.CheckpointEnterEvent;
 import net.gtaun.shoebill.event.checkpoint.CheckpointLeaveEvent;
 import net.gtaun.shoebill.event.checkpoint.RaceCheckpointEnterEvent;
 import net.gtaun.shoebill.event.checkpoint.RaceCheckpointLeaveEvent;
-import net.gtaun.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventHandler;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class CheckpointEventListener extends AbstractEventListener
+public abstract class CheckpointEventListener extends AbstractEventHandler
 {
 	protected CheckpointEventListener()
 	{

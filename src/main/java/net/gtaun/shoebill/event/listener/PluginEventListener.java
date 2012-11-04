@@ -18,14 +18,14 @@ package net.gtaun.shoebill.event.listener;
 
 import net.gtaun.shoebill.event.plugin.PluginLoadEvent;
 import net.gtaun.shoebill.event.plugin.PluginUnloadEvent;
-import net.gtaun.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventHandler;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class PluginEventListener extends AbstractEventListener
+public abstract class PluginEventListener extends AbstractEventHandler
 {
 	protected PluginEventListener()
 	{

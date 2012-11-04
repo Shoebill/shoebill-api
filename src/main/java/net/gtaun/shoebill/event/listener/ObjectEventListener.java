@@ -18,14 +18,14 @@ package net.gtaun.shoebill.event.listener;
 
 import net.gtaun.shoebill.event.object.ObjectMovedEvent;
 import net.gtaun.shoebill.event.object.PlayerObjectMovedEvent;
-import net.gtaun.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventHandler;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class ObjectEventListener extends AbstractEventListener
+public abstract class ObjectEventListener extends AbstractEventHandler
 {
 	protected ObjectEventListener()
 	{

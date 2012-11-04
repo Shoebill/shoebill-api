@@ -18,14 +18,14 @@ package net.gtaun.shoebill.event.listener;
 
 import net.gtaun.shoebill.event.dialog.DialogCancelEvent;
 import net.gtaun.shoebill.event.dialog.DialogResponseEvent;
-import net.gtaun.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventHandler;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class DialogEventListener extends AbstractEventListener
+public abstract class DialogEventListener extends AbstractEventHandler
 {
 	protected DialogEventListener()
 	{

@@ -20,7 +20,7 @@ import java.io.File;
 
 import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.ShoebillLowLevel;
-import net.gtaun.util.event.IEventManager;
+import net.gtaun.util.event.EventManager;
 import net.gtaun.util.event.ManagedEventManager;
 
 import org.slf4j.Logger;
@@ -89,7 +89,7 @@ public abstract class Resource
 		return shoebill;
 	}
 	
-	public IEventManager getEventManager()
+	public EventManager getEventManager()
 	{
 		return eventManager;
 	}

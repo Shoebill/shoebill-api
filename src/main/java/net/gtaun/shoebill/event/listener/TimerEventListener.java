@@ -17,14 +17,14 @@
 package net.gtaun.shoebill.event.listener;
 
 import net.gtaun.shoebill.event.timer.TimerTickEvent;
-import net.gtaun.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventHandler;
 
 /**
  * @author MK124
  *
  */
 
-public abstract class TimerEventListener extends AbstractEventListener
+public abstract class TimerEventListener extends AbstractEventHandler
 {
 	protected TimerEventListener()
 	{
