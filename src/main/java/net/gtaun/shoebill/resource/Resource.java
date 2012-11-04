@@ -68,7 +68,7 @@ public abstract class Resource
 	void disable() throws Throwable
 	{
 		onDisable();
-		eventManager.removeAllListener();
+		eventManager.removeAllHandler();
 		
 		isEnabled = false;
 	}
