@@ -18,7 +18,7 @@ package net.gtaun.shoebill.event.menu;
 
 import net.gtaun.shoebill.object.Menu;
 import net.gtaun.shoebill.object.Player;
-import net.gtaun.shoebill.util.event.Event;
+import net.gtaun.util.event.Event;
 
 /**
  * @author MK124

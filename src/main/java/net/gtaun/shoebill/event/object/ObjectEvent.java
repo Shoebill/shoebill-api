@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.event.object;
 
 import net.gtaun.shoebill.object.SampObject;
-import net.gtaun.shoebill.util.event.Event;
+import net.gtaun.util.event.Event;
 
 /**
  * @author MK124

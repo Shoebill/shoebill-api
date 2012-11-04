@@ -20,8 +20,8 @@ import java.io.File;
 
 import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.ShoebillLowLevel;
-import net.gtaun.shoebill.util.event.IEventManager;
-import net.gtaun.shoebill.util.event.ManagedEventManager;
+import net.gtaun.util.event.IEventManager;
+import net.gtaun.util.event.ManagedEventManager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

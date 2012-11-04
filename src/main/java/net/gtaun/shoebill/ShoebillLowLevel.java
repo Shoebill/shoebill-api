@@ -17,7 +17,7 @@
 package net.gtaun.shoebill;
 
 import net.gtaun.shoebill.samp.SampCallbackManager;
-import net.gtaun.shoebill.util.event.IEventManager;
+import net.gtaun.util.event.IEventManager;
 
 /**
  * @author MK124

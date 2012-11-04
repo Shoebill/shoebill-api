@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.rcon;
 
-import net.gtaun.shoebill.util.event.Event;
+import net.gtaun.util.event.Event;
 
 /**
  * @author MK124

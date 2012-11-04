@@ -18,7 +18,7 @@ package net.gtaun.shoebill.event.listener;
 
 import net.gtaun.shoebill.event.plugin.PluginLoadEvent;
 import net.gtaun.shoebill.event.plugin.PluginUnloadEvent;
-import net.gtaun.shoebill.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventListener;
 
 /**
  * @author MK124

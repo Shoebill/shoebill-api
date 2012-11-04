@@ -51,7 +51,7 @@ import net.gtaun.shoebill.event.vehicle.VehicleResprayEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleStreamInEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleStreamOutEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleUnoccupiedUpdateEvent;
-import net.gtaun.shoebill.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventListener;
 
 /**
  * @author MK124

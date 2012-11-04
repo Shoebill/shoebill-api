@@ -20,7 +20,7 @@ import net.gtaun.shoebill.event.checkpoint.CheckpointEnterEvent;
 import net.gtaun.shoebill.event.checkpoint.CheckpointLeaveEvent;
 import net.gtaun.shoebill.event.checkpoint.RaceCheckpointEnterEvent;
 import net.gtaun.shoebill.event.checkpoint.RaceCheckpointLeaveEvent;
-import net.gtaun.shoebill.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventListener;
 
 /**
  * @author MK124

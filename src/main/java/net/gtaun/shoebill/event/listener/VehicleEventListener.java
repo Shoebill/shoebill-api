@@ -29,7 +29,7 @@ import net.gtaun.shoebill.event.vehicle.VehicleStreamOutEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleUnoccupiedUpdateEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleUpdateDamageEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleUpdateEvent;
-import net.gtaun.shoebill.util.event.AbstractEventListener;
+import net.gtaun.util.event.AbstractEventListener;
 
 
 /**
