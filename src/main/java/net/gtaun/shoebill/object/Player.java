@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.DialogStyle;
@@ -40,11 +39,11 @@ import net.gtaun.shoebill.exception.AlreadyExistException;
 import net.gtaun.shoebill.exception.IllegalLengthException;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
-public interface Player
+public interface Player extends Proxyable
 {
 	public static final int INVALID_ID =							0xFFFF;
 	public static final int NO_TEAM =								255;

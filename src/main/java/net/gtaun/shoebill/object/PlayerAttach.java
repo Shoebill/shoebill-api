@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.PlayerAttachBone;
 import net.gtaun.shoebill.data.Point3D;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface PlayerAttach extends PlayerRelated
 {
 	public static final int MAX_ATTACHED_OBJECTS = 5;

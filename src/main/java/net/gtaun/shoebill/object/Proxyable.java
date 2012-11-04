@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,14 @@
  */
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.constant.DialogStyle;
+import net.gtaun.shoebill.proxy.ProxyManager;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Dialog extends Proxyable
+public interface Proxyable
 {
-	int getId();
-	
-	void show( Player player, DialogStyle style, String caption, String text, String button1, String button2 );
-	void cancel( Player player );
+	ProxyManager getProxyManager();
 }

@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.VehicleComponentSlot;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface VehicleComponent extends VehicleRelated
 {
 	void add( int componentId );

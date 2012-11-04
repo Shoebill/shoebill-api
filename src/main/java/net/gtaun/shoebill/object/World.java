@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.PlayerMarkerMode;
@@ -21,11 +20,11 @@ import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.SpawnInfo;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
-public interface World
+public interface World extends Proxyable
 {
 	void setTeamCount( int count );
 	

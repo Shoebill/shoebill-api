@@ -26,7 +26,7 @@ import net.gtaun.shoebill.data.Point3D;
  *
  */
 
-public interface Checkpoint
+public interface Checkpoint extends Proxyable
 {
 	LocationRadius getLocation();
 	void setLocation( float x, float y, float z );

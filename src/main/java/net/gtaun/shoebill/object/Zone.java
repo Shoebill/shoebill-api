@@ -13,18 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
-public interface Zone extends Destroyable
+public interface Zone extends Destroyable, Proxyable
 {
 	public static final int INVALID_ID =		-1;
 	

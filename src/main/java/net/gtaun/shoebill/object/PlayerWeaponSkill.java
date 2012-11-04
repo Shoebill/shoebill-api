@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.WeaponSkill;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface PlayerWeaponSkill extends PlayerRelated
 {
 	void set( WeaponSkill type, int level );

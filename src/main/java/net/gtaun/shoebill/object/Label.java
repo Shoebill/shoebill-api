@@ -21,11 +21,11 @@ import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Point3D;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
-public interface Label extends Destroyable
+public interface Label extends Destroyable, Proxyable
 {
 	public static final int INVALID_ID =				0xFFFF;
 	
