@@ -138,14 +138,14 @@ public interface Player extends Proxyable
 	void setVelocity( Point3D vel );
 
 	void sendMessage( Color color, String message );
-	void sendMessage( Color color, String format, SampObject... args );
+	void sendMessage( Color color, String format, Object... args );
 	
 	void sendChat( Player player, String message );
 	void sendChatToAll( String message );
 	void sendDeathMessage( Player killer, int reason );
 	
 	void sendGameText( int time, int style, String text );
-	void sendGameText( int time, int style, String format, SampObject... args );
+	void sendGameText( int time, int style, String format, Object... args );
 	
 	void spawn();
 	void setDrunkLevel( int level );
