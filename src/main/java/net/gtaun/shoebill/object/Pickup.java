@@ -27,6 +27,7 @@ public interface Pickup extends Destroyable, Proxyable
 	public static final int INVALID_ID =		-1;
 	
 	
+	int getId();
 	int getModelId();
 	int getType();
 	Location getLocation();
