@@ -80,13 +80,13 @@ public class LocationAngle extends Location implements Cloneable, Serializable, 
 		this.angle = angle;
 	}
 
-	public LocationAngle( Point3D pos, int worldId, float angle )
+	public LocationAngle( Vector3D pos, int worldId, float angle )
 	{
 		super( pos, worldId );
 		this.angle = angle;
 	}
 
-	public LocationAngle( Point3D pos, int interiorId, int worldId, float angle )
+	public LocationAngle( Vector3D pos, int interiorId, int worldId, float angle )
 	{
 		super( pos, interiorId, worldId );
 		this.angle = angle;
@@ -141,7 +141,7 @@ public class LocationAngle extends Location implements Cloneable, Serializable, 
 	}
 	
 
-	public void set( Point3D pos, float angle )
+	public void set( Vector3D pos, float angle )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
@@ -149,7 +149,7 @@ public class LocationAngle extends Location implements Cloneable, Serializable, 
 		setAngle( angle );
 	}
 	
-	public void set( Point3D pos, int worldId, float angle )
+	public void set( Vector3D pos, int worldId, float angle )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
@@ -157,7 +157,7 @@ public class LocationAngle extends Location implements Cloneable, Serializable, 
 		setAngle( angle );
 	}
 	
-	public void set( Point3D pos, int interiorId, int worldId, float angle )
+	public void set( Vector3D pos, int interiorId, int worldId, float angle )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		

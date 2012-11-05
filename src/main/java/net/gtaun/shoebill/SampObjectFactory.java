@@ -20,8 +20,8 @@ import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.LocationAngle;
-import net.gtaun.shoebill.data.Point2D;
-import net.gtaun.shoebill.data.Point3D;
+import net.gtaun.shoebill.data.Vector2D;
+import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
 import net.gtaun.shoebill.object.Dialog;
 import net.gtaun.shoebill.object.Label;
@@ -42,8 +42,8 @@ public interface SampObjectFactory
 
 	Vehicle createVehicle( int modelId, float x, float y, float z, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay ) throws CreationFailedException;
 	Vehicle createVehicle( int modelId, float x, float y, float z, float angle, int color1, int color2, int respawnDelay ) throws CreationFailedException;
-	Vehicle createVehicle( int modelId, Point3D pos, float angle, int color1, int color2, int respawnDelay ) throws CreationFailedException;
-	Vehicle createVehicle( int modelId, Point3D pos, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay ) throws CreationFailedException;
+	Vehicle createVehicle( int modelId, Vector3D pos, float angle, int color1, int color2, int respawnDelay ) throws CreationFailedException;
+	Vehicle createVehicle( int modelId, Vector3D pos, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay ) throws CreationFailedException;
 	Vehicle createVehicle( int modelId, Location loc, float angle, int color1, int color2, int respawnDelay ) throws CreationFailedException;
 	Vehicle createVehicle( int modelId, LocationAngle loc, int color1, int color2, int respawnDelay ) throws CreationFailedException;
 
@@ -51,22 +51,22 @@ public interface SampObjectFactory
 	SampObject createObject( int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance ) throws CreationFailedException;
 	SampObject createObject( int modelId, Location loc, float rx, float ry, float rz ) throws CreationFailedException;
 	SampObject createObject( int modelId, Location loc, float rx, float ry, float rz, float drawDistance) throws CreationFailedException;
-	SampObject createObject( int modelId, Location loc, Point3D rot ) throws CreationFailedException;
-	SampObject createObject( int modelId, Location loc, Point3D rot, float drawDistance ) throws CreationFailedException;
+	SampObject createObject( int modelId, Location loc, Vector3D rot ) throws CreationFailedException;
+	SampObject createObject( int modelId, Location loc, Vector3D rot, float drawDistance ) throws CreationFailedException;
 
 	PlayerObject createPlayerObject( Player player, int modelId, float x, float y, float z, float rx, float ry, float rz ) throws CreationFailedException;
 	PlayerObject createPlayerObject( Player player, int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance ) throws CreationFailedException;
 	PlayerObject createPlayerObject( Player player, int modelId, Location loc, float rx, float ry, float rz ) throws CreationFailedException;
 	PlayerObject createPlayerObject( Player player, int modelId, Location loc, float rx, float ry, float rz, float drawDistance ) throws CreationFailedException;
-	PlayerObject createPlayerObject( Player player, int modelId, Location loc, Point3D rot ) throws CreationFailedException;
-	PlayerObject createPlayerObject( Player player, int modelId, Location loc, Point3D rot, float drawDistance ) throws CreationFailedException;
+	PlayerObject createPlayerObject( Player player, int modelId, Location loc, Vector3D rot ) throws CreationFailedException;
+	PlayerObject createPlayerObject( Player player, int modelId, Location loc, Vector3D rot, float drawDistance ) throws CreationFailedException;
 
 	Pickup createPickup( int modelId, int type, float x, float y, float z, int worldId ) throws CreationFailedException;
 	Pickup createPickup( int modelId, int type, float x, float y, float z ) throws CreationFailedException;
 	Pickup createPickup( int modelId, int type, Location loc ) throws CreationFailedException;
 
 	Label createLabel( String text, Color color, float x, float y, float z, int worldId, float drawDistance, boolean testLOS ) throws CreationFailedException;
-	Label createLabel( String text, Color color, Point3D pos, int worldId, float drawDistance, boolean testLOS ) throws CreationFailedException;
+	Label createLabel( String text, Color color, Vector3D pos, int worldId, float drawDistance, boolean testLOS ) throws CreationFailedException;
 	Label createLabel( String text, Color color, Location loc, float drawDistance, boolean testLOS ) throws CreationFailedException;
 
 	PlayerLabel createPlayerLabel( Player player, String text, Color color, float x, float y, float z, float drawDistance, boolean testLOS );
@@ -77,14 +77,14 @@ public interface SampObjectFactory
 
 	Textdraw createTextdraw( float x, float y );
 	Textdraw createTextdraw( float x, float y, String text );
-	Textdraw createTextdraw( Point2D pos );
-	Textdraw createTextdraw( Point2D pos, String text );
+	Textdraw createTextdraw( Vector2D pos );
+	Textdraw createTextdraw( Vector2D pos, String text );
 
 	Zone createZone( float minX, float minY, float maxX, float maxY );
 	Zone createZone( Area area );
 
 	Menu createMenu( String title, int columns, float x, float y, float col1Width, float col2Width );
-	Menu createMenu( String title, int columns, Point2D pos, float col1Width, float col2Width );
+	Menu createMenu( String title, int columns, Vector2D pos, float col1Width, float col2Width );
 
 	Dialog createDialog();
 

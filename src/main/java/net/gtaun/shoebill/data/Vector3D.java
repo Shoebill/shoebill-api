@@ -32,94 +32,95 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  */
 
-public class Point2D implements Cloneable, Serializable, Immutable
+public class Vector3D extends Vector2D implements Cloneable, Serializable, Immutable
 {
-	private static final long serialVersionUID = 3303330394405245831L;
+	private static final long serialVersionUID = 8493095902831171278L;
 	
 
-	private static final class ImmutablyPoint2D extends Point2D implements Immutably
+	private static final class ImmutablyVector3D extends Vector3D implements Immutably
 	{
-		private static final long serialVersionUID = Point2D.serialVersionUID;
+		private static final long serialVersionUID = Vector3D.serialVersionUID;
 		
-		private ImmutablyPoint2D( Point2D vector2d )
+		private ImmutablyVector3D( Vector3D vector3d )
 		{
-			super( vector2d );
+			super( vector3d );
 		}
 		
 		@Override
-		public Point2D clone()
+		public Vector3D clone()
 		{
-			return new Point2D( this );
+			return new Vector3D( this );
 		}
 	}
 	
 	
-	private float x, y;
+	private float z;
 	
 	
-	public Point2D()
+	public Vector3D()
 	{
-		
-	}
-	
-	public Point2D( float x, float y )
-	{
-		this.x = x;
-		this.y = y;
-	}
-	
-	public Point2D( Point2D vec )
-	{
-		this.x = vec.getX();
-		this.y = vec.getY();
-	}
-	
-	public float getX()
-	{
-		return x;
-	}
-	
-	public void setX( float x )
-	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
-		
-		this.x = x;
-	}
-	
-	public float getY()
-	{
-		return y;
-	}
-	
-	public void setY( float y )
-	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
-		
-		this.y = y;
+
 	}
 
-	public void set( float x, float y )
+	public Vector3D( float x, float y, float z )
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
-		
-		setX( x );
-		setY( y );
+		super( x, y );
+		this.z = z;
+	}
+
+	public Vector3D( Vector2D vec, float z )
+	{
+		super( vec );
+		this.z = z;
 	}
 	
-	public void set( Point2D vector )
+	public Vector3D( Vector3D vec )
+	{
+		super( vec );
+		this.z = vec.getZ();
+	}
+	
+	public float getZ()
+	{
+		return z;
+	}
+	
+	public void setZ( float z )
+	{
+		if( this instanceof Immutably ) throw new ImmutablyException();
+		this.z = z;
+	}
+
+	public void set( float x, float y, float z )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		
-		setX( vector.getX() );
-		setY( vector.getY() );
+		super.set( x, y );
+		setZ( z );
+	}
+	
+	public void set( Vector2D vec, float z )
+	{
+		if( this instanceof Immutably ) throw new ImmutablyException();
+		
+		super.set( vec );
+		setZ( z );
+	}
+	
+	public void set( Vector3D vec )
+	{
+		if( this instanceof Immutably ) throw new ImmutablyException();
+		
+		super.set( vec );
+		setZ( vec.getZ() );
 	}
 	
 	@Override
 	public int hashCode()
 	{
-		return HashCodeBuilder.reflectionHashCode(433024253, 472882049, this, false);
+		return HashCodeBuilder.reflectionHashCode(49979693, 573259433, this, false);
 	}
-	
+
 	@Override
 	public boolean equals( Object obj )
 	{
@@ -127,22 +128,15 @@ public class Point2D implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public Point2D clone()
+	public Vector3D clone()
 	{
-		try
-		{
-			return (Point2D) super.clone();
-		}
-		catch( CloneNotSupportedException e )
-		{
-			throw new InternalError();
-		}
+		return (Vector3D) super.clone();
 	}
 	
 	@Override
-	public Point2D immure()
+	public Vector3D immure()
 	{
-		return new ImmutablyPoint2D(this);
+		return new ImmutablyVector3D(this);
 	}
 	
 	@Override

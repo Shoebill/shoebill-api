@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  */
 
-public class Velocity extends Point3D implements Cloneable, Serializable, Immutable
+public class Velocity extends Vector3D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 6111643976368753336L;
 	
@@ -63,7 +63,7 @@ public class Velocity extends Point3D implements Cloneable, Serializable, Immuta
 		super( x, y, z );
 	}
 
-	public Velocity( Point3D vec )
+	public Velocity( Vector3D vec )
 	{
 		super( vec );
 	}

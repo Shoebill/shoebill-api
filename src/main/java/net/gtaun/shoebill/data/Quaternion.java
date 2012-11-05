@@ -32,7 +32,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  */
 
-public class Quaternion extends Point3D implements Cloneable, Serializable, Immutable
+public class Quaternion extends Vector3D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 455013800771095435L;
 	
@@ -68,7 +68,7 @@ public class Quaternion extends Point3D implements Cloneable, Serializable, Immu
 		this.w = w;
 	}
 
-	public Quaternion( Point3D vec, float w )
+	public Quaternion( Vector3D vec, float w )
 	{
 		super( vec );
 		this.w = w;
@@ -98,7 +98,7 @@ public class Quaternion extends Point3D implements Cloneable, Serializable, Immu
 		setW( w );
 	}
 	
-	public void set( Point3D vec, float w )
+	public void set( Vector3D vec, float w )
 	{
 		if( this instanceof Immutably ) throw new ImmutablyException();
 		

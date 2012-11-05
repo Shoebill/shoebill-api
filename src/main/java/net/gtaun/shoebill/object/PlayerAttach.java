@@ -16,7 +16,7 @@
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.PlayerAttachBone;
-import net.gtaun.shoebill.data.Point3D;
+import net.gtaun.shoebill.data.Vector3D;
 
 /**
  * 
@@ -32,11 +32,11 @@ public interface PlayerAttach extends PlayerRelated
 	{
 		public PlayerAttachBone getBone();
 		public int getModelId();
-		public Point3D getOffset();
-		public Point3D getRotate();
-		public Point3D getScale();
+		public Vector3D getOffset();
+		public Vector3D getRotate();
+		public Vector3D getScale();
 		
-		public boolean set( PlayerAttachBone bone, int modelId, Point3D offset, Point3D rotation, Point3D scale );
+		public boolean set( PlayerAttachBone bone, int modelId, Vector3D offset, Vector3D rotation, Vector3D scale );
 		public boolean remove();
 		public boolean isUsed( int slot );
 	}
