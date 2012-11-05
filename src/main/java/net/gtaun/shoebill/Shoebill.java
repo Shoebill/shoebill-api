@@ -25,7 +25,9 @@ import java.io.File;
 
 public interface Shoebill
 {
-	SampObjectPool getManagedObjectPool();
+	SampObjectPool getSampObjectPool();
+	SampObjectFactory getSampObjectFactory();
+	
 	GamemodeManager getGamemodeManager();
 	PluginManager getPluginManager();
 	
