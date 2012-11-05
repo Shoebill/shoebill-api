@@ -28,8 +28,8 @@ import java.util.Map.Entry;
 import net.gtaun.shoebill.PluginManager;
 import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.ShoebillLowLevel;
-import net.gtaun.shoebill.event.plugin.PluginLoadEvent;
-import net.gtaun.shoebill.event.plugin.PluginUnloadEvent;
+import net.gtaun.shoebill.events.plugin.PluginLoadEvent;
+import net.gtaun.shoebill.events.plugin.PluginUnloadEvent;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
