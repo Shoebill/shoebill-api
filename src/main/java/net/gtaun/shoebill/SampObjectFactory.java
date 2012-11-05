@@ -30,6 +30,7 @@ import net.gtaun.shoebill.object.Pickup;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerLabel;
 import net.gtaun.shoebill.object.PlayerObject;
+import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.shoebill.object.Textdraw;
 import net.gtaun.shoebill.object.Timer;
 import net.gtaun.shoebill.object.Vehicle;
@@ -46,12 +47,12 @@ public interface SampObjectFactory
 	Vehicle createVehicle( int modelId, Location loc, float angle, int color1, int color2, int respawnDelay ) throws CreationFailedException;
 	Vehicle createVehicle( int modelId, LocationAngle loc, int color1, int color2, int respawnDelay ) throws CreationFailedException;
 
-	Object createObject( int modelId, float x, float y, float z, float rx, float ry, float rz ) throws CreationFailedException;
-	Object createObject( int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance ) throws CreationFailedException;
-	Object createObject( int modelId, Location loc, float rx, float ry, float rz ) throws CreationFailedException;
-	Object createObject( int modelId, Location loc, float rx, float ry, float rz, float drawDistance) throws CreationFailedException;
-	Object createObject( int modelId, Location loc, Point3D rot ) throws CreationFailedException;
-	Object createObject( int modelId, Location loc, Point3D rot, float drawDistance ) throws CreationFailedException;
+	SampObject createObject( int modelId, float x, float y, float z, float rx, float ry, float rz ) throws CreationFailedException;
+	SampObject createObject( int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance ) throws CreationFailedException;
+	SampObject createObject( int modelId, Location loc, float rx, float ry, float rz ) throws CreationFailedException;
+	SampObject createObject( int modelId, Location loc, float rx, float ry, float rz, float drawDistance) throws CreationFailedException;
+	SampObject createObject( int modelId, Location loc, Point3D rot ) throws CreationFailedException;
+	SampObject createObject( int modelId, Location loc, Point3D rot, float drawDistance ) throws CreationFailedException;
 
 	PlayerObject createPlayerObject( Player player, int modelId, float x, float y, float z, float rx, float ry, float rz ) throws CreationFailedException;
 	PlayerObject createPlayerObject( Player player, int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance ) throws CreationFailedException;
