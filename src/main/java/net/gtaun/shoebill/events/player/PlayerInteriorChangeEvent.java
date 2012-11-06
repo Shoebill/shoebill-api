@@ -19,20 +19,23 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerInteriorChangeEvent extends PlayerEvent
 {
 	private int oldInteriorId;
 	
-	public int getOldInteriorId()			{ return oldInteriorId; }
 	
-	
-	public PlayerInteriorChangeEvent( Player player, int oldInteriorId )
+	public int getOldInteriorId()
 	{
-		super( player );
+		return oldInteriorId;
+	}
+	
+	public PlayerInteriorChangeEvent(Player player, int oldInteriorId)
+	{
+		super(player);
 		this.oldInteriorId = oldInteriorId;
 	}
 }

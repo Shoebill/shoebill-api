@@ -20,18 +20,21 @@ import net.gtaun.shoebill.resource.Gamemode;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class GamemodeEvent extends Event
 {
 	private Gamemode gamemode;
 	
-	public Gamemode getGamemode()		{ return gamemode; }
 	
+	public Gamemode getGamemode()
+	{
+		return gamemode;
+	}
 	
-	protected GamemodeEvent( Gamemode gamemode )
+	protected GamemodeEvent(Gamemode gamemode)
 	{
 		this.gamemode = gamemode;
 	}

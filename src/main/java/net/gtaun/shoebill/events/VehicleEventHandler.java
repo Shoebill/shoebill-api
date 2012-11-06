@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.vehicle.VehicleDeathEvent;
@@ -39,20 +40,20 @@ public abstract class VehicleEventHandler extends AbstractEventHandler
 {
 	protected VehicleEventHandler()
 	{
-		super( VehicleEventHandler.class );
+		super(VehicleEventHandler.class);
 	}
 	
-	public void onVehicleDestroy( VehicleDestroyEvent event )						{ }
-	public void onVehicleSpawn( VehicleSpawnEvent event )							{ }
-	public void onVehicleDeath( VehicleDeathEvent event )							{ }
-	public void onVehicleUpdate( VehicleUpdateEvent event )							{ }
-	public void onVehicleEnter( VehicleEnterEvent event )							{ }
-	public void onVehicleExit( VehicleExitEvent event )								{ }
-	public void onVehicleMod( VehicleModEvent event )								{ }
-	public void onVehiclePaintjob( VehiclePaintjobEvent event )						{ }
-	public void onVehicleRespray( VehicleResprayEvent event )						{ }
-	public void onVehicleUpdateDamage( VehicleUpdateDamageEvent event )				{ }
-	public void onVehicleUnoccupiedUpdate( VehicleUnoccupiedUpdateEvent event )		{ }
-	public void onVehicleStreamIn( VehicleStreamInEvent event )						{ }
-	public void onVehicleStreamOut( VehicleStreamOutEvent event )					{ }
+	public void onVehicleDestroy(VehicleDestroyEvent event)							{ }
+	public void onVehicleSpawn(VehicleSpawnEvent event)								{ }
+	public void onVehicleDeath(VehicleDeathEvent event)								{ }
+	public void onVehicleUpdate(VehicleUpdateEvent event)							{ }
+	public void onVehicleEnter(VehicleEnterEvent event)								{ }
+	public void onVehicleExit(VehicleExitEvent event)								{ }
+	public void onVehicleMod(VehicleModEvent event)									{ }
+	public void onVehiclePaintjob(VehiclePaintjobEvent event)						{ }
+	public void onVehicleRespray(VehicleResprayEvent event)							{ }
+	public void onVehicleUpdateDamage(VehicleUpdateDamageEvent event)				{ }
+	public void onVehicleUnoccupiedUpdate(VehicleUnoccupiedUpdateEvent event)		{ }
+	public void onVehicleStreamIn(VehicleStreamInEvent event)						{ }
+	public void onVehicleStreamOut(VehicleStreamOutEvent event)						{ }
 }

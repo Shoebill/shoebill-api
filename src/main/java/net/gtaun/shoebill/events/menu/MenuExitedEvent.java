@@ -20,14 +20,14 @@ import net.gtaun.shoebill.object.Menu;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class MenuExitedEvent extends MenuEvent
 {
-	public MenuExitedEvent( Menu menu, Player player )
+	public MenuExitedEvent(Menu menu, Player player)
 	{
-		super( menu, player );
+		super(menu, player);
 	}
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.PlayerAttachBone;
@@ -36,11 +37,11 @@ public interface PlayerAttach extends PlayerRelated
 		public Vector3D getRotate();
 		public Vector3D getScale();
 		
-		public boolean set( PlayerAttachBone bone, int modelId, Vector3D offset, Vector3D rotation, Vector3D scale );
+		public boolean set(PlayerAttachBone bone, int modelId, Vector3D offset, Vector3D rotation, Vector3D scale);
 		public boolean remove();
-		public boolean isUsed( int slot );
+		public boolean isUsed(int slot);
 	}
 	
-	Slot getSlot( int slot );
+	Slot getSlot(int slot);
 	Slot[] getSlots();
 }

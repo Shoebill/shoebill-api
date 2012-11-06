@@ -21,17 +21,17 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class CheckpointEvent extends Event
 {
 	private Player player;
 	private Checkpoint checkpoint;
 	
 	
-	protected CheckpointEvent( Player player, Checkpoint checkpoint )
+	protected CheckpointEvent(Player player, Checkpoint checkpoint)
 	{
 		this.player = player;
 		this.checkpoint = checkpoint;

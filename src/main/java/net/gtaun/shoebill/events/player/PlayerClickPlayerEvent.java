@@ -19,22 +19,29 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerClickPlayerEvent extends PlayerEvent
 {
 	private Player clickedPlayer;
 	private int source;
 	
-	public Player getClickedPlayer()		{ return clickedPlayer; }
-	public int getSource()					{ return source; }
 	
-	
-	public PlayerClickPlayerEvent( Player player, Player clickedPlayer, int source )
+	public Player getClickedPlayer()
 	{
-		super( player );
+		return clickedPlayer;
+	}
+	
+	public int getSource()
+	{
+		return source;
+	}
+	
+	public PlayerClickPlayerEvent(Player player, Player clickedPlayer, int source)
+	{
+		super(player);
 		this.clickedPlayer = clickedPlayer;
 		this.source = source;
 	}

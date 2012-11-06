@@ -19,20 +19,23 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerDisconnectEvent extends PlayerEvent
 {
 	private int reason;
 	
-	public int getReason()			{ return reason; }
 	
-	
-	public PlayerDisconnectEvent( Player player, int reason )
+	public int getReason()
 	{
-		super( player );
+		return reason;
+	}
+	
+	public PlayerDisconnectEvent(Player player, int reason)
+	{
+		super(player);
 		this.reason = reason;
 	}
 }

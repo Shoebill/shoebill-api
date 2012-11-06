@@ -22,23 +22,23 @@ import net.gtaun.shoebill.data.LocationRadius;
 import net.gtaun.shoebill.data.Vector3D;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface Checkpoint extends Proxyable
 {
 	LocationRadius getLocation();
-	void setLocation( float x, float y, float z );
-	void setLocation( Vector3D pos );
-	void setLocation( LocationRadius loc );
+	void setLocation(float x, float y, float z);
+	void setLocation(Vector3D pos);
+	void setLocation(LocationRadius loc);
 
 	float getSize();
-	void setSize( float size );
+	void setSize(float size);
 
-	void set( Player player );
-	void disable( Player player );
-	boolean isInCheckpoint( Player player );
+	void set(Player player);
+	void disable(Player player);
+	boolean isInCheckpoint(Player player);
 	void update();
 	
 	Collection<Player> getUsingPlayers();

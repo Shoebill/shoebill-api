@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.gamemode.GamemodeExitEvent;
@@ -27,8 +28,8 @@ public abstract class GamemodeEventHandler extends AbstractEventHandler
 {
 	protected GamemodeEventHandler()
 	{
-		super( GamemodeEventHandler.class );
+		super(GamemodeEventHandler.class);
 	}
 	
-	public void onGamemodeExit( GamemodeExitEvent event )		{ }
+	public void onGamemodeExit(GamemodeExitEvent event)		{ }
 }

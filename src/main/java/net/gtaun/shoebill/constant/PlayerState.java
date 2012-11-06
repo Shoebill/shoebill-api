@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum PlayerState
 {
 	NONE						(0),
@@ -35,7 +35,7 @@ public enum PlayerState
 	SPECTATING					(9);
 	
 	
-	public static PlayerState get( int data )
+	public static PlayerState get(int data)
 	{
 		return values() [data];
 	}
@@ -44,7 +44,7 @@ public enum PlayerState
 	private final int data;
 	
 	
-	private PlayerState( int data )
+	private PlayerState(int data)
 	{
 		this.data = data;
 	}

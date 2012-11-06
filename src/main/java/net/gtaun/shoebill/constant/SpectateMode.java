@@ -20,10 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum SpectateMode
 {
 	NORMAL		(1),
@@ -32,21 +32,21 @@ public enum SpectateMode
 	
 	
 	private static final Map<Integer, SpectateMode> VALUES = new HashMap<Integer, SpectateMode>();
-	public static SpectateMode get( int data )
+	public static SpectateMode get(int data)
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( SpectateMode mode : values() ) VALUES.put( mode.data, mode );
+		for(SpectateMode mode : values()) VALUES.put(mode.data, mode);
 	}
 	
 
 	private final int data;
 	
 	
-	private SpectateMode( int data )
+	private SpectateMode(int data)
 	{
 		this.data = data;
 	}

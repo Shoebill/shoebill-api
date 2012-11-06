@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 /**
@@ -23,14 +24,14 @@ package net.gtaun.shoebill.object;
 public interface Server extends Proxyable
 {
 	int getServerCodepage();
-	void setServerCodepage( int codepage );
+	void setServerCodepage(int codepage);
 	
 	int getMaxPlayers();
 	
-	void sendRconCommand( String command );
-	void connectNPC( String name, String script );
+	void sendRconCommand(String command);
+	void connectNPC(String name, String script);
 	
-	String getServerVarAsString( String varname );
-	int getServerVarAsInt( String varname );
-	boolean getServerVarAsBool( String varname );
+	String getServerVarAsString(String varname);
+	int getServerVarAsInt(String varname);
+	boolean getServerVarAsBool(String varname);
 }

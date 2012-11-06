@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.exception;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class IllegalLengthException extends Exception
 {
 	static final long serialVersionUID = 2721213796502407892L;
@@ -31,8 +31,8 @@ public class IllegalLengthException extends Exception
 		super();
 	}
 	
-	public IllegalLengthException( String str )
+	public IllegalLengthException(String str)
 	{
-		super( str );
+		super(str);
 	}
 }

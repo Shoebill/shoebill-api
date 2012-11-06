@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum RaceCheckpointType
 {
 	NORMAL				(0),
@@ -30,7 +30,7 @@ public enum RaceCheckpointType
 	AIR_FINISH			(4);
 	
 	
-	public static RaceCheckpointType get( int data )
+	public static RaceCheckpointType get(int data)
 	{
 		return values() [data];
 	}
@@ -39,7 +39,7 @@ public enum RaceCheckpointType
 	private final int data;
 	
 	
-	private RaceCheckpointType( int data )
+	private RaceCheckpointType(int data)
 	{
 		this.data = data;
 	}

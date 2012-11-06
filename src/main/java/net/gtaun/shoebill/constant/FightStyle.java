@@ -20,10 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum FightStyle
 {
 	NORMAL			(4),
@@ -35,14 +35,14 @@ public enum FightStyle
 	
 	
 	private static final Map<Integer, FightStyle> VALUES = new HashMap<Integer, FightStyle>();
-	public static FightStyle get( int data )
+	public static FightStyle get(int data)
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( FightStyle style : values() ) VALUES.put( style.data, style );
+		for(FightStyle style : values()) VALUES.put(style.data, style);
 	}
 	
 	
@@ -50,7 +50,7 @@ public enum FightStyle
 	
 	
 	
-	private FightStyle( int data )
+	private FightStyle(int data)
 	{
 		this.data = data;
 	}

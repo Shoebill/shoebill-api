@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum MapIconStyle
 {
 	LOCAL					(0),
@@ -29,7 +29,7 @@ public enum MapIconStyle
 	GLOBAL_CHECKPOINT		(3);
 	
 	
-	public static MapIconStyle get( int data )
+	public static MapIconStyle get(int data)
 	{
 		return values() [data];
 	}
@@ -38,7 +38,7 @@ public enum MapIconStyle
 	private final int data;
 	
 	
-	private MapIconStyle( int data )
+	private MapIconStyle(int data)
 	{
 		this.data = data;
 	}

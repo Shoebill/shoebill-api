@@ -28,10 +28,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class LocationRadius extends Location implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = -4375366678586498863L;
@@ -41,15 +41,16 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	{
 		private static final long serialVersionUID = LocationRadius.serialVersionUID;
 		
-		private ImmutablyLocationRadius( LocationRadius locationRadius )
+		
+		private ImmutablyLocationRadius(LocationRadius locationRadius)
 		{
-			super( locationRadius );
+			super(locationRadius);
 		}
 		
 		@Override
 		public LocationRadius clone()
 		{
-			return new LocationRadius( this );
+			return new LocationRadius(this);
 		}
 	}
 	
@@ -61,52 +62,52 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	{
 		
 	}
-
-	public LocationRadius( float x, float y, float z, float radius )
+	
+	public LocationRadius(float x, float y, float z, float radius)
 	{
-		super( x, y, z );
+		super(x, y, z);
 		this.radius = radius;
 	}
 	
-	public LocationRadius( float x, float y, float z, int worldId, float radius )
+	public LocationRadius(float x, float y, float z, int worldId, float radius)
 	{
-		super( x, y, z, worldId );
+		super(x, y, z, worldId);
 		this.radius = radius;
 	}
 	
-	public LocationRadius( float x, float y, float z, int interiorId, int worldId, float radius )
+	public LocationRadius(float x, float y, float z, int interiorId, int worldId, float radius)
 	{
-		super( x, y, z, interiorId, worldId );
-		this.radius = radius;
-	}
-
-	public LocationRadius( Vector3D pos, float radius )
-	{
-		super( pos );
+		super(x, y, z, interiorId, worldId);
 		this.radius = radius;
 	}
 	
-	public LocationRadius( Vector3D pos, int worldId, float radius )
+	public LocationRadius(Vector3D pos, float radius)
 	{
-		super( pos, worldId );
+		super(pos);
 		this.radius = radius;
 	}
 	
-	public LocationRadius( Vector3D pos, int interiorId, int worldId, float radius )
+	public LocationRadius(Vector3D pos, int worldId, float radius)
 	{
-		super( pos, interiorId, worldId );
-		this.radius = radius;
-	}
-
-	public LocationRadius( Location loc, float radius )
-	{
-		super( loc );
+		super(pos, worldId);
 		this.radius = radius;
 	}
 	
-	public LocationRadius( LocationRadius loc )
+	public LocationRadius(Vector3D pos, int interiorId, int worldId, float radius)
 	{
-		super( loc );
+		super(pos, interiorId, worldId);
+		this.radius = radius;
+	}
+	
+	public LocationRadius(Location loc, float radius)
+	{
+		super(loc);
+		this.radius = radius;
+	}
+	
+	public LocationRadius(LocationRadius loc)
+	{
+		super(loc);
 		this.radius = loc.getRadius();
 	}
 	
@@ -114,67 +115,67 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	{
 		return radius;
 	}
-
-	public void setRadius( float radius )
+	
+	public void setRadius(float radius)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		this.radius = radius;
 	}
 	
-	public void set( float x, float y, float z, float radius )
+	public void set(float x, float y, float z, float radius)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		super.set( x, y, z );
-		setRadius( radius );
+		super.set(x, y, z);
+		setRadius(radius);
 	}
 	
-	public void set( float x, float y, float z, int worldId, float radius )
+	public void set(float x, float y, float z, int worldId, float radius)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		super.set( x, y, z, worldId );
-		setRadius( radius );
+		super.set(x, y, z, worldId);
+		setRadius(radius);
 	}
 	
-	public void set( float x, float y, float z, int interiorId, int worldId, float radius )
+	public void set(float x, float y, float z, int interiorId, int worldId, float radius)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		super.set( x, y, z, interiorId, worldId );
-		setRadius( radius );
+		super.set(x, y, z, interiorId, worldId);
+		setRadius(radius);
 	}
 	
-	public void set( Vector3D pos, float radius )
+	public void set(Vector3D pos, float radius)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
-
-		super.set( pos );
-		setRadius( radius );
-	}
-	
-	public void set( Vector3D pos, int worldId, float radius )
-	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
-
-		super.set( pos, worldId );
-		setRadius( radius );
-	}
-	
-	public void set( Vector3D pos, int interiorId, int worldId, float radius )
-	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		super.set( pos, interiorId, worldId );
-		setRadius( radius );
+		super.set(pos);
+		setRadius(radius);
 	}
-
-	public void set( LocationRadius loc )
+	
+	public void set(Vector3D pos, int worldId, float radius)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
-
-		super.set( loc );
-		setRadius( loc.getRadius() );
+		if (this instanceof Immutably) throw new ImmutablyException();
+		
+		super.set(pos, worldId);
+		setRadius(radius);
+	}
+	
+	public void set(Vector3D pos, int interiorId, int worldId, float radius)
+	{
+		if (this instanceof Immutably) throw new ImmutablyException();
+		
+		super.set(pos, interiorId, worldId);
+		setRadius(radius);
+	}
+	
+	public void set(LocationRadius loc)
+	{
+		if (this instanceof Immutably) throw new ImmutablyException();
+		
+		super.set(loc);
+		setRadius(loc.getRadius());
 	}
 	
 	@Override
@@ -184,7 +185,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	}
 	
 	@Override
-	public boolean equals( Object obj )
+	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}

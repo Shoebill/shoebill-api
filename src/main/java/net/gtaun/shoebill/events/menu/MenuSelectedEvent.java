@@ -20,20 +20,23 @@ import net.gtaun.shoebill.object.Menu;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class MenuSelectedEvent extends MenuEvent
 {
 	private int row;
 	
-	public int getRow()				{ return row; }
 	
-	
-	public MenuSelectedEvent( Menu menu, Player player, int row )
+	public int getRow()
 	{
-		super( menu, player );
+		return row;
+	}
+	
+	public MenuSelectedEvent(Menu menu, Player player, int row)
+	{
+		super(menu, player);
 		this.row = row;
 	}
 }

@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.resource;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class Gamemode extends Resource
 {
 	protected Gamemode()
@@ -33,10 +33,10 @@ public abstract class Gamemode extends Resource
 	{
 		return (GamemodeDescription) super.getDescription();
 	}
-
-//	public void setGamemodeText( String string )
-//	{
-//		if( string == null ) throw new NullPointerException();
-//		SampNativeFunction.setGameModeText( string );
-//	}
+	
+	// public void setGamemodeText(String string)
+	// {
+	// if(string == null) throw new NullPointerException();
+	// SampNativeFunction.setGameModeText(string);
+	// }
 }

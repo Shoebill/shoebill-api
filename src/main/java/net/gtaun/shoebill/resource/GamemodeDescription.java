@@ -24,18 +24,18 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author JoJLlmAn, MK124
- *
  */
-
 public class GamemodeDescription extends ResourceDescription
 {
-	public GamemodeDescription( File file, ClassLoader classLoader ) throws ClassNotFoundException, IOException
+	public GamemodeDescription(File file, ClassLoader classLoader) throws ClassNotFoundException, IOException
 	{
-		super( file, classLoader );
-		super.loadConfig( "gamemode.yml" );
+		super(file, classLoader);
+		super.loadConfig("gamemode.yml");
 	}
-
+	
 	@Override
 	public String toString()
 	{
@@ -45,6 +45,6 @@ public class GamemodeDescription extends ResourceDescription
 	@Override
 	public Class<? extends Gamemode> getClazz()
 	{
-		return super.getClazz().asSubclass( Gamemode.class );
+		return super.getClazz().asSubclass(Gamemode.class);
 	}
 }

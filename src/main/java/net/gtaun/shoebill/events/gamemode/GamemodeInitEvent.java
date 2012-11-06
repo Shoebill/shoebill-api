@@ -19,14 +19,14 @@ package net.gtaun.shoebill.events.gamemode;
 import net.gtaun.shoebill.resource.Gamemode;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class GamemodeInitEvent extends GamemodeEvent
 {
-	public GamemodeInitEvent( Gamemode gamemode )
+	public GamemodeInitEvent(Gamemode gamemode)
 	{
-		super( gamemode );
+		super(gamemode);
 	}
 }

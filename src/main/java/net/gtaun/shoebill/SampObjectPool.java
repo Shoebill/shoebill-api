@@ -34,34 +34,33 @@ import net.gtaun.shoebill.object.World;
 import net.gtaun.shoebill.object.Zone;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface SampObjectPool
 {
 	Server getServer();
 	World getWorld();
-	
-	Player getPlayer( int id );
-	Vehicle getVehicle( int id );
-	SampObject getObject( int id );
-	PlayerObject getPlayerObject( Player player, int id );
-	Pickup getPickup( int id );
-	Label getLabel( int id );
-	PlayerLabel getPlayerLabel( Player player, int id );
-	Textdraw getTextdraw( int id );
-	Zone getZone( int id );
-	Menu getMenu( int id );
-	Dialog getDialog( int id );
+	Player getPlayer(int id);
+	Vehicle getVehicle(int id);
+	SampObject getObject(int id);
+	PlayerObject getPlayerObject(Player player, int id);
+	Pickup getPickup(int id);
+	Label getLabel(int id);
+	PlayerLabel getPlayerLabel(Player player, int id);
+	Textdraw getTextdraw(int id);
+	Zone getZone(int id);
+	Menu getMenu(int id);
+	Dialog getDialog(int id);
 	
 	Collection<Player> getPlayers();
 	Collection<Vehicle> getVehicles();
 	Collection<SampObject> getObjects();
-	Collection<PlayerObject> getPlayerObjects( Player player );
+	Collection<PlayerObject> getPlayerObjects(Player player);
 	Collection<Pickup> getPickups();
 	Collection<Label> getLabels();
-	Collection<PlayerLabel> getPlayerLabels( Player player );
+	Collection<PlayerLabel> getPlayerLabels(Player player);
 	Collection<Textdraw> getTextdraws();
 	Collection<Zone> getZones();
 	Collection<Menu> getMenus();

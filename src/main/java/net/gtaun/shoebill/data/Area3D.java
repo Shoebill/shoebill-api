@@ -28,10 +28,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class Area3D extends Area implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 7421659231232420433L;
@@ -40,16 +40,17 @@ public class Area3D extends Area implements Cloneable, Serializable, Immutable
 	private static final class ImmutablyArea3D extends Area3D implements Immutably
 	{
 		private static final long serialVersionUID = Area3D.serialVersionUID;
-
-		private ImmutablyArea3D( Area3D area3d )
+		
+		
+		private ImmutablyArea3D(Area3D area3d)
 		{
-			super( area3d );
+			super(area3d);
 		}
 		
 		@Override
 		public Area3D clone()
 		{
-			return new Area3D( this );
+			return new Area3D(this);
 		}
 	}
 	
@@ -57,23 +58,23 @@ public class Area3D extends Area implements Cloneable, Serializable, Immutable
 	private float minZ, maxZ;
 	
 	
-	public Area3D( float minX, float minY, float minZ, float maxX, float maxY, float maxZ )
+	public Area3D(float minX, float minY, float minZ, float maxX, float maxY, float maxZ)
 	{
-		super( minX, minY, maxX, maxY );
-		this.minZ = minZ;
-		this.maxZ = maxZ;
-	}
-
-	public Area3D( Area area, float minZ, float maxZ )
-	{
-		super( area );
+		super(minX, minY, maxX, maxY);
 		this.minZ = minZ;
 		this.maxZ = maxZ;
 	}
 	
-	public Area3D( Area3D area )
+	public Area3D(Area area, float minZ, float maxZ)
 	{
-		super( area );
+		super(area);
+		this.minZ = minZ;
+		this.maxZ = maxZ;
+	}
+	
+	public Area3D(Area3D area)
+	{
+		super(area);
 		this.minZ = area.getMinZ();
 		this.maxZ = area.getMaxZ();
 	}
@@ -82,60 +83,60 @@ public class Area3D extends Area implements Cloneable, Serializable, Immutable
 	{
 		return minZ;
 	}
-
-	public void setMinZ( float minZ )
+	
+	public void setMinZ(float minZ)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.minZ = minZ;
 	}
-
+	
 	public float getMaxZ()
 	{
 		return maxZ;
 	}
-
-	public void setMaxZ( float maxZ )
+	
+	public void setMaxZ(float maxZ)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.maxZ = maxZ;
 	}
-
-	public void set( float minX, float minY, float minZ, float maxX, float maxY, float maxZ )
+	
+	public void set(float minX, float minY, float minZ, float maxX, float maxY, float maxZ)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		setMinX( minX );
-		setMinY( minY );
-		setMinZ( minZ );
-		setMaxX( maxX );
-		setMaxY( maxY );
-		setMaxZ( maxZ );
+		setMinX(minX);
+		setMinY(minY);
+		setMinZ(minZ);
+		setMaxX(maxX);
+		setMaxY(maxY);
+		setMaxZ(maxZ);
 	}
 	
-	public void set( Area area, float minZ, float maxZ )
+	public void set(Area area, float minZ, float maxZ)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		super.set( area );
-
-		setMinZ( minZ );
-		setMaxZ( maxZ );
+		super.set(area);
+		
+		setMinZ(minZ);
+		setMaxZ(maxZ);
 	}
 	
-	public void set( Area3D area )
+	public void set(Area3D area)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		setMinX( area.getMinX() );
-		setMinY( area.getMinY() );
-		setMinZ( area.getMinZ() );
-		setMaxX( area.getMaxX() );
-		setMaxY( area.getMaxY() );
-		setMaxZ( area.getMaxZ() );
+		setMinX(area.getMinX());
+		setMinY(area.getMinY());
+		setMinZ(area.getMinZ());
+		setMaxX(area.getMaxX());
+		setMaxY(area.getMaxY());
+		setMaxZ(area.getMaxZ());
 	}
-
+	
 	public float volume()
 	{
 		return (getMaxX() - getMinX()) * (getMaxY() - getMaxY()) * (getMaxZ() - getMinZ());
@@ -148,11 +149,11 @@ public class Area3D extends Area implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public boolean equals( Object obj )
+	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}
-
+	
 	@Override
 	public Area3D clone()
 	{

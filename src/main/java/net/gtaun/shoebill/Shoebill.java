@@ -19,10 +19,10 @@ package net.gtaun.shoebill;
 import java.io.File;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface Shoebill
 {
 	SampObjectPool getSampObjectPool();
@@ -33,6 +33,6 @@ public interface Shoebill
 	
 	ShoebillVersion getVersion();
 	
-	void changeGamemode( File file );
+	void changeGamemode(File file);
 	void reload();
 }

@@ -19,26 +19,33 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerRequestClassEvent extends PlayerEvent
 {
 	private int result = 0;
 	private int classId;
 	
-	public int getResult()				{ return result; }
-	public int getClassId()				{ return classId; }
 	
-	
-	public PlayerRequestClassEvent(	Player player, int classId )
+	public int getResult()
 	{
-		super( player );
+		return result;
+	}
+	
+	public int getClassId()
+	{
+		return classId;
+	}
+	
+	public PlayerRequestClassEvent(Player player, int classId)
+	{
+		super(player);
 		this.classId = classId;
 	}
 	
-	public void setResult( int result )
+	public void setResult(int result)
 	{
 		this.result |= result;
 	}

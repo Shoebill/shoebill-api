@@ -19,14 +19,14 @@ package net.gtaun.shoebill.events.checkpoint;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class CheckpointEnterEvent extends CheckpointEvent
 {
-	public CheckpointEnterEvent( Player player )
+	public CheckpointEnterEvent(Player player)
 	{
-		super( player, player.getCheckpoint() );
+		super(player, player.getCheckpoint());
 	}
 }

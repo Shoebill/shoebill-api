@@ -19,14 +19,14 @@ package net.gtaun.shoebill.events.plugin;
 import net.gtaun.shoebill.resource.Plugin;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PluginLoadEvent extends PluginEvent
 {
-	public PluginLoadEvent( Plugin plugin )
+	public PluginLoadEvent(Plugin plugin)
 	{
-		super( plugin );
+		super(plugin);
 	}
 }

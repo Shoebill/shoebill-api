@@ -27,10 +27,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class Velocity extends Vector3D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 6111643976368753336L;
@@ -40,52 +40,53 @@ public class Velocity extends Vector3D implements Cloneable, Serializable, Immut
 	{
 		private static final long serialVersionUID = Velocity.serialVersionUID;
 		
-		private ImmutablyVelocity( Velocity velocity )
+		
+		private ImmutablyVelocity(Velocity velocity)
 		{
-			super( velocity );
+			super(velocity);
 		}
 		
 		@Override
 		public Velocity clone()
 		{
-			return new Velocity( this );
+			return new Velocity(this);
 		}
 	}
 	
-
+	
 	public Velocity()
 	{
 		
 	}
-
-	public Velocity( float x, float y, float z )
+	
+	public Velocity(float x, float y, float z)
 	{
-		super( x, y, z );
+		super(x, y, z);
 	}
-
-	public Velocity( Vector3D vec )
+	
+	public Velocity(Vector3D vec)
 	{
-		super( vec );
+		super(vec);
 	}
 	
 	public float speed2d()
 	{
-		return (float) Math.sqrt( getX()*getX() + getY()*getY() );
+		return (float) Math.sqrt(getX() * getX() + getY() * getY());
 	}
 	
 	public float speed3d()
 	{
-		return (float) Math.sqrt( getX()*getX() + getY()*getY() + getZ()*getZ() );
+		return (float) Math.sqrt(getX() * getX() + getY() * getY() + getZ() * getZ());
 	}
 	
 	public float angle2d()
 	{
-		return (float) Math.acos( getX()/Math.abs(speed2d()) );
+		return (float) Math.acos(getX() / Math.abs(speed2d()));
 	}
 	
 	public float angleZ()
 	{
-		return (float) Math.acos( getZ()/Math.abs(speed3d()) );
+		return (float) Math.acos(getZ() / Math.abs(speed3d()));
 	}
 	
 	@Override
@@ -95,7 +96,7 @@ public class Velocity extends Vector3D implements Cloneable, Serializable, Immut
 	}
 	
 	@Override
-	public boolean equals( Object obj )
+	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Color;
@@ -32,24 +33,24 @@ public interface Textdraw extends Destroyable, Proxyable
 	Vector2D getPosition();
 	String getText();
 
-	void setLetterSize( float x, float y );
-	void setLetterSize( Vector2D vec );
+	void setLetterSize(float x, float y);
+	void setLetterSize(Vector2D vec);
 	
-	void setTextSize( float x, float y );
-	void setTextSize( Vector2D vec );
+	void setTextSize(float x, float y);
+	void setTextSize(Vector2D vec);
 	
-	void setAlignment( int alignment );
-	void setColor( Color color );
-	void setUseBox( boolean use );
-	void setBoxColor( Color color );
-	void setShadow( int size );
-	void setOutline( int size );
-	void setBackgroundColor( Color color );
-	void setFont( int font );
-	void setProportional( int set );
-	void setText( String text );
-	void show( Player player );
-	void hide( Player player );
+	void setAlignment(int alignment);
+	void setColor(Color color);
+	void setUseBox(boolean use);
+	void setBoxColor(Color color);
+	void setShadow(int size);
+	void setOutline(int size);
+	void setBackgroundColor(Color color);
+	void setFont(int font);
+	void setProportional(int set);
+	void setText(String text);
+	void show(Player player);
+	void hide(Player player);
 	void showForAll();
 	void hideForAll();
 }

@@ -21,20 +21,27 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class MenuEvent extends Event
 {
 	private Menu menu;
 	private Player player;
 	
-	public Menu getMenu()			{ return menu; }
-	public Player getPlayer()		{ return player; }
 	
+	public Menu getMenu()
+	{
+		return menu;
+	}
 	
-	protected MenuEvent( Menu menu, Player player )
+	public Player getPlayer()
+	{
+		return player;
+	}
+	
+	protected MenuEvent(Menu menu, Player player)
 	{
 		this.menu = menu;
 		this.player = player;

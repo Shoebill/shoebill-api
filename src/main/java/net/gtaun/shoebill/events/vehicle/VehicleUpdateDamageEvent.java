@@ -20,20 +20,23 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.Vehicle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class VehicleUpdateDamageEvent extends VehicleEvent
 {
 	private Player player;
 	
-	public Player getPlayer()			{ return player; }
 	
-	
-	public VehicleUpdateDamageEvent( Vehicle vehicle, Player player )
+	public Player getPlayer()
 	{
-		super( vehicle );
+		return player;
+	}
+	
+	public VehicleUpdateDamageEvent(Vehicle vehicle, Player player)
+	{
+		super(vehicle);
 		this.player = player;
 	}
 }

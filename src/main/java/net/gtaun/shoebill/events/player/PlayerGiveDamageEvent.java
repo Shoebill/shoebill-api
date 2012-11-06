@@ -19,24 +19,35 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerGiveDamageEvent extends PlayerEvent
 {
 	private Player victim;
 	private float amount;
 	private int weaponId;
 	
-	public Player getVictim()		{ return victim; }
-	public float getAmount()		{ return amount; }
-	public int getWeaponId()		{ return weaponId; }
 	
-	
-	public PlayerGiveDamageEvent( Player player, Player victim, float amount, int weaponId )
+	public Player getVictim()
 	{
-		super( player );
+		return victim;
+	}
+	
+	public float getAmount()
+	{
+		return amount;
+	}
+	
+	public int getWeaponId()
+	{
+		return weaponId;
+	}
+	
+	public PlayerGiveDamageEvent(Player player, Player victim, float amount, int weaponId)
+	{
+		super(player);
 		this.victim = victim;
 		this.amount = amount;
 		this.weaponId = weaponId;

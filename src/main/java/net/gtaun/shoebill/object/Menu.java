@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Vector2D;
@@ -24,7 +25,7 @@ import net.gtaun.shoebill.data.Vector2D;
  */
 public interface Menu extends Destroyable, Proxyable
 {
-	public static final int INVALID_ID =			0xFF;
+	public static final int INVALID_ID = 0xFF;
 	
 	
 	int getId();
@@ -35,10 +36,10 @@ public interface Menu extends Destroyable, Proxyable
 	float getCol2Width();
 	String getColumnHeader();
 	
-	void addItem( int column, String text );
-	void setColumnHeader( int column, String text );
+	void addItem(int column, String text);
+	void setColumnHeader(int column, String text);
 	void disable();
-	void disableRow( int row );
-	void show( Player player );
-	void hide( Player player );
+	void disableRow(int row);
+	void show(Player player);
+	void hide(Player player);
 }

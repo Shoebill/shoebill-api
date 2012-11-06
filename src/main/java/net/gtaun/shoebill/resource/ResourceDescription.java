@@ -29,10 +29,10 @@ import net.gtaun.shoebill.util.config.FileConfiguration;
 import net.gtaun.shoebill.util.config.YamlConfiguration;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class ResourceDescription
 {
 	private File file;
@@ -45,47 +45,56 @@ public abstract class ResourceDescription
 	private int buildNumber;
 	private String buildDate;
 	
-
-	protected ResourceDescription( File file, ClassLoader classLoader )
+	
+	protected ResourceDescription(File file, ClassLoader classLoader)
 	{
 		this.file = file;
 		this.classLoader = classLoader;
 	}
 	
-	protected Configuration loadConfig( String configFilename ) throws IOException, ClassNotFoundException
+	protected Configuration loadConfig(String configFilename) throws IOException, ClassNotFoundException
 	{
-		JarFile jarFile = new JarFile( file );
-		JarEntry entry = jarFile.getJarEntry( configFilename );
-		InputStream in = jarFile.getInputStream( entry );
-
+		JarFile jarFile = new JarFile(file);
+		JarEntry entry = jarFile.getJarEntry(configFilename);
+		InputStream in = jarFile.getInputStream(entry);
+		
 		FileConfiguration config = new YamlConfiguration();
-		config.read( in );
+		config.read(in);
 		
-		String className = config.getString( "class" );
-		clazz = classLoader.loadClass( className ).asSubclass( Resource.class );
+		String className = config.getString("class");
+		clazz = classLoader.loadClass(className).asSubclass(Resource.class);
 		
-		name = config.getString( "name", "Unnamed" );
-		version = config.getString( "version" );
+		name = config.getString("name", "Unnamed");
+		version = config.getString("version");
 		
-		String author = config.getString( "authors" );
+		String author = config.getString("authors");
 		authors = new ArrayList<>();
 		String[] auth = author.split("[,;]");
 		
-		if( auth.length > 0 )	for( String string : auth ) authors.add( string.trim() );
-		else					authors.add( author.trim() );
-			
-		description = config.getString( "description" );
-		buildNumber = config.getInt( "buildNumber", 0 );
-		buildDate = config.getString( "buildDate", "Unknown" );
+		if (auth.length > 0)
+		{
+			for (String string : auth)
+			{
+				authors.add(string.trim());
+			}
+		}
+		else
+		{
+			authors.add(author.trim());
+		}
+		
+		description = config.getString("description");
+		buildNumber = config.getInt("buildNumber", 0);
+		buildDate = config.getString("buildDate", "Unknown");
 		
 		return config;
 	}
-
+	
 	public File getFile()
 	{
 		return file;
 	}
-
+	
 	public Class<? extends Resource> getClazz()
 	{
 		return clazz;

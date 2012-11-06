@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 /**
@@ -22,5 +23,5 @@ package net.gtaun.shoebill.object;
  */
 public interface PlayerLabel extends Label, PlayerRelated
 {
-	public static final int INVALID_ID =			0xFFFF;
+	public static final int INVALID_ID = 0xFFFF;
 }

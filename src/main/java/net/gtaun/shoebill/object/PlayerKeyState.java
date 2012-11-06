@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 /**
@@ -45,7 +46,7 @@ public interface PlayerKeyState
 		private final int value;
 		
 		
-		private Key( int val )
+		private Key(int val)
 		{
 			value = val;
 		}
@@ -56,15 +57,15 @@ public interface PlayerKeyState
 		}
 	}
 	
-	public static final int KEY_UP				= -128;
-	public static final int KEY_DOWN			= 128;
-	public static final int KEY_LEFT			= -128;
-	public static final int KEY_RIGHT			= 128;
+	public static final int KEY_UP		= -128;
+	public static final int KEY_DOWN	= 128;
+	public static final int KEY_LEFT	= -128;
+	public static final int KEY_RIGHT	= 128;
 	
 	
 	Player getPlayer();
 	int getKeys();
 	int getUpdown();
 	int getLeftright();
-	boolean isKeyPressed( Key key );
+	boolean isKeyPressed(Key key);
 }

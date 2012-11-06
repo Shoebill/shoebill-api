@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.object.ObjectMovedEvent;
@@ -28,9 +29,9 @@ public abstract class ObjectEventHandler extends AbstractEventHandler
 {
 	protected ObjectEventHandler()
 	{
-		super( ObjectEventHandler.class );
+		super(ObjectEventHandler.class);
 	}
 	
-	public void onObjectMoved( ObjectMovedEvent event )					{ }
-	public void onPlayerObjectMoved( PlayerObjectMovedEvent event )		{ }
+	public void onObjectMoved(ObjectMovedEvent event)					{ }
+	public void onPlayerObjectMoved(PlayerObjectMovedEvent event)		{ }
 }

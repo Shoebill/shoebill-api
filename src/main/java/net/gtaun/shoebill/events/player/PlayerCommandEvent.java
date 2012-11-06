@@ -19,26 +19,33 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerCommandEvent extends PlayerEvent
 {
 	private int result = 0;
 	private String command;
 	
-	public int getResult()					{ return result; }
-	public String getCommand()				{ return command; }
 	
-	
-	public PlayerCommandEvent( Player player, String command )
+	public int getResult()
 	{
-		super( player );
+		return result;
+	}
+	
+	public String getCommand()
+	{
+		return command;
+	}
+	
+	public PlayerCommandEvent(Player player, String command)
+	{
+		super(player);
 		this.command = command;
 	}
 	
-	public void setResult( int result )
+	public void setResult(int result)
 	{
 		this.result |= result;
 	}

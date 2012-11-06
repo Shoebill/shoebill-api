@@ -20,31 +20,46 @@ import net.gtaun.shoebill.object.Dialog;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class DialogResponseEvent extends DialogEvent
 {
 	private int result = 0;
 	private int response, listitem;
 	private String inputText;
-
-	public int getResult()				{ return result; }
-	public int getResponse()				{ return response; }
-	public int getListitem()				{ return listitem; }
-	public String getInputText()			{ return inputText;}
 	
 	
-	public DialogResponseEvent( Dialog dialog, Player player, int response, int listitem, String inputtext )
+	public int getResult()
 	{
-		super( dialog, player );
+		return result;
+	}
+	
+	public int getResponse()
+	{
+		return response;
+	}
+	
+	public int getListitem()
+	{
+		return listitem;
+	}
+	
+	public String getInputText()
+	{
+		return inputText;
+	}
+	
+	public DialogResponseEvent(Dialog dialog, Player player, int response, int listitem, String inputtext)
+	{
+		super(dialog, player);
 		this.response = response;
 		this.listitem = listitem;
 		this.inputText = inputtext;
 	}
 	
-	public void setResult( int result )
+	public void setResult(int result)
 	{
 		this.result |= result;
 	}

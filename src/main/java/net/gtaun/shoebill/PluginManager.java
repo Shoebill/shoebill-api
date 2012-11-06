@@ -24,19 +24,18 @@ import net.gtaun.shoebill.resource.Plugin;
 import net.gtaun.shoebill.resource.PluginDescription;
 
 /**
+ * 
+ * 
  * @author MK124, JoJLlmAn
- *
  */
-
 public interface PluginManager
 {
-	Plugin loadPlugin( String filename );
-	Plugin loadPlugin( File file );
-	Plugin loadPlugin( PluginDescription desc );
+	Plugin loadPlugin(String filename);
+	Plugin loadPlugin(File file);
+	Plugin loadPlugin(PluginDescription desc);
 	
-	void unloadPlugin( Plugin plugin );
+	void unloadPlugin(Plugin plugin);
 	
-	<T extends Plugin> T getPlugin( Class<T> cls );
-	
+	<T extends Plugin> T getPlugin(Class<T> cls);
 	Collection<Plugin> getPlugins();
 }

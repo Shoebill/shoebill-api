@@ -17,22 +17,22 @@
 package net.gtaun.shoebill.exception;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class CreationFailedException extends RuntimeException
 {
 	static final long serialVersionUID = 6941011337986149127L;
-
+	
 	
 	public CreationFailedException()
 	{
 		
 	}
-
-	public CreationFailedException( String message )
+	
+	public CreationFailedException(String message)
 	{
-		super( message );
+		super(message);
 	}
 }

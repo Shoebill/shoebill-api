@@ -20,37 +20,37 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum ShopName
 {
-	PIZZASTACK		( "FDPIZA" ),
-	BURGERSHOT		( "FDBURG" ),
-	CLUCKINBELL		( "FDCHICK" ),
-	AMMUNATION1		( "AMMUN1" ),
-	AMMUNATION2		( "AMMUN2" ),
-	AMMUNATION3		( "AMMUN3" ),
-	AMMUNATION5		( "AMMUN5" );
+	PIZZASTACK		("FDPIZA"),
+	BURGERSHOT		("FDBURG"),
+	CLUCKINBELL		("FDCHICK"),
+	AMMUNATION1		("AMMUN1"),
+	AMMUNATION2		("AMMUN2"),
+	AMMUNATION3		("AMMUN3"),
+	AMMUNATION5		("AMMUN5");
 	
 	
 	private static final Map<String, ShopName> VALUES = new HashMap<String, ShopName>();
-	public static ShopName get( String data )
+	public static ShopName get(String data)
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( ShopName shopName : values() ) VALUES.put( shopName.data, shopName );
+		for(ShopName shopName : values()) VALUES.put(shopName.data, shopName);
 	}
 	
 	
 	private final String data;
 	
 	
-	private ShopName( String data )
+	private ShopName(String data)
 	{
 		this.data = data;
 	}

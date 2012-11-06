@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum VehicleComponentSlot
 {
 	SPOILER				(0),
@@ -39,12 +39,12 @@ public enum VehicleComponentSlot
 	VENT_LEFT			(13);
 	
 	
-	public static VehicleComponentSlot get( int data )
+	public static VehicleComponentSlot get(int data)
 	{
 		return values() [data];
 	}
 	
-//	public static int getComponentSlot( int componentId )
+//	public static int getComponentSlot(int componentId)
 //	{
 //		return SampNativeFunction.getVehicleComponentType(componentId);
 //	}
@@ -53,7 +53,7 @@ public enum VehicleComponentSlot
 	private final int data;
 	
 	
-	private VehicleComponentSlot( int data )
+	private VehicleComponentSlot(int data)
 	{
 		this.data = data;
 	}

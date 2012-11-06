@@ -28,10 +28,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class Area implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 4319892622317856825L;
@@ -40,16 +40,17 @@ public class Area implements Cloneable, Serializable, Immutable
 	private static final class ImmutablyArea extends Area implements Immutably
 	{
 		private static final long serialVersionUID = Area.serialVersionUID;
-
-		private ImmutablyArea( Area area )
+		
+		
+		private ImmutablyArea(Area area)
 		{
-			super( area );
+			super(area);
 		}
 		
 		@Override
 		public Area clone()
 		{
-			return new Area( this );
+			return new Area(this);
 		}
 	}
 	
@@ -61,8 +62,8 @@ public class Area implements Cloneable, Serializable, Immutable
 	{
 		
 	}
-
-	public Area( float minX, float minY, float maxX, float maxY )
+	
+	public Area(float minX, float minY, float maxX, float maxY)
 	{
 		this.minX = minX;
 		this.minY = minY;
@@ -70,7 +71,7 @@ public class Area implements Cloneable, Serializable, Immutable
 		this.maxY = maxY;
 	}
 	
-	public Area( Area area )
+	public Area(Area area)
 	{
 		this.minX = area.getMinX();
 		this.minY = area.getMinY();
@@ -78,75 +79,74 @@ public class Area implements Cloneable, Serializable, Immutable
 		this.maxY = area.getMaxY();
 	}
 	
-	
 	public float getMinX()
 	{
 		return minX;
 	}
-
-	public void setMinX( float minX )
+	
+	public void setMinX(float minX)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.minX = minX;
 	}
-
+	
 	public float getMinY()
 	{
 		return minY;
 	}
-
-	public void setMinY( float minY )
+	
+	public void setMinY(float minY)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.minY = minY;
 	}
-
+	
 	public float getMaxX()
 	{
 		return maxX;
 	}
-
-	public void setMaxX( float maxX )
+	
+	public void setMaxX(float maxX)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.maxX = maxX;
 	}
-
+	
 	public float getMaxY()
 	{
 		return maxY;
 	}
-
-	public void setMaxY( float maxY )
+	
+	public void setMaxY(float maxY)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.maxY = maxY;
 	}
-
-	public void set( float minX, float minY, float maxX, float maxY )
+	
+	public void set(float minX, float minY, float maxX, float maxY)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		setMinX( minX );
-		setMinY( minY );
-		setMaxX( maxX );
-		setMaxY( maxY );
+		setMinX(minX);
+		setMinY(minY);
+		setMaxX(maxX);
+		setMaxY(maxY);
 	}
 	
-	public void set( Area area )
+	public void set(Area area)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
-
-		setMinX( area.getMinX() );
-		setMinY( area.getMinY() );
-		setMaxX( area.getMaxX() );
-		setMaxY( area.getMaxY() );
+		if (this instanceof Immutably) throw new ImmutablyException();
+		
+		setMinX(area.getMinX());
+		setMinY(area.getMinY());
+		setMaxX(area.getMaxX());
+		setMaxY(area.getMaxY());
 	}
-
+	
 	public float area()
 	{
 		return (maxX - minX) * (maxY - minY);
@@ -159,11 +159,11 @@ public class Area implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public boolean equals( Object obj )
+	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}
-
+	
 	@Override
 	public Area clone()
 	{
@@ -171,7 +171,7 @@ public class Area implements Cloneable, Serializable, Immutable
 		{
 			return (Area) super.clone();
 		}
-		catch( CloneNotSupportedException e )
+		catch (CloneNotSupportedException e)
 		{
 			throw new InternalError();
 		}

@@ -16,17 +16,16 @@
 
 package net.gtaun.shoebill.samp;
 
-
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface SampCallbackManager
 {
-	void registerCallbackHandler( SampCallbackHandler handler );
-	void unregisterCallbackHandler( SampCallbackHandler handler );
-	boolean hasCallbackHandler( SampCallbackHandler handler );
+	void registerCallbackHandler(SampCallbackHandler handler);
+	void unregisterCallbackHandler(SampCallbackHandler handler);
+	boolean hasCallbackHandler(SampCallbackHandler handler);
 	
 	SampCallbackHandler getMasterCallbackHandler();
 }

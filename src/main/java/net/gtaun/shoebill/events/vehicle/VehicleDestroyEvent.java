@@ -19,14 +19,14 @@ package net.gtaun.shoebill.events.vehicle;
 import net.gtaun.shoebill.object.Vehicle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class VehicleDestroyEvent extends VehicleEvent
 {
-	public VehicleDestroyEvent( Vehicle vehicle )
+	public VehicleDestroyEvent(Vehicle vehicle)
 	{
-		super( vehicle );
+		super(vehicle);
 	}
 }

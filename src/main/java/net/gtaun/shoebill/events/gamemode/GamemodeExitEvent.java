@@ -19,14 +19,14 @@ package net.gtaun.shoebill.events.gamemode;
 import net.gtaun.shoebill.resource.Gamemode;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class GamemodeExitEvent extends GamemodeEvent
 {
-	public GamemodeExitEvent( Gamemode gamemode )
+	public GamemodeExitEvent(Gamemode gamemode)
 	{
-		super( gamemode );
+		super(gamemode);
 	}
 }

@@ -20,10 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum WeaponState
 {
 	UNKNOWN				(-1),
@@ -34,21 +34,21 @@ public enum WeaponState
 	
 	
 	private static final Map<Integer, WeaponState> VALUES = new HashMap<Integer, WeaponState>();
-	public static WeaponState get( int data )
+	public static WeaponState get(int data)
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( WeaponState state : values() ) VALUES.put( state.data, state );
+		for(WeaponState state : values()) VALUES.put(state.data, state);
 	}
 	
 	
 	private final int data;
 	
 	
-	private WeaponState( int data )
+	private WeaponState(int data)
 	{
 		this.data = data;
 	}

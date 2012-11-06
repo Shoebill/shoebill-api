@@ -20,10 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum SpecialAction
 {
 	NONE					(0),
@@ -46,21 +46,21 @@ public enum SpecialAction
 	
 	
 	private static final Map<Integer, SpecialAction> VALUES = new HashMap<Integer, SpecialAction>();
-	public static SpecialAction get( int data )
+	public static SpecialAction get(int data)
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for( SpecialAction action : values() ) VALUES.put( action.data, action );
+		for(SpecialAction action : values()) VALUES.put(action.data, action);
 	}
 	
 	
 	private final int data;
 	
 	
-	private SpecialAction( int data )
+	private SpecialAction(int data)
 	{
 		this.data = data;
 	}

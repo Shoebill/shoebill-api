@@ -27,10 +27,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class Resource
 {
 	private boolean isEnabled;
@@ -45,17 +45,17 @@ public abstract class Resource
 	{
 		
 	}
-		
-	void setContext( ResourceDescription description, Shoebill shoebill, File dataDir )
+	
+	void setContext(ResourceDescription description, Shoebill shoebill, File dataDir)
 	{
 		this.description = description;
 		this.shoebill = shoebill;
 		this.dataDirectory = dataDir;
 		
 		ShoebillLowLevel shoebillLowLevel = (ShoebillLowLevel) shoebill;
-		eventManager = new ManagedEventManager( shoebillLowLevel.getEventManager() );
+		eventManager = new ManagedEventManager(shoebillLowLevel.getEventManager());
 	}
-
+	
 	protected abstract void onEnable() throws Throwable;
 	protected abstract void onDisable() throws Throwable;
 	
@@ -73,12 +73,11 @@ public abstract class Resource
 		isEnabled = false;
 	}
 	
-	
 	public boolean isEnabled()
 	{
 		return isEnabled;
 	}
-
+	
 	public ResourceDescription getDescription()
 	{
 		return description;
@@ -101,6 +100,6 @@ public abstract class Resource
 	
 	public Logger getLogger()
 	{
-		return LoggerFactory.getLogger( description.getClazz() );
+		return LoggerFactory.getLogger(description.getClazz());
 	}
 }

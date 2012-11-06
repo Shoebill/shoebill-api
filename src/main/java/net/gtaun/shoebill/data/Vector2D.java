@@ -36,20 +36,21 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 3303330394405245831L;
 	
-
+	
 	private static final class ImmutablyVector2D extends Vector2D implements Immutably
 	{
 		private static final long serialVersionUID = Vector2D.serialVersionUID;
 		
-		private ImmutablyVector2D( Vector2D vector2d )
+		
+		private ImmutablyVector2D(Vector2D vector2d)
 		{
-			super( vector2d );
+			super(vector2d);
 		}
 		
 		@Override
 		public Vector2D clone()
 		{
-			return new Vector2D( this );
+			return new Vector2D(this);
 		}
 	}
 	
@@ -62,13 +63,13 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 		
 	}
 	
-	public Vector2D( float x, float y )
+	public Vector2D(float x, float y)
 	{
 		this.x = x;
 		this.y = y;
 	}
 	
-	public Vector2D( Vector2D vec )
+	public Vector2D(Vector2D vec)
 	{
 		this.x = vec.getX();
 		this.y = vec.getY();
@@ -79,9 +80,9 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 		return x;
 	}
 	
-	public void setX( float x )
+	public void setX(float x)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.x = x;
 	}
@@ -91,27 +92,27 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 		return y;
 	}
 	
-	public void setY( float y )
+	public void setY(float y)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.y = y;
 	}
-
-	public void set( float x, float y )
+	
+	public void set(float x, float y)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		setX( x );
-		setY( y );
+		setX(x);
+		setY(y);
 	}
 	
-	public void set( Vector2D vector )
+	public void set(Vector2D vector)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		setX( vector.getX() );
-		setY( vector.getY() );
+		setX(vector.getX());
+		setY(vector.getY());
 	}
 	
 	@Override
@@ -121,7 +122,7 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public boolean equals( Object obj )
+	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}
@@ -133,7 +134,7 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 		{
 			return (Vector2D) super.clone();
 		}
-		catch( CloneNotSupportedException e )
+		catch (CloneNotSupportedException e)
 		{
 			throw new InternalError();
 		}

@@ -17,11 +17,11 @@
 package net.gtaun.shoebill.util.immutable;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface Immutably
 {
-
+	
 }

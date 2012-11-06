@@ -19,50 +19,49 @@ package net.gtaun.shoebill.util.config;
 import java.util.List;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface Configuration
 {
-	boolean contains( String path );
+	boolean contains(String path);
 	
-	Object get( String path );
-	void set( String path, Object value );
+	Object get(String path);
+	void set(String path, Object value);
 	
-	Configuration getNode( String path );
+	Configuration getNode(String path);
 	
-	String getString( String path );
-	String getString( String path, String def );
-	void setString( String path, Object value );
-	boolean isString( String path );
+	String getString(String path);
+	String getString(String path, String def);
+	void setString(String path, Object value);
+	boolean isString(String path);
 	
-	int getInt( String path );
-	int getInt( String path, int def );
-	void setInt( String path, int value );
-	boolean isInt( String path );
+	int getInt(String path);
+	int getInt(String path, int def);
+	void setInt(String path, int value);
+	boolean isInt(String path);
 	
-	long getLong( String path );
-	long getLong( String path, long def );
-	void setLong( String path, long value );
-	boolean isLong( String path );
+	long getLong(String path);
+	long getLong(String path, long def);
+	void setLong(String path, long value);
+	boolean isLong(String path);
 	
-	double getDouble( String path );
-	double getDouble( String path, double def );
-	void setDouble( String path, double value );
-	boolean isDouble( String path );
+	double getDouble(String path);
+	double getDouble(String path, double def);
+	void setDouble(String path, double value);
+	boolean isDouble(String path);
 	
-	boolean getBoolean( String path );
-	boolean getBoolean( String path, boolean def );
-	void setBoolean( String path, boolean value );
-	boolean isBoolean( String path );
+	boolean getBoolean(String path);
+	boolean getBoolean(String path, boolean def);
+	void setBoolean(String path, boolean value);
+	boolean isBoolean(String path);
 	
-	List<?> getList( String path );
-	void setList( String path, List<?> value );
-	boolean isList( String path );
-	
-	List<String> getStringList( String path, List<String> def );
-	List<Integer> getIntList( String path, List<Integer> def );
-	List<Double> getDoubleList( String path, List<Double> def );
-	List<Boolean> getBooleanList( String path, List<Boolean> def );
+	List<?> getList(String path);
+	void setList(String path, List<?> value);
+	boolean isList(String path);
+	List<String> getStringList(String path, List<String> def);
+	List<Integer> getIntList(String path, List<Integer> def);
+	List<Double> getDoubleList(String path, List<Double> def);
+	List<Boolean> getBooleanList(String path, List<Boolean> def);
 }

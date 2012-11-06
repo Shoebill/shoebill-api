@@ -17,11 +17,22 @@
 package net.gtaun.shoebill.exception;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class AlreadyExistException extends Exception
 {
 	static final long serialVersionUID = 2773091503398336962L;
+
+	
+	public AlreadyExistException()
+	{
+		
+	}
+	
+	public AlreadyExistException(String message)
+	{
+		super(message);
+	}
 }

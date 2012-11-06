@@ -20,18 +20,21 @@ import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class ObjectEvent extends Event
 {
 	private SampObject object;
 	
-	public SampObject getObject()		{ return object; }
 	
+	public SampObject getObject()
+	{
+		return object;
+	}
 	
-	public ObjectEvent( SampObject object )
+	public ObjectEvent(SampObject object)
 	{
 		this.object = object;
 	}

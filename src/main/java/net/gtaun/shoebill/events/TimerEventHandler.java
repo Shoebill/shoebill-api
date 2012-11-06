@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.timer.TimerTickEvent;
@@ -27,8 +28,8 @@ public abstract class TimerEventHandler extends AbstractEventHandler
 {
 	protected TimerEventHandler()
 	{
-		super( TimerEventHandler.class );
+		super(TimerEventHandler.class);
 	}
 
-	public void onTimerTick( TimerTickEvent event )		{ }
+	public void onTimerTick(TimerTickEvent event)		{ }
 }

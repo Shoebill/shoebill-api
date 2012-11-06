@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.checkpoint.CheckpointEnterEvent;
@@ -30,11 +31,11 @@ public abstract class CheckpointEventHandler extends AbstractEventHandler
 {
 	protected CheckpointEventHandler()
 	{
-		super( CheckpointEventHandler.class );
+		super(CheckpointEventHandler.class);
 	}
 
-	public void onCheckpointEnter( CheckpointEnterEvent event )						{ }
-	public void onCheckpointLeave( CheckpointLeaveEvent event )						{ }
-	public void onRaceCheckpointEnter( RaceCheckpointEnterEvent event  )			{ }
-	public void onRaceCheckpointLeave( RaceCheckpointLeaveEvent event  )			{ }
+	public void onCheckpointEnter(CheckpointEnterEvent event)					{ }
+	public void onCheckpointLeave(CheckpointLeaveEvent event)					{ }
+	public void onRaceCheckpointEnter(RaceCheckpointEnterEvent event )			{ }
+	public void onRaceCheckpointLeave(RaceCheckpointLeaveEvent event )			{ }
 }

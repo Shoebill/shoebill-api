@@ -19,20 +19,23 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerKeyStateChangeEvent extends PlayerEvent
 {
 	private int oldKeys;
 	
-	public int getOldkeys()				{ return oldKeys; }
 	
-	
-	public PlayerKeyStateChangeEvent( Player player, int oldKeys )
+	public int getOldkeys()
 	{
-		super( player );
+		return oldKeys;
+	}
+	
+	public PlayerKeyStateChangeEvent(Player player, int oldKeys)
+	{
+		super(player);
 		this.oldKeys = oldKeys;
 	}
 }

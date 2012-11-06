@@ -28,10 +28,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class Time implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = -2904498722367946789L;
@@ -41,15 +41,16 @@ public class Time implements Cloneable, Serializable, Immutable
 	{
 		private static final long serialVersionUID = Time.serialVersionUID;
 		
-		private ImmutablyTime( Time time )
+		
+		private ImmutablyTime(Time time)
 		{
-			super( time );
+			super(time);
 		}
 		
 		@Override
 		public Time clone()
 		{
-			return new Time( this );
+			return new Time(this);
 		}
 	}
 	
@@ -61,14 +62,14 @@ public class Time implements Cloneable, Serializable, Immutable
 	{
 		
 	}
-
-	public Time( int hour, int minute )
+	
+	public Time(int hour, int minute)
 	{
 		this.hour = hour;
 		this.minute = minute;
 	}
 	
-	public Time( Time time )
+	public Time(Time time)
 	{
 		this.hour = time.getHour();
 		this.minute = time.getMinute();
@@ -78,42 +79,42 @@ public class Time implements Cloneable, Serializable, Immutable
 	{
 		return hour;
 	}
-
-	public void setHour( int hour )
+	
+	public void setHour(int hour)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.hour = hour;
 	}
-
+	
 	public int getMinute()
 	{
 		return minute;
 	}
-
-	public void setMinute( int minute )
+	
+	public void setMinute(int minute)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
 		this.minute = minute;
 	}
-
-	public void set( int hour, int minute )
+	
+	public void set(int hour, int minute)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		setHour( hour );
-		setMinute( minute );
+		setHour(hour);
+		setMinute(minute);
 	}
 	
-	public void set( Time time )
+	public void set(Time time)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		setHour( time.getHour() );
-		setMinute( time.getMinute() );
+		setHour(time.getHour());
+		setMinute(time.getMinute());
 	}
-
+	
 	@Override
 	public int hashCode()
 	{
@@ -121,7 +122,7 @@ public class Time implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public boolean equals( Object obj )
+	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}
@@ -133,7 +134,7 @@ public class Time implements Cloneable, Serializable, Immutable
 		{
 			return (Time) super.clone();
 		}
-		catch( CloneNotSupportedException e )
+		catch (CloneNotSupportedException e)
 		{
 			throw new InternalError();
 		}

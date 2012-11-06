@@ -28,10 +28,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author JoJLlmAn
- *
  */
-
 public class Quaternion extends Vector3D implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = 455013800771095435L;
@@ -41,15 +41,16 @@ public class Quaternion extends Vector3D implements Cloneable, Serializable, Imm
 	{
 		private static final long serialVersionUID = Quaternion.serialVersionUID;
 		
-		private ImmutablyQuaternions( Quaternion quaternions )
+		
+		private ImmutablyQuaternions(Quaternion quaternions)
 		{
-			super( quaternions );
+			super(quaternions);
 		}
 		
 		@Override
 		public Quaternion clone()
 		{
-			return new Quaternion( this );
+			return new Quaternion(this);
 		}
 	}
 	
@@ -61,22 +62,22 @@ public class Quaternion extends Vector3D implements Cloneable, Serializable, Imm
 	{
 		
 	}
-
-	public Quaternion( float x, float y, float z, float w )
+	
+	public Quaternion(float x, float y, float z, float w)
 	{
-		super( x, y, z );
-		this.w = w;
-	}
-
-	public Quaternion( Vector3D vec, float w )
-	{
-		super( vec );
+		super(x, y, z);
 		this.w = w;
 	}
 	
-	public Quaternion( Quaternion quat )
+	public Quaternion(Vector3D vec, float w)
 	{
-		super( quat );
+		super(vec);
+		this.w = w;
+	}
+	
+	public Quaternion(Quaternion quat)
+	{
+		super(quat);
 		this.w = quat.getW();
 	}
 	
@@ -84,36 +85,36 @@ public class Quaternion extends Vector3D implements Cloneable, Serializable, Imm
 	{
 		return w;
 	}
-
-	public void setW( float w )
+	
+	public void setW(float w)
 	{
 		this.w = w;
 	}
-
-	public void set( float x, float y, float z, float w )
+	
+	public void set(float x, float y, float z, float w)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		super.set( x, y, z );
-		setW( w );
+		super.set(x, y, z);
+		setW(w);
 	}
 	
-	public void set( Vector3D vec, float w )
+	public void set(Vector3D vec, float w)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		super.set( vec );
-		setW( w );
+		super.set(vec);
+		setW(w);
 	}
 	
-	public void set( Quaternion quat )
+	public void set(Quaternion quat)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		super.set( quat );
-		setW( quat.getW() );
+		super.set(quat);
+		setW(quat.getW());
 	}
-
+	
 	public Quaternion getConjugate()
 	{
 		return new Quaternion(-getX(), -getY(), -getZ(), getW());
@@ -124,19 +125,19 @@ public class Quaternion extends Vector3D implements Cloneable, Serializable, Imm
 		float[][] matrix = new float[4][4];
 		float x = getX(), y = getY(), z = getZ();
 		
-		matrix[0][0] = 1 - 2 * (y*y + z*z);
-		matrix[0][1] = 	   2 * (x*y - w*z);
-		matrix[0][2] = 	   2 * (w*y + x*z);
+		matrix[0][0] = 1 - 2 * (y * y + z * z);
+		matrix[0][1] = 2 * (x * y - w * z);
+		matrix[0][2] = 2 * (w * y + x * z);
 		matrix[0][3] = 0;
 		
-		matrix[1][0] =     2 * (x*y + w*z);
-		matrix[1][1] = 1 - 2 * (x*x + z*z);
-		matrix[1][2] =     2 * (y*z - w*x);
+		matrix[1][0] = 2 * (x * y + w * z);
+		matrix[1][1] = 1 - 2 * (x * x + z * z);
+		matrix[1][2] = 2 * (y * z - w * x);
 		matrix[1][3] = 0;
 		
-		matrix[2][0] =     2 * (x*z - w*y);
-		matrix[2][1] =     2 * (y*z + w*x);
-		matrix[2][2] = 1 - 2 * (x*x + y*y);
+		matrix[2][0] = 2 * (x * z - w * y);
+		matrix[2][1] = 2 * (y * z + w * x);
+		matrix[2][2] = 1 - 2 * (x * x + y * y);
 		matrix[2][3] = 0;
 		
 		matrix[3][0] = 0;
@@ -147,30 +148,30 @@ public class Quaternion extends Vector3D implements Cloneable, Serializable, Imm
 		return matrix;
 	}
 	
-	public float[] rotatedMatrix( float dx, float dy, float dz, double angle )
+	public float[] rotatedMatrix(float dx, float dy, float dz, double angle)
 	{
 		float x = getX(), y = getY(), z = getZ();
 		float w = (float) Math.cos(angle / 2);
 		
 		float[][] matrix = new float[3][3];
 		
-		matrix[0][0] = 1 - 2 * (y*y + z*z);
-		matrix[0][1] = 	   2 * (x*y - w*z);
-		matrix[0][2] = 	   2 * (w*y + x*z);
+		matrix[0][0] = 1 - 2 * (y * y + z * z);
+		matrix[0][1] = 2 * (x * y - w * z);
+		matrix[0][2] = 2 * (w * y + x * z);
 		
-		matrix[1][0] =     2 * (x*y + w*z);
-		matrix[1][1] = 1 - 2 * (x*x + z*z);
-		matrix[1][2] =     2 * (y*z - w*x);
+		matrix[1][0] = 2 * (x * y + w * z);
+		matrix[1][1] = 1 - 2 * (x * x + z * z);
+		matrix[1][2] = 2 * (y * z - w * x);
 		
-		matrix[2][0] =     2 * (x*z - w*y);
-		matrix[2][1] =     2 * (y*z + w*x);
-		matrix[2][2] = 1 - 2 * (x*x + y*y);
+		matrix[2][0] = 2 * (x * z - w * y);
+		matrix[2][1] = 2 * (y * z + w * x);
+		matrix[2][2] = 1 - 2 * (x * x + y * y);
 		
 		float[] rotated = new float[3];
 		
-		rotated[0] = dx*matrix[0][0] + dy*matrix[0][1] + dz*matrix[0][2];
-		rotated[1] = dx*matrix[1][0] + dy*matrix[1][1] + dz*matrix[1][2];
-		rotated[2] = dx*matrix[2][0] + dy*matrix[2][1] + dz*matrix[2][2];
+		rotated[0] = dx * matrix[0][0] + dy * matrix[0][1] + dz * matrix[0][2];
+		rotated[1] = dx * matrix[1][0] + dy * matrix[1][1] + dz * matrix[1][2];
+		rotated[2] = dx * matrix[2][0] + dy * matrix[2][1] + dz * matrix[2][2];
 		
 		return rotated;
 	}
@@ -182,7 +183,7 @@ public class Quaternion extends Vector3D implements Cloneable, Serializable, Imm
 	}
 	
 	@Override
-	public boolean equals( Object obj )
+	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}

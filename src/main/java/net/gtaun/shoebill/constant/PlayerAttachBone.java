@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum PlayerAttachBone
 {
 	NOT_USABLE			(0),
@@ -44,7 +44,7 @@ public enum PlayerAttachBone
 	JAW					(18);
 	
 	
-	public static PlayerAttachBone get( int data )
+	public static PlayerAttachBone get(int data)
 	{
 		return values() [data];
 	}
@@ -53,7 +53,7 @@ public enum PlayerAttachBone
 	private final int data;
 	
 	
-	private PlayerAttachBone( int data )
+	private PlayerAttachBone(int data)
 	{
 		this.data = data;
 	}

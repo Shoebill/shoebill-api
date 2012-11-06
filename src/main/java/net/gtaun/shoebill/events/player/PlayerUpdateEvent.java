@@ -19,14 +19,14 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerUpdateEvent extends PlayerEvent
 {
-	public PlayerUpdateEvent( Player player )
+	public PlayerUpdateEvent(Player player)
 	{
-		super( player );
+		super(player);
 	}
 }

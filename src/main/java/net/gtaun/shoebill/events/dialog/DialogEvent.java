@@ -21,20 +21,27 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class DialogEvent extends Event
 {
 	private Dialog dialog;
 	private Player player;
 	
-	public Dialog getDialog()			{ return dialog; }
-	public Player getPlayer()			{ return player; }
 	
+	public Dialog getDialog()
+	{
+		return dialog;
+	}
 	
-	protected DialogEvent( Dialog dialog, Player player )
+	public Player getPlayer()
+	{
+		return player;
+	}
+	
+	protected DialogEvent(Dialog dialog, Player player)
 	{
 		this.dialog = dialog;
 		this.player = player;

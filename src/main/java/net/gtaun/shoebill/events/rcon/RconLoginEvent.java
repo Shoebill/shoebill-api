@@ -19,21 +19,32 @@ package net.gtaun.shoebill.events.rcon;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class RconLoginEvent extends Event
 {
 	private String ip, password;
 	private boolean isSuccess;
 	
-	public String getIp()			{ return ip; }
-	public String getPassword()		{ return password; }
-	public boolean isSuccess()		{ return isSuccess; }
 	
+	public String getIp()
+	{
+		return ip;
+	}
 	
-	public RconLoginEvent( String ip, String password, boolean isSuccess )
+	public String getPassword()
+	{
+		return password;
+	}
+	
+	public boolean isSuccess()
+	{
+		return isSuccess;
+	}
+	
+	public RconLoginEvent(String ip, String password, boolean isSuccess)
 	{
 		this.ip = ip;
 		this.password = password;

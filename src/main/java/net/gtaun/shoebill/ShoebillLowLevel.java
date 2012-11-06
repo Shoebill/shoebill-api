@@ -20,10 +20,10 @@ import net.gtaun.shoebill.samp.SampCallbackManager;
 import net.gtaun.util.event.EventManager;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface ShoebillLowLevel
 {
 	EventManager getEventManager();

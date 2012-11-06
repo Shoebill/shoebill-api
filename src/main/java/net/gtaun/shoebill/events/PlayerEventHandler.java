@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.checkpoint.CheckpointEnterEvent;
@@ -61,43 +62,43 @@ public abstract class PlayerEventHandler extends AbstractEventHandler
 {
 	protected PlayerEventHandler()
 	{
-		super( PlayerEventHandler.class );
+		super(PlayerEventHandler.class);
 	}
 	
-	public void onPlayerConnect( PlayerConnectEvent event )								{ }
-	public void onPlayerDisconnect( PlayerDisconnectEvent event )						{ }
-	public void onPlayerRequestSpawn( PlayerRequestSpawnEvent event )					{ }
-	public void onPlayerSpawn( PlayerSpawnEvent event )									{ }
-	public void onPlayerKill( PlayerKillEvent event )									{ }
-	public void onPlayerDeath( PlayerDeathEvent event )									{ }
-	public void onPlayerText( PlayerTextEvent event )									{ }
-	public void onPlayerCommand( PlayerCommandEvent event )								{ }
-	public void onPlayerRequestClass( PlayerRequestClassEvent event )					{ }
-	public void onPlayerUpdate( PlayerUpdateEvent event )								{ }
-	public void onPlayerStateChange( PlayerStateChangeEvent event )						{ }
-	public void onPlayerEnterCheckpoint( CheckpointEnterEvent event )					{ }
-	public void onPlayerLeaveCheckpoint( CheckpointLeaveEvent event )					{ }
-	public void onPlayerEnterRaceCheckpoint( RaceCheckpointEnterEvent event )			{ }
-	public void onPlayerLeaveRaceCheckpoint( RaceCheckpointLeaveEvent event )			{ }
-	public void onPlayerObjectMoved( PlayerObjectMovedEvent event )						{ }
-	public void onPlayerPickup( PlayerPickupEvent event )								{ }
-	public void onPlayerEnterExitModShop( PlayerEnterExitModShopEvent event )			{ }
-	public void onPlayerInteriorChange( PlayerInteriorChangeEvent event )				{ }
-	public void onPlayerKeyStateChange( PlayerKeyStateChangeEvent event )				{ }
-	public void onPlayerStreamIn( PlayerStreamInEvent event )							{ }
-	public void onPlayerStreamOut( PlayerStreamOutEvent event )							{ }
-	public void onPlayerClickPlayer( PlayerClickPlayerEvent event )						{ }
-	public void onPlayerOthersClick( PlayerClickPlayerEvent event )						{ }
-	public void onPlayerEnterVehicle( VehicleEnterEvent event )							{ }
-	public void onPlayerExitVehicle( VehicleExitEvent event )							{ }
-	public void onPlayerVehicleMod( VehicleModEvent event )								{ }
-	public void onPlayerVehiclePaintjob( VehiclePaintjobEvent event )					{ }
-	public void onPlayerVehicleRespray( VehicleResprayEvent event )						{ }
-	public void onPlayerUnoccupiedVehicleUpdate( VehicleUnoccupiedUpdateEvent event )	{ }
-	public void onPlayerVehicleStreamIn( VehicleStreamInEvent event )					{ }
-	public void onPlayerVehicleStreamOut( VehicleStreamOutEvent event )					{ }
-	public void onPlayerDialogResponse( DialogResponseEvent event )						{ }
-	public void onPlayerDialogCancel( DialogCancelEvent event )							{ }
-	public void onPlayerMenuSelected( MenuSelectedEvent event )							{ }
-	public void onPlayerMenuExited( MenuExitedEvent event )								{ }
+	public void onPlayerConnect(PlayerConnectEvent event)								{ }
+	public void onPlayerDisconnect(PlayerDisconnectEvent event)							{ }
+	public void onPlayerRequestSpawn(PlayerRequestSpawnEvent event)						{ }
+	public void onPlayerSpawn(PlayerSpawnEvent event)									{ }
+	public void onPlayerKill(PlayerKillEvent event)										{ }
+	public void onPlayerDeath(PlayerDeathEvent event)									{ }
+	public void onPlayerText(PlayerTextEvent event)										{ }
+	public void onPlayerCommand(PlayerCommandEvent event)								{ }
+	public void onPlayerRequestClass(PlayerRequestClassEvent event)						{ }
+	public void onPlayerUpdate(PlayerUpdateEvent event)									{ }
+	public void onPlayerStateChange(PlayerStateChangeEvent event)						{ }
+	public void onPlayerEnterCheckpoint(CheckpointEnterEvent event)						{ }
+	public void onPlayerLeaveCheckpoint(CheckpointLeaveEvent event)						{ }
+	public void onPlayerEnterRaceCheckpoint(RaceCheckpointEnterEvent event)				{ }
+	public void onPlayerLeaveRaceCheckpoint(RaceCheckpointLeaveEvent event)				{ }
+	public void onPlayerObjectMoved(PlayerObjectMovedEvent event)						{ }
+	public void onPlayerPickup(PlayerPickupEvent event)									{ }
+	public void onPlayerEnterExitModShop(PlayerEnterExitModShopEvent event)				{ }
+	public void onPlayerInteriorChange(PlayerInteriorChangeEvent event)					{ }
+	public void onPlayerKeyStateChange(PlayerKeyStateChangeEvent event)					{ }
+	public void onPlayerStreamIn(PlayerStreamInEvent event)								{ }
+	public void onPlayerStreamOut(PlayerStreamOutEvent event)							{ }
+	public void onPlayerClickPlayer(PlayerClickPlayerEvent event)						{ }
+	public void onPlayerOthersClick(PlayerClickPlayerEvent event)						{ }
+	public void onPlayerEnterVehicle(VehicleEnterEvent event)							{ }
+	public void onPlayerExitVehicle(VehicleExitEvent event)								{ }
+	public void onPlayerVehicleMod(VehicleModEvent event)								{ }
+	public void onPlayerVehiclePaintjob(VehiclePaintjobEvent event)						{ }
+	public void onPlayerVehicleRespray(VehicleResprayEvent event)						{ }
+	public void onPlayerUnoccupiedVehicleUpdate(VehicleUnoccupiedUpdateEvent event)		{ }
+	public void onPlayerVehicleStreamIn(VehicleStreamInEvent event)						{ }
+	public void onPlayerVehicleStreamOut(VehicleStreamOutEvent event)					{ }
+	public void onPlayerDialogResponse(DialogResponseEvent event)						{ }
+	public void onPlayerDialogCancel(DialogCancelEvent event)							{ }
+	public void onPlayerMenuSelected(MenuSelectedEvent event)							{ }
+	public void onPlayerMenuExited(MenuExitedEvent event)								{ }
 }

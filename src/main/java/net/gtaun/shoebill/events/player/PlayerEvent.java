@@ -20,18 +20,21 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class PlayerEvent extends Event
 {
 	private Player player;
 	
-	public Player getPlayer()		{ return player; }
 	
+	public Player getPlayer()
+	{
+		return player;
+	}
 	
-	protected PlayerEvent( Player player )
+	protected PlayerEvent(Player player)
 	{
 		this.player = player;
 	}

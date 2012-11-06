@@ -23,18 +23,18 @@ import net.gtaun.shoebill.resource.Gamemode;
 import net.gtaun.shoebill.resource.GamemodeDescription;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface GamemodeManager
 {
-	void changeMode( String filename );
-	void changeMode( File file );
-	void changeMode( GamemodeDescription desc );
+	void changeMode(String filename);
+	void changeMode(File file);
+	void changeMode(GamemodeDescription desc);
 	
 	Gamemode getGamemode();
-	<T extends Gamemode> T getGamemode( Class<T> cls );
-
+	<T extends Gamemode> T getGamemode(Class<T> cls);
+	
 	Collection<GamemodeDescription> getGamemodeDescriptions();
 }

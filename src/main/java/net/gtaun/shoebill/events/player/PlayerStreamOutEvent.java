@@ -19,20 +19,23 @@ package net.gtaun.shoebill.events.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerStreamOutEvent extends PlayerEvent
 {
 	private Player forPlayer;
 	
-	public Player getForPlayer()		{ return forPlayer; }
 	
-	
-	public PlayerStreamOutEvent( Player player, Player forPlayer )
+	public Player getForPlayer()
 	{
-		super( player );
+		return forPlayer;
+	}
+	
+	public PlayerStreamOutEvent(Player player, Player forPlayer)
+	{
+		super(player);
 		this.forPlayer = forPlayer;
 	}
 }

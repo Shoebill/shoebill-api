@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.plugin.PluginLoadEvent;
@@ -28,10 +29,10 @@ public abstract class PluginEventHandler extends AbstractEventHandler
 {
 	protected PluginEventHandler()
 	{
-		super( PluginEventHandler.class );
+		super(PluginEventHandler.class);
 	}
 
 
-	public void onPluginLoad( PluginLoadEvent event )			{ }
-	public void onPluginUnload( PluginUnloadEvent event )		{ }
+	public void onPluginLoad(PluginLoadEvent event)			{ }
+	public void onPluginUnload(PluginUnloadEvent event)		{ }
 }

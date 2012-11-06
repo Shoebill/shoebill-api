@@ -29,10 +29,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class SpawnInfo implements Cloneable, Serializable, Immutable
 {
 	private static final long serialVersionUID = -1494282877268559489L;
@@ -42,15 +42,16 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 	{
 		private static final long serialVersionUID = SpawnInfo.serialVersionUID;
 		
-		private ImmutablySpawnInfo( SpawnInfo spawnInfo )
+		
+		private ImmutablySpawnInfo(SpawnInfo spawnInfo)
 		{
-			super( spawnInfo.getLocation().immure(), spawnInfo.getSkinId(), spawnInfo.getTeamId(), spawnInfo.getWeapon1().immure(), spawnInfo.getWeapon2().immure(), spawnInfo.getWeapon3().immure() );
+			super(spawnInfo.getLocation().immure(), spawnInfo.getSkinId(), spawnInfo.getTeamId(), spawnInfo.getWeapon1().immure(), spawnInfo.getWeapon2().immure(), spawnInfo.getWeapon3().immure());
 		}
 		
 		@Override
 		public SpawnInfo clone()
 		{
-			return new SpawnInfo( this );
+			return new SpawnInfo(this);
 		}
 	}
 	
@@ -60,7 +61,7 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 	private WeaponData weapon1, weapon2, weapon3;
 	
 	
-	public SpawnInfo( float x, float y, float z, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3 )
+	public SpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
 	{
 		location = new LocationAngle(x, y, z, interiorId, worldId, angle);
 		this.skinId = skin;
@@ -69,8 +70,8 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 		this.weapon2 = new WeaponData(weapon2, ammo2);
 		this.weapon3 = new WeaponData(weapon3, ammo3);
 	}
-
-	public SpawnInfo( Vector3D vec, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3 )
+	
+	public SpawnInfo(Vector3D vec, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
 	{
 		location = new LocationAngle(vec, interiorId, worldId, angle);
 		this.skinId = skin;
@@ -79,8 +80,8 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 		this.weapon2 = new WeaponData(weapon2, ammo2);
 		this.weapon3 = new WeaponData(weapon3, ammo3);
 	}
-
-	public SpawnInfo( Location loc, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3 )
+	
+	public SpawnInfo(Location loc, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
 	{
 		location = new LocationAngle(loc, angle);
 		this.skinId = skin;
@@ -89,8 +90,8 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 		this.weapon2 = new WeaponData(weapon2, ammo2);
 		this.weapon3 = new WeaponData(weapon3, ammo3);
 	}
-
-	public SpawnInfo( LocationAngle loc, int skin, int team, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3 )
+	
+	public SpawnInfo(LocationAngle loc, int skin, int team, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3)
 	{
 		this.location = new LocationAngle(loc);
 		this.skinId = skin;
@@ -99,8 +100,8 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 		this.weapon2 = new WeaponData(weapon2);
 		this.weapon3 = new WeaponData(weapon3);
 	}
-
-	public SpawnInfo( SpawnInfo info )
+	
+	public SpawnInfo(SpawnInfo info)
 	{
 		this.location = new LocationAngle(info.getLocation());
 		this.skinId = info.getSkinId();
@@ -114,77 +115,77 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 	{
 		return location.clone();
 	}
-
-	public void setLocation( LocationAngle loc )
+	
+	public void setLocation(LocationAngle loc)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		
-		this.location.set( loc );
+		this.location.set(loc);
 	}
-
+	
 	public int getSkinId()
 	{
 		return skinId;
 	}
-
-	public void setSkinId( int skinId )
+	
+	public void setSkinId(int skinId)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		this.skinId = skinId;
 	}
-
+	
 	public int getTeamId()
 	{
 		return teamId;
 	}
-
-	public void setTeamId( int teamId )
+	
+	public void setTeamId(int teamId)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		this.teamId = teamId;
 	}
-
+	
 	public WeaponData getWeapon1()
 	{
 		return weapon1;
 	}
-
-	public void setWeapon1( WeaponData weapon1 )
+	
+	public void setWeapon1(WeaponData weapon1)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		this.weapon1 = weapon1;
 	}
-
+	
 	public WeaponData getWeapon2()
 	{
 		return weapon2;
 	}
-
-	public void setWeapon2( WeaponData weapon2 )
+	
+	public void setWeapon2(WeaponData weapon2)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		this.weapon2 = weapon2;
 	}
-
+	
 	public WeaponData getWeapon3()
 	{
 		return weapon3;
 	}
-
-	public void setWeapon3( WeaponData weapon3 )
+	
+	public void setWeapon3(WeaponData weapon3)
 	{
-		if( this instanceof Immutably ) throw new ImmutablyException();
+		if (this instanceof Immutably) throw new ImmutablyException();
 		this.weapon3 = weapon3;
 	}
-
+	
 	@Override
 	public int hashCode()
 	{
 		return HashCodeBuilder.reflectionHashCode(492876847, 715225739, this, false);
 	}
-
+	
 	@Override
-	public boolean equals( Object obj )
+	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}
@@ -196,7 +197,7 @@ public class SpawnInfo implements Cloneable, Serializable, Immutable
 		{
 			return (SpawnInfo) super.clone();
 		}
-		catch( CloneNotSupportedException e )
+		catch (CloneNotSupportedException e)
 		{
 			throw new InternalError();
 		}

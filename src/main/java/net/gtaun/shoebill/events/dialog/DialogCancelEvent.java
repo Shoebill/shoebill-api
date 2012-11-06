@@ -20,14 +20,14 @@ import net.gtaun.shoebill.object.Dialog;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class DialogCancelEvent extends DialogEvent
 {
-	public DialogCancelEvent( Dialog dialog, Player player )
+	public DialogCancelEvent(Dialog dialog, Player player)
 	{
-		super( dialog, player );
+		super(dialog, player);
 	}
 }

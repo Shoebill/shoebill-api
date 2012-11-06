@@ -20,20 +20,23 @@ import net.gtaun.shoebill.object.Pickup;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerPickupEvent extends PlayerEvent
 {
 	private Pickup pickup;
-
-	public Pickup getPickup()			{ return pickup; }
 	
 	
-	public PlayerPickupEvent( Player player, Pickup pickup )
+	public Pickup getPickup()
 	{
-		super( player );
+		return pickup;
+	}
+	
+	public PlayerPickupEvent(Player player, Pickup pickup)
+	{
+		super(player);
 		this.pickup = pickup;
 	}
 }

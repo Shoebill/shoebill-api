@@ -24,116 +24,116 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author MK124
  * 
+ * 
+ * @author MK124
  */
-
 public class ImmutablyKeyMap<K extends Immutable, V> implements Map<K, V>, Serializable
 {
 	private static final long serialVersionUID = -8268080368867522132L;
 	
 	
 	private final Map<K, V> map;
-
-
-	public ImmutablyKeyMap( Map<K, V> m )
+	
+	
+	public ImmutablyKeyMap(Map<K, V> m)
 	{
-		if( m == null ) throw new NullPointerException();
+		if (m == null) throw new NullPointerException();
 		this.map = m;
 	}
-
+	
 	@Override
 	public int size()
 	{
 		return map.size();
 	}
-
+	
 	@Override
 	public boolean isEmpty()
 	{
 		return map.isEmpty();
 	}
-
+	
 	@Override
-	public boolean containsKey( Object key )
+	public boolean containsKey(Object key)
 	{
-		return map.containsKey( key );
+		return map.containsKey(key);
 	}
-
+	
 	@Override
-	public boolean containsValue( Object value )
+	public boolean containsValue(Object value)
 	{
-		return map.containsValue( value );
+		return map.containsValue(value);
 	}
-
+	
 	@Override
-	public V get( Object key )
+	public V get(Object key)
 	{
-		return map.get( key );
+		return map.get(key);
 	}
-
+	
 	@SuppressWarnings("unchecked")
 	@Override
-	public V put( K key, V value )
+	public V put(K key, V value)
 	{
-		return map.put( (K) key.immure(), value );
+		return map.put((K) key.immure(), value);
 	}
-
+	
 	@Override
-	public V remove( Object key )
+	public V remove(Object key)
 	{
-		return map.remove( key );
+		return map.remove(key);
 	}
-
+	
 	@Override
-	public void putAll( Map<? extends K, ? extends V> m )
+	public void putAll(Map<? extends K, ? extends V> m)
 	{
-		map.putAll( m );
+		map.putAll(m);
 	}
-
+	
 	@Override
 	public void clear()
 	{
 		map.clear();
 	}
-
+	
 	@Override
 	public Set<K> keySet()
 	{
 		return map.keySet();
 	}
-
+	
 	@Override
 	public Set<Map.Entry<K, V>> entrySet()
 	{
 		return map.entrySet();
 	}
-
+	
 	@Override
 	public Collection<V> values()
 	{
 		return map.values();
 	}
-
+	
 	@Override
-	public boolean equals( Object o )
+	public boolean equals(Object o)
 	{
-		return map.equals( o );
+		return map.equals(o);
 	}
-
+	
 	@Override
 	public int hashCode()
 	{
 		return map.hashCode();
 	}
-
+	
 	@Override
 	public String toString()
 	{
 		return map.toString();
 	}
-
-	private void writeObject( ObjectOutputStream s ) throws IOException
+	
+	private void writeObject(ObjectOutputStream s) throws IOException
 	{
 		s.defaultWriteObject();
 	}

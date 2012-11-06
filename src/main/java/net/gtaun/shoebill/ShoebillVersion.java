@@ -17,10 +17,10 @@
 package net.gtaun.shoebill;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface ShoebillVersion
 {
 	String getName();

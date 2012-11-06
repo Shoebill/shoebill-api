@@ -23,18 +23,18 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PluginDescription extends ResourceDescription
 {
-	public PluginDescription( File file, ClassLoader classLoader ) throws ClassNotFoundException, IOException
+	public PluginDescription(File file, ClassLoader classLoader) throws ClassNotFoundException, IOException
 	{
-		super( file, classLoader );
-		super.loadConfig( "plugin.yml" );
+		super(file, classLoader);
+		super.loadConfig("plugin.yml");
 	}
-
+	
 	@Override
 	public String toString()
 	{
@@ -44,6 +44,6 @@ public class PluginDescription extends ResourceDescription
 	@Override
 	public Class<? extends Plugin> getClazz()
 	{
-		return super.getClazz().asSubclass( Plugin.class );
+		return super.getClazz().asSubclass(Plugin.class);
 	}
 }

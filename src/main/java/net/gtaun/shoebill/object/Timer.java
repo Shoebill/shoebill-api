@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 /**
@@ -30,10 +31,10 @@ public interface Timer extends Proxyable
 
 	boolean isRunning();
 	
-	void setInterval( int interval );
-	void setCount( int count );
+	void setInterval(int interval);
+	void setCount(int count);
 	void start();
 	void stop();
 	
-	void tick( int realint );
+	void tick(int realint);
 }

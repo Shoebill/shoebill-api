@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum DialogStyle
 {
 	MSGBOX		(0),
@@ -28,7 +28,7 @@ public enum DialogStyle
 	LIST		(2);
 	
 	
-	public static DialogStyle get( int data )
+	public static DialogStyle get(int data)
 	{
 		return values() [data];
 	}
@@ -37,7 +37,7 @@ public enum DialogStyle
 	private final int data;
 	
 	
-	private DialogStyle( int data )
+	private DialogStyle(int data)
 	{
 		this.data = data;
 	}

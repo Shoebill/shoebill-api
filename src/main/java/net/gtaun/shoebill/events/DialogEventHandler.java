@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.dialog.DialogCancelEvent;
@@ -28,9 +29,9 @@ public abstract class DialogEventHandler extends AbstractEventHandler
 {
 	protected DialogEventHandler()
 	{
-		super( DialogEventHandler.class );
+		super(DialogEventHandler.class);
 	}
 
-	public void onDialogCancel( DialogCancelEvent event )			{ }
-	public void onDialogResponse( DialogResponseEvent event )		{ }
+	public void onDialogCancel(DialogCancelEvent event)			{ }
+	public void onDialogResponse(DialogResponseEvent event)		{ }
 }

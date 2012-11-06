@@ -19,25 +19,32 @@ package net.gtaun.shoebill.events.rcon;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class RconCommandEvent extends Event
 {
 	private int result = 0;
 	private String command;
 	
-	public int getResult()			{ return result; }
-	public String getCommand()		{ return command; }
 	
+	public int getResult()
+	{
+		return result;
+	}
 	
-	public RconCommandEvent( String command )
+	public String getCommand()
+	{
+		return command;
+	}
+	
+	public RconCommandEvent(String command)
 	{
 		this.command = command;
 	}
 	
-	public void setResult( int result )
+	public void setResult(int result)
 	{
 		this.result |= result;
 	}

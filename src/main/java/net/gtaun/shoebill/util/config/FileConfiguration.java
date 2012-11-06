@@ -21,17 +21,17 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public interface FileConfiguration extends Configuration
 {
-	public void setFile( File file );
+	public void setFile(File file);
 	public File getFile();
 	
-	public abstract void read( InputStream stream );
-	public abstract void write( OutputStream stream );
+	public abstract void read(InputStream stream);
+	public abstract void write(OutputStream stream);
 	
 	public abstract void save();
 	public abstract void load();

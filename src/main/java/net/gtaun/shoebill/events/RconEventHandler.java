@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.rcon.RconCommandEvent;
@@ -28,9 +29,9 @@ public abstract class RconEventHandler extends AbstractEventHandler
 {
 	protected RconEventHandler()
 	{
-		super( RconEventHandler.class );
+		super(RconEventHandler.class);
 	}
 	
-	public void onRconCommand( RconCommandEvent event )		{ }
-	public void onRconLogin( RconLoginEvent event )			{ }
+	public void onRconCommand(RconCommandEvent event)		{ }
+	public void onRconLogin(RconLoginEvent event)			{ }
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 /**
@@ -27,10 +28,10 @@ public interface VehicleDamage extends VehicleRelated
 	int getLights();
 	int getTires();
 	
-	void setPanels( int panels );
-	void setDoors( int doors );
-	void setLights( int lights );
-	void setTires( int tires );
+	void setPanels(int panels);
+	void setDoors(int doors);
+	void setLights(int lights);
+	void setTires(int tires);
 	
-	void set( int panels, int doors, int lights, int tires );
+	void set(int panels, int doors, int lights, int tires);
 }

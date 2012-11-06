@@ -19,14 +19,14 @@ package net.gtaun.shoebill.events.object;
 import net.gtaun.shoebill.object.SampObject;
 
 /**
- * @author JoJLlmAn
- *
+ * 
+ * 
+ * @author MK124
  */
-
 public class ObjectMovedEvent extends ObjectEvent
 {
-	public ObjectMovedEvent( SampObject object )
+	public ObjectMovedEvent(SampObject object)
 	{
-		super( object );
+		super(object);
 	}
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Area;
@@ -25,20 +26,20 @@ import net.gtaun.shoebill.data.Color;
  */
 public interface Zone extends Destroyable, Proxyable
 {
-	public static final int INVALID_ID =		-1;
+	public static final int INVALID_ID = -1;
 	
 	
 	int getId();
 	Area getArea();
 	
-	void show( Player player, Color color );
-	void hide( Player player );
-	void flash( Player player, Color color );
-	void stopFlash( Player player );
+	void show(Player player, Color color);
+	void hide(Player player);
+	void flash(Player player, Color color);
+	void stopFlash(Player player);
 	
-	void showForAll( Color color );
+	void showForAll(Color color);
 	void hideForAll();
 	
-	void flashForAll( Color color );
+	void flashForAll(Color color);
 	void stopFlashForAll();
 }

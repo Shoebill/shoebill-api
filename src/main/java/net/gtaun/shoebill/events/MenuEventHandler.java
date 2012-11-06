@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.menu.MenuExitedEvent;
@@ -28,9 +29,9 @@ public abstract class MenuEventHandler extends AbstractEventHandler
 {
 	protected MenuEventHandler()
 	{
-		super( MenuEventHandler.class );
+		super(MenuEventHandler.class);
 	}
 	
-	public void onMenuExited( MenuExitedEvent event )				{ }
-	public void onMenuSelected( MenuSelectedEvent event )			{ }
+	public void onMenuExited(MenuExitedEvent event)				{ }
+	public void onMenuSelected(MenuSelectedEvent event)			{ }
 }

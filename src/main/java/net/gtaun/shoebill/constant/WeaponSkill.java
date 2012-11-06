@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum WeaponSkill
 {
 	PISTOL				(0),
@@ -36,7 +36,7 @@ public enum WeaponSkill
 	SNIPERRIFLE			(10);
 	
 	
-	public static WeaponSkill get( int id )
+	public static WeaponSkill get(int id)
 	{
 		return values() [id];
 	}
@@ -45,7 +45,7 @@ public enum WeaponSkill
 	private final int data;
 	
 	
-	private WeaponSkill( int data )
+	private WeaponSkill(int data)
 	{
 		this.data = data;
 	}

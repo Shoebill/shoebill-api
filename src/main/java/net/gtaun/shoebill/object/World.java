@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.PlayerMarkerMode;
@@ -26,36 +27,36 @@ import net.gtaun.shoebill.data.SpawnInfo;
  */
 public interface World extends Proxyable
 {
-	void setTeamCount( int count );
+	void setTeamCount(int count);
 	
-	int addPlayerClass( int modelId, float x, float y, float z, float angle, int weapon1, int ammo1, int weapon2, int ammo2, int weapon3, int ammo3 );
-	int addPlayerClass( int modelId, SpawnInfo spawnInfo );
-	int addPlayerClassEx( int teamId, int modelId, SpawnInfo spawnInfo );
+	int addPlayerClass(int modelId, float x, float y, float z, float angle, int weapon1, int ammo1, int weapon2, int ammo2, int weapon3, int ammo3);
+	int addPlayerClass(int modelId, SpawnInfo spawnInfo);
+	int addPlayerClassEx(int teamId, int modelId, SpawnInfo spawnInfo);
 	
 	float getChatRadius();
-	void setChatRadius( float radius );
+	void setChatRadius(float radius);
 	
 	float getPlayerMarkerRadius();
-	void setPlayerMarkerRadius( float radius );
+	void setPlayerMarkerRadius(float radius);
 
 	int getWeatherId();
-	void setWeatherId( int weatherId );
+	void setWeatherId(int weatherId);
 
 	float getGravity();
-	void setGravity( float gravity );
+	void setGravity(float gravity);
 
-	void setWorldTime( int hour );
+	void setWorldTime(int hour);
 	
 	float getNameTagDrawDistance();
-	void setNameTagDrawDistance( float distance );
+	void setNameTagDrawDistance(float distance);
 	
-	void showNameTags( boolean enabled );
-	void showPlayerMarkers( PlayerMarkerMode mode );
-	void enableTirePopping( boolean enabled );
-	void allowInteriorWeapons( boolean allow );
+	void showNameTags(boolean enabled);
+	void showPlayerMarkers(PlayerMarkerMode mode);
+	void enableTirePopping(boolean enabled);
+	void allowInteriorWeapons(boolean allow);
 	
-	void createExplosion( Location location, int type, float radius );
-	void enableZoneNames( boolean enabled );
+	void createExplosion(Location location, int type, float radius);
+	void enableZoneNames(boolean enabled);
 	void usePlayerPedAnims();
 
 	void disableInteriorEnterExits();

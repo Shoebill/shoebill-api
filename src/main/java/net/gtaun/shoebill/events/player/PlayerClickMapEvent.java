@@ -20,20 +20,23 @@ import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.object.Player;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class PlayerClickMapEvent extends PlayerEvent
 {
 	private Vector3D position;
 	
-	public Vector3D getPosition()	{ return position.clone(); }
 	
-	
-	public PlayerClickMapEvent( Player player, float x, float y, float z )
+	public Vector3D getPosition()
 	{
-		super( player );
-		position = new Vector3D( x, y, z );
+		return position.clone();
+	}
+	
+	public PlayerClickMapEvent(Player player, float x, float y, float z)
+	{
+		super(player);
+		position = new Vector3D(x, y, z);
 	}
 }

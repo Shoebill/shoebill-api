@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.gtaun.shoebill.object;
 
 /**
@@ -22,9 +23,9 @@ package net.gtaun.shoebill.object;
  */
 public interface VehicleParam extends VehicleRelated
 {
-	public static final int PARAM_UNSET =			-1;
-	public static final int PARAM_OFF =				0;
-	public static final int PARAM_ON =				1;
+	public static final int PARAM_UNSET =	-1;
+	public static final int PARAM_OFF =		0;
+	public static final int PARAM_ON =		1;
 	
 	
 	int getEngine();
@@ -35,13 +36,13 @@ public interface VehicleParam extends VehicleRelated
 	int getBoot();
 	int getObjective();
 	
-	void setEngine( int engine );
-	void setLights( int lights );
-	void setAlarm( int alarm );
-	void setDoors( int doors );
-	void setBonnet( int bonnet );
-	void setBoot( int boot );
-	void setObjective( int objective );
+	void setEngine(int engine);
+	void setLights(int lights);
+	void setAlarm(int alarm);
+	void setDoors(int doors);
+	void setBonnet(int bonnet);
+	void setBoot(int boot);
+	void setObjective(int objective);
 	
-	void set( int engine, int lights, int alarm, int doors, int bonnet, int boot, int objective );
+	void set(int engine, int lights, int alarm, int doors, int bonnet, int boot, int objective);
 }

@@ -35,10 +35,10 @@ import org.yaml.snakeyaml.constructor.SafeConstructor;
 import org.yaml.snakeyaml.representer.Representer;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public class YamlConfiguration extends MemoryConfiguration implements FileConfiguration
 {
 	private Yaml yaml;
@@ -51,15 +51,15 @@ public class YamlConfiguration extends MemoryConfiguration implements FileConfig
 		initialize();
 	}
 	
-	public YamlConfiguration( MemoryConfiguration config )
+	public YamlConfiguration(MemoryConfiguration config)
 	{
-		super( config.getRoot() );
+		super(config.getRoot());
 		initialize();
 	}
 	
-	public YamlConfiguration( File file )
+	public YamlConfiguration(File file)
 	{
-		setFile( file );
+		setFile(file);
 		initialize();
 	}
 	
@@ -69,9 +69,9 @@ public class YamlConfiguration extends MemoryConfiguration implements FileConfig
 		options.setIndent(4);
 		options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
 		
-		yaml = new Yaml( new SafeConstructor(), new Representer(), options );
+		yaml = new Yaml(new SafeConstructor(), new Representer(), options);
 	}
-
+	
 	@Override
 	public String toString()
 	{
@@ -79,42 +79,42 @@ public class YamlConfiguration extends MemoryConfiguration implements FileConfig
 	}
 	
 	@Override
-	public void setFile( File file )
+	public void setFile(File file)
 	{
 		this.file = file;
 	}
-
+	
 	@Override
 	public File getFile()
 	{
 		return file;
 	}
-
+	
 	@SuppressWarnings("unchecked")
 	@Override
-	public void read( InputStream in )
+	public void read(InputStream in)
 	{
 		Object obj = yaml.load(in);
-		if( obj instanceof Map )	setRoot( (Map<String, Object>) obj );
-		else						setRoot( new HashMap<String, Object>() );
+		if (obj instanceof Map) setRoot((Map<String, Object>) obj);
+		else setRoot(new HashMap<String, Object>());
 	}
 	
 	@Override
-	public void write( OutputStream out )
+	public void write(OutputStream out)
 	{
 		Writer writer = new OutputStreamWriter(out);
-		yaml.dump( getRoot(), writer );
+		yaml.dump(getRoot(), writer);
 	}
-
+	
 	@Override
 	public void save()
 	{
 		try
 		{
 			OutputStream out = new FileOutputStream(file);
-			write( out );
+			write(out);
 		}
-		catch( FileNotFoundException e )
+		catch (FileNotFoundException e)
 		{
 			e.printStackTrace();
 		}
@@ -127,9 +127,9 @@ public class YamlConfiguration extends MemoryConfiguration implements FileConfig
 		try
 		{
 			in = new FileInputStream(file);
-			read( in );
+			read(in);
 		}
-		catch( FileNotFoundException e )
+		catch (FileNotFoundException e)
 		{
 			e.printStackTrace();
 		}

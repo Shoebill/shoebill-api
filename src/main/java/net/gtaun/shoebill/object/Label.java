@@ -27,7 +27,7 @@ import net.gtaun.shoebill.data.Vector3D;
  */
 public interface Label extends Destroyable, Proxyable
 {
-	public static final int INVALID_ID =				0xFFFF;
+	public static final int INVALID_ID = 0xFFFF;
 	
 	
 	int getId();
@@ -39,9 +39,9 @@ public interface Label extends Destroyable, Proxyable
 	Player getAttachedPlayer();
 	Vehicle getAttachedVehicle();
 
-	void attach( Player player, float x, float y, float z );
-	void attach( Player player, Vector3D offset );
-	void attach( Vehicle vehicle, float x, float y, float z );
-	void attach( Vehicle vehicle, Vector3D offset );
-	void update( Color color, String text );
+	void attach(Player player, float x, float y, float z);
+	void attach(Player player, Vector3D offset);
+	void attach(Vehicle vehicle, float x, float y, float z);
+	void attach(Vehicle vehicle, Vector3D offset);
+	void update(Color color, String text);
 }

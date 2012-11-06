@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum PlayerMarkerMode
 {
 	OFF				(0),
@@ -28,7 +28,7 @@ public enum PlayerMarkerMode
 	STREAMED		(2);
 	
 	
-	public static PlayerMarkerMode get( int data )
+	public static PlayerMarkerMode get(int data)
 	{
 		return values() [data];
 	}
@@ -37,7 +37,7 @@ public enum PlayerMarkerMode
 	private final int data;
 	
 	
-	private PlayerMarkerMode( int data )
+	private PlayerMarkerMode(int data)
 	{
 		this.data = data;
 	}

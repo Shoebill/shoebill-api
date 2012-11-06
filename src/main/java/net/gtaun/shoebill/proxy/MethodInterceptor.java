@@ -27,22 +27,23 @@ public abstract interface MethodInterceptor
 {
 	public static enum Priority
 	{
-		BOTTOM		( (short) -32768 ),
-		LOWEST		( (short) -16384 ),
-		LOW			( (short) -8192 ),
-		NORMAL		( (short) 0 ),
-		HIGH		( (short) 8192 ),
-		HIGHEST		( (short) 16384 ),
-		MONITOR		( (short) 32767 );
-	
-		private final short value;
-	
+		BOTTOM		((short) -32768),
+		LOWEST		((short) -16384),
+		LOW			((short) -8192),
+		NORMAL		((short) 0),
+		HIGH		((short) 8192),
+		HIGHEST		((short) 16384),
+		MONITOR		((short) 32767);
 		
-		private Priority( short value )
+		
+		private final short value;
+		
+		
+		private Priority(short value)
 		{
 			this.value = value;
 		}
-	
+		
 		public short getValue()
 		{
 			return value;
@@ -50,7 +51,7 @@ public abstract interface MethodInterceptor
 	}
 	
 	public static interface Helper
-	{	
+	{
 		@Deprecated
 		Object invokeOriginal(Object obj, Object[] args) throws Throwable;
 		Object invokeLower(Object obj, Object[] args) throws Throwable;

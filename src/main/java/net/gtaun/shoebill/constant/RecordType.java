@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.constant;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public enum RecordType
 {
 	NONE		(0),
@@ -28,7 +28,7 @@ public enum RecordType
 	ONFOOT		(2);
 	
 	
-	public static RecordType get( int data )
+	public static RecordType get(int data)
 	{
 		return values() [data];
 	}
@@ -37,7 +37,7 @@ public enum RecordType
 	private final int data;
 	
 	
-	private RecordType( int data )
+	private RecordType(int data)
 	{
 		this.data = data;
 	}

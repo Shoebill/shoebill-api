@@ -17,10 +17,10 @@
 package net.gtaun.shoebill.resource;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class Plugin extends Resource
 {
 	protected Plugin()

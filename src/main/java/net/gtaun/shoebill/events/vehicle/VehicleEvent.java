@@ -20,18 +20,21 @@ import net.gtaun.shoebill.object.Vehicle;
 import net.gtaun.util.event.Event;
 
 /**
+ * 
+ * 
  * @author MK124
- *
  */
-
 public abstract class VehicleEvent extends Event
 {
 	private Vehicle vehicle;
 	
-	public Vehicle getVehicle()		{ return vehicle; }
 	
+	public Vehicle getVehicle()
+	{
+		return vehicle;
+	}
 	
-	protected VehicleEvent( Vehicle vehicle )
+	protected VehicleEvent(Vehicle vehicle)
 	{
 		this.vehicle = vehicle;
 	}
