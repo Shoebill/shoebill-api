@@ -16,10 +16,18 @@
 
 package net.gtaun.shoebill.proxy;
 
+import java.lang.reflect.Method;
+
+import net.gtaun.shoebill.proxy.MethodInterceptor.Interceptor;
+import net.gtaun.shoebill.proxy.MethodInterceptor.Priority;
+
 /**
+ * 
+ * 
  * @author MK124
  */
 public interface ProxyManager
 {
-
+	MethodInterceptor createMethodInterceptor(Method method, Interceptor interceptor, Priority priority);
+	MethodInterceptor createMethodInterceptor(Method method, Interceptor interceptor, short priority);
 }
