@@ -33,10 +33,4 @@ public abstract class Gamemode extends Resource
 	{
 		return (GamemodeDescription) super.getDescription();
 	}
-	
-	// public void setGamemodeText(String string)
-	// {
-	// if(string == null) throw new NullPointerException();
-	// SampNativeFunction.setGameModeText(string);
-	// }
 }

@@ -28,6 +28,8 @@ public interface Server extends Proxyable
 	
 	int getMaxPlayers();
 	
+	void setGamemodeText(String text);
+	
 	void sendRconCommand(String command);
 	void connectNPC(String name, String script);
 	
