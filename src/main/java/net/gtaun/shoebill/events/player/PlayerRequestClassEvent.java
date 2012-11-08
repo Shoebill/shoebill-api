@@ -35,9 +35,9 @@ public class PlayerRequestClassEvent extends PlayerEvent
 		this.classId = classId;
 	}
 	
-	public void setResponse(int result)
+	public void setResponse(int response)
 	{
-		this.response |= result;
+		this.response |= response;
 	}
 	
 	public int getResponse()

@@ -35,9 +35,9 @@ public class PlayerTextEvent extends PlayerEvent
 		this.text = text;
 	}
 	
-	public void setResponse(int result)
+	public void setResponse(int response)
 	{
-		this.response &= result;
+		this.response &= response;
 	}
 	
 	public int getResponse()

@@ -25,7 +25,7 @@ import net.gtaun.shoebill.object.Player;
  */
 public class PlayerRequestSpawnEvent extends PlayerEvent
 {
-	private int result = 1;
+	private int response = 1;
 	
 	
 	public PlayerRequestSpawnEvent(Player player)
@@ -33,13 +33,13 @@ public class PlayerRequestSpawnEvent extends PlayerEvent
 		super(player);
 	}
 	
-	public void setResult(int result)
+	public void setResponse(int response)
 	{
-		this.result &= result;
+		this.response &= response;
 	}
 	
-	public int getResult()
+	public int getResponse()
 	{
-		return result;
+		return response;
 	}
 }
