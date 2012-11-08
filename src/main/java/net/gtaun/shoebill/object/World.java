@@ -61,4 +61,10 @@ public interface World extends Proxyable
 
 	void disableInteriorEnterExits();
 	void disableNameTagLOS();
+	
+	// Global player methods
+	void enableStuntBonusForAll(boolean enabled);
+
+	// Global vehicle methods
+	void manualEngineAndLights();
 }
