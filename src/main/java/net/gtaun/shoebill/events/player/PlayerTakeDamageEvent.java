@@ -30,6 +30,14 @@ public class PlayerTakeDamageEvent extends PlayerEvent
 	private int weaponId;
 	
 	
+	public PlayerTakeDamageEvent(Player player, Player issuer, float amount, int weaponId)
+	{
+		super(player);
+		this.issuer = issuer;
+		this.amount = amount;
+		this.weaponId = weaponId;
+	}
+	
 	public Player getIssuer()
 	{
 		return issuer;
@@ -43,13 +51,5 @@ public class PlayerTakeDamageEvent extends PlayerEvent
 	public int getWeaponId()
 	{
 		return weaponId;
-	}
-	
-	public PlayerTakeDamageEvent(Player player, Player issuer, float amount, int weaponId)
-	{
-		super(player);
-		this.issuer = issuer;
-		this.amount = amount;
-		this.weaponId = weaponId;
 	}
 }

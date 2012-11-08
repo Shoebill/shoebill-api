@@ -31,6 +31,12 @@ public abstract class MenuEvent extends Event
 	private Player player;
 	
 	
+	protected MenuEvent(Menu menu, Player player)
+	{
+		this.menu = menu;
+		this.player = player;
+	}
+	
 	public Menu getMenu()
 	{
 		return menu;
@@ -39,11 +45,5 @@ public abstract class MenuEvent extends Event
 	public Player getPlayer()
 	{
 		return player;
-	}
-	
-	protected MenuEvent(Menu menu, Player player)
-	{
-		this.menu = menu;
-		this.player = player;
 	}
 }

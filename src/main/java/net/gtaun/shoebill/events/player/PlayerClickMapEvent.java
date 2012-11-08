@@ -29,14 +29,14 @@ public class PlayerClickMapEvent extends PlayerEvent
 	private Vector3D position;
 	
 	
-	public Vector3D getPosition()
-	{
-		return position.clone();
-	}
-	
 	public PlayerClickMapEvent(Player player, float x, float y, float z)
 	{
 		super(player);
 		position = new Vector3D(x, y, z);
+	}
+	
+	public Vector3D getPosition()
+	{
+		return position.clone();
 	}
 }

@@ -30,6 +30,13 @@ public class VehicleEnterEvent extends VehicleEvent
 	private boolean isPassenger;
 	
 	
+	public VehicleEnterEvent(Vehicle vehicle, Player player, boolean isPassenger)
+	{
+		super(vehicle);
+		this.player = player;
+		this.isPassenger = isPassenger;
+	}
+	
 	public Player getPlayer()
 	{
 		return player;
@@ -38,12 +45,5 @@ public class VehicleEnterEvent extends VehicleEvent
 	public boolean isPassenger()
 	{
 		return isPassenger;
-	}
-	
-	public VehicleEnterEvent(Vehicle vehicle, Player player, boolean isPassenger)
-	{
-		super(vehicle);
-		this.player = player;
-		this.isPassenger = isPassenger;
 	}
 }

@@ -28,14 +28,14 @@ public class PlayerStreamInEvent extends PlayerEvent
 	private Player forPlayer;
 	
 	
-	public Player getForPlayer()
-	{
-		return forPlayer;
-	}
-	
 	public PlayerStreamInEvent(Player player, Player forPlayer)
 	{
 		super(player);
 		this.forPlayer = forPlayer;
+	}
+	
+	public Player getForPlayer()
+	{
+		return forPlayer;
 	}
 }

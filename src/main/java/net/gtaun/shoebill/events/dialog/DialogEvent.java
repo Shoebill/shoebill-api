@@ -31,6 +31,12 @@ public abstract class DialogEvent extends Event
 	private Player player;
 	
 	
+	protected DialogEvent(Dialog dialog, Player player)
+	{
+		this.dialog = dialog;
+		this.player = player;
+	}
+	
 	public Dialog getDialog()
 	{
 		return dialog;
@@ -39,11 +45,5 @@ public abstract class DialogEvent extends Event
 	public Player getPlayer()
 	{
 		return player;
-	}
-	
-	protected DialogEvent(Dialog dialog, Player player)
-	{
-		this.dialog = dialog;
-		this.player = player;
 	}
 }

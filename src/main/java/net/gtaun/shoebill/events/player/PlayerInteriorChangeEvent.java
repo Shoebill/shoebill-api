@@ -28,14 +28,14 @@ public class PlayerInteriorChangeEvent extends PlayerEvent
 	private int oldInteriorId;
 	
 	
-	public int getOldInteriorId()
-	{
-		return oldInteriorId;
-	}
-	
 	public PlayerInteriorChangeEvent(Player player, int oldInteriorId)
 	{
 		super(player);
 		this.oldInteriorId = oldInteriorId;
+	}
+	
+	public int getOldInteriorId()
+	{
+		return oldInteriorId;
 	}
 }

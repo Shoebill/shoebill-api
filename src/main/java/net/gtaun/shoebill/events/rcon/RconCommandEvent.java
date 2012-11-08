@@ -25,27 +25,27 @@ import net.gtaun.util.event.Event;
  */
 public class RconCommandEvent extends Event
 {
-	private int result = 0;
+	private int response = 0;
 	private String command;
 	
-	
-	public int getResult()
-	{
-		return result;
-	}
-	
-	public String getCommand()
-	{
-		return command;
-	}
 	
 	public RconCommandEvent(String command)
 	{
 		this.command = command;
 	}
 	
-	public void setResult(int result)
+	public void setResponse(int result)
 	{
-		this.result |= result;
+		this.response |= result;
+	}
+
+	public int getResponse()
+	{
+		return response;
+	}
+	
+	public String getCommand()
+	{
+		return command;
 	}
 }

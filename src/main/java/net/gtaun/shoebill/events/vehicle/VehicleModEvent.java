@@ -28,14 +28,14 @@ public class VehicleModEvent extends VehicleEvent
 	private int componentId;
 	
 	
-	public int getComponentId()
-	{
-		return componentId;
-	}
-	
 	public VehicleModEvent(Vehicle vehicle, int componentId)
 	{
 		super(vehicle);
 		this.componentId = componentId;
+	}
+	
+	public int getComponentId()
+	{
+		return componentId;
 	}
 }

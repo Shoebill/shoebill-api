@@ -28,14 +28,14 @@ public class PlayerKeyStateChangeEvent extends PlayerEvent
 	private int oldKeys;
 	
 	
-	public int getOldkeys()
-	{
-		return oldKeys;
-	}
-	
 	public PlayerKeyStateChangeEvent(Player player, int oldKeys)
 	{
 		super(player);
 		this.oldKeys = oldKeys;
+	}
+	
+	public int getOldkeys()
+	{
+		return oldKeys;
 	}
 }

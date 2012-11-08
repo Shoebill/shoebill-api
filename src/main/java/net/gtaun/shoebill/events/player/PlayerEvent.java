@@ -29,13 +29,13 @@ public abstract class PlayerEvent extends Event
 	private Player player;
 	
 	
-	public Player getPlayer()
-	{
-		return player;
-	}
-	
 	protected PlayerEvent(Player player)
 	{
 		this.player = player;
+	}
+	
+	public Player getPlayer()
+	{
+		return player;
 	}
 }

@@ -28,14 +28,14 @@ public class VehiclePaintjobEvent extends VehicleEvent
 	private int paintjobId;
 	
 	
-	public int getPaintjobId()
-	{
-		return paintjobId;
-	}
-	
 	public VehiclePaintjobEvent(Vehicle vehicle, int paintjobId)
 	{
 		super(vehicle);
 		this.paintjobId = paintjobId;
+	}
+	
+	public int getPaintjobId()
+	{
+		return paintjobId;
 	}
 }

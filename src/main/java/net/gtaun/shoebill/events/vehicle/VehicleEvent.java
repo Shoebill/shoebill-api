@@ -29,13 +29,13 @@ public abstract class VehicleEvent extends Event
 	private Vehicle vehicle;
 	
 	
-	public Vehicle getVehicle()
-	{
-		return vehicle;
-	}
-	
 	protected VehicleEvent(Vehicle vehicle)
 	{
 		this.vehicle = vehicle;
+	}
+	
+	public Vehicle getVehicle()
+	{
+		return vehicle;
 	}
 }

@@ -29,13 +29,13 @@ public class ObjectEvent extends Event
 	private SampObject object;
 	
 	
-	public SampObject getObject()
-	{
-		return object;
-	}
-	
 	public ObjectEvent(SampObject object)
 	{
 		this.object = object;
+	}
+	
+	public SampObject getObject()
+	{
+		return object;
 	}
 }

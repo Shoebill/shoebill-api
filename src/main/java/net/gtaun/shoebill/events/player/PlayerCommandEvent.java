@@ -25,19 +25,9 @@ import net.gtaun.shoebill.object.Player;
  */
 public class PlayerCommandEvent extends PlayerEvent
 {
-	private int result = 0;
+	private int response = 0;
 	private String command;
 	
-	
-	public int getResult()
-	{
-		return result;
-	}
-	
-	public String getCommand()
-	{
-		return command;
-	}
 	
 	public PlayerCommandEvent(Player player, String command)
 	{
@@ -45,8 +35,18 @@ public class PlayerCommandEvent extends PlayerEvent
 		this.command = command;
 	}
 	
-	public void setResult(int result)
+	public void setResponse(int response)
 	{
-		this.result |= result;
+		this.response |= response;
+	}
+	
+	public int getResponse()
+	{
+		return response;
+	}
+	
+	public String getCommand()
+	{
+		return command;
 	}
 }

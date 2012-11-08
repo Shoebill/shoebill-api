@@ -25,19 +25,9 @@ import net.gtaun.shoebill.object.Player;
  */
 public class PlayerRequestClassEvent extends PlayerEvent
 {
-	private int result = 0;
+	private int response = 0;
 	private int classId;
 	
-	
-	public int getResult()
-	{
-		return result;
-	}
-	
-	public int getClassId()
-	{
-		return classId;
-	}
 	
 	public PlayerRequestClassEvent(Player player, int classId)
 	{
@@ -45,8 +35,18 @@ public class PlayerRequestClassEvent extends PlayerEvent
 		this.classId = classId;
 	}
 	
-	public void setResult(int result)
+	public void setResponse(int result)
 	{
-		this.result |= result;
+		this.response |= result;
+	}
+	
+	public int getResponse()
+	{
+		return response;
+	}
+	
+	public int getClassId()
+	{
+		return classId;
 	}
 }

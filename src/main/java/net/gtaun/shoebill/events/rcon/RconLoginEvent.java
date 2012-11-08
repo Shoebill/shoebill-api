@@ -29,6 +29,13 @@ public class RconLoginEvent extends Event
 	private boolean isSuccess;
 	
 	
+	public RconLoginEvent(String ip, String password, boolean isSuccess)
+	{
+		this.ip = ip;
+		this.password = password;
+		this.isSuccess = isSuccess;
+	}
+	
 	public String getIp()
 	{
 		return ip;
@@ -42,12 +49,5 @@ public class RconLoginEvent extends Event
 	public boolean isSuccess()
 	{
 		return isSuccess;
-	}
-	
-	public RconLoginEvent(String ip, String password, boolean isSuccess)
-	{
-		this.ip = ip;
-		this.password = password;
-		this.isSuccess = isSuccess;
 	}
 }

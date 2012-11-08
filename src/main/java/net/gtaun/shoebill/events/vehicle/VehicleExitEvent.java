@@ -29,14 +29,14 @@ public class VehicleExitEvent extends VehicleEvent
 	private Player player;
 	
 	
-	public Player getPlayer()
-	{
-		return player;
-	}
-	
 	public VehicleExitEvent(Vehicle vehicle, Player player)
 	{
 		super(vehicle);
 		this.player = player;
+	}
+	
+	public Player getPlayer()
+	{
+		return player;
 	}
 }

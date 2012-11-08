@@ -29,14 +29,14 @@ public class PlayerPickupEvent extends PlayerEvent
 	private Pickup pickup;
 	
 	
-	public Pickup getPickup()
-	{
-		return pickup;
-	}
-	
 	public PlayerPickupEvent(Player player, Pickup pickup)
 	{
 		super(player);
 		this.pickup = pickup;
+	}
+	
+	public Pickup getPickup()
+	{
+		return pickup;
 	}
 }

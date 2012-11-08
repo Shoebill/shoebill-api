@@ -29,6 +29,13 @@ public class PlayerClickPlayerEvent extends PlayerEvent
 	private int source;
 	
 	
+	public PlayerClickPlayerEvent(Player player, Player clickedPlayer, int source)
+	{
+		super(player);
+		this.clickedPlayer = clickedPlayer;
+		this.source = source;
+	}
+	
 	public Player getClickedPlayer()
 	{
 		return clickedPlayer;
@@ -37,12 +44,5 @@ public class PlayerClickPlayerEvent extends PlayerEvent
 	public int getSource()
 	{
 		return source;
-	}
-	
-	public PlayerClickPlayerEvent(Player player, Player clickedPlayer, int source)
-	{
-		super(player);
-		this.clickedPlayer = clickedPlayer;
-		this.source = source;
 	}
 }

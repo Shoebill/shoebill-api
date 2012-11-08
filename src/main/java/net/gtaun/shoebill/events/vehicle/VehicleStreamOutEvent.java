@@ -29,14 +29,14 @@ public class VehicleStreamOutEvent extends VehicleEvent
 	private Player player;
 	
 	
-	public Player getPlayer()
-	{
-		return player;
-	}
-	
 	public VehicleStreamOutEvent(Vehicle vehicle, Player player)
 	{
 		super(vehicle);
 		this.player = player;
+	}
+	
+	public Player getPlayer()
+	{
+		return player;
 	}
 }

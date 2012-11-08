@@ -28,14 +28,14 @@ public class PlayerDisconnectEvent extends PlayerEvent
 	private int reason;
 	
 	
-	public int getReason()
-	{
-		return reason;
-	}
-	
 	public PlayerDisconnectEvent(Player player, int reason)
 	{
 		super(player);
 		this.reason = reason;
+	}
+	
+	public int getReason()
+	{
+		return reason;
 	}
 }

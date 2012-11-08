@@ -28,14 +28,14 @@ public class PlayerStateChangeEvent extends PlayerEvent
 	private int oldState;
 	
 	
-	public int getOldState()
-	{
-		return oldState;
-	}
-	
 	public PlayerStateChangeEvent(Player player, int oldState)
 	{
 		super(player);
 		this.oldState = oldState;
+	}
+	
+	public int getOldState()
+	{
+		return oldState;
 	}
 }

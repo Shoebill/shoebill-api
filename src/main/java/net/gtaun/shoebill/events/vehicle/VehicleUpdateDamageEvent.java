@@ -29,14 +29,14 @@ public class VehicleUpdateDamageEvent extends VehicleEvent
 	private Player player;
 	
 	
-	public Player getPlayer()
-	{
-		return player;
-	}
-	
 	public VehicleUpdateDamageEvent(Vehicle vehicle, Player player)
 	{
 		super(vehicle);
 		this.player = player;
+	}
+
+	public Player getPlayer()
+	{
+		return player;
 	}
 }

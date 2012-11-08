@@ -29,14 +29,14 @@ public class MenuSelectedEvent extends MenuEvent
 	private int row;
 	
 	
-	public int getRow()
-	{
-		return row;
-	}
-	
 	public MenuSelectedEvent(Menu menu, Player player, int row)
 	{
 		super(menu, player);
 		this.row = row;
+	}
+	
+	public int getRow()
+	{
+		return row;
 	}
 }

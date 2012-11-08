@@ -30,6 +30,12 @@ public class TimerTickEvent extends Event
 	private int realInterval;
 	
 	
+	public TimerTickEvent(Timer timer, int realInterval)
+	{
+		this.timer = timer;
+		this.realInterval = realInterval;
+	}
+	
 	public Timer getTimer()
 	{
 		return timer;
@@ -38,11 +44,5 @@ public class TimerTickEvent extends Event
 	public int getRealInterval()
 	{
 		return realInterval;
-	}
-	
-	public TimerTickEvent(Timer timer, int realInterval)
-	{
-		this.timer = timer;
-		this.realInterval = realInterval;
 	}
 }

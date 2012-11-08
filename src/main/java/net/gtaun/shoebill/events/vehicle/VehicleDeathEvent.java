@@ -29,14 +29,14 @@ public class VehicleDeathEvent extends VehicleEvent
 	private Player killer;
 	
 	
-	public Player getKiller()
-	{
-		return killer;
-	}
-	
 	public VehicleDeathEvent(Vehicle vehicle, Player killer)
 	{
 		super(vehicle);
 		this.killer = killer;
+	}
+	
+	public Player getKiller()
+	{
+		return killer;
 	}
 }

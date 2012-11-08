@@ -28,11 +28,6 @@ public class PlayerRequestSpawnEvent extends PlayerEvent
 	private int result = 1;
 	
 	
-	public int getResult()
-	{
-		return result;
-	}
-	
 	public PlayerRequestSpawnEvent(Player player)
 	{
 		super(player);
@@ -41,5 +36,10 @@ public class PlayerRequestSpawnEvent extends PlayerEvent
 	public void setResult(int result)
 	{
 		this.result &= result;
+	}
+	
+	public int getResult()
+	{
+		return result;
 	}
 }

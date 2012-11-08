@@ -29,6 +29,13 @@ public class PlayerEnterExitModShopEvent extends PlayerEvent
 	private int interiorId;
 	
 	
+	public PlayerEnterExitModShopEvent(Player player, int enterexit, int interiorId)
+	{
+		super(player);
+		this.enterexit = enterexit;
+		this.interiorId = interiorId;
+	}
+	
 	public int getEnterexit()
 	{
 		return enterexit;
@@ -37,12 +44,5 @@ public class PlayerEnterExitModShopEvent extends PlayerEvent
 	public int getInteriorId()
 	{
 		return interiorId;
-	}
-	
-	public PlayerEnterExitModShopEvent(Player player, int enterexit, int interiorId)
-	{
-		super(player);
-		this.enterexit = enterexit;
-		this.interiorId = interiorId;
 	}
 }

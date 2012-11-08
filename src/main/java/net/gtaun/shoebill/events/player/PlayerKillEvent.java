@@ -29,6 +29,13 @@ public class PlayerKillEvent extends PlayerEvent
 	private int reason;
 	
 	
+	public PlayerKillEvent(Player player, Player victim, int reason)
+	{
+		super(player);
+		this.victim = victim;
+		this.reason = reason;
+	}
+	
 	public Player getVictim()
 	{
 		return victim;
@@ -37,12 +44,5 @@ public class PlayerKillEvent extends PlayerEvent
 	public int getReason()
 	{
 		return reason;
-	}
-	
-	public PlayerKillEvent(Player player, Player victim, int reason)
-	{
-		super(player);
-		this.victim = victim;
-		this.reason = reason;
 	}
 }

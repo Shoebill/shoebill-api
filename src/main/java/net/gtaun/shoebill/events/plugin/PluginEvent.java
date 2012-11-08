@@ -29,13 +29,13 @@ public abstract class PluginEvent extends Event
 	private Plugin plugin;
 	
 	
-	public Plugin getPlugin()
-	{
-		return plugin;
-	}
-	
 	protected PluginEvent(Plugin plugin)
 	{
 		this.plugin = plugin;
+	}
+	
+	public Plugin getPlugin()
+	{
+		return plugin;
 	}
 }
