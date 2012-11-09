@@ -18,6 +18,8 @@ package net.gtaun.shoebill;
 
 import java.io.File;
 
+import net.gtaun.shoebill.service.ServiceManager;
+
 /**
  * 
  * 
@@ -30,6 +32,7 @@ public interface Shoebill
 	
 	GamemodeManager getGamemodeManager();
 	PluginManager getPluginManager();
+	ServiceManager getServiceManager();
 	
 	ShoebillVersion getVersion();
 	
