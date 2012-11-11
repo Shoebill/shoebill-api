@@ -40,18 +40,107 @@ import net.gtaun.shoebill.object.Zone;
  */
 public interface SampObjectStore
 {
+	/**
+	 * Get Server instance.
+	 * 
+	 * @return Server instance.
+	 */
 	Server getServer();
+	
+	/**
+	 * Get World instance.
+	 * 
+	 * @return World instance.
+	 */
 	World getWorld();
+	
+	/**
+	 * Get Player instance with id.
+	 * 
+	 * @param id ID of Player.
+	 * @return Player instance. If not exist, then it return {@code null}.
+	 */
 	Player getPlayer(int id);
+	
+	/**
+	 * Get vehicle instance with id.
+	 * 
+	 * @param id ID of Vehicle.
+	 * @return Vehicle instance. If not exist, then it return {@code null}.
+	 */
 	Vehicle getVehicle(int id);
+	
+	/**
+	 * Get SampObject instance with id.
+	 * 
+	 * @param id ID of Object.
+	 * @return SampObject instance. If not exist, then it return {@code null}.
+	 */
 	SampObject getObject(int id);
+	
+	/**
+	 * Get PlayerObject instance with id.
+	 * 
+	 * @param player Player instance.
+	 * @param id ID of PlayerObject.
+	 * @return PlayerObject instance. If not exist, then it return {@code null}.
+	 */
 	PlayerObject getPlayerObject(Player player, int id);
+	
+	/**
+	 * Get Pickup instance with id.
+	 * 
+	 * @param id ID of Pickup.
+	 * @return Pickup instance. If not exist, then it return {@code null}.
+	 */
 	Pickup getPickup(int id);
+	
+	/**
+	 * Get Label instance with id.
+	 * 
+	 * @param id ID of Label.
+	 * @return Label instance. If not exist, then it return {@code null}.
+	 */
 	Label getLabel(int id);
+	
+	/**
+	 * Get PlayerLabel instance with id.
+	 * 
+	 * @param id ID of PlayerLabel.
+	 * @return PlayerLabel instance. If not exist, then it return {@code null}.
+	 */
 	PlayerLabel getPlayerLabel(Player player, int id);
+	
+	/**
+	 * Get Textdraw instance with id.
+	 * 
+	 * @param id ID of Textdraw.
+	 * @return Textdraw instance. If not exist, then it return {@code null}.
+	 */
 	Textdraw getTextdraw(int id);
+	
+	/**
+	 * Get Zone instance with id.
+	 * 
+	 * @param id ID of Zone.
+	 * @return Zone instance. If not exist, then it return {@code null}.
+	 */
 	Zone getZone(int id);
+	
+	/**
+	 * Get Menu instance with id.
+	 * 
+	 * @param id ID of Menu.
+	 * @return Menu instance. If not exist, then it return {@code null}.
+	 */
 	Menu getMenu(int id);
+	
+	/**
+	 * Get Dialog instance with id.
+	 * 
+	 * @param id ID of Dialog.
+	 * @return Dialog instance. If not exist, then it return {@code null}.
+	 */
 	Dialog getDialog(int id);
 	
 	Collection<Player> getPlayers();

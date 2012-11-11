@@ -17,15 +17,44 @@
 package net.gtaun.shoebill;
 
 /**
- * 
+ * Shoebill version information interface.
  * 
  * @author MK124
  */
 public interface ShoebillVersion
 {
+	/**
+	 * Get the name of the running library.
+	 * 
+	 * @return Name.
+	 */
 	String getName();
+	
+	/**
+	 * Get the version information of the running library.
+	 * 
+	 * @return Version information.
+	 */
 	String getVersion();
+	
+	/**
+	 * Get the supported SA-MP version of the running library.
+	 * 
+	 * @return Supported SA-MP version.
+	 */
 	String getSupport();
+	
+	/**
+	 * Get the build number of the running library.
+	 * 
+	 * @return Build number.
+	 */
 	int getBuildNumber();
+	
+	/**
+	 * Get the build date of the running library.
+	 * 
+	 * @return Build date.
+	 */
 	String getBuildDate();
 }

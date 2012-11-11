@@ -20,12 +20,24 @@ import net.gtaun.shoebill.samp.SampCallbackManager;
 import net.gtaun.util.event.EventManager;
 
 /**
- * 
+ * Shoebill low-level interface, provides some low-level functions which are not recommend. 
  * 
  * @author MK124
  */
 public interface ShoebillLowLevel
 {
+	/**
+	 * Get the main low-level EventManager. 
+	 * It won't be managed by PluginLifeTime.
+	 * 
+	 * @return EventManager instance.
+	 */
 	EventManager getEventManager();
+	
+	/**
+	 * Get original SA-MP CallbackManager.
+	 * 
+	 * @return SampCallbackManager instance.
+	 */
 	SampCallbackManager getCallbackManager();
 }

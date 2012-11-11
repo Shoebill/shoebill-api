@@ -21,21 +21,63 @@ import java.io.File;
 import net.gtaun.shoebill.service.ServiceStore;
 
 /**
- * 
+ * Shoebill main interface, provides the basic manager instance and functions.
  * 
  * @author MK124
  */
 public interface Shoebill
 {
+	/**
+	 * Get SA-MP object store.
+	 * 
+	 * @return SampObjectStore instance.
+	 */
 	SampObjectStore getSampObjectStore();
+	
+	/**
+	 * Get SA-MP object factory.
+	 * 
+	 * @return SampObjectFactory instance.
+	 */
 	SampObjectFactory getSampObjectFactory();
 	
+	/**
+	 * Get gamemode manager.
+	 * 
+	 * @return GamemodeManager instance.
+	 */
 	GamemodeManager getGamemodeManager();
+	
+	/**
+	 * Get plugin manager.
+	 * 
+	 * @return PluginManager instance.
+	 */
 	PluginManager getPluginManager();
+	
+	/**
+	 * Get service store.
+	 * 
+	 * @return ServiceStore instance.
+	 */
 	ServiceStore getServiceStore();
 	
+	/**
+	 * Get version information.
+	 * 
+	 * @return ShoebillVersion instance.
+	 */
 	ShoebillVersion getVersion();
 	
+	/**
+	 * Change gamemode.
+	 * 
+	 * @param file The archive file of gamemode.
+	 */
 	void changeGamemode(File file);
+	
+	/**
+	 * Reload gamemode.
+	 */
 	void reload();
 }
