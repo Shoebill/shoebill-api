@@ -143,16 +143,89 @@ public interface SampObjectStore
 	 */
 	Dialog getDialog(int id);
 	
+	/**
+	 * Get the collection of the online players.
+	 * 
+	 * @return Collection of Players.
+	 */
 	Collection<Player> getPlayers();
+	
+	/**
+	 * Get the collection of the vehicles that exist.
+	 * 
+	 * @return Collection of Vehicles.
+	 */
 	Collection<Vehicle> getVehicles();
+	
+	/**
+	 * Get the collection of the objects that exist.
+	 * 
+	 * @return Collection of Objects.
+	 */
 	Collection<SampObject> getObjects();
+	
+	/**
+	 * Get the collection of the PlayerObjects that exist.
+	 * 
+	 * @param player Player instance.
+	 * @return Collection of PlayerObjects.
+	 */
 	Collection<PlayerObject> getPlayerObjects(Player player);
+	
+	/**
+	 * Get the collection of the pickups that exist.
+	 * 
+	 * @return Collection of Pickups.
+	 */
 	Collection<Pickup> getPickups();
+	
+	/**
+	 * Get the collection of the labels that exist.
+	 * 
+	 * @return Collection of Labels.
+	 */
 	Collection<Label> getLabels();
+	
+	/**
+	 * Get the collection of the PlayerLabels that exist.
+	 * 
+	 * @return Collection of PlayerLabels.
+	 */
 	Collection<PlayerLabel> getPlayerLabels(Player player);
+	
+	/**
+	 * Get the collection of the textdraws that exist.
+	 * 
+	 * @param player Player instance.
+	 * @return Collection of Textdraws.
+	 */
 	Collection<Textdraw> getTextdraws();
+	
+	/**
+	 * Get the collection of the zones that exist.
+	 * 
+	 * @return Collection of Zones.
+	 */
 	Collection<Zone> getZones();
+	
+	/**
+	 * Get the collection of the menus that exist.
+	 * 
+	 * @return Collection of Menus.
+	 */
 	Collection<Menu> getMenus();
+	
+	/**
+	 * Get the collection of the dialogs that exist.
+	 * 
+	 * @return Collection of Dialogs.
+	 */
 	Collection<Dialog> getDialogs();
+	
+	/**
+	 * Get the collection of the timers that exist.
+	 * 
+	 * @return Collection of Timers.
+	 */
 	Collection<Timer> getTimers();
 }

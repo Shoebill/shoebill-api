@@ -28,7 +28,7 @@ public interface ShoebillLowLevel
 {
 	/**
 	 * Get the main low-level EventManager. 
-	 * It won't be managed by PluginLifeTime.
+	 * It won't be effected by plugin's lifetime.
 	 * 
 	 * @return EventManager instance.
 	 */

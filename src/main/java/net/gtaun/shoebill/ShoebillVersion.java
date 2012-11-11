@@ -24,35 +24,35 @@ package net.gtaun.shoebill;
 public interface ShoebillVersion
 {
 	/**
-	 * Get the name of the running library.
+	 * Get the name of the runtime library.
 	 * 
 	 * @return Name.
 	 */
 	String getName();
 	
 	/**
-	 * Get the version information of the running library.
+	 * Get the version information of the runtime library.
 	 * 
 	 * @return Version information.
 	 */
 	String getVersion();
 	
 	/**
-	 * Get the supported SA-MP version of the running library.
+	 * Get the supported SA-MP version of the runtime library.
 	 * 
 	 * @return Supported SA-MP version.
 	 */
 	String getSupport();
 	
 	/**
-	 * Get the build number of the running library.
+	 * Get the build number of the runtime library.
 	 * 
 	 * @return Build number.
 	 */
 	int getBuildNumber();
 	
 	/**
-	 * Get the build date of the running library.
+	 * Get the build date of the runtime library.
 	 * 
 	 * @return Build date.
 	 */
