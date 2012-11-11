@@ -27,7 +27,7 @@ import net.gtaun.shoebill.service.ServiceStore;
  */
 public interface Shoebill
 {
-	SampObjectPool getSampObjectPool();
+	SampObjectStore getSampObjectStore();
 	SampObjectFactory getSampObjectFactory();
 	
 	GamemodeManager getGamemodeManager();
