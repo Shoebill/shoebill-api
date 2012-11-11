@@ -34,7 +34,7 @@ import net.gtaun.shoebill.object.World;
 import net.gtaun.shoebill.object.Zone;
 
 /**
- * 
+ * SA-MP object interface, managing all SA-MP objects that exist.
  * 
  * @author MK124
  */
