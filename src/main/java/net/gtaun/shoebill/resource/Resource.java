@@ -20,6 +20,8 @@ import java.io.File;
 
 import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.ShoebillLowLevel;
+import net.gtaun.shoebill.service.Service;
+import net.gtaun.shoebill.service.ServiceManager;
 import net.gtaun.util.event.EventManager;
 import net.gtaun.util.event.ManagedEventManager;
 
@@ -101,5 +103,17 @@ public abstract class Resource
 	public Logger getLogger()
 	{
 		return LoggerFactory.getLogger(description.getClazz());
+	}
+	
+	public <T extends Service> void registerService(Class<T> type, T service)
+	{
+		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
+		serviceManager.registerService(type, service);
+	}
+	
+	public <T extends Service> void unregisterService(Class<T> type, T service)
+	{
+		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
+		serviceManager.unregisterService(type, service);
 	}
 }

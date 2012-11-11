@@ -24,5 +24,7 @@ package net.gtaun.shoebill.service;
 public interface ServiceManager extends ServiceStore
 {
 	<T extends Service> void registerService(Class<T> type, T service);
-	void unregisterService(Class<? extends Service> type);
+	
+	<T extends Service> void unregisterService(Class<T> type);
+	<T extends Service> void unregisterService(Class<T> type, T service);
 }
