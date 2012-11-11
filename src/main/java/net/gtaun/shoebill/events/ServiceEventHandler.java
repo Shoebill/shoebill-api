@@ -14,15 +14,26 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.service;
+package net.gtaun.shoebill.events;
+
+import net.gtaun.shoebill.events.service.ServiceRegisterEvent;
+import net.gtaun.shoebill.events.service.ServiceReregisterEvent;
+import net.gtaun.shoebill.events.service.ServiceUnregisterEvent;
+import net.gtaun.util.event.AbstractEventHandler;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface ServiceManager extends ServiceStore
-{
-	<T extends Service> void registerService(Class<T> type, T service);
-	void unregisterService(Class<? extends Service> type);
+public class ServiceEventHandler extends AbstractEventHandler
+{	
+	public ServiceEventHandler()
+	{
+		super(ServiceEventHandler.class);
+	}
+	
+	public void onServiceRegister(ServiceRegisterEvent event)			{ }
+	public void onServiceReregister(ServiceReregisterEvent event)		{ }
+	public void onServiceRegister(ServiceUnregisterEvent event)			{ }
 }
