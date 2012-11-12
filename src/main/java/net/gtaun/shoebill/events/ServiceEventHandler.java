@@ -17,7 +17,6 @@
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.service.ServiceRegisterEvent;
-import net.gtaun.shoebill.events.service.ServiceRegisterEvent;
 import net.gtaun.shoebill.events.service.ServiceUnregisterEvent;
 import net.gtaun.util.event.AbstractEventHandler;
 
