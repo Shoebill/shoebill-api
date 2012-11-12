@@ -18,6 +18,7 @@ package net.gtaun.shoebill.events.service;
 
 import net.gtaun.shoebill.resource.Resource;
 import net.gtaun.shoebill.service.Service;
+import net.gtaun.shoebill.service.ServiceStore.ServiceEntry;
 import net.gtaun.util.event.Event;
 
 /**
@@ -27,31 +28,32 @@ import net.gtaun.util.event.Event;
  */
 public class ServiceEvent extends Event
 {
-	private Resource resource;
-	private Class<? extends Service> type;
-	private Service service;
+	private ServiceEntry serviceEntry;
 	
 	
-	public ServiceEvent(boolean interruptable, Resource resource, Class<? extends Service> type, Service service)
+	public ServiceEvent(ServiceEntry entry)
 	{
-		super(interruptable);
-		this.resource = resource;
-		this.type = type;
-		this.service = service;
+		super(false);
+		this.serviceEntry = entry;
+	}
+	
+	public ServiceEntry getServiceEntry()
+	{
+		return serviceEntry;
 	}
 	
 	public Resource getResource()
 	{
-		return resource;
+		return serviceEntry.getResource();
 	}
 	
 	public Class<? extends Service> getType()
 	{
-		return type;
+		return serviceEntry.getType();
 	}
 	
 	public Service getService()
 	{
-		return service;
+		return serviceEntry.getService();
 	}
 }

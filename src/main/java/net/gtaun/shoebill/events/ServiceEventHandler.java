@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.events;
 
 import net.gtaun.shoebill.events.service.ServiceRegisterEvent;
-import net.gtaun.shoebill.events.service.ServiceReregisterEvent;
+import net.gtaun.shoebill.events.service.ServiceRegisterEvent;
 import net.gtaun.shoebill.events.service.ServiceUnregisterEvent;
 import net.gtaun.util.event.AbstractEventHandler;
 
@@ -34,6 +34,5 @@ public class ServiceEventHandler extends AbstractEventHandler
 	}
 	
 	public void onServiceRegister(ServiceRegisterEvent event)			{ }
-	public void onServiceReregister(ServiceReregisterEvent event)		{ }
-	public void onServiceRegister(ServiceUnregisterEvent event)			{ }
+	public void onServiceUnregister(ServiceUnregisterEvent event)		{ }
 }

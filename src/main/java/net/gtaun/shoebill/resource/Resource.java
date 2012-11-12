@@ -70,7 +70,11 @@ public abstract class Resource
 	void disable() throws Throwable
 	{
 		onDisable();
+		
 		eventManager.removeAllHandler();
+		
+		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
+		serviceManager.unregisterServices(this);
 		
 		isEnabled = false;
 	}
@@ -108,12 +112,12 @@ public abstract class Resource
 	public <T extends Service> void registerService(Class<T> type, T service)
 	{
 		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
-		serviceManager.registerService(type, service);
+		serviceManager.registerService(this, type, service);
 	}
 	
 	public <T extends Service> void unregisterService(Class<T> type, T service)
 	{
 		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
-		serviceManager.unregisterService(type, service);
+		serviceManager.unregisterService(this, type, service);
 	}
 }

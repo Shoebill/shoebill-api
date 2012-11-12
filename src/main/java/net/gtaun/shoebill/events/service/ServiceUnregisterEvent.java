@@ -16,8 +16,7 @@
 
 package net.gtaun.shoebill.events.service;
 
-import net.gtaun.shoebill.resource.Resource;
-import net.gtaun.shoebill.service.Service;
+import net.gtaun.shoebill.service.ServiceStore.ServiceEntry;
 
 /**
  * 
@@ -26,8 +25,8 @@ import net.gtaun.shoebill.service.Service;
  */
 public class ServiceUnregisterEvent extends ServiceEvent
 {
-	public ServiceUnregisterEvent(Resource resource, Class<? extends Service> type, Service service)
+	public ServiceUnregisterEvent(ServiceEntry entry)
 	{
-		super(false, resource, type, service);
+		super(entry);
 	}
 }

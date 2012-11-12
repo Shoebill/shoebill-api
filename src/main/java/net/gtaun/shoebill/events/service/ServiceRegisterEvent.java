@@ -18,6 +18,7 @@ package net.gtaun.shoebill.events.service;
 
 import net.gtaun.shoebill.resource.Resource;
 import net.gtaun.shoebill.service.Service;
+import net.gtaun.shoebill.service.ServiceStore.ServiceEntry;
 
 /**
  * 
@@ -26,8 +27,42 @@ import net.gtaun.shoebill.service.Service;
  */
 public class ServiceRegisterEvent extends ServiceEvent
 {
-	public ServiceRegisterEvent(Resource resource, Class<? extends Service> type, Service service)
+	private ServiceEntry previousServiceEntry;
+	
+	
+	public ServiceRegisterEvent(ServiceEntry entry)
 	{
-		super(false, resource, type, service);
+		this(entry, null);
+	}
+	
+	public ServiceRegisterEvent(ServiceEntry entry, ServiceEntry previousEntry)
+	{
+		super(entry);
+		this.previousServiceEntry = previousEntry;
+	}
+
+	public boolean isReregistering()
+	{
+		return getPreviousServiceEntry() != null;
+	}
+	
+	public ServiceEntry getPreviousServiceEntry()
+	{
+		return previousServiceEntry;
+	}
+	
+	public Resource getPreviousResource()
+	{
+		return previousServiceEntry.getResource();
+	}
+	
+	public Class<? extends Service> getPreviousType()
+	{
+		return previousServiceEntry.getType();
+	}
+
+	public Service getPreviousService()
+	{
+		return previousServiceEntry.getService();
 	}
 }

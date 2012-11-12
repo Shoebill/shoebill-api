@@ -18,6 +18,8 @@ package net.gtaun.shoebill.service;
 
 import java.util.Collection;
 
+import net.gtaun.shoebill.resource.Resource;
+
 /**
  * 
  * 
@@ -25,8 +27,17 @@ import java.util.Collection;
  */
 public interface ServiceStore
 {
-	<T extends Service> T getService(Class<T> type);
+	public interface ServiceEntry
+	{
+		ServiceStore getServiceStore();
+		Resource getResource();
+		Class<? extends Service> getType();
+		Service getService();
+	}
+	
 
-	Collection<Service> getServices();
-	Collection<Class<? extends Service>> getServiceTypes();
+	<T extends Service> T getService(Class<T> type);
+	<T extends Service> ServiceEntry getServiceEnrty(Class<T> type);
+
+	Collection<ServiceEntry> getServiceEntries();
 }
