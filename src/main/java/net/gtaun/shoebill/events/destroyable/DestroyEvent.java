@@ -31,7 +31,6 @@ public class DestroyEvent extends Event
 	
 	public DestroyEvent(Destroyable destroyable)
 	{
-		super(false);
 		this.destroyable = destroyable;
 	}
 	

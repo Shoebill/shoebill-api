@@ -33,7 +33,6 @@ public class ServiceEvent extends Event
 	
 	public ServiceEvent(ServiceEntry entry)
 	{
-		super(false);
 		this.serviceEntry = entry;
 	}
 	
