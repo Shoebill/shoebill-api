@@ -196,7 +196,6 @@ public interface SampObjectStore
 	/**
 	 * Get the collection of the textdraws that exist.
 	 * 
-	 * @param player Player instance.
 	 * @return Collection of Textdraws.
 	 */
 	Collection<Textdraw> getTextdraws();
