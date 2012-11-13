@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Vector2D;
+import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 

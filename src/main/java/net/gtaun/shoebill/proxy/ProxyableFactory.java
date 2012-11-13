@@ -16,13 +16,37 @@
 
 package net.gtaun.shoebill.proxy;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * 
  * 
  * @author MK124
  */
-public interface ProxyableFactory<T>
+public interface ProxyableFactory<T extends Proxyable>
 {
+	public static final class Impl
+	{
+		static Class<?> implClass;
+		
+		@SuppressWarnings("unchecked")
+		public static <T extends Proxyable> ProxyableFactory<T> createProxyableFactory(Class<T> clz)
+		{
+			try
+			{
+				Constructor<?> constructor = implClass.getConstructor(Class.class);
+				return ProxyableFactory.class.cast(constructor.newInstance(clz));
+			}
+			catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e)
+			{
+				e.printStackTrace();
+				return null;
+			}
+		}
+	}
+	
+	
 	T create();
 	T create(Class<?>[] paramTypes, Object... params);
 }

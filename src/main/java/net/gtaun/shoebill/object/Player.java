@@ -38,6 +38,7 @@ import net.gtaun.shoebill.data.Velocity;
 import net.gtaun.shoebill.data.WeaponData;
 import net.gtaun.shoebill.exception.AlreadyExistException;
 import net.gtaun.shoebill.exception.IllegalLengthException;
+import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 

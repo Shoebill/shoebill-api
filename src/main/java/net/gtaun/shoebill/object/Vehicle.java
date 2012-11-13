@@ -21,6 +21,7 @@ import net.gtaun.shoebill.data.LocationAngle;
 import net.gtaun.shoebill.data.Quaternion;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.data.Velocity;
+import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 

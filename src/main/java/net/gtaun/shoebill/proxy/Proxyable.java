@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
+package net.gtaun.shoebill.proxy;
 
-import net.gtaun.shoebill.proxy.ProxyManager;
 
 /**
  * 

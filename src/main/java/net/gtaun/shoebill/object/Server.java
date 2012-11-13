@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Color;
+import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
