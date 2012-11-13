@@ -25,7 +25,7 @@ import java.lang.reflect.Method;
  */
 public abstract interface MethodInterceptor
 {
-	public static enum Priority
+	public static enum InterceptorPriority
 	{
 		BOTTOM		((short) -32768),
 		LOWEST		((short) -16384),
@@ -39,7 +39,7 @@ public abstract interface MethodInterceptor
 		private final short value;
 		
 		
-		private Priority(short value)
+		private InterceptorPriority(short value)
 		{
 			this.value = value;
 		}
