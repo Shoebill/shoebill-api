@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.events.plugin;
+package net.gtaun.shoebill.events.resource;
 
 import net.gtaun.shoebill.resource.Plugin;
 

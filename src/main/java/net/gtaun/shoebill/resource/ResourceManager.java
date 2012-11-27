@@ -20,7 +20,6 @@ package net.gtaun.shoebill.resource;
 import java.io.File;
 import java.util.Collection;
 
-
 /**
  * 
  * 
@@ -30,14 +29,10 @@ public interface ResourceManager
 {
 	Plugin loadPlugin(String filename);
 	Plugin loadPlugin(File file);
-	Plugin loadPlugin(PluginDescription desc);
-	
-	void unloadPlugin(Plugin plugin);
 	
 	<T extends Plugin> T getPlugin(Class<T> cls);
 	Collection<Plugin> getPlugins();
 	
-
 	Gamemode getGamemode();
 	<T extends Gamemode> T getGamemode(Class<T> cls);
 }

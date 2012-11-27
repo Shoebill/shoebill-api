@@ -27,10 +27,4 @@ public abstract class Plugin extends Resource
 	{
 		
 	}
-	
-	@Override
-	public PluginDescription getDescription()
-	{
-		return (PluginDescription) super.getDescription();
-	}
 }

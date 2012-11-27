@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2011 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,28 +14,19 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.events.plugin;
+package net.gtaun.shoebill.events.resource;
 
 import net.gtaun.shoebill.resource.Plugin;
-import net.gtaun.util.event.Event;
 
 /**
  * 
  * 
  * @author MK124
  */
-public abstract class PluginEvent extends Event
+public class PluginLoadEvent extends PluginEvent
 {
-	private Plugin plugin;
-	
-	
-	protected PluginEvent(Plugin plugin)
+	public PluginLoadEvent(Plugin plugin)
 	{
-		this.plugin = plugin;
-	}
-	
-	public Plugin getPlugin()
-	{
-		return plugin;
+		super(plugin);
 	}
 }

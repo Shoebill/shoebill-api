@@ -27,10 +27,4 @@ public abstract class Gamemode extends Resource
 	{
 		
 	}
-	
-	@Override
-	public GamemodeDescription getDescription()
-	{
-		return (GamemodeDescription) super.getDescription();
-	}
 }

@@ -33,8 +33,28 @@ import net.gtaun.shoebill.util.config.YamlConfiguration;
  * 
  * @author MK124
  */
-public abstract class ResourceDescription
+public class ResourceDescription
 {
+	public static enum ResourceType
+	{
+		PLUGIN		("plugin.yml"),
+		GAMEMODE	("gamemode.yml");
+		
+		private final String configFileName;
+		
+		private ResourceType(String filename)
+		{
+			configFileName = filename;
+		}
+		
+		public String getConfigFileName()
+		{
+			return configFileName;
+		}
+	}
+	
+	
+	private ResourceType type;
 	private File file;
 	private ClassLoader classLoader;
 	private Class<? extends Resource> clazz;
@@ -46,13 +66,16 @@ public abstract class ResourceDescription
 	private String buildDate;
 	
 	
-	protected ResourceDescription(File file, ClassLoader classLoader)
+	public ResourceDescription(ResourceType type, File file, ClassLoader classLoader) throws ClassNotFoundException, IOException
 	{
+		this.type = type;
 		this.file = file;
 		this.classLoader = classLoader;
+		
+		loadConfig(type.getConfigFileName());
 	}
 	
-	protected Configuration loadConfig(String configFilename) throws IOException, ClassNotFoundException
+	private Configuration loadConfig(String configFilename) throws IOException, ClassNotFoundException
 	{
 		JarFile jarFile = new JarFile(file);
 		JarEntry entry = jarFile.getJarEntry(configFilename);
@@ -69,13 +92,13 @@ public abstract class ResourceDescription
 		
 		String author = config.getString("authors");
 		authors = new ArrayList<>();
-		String[] auth = author.split("[,;]");
+		String[] tokens = author.split("[,;]");
 		
-		if (auth.length > 0)
+		if (tokens.length > 0)
 		{
-			for (String string : auth)
+			for (String a : tokens)
 			{
-				authors.add(string.trim());
+				authors.add(a.trim());
 			}
 		}
 		else
@@ -88,6 +111,11 @@ public abstract class ResourceDescription
 		buildDate = config.getString("buildDate", "Unknown");
 		
 		return config;
+	}
+	
+	public ResourceType getType()
+	{
+		return type;
 	}
 	
 	public File getFile()
