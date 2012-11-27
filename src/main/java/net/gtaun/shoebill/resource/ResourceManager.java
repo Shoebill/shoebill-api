@@ -15,20 +15,18 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill;
+package net.gtaun.shoebill.resource;
 
 import java.io.File;
 import java.util.Collection;
 
-import net.gtaun.shoebill.resource.Plugin;
-import net.gtaun.shoebill.resource.PluginDescription;
 
 /**
  * 
  * 
  * @author MK124, JoJLlmAn
  */
-public interface PluginManager
+public interface ResourceManager
 {
 	Plugin loadPlugin(String filename);
 	Plugin loadPlugin(File file);
@@ -38,4 +36,8 @@ public interface PluginManager
 	
 	<T extends Plugin> T getPlugin(Class<T> cls);
 	Collection<Plugin> getPlugins();
+	
+
+	Gamemode getGamemode();
+	<T extends Gamemode> T getGamemode(Class<T> cls);
 }

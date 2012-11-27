@@ -16,8 +16,7 @@
 
 package net.gtaun.shoebill;
 
-import java.io.File;
-
+import net.gtaun.shoebill.resource.ResourceManager;
 import net.gtaun.shoebill.service.ServiceStore;
 
 /**
@@ -42,18 +41,11 @@ public interface Shoebill
 	SampObjectFactory getSampObjectFactory();
 	
 	/**
-	 * Get gamemode manager.
-	 * 
-	 * @return GamemodeManager instance.
-	 */
-	GamemodeManager getGamemodeManager();
-	
-	/**
 	 * Get plugin manager.
 	 * 
 	 * @return PluginManager instance.
 	 */
-	PluginManager getPluginManager();
+	ResourceManager getResourceManager();
 	
 	/**
 	 * Get service store.
@@ -70,14 +62,7 @@ public interface Shoebill
 	ShoebillVersion getVersion();
 	
 	/**
-	 * Change gamemode.
-	 * 
-	 * @param file The archive file of gamemode.
-	 */
-	void changeGamemode(File file);
-	
-	/**
-	 * Reload gamemode.
+	 * Reload all.
 	 */
 	void reload();
 }
