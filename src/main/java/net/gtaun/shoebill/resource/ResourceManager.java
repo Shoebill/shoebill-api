@@ -30,6 +30,8 @@ public interface ResourceManager
 	Plugin loadPlugin(String filename);
 	Plugin loadPlugin(File file);
 	
+	void unloadPlugin(Plugin plugin);
+	
 	<T extends Plugin> T getPlugin(Class<T> cls);
 	Collection<Plugin> getPlugins();
 	
