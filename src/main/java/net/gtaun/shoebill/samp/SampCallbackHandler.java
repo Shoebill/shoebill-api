@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,12 @@ public interface SampCallbackHandler
 	int onPlayerTakeDamage(int playerid, int issuerId, float amount, int weaponid);
 	int onPlayerGiveDamage(int playerId, int damagedId, float amount, int weaponId);
 	int onPlayerClickMap(int playerId, float x, float y, float z);
+	int onPlayerClickTextDraw(int playerid, int clickedid);
+	int onPlayerClickPlayerTextDraw(int playerid, int playertextid);
 	int onPlayerClickPlayer(int playerId, int clickedPlayerId, int source);
+	int onPlayerEditObject(int playerid, int playerobject, int objectid, int response, float fX, float fY, float fZ, float fRotX, float fRotY, float fRotZ);
+	int onPlayerEditAttachedObject(int playerid, int response, int index, int modelid, int boneid, float fOffsetX, float fOffsetY, float fOffsetZ, float fRotX, float fRotY, float fRotZ, float fScaleX, float fScaleY, float fScaleZ);
+	int onPlayerSelectObject(int playerid, int type, int objectid, int modelid, float fX, float fY, float fZ);
+	
 	void onProcessTick();
 }
