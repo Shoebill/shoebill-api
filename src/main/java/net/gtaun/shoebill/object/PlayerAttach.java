@@ -37,7 +37,7 @@ public interface PlayerAttach extends PlayerRelated
 		public Vector3D getRotate();
 		public Vector3D getScale();
 		
-		public boolean set(PlayerAttachBone bone, int modelId, Vector3D offset, Vector3D rotation, Vector3D scale);
+		public boolean set(PlayerAttachBone bone, int modelId, Vector3D offset, Vector3D rotation, Vector3D scale, int materialcolor1, int materialcolor2);
 		public boolean remove();
 		public boolean isUsed(int slot);
 	}

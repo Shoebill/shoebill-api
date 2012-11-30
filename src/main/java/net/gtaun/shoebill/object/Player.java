@@ -172,7 +172,7 @@ public interface Player extends Proxyable
 	void setCameraPosition(float x, float y, float z);
 	void setCameraPosition(Vector3D pos);
 	
-	void setCameraLookAt(float x, float y, float z);
+	void setCameraLookAt(float x, float y, float z, int cut);
 	void setCameraLookAt(Vector3D pos);
 	
 	void setCameraBehind();
