@@ -39,9 +39,9 @@ public enum VehicleComponentSlot
 	VENT_LEFT			(13);
 	
 	
-	public static VehicleComponentSlot get(int data)
+	public static VehicleComponentSlot get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 //	public static int getComponentSlot(int componentId)
@@ -50,16 +50,16 @@ public enum VehicleComponentSlot
 //	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private VehicleComponentSlot(int data)
+	private VehicleComponentSlot(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

@@ -31,28 +31,28 @@ public enum SpectateMode
 	SIDE		(3);
 	
 	
-	private static final Map<Integer, SpectateMode> VALUES = new HashMap<Integer, SpectateMode>();
-	public static SpectateMode get(int data)
+	private static final Map<Integer, SpectateMode> VALUES = new HashMap<>();
+	public static SpectateMode get(int value)
 	{
-		return VALUES.get(data);
+		return VALUES.get(value);
 	}
 	
 	static
 	{
-		for(SpectateMode mode : values()) VALUES.put(mode.data, mode);
+		for(SpectateMode val : values()) VALUES.put(val.value, val);
 	}
 	
 
-	private final int data;
+	private final int value;
 	
 	
-	private SpectateMode(int data)
+	private SpectateMode(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

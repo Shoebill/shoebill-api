@@ -29,22 +29,22 @@ public enum DialogStyle
 	PASSWORD	(3);
 	
 	
-	public static DialogStyle get(int data)
+	public static DialogStyle get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private DialogStyle(int data)
+	private DialogStyle(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

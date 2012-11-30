@@ -42,7 +42,6 @@ public enum ObjectMaterialSize
 	SIZE_512x512	(140);
 	
 	
-
 	private static final Map<Integer, ObjectMaterialSize> VALUES = new HashMap<>();
 	public static ObjectMaterialSize get(int value)
 	{

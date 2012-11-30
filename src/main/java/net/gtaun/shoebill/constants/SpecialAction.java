@@ -46,28 +46,28 @@ public enum SpecialAction
 	CUFFED					(24);
 	
 	
-	private static final Map<Integer, SpecialAction> VALUES = new HashMap<Integer, SpecialAction>();
-	public static SpecialAction get(int data)
+	private static final Map<Integer, SpecialAction> VALUES = new HashMap<>();
+	public static SpecialAction get(int value)
 	{
-		return VALUES.get(data);
+		return VALUES.get(value);
 	}
 	
 	static
 	{
-		for(SpecialAction action : values()) VALUES.put(action.data, action);
+		for(SpecialAction val : values()) VALUES.put(val.value, val);
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private SpecialAction(int data)
+	private SpecialAction(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

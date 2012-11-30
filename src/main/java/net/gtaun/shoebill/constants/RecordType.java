@@ -28,22 +28,22 @@ public enum RecordType
 	ONFOOT		(2);
 	
 	
-	public static RecordType get(int data)
+	public static RecordType get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private RecordType(int data)
+	private RecordType(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

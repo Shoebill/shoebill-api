@@ -30,22 +30,22 @@ public enum RaceCheckpointType
 	AIR_FINISH			(4);
 	
 	
-	public static RaceCheckpointType get(int data)
+	public static RaceCheckpointType get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private RaceCheckpointType(int data)
+	private RaceCheckpointType(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

@@ -35,22 +35,22 @@ public enum PlayerState
 	SPECTATING					(9);
 	
 	
-	public static PlayerState get(int data)
+	public static PlayerState get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private PlayerState(int data)
+	private PlayerState(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

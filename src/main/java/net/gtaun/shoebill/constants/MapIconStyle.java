@@ -29,22 +29,22 @@ public enum MapIconStyle
 	GLOBAL_CHECKPOINT		(3);
 	
 	
-	public static MapIconStyle get(int data)
+	public static MapIconStyle get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private MapIconStyle(int data)
+	private MapIconStyle(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

@@ -35,28 +35,28 @@ public enum ShopName
 	AMMUNATION5		("AMMUN5");
 	
 	
-	private static final Map<String, ShopName> VALUES = new HashMap<String, ShopName>();
-	public static ShopName get(String data)
+	private static final Map<String, ShopName> VALUES = new HashMap<>();
+	public static ShopName get(String value)
 	{
-		return VALUES.get(data);
+		return VALUES.get(value);
 	}
 	
 	static
 	{
-		for(ShopName shopName : values()) VALUES.put(shopName.data, shopName);
+		for(ShopName val : values()) VALUES.put(val.value, val);
 	}
 	
 	
-	private final String data;
+	private final String value;
 	
 	
-	private ShopName(String data)
+	private ShopName(String value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public String getData()
+	public String getValue()
 	{
-		return data;
+		return value;
 	}
 }

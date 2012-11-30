@@ -26,16 +26,16 @@ import java.util.Map;
  */
 public enum WeaponType
 {
-	NONE					(0,	0,		0,		"Unarmed"),
-	BRASSKNUCKLE			(1,	0,		331,	"Brass Knuckles"),
-	GOLFCLUB				(2,	1,		333,	"Golf Club"),
-	NITESTICK				(3,	1,		334,	"Nite Stick"),
-	KNIFE					(4,	1,		335,	"Knife"),
-	BAT						(5,	1,		336,	"Baseball Bat"),
-	SHOVEL					(6,	1,		337,	"Shovel"),
-	POOLSTICK				(7,	1,		338,	"Pool Stick"),
-	KATANA					(8,	1,		339,	"Katana"),
-	CHAINSAW				(9,	1,		341,	"Chainsaw"),
+	NONE					(0,		0,		0,		"Unarmed"),
+	BRASSKNUCKLE			(1,		0,		331,	"Brass Knuckles"),
+	GOLFCLUB				(2,		1,		333,	"Golf Club"),
+	NITESTICK				(3,		1,		334,	"Nite Stick"),
+	KNIFE					(4,		1,		335,	"Knife"),
+	BAT						(5,		1,		336,	"Baseball Bat"),
+	SHOVEL					(6,		1,		337,	"Shovel"),
+	POOLSTICK				(7,		1,		338,	"Pool Stick"),
+	KATANA					(8,		1,		339,	"Katana"),
+	CHAINSAW				(9,		1,		341,	"Chainsaw"),
 	DILDO					(10,	10,		321,	"Purple Dildo"),
 	DILDO2					(11,	10,		322,	"Small White Vibrator"),
 	VIBRATOR				(12,	10,		323,	"Large White Vibrator"),
@@ -80,7 +80,7 @@ public enum WeaponType
 	DISCONNECT				(201,	-1,		0,		"Disconnect");
 	
 	
-	private static final Map<Integer, WeaponType> VALUES = new HashMap<Integer, WeaponType>();
+	private static final Map<Integer, WeaponType> VALUES = new HashMap<>();
 	
 	public static WeaponType get(int id)
 	{
@@ -89,7 +89,7 @@ public enum WeaponType
 	
 	static
 	{
-		for(WeaponType type : values()) VALUES.put(type.id, type);
+		for(WeaponType val : values()) VALUES.put(val.id, val);
 	}
 	
 	

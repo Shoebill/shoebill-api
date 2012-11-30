@@ -44,22 +44,22 @@ public enum PlayerAttachBone
 	JAW					(18);
 	
 	
-	public static PlayerAttachBone get(int data)
+	public static PlayerAttachBone get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private PlayerAttachBone(int data)
+	private PlayerAttachBone(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

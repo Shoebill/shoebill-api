@@ -36,22 +36,22 @@ public enum WeaponSkill
 	SNIPERRIFLE			(10);
 	
 	
-	public static WeaponSkill get(int id)
+	public static WeaponSkill get(int value)
 	{
-		return values() [id];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private WeaponSkill(int data)
+	private WeaponSkill(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

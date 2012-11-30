@@ -28,22 +28,22 @@ public enum PlayerMarkerMode
 	STREAMED		(2);
 	
 	
-	public static PlayerMarkerMode get(int data)
+	public static PlayerMarkerMode get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private PlayerMarkerMode(int data)
+	private PlayerMarkerMode(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

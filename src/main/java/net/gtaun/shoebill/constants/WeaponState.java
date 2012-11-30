@@ -33,28 +33,28 @@ public enum WeaponState
 	RELOADING			(3);
 	
 	
-	private static final Map<Integer, WeaponState> VALUES = new HashMap<Integer, WeaponState>();
-	public static WeaponState get(int data)
+	private static final Map<Integer, WeaponState> VALUES = new HashMap<>();
+	public static WeaponState get(int value)
 	{
-		return VALUES.get(data);
+		return VALUES.get(value);
 	}
 	
 	static
 	{
-		for(WeaponState state : values()) VALUES.put(state.data, state);
+		for(WeaponState val : values()) VALUES.put(val.value, val);
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private WeaponState(int data)
+	private WeaponState(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

@@ -47,9 +47,9 @@ public enum PlayerKey
 	private final int value;
 	
 	
-	private PlayerKey(int val)
+	private PlayerKey(int value)
 	{
-		value = val;
+		this.value = value;
 	}
 
 	public int getValue()
