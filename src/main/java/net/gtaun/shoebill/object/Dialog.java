@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.constant.DialogStyle;
+import net.gtaun.shoebill.constants.DialogStyle;
 import net.gtaun.shoebill.proxy.Proxyable;
 
 /**

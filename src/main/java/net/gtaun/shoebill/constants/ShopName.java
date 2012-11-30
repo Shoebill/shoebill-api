@@ -14,35 +14,48 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum PlayerMarkerMode
+public enum ShopName
 {
-	OFF				(0),
-	GLOBAL			(1),
-	STREAMED		(2);
+	PIZZASTACK		("FDPIZA"),
+	BURGERSHOT		("FDBURG"),
+	CLUCKINBELL		("FDCHICK"),
+	AMMUNATION1		("AMMUN1"),
+	AMMUNATION2		("AMMUN2"),
+	AMMUNATION3		("AMMUN3"),
+	AMMUNATION5		("AMMUN5");
 	
 	
-	public static PlayerMarkerMode get(int data)
+	private static final Map<String, ShopName> VALUES = new HashMap<String, ShopName>();
+	public static ShopName get(String data)
 	{
-		return values() [data];
+		return VALUES.get(data);
+	}
+	
+	static
+	{
+		for(ShopName shopName : values()) VALUES.put(shopName.data, shopName);
 	}
 	
 	
-	private final int data;
+	private final String data;
 	
 	
-	private PlayerMarkerMode(int data)
+	private ShopName(String data)
 	{
 		this.data = data;
 	}
 	
-	public int getData()
+	public String getData()
 	{
 		return data;
 	}

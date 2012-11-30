@@ -14,36 +14,47 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
- * @author MK124
+ * @author mk124
  */
-public enum ObjectMaterialTextAlign
+public enum PlayerKey
 {
-	LEFT		(0),
-	CENTER		(1),
-	RIGHT		(2);
-	
-	
-	public static ObjectMaterialTextAlign get(int value)
-	{
-		return values() [value];
-	}
+	ACTION					(1),
+	CROUCH					(2),
+	FIRE					(4),
+	SPRINT					(8),
+	SECONDARY_ATTACK		(16),
+	JUMP					(32),
+	LOOK_RIGHT				(64),
+	HANDBRAKE				(128),
+	LOOK_LEFT				(256),
+	SUBMISSION				(512),
+	LOOK_BEHIND				(512),
+	WALK					(1024),
+	ANALOG_UP				(2048),
+	ANALOG_DOWN				(4096),
+	ANALOG_LEFT				(8192),
+	ANALOG_RIGHT			(16384),
+	KEY_YES					(65536),
+	KEY_NO					(131072),
+	KEY_CTRL_BACK			(262144);
 	
 	
 	private final int value;
 	
 	
-	private ObjectMaterialTextAlign(int value)
+	private PlayerKey(int val)
 	{
-		this.value = value;
+		value = val;
 	}
-	
+
 	public int getValue()
 	{
 		return value;
 	}
 }
+

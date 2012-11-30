@@ -14,41 +14,46 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
-
-import java.util.HashMap;
-import java.util.Map;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum WeaponState
+public enum VehicleComponentSlot
 {
-	UNKNOWN				(-1),
-	NO_BULLETS			(0),
-	LAST_BULLET			(1),
-	MORE_BULLETS		(2),
-	RELOADING			(3);
+	SPOILER				(0),
+	HOOD				(1),
+	ROOF				(2),
+	SIDE_SKIRT			(3),
+	LAMPS				(4),
+	NITRO				(5),
+	EXHAUST				(6),
+	WHEELS				(7),
+	STEREO				(8),
+	HYDRAULICS			(9),
+	FRONT_BUMPER		(10),
+	REAR_BUMPER			(11),
+	VENT_RIGHT			(12),
+	VENT_LEFT			(13);
 	
 	
-	private static final Map<Integer, WeaponState> VALUES = new HashMap<Integer, WeaponState>();
-	public static WeaponState get(int data)
+	public static VehicleComponentSlot get(int data)
 	{
-		return VALUES.get(data);
+		return values() [data];
 	}
 	
-	static
-	{
-		for(WeaponState state : values()) VALUES.put(state.data, state);
-	}
+//	public static int getComponentSlot(int componentId)
+//	{
+//		return SampNativeFunction.getVehicleComponentType(componentId);
+//	}
 	
 	
 	private final int data;
 	
 	
-	private WeaponState(int data)
+	private VehicleComponentSlot(int data)
 	{
 		this.data = data;
 	}

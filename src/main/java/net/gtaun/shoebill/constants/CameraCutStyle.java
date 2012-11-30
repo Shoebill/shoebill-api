@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,37 +14,44 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum DialogStyle
+public enum CameraCutStyle
 {
-	MSGBOX		(0),
-	INPUT		(1),
-	LIST		(2),
-	PASSWORD	(3);
+	CAMERA_CUT		(2),
+	CAMERA_MOVE 	(1);
 	
 	
-	public static DialogStyle get(int data)
+	private static final Map<Integer, CameraCutStyle> VALUES = new HashMap<>();
+	public static CameraCutStyle get(int value)
 	{
-		return values() [data];
+		return VALUES.get(value);
+	}
+	
+	static
+	{
+		for(CameraCutStyle val : values()) VALUES.put(val.value, val);
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private DialogStyle(int data)
+	private CameraCutStyle(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

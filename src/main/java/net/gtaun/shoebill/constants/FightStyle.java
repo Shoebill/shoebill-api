@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,29 +24,33 @@ import java.util.Map;
  * 
  * @author MK124
  */
-public enum SpectateMode
+public enum FightStyle
 {
-	NORMAL		(1),
-	FIXED		(2),
-	SIDE		(3);
+	NORMAL			(4),
+	BOXING			(5),
+	KUNGFU			(6),
+	KNEEHEAD		(7),
+	GRABKICK		(15),
+	ELBOW			(16);
 	
 	
-	private static final Map<Integer, SpectateMode> VALUES = new HashMap<Integer, SpectateMode>();
-	public static SpectateMode get(int data)
+	private static final Map<Integer, FightStyle> VALUES = new HashMap<Integer, FightStyle>();
+	public static FightStyle get(int data)
 	{
 		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for(SpectateMode mode : values()) VALUES.put(mode.data, mode);
+		for(FightStyle style : values()) VALUES.put(style.data, style);
 	}
 	
-
+	
 	private final int data;
 	
 	
-	private SpectateMode(int data)
+	
+	private FightStyle(int data)
 	{
 		this.data = data;
 	}

@@ -14,38 +14,37 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum WeaponSkill
+public enum PlayerState
 {
-	PISTOL				(0),
-	PISTOL_SILENCED		(1),
-	DESERT_EAGLE		(2),
-	SHOTGUN				(3),
-	SAWNOFF_SHOTGUN		(4),
-	SPAS12_SHOTGUN		(5),
-	MICRO_UZI			(6),
-	MP5					(7),
-	AK47				(8),
-	M4					(9),
-	SNIPERRIFLE			(10);
+	NONE						(0),
+	ONFOOT						(1),
+	DRIVER						(2),
+	PASSENGER					(3),
+	EXIT_VEHICLE				(4),
+	ENTER_VEHICLE_DRIVER		(5),
+	ENTER_VEHICLE_PASSENGER		(6),
+	WASTED						(7),
+	SPAWNED						(8),
+	SPECTATING					(9);
 	
 	
-	public static WeaponSkill get(int id)
+	public static PlayerState get(int data)
 	{
-		return values() [id];
+		return values() [data];
 	}
 	
 	
 	private final int data;
 	
 	
-	private WeaponSkill(int data)
+	private PlayerState(int data)
 	{
 		this.data = data;
 	}

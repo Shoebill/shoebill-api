@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum RaceCheckpointType
+public enum MapIconStyle
 {
-	NORMAL				(0),
-	NORMAL_FINISH		(1),
-	NOTHING				(2),
-	AIR					(3),
-	AIR_FINISH			(4);
+	LOCAL					(0),
+	GLOBAL					(1),
+	LOCAL_CHECKPOINT		(2),
+	GLOBAL_CHECKPOINT		(3);
 	
 	
-	public static RaceCheckpointType get(int data)
+	public static MapIconStyle get(int data)
 	{
 		return values() [data];
 	}
@@ -39,7 +38,7 @@ public enum RaceCheckpointType
 	private final int data;
 	
 	
-	private RaceCheckpointType(int data)
+	private MapIconStyle(int data)
 	{
 		this.data = data;
 	}

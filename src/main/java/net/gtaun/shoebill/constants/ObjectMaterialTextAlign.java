@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,37 +14,36 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum MapIconStyle
+public enum ObjectMaterialTextAlign
 {
-	LOCAL					(0),
-	GLOBAL					(1),
-	LOCAL_CHECKPOINT		(2),
-	GLOBAL_CHECKPOINT		(3);
+	LEFT		(0),
+	CENTER		(1),
+	RIGHT		(2);
 	
 	
-	public static MapIconStyle get(int data)
+	public static ObjectMaterialTextAlign get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private MapIconStyle(int data)
+	private ObjectMaterialTextAlign(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

@@ -14,46 +14,31 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum VehicleComponentSlot
+public enum DialogStyle
 {
-	SPOILER				(0),
-	HOOD				(1),
-	ROOF				(2),
-	SIDE_SKIRT			(3),
-	LAMPS				(4),
-	NITRO				(5),
-	EXHAUST				(6),
-	WHEELS				(7),
-	STEREO				(8),
-	HYDRAULICS			(9),
-	FRONT_BUMPER		(10),
-	REAR_BUMPER			(11),
-	VENT_RIGHT			(12),
-	VENT_LEFT			(13);
+	MSGBOX		(0),
+	INPUT		(1),
+	LIST		(2),
+	PASSWORD	(3);
 	
 	
-	public static VehicleComponentSlot get(int data)
+	public static DialogStyle get(int data)
 	{
 		return values() [data];
 	}
-	
-//	public static int getComponentSlot(int componentId)
-//	{
-//		return SampNativeFunction.getVehicleComponentType(componentId);
-//	}
 	
 	
 	private final int data;
 	
 	
-	private VehicleComponentSlot(int data)
+	private DialogStyle(int data)
 	{
 		this.data = data;
 	}

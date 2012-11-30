@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2011 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,36 +14,44 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum ObjectEditResponse
+public enum WeaponSkill
 {
-	CANCEL		(0),
-	FINAL		(1),
-	UPDATE		(2);
+	PISTOL				(0),
+	PISTOL_SILENCED		(1),
+	DESERT_EAGLE		(2),
+	SHOTGUN				(3),
+	SAWNOFF_SHOTGUN		(4),
+	SPAS12_SHOTGUN		(5),
+	MICRO_UZI			(6),
+	MP5					(7),
+	AK47				(8),
+	M4					(9),
+	SNIPERRIFLE			(10);
 	
 	
-	public static ObjectEditResponse get(int value)
+	public static WeaponSkill get(int id)
 	{
-		return values() [value];
+		return values() [id];
 	}
 	
 	
-	private final int value;
+	private final int data;
 	
 	
-	private ObjectEditResponse(int value)
+	private WeaponSkill(int data)
 	{
-		this.value = value;
+		this.data = data;
 	}
 	
-	public int getValue()
+	public int getData()
 	{
-		return value;
+		return data;
 	}
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2011 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,42 +14,36 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum VehicleModelInfoType
+public enum PlayerMarkerMode
 {
-	VEHICLE_MODEL_INFO_SIZE				(1),
-	VEHICLE_MODEL_INFO_FRONTSEAT		(2),
-	VEHICLE_MODEL_INFO_REARSEAT			(3),
-	VEHICLE_MODEL_INFO_PETROLCAP		(4),
-	VEHICLE_MODEL_INFO_WHEELSFRONT		(5),
-	VEHICLE_MODEL_INFO_WHEELSREAR		(6),
-	VEHICLE_MODEL_INFO_WHEELSMID		(7),
-	VEHICLE_MODEL_INFO_FRONT_BUMPER_Z	(8),
-	VEHICLE_MODEL_INFO_REAR_BUMPER_Z	(9);
+	OFF				(0),
+	GLOBAL			(1),
+	STREAMED		(2);
 	
 	
-	public static VehicleModelInfoType get(int value)
+	public static PlayerMarkerMode get(int data)
 	{
-		return values() [value-1];
+		return values() [data];
 	}
 	
 	
-	private final int value;
+	private final int data;
 	
 	
-	private VehicleModelInfoType(int value)
+	private PlayerMarkerMode(int data)
 	{
-		this.value = value;
+		this.data = data;
 	}
 	
-	public int getValue()
+	public int getData()
 	{
-		return value;
+		return data;
 	}
 }

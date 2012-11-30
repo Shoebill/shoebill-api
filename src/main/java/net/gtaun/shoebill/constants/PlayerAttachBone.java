@@ -14,48 +14,51 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
-
-import java.util.HashMap;
-import java.util.Map;
+package net.gtaun.shoebill.constants;
 
 /**
  * 
  * 
  * @author MK124
  */
-public enum ShopName
+public enum PlayerAttachBone
 {
-	PIZZASTACK		("FDPIZA"),
-	BURGERSHOT		("FDBURG"),
-	CLUCKINBELL		("FDCHICK"),
-	AMMUNATION1		("AMMUN1"),
-	AMMUNATION2		("AMMUN2"),
-	AMMUNATION3		("AMMUN3"),
-	AMMUNATION5		("AMMUN5");
+	NOT_USABLE			(0),
+	SPINE				(1),
+	HEAD				(2),
+	UPPER_ARM_LEFT		(3),
+	UPPER_ARM_RIGHT		(4),
+	HAND_LEFT			(5),
+	HAND_RIGHT			(6),
+	THIGH_LEFT			(7),
+	THIGH_RIGHT			(8),
+	FOOT_LEFT			(9),
+	FOOT_RIGHT			(10),
+	CALF_RIGHT			(11),
+	CALF_LEFT			(12),
+	FOREARM_LEFT		(13),
+	FOREARM_RIGHT		(14),
+	CLAVICLE_LEFT		(15),
+	CLAVICLE_RIGHT		(16),
+	NECK				(17),
+	JAW					(18);
 	
 	
-	private static final Map<String, ShopName> VALUES = new HashMap<String, ShopName>();
-	public static ShopName get(String data)
+	public static PlayerAttachBone get(int data)
 	{
-		return VALUES.get(data);
+		return values() [data];
 	}
 	
-	static
-	{
-		for(ShopName shopName : values()) VALUES.put(shopName.data, shopName);
-	}
+	
+	private final int data;
 	
 	
-	private final String data;
-	
-	
-	private ShopName(String data)
+	private PlayerAttachBone(int data)
 	{
 		this.data = data;
 	}
 	
-	public String getData()
+	public int getData()
 	{
 		return data;
 	}

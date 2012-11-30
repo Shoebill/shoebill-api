@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2011 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.constant;
+package net.gtaun.shoebill.constants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,34 +24,37 @@ import java.util.Map;
  * 
  * @author MK124
  */
-public enum CameraCutStyle
+public enum WeaponState
 {
-	CAMERA_CUT		(2),
-	CAMERA_MOVE 	(1);
+	UNKNOWN				(-1),
+	NO_BULLETS			(0),
+	LAST_BULLET			(1),
+	MORE_BULLETS		(2),
+	RELOADING			(3);
 	
 	
-	private static final Map<Integer, CameraCutStyle> VALUES = new HashMap<>();
-	public static CameraCutStyle get(int value)
+	private static final Map<Integer, WeaponState> VALUES = new HashMap<Integer, WeaponState>();
+	public static WeaponState get(int data)
 	{
-		return VALUES.get(value);
+		return VALUES.get(data);
 	}
 	
 	static
 	{
-		for(CameraCutStyle val : values()) VALUES.put(val.value, val);
+		for(WeaponState state : values()) VALUES.put(state.data, state);
 	}
 	
 	
-	private final int value;
+	private final int data;
 	
 	
-	private CameraCutStyle(int value)
+	private WeaponState(int data)
 	{
-		this.value = value;
+		this.data = data;
 	}
 	
-	public int getValue()
+	public int getData()
 	{
-		return value;
+		return data;
 	}
 }
