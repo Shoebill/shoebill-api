@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.constants.PlayerMarkerMode;
+import net.gtaun.shoebill.constant.PlayerMarkerMode;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.SpawnInfo;
 import net.gtaun.shoebill.proxy.Proxyable;

@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.constants.PlayerKey;
+import net.gtaun.shoebill.constant.PlayerKey;
 
 /**
  * 

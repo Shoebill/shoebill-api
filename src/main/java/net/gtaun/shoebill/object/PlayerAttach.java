@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.constants.PlayerAttachBone;
+import net.gtaun.shoebill.constant.PlayerAttachBone;
 import net.gtaun.shoebill.data.Vector3D;
 
 /**

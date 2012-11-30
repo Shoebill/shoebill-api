@@ -16,16 +16,16 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.constants.DialogStyle;
-import net.gtaun.shoebill.constants.FightStyle;
-import net.gtaun.shoebill.constants.MapIconStyle;
-import net.gtaun.shoebill.constants.PlayerState;
-import net.gtaun.shoebill.constants.RecordType;
-import net.gtaun.shoebill.constants.ShopName;
-import net.gtaun.shoebill.constants.SpecialAction;
-import net.gtaun.shoebill.constants.SpectateMode;
-import net.gtaun.shoebill.constants.WeaponState;
-import net.gtaun.shoebill.constants.WeaponType;
+import net.gtaun.shoebill.constant.DialogStyle;
+import net.gtaun.shoebill.constant.FightStyle;
+import net.gtaun.shoebill.constant.MapIconStyle;
+import net.gtaun.shoebill.constant.PlayerState;
+import net.gtaun.shoebill.constant.RecordType;
+import net.gtaun.shoebill.constant.ShopName;
+import net.gtaun.shoebill.constant.SpecialAction;
+import net.gtaun.shoebill.constant.SpectateMode;
+import net.gtaun.shoebill.constant.WeaponState;
+import net.gtaun.shoebill.constant.WeaponType;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
