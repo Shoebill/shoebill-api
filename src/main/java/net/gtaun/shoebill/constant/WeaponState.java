@@ -20,9 +20,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
+ * To be used with getWeaponState.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#getWeaponState
  */
 public enum WeaponState
 {

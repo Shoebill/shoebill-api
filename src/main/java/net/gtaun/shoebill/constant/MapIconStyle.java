@@ -17,15 +17,32 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with setMapIcon.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#setMapIcon
  */
 public enum MapIconStyle
 {
+	/**
+	 * Display in the player's local area
+	 */
 	LOCAL					(0),
+	
+	/**
+	 * Display always
+	 */
 	GLOBAL					(1),
+	
+	/**
+	 * Display in the player's local area and has a checkpoint marker
+	 */
 	LOCAL_CHECKPOINT		(2),
+	
+	/**
+	 * Display always and has a checkpoint marker
+	 */
 	GLOBAL_CHECKPOINT		(3);
 	
 	

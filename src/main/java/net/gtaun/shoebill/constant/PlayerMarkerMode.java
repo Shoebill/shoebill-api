@@ -17,9 +17,11 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with showPlayerMarkers.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.World#showPlayerMarkers
  */
 public enum PlayerMarkerMode
 {

@@ -16,10 +16,15 @@
 
 package net.gtaun.shoebill.constant;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * 
+ * To be used with PlayerKeyState.
  * 
  * @author mk124
+ * 
+ * @see net.gtaun.shoebill.object.PlayerKeyState
  */
 public enum PlayerKey
 {
@@ -41,17 +46,33 @@ public enum PlayerKey
 	ANALOG_RIGHT			(16384),
 	KEY_YES					(65536),
 	KEY_NO					(131072),
-	KEY_CTRL_BACK			(262144);
+	KEY_CTRL_BACK			(262144),
+	UNDEFINED				(0);
+	
+	
+	private static final Map<Integer, PlayerKey> VALUES = new HashMap<>();
+	public static PlayerKey get(int value)
+	{
+		PlayerKey key = VALUES.get(value);
+		if (key == null) key = UNDEFINED;
+		return key;
+	}
+	
+	static
+	{
+		for(PlayerKey val : values()) VALUES.put(val.value, val);
+	}
 	
 	
 	private final int value;
+	
 	
 	
 	private PlayerKey(int value)
 	{
 		this.value = value;
 	}
-
+	
 	public int getValue()
 	{
 		return value;

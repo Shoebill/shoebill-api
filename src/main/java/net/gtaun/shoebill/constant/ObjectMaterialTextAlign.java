@@ -17,9 +17,11 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with setMaterialText.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.SampObject#setMaterialText
  */
 public enum ObjectMaterialTextAlign
 {

@@ -17,21 +17,58 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with getModelInfo.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Vehicle#getModelInfo
  */
 public enum VehicleModelInfoType
 {
-	VEHICLE_MODEL_INFO_SIZE				(1),
-	VEHICLE_MODEL_INFO_FRONTSEAT		(2),
-	VEHICLE_MODEL_INFO_REARSEAT			(3),
-	VEHICLE_MODEL_INFO_PETROLCAP		(4),
-	VEHICLE_MODEL_INFO_WHEELSFRONT		(5),
-	VEHICLE_MODEL_INFO_WHEELSREAR		(6),
-	VEHICLE_MODEL_INFO_WHEELSMID		(7),
-	VEHICLE_MODEL_INFO_FRONT_BUMPER_Z	(8),
-	VEHICLE_MODEL_INFO_REAR_BUMPER_Z	(9);
+	/**
+	 * Vehicle size
+	 */
+	SIZE				(1),
+	
+	/**
+	 * Position of the front seat (calculated from the center of the vehicle)
+	 */
+	FRONTSEAT			(2),
+	
+	/**
+	 * Position of the rear seat (calculated from the center of the vehicle)
+	 */
+	REARSEAT			(3),
+	
+	/**
+	 * Position of the fuel cap (calculated from the center of the vehicle)
+	 */
+	PETROLCAP			(4),
+	
+	/**
+	 * Position of the front wheels (calculated from the center of the vehicle)
+	 */
+	WHEELSFRONT			(5),
+	
+	/**
+	 * Position of the rear wheels (calculated from the center of the vehicle)
+	 */
+	WHEELSREAR			(6),
+	
+	/**
+	 * Position of the middle wheels (applies to vehicles with 3 axes, calculated from the center of the vehicle)
+	 */
+	WHEELSMID			(7),
+	
+	/**
+	 * Height of the front bumper
+	 */
+	FRONT_BUMPER_Z		(8),
+	
+	/**
+	 * Height of the rear bumper
+	 */
+	REAR_BUMPER_Z		(9);
 	
 	
 	public static VehicleModelInfoType get(int value)

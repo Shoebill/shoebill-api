@@ -20,9 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
+ * To be used with setFightStyle and getFightStyle.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#setFightStyle
+ * @see net.gtaun.shoebill.object.Player#getFightStyle
  */
 public enum FightStyle
 {

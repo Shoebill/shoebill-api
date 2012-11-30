@@ -17,15 +17,33 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with showDialog.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#showDialog
+ * @see net.gtaun.shoebill.object.Dialog#show
  */
 public enum DialogStyle
 {
+	/**
+	 * Message box dialog
+	 */
 	MSGBOX		(0),
+	
+	/**
+	 * Input dialog
+	 */
 	INPUT		(1),
+	
+	/**
+	 * List dialog
+	 */
 	LIST		(2),
+	
+	/**
+	 * Password input dialog
+	 */
 	PASSWORD	(3);
 	
 	

@@ -17,21 +17,63 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with getState or PlayerStateChangeEvent.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#getState
+ * @see net.gtaun.shoebill.event.player.PlayerStateChangeEvent
  */
 public enum PlayerState
 {
+	/**
+	 * Empty (while initializing)
+	 */
 	NONE						(0),
+	
+	/**
+	 * Player is on foot
+	 */
 	ONFOOT						(1),
+	
+	/**
+	 * Player is driver of a vehicle
+	 */
 	DRIVER						(2),
+	
+	/**
+	 * Player is passenger of a vehicle
+	 */
 	PASSENGER					(3),
+	
+	/**
+	 * Player exits a vehicle (Used internally)
+	 */
 	EXIT_VEHICLE				(4),
+	
+	/**
+	 * Player enters a vehicle as driver (Used internally)
+	 */
 	ENTER_VEHICLE_DRIVER		(5),
+	
+	/**
+	 * Player enters a vehicle as passenger (Used internally)
+	 */
 	ENTER_VEHICLE_PASSENGER		(6),
+	
+	/**
+	 * Player is wasted or on class selection
+	 */
 	WASTED						(7),
+	
+	/**
+	 * Player is spawned
+	 */
 	SPAWNED						(8),
+	
+	/**
+	 * Player is spectating
+	 */
 	SPECTATING					(9);
 	
 	

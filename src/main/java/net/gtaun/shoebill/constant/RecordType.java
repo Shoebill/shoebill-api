@@ -17,9 +17,11 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with startRecord.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#startRecord
  */
 public enum RecordType
 {

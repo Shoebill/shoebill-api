@@ -20,14 +20,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
+ * To be used with setCameraLookAt, interpolateCameraPos and interpolateCameraLookAt.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#setCameraLookAt
+ * @see net.gtaun.shoebill.object.Player#interpolateCameraPos
+ * @see net.gtaun.shoebill.object.Player#interpolateCameraLookAt
  */
 public enum CameraCutStyle
 {
-	CAMERA_CUT		(2),
-	CAMERA_MOVE 	(1);
+	/**
+	 * Direct cut
+	 */
+	CUT		(2),
+	
+	/**
+	 * Smooth movement
+	 */
+	MOVE 	(1);
 	
 	
 	private static final Map<Integer, CameraCutStyle> VALUES = new HashMap<>();

@@ -17,25 +17,82 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with VehicleComponent.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.VehicleComponent
  */
 public enum VehicleComponentSlot
 {
+	/**
+	 * Spoiler
+	 */
 	SPOILER				(0),
+
+	/**
+	 * Hood
+	 */
 	HOOD				(1),
+
+	/**
+	 * Roof
+	 */
 	ROOF				(2),
+
+	/**
+	 * Side Skirts
+	 */
 	SIDE_SKIRT			(3),
+
+	/**
+	 * Lamps
+	 */
 	LAMPS				(4),
+
+	/**
+	 * Nitro
+	 */
 	NITRO				(5),
+
+	/**
+	 * Exhaust
+	 */
 	EXHAUST				(6),
+
+	/**
+	 * Wheels
+	 */
 	WHEELS				(7),
+
+	/**
+	 * Stereo
+	 */
 	STEREO				(8),
+
+	/**
+	 * Hydraulics
+	 */
 	HYDRAULICS			(9),
+
+	/**
+	 * Front Bumper
+	 */
 	FRONT_BUMPER		(10),
+
+	/**
+	 * Rear Bumper
+	 */
 	REAR_BUMPER			(11),
+
+	/**
+	 * Right Vent
+	 */
 	VENT_RIGHT			(12),
+
+	/**
+	 * Left Vent
+	 */
 	VENT_LEFT			(13);
 	
 	

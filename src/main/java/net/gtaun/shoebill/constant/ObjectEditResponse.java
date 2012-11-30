@@ -17,14 +17,28 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * Used in PlayerEditObjectEvent and PlayerEditAttachedObjectEvent.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.event.player.PlayerEditObjectEvent
+ * @see net.gtaun.shoebill.event.player.PlayerEditAttachedObjectEvent
  */
 public enum ObjectEditResponse
 {
+	/**
+	 * Player cancelled (ESC)
+	 */
 	CANCEL		(0),
+	
+	/**
+	 * Player clicked on save
+	 */
 	FINAL		(1),
+	
+	/**
+	 * Player moved the object (edition did not stop at all)
+	 */
 	UPDATE		(2);
 	
 	

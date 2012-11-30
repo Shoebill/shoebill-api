@@ -20,9 +20,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
+ * To be used with setMaterialText.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.SampObject#setMaterialText
  */
 public enum ObjectMaterialSize
 {

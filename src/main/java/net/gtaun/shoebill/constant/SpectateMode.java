@@ -20,9 +20,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
+ * To be used with spectate.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#spectate
  */
 public enum SpectateMode
 {

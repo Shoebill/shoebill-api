@@ -17,16 +17,35 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * Type of checkpoint.
  * 
  * @author MK124
  */
 public enum RaceCheckpointType
 {
+	/**
+	 * Normal
+	 */
 	NORMAL				(0),
+	
+	/**
+	 * Finish
+	 */
 	NORMAL_FINISH		(1),
+	
+	/**
+	 * Nothing (Only the checkpoint without anything on it)
+	 */
 	NOTHING				(2),
+	
+	/**
+	 * Air normal
+	 */
 	AIR					(3),
+	
+	/**
+	 * Air finish
+	 */
 	AIR_FINISH			(4);
 	
 	

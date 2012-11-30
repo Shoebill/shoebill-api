@@ -17,9 +17,11 @@
 package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with PlayerWeaponSkill.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.PlayerWeaponSkill
  */
 public enum WeaponSkill
 {

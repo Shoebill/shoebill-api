@@ -20,18 +20,47 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
+ * To be used with setShopName.
  * 
  * @author MK124
+ * 
+ * @see net.gtaun.shoebill.object.Player#setShopName
  */
 public enum ShopName
 {
-	PIZZASTACK		("FDPIZA"),
-	BURGERSHOT		("FDBURG"),
-	CLUCKINBELL		("FDCHICK"),
+	/**
+	 * Pizza Stack
+	 */
+	PIZZA_STACK		("FDPIZA"),
+	
+	/**
+	 * Burger Shot
+	 */
+	BURGER_SHOT		("FDBURG"),
+	
+	/**
+	 * Cluckin' Bell
+	 */
+	CLUCKIN_BELL	("FDCHICK"),
+	
+	/**
+	 * Ammunation 1
+	 */
 	AMMUNATION1		("AMMUN1"),
+	
+	/**
+	 * Ammunation 2
+	 */
 	AMMUNATION2		("AMMUN2"),
+	
+	/**
+	 * Ammunation 3
+	 */
 	AMMUNATION3		("AMMUN3"),
+	
+	/**
+	 * Ammunation 5
+	 */
 	AMMUNATION5		("AMMUN5");
 	
 	
