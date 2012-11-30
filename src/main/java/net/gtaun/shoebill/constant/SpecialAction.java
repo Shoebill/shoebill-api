@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,8 @@ public enum SpecialAction
 	DRINK_BEER				(20),
 	SMOKE_CIGGY				(21),
 	DRINK_WINE				(22),
-	DRINK_SPRUNK			(23);
+	DRINK_SPRUNK			(23),
+	CUFFED					(24);
 	
 	
 	private static final Map<Integer, SpecialAction> VALUES = new HashMap<Integer, SpecialAction>();

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,30 +21,35 @@ package net.gtaun.shoebill.constant;
  * 
  * @author MK124
  */
-public enum DialogStyle
+public enum VehicleModelInfoType
 {
-	MSGBOX		(0),
-	INPUT		(1),
-	LIST		(2),
-	PASSWORD	(3);
+	VEHICLE_MODEL_INFO_SIZE				(1),
+	VEHICLE_MODEL_INFO_FRONTSEAT		(2),
+	VEHICLE_MODEL_INFO_REARSEAT			(3),
+	VEHICLE_MODEL_INFO_PETROLCAP		(4),
+	VEHICLE_MODEL_INFO_WHEELSFRONT		(5),
+	VEHICLE_MODEL_INFO_WHEELSREAR		(6),
+	VEHICLE_MODEL_INFO_WHEELSMID		(7),
+	VEHICLE_MODEL_INFO_FRONT_BUMPER_Z	(8),
+	VEHICLE_MODEL_INFO_REAR_BUMPER_Z	(9);
 	
 	
-	public static DialogStyle get(int data)
+	public static VehicleModelInfoType get(int value)
 	{
-		return values() [data];
+		return values() [value-1];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private DialogStyle(int data)
+	private VehicleModelInfoType(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

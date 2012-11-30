@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,32 +19,42 @@ package net.gtaun.shoebill.constant;
 /**
  * 
  * 
- * @author MK124
+ * @author mk124
  */
-public enum DialogStyle
+public enum PlayerKey
 {
-	MSGBOX		(0),
-	INPUT		(1),
-	LIST		(2),
-	PASSWORD	(3);
+	ACTION					(1),
+	CROUCH					(2),
+	FIRE					(4),
+	SPRINT					(8),
+	SECONDARY_ATTACK		(16),
+	JUMP					(32),
+	LOOK_RIGHT				(64),
+	HANDBRAKE				(128),
+	LOOK_LEFT				(256),
+	SUBMISSION				(512),
+	LOOK_BEHIND				(512),
+	WALK					(1024),
+	ANALOG_UP				(2048),
+	ANALOG_DOWN				(4096),
+	ANALOG_LEFT				(8192),
+	ANALOG_RIGHT			(16384),
+	KEY_YES					(65536),
+	KEY_NO					(131072),
+	KEY_CTRL_BACK			(262144);
 	
 	
-	public static DialogStyle get(int data)
+	private final int value;
+	
+	
+	private PlayerKey(int val)
 	{
-		return values() [data];
+		value = val;
 	}
-	
-	
-	private final int data;
-	
-	
-	private DialogStyle(int data)
+
+	public int getValue()
 	{
-		this.data = data;
-	}
-	
-	public int getData()
-	{
-		return data;
+		return value;
 	}
 }
+

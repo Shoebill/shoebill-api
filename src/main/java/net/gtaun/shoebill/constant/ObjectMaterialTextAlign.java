@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,30 +21,29 @@ package net.gtaun.shoebill.constant;
  * 
  * @author MK124
  */
-public enum DialogStyle
+public enum ObjectMaterialTextAlign
 {
-	MSGBOX		(0),
-	INPUT		(1),
-	LIST		(2),
-	PASSWORD	(3);
+	LEFT		(0),
+	CENTER		(1),
+	RIGHT		(2);
 	
 	
-	public static DialogStyle get(int data)
+	public static ObjectMaterialTextAlign get(int value)
 	{
-		return values() [data];
+		return values() [value];
 	}
 	
 	
-	private final int data;
+	private final int value;
 	
 	
-	private DialogStyle(int data)
+	private ObjectMaterialTextAlign(int value)
 	{
-		this.data = data;
+		this.value = value;
 	}
 	
-	public int getData()
+	public int getValue()
 	{
-		return data;
+		return value;
 	}
 }

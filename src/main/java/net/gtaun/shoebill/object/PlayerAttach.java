@@ -26,7 +26,7 @@ import net.gtaun.shoebill.data.Vector3D;
  */
 public interface PlayerAttach extends PlayerRelated
 {
-	public static final int MAX_ATTACHED_OBJECTS = 5;
+	public static final int MAX_ATTACHED_OBJECTS = 10;
 	
 	
 	public interface Slot

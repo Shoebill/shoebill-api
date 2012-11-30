@@ -16,47 +16,15 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.constant.PlayerKey;
+
 /**
  * 
  * 
- * @author Kee
+ * @author MK124
  */
 public interface PlayerKeyState
 {
-	public enum Key
-	{
-		ACTION					(1),
-		CROUCH					(2),
-		FIRE					(4),
-		SPRINT					(8),
-		SECONDARY_ATTACK		(16),
-		JUMP					(32),
-		LOOK_RIGHT				(64),
-		HANDBRAKE				(128),
-		LOOK_LEFT				(256),
-		SUBMISSION				(512),
-		LOOK_BEHIND				(512),
-		WALK					(1024),
-		ANALOG_UP				(2048),
-		ANALOG_DOWN				(4096),
-		ANALOG_LEFT				(8192),
-		ANALOG_RIGHT			(16384);
-		
-		
-		private final int value;
-		
-		
-		private Key(int val)
-		{
-			value = val;
-		}
-
-		public int getValue()
-		{
-			return value;
-		}
-	}
-	
 	public static final int KEY_UP		= -128;
 	public static final int KEY_DOWN	= 128;
 	public static final int KEY_LEFT	= -128;
@@ -67,5 +35,5 @@ public interface PlayerKeyState
 	int getKeys();
 	int getUpdown();
 	int getLeftright();
-	boolean isKeyPressed(Key key);
+	boolean isKeyPressed(PlayerKey key);
 }
