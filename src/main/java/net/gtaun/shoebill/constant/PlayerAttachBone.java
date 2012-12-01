@@ -21,7 +21,7 @@ package net.gtaun.shoebill.constant;
  * 
  * @author MK124
  * 
- * @see net.gtaun.shoebill.object.PlayerAttach.Slot
+ * @see net.gtaun.shoebill.object.PlayerAttach.PlayerAttachSlot
  */
 public enum PlayerAttachBone
 {

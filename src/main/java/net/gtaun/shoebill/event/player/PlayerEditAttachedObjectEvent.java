@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
-import net.gtaun.shoebill.object.PlayerAttach.Slot;
+import net.gtaun.shoebill.object.PlayerAttach.PlayerAttachSlot;
 
 /**
  * 
@@ -26,16 +26,16 @@ import net.gtaun.shoebill.object.PlayerAttach.Slot;
  */
 public class PlayerEditAttachedObjectEvent extends PlayerEvent
 {
-	private Slot slot;
+	private PlayerAttachSlot slot;
 	
 	
-	public PlayerEditAttachedObjectEvent(Player player, Slot slot)
+	public PlayerEditAttachedObjectEvent(Player player, PlayerAttachSlot slot)
 	{
 		super(player);
 		this.slot = slot;
 	}
 	
-	public Slot getSlot()
+	public PlayerAttachSlot getSlot()
 	{
 		return slot;
 	}

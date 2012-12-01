@@ -59,7 +59,7 @@ public interface Player extends Proxyable
 	int getId();
 
 	PlayerKeyState getKeyState();
-	PlayerAttach getPlayerAttach();
+	PlayerAttach getAttach();
 	PlayerWeaponSkill getWeaponSkill();
 	
 	int getPing();

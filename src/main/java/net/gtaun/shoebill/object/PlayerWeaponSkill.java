@@ -25,6 +25,6 @@ import net.gtaun.shoebill.constant.WeaponSkill;
  */
 public interface PlayerWeaponSkill extends PlayerRelated
 {
-	void set(WeaponSkill type, int level);
-	int get(WeaponSkill type);
+	void setLevel(WeaponSkill type, int level);
+	int getLevel(WeaponSkill type);
 }

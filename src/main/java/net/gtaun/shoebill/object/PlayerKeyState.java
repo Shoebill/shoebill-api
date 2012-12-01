@@ -23,7 +23,7 @@ import net.gtaun.shoebill.constant.PlayerKey;
  * 
  * @author MK124
  */
-public interface PlayerKeyState
+public interface PlayerKeyState extends PlayerRelated
 {
 	public static final int KEY_UP		= -128;
 	public static final int KEY_DOWN	= 128;
@@ -31,7 +31,6 @@ public interface PlayerKeyState
 	public static final int KEY_RIGHT	= 128;
 	
 	
-	Player getPlayer();
 	int getKeys();
 	int getUpdown();
 	int getLeftright();
