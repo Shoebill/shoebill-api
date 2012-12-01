@@ -30,6 +30,7 @@ import net.gtaun.shoebill.object.Pickup;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerLabel;
 import net.gtaun.shoebill.object.PlayerObject;
+import net.gtaun.shoebill.object.PlayerTextdraw;
 import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.shoebill.object.Textdraw;
 import net.gtaun.shoebill.object.Timer;
@@ -79,11 +80,16 @@ public interface SampObjectFactory
 	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS);
 	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS, Player attachedPlayer);
 	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS, Vehicle attachedVehicle);
-	
+
 	Textdraw createTextdraw(float x, float y);
 	Textdraw createTextdraw(float x, float y, String text);
 	Textdraw createTextdraw(Vector2D pos);
 	Textdraw createTextdraw(Vector2D pos, String text);
+	
+	PlayerTextdraw createPlayerTextdraw(Player player, float x, float y);
+	PlayerTextdraw createPlayerTextdraw(Player player, float x, float y, String text);
+	PlayerTextdraw createPlayerTextdraw(Player player, Vector2D pos);
+	PlayerTextdraw createPlayerTextdraw(Player player, Vector2D pos, String text);
 	
 	Zone createZone(float minX, float minY, float maxX, float maxY);
 	Zone createZone(Area area);

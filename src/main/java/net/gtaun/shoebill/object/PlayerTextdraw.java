@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import net.gtaun.shoebill.proxy.Proxyable;
  * 
  * @author MK124
  */
-public interface Textdraw extends Destroyable, Proxyable
+public interface PlayerTextdraw extends PlayerRelated, Destroyable, Proxyable
 {
 	public static final int INVALID_ID =		0xFFFF;
 	
@@ -33,7 +33,7 @@ public interface Textdraw extends Destroyable, Proxyable
 	int getId();
 	Vector2D getPosition();
 	String getText();
-
+	
 	void setLetterSize(float x, float y);
 	void setLetterSize(Vector2D vec);
 	
@@ -52,11 +52,8 @@ public interface Textdraw extends Destroyable, Proxyable
 	void setSelectable(boolean set);
 	void setText(String text);
 	
-	void show(Player player);
-	void hide(Player player);
+	void show();
+	void hide();
 	
-	void showForAll();
-	void hideForAll();
-	
-	boolean isPlayerShowed(Player player);
+	boolean isShowed();
 }

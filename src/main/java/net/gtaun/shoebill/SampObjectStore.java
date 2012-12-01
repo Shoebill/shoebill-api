@@ -25,6 +25,7 @@ import net.gtaun.shoebill.object.Pickup;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerLabel;
 import net.gtaun.shoebill.object.PlayerObject;
+import net.gtaun.shoebill.object.PlayerTextdraw;
 import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.shoebill.object.Server;
 import net.gtaun.shoebill.object.Textdraw;
@@ -110,7 +111,7 @@ public interface SampObjectStore
 	 * @return PlayerLabel instance. If not exist, then it return {@code null}.
 	 */
 	PlayerLabel getPlayerLabel(Player player, int id);
-	
+
 	/**
 	 * Get Textdraw instance with id.
 	 * 
@@ -118,6 +119,15 @@ public interface SampObjectStore
 	 * @return Textdraw instance. If not exist, then it return {@code null}.
 	 */
 	Textdraw getTextdraw(int id);
+	
+	/**
+	 * Get PlayerTextdraw instance with id.
+	 * 
+	 * @param player Player instance.
+	 * @param id ID of PlayerTextdraw.
+	 * @return PlayerTextdraw instance. If not exist, then it return {@code null}.
+	 */
+	PlayerTextdraw getPlayerTextdraw(Player player, int id);
 	
 	/**
 	 * Get Zone instance with id.
@@ -192,13 +202,20 @@ public interface SampObjectStore
 	 * @return Collection of PlayerLabels.
 	 */
 	Collection<PlayerLabel> getPlayerLabels(Player player);
-	
+
 	/**
 	 * Get the collection of the textdraws that exist.
 	 * 
 	 * @return Collection of Textdraws.
 	 */
 	Collection<Textdraw> getTextdraws();
+	
+	/**
+	 * Get the collection of the player textdraws that exist.
+	 * 
+	 * @return Collection of PlayerTextdraws.
+	 */
+	Collection<PlayerTextdraw> getPlayerTextdraws(Player player);
 	
 	/**
 	 * Get the collection of the zones that exist.
