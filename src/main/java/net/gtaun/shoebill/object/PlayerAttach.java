@@ -43,5 +43,7 @@ public interface PlayerAttach extends PlayerRelated
 	}
 	
 	Slot getSlot(int slot);
+	Slot getSlotByBone(PlayerAttachBone bone);
+	
 	Slot[] getSlots();
 }
