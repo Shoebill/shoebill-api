@@ -44,6 +44,21 @@ public interface ProxyableFactory<T extends Proxyable>
 				return null;
 			}
 		}
+		
+		@SuppressWarnings("unchecked")
+		public static <T extends Proxyable> ProxyableFactory<T> createProxyableFactory(Class<T> clz, GlobalProxyManager globalProxyManager)
+		{
+			try
+			{
+				Constructor<?> constructor = implClass.getConstructor(Class.class, GlobalProxyManager.class);
+				return ProxyableFactory.class.cast(constructor.newInstance(clz, globalProxyManager));
+			}
+			catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e)
+			{
+				e.printStackTrace();
+				return null;
+			}
+		}
 	}
 	
 	

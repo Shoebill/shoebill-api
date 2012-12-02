@@ -16,6 +16,9 @@
 
 package net.gtaun.shoebill.proxy;
 
+import java.lang.reflect.Method;
+import java.util.Collection;
+
 /**
  * 
  * 
@@ -23,5 +26,5 @@ package net.gtaun.shoebill.proxy;
  */
 public interface GlobalProxyManager extends ProxyManager
 {
-	
+	Collection<MethodInterceptor> getMethodInterceptors(Method method);
 }
