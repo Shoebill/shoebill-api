@@ -18,9 +18,8 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
+import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
-import net.gtaun.shoebill.util.immutable.Immutably;
-import net.gtaun.shoebill.util.immutable.ImmutablyException;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -32,25 +31,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author JoJLlmAn
  */
-public class Vector3D extends Vector2D implements Cloneable, Serializable, Immutable
+public class Vector3D extends Vector2D implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = 8493095902831171278L;
 	
 	
-	private static final class ImmutablyVector3D extends Vector3D implements Immutably
+	private static final class ImmutableVector3D extends Vector3D implements Immutable
 	{
 		private static final long serialVersionUID = Vector3D.serialVersionUID;
 		
 		
-		private ImmutablyVector3D(Vector3D vector3d)
+		private ImmutableVector3D(Vector3D vector3d)
 		{
 			super(vector3d);
 		}
 		
 		@Override
-		public Vector3D clone()
+		public ImmutableVector3D clone()
 		{
-			return new Vector3D(this);
+			return this;
 		}
 	}
 	
@@ -88,13 +87,13 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, Immut
 	
 	public void setZ(float z)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.z = z;
 	}
 	
 	public void set(float x, float y, float z)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(x, y);
 		setZ(z);
@@ -102,7 +101,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, Immut
 	
 	public void set(Vector2D vec, float z)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(vec);
 		setZ(z);
@@ -110,7 +109,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, Immut
 	
 	public void set(Vector3D vec)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(vec);
 		setZ(vec.getZ());
@@ -135,9 +134,9 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, Immut
 	}
 	
 	@Override
-	public Vector3D immure()
+	public Vector3D immutable()
 	{
-		return new ImmutablyVector3D(this);
+		return new ImmutableVector3D(this);
 	}
 	
 	@Override

@@ -33,6 +33,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @author MK124
  */
+@SuppressWarnings("deprecation")
 public abstract class Resource
 {
 	private boolean isEnabled;

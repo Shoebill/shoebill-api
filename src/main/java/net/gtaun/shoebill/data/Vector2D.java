@@ -18,9 +18,8 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
+import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
-import net.gtaun.shoebill.util.immutable.Immutably;
-import net.gtaun.shoebill.util.immutable.ImmutablyException;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -32,25 +31,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author JoJLlmAn
  */
-public class Vector2D implements Cloneable, Serializable, Immutable
+public class Vector2D implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = 3303330394405245831L;
 	
 	
-	private static final class ImmutablyVector2D extends Vector2D implements Immutably
+	private static final class ImmutableVector2D extends Vector2D implements Immutable
 	{
 		private static final long serialVersionUID = Vector2D.serialVersionUID;
 		
 		
-		private ImmutablyVector2D(Vector2D vector2d)
+		private ImmutableVector2D(Vector2D vector2d)
 		{
 			super(vector2d);
 		}
 		
 		@Override
-		public Vector2D clone()
+		public ImmutableVector2D clone()
 		{
-			return new Vector2D(this);
+			return this;
 		}
 	}
 	
@@ -82,7 +81,7 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 	
 	public void setX(float x)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.x = x;
 	}
@@ -94,14 +93,14 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 	
 	public void setY(float y)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.y = y;
 	}
 	
 	public void set(float x, float y)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		setX(x);
 		setY(y);
@@ -109,7 +108,7 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 	
 	public void set(Vector2D vector)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		setX(vector.getX());
 		setY(vector.getY());
@@ -141,9 +140,9 @@ public class Vector2D implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public Vector2D immure()
+	public Vector2D immutable()
 	{
-		return new ImmutablyVector2D(this);
+		return new ImmutableVector2D(this);
 	}
 	
 	@Override

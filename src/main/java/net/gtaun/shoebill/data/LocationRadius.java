@@ -18,9 +18,8 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
+import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
-import net.gtaun.shoebill.util.immutable.Immutably;
-import net.gtaun.shoebill.util.immutable.ImmutablyException;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -32,25 +31,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class LocationRadius extends Location implements Cloneable, Serializable, Immutable
+public class LocationRadius extends Location implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = -4375366678586498863L;
 	
 	
-	private static final class ImmutablyLocationRadius extends LocationRadius implements Immutably
+	private static final class ImmutableLocationRadius extends LocationRadius implements Immutable
 	{
 		private static final long serialVersionUID = LocationRadius.serialVersionUID;
 		
 		
-		private ImmutablyLocationRadius(LocationRadius locationRadius)
+		private ImmutableLocationRadius(LocationRadius locationRadius)
 		{
 			super(locationRadius);
 		}
 		
 		@Override
-		public LocationRadius clone()
+		public ImmutableLocationRadius clone()
 		{
-			return new LocationRadius(this);
+			return this;
 		}
 	}
 	
@@ -118,13 +117,13 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	
 	public void setRadius(float radius)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.radius = radius;
 	}
 	
 	public void set(float x, float y, float z, float radius)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(x, y, z);
 		setRadius(radius);
@@ -132,7 +131,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	
 	public void set(float x, float y, float z, int worldId, float radius)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(x, y, z, worldId);
 		setRadius(radius);
@@ -140,7 +139,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	
 	public void set(float x, float y, float z, int interiorId, int worldId, float radius)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(x, y, z, interiorId, worldId);
 		setRadius(radius);
@@ -148,7 +147,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	
 	public void set(Vector3D pos, float radius)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(pos);
 		setRadius(radius);
@@ -156,7 +155,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	
 	public void set(Vector3D pos, int worldId, float radius)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(pos, worldId);
 		setRadius(radius);
@@ -164,7 +163,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	
 	public void set(Vector3D pos, int interiorId, int worldId, float radius)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(pos, interiorId, worldId);
 		setRadius(radius);
@@ -172,7 +171,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	
 	public void set(LocationRadius loc)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		super.set(loc);
 		setRadius(loc.getRadius());
@@ -197,9 +196,9 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	}
 	
 	@Override
-	public LocationRadius immure()
+	public LocationRadius immutable()
 	{
-		return new ImmutablyLocationRadius(this);
+		return new ImmutableLocationRadius(this);
 	}
 	
 	@Override

@@ -18,8 +18,8 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
+import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
-import net.gtaun.shoebill.util.immutable.Immutably;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -31,25 +31,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class Velocity extends Vector3D implements Cloneable, Serializable, Immutable
+public class Velocity extends Vector3D implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = 6111643976368753336L;
 	
 	
-	private static final class ImmutablyVelocity extends Velocity implements Immutably
+	private static final class ImmutableVelocity extends Velocity implements Immutable
 	{
 		private static final long serialVersionUID = Velocity.serialVersionUID;
 		
 		
-		private ImmutablyVelocity(Velocity velocity)
+		private ImmutableVelocity(Velocity velocity)
 		{
 			super(velocity);
 		}
 		
 		@Override
-		public Velocity clone()
+		public ImmutableVelocity clone()
 		{
-			return new Velocity(this);
+			return this;
 		}
 	}
 	
@@ -108,9 +108,9 @@ public class Velocity extends Vector3D implements Cloneable, Serializable, Immut
 	}
 	
 	@Override
-	public Velocity immure()
+	public Velocity immutable()
 	{
-		return new ImmutablyVelocity(this);
+		return new ImmutableVelocity(this);
 	}
 	
 	@Override

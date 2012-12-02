@@ -18,9 +18,8 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
+import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
-import net.gtaun.shoebill.util.immutable.Immutably;
-import net.gtaun.shoebill.util.immutable.ImmutablyException;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -32,25 +31,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class Area implements Cloneable, Serializable, Immutable
+public class Area implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = 4319892622317856825L;
 	
 	
-	private static final class ImmutablyArea extends Area implements Immutably
+	private static final class ImmutableArea extends Area implements Immutable
 	{
 		private static final long serialVersionUID = Area.serialVersionUID;
 		
 		
-		private ImmutablyArea(Area area)
+		private ImmutableArea(Area area)
 		{
 			super(area);
 		}
 		
 		@Override
-		public Area clone()
+		public ImmutableArea clone()
 		{
-			return new Area(this);
+			return this;
 		}
 	}
 	
@@ -86,7 +85,7 @@ public class Area implements Cloneable, Serializable, Immutable
 	
 	public void setMinX(float minX)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.minX = minX;
 	}
@@ -98,7 +97,7 @@ public class Area implements Cloneable, Serializable, Immutable
 	
 	public void setMinY(float minY)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.minY = minY;
 	}
@@ -110,7 +109,7 @@ public class Area implements Cloneable, Serializable, Immutable
 	
 	public void setMaxX(float maxX)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.maxX = maxX;
 	}
@@ -122,14 +121,14 @@ public class Area implements Cloneable, Serializable, Immutable
 	
 	public void setMaxY(float maxY)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.maxY = maxY;
 	}
 	
 	public void set(float minX, float minY, float maxX, float maxY)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		setMinX(minX);
 		setMinY(minY);
@@ -139,7 +138,7 @@ public class Area implements Cloneable, Serializable, Immutable
 	
 	public void set(Area area)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		setMinX(area.getMinX());
 		setMinY(area.getMinY());
@@ -178,9 +177,9 @@ public class Area implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public Area immure()
+	public Area immutable()
 	{
-		return new ImmutablyArea(this);
+		return new ImmutableArea(this);
 	}
 	
 	@Override

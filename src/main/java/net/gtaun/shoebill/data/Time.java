@@ -18,9 +18,8 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
+import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
-import net.gtaun.shoebill.util.immutable.Immutably;
-import net.gtaun.shoebill.util.immutable.ImmutablyException;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -32,25 +31,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class Time implements Cloneable, Serializable, Immutable
+public class Time implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = -2904498722367946789L;
 	
 	
-	private static final class ImmutablyTime extends Time implements Immutably
+	private static final class ImmutableTime extends Time implements Immutable
 	{
 		private static final long serialVersionUID = Time.serialVersionUID;
 		
 		
-		private ImmutablyTime(Time time)
+		private ImmutableTime(Time time)
 		{
 			super(time);
 		}
 		
 		@Override
-		public Time clone()
+		public ImmutableTime clone()
 		{
-			return new Time(this);
+			return this;
 		}
 	}
 	
@@ -82,7 +81,7 @@ public class Time implements Cloneable, Serializable, Immutable
 	
 	public void setHour(int hour)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.hour = hour;
 	}
@@ -94,14 +93,14 @@ public class Time implements Cloneable, Serializable, Immutable
 	
 	public void setMinute(int minute)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.minute = minute;
 	}
 	
 	public void set(int hour, int minute)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		setHour(hour);
 		setMinute(minute);
@@ -109,7 +108,7 @@ public class Time implements Cloneable, Serializable, Immutable
 	
 	public void set(Time time)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		setHour(time.getHour());
 		setMinute(time.getMinute());
@@ -141,9 +140,9 @@ public class Time implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public Time immure()
+	public Time immutable()
 	{
-		return new ImmutablyTime(this);
+		return new ImmutableTime(this);
 	}
 	
 	@Override

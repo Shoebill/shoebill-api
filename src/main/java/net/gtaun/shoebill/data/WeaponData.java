@@ -19,9 +19,8 @@ package net.gtaun.shoebill.data;
 import java.io.Serializable;
 
 import net.gtaun.shoebill.constant.WeaponType;
+import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
-import net.gtaun.shoebill.util.immutable.Immutably;
-import net.gtaun.shoebill.util.immutable.ImmutablyException;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -33,25 +32,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class WeaponData implements Cloneable, Serializable, Immutable
+public class WeaponData implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = 8584508544432627380L;
 	
 	
-	private static final class ImmutablyWeaponData extends WeaponData implements Immutably
+	private static final class ImmutableWeaponData extends WeaponData implements Immutable
 	{
 		private static final long serialVersionUID = WeaponData.serialVersionUID;
 		
 		
-		private ImmutablyWeaponData(WeaponData weaponData)
+		private ImmutableWeaponData(WeaponData weaponData)
 		{
 			super(weaponData);
 		}
 		
 		@Override
-		public WeaponData clone()
+		public ImmutableWeaponData clone()
 		{
-			return new WeaponData(this);
+			return this;
 		}
 	}
 	
@@ -85,7 +84,7 @@ public class WeaponData implements Cloneable, Serializable, Immutable
 	
 	public void setType(WeaponType type)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.type = type;
 	}
@@ -97,14 +96,14 @@ public class WeaponData implements Cloneable, Serializable, Immutable
 	
 	public void setAmmo(int ammo)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		this.ammo = ammo;
 	}
 	
 	public void set(WeaponType type, int ammo)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		setType(type);
 		setAmmo(ammo);
@@ -112,7 +111,7 @@ public class WeaponData implements Cloneable, Serializable, Immutable
 	
 	public void set(WeaponData data)
 	{
-		if (this instanceof Immutably) throw new ImmutablyException();
+		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
 		setType(data.getType());
 		setAmmo(data.getAmmo());
@@ -144,9 +143,9 @@ public class WeaponData implements Cloneable, Serializable, Immutable
 	}
 	
 	@Override
-	public WeaponData immure()
+	public WeaponData immutable()
 	{
-		return new ImmutablyWeaponData(this);
+		return new ImmutableWeaponData(this);
 	}
 	
 	@Override
