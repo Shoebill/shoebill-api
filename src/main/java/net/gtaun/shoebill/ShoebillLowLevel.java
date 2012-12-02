@@ -23,6 +23,7 @@ import net.gtaun.util.event.EventManager;
  * Shoebill low-level interface, provides some low-level functions which are not recommend. 
  * 
  * @author MK124
+ * @deprecated
  */
 public interface ShoebillLowLevel
 {

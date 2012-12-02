@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill;
 
+import net.gtaun.shoebill.proxy.GlobalProxyManager;
 import net.gtaun.shoebill.resource.ResourceManager;
 import net.gtaun.shoebill.service.ServiceStore;
 
@@ -53,6 +54,13 @@ public interface Shoebill
 	 * @return ServiceStore instance.
 	 */
 	ServiceStore getServiceStore();
+	
+	/**
+	 * Get global proxy manager.
+	 * 
+	 * @return GlobalProxyManager instance.
+	 */
+	GlobalProxyManager getGlobalProxyManager();
 	
 	/**
 	 * Get version information.
