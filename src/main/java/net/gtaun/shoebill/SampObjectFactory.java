@@ -16,13 +16,16 @@
 
 package net.gtaun.shoebill;
 
+import net.gtaun.shoebill.constant.RaceCheckpointType;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.LocationAngle;
+import net.gtaun.shoebill.data.LocationRadius;
 import net.gtaun.shoebill.data.Vector2D;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
+import net.gtaun.shoebill.object.Checkpoint;
 import net.gtaun.shoebill.object.Dialog;
 import net.gtaun.shoebill.object.Label;
 import net.gtaun.shoebill.object.Menu;
@@ -31,6 +34,7 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerLabel;
 import net.gtaun.shoebill.object.PlayerObject;
 import net.gtaun.shoebill.object.PlayerTextdraw;
+import net.gtaun.shoebill.object.RaceCheckpoint;
 import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.shoebill.object.Textdraw;
 import net.gtaun.shoebill.object.Timer;
@@ -101,4 +105,14 @@ public interface SampObjectFactory
 	
 	Timer createTimer(int interval);
 	Timer createTimer(int interval, int count);
+
+	Checkpoint createCheckpoint(float x, float y, float z, float size);
+	Checkpoint createCheckpoint(Vector3D pos, float size);
+	Checkpoint createCheckpoint(Location pos, float size);
+	Checkpoint createCheckpoint(LocationRadius loc);
+
+	RaceCheckpoint createRaceCheckpoint(float x, float y, float z, float size, RaceCheckpointType type, RaceCheckpoint next);
+	RaceCheckpoint createRaceCheckpoint(Vector3D pos, float size, RaceCheckpointType type, RaceCheckpoint next);
+	RaceCheckpoint createRaceCheckpoint(Location loc, float size, RaceCheckpointType type, RaceCheckpoint next);
+	RaceCheckpoint createRaceCheckpoint(LocationRadius loc, RaceCheckpointType type, RaceCheckpoint next);
 }
