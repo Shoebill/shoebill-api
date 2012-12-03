@@ -31,23 +31,23 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class LocationAngle extends Location implements Cloneable, Serializable, CanImmutable
+public class AngledLocation extends Location implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = -6964956260244629027L;
 	
 	
-	private static final class ImmutableLocationAngular extends LocationAngle implements Immutable
+	private static final class ImmutableAngledLocation extends AngledLocation implements Immutable
 	{
-		private static final long serialVersionUID = LocationAngle.serialVersionUID;
+		private static final long serialVersionUID = AngledLocation.serialVersionUID;
 		
 		
-		private ImmutableLocationAngular(LocationAngle locationAngle)
+		private ImmutableAngledLocation(AngledLocation locationAngle)
 		{
 			super(locationAngle);
 		}
 		
 		@Override
-		public ImmutableLocationAngular clone()
+		public ImmutableAngledLocation clone()
 		{
 			return this;
 		}
@@ -57,48 +57,48 @@ public class LocationAngle extends Location implements Cloneable, Serializable, 
 	private float angle;
 	
 	
-	public LocationAngle()
+	public AngledLocation()
 	{
 		
 	}
 	
-	public LocationAngle(float x, float y, float z, float angle)
+	public AngledLocation(float x, float y, float z, float angle)
 	{
 		super(x, y, z);
 		this.angle = angle;
 	}
 	
-	public LocationAngle(float x, float y, float z, int worldId, float angle)
+	public AngledLocation(float x, float y, float z, int worldId, float angle)
 	{
 		super(x, y, z, worldId);
 		this.angle = angle;
 	}
 	
-	public LocationAngle(float x, float y, float z, int interiorId, int worldId, float angle)
+	public AngledLocation(float x, float y, float z, int interiorId, int worldId, float angle)
 	{
 		super(x, y, z, interiorId, worldId);
 		this.angle = angle;
 	}
 	
-	public LocationAngle(Vector3D pos, int worldId, float angle)
+	public AngledLocation(Vector3D pos, int worldId, float angle)
 	{
 		super(pos, worldId);
 		this.angle = angle;
 	}
 	
-	public LocationAngle(Vector3D pos, int interiorId, int worldId, float angle)
+	public AngledLocation(Vector3D pos, int interiorId, int worldId, float angle)
 	{
 		super(pos, interiorId, worldId);
 		this.angle = angle;
 	}
 	
-	public LocationAngle(Location loc, float angle)
+	public AngledLocation(Location loc, float angle)
 	{
 		super(loc);
 		this.angle = angle;
 	}
 	
-	public LocationAngle(LocationAngle loc)
+	public AngledLocation(AngledLocation loc)
 	{
 		super(loc);
 		this.angle = loc.getAngle();
@@ -164,7 +164,7 @@ public class LocationAngle extends Location implements Cloneable, Serializable, 
 		setAngle(angle);
 	}
 	
-	public void set(LocationAngle loc)
+	public void set(AngledLocation loc)
 	{
 		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
@@ -185,15 +185,15 @@ public class LocationAngle extends Location implements Cloneable, Serializable, 
 	}
 	
 	@Override
-	public LocationAngle clone()
+	public AngledLocation clone()
 	{
-		return (LocationAngle) super.clone();
+		return (AngledLocation) super.clone();
 	}
 	
 	@Override
-	public LocationAngle immutable()
+	public AngledLocation immutable()
 	{
-		return new ImmutableLocationAngular(this);
+		return new ImmutableAngledLocation(this);
 	}
 	
 	@Override

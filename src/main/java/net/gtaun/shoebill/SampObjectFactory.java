@@ -20,8 +20,8 @@ import net.gtaun.shoebill.constant.RaceCheckpointType;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.data.LocationAngle;
-import net.gtaun.shoebill.data.LocationRadius;
+import net.gtaun.shoebill.data.AngledLocation;
+import net.gtaun.shoebill.data.Radius;
 import net.gtaun.shoebill.data.Vector2D;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
@@ -55,7 +55,7 @@ public interface SampObjectFactory
 	Vehicle createVehicle(int modelId, Vector3D pos, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException;
 	Vehicle createVehicle(int modelId, Vector3D pos, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException;
 	Vehicle createVehicle(int modelId, Location loc, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException;
-	Vehicle createVehicle(int modelId, LocationAngle loc, int color1, int color2, int respawnDelay) throws CreationFailedException;
+	Vehicle createVehicle(int modelId, AngledLocation loc, int color1, int color2, int respawnDelay) throws CreationFailedException;
 	
 	SampObject createObject(int modelId, float x, float y, float z, float rx, float ry, float rz) throws CreationFailedException;
 	SampObject createObject(int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance) throws CreationFailedException;
@@ -109,10 +109,10 @@ public interface SampObjectFactory
 	Checkpoint createCheckpoint(float x, float y, float z, float size);
 	Checkpoint createCheckpoint(Vector3D pos, float size);
 	Checkpoint createCheckpoint(Location pos, float size);
-	Checkpoint createCheckpoint(LocationRadius loc);
+	Checkpoint createCheckpoint(Radius loc);
 
 	RaceCheckpoint createRaceCheckpoint(float x, float y, float z, float size, RaceCheckpointType type, RaceCheckpoint next);
 	RaceCheckpoint createRaceCheckpoint(Vector3D pos, float size, RaceCheckpointType type, RaceCheckpoint next);
 	RaceCheckpoint createRaceCheckpoint(Location loc, float size, RaceCheckpointType type, RaceCheckpoint next);
-	RaceCheckpoint createRaceCheckpoint(LocationRadius loc, RaceCheckpointType type, RaceCheckpoint next);
+	RaceCheckpoint createRaceCheckpoint(Radius loc, RaceCheckpointType type, RaceCheckpoint next);
 }

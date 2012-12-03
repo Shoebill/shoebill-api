@@ -29,8 +29,8 @@ import net.gtaun.shoebill.constant.WeaponType;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.data.LocationAngle;
-import net.gtaun.shoebill.data.LocationRadius;
+import net.gtaun.shoebill.data.AngledLocation;
+import net.gtaun.shoebill.data.Radius;
 import net.gtaun.shoebill.data.SpawnInfo;
 import net.gtaun.shoebill.data.Time;
 import net.gtaun.shoebill.data.Vector3D;
@@ -87,7 +87,7 @@ public interface Player extends Proxyable
 	Player getSpectatingPlayer();
 	Vehicle getSpectatingVehicle();
 	
-	LocationAngle getLocation();
+	AngledLocation getLocation();
 	Area getWorldBound();
 	Velocity getVelocity();
 	PlayerState getState();
@@ -107,7 +107,7 @@ public interface Player extends Proxyable
 	void setSpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skinId, int teamId, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3);
 	void setSpawnInfo(Vector3D pos, int interiorId, int worldId, float angle, int skinId, int teamId, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
 	void setSpawnInfo(Location loc, float angle, int skinId, int teamId, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
-	void setSpawnInfo(LocationAngle loc, int skin, int team, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
+	void setSpawnInfo(AngledLocation loc, int skin, int team, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
 	void setSpawnInfo(SpawnInfo info);
 	
 	void setColor(Color color);
@@ -126,12 +126,12 @@ public interface Player extends Proxyable
 	void setLocation(float x, float y, float z);
 	void setLocation(Vector3D pos);
 	void setLocation(Location loc);
-	void setLocation(LocationAngle loc);
+	void setLocation(AngledLocation loc);
 
 	void setLocationFindZ(float x, float y, float z);
 	void setLocationFindZ(Vector3D pos);
 	void setLocationFindZ(Location loc);
-	void setLocationFindZ(LocationAngle loc);
+	void setLocationFindZ(AngledLocation loc);
 	
 	void setAngle(float angle);
 	void setInteriorId(int interiorId);
@@ -237,12 +237,12 @@ public interface Player extends Proxyable
 	void playAudioStream(String url);
 	void playAudioStream(String url, float x, float y, float z, float distance);
 	void playAudioStream(String url, Vector3D location, float distance);
-	void playAudioStream(String url, LocationRadius loc);
+	void playAudioStream(String url, Radius loc);
 	void stopAudioStream();
 
 	void removeBuilding(int modelId, float x, float y, float z, float radius);
 	void removeBuilding(int modelId, Vector3D pos, float radius);
-	void removeBuilding(int modelId, LocationRadius loc);
+	void removeBuilding(int modelId, Radius loc);
 
 	void showDialog(Dialog dialog, DialogStyle style, String caption, String text, String button1, String button2);
 	void cancelDialog();

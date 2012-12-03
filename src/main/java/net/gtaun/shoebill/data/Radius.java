@@ -31,23 +31,23 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class LocationRadius extends Location implements Cloneable, Serializable, CanImmutable
+public class Radius extends Location implements Cloneable, Serializable, CanImmutable
 {
 	private static final long serialVersionUID = -4375366678586498863L;
 	
 	
-	private static final class ImmutableLocationRadius extends LocationRadius implements Immutable
+	private static final class ImmutableRadius extends Radius implements Immutable
 	{
-		private static final long serialVersionUID = LocationRadius.serialVersionUID;
+		private static final long serialVersionUID = Radius.serialVersionUID;
 		
 		
-		private ImmutableLocationRadius(LocationRadius locationRadius)
+		private ImmutableRadius(Radius locationRadius)
 		{
 			super(locationRadius);
 		}
 		
 		@Override
-		public ImmutableLocationRadius clone()
+		public ImmutableRadius clone()
 		{
 			return this;
 		}
@@ -57,54 +57,54 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	private float radius;
 	
 	
-	public LocationRadius()
+	public Radius()
 	{
 		
 	}
 	
-	public LocationRadius(float x, float y, float z, float radius)
+	public Radius(float x, float y, float z, float radius)
 	{
 		super(x, y, z);
 		this.radius = radius;
 	}
 	
-	public LocationRadius(float x, float y, float z, int worldId, float radius)
+	public Radius(float x, float y, float z, int worldId, float radius)
 	{
 		super(x, y, z, worldId);
 		this.radius = radius;
 	}
 	
-	public LocationRadius(float x, float y, float z, int interiorId, int worldId, float radius)
+	public Radius(float x, float y, float z, int interiorId, int worldId, float radius)
 	{
 		super(x, y, z, interiorId, worldId);
 		this.radius = radius;
 	}
 	
-	public LocationRadius(Vector3D pos, float radius)
+	public Radius(Vector3D pos, float radius)
 	{
 		super(pos);
 		this.radius = radius;
 	}
 	
-	public LocationRadius(Vector3D pos, int worldId, float radius)
+	public Radius(Vector3D pos, int worldId, float radius)
 	{
 		super(pos, worldId);
 		this.radius = radius;
 	}
 	
-	public LocationRadius(Vector3D pos, int interiorId, int worldId, float radius)
+	public Radius(Vector3D pos, int interiorId, int worldId, float radius)
 	{
 		super(pos, interiorId, worldId);
 		this.radius = radius;
 	}
 	
-	public LocationRadius(Location loc, float radius)
+	public Radius(Location loc, float radius)
 	{
 		super(loc);
 		this.radius = radius;
 	}
 	
-	public LocationRadius(LocationRadius loc)
+	public Radius(Radius loc)
 	{
 		super(loc);
 		this.radius = loc.getRadius();
@@ -169,7 +169,7 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 		setRadius(radius);
 	}
 	
-	public void set(LocationRadius loc)
+	public void set(Radius loc)
 	{
 		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
@@ -190,15 +190,15 @@ public class LocationRadius extends Location implements Cloneable, Serializable,
 	}
 	
 	@Override
-	public LocationRadius clone()
+	public Radius clone()
 	{
-		return (LocationRadius) super.clone();
+		return (Radius) super.clone();
 	}
 	
 	@Override
-	public LocationRadius immutable()
+	public Radius immutable()
 	{
-		return new ImmutableLocationRadius(this);
+		return new ImmutableRadius(this);
 	}
 	
 	@Override

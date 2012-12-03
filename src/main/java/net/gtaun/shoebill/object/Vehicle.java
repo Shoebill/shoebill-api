@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.data.LocationAngle;
+import net.gtaun.shoebill.data.AngledLocation;
 import net.gtaun.shoebill.data.Quaternion;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.data.Velocity;
@@ -45,11 +45,11 @@ public interface Vehicle extends Destroyable, Proxyable
 	VehicleComponent getComponent();
 	public VehicleDamage getDamage();
 	
-	LocationAngle getLocation();
+	AngledLocation getLocation();
 	void setLocation(float x, float y, float z);
 	void setLocation(Vector3D pos);
 	void setLocation(Location loc);
-	void setLocation(LocationAngle loc);
+	void setLocation(AngledLocation loc);
 
 	float getAngle();
 	void setAngle(float angle);

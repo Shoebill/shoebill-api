@@ -55,14 +55,14 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	}
 	
 	
-	private LocationAngle location;
+	private AngledLocation location;
 	private int skinId, teamId;
 	private WeaponData weapon1, weapon2, weapon3;
 	
 	
 	public SpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
 	{
-		location = new LocationAngle(x, y, z, interiorId, worldId, angle);
+		location = new AngledLocation(x, y, z, interiorId, worldId, angle);
 		this.skinId = skin;
 		this.teamId = team;
 		this.weapon1 = new WeaponData(weapon1, ammo1);
@@ -72,7 +72,7 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public SpawnInfo(Vector3D vec, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
 	{
-		location = new LocationAngle(vec, interiorId, worldId, angle);
+		location = new AngledLocation(vec, interiorId, worldId, angle);
 		this.skinId = skin;
 		this.teamId = team;
 		this.weapon1 = new WeaponData(weapon1, ammo1);
@@ -82,7 +82,7 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public SpawnInfo(Location loc, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
 	{
-		location = new LocationAngle(loc, angle);
+		location = new AngledLocation(loc, angle);
 		this.skinId = skin;
 		this.teamId = team;
 		this.weapon1 = new WeaponData(weapon1, ammo1);
@@ -90,9 +90,9 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 		this.weapon3 = new WeaponData(weapon3, ammo3);
 	}
 	
-	public SpawnInfo(LocationAngle loc, int skin, int team, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3)
+	public SpawnInfo(AngledLocation loc, int skin, int team, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3)
 	{
-		this.location = new LocationAngle(loc);
+		this.location = new AngledLocation(loc);
 		this.skinId = skin;
 		this.teamId = team;
 		this.weapon1 = new WeaponData(weapon1);
@@ -102,7 +102,7 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public SpawnInfo(SpawnInfo info)
 	{
-		this.location = new LocationAngle(info.getLocation());
+		this.location = new AngledLocation(info.getLocation());
 		this.skinId = info.getSkinId();
 		this.teamId = info.getTeamId();
 		this.weapon1 = new WeaponData(weapon1);
@@ -110,12 +110,12 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 		this.weapon3 = new WeaponData(weapon3);
 	}
 	
-	public LocationAngle getLocation()
+	public AngledLocation getLocation()
 	{
 		return location.clone();
 	}
 	
-	public void setLocation(LocationAngle loc)
+	public void setLocation(AngledLocation loc)
 	{
 		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
