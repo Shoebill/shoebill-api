@@ -64,6 +64,14 @@ public interface SampObjectStore
 	Player getPlayer(int id);
 	
 	/**
+	 * Get Player instance with name.
+	 * 
+	 * @param name name of Player.
+	 * @return Player instance. If not exist, then it return {@code null}.
+	 */
+	Player getPlayer(String name);
+	
+	/**
 	 * Get vehicle instance with id.
 	 * 
 	 * @param id ID of Vehicle.
