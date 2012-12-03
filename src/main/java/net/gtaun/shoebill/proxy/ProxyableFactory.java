@@ -62,6 +62,6 @@ public interface ProxyableFactory<T extends Proxyable>
 	}
 	
 	
-	T create();
-	T create(Class<?>[] paramTypes, Object... params);
+	T create() throws Throwable;
+	T create(Class<?>[] paramTypes, Object... params) throws Throwable;
 }

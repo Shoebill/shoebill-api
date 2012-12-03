@@ -79,27 +79,27 @@ public interface SampObjectFactory
 	Label createLabel(String text, Color color, Vector3D pos, int worldId, float drawDistance, boolean testLOS) throws CreationFailedException;
 	Label createLabel(String text, Color color, Location loc, float drawDistance, boolean testLOS) throws CreationFailedException;
 	
-	PlayerLabel createPlayerLabel(Player player, String text, Color color, float x, float y, float z, float drawDistance, boolean testLOS);
-	PlayerLabel createPlayerLabel(Player player, String text, Color color, float x, float y, float z, int worldId, float drawDistance, boolean testLOS);
-	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS);
-	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS, Player attachedPlayer);
-	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS, Vehicle attachedVehicle);
+	PlayerLabel createPlayerLabel(Player player, String text, Color color, float x, float y, float z, float drawDistance, boolean testLOS) throws CreationFailedException;
+	PlayerLabel createPlayerLabel(Player player, String text, Color color, float x, float y, float z, int worldId, float drawDistance, boolean testLOS) throws CreationFailedException;
+	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS) throws CreationFailedException;
+	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS, Player attachedPlayer) throws CreationFailedException;
+	PlayerLabel createPlayerLabel(Player player, String text, Color color, Location loc, float drawDistance, boolean testLOS, Vehicle attachedVehicle) throws CreationFailedException;
 
-	Textdraw createTextdraw(float x, float y);
-	Textdraw createTextdraw(float x, float y, String text);
-	Textdraw createTextdraw(Vector2D pos);
-	Textdraw createTextdraw(Vector2D pos, String text);
+	Textdraw createTextdraw(float x, float y) throws CreationFailedException;
+	Textdraw createTextdraw(float x, float y, String text) throws CreationFailedException;
+	Textdraw createTextdraw(Vector2D pos) throws CreationFailedException;
+	Textdraw createTextdraw(Vector2D pos, String text) throws CreationFailedException;
 	
-	PlayerTextdraw createPlayerTextdraw(Player player, float x, float y);
-	PlayerTextdraw createPlayerTextdraw(Player player, float x, float y, String text);
-	PlayerTextdraw createPlayerTextdraw(Player player, Vector2D pos);
-	PlayerTextdraw createPlayerTextdraw(Player player, Vector2D pos, String text);
+	PlayerTextdraw createPlayerTextdraw(Player player, float x, float y) throws CreationFailedException;
+	PlayerTextdraw createPlayerTextdraw(Player player, float x, float y, String text) throws CreationFailedException;
+	PlayerTextdraw createPlayerTextdraw(Player player, Vector2D pos) throws CreationFailedException;
+	PlayerTextdraw createPlayerTextdraw(Player player, Vector2D pos, String text) throws CreationFailedException;
 	
-	Zone createZone(float minX, float minY, float maxX, float maxY);
-	Zone createZone(Area area);
+	Zone createZone(float minX, float minY, float maxX, float maxY) throws CreationFailedException;
+	Zone createZone(Area area) throws CreationFailedException;
 	
-	Menu createMenu(String title, int columns, float x, float y, float col1Width, float col2Width);
-	Menu createMenu(String title, int columns, Vector2D pos, float col1Width, float col2Width);
+	Menu createMenu(String title, int columns, float x, float y, float col1Width, float col2Width) throws CreationFailedException;
+	Menu createMenu(String title, int columns, Vector2D pos, float col1Width, float col2Width) throws CreationFailedException;
 	
 	Dialog createDialog();
 	
