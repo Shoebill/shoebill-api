@@ -33,6 +33,7 @@ public interface Server extends Proxyable
 	
 	int getMaxPlayers();
 	
+	String getGamemodeText();
 	void setGamemodeText(String text);
 	
 	void sendRconCommand(String command);
@@ -50,4 +51,13 @@ public interface Server extends Proxyable
 	void gameTextToAll(int time, int style, String format, Object... args);
 	
 	Vector3D getVehicleModelInfo(int modelId, VehicleModelInfoType infotype);
+	
+	String getHostname();
+	void setHostname(String name);
+	
+	String getMapname();
+	void setMapname(String name);
+	
+	String getPassword();
+	void setPassword(String password);
 }
