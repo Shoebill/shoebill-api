@@ -16,8 +16,10 @@
 
 package net.gtaun.shoebill.event;
 
-import net.gtaun.shoebill.event.resource.PluginLoadEvent;
-import net.gtaun.shoebill.event.resource.PluginUnloadEvent;
+import net.gtaun.shoebill.event.resource.ResourceEnableEvent;
+import net.gtaun.shoebill.event.resource.ResourceDisableEvent;
+import net.gtaun.shoebill.event.resource.ResourceLoadEvent;
+import net.gtaun.shoebill.event.resource.ResourceUnloadEvent;
 import net.gtaun.util.event.AbstractEventHandler;
 
 /**
@@ -31,8 +33,10 @@ public abstract class ResourceEventHandler extends AbstractEventHandler
 	{
 		super(ResourceEventHandler.class);
 	}
+	
+	public void onResourceLoad(ResourceLoadEvent event)				{ }
+	public void onResourceUnload(ResourceUnloadEvent event)			{ }
 
-
-	public void onPluginLoad(PluginLoadEvent event)			{ }
-	public void onPluginUnload(PluginUnloadEvent event)		{ }
+	public void onResourceEnable(ResourceEnableEvent event)			{ }
+	public void onResourceDisable(ResourceDisableEvent event)		{ }
 }

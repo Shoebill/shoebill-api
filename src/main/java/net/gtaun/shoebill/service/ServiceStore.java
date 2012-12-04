@@ -29,9 +29,8 @@ public interface ServiceStore
 {
 	public interface ServiceEntry
 	{
-		ServiceStore getServiceStore();
-		Resource getResource();
 		Class<? extends Service> getType();
+		Resource getProvider();
 		Service getService();
 	}
 	

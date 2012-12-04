@@ -14,45 +14,19 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.event.service;
+package net.gtaun.shoebill.event.resource;
 
 import net.gtaun.shoebill.resource.Resource;
-import net.gtaun.shoebill.service.Service;
-import net.gtaun.shoebill.service.ServiceStore.ServiceEntry;
-import net.gtaun.util.event.Event;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class ServiceEvent extends Event
+public class ResourceUnloadEvent extends ResourceEvent
 {
-	private ServiceEntry serviceEntry;
-	
-	
-	public ServiceEvent(ServiceEntry entry)
+	public ResourceUnloadEvent(Resource resource)
 	{
-		this.serviceEntry = entry;
-	}
-	
-	public ServiceEntry getServiceEntry()
-	{
-		return serviceEntry;
-	}
-	
-	public Resource getProvider()
-	{
-		return serviceEntry.getProvider();
-	}
-	
-	public Class<? extends Service> getType()
-	{
-		return serviceEntry.getType();
-	}
-	
-	public Service getService()
-	{
-		return serviceEntry.getService();
+		super(resource);
 	}
 }

@@ -51,9 +51,9 @@ public class ServiceRegisterEvent extends ServiceEvent
 		return previousServiceEntry;
 	}
 	
-	public Resource getPreviousResource()
+	public Resource getPreviousProvider()
 	{
-		return previousServiceEntry.getResource();
+		return previousServiceEntry.getProvider();
 	}
 	
 	public Class<? extends Service> getPreviousType()

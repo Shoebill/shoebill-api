@@ -16,8 +16,6 @@
 
 package net.gtaun.shoebill.service;
 
-import net.gtaun.shoebill.resource.Resource;
-
 /**
  * 
  * 
@@ -25,5 +23,5 @@ import net.gtaun.shoebill.resource.Resource;
  */
 public interface Service
 {
-	Resource getProvider();
+	
 }

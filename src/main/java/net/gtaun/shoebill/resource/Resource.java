@@ -20,6 +20,8 @@ import java.io.File;
 
 import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.ShoebillLowLevel;
+import net.gtaun.shoebill.event.resource.ResourceDisableEvent;
+import net.gtaun.shoebill.event.resource.ResourceEnableEvent;
 import net.gtaun.shoebill.service.Service;
 import net.gtaun.shoebill.service.ServiceManager;
 import net.gtaun.util.event.EventManager;
@@ -33,7 +35,6 @@ import org.slf4j.LoggerFactory;
  * 
  * @author MK124
  */
-@SuppressWarnings("deprecation")
 public abstract class Resource
 {
 	private boolean isEnabled;
@@ -48,7 +49,8 @@ public abstract class Resource
 	{
 		
 	}
-	
+
+	@SuppressWarnings("deprecation")
 	void setContext(ResourceDescription description, Shoebill shoebill, File dataDir)
 	{
 		this.description = description;
@@ -66,10 +68,16 @@ public abstract class Resource
 	{
 		onEnable();
 		isEnabled = true;
+		
+		ResourceEnableEvent event = new ResourceEnableEvent(this);
+		eventManager.dispatchEvent(event, getEventManager(), this);
 	}
 	
 	void disable() throws Throwable
 	{
+		ResourceDisableEvent event = new ResourceDisableEvent(this);
+		eventManager.dispatchEvent(event, getEventManager(), this);
+		
 		onDisable();
 		
 		eventManager.removeAllHandler();

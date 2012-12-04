@@ -1,6 +1,5 @@
 /**
- * Copyright (C) 2011 JoJLlmAn
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,17 +16,26 @@
 
 package net.gtaun.shoebill.event.resource;
 
-import net.gtaun.shoebill.resource.Plugin;
+import net.gtaun.shoebill.resource.Resource;
+import net.gtaun.util.event.Event;
 
 /**
  * 
  * 
- * @author MK124, JoJLlmAn
+ * @author MK124
  */
-public class PluginUnloadEvent extends PluginEvent
+public abstract class ResourceEvent extends Event
 {
-	public PluginUnloadEvent(Plugin plugin)
+	private Resource resource;
+	
+	
+	protected ResourceEvent(Resource resource)
 	{
-		super(plugin);
+		this.resource = resource;
+	}
+	
+	public Resource getResource()
+	{
+		return resource;
 	}
 }

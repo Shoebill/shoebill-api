@@ -16,17 +16,17 @@
 
 package net.gtaun.shoebill.event.resource;
 
-import net.gtaun.shoebill.resource.Plugin;
+import net.gtaun.shoebill.resource.Resource;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PluginLoadEvent extends PluginEvent
+public class ResourceEnableEvent extends ResourceEvent
 {
-	public PluginLoadEvent(Plugin plugin)
+	public ResourceEnableEvent(Resource resource)
 	{
-		super(plugin);
+		super(resource);
 	}
 }

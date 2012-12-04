@@ -1,4 +1,5 @@
 /**
+ * Copyright (C) 2011 JoJLlmAn
  * Copyright (C) 2011 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +15,19 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill;
+package net.gtaun.shoebill.event.resource;
 
-import net.gtaun.util.event.EventManager;
+import net.gtaun.shoebill.resource.Resource;
 
 /**
- * Shoebill low-level interface, provides some low-level functions which are not recommend. 
  * 
- * @author MK124
+ * 
+ * @author MK124, JoJLlmAn
  */
-public interface ShoebillLowLevel
+public class ResourceDisableEvent extends ResourceEvent
 {
-	/**
-	 * Get the main low-level EventManager. 
-	 * It won't be effected by plugin's lifetime.
-	 * 
-	 * @return EventManager instance.
-	 */
-	@Deprecated
-	EventManager getEventManager();
+	public ResourceDisableEvent(Resource resource)
+	{
+		super(resource);
+	}
 }
