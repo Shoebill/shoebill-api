@@ -41,7 +41,7 @@ public abstract class Resource
 	private ResourceDescription description;
 	private Shoebill shoebill;
 	private ManagedEventManager eventManager;
-	private File dataDirectory;
+	private File dataDir;
 	
 	
 	protected Resource()
@@ -53,7 +53,7 @@ public abstract class Resource
 	{
 		this.description = description;
 		this.shoebill = shoebill;
-		this.dataDirectory = dataDir;
+		this.dataDir = dataDir;
 		
 		ShoebillLowLevel shoebillLowLevel = (ShoebillLowLevel) shoebill;
 		eventManager = new ManagedEventManager(shoebillLowLevel.getEventManager());
@@ -100,9 +100,9 @@ public abstract class Resource
 		return eventManager;
 	}
 	
-	public File getDataDirectory()
+	public File getDataDir()
 	{
-		return dataDirectory;
+		return dataDir;
 	}
 	
 	public Logger getLogger()

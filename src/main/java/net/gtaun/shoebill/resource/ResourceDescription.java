@@ -35,25 +35,6 @@ import net.gtaun.shoebill.util.config.YamlConfiguration;
  */
 public class ResourceDescription
 {
-	public static enum ResourceType
-	{
-		PLUGIN		("plugin.yml"),
-		GAMEMODE	("gamemode.yml");
-		
-		private final String configFileName;
-		
-		private ResourceType(String filename)
-		{
-			configFileName = filename;
-		}
-		
-		public String getConfigFileName()
-		{
-			return configFileName;
-		}
-	}
-	
-	
 	private ResourceType type;
 	private File file;
 	private ClassLoader classLoader;
@@ -72,7 +53,7 @@ public class ResourceDescription
 		this.file = file;
 		this.classLoader = classLoader;
 		
-		loadConfig(type.getConfigFileName());
+		loadConfig(type.getConfigFilename());
 	}
 	
 	private Configuration loadConfig(String configFilename) throws IOException, ClassNotFoundException

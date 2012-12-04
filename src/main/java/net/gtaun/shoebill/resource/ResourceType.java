@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,29 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.samp;
+package net.gtaun.shoebill.resource;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface SampCallbackManager
+public enum ResourceType
 {
-	void registerCallbackHandler(SampCallbackHandler handler);
-	void unregisterCallbackHandler(SampCallbackHandler handler);
-	boolean hasCallbackHandler(SampCallbackHandler handler);
+	PLUGIN		("plugin.yml"),
+	GAMEMODE	("gamemode.yml");
 	
-	SampCallbackHandler getMasterCallbackHandler();
+	
+	private final String configFilename;
+	
+	
+	private ResourceType(String filename)
+	{
+		configFilename = filename;
+	}
+	
+	public String getConfigFilename()
+	{
+		return configFilename;
+	}
 }

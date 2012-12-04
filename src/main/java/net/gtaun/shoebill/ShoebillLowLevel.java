@@ -16,7 +16,6 @@
 
 package net.gtaun.shoebill;
 
-import net.gtaun.shoebill.samp.SampCallbackManager;
 import net.gtaun.util.event.EventManager;
 
 /**
@@ -34,11 +33,4 @@ public interface ShoebillLowLevel
 	 * @return EventManager instance.
 	 */
 	EventManager getEventManager();
-	
-	/**
-	 * Get original SA-MP CallbackManager.
-	 * 
-	 * @return SampCallbackManager instance.
-	 */
-	SampCallbackManager getCallbackManager();
 }
