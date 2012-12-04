@@ -34,7 +34,7 @@ public interface ServiceStore
 		Service getService();
 	}
 	
-
+	
 	<T extends Service> T getService(Class<T> type);
 	<T extends Service> ServiceEntry getServiceEnrty(Class<T> type);
 

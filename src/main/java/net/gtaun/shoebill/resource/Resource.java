@@ -124,9 +124,9 @@ public abstract class Resource
 		serviceManager.registerService(this, type, service);
 	}
 	
-	public <T extends Service> void unregisterService(Class<T> type, T service)
+	public <T extends Service> void unregisterService(Class<T> type)
 	{
 		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
-		serviceManager.unregisterService(this, type, service);
+		serviceManager.unregisterService(this, type);
 	}
 }

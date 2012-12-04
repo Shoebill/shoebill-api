@@ -28,7 +28,5 @@ public interface ServiceManager extends ServiceStore
 	<T extends Service> void registerService(Resource resource, Class<T> type, T service);
 	
 	<T extends Service> void unregisterService(Resource resource, Class<T> type);
-	<T extends Service> void unregisterService(Resource resource, Class<T> type, T service);
-	
 	<T extends Service> void unregisterServices(Resource resource);
 }
