@@ -16,7 +16,9 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.constant.VehicleModelInfoType;
 import net.gtaun.shoebill.data.Color;
+import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
@@ -46,4 +48,6 @@ public interface Server extends Proxyable
 	
 	void gameTextToAll(int time, int style, String text);
 	void gameTextToAll(int time, int style, String format, Object... args);
+	
+	Vector3D getVehicleModelInfo(int modelId, VehicleModelInfoType infotype);
 }

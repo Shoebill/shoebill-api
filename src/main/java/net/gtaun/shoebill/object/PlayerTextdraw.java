@@ -16,41 +16,16 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.Color;
-import net.gtaun.shoebill.data.Vector2D;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface PlayerTextdraw extends PlayerRelated, Destroyable, Proxyable
+public interface PlayerTextdraw extends PlayerRelated, TextdrawBase
 {
 	public static final int INVALID_ID =		0xFFFF;
 	
-	
-	int getId();
-	Vector2D getPosition();
-	String getText();
-	
-	void setLetterSize(float x, float y);
-	void setLetterSize(Vector2D vec);
-	
-	void setTextSize(float x, float y);
-	void setTextSize(Vector2D vec);
-	
-	void setAlignment(int alignment);
-	void setColor(Color color);
-	void setUseBox(boolean use);
-	void setBoxColor(Color color);
-	void setShadow(int size);
-	void setOutline(int size);
-	void setBackgroundColor(Color color);
-	void setFont(int font);
-	void setProportional(boolean set);
-	void setSelectable(boolean set);
-	void setText(String text);
 	
 	void show();
 	void hide();

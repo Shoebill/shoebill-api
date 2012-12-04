@@ -30,7 +30,9 @@ public interface PlayerAttach extends PlayerRelated
 	
 	
 	public interface PlayerAttachSlot extends PlayerRelated
-	{		
+	{
+		int getSlot();
+		
 		PlayerAttachBone getBone();
 		int getModelId();
 		Vector3D getOffset();
@@ -39,7 +41,9 @@ public interface PlayerAttach extends PlayerRelated
 		
 		boolean set(PlayerAttachBone bone, int modelId, Vector3D offset, Vector3D rotation, Vector3D scale, int materialcolor1, int materialcolor2);
 		boolean remove();
-		boolean isUsed(int slot);
+		boolean isUsed();
+		
+		boolean edit();
 	}
 	
 	PlayerAttachSlot getSlot(int slot);

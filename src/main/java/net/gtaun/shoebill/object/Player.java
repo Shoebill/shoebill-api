@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.constant.CameraCutStyle;
 import net.gtaun.shoebill.constant.DialogStyle;
 import net.gtaun.shoebill.constant.FightStyle;
 import net.gtaun.shoebill.constant.MapIconStyle;
@@ -246,4 +247,19 @@ public interface Player extends Proxyable
 
 	void showDialog(Dialog dialog, DialogStyle style, String caption, String text, String button1, String button2);
 	void cancelDialog();
+	
+	boolean editObject(SampObject object);
+	boolean editPlayerObject(PlayerObject object);
+	void selectObject();
+	void cancelEdit();
+	
+	void attachCameraTo(SampObject object);
+	void attachCameraTo(PlayerObject object);
+	void interpolateCameraPosition(float FromX, float FromY, float FromZ, float ToX, float ToY, float ToZ, int time, CameraCutStyle cut);
+	void interpolateCameraLookAt(float FromX, float FromY, float FromZ, float ToX, float ToY, float ToZ, int time, CameraCutStyle cut);
+	
+	void selectTextDraw(Color hoverColor);
+	void cancelSelectTextDraw();
+	
+	String getVersion(int playerid);
 }

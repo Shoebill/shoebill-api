@@ -16,6 +16,9 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.constant.ObjectMaterialSize;
+import net.gtaun.shoebill.constant.ObjectMaterialTextAlign;
+import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.proxy.Proxyable;
@@ -62,4 +65,7 @@ public interface SampObject extends Destroyable, Proxyable
 
 	void attach(Vehicle vehicle, float x, float y, float z, float rx, float ry, float rz);
 	void attach(Vehicle vehicle, Vector3D offset, Vector3D rot);
+	
+	void setMaterial(int materialIndex, int modelId, String txdName, String textureName, Color materialColor);
+	void setMaterialText(String text, int materialIndex, ObjectMaterialSize materialSize, String fontFace, int fontSize, boolean isBold, Color fontColor, Color backColor, ObjectMaterialTextAlign textAlignment);
 }
