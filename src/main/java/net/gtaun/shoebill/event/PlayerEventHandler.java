@@ -26,10 +26,15 @@ import net.gtaun.shoebill.event.menu.MenuExitedEvent;
 import net.gtaun.shoebill.event.menu.MenuSelectedEvent;
 import net.gtaun.shoebill.event.object.PlayerObjectMovedEvent;
 import net.gtaun.shoebill.event.player.PlayerClickPlayerEvent;
+import net.gtaun.shoebill.event.player.PlayerClickPlayerTextDrawEvent;
+import net.gtaun.shoebill.event.player.PlayerClickTextDrawEvent;
 import net.gtaun.shoebill.event.player.PlayerCommandEvent;
 import net.gtaun.shoebill.event.player.PlayerConnectEvent;
 import net.gtaun.shoebill.event.player.PlayerDeathEvent;
 import net.gtaun.shoebill.event.player.PlayerDisconnectEvent;
+import net.gtaun.shoebill.event.player.PlayerEditAttachedObjectEvent;
+import net.gtaun.shoebill.event.player.PlayerEditObjectEvent;
+import net.gtaun.shoebill.event.player.PlayerEditPlayerObjectEvent;
 import net.gtaun.shoebill.event.player.PlayerEnterExitModShopEvent;
 import net.gtaun.shoebill.event.player.PlayerInteriorChangeEvent;
 import net.gtaun.shoebill.event.player.PlayerKeyStateChangeEvent;
@@ -37,6 +42,8 @@ import net.gtaun.shoebill.event.player.PlayerKillEvent;
 import net.gtaun.shoebill.event.player.PlayerPickupEvent;
 import net.gtaun.shoebill.event.player.PlayerRequestClassEvent;
 import net.gtaun.shoebill.event.player.PlayerRequestSpawnEvent;
+import net.gtaun.shoebill.event.player.PlayerSelectObjectEvent;
+import net.gtaun.shoebill.event.player.PlayerSelectPlayerObjectEvent;
 import net.gtaun.shoebill.event.player.PlayerSpawnEvent;
 import net.gtaun.shoebill.event.player.PlayerStateChangeEvent;
 import net.gtaun.shoebill.event.player.PlayerStreamInEvent;
@@ -101,4 +108,11 @@ public abstract class PlayerEventHandler extends AbstractEventHandler
 	public void onPlayerDialogCancel(DialogCancelEvent event)							{ }
 	public void onPlayerMenuSelected(MenuSelectedEvent event)							{ }
 	public void onPlayerMenuExited(MenuExitedEvent event)								{ }
+	public void onPlayerClickTextDraw(PlayerClickTextDrawEvent event)					{ }
+	public void onPlayerClickPlayerTextDraw(PlayerClickPlayerTextDrawEvent event)		{ }
+	public void onPlayerEditObject(PlayerEditObjectEvent event)							{ }
+	public void onPlayerEditPlayerObject(PlayerEditPlayerObjectEvent event)				{ }
+	public void onPlayerEditAttachedObject(PlayerEditAttachedObjectEvent event)			{ }
+	public void onPlayerSelectObject(PlayerSelectObjectEvent event)						{ }
+	public void onPlayerSelectPlayerObject(PlayerSelectPlayerObjectEvent event)			{ }
 }
