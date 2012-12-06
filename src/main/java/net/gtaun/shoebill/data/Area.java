@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class Area implements Cloneable, Serializable, CanImmutable
+public class Area implements Cloneable, Serializable, CanImmutable, RangeCheckable3D
 {
 	private static final long serialVersionUID = 4319892622317856825L;
 	
@@ -151,12 +151,18 @@ public class Area implements Cloneable, Serializable, CanImmutable
 		return (maxX - minX) * (maxY - minY);
 	}
 	
-	public boolean isInAera(Vector2D pos)
+	public boolean isInRange(Vector2D pos)
 	{
 		float x = pos.getX(), y = pos.getY();
 		if (x < minX || x > maxX) return false;
 		if (y < minY || y > maxY) return false;
 		return true;
+	}
+	
+	@Override
+	public boolean isInRange(Vector3D pos)
+	{
+		return isInRange(pos);
 	}
 	
 	@Override

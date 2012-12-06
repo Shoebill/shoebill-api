@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class Radius extends Location implements Cloneable, Serializable, CanImmutable
+public class Radius extends Location implements Cloneable, Serializable, CanImmutable, RangeCheckable3D
 {
 	private static final long serialVersionUID = -4375366678586498863L;
 	
@@ -177,16 +177,11 @@ public class Radius extends Location implements Cloneable, Serializable, CanImmu
 		setRadius(loc.getRadius());
 	}
 
-	public boolean isInAera(Vector3D pos)
+	@Override
+	public boolean isInRange(Vector3D pos)
 	{
-		if (super.distance(pos) <= radius) return true;
-		return false;
-	}
-	
-	public boolean isInAera(Location loc)
-	{
-		if (super.distance(loc) <= radius) return true;
-		return false;
+		if (pos instanceof Location) return super.distance((Location)pos) <= radius;
+		return super.distance(pos) <= radius;
 	}
 	
 	@Override

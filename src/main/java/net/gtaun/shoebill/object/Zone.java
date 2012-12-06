@@ -18,6 +18,7 @@ package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
+import net.gtaun.shoebill.data.RangeCheckable3D;
 import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
@@ -25,7 +26,7 @@ import net.gtaun.shoebill.proxy.Proxyable;
  * 
  * @author MK124
  */
-public interface Zone extends Destroyable, Proxyable
+public interface Zone extends Destroyable, Proxyable, RangeCheckable3D
 {
 	public static final int INVALID_ID = -1;
 	

@@ -19,6 +19,7 @@ package net.gtaun.shoebill.object;
 import java.util.Collection;
 
 import net.gtaun.shoebill.data.Radius;
+import net.gtaun.shoebill.data.RangeCheckable3D;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.proxy.Proxyable;
 
@@ -27,7 +28,7 @@ import net.gtaun.shoebill.proxy.Proxyable;
  * 
  * @author MK124
  */
-public interface Checkpoint extends Proxyable
+public interface Checkpoint extends Proxyable, RangeCheckable3D
 {
 	Radius getLocation();
 	void setLocation(float x, float y, float z);
@@ -39,7 +40,7 @@ public interface Checkpoint extends Proxyable
 
 	void set(Player player);
 	void disable(Player player);
-	boolean isInArea(Player player);
+	boolean isInRange(Player player);
 	void update();
 	
 	Collection<Player> getUsingPlayers();
