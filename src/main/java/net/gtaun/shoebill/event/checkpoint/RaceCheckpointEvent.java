@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,36 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.event.gamemode;
+package net.gtaun.shoebill.event.checkpoint;
 
-import net.gtaun.shoebill.resource.Gamemode;
+import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.RaceCheckpoint;
+import net.gtaun.util.event.Event;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class GamemodeInitEvent extends GamemodeEvent
+public abstract class RaceCheckpointEvent extends Event
 {
-	public GamemodeInitEvent(Gamemode gamemode)
+	private Player player;
+	private RaceCheckpoint checkpoint;
+	
+	
+	protected RaceCheckpointEvent(Player player, RaceCheckpoint checkpoint)
 	{
-		super(gamemode);
+		this.player = player;
+		this.checkpoint = checkpoint;
+	}
+	
+	public Player getPlayer()
+	{
+		return player;
+	}
+	
+	public RaceCheckpoint getCheckpoint()
+	{
+		return checkpoint;
 	}
 }

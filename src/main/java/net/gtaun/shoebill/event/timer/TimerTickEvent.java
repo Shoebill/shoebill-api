@@ -27,13 +27,13 @@ import net.gtaun.util.event.Event;
 public class TimerTickEvent extends Event
 {
 	private Timer timer;
-	private int realInterval;
+	private int factualInterval;
 	
 	
 	public TimerTickEvent(Timer timer, int realInterval)
 	{
 		this.timer = timer;
-		this.realInterval = realInterval;
+		this.factualInterval = realInterval;
 	}
 	
 	public Timer getTimer()
@@ -41,8 +41,8 @@ public class TimerTickEvent extends Event
 		return timer;
 	}
 	
-	public int getRealInterval()
+	public int getFactualInterval()
 	{
-		return realInterval;
+		return factualInterval;
 	}
 }

@@ -22,13 +22,20 @@ import net.gtaun.shoebill.object.Vehicle;
 /**
  * 
  * 
- * @author MK124
+ * @author JoJLlmAn
  */
 public class VehicleUnoccupiedUpdateEvent extends VehicleEvent
 {
 	private Player player;
 	private int passengerSeat;
 	
+	
+	public VehicleUnoccupiedUpdateEvent(Vehicle vehicle, Player player, int passengeSeat)
+	{
+		super(vehicle);
+		this.player = player;
+		this.passengerSeat = passengeSeat;
+	}
 	
 	public Player getPlayer()
 	{
@@ -38,12 +45,5 @@ public class VehicleUnoccupiedUpdateEvent extends VehicleEvent
 	public int getPassengerSeat()
 	{
 		return passengerSeat;
-	}
-	
-	public VehicleUnoccupiedUpdateEvent(Vehicle vehicle, Player player, int passengeSeat)
-	{
-		super(vehicle);
-		this.player = player;
-		this.passengerSeat = passengeSeat;
 	}
 }

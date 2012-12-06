@@ -26,18 +26,14 @@ import net.gtaun.shoebill.object.PlayerObject;
  */
 public class PlayerObjectMovedEvent extends ObjectEvent
 {
-	private Player player;
-	
-	
-	public PlayerObjectMovedEvent(Player player, PlayerObject object)
+	public PlayerObjectMovedEvent(PlayerObject object)
 	{
 		super(object);
-		this.player = player;
 	}
 	
 	public Player getPlayer()
 	{
-		return player;
+		return getObject().getPlayer();
 	}
 	
 	@Override
