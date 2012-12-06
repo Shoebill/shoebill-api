@@ -171,6 +171,12 @@ public class Location extends Vector3D implements Cloneable, Serializable, CanIm
 		setWorldId(loc.getWorldId());
 	}
 	
+	public float distance(Location loc)
+	{
+		if (loc.interiorId != interiorId || loc.worldId != worldId) return Float.POSITIVE_INFINITY;
+		return super.distance(loc);
+	}
+	
 	@Override
 	public int hashCode()
 	{

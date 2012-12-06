@@ -115,6 +115,12 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, CanIm
 		setZ(vec.getZ());
 	}
 	
+	public float distance(Vector3D pos)
+	{
+		float dx = pos.getX() - getX(), dy = pos.getY() - getY(), dz = pos.getZ() - getZ();
+		return (float) Math.sqrt(dx*dx + dy*dy + dz*dz);
+	}
+	
 	@Override
 	public int hashCode()
 	{

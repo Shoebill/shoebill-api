@@ -151,6 +151,14 @@ public class Area implements Cloneable, Serializable, CanImmutable
 		return (maxX - minX) * (maxY - minY);
 	}
 	
+	public boolean isInAera(Vector2D pos)
+	{
+		float x = pos.getX(), y = pos.getY();
+		if (x < minX || x > maxX) return false;
+		if (y < minY || y > maxY) return false;
+		return true;
+	}
+	
 	@Override
 	public int hashCode()
 	{

@@ -136,6 +136,14 @@ public class Area3D extends Area implements Cloneable, Serializable, CanImmutabl
 		setMaxZ(area.getMaxZ());
 	}
 	
+	public boolean isInAera(Vector3D pos)
+	{
+		float z = pos.getZ();
+		if (super.isInAera(pos) == false) return false;
+		if (z < minZ || z > maxZ) return false;
+		return true;
+	}
+	
 	public float volume()
 	{
 		return (getMaxX() - getMinX()) * (getMaxY() - getMaxY()) * (getMaxZ() - getMinZ());

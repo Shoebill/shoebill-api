@@ -176,6 +176,18 @@ public class Radius extends Location implements Cloneable, Serializable, CanImmu
 		super.set(loc);
 		setRadius(loc.getRadius());
 	}
+
+	public boolean isInAera(Vector3D pos)
+	{
+		if (super.distance(pos) <= radius) return true;
+		return false;
+	}
+	
+	public boolean isInAera(Location loc)
+	{
+		if (super.distance(loc) <= radius) return true;
+		return false;
+	}
 	
 	@Override
 	public int hashCode()
