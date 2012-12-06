@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,9 @@ public interface SampObject extends Destroyable, Proxyable
 	void setLocation(Vector3D pos);
 	void setLocation(Location loc);
 	
-	Vector3D getRotate();
-	void setRotate(float rx, float ry, float rz);
-	void setRotate(Vector3D rot);
+	Vector3D getRotation();
+	void setRotation(float rx, float ry, float rz);
+	void setRotation(Vector3D rot);
 
 	boolean isMoving();
 	int move(float x, float y, float z, float speed);
@@ -60,12 +60,15 @@ public interface SampObject extends Destroyable, Proxyable
 	void attach(Player player, float x, float y, float z, float rx, float ry, float rz);
 	void attach(Player player, Vector3D offset, Vector3D rot);
 	
-	void attach(SampObject object, float x, float y, float z, float rx, float ry, float rz, boolean syncRotation);
-	void attach(SampObject object, Vector3D offset, Vector3D rot, boolean syncRotation);
+	void attach(SampObject object, float x, float y, float z, float rx, float ry, float rz, boolean isSyncRotation);
+	void attach(SampObject object, Vector3D offset, Vector3D rot, boolean isSyncRotation);
 
 	void attach(Vehicle vehicle, float x, float y, float z, float rx, float ry, float rz);
 	void attach(Vehicle vehicle, Vector3D offset, Vector3D rot);
-	
+
 	void setMaterial(int materialIndex, int modelId, String txdName, String textureName, Color materialColor);
+	void setMaterial(int materialIndex, int modelId, String txdName, String textureName);
+	
 	void setMaterialText(String text, int materialIndex, ObjectMaterialSize materialSize, String fontFace, int fontSize, boolean isBold, Color fontColor, Color backColor, ObjectMaterialTextAlign textAlignment);
+	void setMaterialText(String text);
 }

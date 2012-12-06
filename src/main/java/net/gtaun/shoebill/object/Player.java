@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,8 @@ public interface Player extends Proxyable
 	PlayerWeaponSkill getWeaponSkill();
 	
 	int getPing();
-	int getTeamId();
-	int getSkinId();
+	int getTeam();
+	int getSkin();
 	int getWantedLevel();
 	int getCodepage();
 	String getIp();
@@ -79,7 +79,7 @@ public interface Player extends Proxyable
 	int getArmedWeaponAmmo();
 	int getMoney();
 	int getScore();
-	int getWeatherId();
+	int getWeather();
 	int getCameraMode();
 	FightStyle getFightStyle();
 	Vehicle getVehicle();
@@ -96,7 +96,7 @@ public interface Player extends Proxyable
 	RaceCheckpoint getRaceCheckpoint();
 	
 	Dialog getDialog();
-
+	
 	boolean isStuntBonusEnabled();
 	boolean isSpectating();
 	boolean isRecording();
@@ -114,11 +114,11 @@ public interface Player extends Proxyable
 	void setColor(Color color);
 	void setHealth(float health);
 	void setArmour(float armour);
-	void setWeaponAmmo(int slot, int ammo);
+	void setWeaponAmmo(WeaponType weapon, int ammo);
 	void setMoney(int money);
 	void giveMoney(int money);
 	void setScore(int score);
-	void setWeatherId(int weatherId);
+	void setWeather(int weatherId);
 	void setFightStyle(FightStyle style);
 	
 	void setVehicle(Vehicle vehicle, int seat);
@@ -135,11 +135,11 @@ public interface Player extends Proxyable
 	void setLocationFindZ(AngledLocation loc);
 	
 	void setAngle(float angle);
-	void setInteriorId(int interiorId);
-	void setWorldId(int worldId);
+	void setInterior(int interiorId);
+	void setWorld(int worldId);
 	void setWorldBound(Area bound);
 	void setVelocity(Vector3D vel);
-
+	
 	void sendMessage(Color color, String message);
 	void sendMessage(Color color, String format, Object... args);
 	
@@ -168,13 +168,15 @@ public interface Player extends Proxyable
 	void ban();
 	void ban(String reason);
 	
-	Menu getMenu();
+	Menu getCurrentMenu();
 	
 	void setCameraPosition(float x, float y, float z);
 	void setCameraPosition(Vector3D pos);
-	
-	void setCameraLookAt(float x, float y, float z, int cut);
-	void setCameraLookAt(Vector3D pos);
+
+	void setCameraLookAt(float x, float y, float z, CameraCutStyle cut);
+	void setCameraLookAt(Vector3D lookAt, CameraCutStyle cut);
+	void setCameraLookAt(float x, float y, float z);
+	void setCameraLookAt(Vector3D lookAt);
 	
 	void setCameraBehind();
 	Vector3D getCameraPosition();
@@ -199,7 +201,7 @@ public interface Player extends Proxyable
 	void giveWeapon(WeaponData data);
 	
 	void resetWeapons();
-
+	
 	Time getTime();
 	
 	void setTime(int hour, int minute);
@@ -240,11 +242,11 @@ public interface Player extends Proxyable
 	void playAudioStream(String url, Vector3D location, float distance);
 	void playAudioStream(String url, Radius loc);
 	void stopAudioStream();
-
+	
 	void removeBuilding(int modelId, float x, float y, float z, float radius);
 	void removeBuilding(int modelId, Vector3D pos, float radius);
 	void removeBuilding(int modelId, Radius loc);
-
+	
 	void showDialog(Dialog dialog, DialogStyle style, String caption, String text, String button1, String button2);
 	void cancelDialog();
 	
@@ -255,8 +257,10 @@ public interface Player extends Proxyable
 	
 	void attachCameraTo(SampObject object);
 	void attachCameraTo(PlayerObject object);
-	void interpolateCameraPosition(float FromX, float FromY, float FromZ, float ToX, float ToY, float ToZ, int time, CameraCutStyle cut);
-	void interpolateCameraLookAt(float FromX, float FromY, float FromZ, float ToX, float ToY, float ToZ, int time, CameraCutStyle cut);
+	void interpolateCameraPosition(float fromX, float fromY, float fromZ, float toX, float toY, float toZ, int time, CameraCutStyle cut);
+	void interpolateCameraPosition(Vector3D from, Vector3D to, int time, CameraCutStyle cut);
+	void interpolateCameraLookAt(float fromX, float fromY, float fromZ, float toX, float toY, float toZ, int time, CameraCutStyle cut);
+	void interpolateCameraLookAt(Vector3D from, Vector3D to, int time, CameraCutStyle cut);
 	
 	void selectTextDraw(Color hoverColor);
 	void cancelSelectTextDraw();

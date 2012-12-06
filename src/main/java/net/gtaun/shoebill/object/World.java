@@ -40,8 +40,8 @@ public interface World extends Proxyable
 	float getPlayerMarkerRadius();
 	void setPlayerMarkerRadius(float radius);
 
-	int getWeatherId();
-	void setWeatherId(int weatherId);
+	int getWeather();
+	void setWeather(int weatherId);
 
 	float getGravity();
 	void setGravity(float gravity);

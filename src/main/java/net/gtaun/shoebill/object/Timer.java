@@ -33,7 +33,7 @@ public interface Timer extends Proxyable
 
 	boolean isRunning();
 	
-	void setInterval(int interval);
+	void setInterval(int ms);
 	void setCount(int count);
 	void start();
 	void stop();

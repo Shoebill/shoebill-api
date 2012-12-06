@@ -33,5 +33,5 @@ public interface Textdraw extends TextdrawBase
 	void showForAll();
 	void hideForAll();
 	
-	boolean isPlayerShowed(Player player);
+	boolean isShowed(Player player);
 }

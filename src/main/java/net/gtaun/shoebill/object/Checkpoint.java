@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,12 +34,12 @@ public interface Checkpoint extends Proxyable
 	void setLocation(Vector3D pos);
 	void setLocation(Radius loc);
 
-	float getSize();
-	void setSize(float size);
+	float getRadius();
+	void setRadius(float radius);
 
 	void set(Player player);
 	void disable(Player player);
-	boolean isInCheckpoint(Player player);
+	boolean isInArea(Player player);
 	void update();
 	
 	Collection<Player> getUsingPlayers();

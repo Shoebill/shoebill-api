@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2012 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,33 +14,37 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.object;
-
-import net.gtaun.shoebill.data.Vector2D;
-import net.gtaun.shoebill.proxy.Proxyable;
+package net.gtaun.shoebill.constant;
 
 /**
- * 
+ * To be used with TextDraw and PlayerTextDraw.
  * 
  * @author MK124
  */
-public interface Menu extends Destroyable, Proxyable
+public enum TextDrawFont
 {
-	public static final int INVALID_ID = 0xFF;
+	DIPLOMA(0),
+	FONT2(1),
+	BANK_GOTHIC(2),
+	PRICEDOWN(3);
 	
 	
-	int getId();
-	String getTitle();
-	int getColumns();
-	Vector2D getPosition();
-	float getColumn1Width();
-	float getColumn2Width();
-	String getColumnHeader();
+	public static TextDrawFont get(int value)
+	{
+		return values() [value];
+	}
 	
-	void addItem(int column, String text);
-	void setColumnHeader(int column, String text);
-	void disable();
-	void disableRow(int row);
-	void show(Player player);
-	void hide(Player player);
+	
+	private final int value;
+	
+	
+	private TextDrawFont(int value)
+	{
+		this.value = value;
+	}
+	
+	public int getValue()
+	{
+		return value;
+	}
 }

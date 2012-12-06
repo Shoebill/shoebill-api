@@ -40,7 +40,7 @@ public interface Vehicle extends Destroyable, Proxyable
 	int getColor1();
 	int getColor2();
 	int getRespawnDelay();
-
+	
 	VehicleParam getState();
 	VehicleComponent getComponent();
 	public VehicleDamage getDamage();
@@ -50,12 +50,12 @@ public interface Vehicle extends Destroyable, Proxyable
 	void setLocation(Vector3D pos);
 	void setLocation(Location loc);
 	void setLocation(AngledLocation loc);
-
+	
 	float getAngle();
 	void setAngle(float angle);
 	
 	Quaternion getRotationQuat();
-
+	
 	int getInteriorId();
 	void setInteriorId(int interiorId);
 	

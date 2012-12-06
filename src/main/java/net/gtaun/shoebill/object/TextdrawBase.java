@@ -16,6 +16,8 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.constant.TextDrawAlign;
+import net.gtaun.shoebill.constant.TextDrawFont;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Vector2D;
 import net.gtaun.shoebill.proxy.Proxyable;
@@ -40,14 +42,14 @@ public interface TextdrawBase extends Destroyable, Proxyable
 	void setTextSize(float x, float y);
 	void setTextSize(Vector2D vec);
 	
-	void setAlignment(int alignment);
+	void setAlignment(TextDrawAlign alignment);
 	void setColor(Color color);
 	void setUseBox(boolean use);
 	void setBoxColor(Color color);
-	void setShadow(int size);
-	void setOutline(int size);
+	void setShadowSize(int size);
+	void setOutlineSize(int size);
 	void setBackgroundColor(Color color);
-	void setFont(int font);
+	void setFont(TextDrawFont font);
 	void setProportional(boolean set);
 	void setSelectable(boolean set);
 	void setText(String text);

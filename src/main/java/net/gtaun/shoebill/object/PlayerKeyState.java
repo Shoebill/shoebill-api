@@ -32,7 +32,7 @@ public interface PlayerKeyState extends PlayerRelated
 	
 	
 	int getKeys();
-	int getUpdown();
-	int getLeftright();
+	int getUpdownValue();
+	int getLeftrightValue();
 	boolean isKeyPressed(PlayerKey key);
 }

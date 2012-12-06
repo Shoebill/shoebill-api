@@ -36,7 +36,7 @@ public interface PlayerAttach extends PlayerRelated
 		PlayerAttachBone getBone();
 		int getModelId();
 		Vector3D getOffset();
-		Vector3D getRotate();
+		Vector3D getRotation();
 		Vector3D getScale();
 		
 		boolean set(PlayerAttachBone bone, int modelId, Vector3D offset, Vector3D rotation, Vector3D scale, int materialcolor1, int materialcolor2);

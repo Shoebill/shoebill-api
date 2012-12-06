@@ -196,6 +196,8 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	public static final Color YELLOW =					new Color(0xFFFF00FF).immutable();
 	public static final Color YELLOWGREEN =				new Color(0x9ACD32FF).immutable();
 	
+	public static final Color TRANSPARENT =				new Color(0x00000000).immutable();
+	
 	
 	private static final class ImmutableColor extends Color implements Immutable
 	{
@@ -241,6 +243,11 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	public int getValue()
 	{
 		return value;
+	}
+	
+	public int getArgbValue()
+	{
+		return ((value & 0xFF) << 24) | (value >> 8);
 	}
 	
 	public void setValue(int value)
