@@ -63,12 +63,19 @@ public class ResourceDescription
 		InputStream in = jarFile.getInputStream(entry);
 		
 		FileConfiguration config = new YamlConfiguration();
+		config.setDefault("name", "Unnamed");
+		config.setDefault("version", "Unknown");
+		config.setDefault("authors", "Unknown");
+		config.setDefault("description", "");
+		config.setDefault("buildNumber", 0);
+		config.setDefault("buildDate", "Unknown");
+		
 		config.read(in);
 		
 		String className = config.getString("class");
 		clazz = classLoader.loadClass(className).asSubclass(Resource.class);
 		
-		name = config.getString("name", "Unnamed");
+		name = config.getString("name");
 		version = config.getString("version");
 		
 		String author = config.getString("authors");
@@ -88,8 +95,8 @@ public class ResourceDescription
 		}
 		
 		description = config.getString("description");
-		buildNumber = config.getInt("buildNumber", 0);
-		buildDate = config.getString("buildDate", "Unknown");
+		buildNumber = config.getInt("buildNumber");
+		buildDate = config.getString("buildDate");
 		
 		return config;
 	}
