@@ -78,7 +78,15 @@ public abstract class Resource
 		ResourceDisableEvent event = new ResourceDisableEvent(this);
 		eventManager.dispatchEvent(event, getEventManager(), this);
 		
-		onDisable();
+		Throwable throwable = null;
+		try
+		{
+			onDisable();	
+		}
+		catch (Throwable e)
+		{
+			throwable = e;
+		}
 		
 		eventManager.removeAllHandler();
 		
@@ -86,6 +94,7 @@ public abstract class Resource
 		serviceManager.unregisterServices(this);
 		
 		isEnabled = false;
+		throw throwable;
 	}
 	
 	public boolean isEnabled()
