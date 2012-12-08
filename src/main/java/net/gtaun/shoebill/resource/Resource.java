@@ -81,7 +81,7 @@ public abstract class Resource
 		Throwable throwable = null;
 		try
 		{
-			onDisable();	
+			if (isEnabled) onDisable();
 		}
 		catch (Throwable e)
 		{
