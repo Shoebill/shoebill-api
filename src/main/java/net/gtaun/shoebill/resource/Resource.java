@@ -94,7 +94,7 @@ public abstract class Resource
 		serviceManager.unregisterServices(this);
 		
 		isEnabled = false;
-		throw throwable;
+		if (throwable != null) throw throwable;
 	}
 	
 	public boolean isEnabled()
