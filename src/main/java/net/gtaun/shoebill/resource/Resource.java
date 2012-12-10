@@ -19,7 +19,6 @@ package net.gtaun.shoebill.resource;
 import java.io.File;
 
 import net.gtaun.shoebill.Shoebill;
-import net.gtaun.shoebill.ShoebillLowLevel;
 import net.gtaun.shoebill.event.resource.ResourceDisableEvent;
 import net.gtaun.shoebill.event.resource.ResourceEnableEvent;
 import net.gtaun.shoebill.service.Service;
@@ -49,16 +48,13 @@ public abstract class Resource
 	{
 		
 	}
-
-	@SuppressWarnings("deprecation")
-	void setContext(ResourceDescription description, Shoebill shoebill, File dataDir)
+	
+	void setContext(ResourceDescription description, Shoebill shoebill, ManagedEventManager eventManager, File dataDir)
 	{
 		this.description = description;
 		this.shoebill = shoebill;
+		this.eventManager = eventManager;
 		this.dataDir = dataDir;
-		
-		ShoebillLowLevel shoebillLowLevel = (ShoebillLowLevel) shoebill;
-		eventManager = new ManagedEventManager(shoebillLowLevel.getEventManager());
 	}
 	
 	protected abstract void onEnable() throws Throwable;
