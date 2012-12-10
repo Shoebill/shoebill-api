@@ -88,7 +88,7 @@ public abstract class Resource
 			throwable = e;
 		}
 		
-		eventManager.removeAllHandler();
+		eventManager.cancelAll();
 		
 		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
 		serviceManager.unregisterServices(this);
