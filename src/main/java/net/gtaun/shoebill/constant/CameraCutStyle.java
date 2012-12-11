@@ -25,7 +25,7 @@ import java.util.Map;
  * @author MK124
  * 
  * @see net.gtaun.shoebill.object.Player#setCameraLookAt
- * @see net.gtaun.shoebill.object.Player#interpolateCameraPos
+ * @see net.gtaun.shoebill.object.Player#interpolateCameraPosition
  * @see net.gtaun.shoebill.object.Player#interpolateCameraLookAt
  */
 public enum CameraCutStyle

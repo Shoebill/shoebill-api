@@ -21,7 +21,7 @@ package net.gtaun.shoebill.constant;
  * 
  * @author MK124
  * 
- * @see net.gtaun.shoebill.object.Vehicle#getModelInfo
+ * @see net.gtaun.shoebill.object.Server#getVehicleModelInfo
  */
 public enum VehicleModelInfoType
 {
