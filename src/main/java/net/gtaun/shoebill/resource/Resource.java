@@ -44,7 +44,7 @@ public abstract class Resource
 	private File dataDir;
 	
 	
-	protected Resource()
+	Resource()
 	{
 		
 	}
