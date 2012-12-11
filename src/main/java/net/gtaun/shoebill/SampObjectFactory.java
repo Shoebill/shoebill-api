@@ -101,11 +101,11 @@ public interface SampObjectFactory
 	Menu createMenu(String title, int columns, float x, float y, float col1Width, float col2Width) throws CreationFailedException;
 	Menu createMenu(String title, int columns, Vector2D pos, float col1Width, float col2Width) throws CreationFailedException;
 	
-	Dialog createDialog();
+	Dialog createDialog() throws CreationFailedException;
 	
-	Timer createTimer(int interval);
-	Timer createTimer(int interval, int count);
-
+	Timer createTimer(int interval) throws CreationFailedException;
+	Timer createTimer(int interval, int count) throws CreationFailedException;
+	
 	Checkpoint createCheckpoint(float x, float y, float z, float size);
 	Checkpoint createCheckpoint(Vector3D pos, float size);
 	Checkpoint createCheckpoint(Location pos, float size);

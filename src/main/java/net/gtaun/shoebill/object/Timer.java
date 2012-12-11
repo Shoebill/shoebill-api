@@ -23,7 +23,7 @@ import net.gtaun.shoebill.proxy.Proxyable;
  * 
  * @author MK124
  */
-public interface Timer extends Proxyable
+public interface Timer extends Destroyable, Proxyable
 {
 	public static final int COUNT_INFINITE = 0;
 	

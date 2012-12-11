@@ -24,7 +24,7 @@ import net.gtaun.shoebill.proxy.Proxyable;
  * 
  * @author MK124
  */
-public interface Dialog extends Proxyable
+public interface Dialog extends Destroyable, Proxyable
 {
 	int getId();
 	
