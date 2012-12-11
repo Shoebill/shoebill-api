@@ -17,16 +17,28 @@
 package net.gtaun.shoebill.event.checkpoint;
 
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class CheckpointEnterEvent extends CheckpointEvent
+public class CheckpointEnterEvent extends CheckpointEvent implements Interruptable
 {
 	public CheckpointEnterEvent(Player player)
 	{
 		super(player, player.getCheckpoint());
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
+	}
+	
+	public void setProcessed()
+	{
+		interrupt();
 	}
 }

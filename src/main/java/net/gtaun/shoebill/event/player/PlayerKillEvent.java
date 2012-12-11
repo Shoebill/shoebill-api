@@ -17,13 +17,14 @@
 package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerKillEvent extends PlayerEvent
+public class PlayerKillEvent extends PlayerEvent implements Interruptable
 {
 	private Player victim;
 	private int reason;
@@ -34,6 +35,12 @@ public class PlayerKillEvent extends PlayerEvent
 		super(player);
 		this.victim = victim;
 		this.reason = reason;
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 	
 	public Player getVictim()

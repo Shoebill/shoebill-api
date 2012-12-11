@@ -17,15 +17,16 @@
 package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerRequestClassEvent extends PlayerEvent
+public class PlayerRequestClassEvent extends PlayerEvent implements Interruptable
 {
-	private int response = 0;
+	private int response = 1;
 	private int classId;
 	
 	
@@ -35,9 +36,15 @@ public class PlayerRequestClassEvent extends PlayerEvent
 		this.classId = classId;
 	}
 	
-	public void setResponse(int response)
+	@Override
+	public void interrupt()
 	{
-		this.response |= response;
+		super.interrupt();
+	}
+	
+	public void disallow()
+	{
+		this.response &= 0;
 	}
 	
 	public int getResponse()

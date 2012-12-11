@@ -18,13 +18,14 @@ package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerAttach.PlayerAttachSlot;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerEditAttachedObjectEvent extends PlayerEvent
+public class PlayerEditAttachedObjectEvent extends PlayerEvent implements Interruptable
 {
 	private PlayerAttachSlot slot;
 	
@@ -33,6 +34,12 @@ public class PlayerEditAttachedObjectEvent extends PlayerEvent
 	{
 		super(player);
 		this.slot = slot;
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 	
 	public PlayerAttachSlot getSlot()

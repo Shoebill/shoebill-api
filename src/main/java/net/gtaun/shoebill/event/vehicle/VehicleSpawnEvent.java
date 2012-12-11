@@ -17,16 +17,23 @@
 package net.gtaun.shoebill.event.vehicle;
 
 import net.gtaun.shoebill.object.Vehicle;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class VehicleSpawnEvent extends VehicleEvent
+public class VehicleSpawnEvent extends VehicleEvent implements Interruptable
 {
 	public VehicleSpawnEvent(Vehicle vehicle)
 	{
 		super(vehicle);
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 }

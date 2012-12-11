@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011 JoJLlmAn
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,34 @@
 
 package net.gtaun.shoebill.event.vehicle;
 
+import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.Vehicle;
 
 /**
  * 
  * 
- * @author MK124
+ * @author JoJLlmAn
  */
 public class VehicleUpdateEvent extends VehicleEvent
 {
-	public VehicleUpdateEvent(Vehicle vehicle)
+	private Player player;
+	private int playerSeat;
+	
+	
+	public VehicleUpdateEvent(Vehicle vehicle, Player player, int playerSeat)
 	{
 		super(vehicle);
+		this.player = player;
+		this.playerSeat = playerSeat;
+	}
+	
+	public Player getPlayer()
+	{
+		return player;
+	}
+	
+	public int getPlayerSeat()
+	{
+		return playerSeat;
 	}
 }

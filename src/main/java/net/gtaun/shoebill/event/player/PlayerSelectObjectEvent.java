@@ -18,13 +18,14 @@ package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.SampObject;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerSelectObjectEvent extends PlayerEvent
+public class PlayerSelectObjectEvent extends PlayerEvent implements Interruptable
 {
 	private SampObject object;
 	
@@ -33,6 +34,12 @@ public class PlayerSelectObjectEvent extends PlayerEvent
 	{
 		super(player);
 		this.object = object;
+	}
+
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 	
 	public SampObject getObject()

@@ -19,13 +19,14 @@ package net.gtaun.shoebill.event.player;
 import net.gtaun.shoebill.constant.ObjectEditResponse;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.SampObject;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerEditObjectEvent extends PlayerEvent
+public class PlayerEditObjectEvent extends PlayerEvent implements Interruptable
 {
 	private SampObject object;
 	private ObjectEditResponse editResponse;
@@ -36,6 +37,12 @@ public class PlayerEditObjectEvent extends PlayerEvent
 		super(player);
 		this.object = object;
 		this.editResponse = response;
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 	
 	public SampObject getObject()

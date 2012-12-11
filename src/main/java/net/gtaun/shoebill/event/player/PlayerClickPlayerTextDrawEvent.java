@@ -18,13 +18,14 @@ package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerTextdraw;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerClickPlayerTextDrawEvent extends PlayerEvent
+public class PlayerClickPlayerTextDrawEvent extends PlayerEvent implements Interruptable
 {
 	private int response = 0;
 	private PlayerTextdraw playerTextdraw;
@@ -36,9 +37,16 @@ public class PlayerClickPlayerTextDrawEvent extends PlayerEvent
 		this.playerTextdraw = textdraw;
 	}
 	
-	public void setResponse(int response)
+	@Override
+	public void interrupt()
 	{
-		this.response |= response;
+		super.interrupt();
+	}
+	
+	public void setProcessed()
+	{
+		this.response |= 1;
+		interrupt();
 	}
 	
 	public int getResponse()

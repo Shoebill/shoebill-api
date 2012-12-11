@@ -18,13 +18,14 @@ package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerClickMapEvent extends PlayerEvent
+public class PlayerClickMapEvent extends PlayerEvent implements Interruptable
 {
 	private Vector3D position;
 	
@@ -33,6 +34,12 @@ public class PlayerClickMapEvent extends PlayerEvent
 	{
 		super(player);
 		position = new Vector3D(x, y, z);
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 	
 	public Vector3D getPosition()

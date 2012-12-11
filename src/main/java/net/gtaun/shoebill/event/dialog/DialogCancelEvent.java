@@ -30,4 +30,15 @@ public class DialogCancelEvent extends DialogEvent
 	{
 		super(dialog, player);
 	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
+	}
+	
+	public void setProcessed()
+	{
+		interrupt();
+	}
 }

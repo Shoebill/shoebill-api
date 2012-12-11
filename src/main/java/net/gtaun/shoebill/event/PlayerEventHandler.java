@@ -57,7 +57,7 @@ import net.gtaun.shoebill.event.vehicle.VehiclePaintjobEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleResprayEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleStreamInEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleStreamOutEvent;
-import net.gtaun.shoebill.event.vehicle.VehicleUnoccupiedUpdateEvent;
+import net.gtaun.shoebill.event.vehicle.VehicleUpdateEvent;
 import net.gtaun.util.event.AbstractEventHandler;
 
 /**
@@ -101,7 +101,7 @@ public abstract class PlayerEventHandler extends AbstractEventHandler
 	public void onPlayerVehicleMod(VehicleModEvent event)								{ }
 	public void onPlayerVehiclePaintjob(VehiclePaintjobEvent event)						{ }
 	public void onPlayerVehicleRespray(VehicleResprayEvent event)						{ }
-	public void onPlayerUnoccupiedVehicleUpdate(VehicleUnoccupiedUpdateEvent event)		{ }
+	public void onPlayerUnoccupiedVehicleUpdate(VehicleUpdateEvent event)		{ }
 	public void onPlayerVehicleStreamIn(VehicleStreamInEvent event)						{ }
 	public void onPlayerVehicleStreamOut(VehicleStreamOutEvent event)					{ }
 	public void onPlayerDialogResponse(DialogResponseEvent event)						{ }

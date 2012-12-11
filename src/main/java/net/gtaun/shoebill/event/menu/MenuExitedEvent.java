@@ -18,16 +18,28 @@ package net.gtaun.shoebill.event.menu;
 
 import net.gtaun.shoebill.object.Menu;
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class MenuExitedEvent extends MenuEvent
+public class MenuExitedEvent extends MenuEvent implements Interruptable
 {
 	public MenuExitedEvent(Menu menu, Player player)
 	{
 		super(menu, player);
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
+	}
+	
+	public void setProcessed()
+	{
+		interrupt();
 	}
 }

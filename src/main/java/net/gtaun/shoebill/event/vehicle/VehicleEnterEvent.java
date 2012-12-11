@@ -18,13 +18,14 @@ package net.gtaun.shoebill.event.vehicle;
 
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.Vehicle;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class VehicleEnterEvent extends VehicleEvent
+public class VehicleEnterEvent extends VehicleEvent implements Interruptable
 {
 	private Player player;
 	private boolean isPassenger;
@@ -35,6 +36,12 @@ public class VehicleEnterEvent extends VehicleEvent
 		super(vehicle);
 		this.player = player;
 		this.isPassenger = isPassenger;
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 	
 	public Player getPlayer()

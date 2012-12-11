@@ -17,13 +17,14 @@
 package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerEnterExitModShopEvent extends PlayerEvent
+public class PlayerEnterExitModShopEvent extends PlayerEvent implements Interruptable
 {
 	private int enterexit;
 	private int interiorId;
@@ -34,6 +35,12 @@ public class PlayerEnterExitModShopEvent extends PlayerEvent
 		super(player);
 		this.enterexit = enterexit;
 		this.interiorId = interiorId;
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 	
 	public int getEnterexit()

@@ -18,13 +18,14 @@ package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Pickup;
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public class PlayerPickupEvent extends PlayerEvent
+public class PlayerPickupEvent extends PlayerEvent implements Interruptable
 {
 	private Pickup pickup;
 	
@@ -33,6 +34,12 @@ public class PlayerPickupEvent extends PlayerEvent
 	{
 		super(player);
 		this.pickup = pickup;
+	}
+	
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
 	}
 	
 	public Pickup getPickup()
