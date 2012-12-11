@@ -103,8 +103,8 @@ public interface SampObjectFactory
 	
 	Dialog createDialog() throws CreationFailedException;
 	
-	Timer createTimer(int interval) throws CreationFailedException;
-	Timer createTimer(int interval, int count) throws CreationFailedException;
+	Timer createTimer(int interval);
+	Timer createTimer(int interval, int count);
 	
 	Checkpoint createCheckpoint(float x, float y, float z, float size);
 	Checkpoint createCheckpoint(Vector3D pos, float size);
