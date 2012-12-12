@@ -245,9 +245,19 @@ public class Color implements Cloneable, Serializable, CanImmutable
 		return value;
 	}
 	
-	public int getArgbValue()
+	public int toRgbValue()
+	{
+		return (value >> 8) & 0x00FFFFFF;
+	}
+	
+	public int toArgbValue()
 	{
 		return ((value & 0xFF) << 24) | (value >> 8);
+	}
+	
+	public String toRgbHexString()
+	{
+		return Integer.toHexString(toRgbValue()).toUpperCase();
 	}
 	
 	public void setValue(int value)
