@@ -31,5 +31,5 @@ public abstract class TimerEventHandler extends AbstractEventHandler
 		super(TimerEventHandler.class);
 	}
 
-	public void onTimerTick(TimerTickEvent event)		{ }
+	protected void onTimerTick(TimerTickEvent event)		{ }
 }

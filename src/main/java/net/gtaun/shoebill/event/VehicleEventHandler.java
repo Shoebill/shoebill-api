@@ -41,15 +41,15 @@ public abstract class VehicleEventHandler extends AbstractEventHandler
 		super(VehicleEventHandler.class);
 	}
 	
-	public void onVehicleSpawn(VehicleSpawnEvent event)								{ }
-	public void onVehicleDeath(VehicleDeathEvent event)								{ }
-	public void onVehicleEnter(VehicleEnterEvent event)								{ }
-	public void onVehicleExit(VehicleExitEvent event)								{ }
-	public void onVehicleMod(VehicleModEvent event)									{ }
-	public void onVehiclePaintjob(VehiclePaintjobEvent event)						{ }
-	public void onVehicleRespray(VehicleResprayEvent event)							{ }
-	public void onVehicleUpdateDamage(VehicleUpdateDamageEvent event)				{ }
-	public void onVehicleUpdate(VehicleUpdateEvent event)							{ }
-	public void onVehicleStreamIn(VehicleStreamInEvent event)						{ }
-	public void onVehicleStreamOut(VehicleStreamOutEvent event)						{ }
+	protected void onVehicleSpawn(VehicleSpawnEvent event)								{ }
+	protected void onVehicleDeath(VehicleDeathEvent event)								{ }
+	protected void onVehicleEnter(VehicleEnterEvent event)								{ }
+	protected void onVehicleExit(VehicleExitEvent event)								{ }
+	protected void onVehicleMod(VehicleModEvent event)									{ }
+	protected void onVehiclePaintjob(VehiclePaintjobEvent event)						{ }
+	protected void onVehicleRespray(VehicleResprayEvent event)							{ }
+	protected void onVehicleUpdateDamage(VehicleUpdateDamageEvent event)				{ }
+	protected void onVehicleUpdate(VehicleUpdateEvent event)							{ }
+	protected void onVehicleStreamIn(VehicleStreamInEvent event)						{ }
+	protected void onVehicleStreamOut(VehicleStreamOutEvent event)						{ }
 }

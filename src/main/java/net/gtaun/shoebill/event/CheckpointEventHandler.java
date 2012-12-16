@@ -34,8 +34,8 @@ public abstract class CheckpointEventHandler extends AbstractEventHandler
 		super(CheckpointEventHandler.class);
 	}
 
-	public void onCheckpointEnter(CheckpointEnterEvent event)					{ }
-	public void onCheckpointLeave(CheckpointLeaveEvent event)					{ }
-	public void onRaceCheckpointEnter(RaceCheckpointEnterEvent event )			{ }
-	public void onRaceCheckpointLeave(RaceCheckpointLeaveEvent event )			{ }
+	protected void onCheckpointEnter(CheckpointEnterEvent event)					{ }
+	protected void onCheckpointLeave(CheckpointLeaveEvent event)					{ }
+	protected void onRaceCheckpointEnter(RaceCheckpointEnterEvent event )			{ }
+	protected void onRaceCheckpointLeave(RaceCheckpointLeaveEvent event )			{ }
 }

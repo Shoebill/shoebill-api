@@ -32,6 +32,6 @@ public class ServiceEventHandler extends AbstractEventHandler
 		super(ServiceEventHandler.class);
 	}
 	
-	public void onServiceRegister(ServiceRegisterEvent event)			{ }
-	public void onServiceUnregister(ServiceUnregisterEvent event)		{ }
+	protected void onServiceRegister(ServiceRegisterEvent event)			{ }
+	protected void onServiceUnregister(ServiceUnregisterEvent event)		{ }
 }

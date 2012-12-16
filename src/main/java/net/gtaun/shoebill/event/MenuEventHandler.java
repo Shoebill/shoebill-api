@@ -32,6 +32,6 @@ public abstract class MenuEventHandler extends AbstractEventHandler
 		super(MenuEventHandler.class);
 	}
 	
-	public void onMenuExited(MenuExitedEvent event)				{ }
-	public void onMenuSelected(MenuSelectedEvent event)			{ }
+	protected void onMenuExited(MenuExitedEvent event)				{ }
+	protected void onMenuSelected(MenuSelectedEvent event)			{ }
 }

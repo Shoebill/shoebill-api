@@ -32,6 +32,6 @@ public abstract class DialogEventHandler extends AbstractEventHandler
 		super(DialogEventHandler.class);
 	}
 
-	public void onDialogCancel(DialogCancelEvent event)			{ }
-	public void onDialogResponse(DialogResponseEvent event)		{ }
+	protected void onDialogCancel(DialogCancelEvent event)			{ }
+	protected void onDialogResponse(DialogResponseEvent event)		{ }
 }

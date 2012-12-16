@@ -32,6 +32,6 @@ public abstract class RconEventHandler extends AbstractEventHandler
 		super(RconEventHandler.class);
 	}
 	
-	public void onRconCommand(RconCommandEvent event)		{ }
-	public void onRconLogin(RconLoginEvent event)			{ }
+	protected void onRconCommand(RconCommandEvent event)		{ }
+	protected void onRconLogin(RconLoginEvent event)			{ }
 }

@@ -31,5 +31,5 @@ public class DestroyEventHandler extends AbstractEventHandler
 		super(DestroyEventHandler.class);
 	}
 	
-	public void onDestroy(DestroyEvent event)			{ }
+	protected void onDestroy(DestroyEvent event)			{ }
 }

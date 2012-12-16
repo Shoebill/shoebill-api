@@ -32,6 +32,6 @@ public abstract class ObjectEventHandler extends AbstractEventHandler
 		super(ObjectEventHandler.class);
 	}
 	
-	public void onObjectMoved(ObjectMovedEvent event)					{ }
-	public void onPlayerObjectMoved(PlayerObjectMovedEvent event)		{ }
+	protected void onObjectMoved(ObjectMovedEvent event)					{ }
+	protected void onPlayerObjectMoved(PlayerObjectMovedEvent event)		{ }
 }

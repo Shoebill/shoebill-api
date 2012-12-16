@@ -34,9 +34,9 @@ public abstract class ResourceEventHandler extends AbstractEventHandler
 		super(ResourceEventHandler.class);
 	}
 	
-	public void onResourceLoad(ResourceLoadEvent event)				{ }
-	public void onResourceUnload(ResourceUnloadEvent event)			{ }
+	protected void onResourceLoad(ResourceLoadEvent event)				{ }
+	protected void onResourceUnload(ResourceUnloadEvent event)			{ }
 
-	public void onResourceEnable(ResourceEnableEvent event)			{ }
-	public void onResourceDisable(ResourceDisableEvent event)		{ }
+	protected void onResourceEnable(ResourceEnableEvent event)			{ }
+	protected void onResourceDisable(ResourceDisableEvent event)		{ }
 }
