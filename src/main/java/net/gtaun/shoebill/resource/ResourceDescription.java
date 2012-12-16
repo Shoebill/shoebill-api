@@ -58,47 +58,49 @@ public class ResourceDescription
 	
 	private Configuration loadConfig(String configFilename) throws IOException, ClassNotFoundException
 	{
-		JarFile jarFile = new JarFile(file);
-		JarEntry entry = jarFile.getJarEntry(configFilename);
-		InputStream in = jarFile.getInputStream(entry);
-		
-		FileConfiguration config = new YamlConfiguration();
-		config.setDefault("name", "Unnamed");
-		config.setDefault("version", "Unknown");
-		config.setDefault("authors", "Unknown");
-		config.setDefault("description", "");
-		config.setDefault("buildNumber", 0);
-		config.setDefault("buildDate", "Unknown");
-		
-		config.read(in);
-		
-		String className = config.getString("class");
-		clazz = classLoader.loadClass(className).asSubclass(Resource.class);
-		
-		name = config.getString("name");
-		version = config.getString("version");
-		
-		String author = config.getString("authors");
-		authors = new ArrayList<>();
-		String[] tokens = author.split("[,;]");
-		
-		if (tokens.length > 0)
+		try(JarFile jarFile = new JarFile(file))
 		{
-			for (String a : tokens)
+			JarEntry entry = jarFile.getJarEntry(configFilename);
+			InputStream in = jarFile.getInputStream(entry);
+			
+			FileConfiguration config = new YamlConfiguration();
+			config.setDefault("name", "Unnamed");
+			config.setDefault("version", "Unknown");
+			config.setDefault("authors", "Unknown");
+			config.setDefault("description", "");
+			config.setDefault("buildNumber", 0);
+			config.setDefault("buildDate", "Unknown");
+			
+			config.read(in);
+			
+			String className = config.getString("class");
+			clazz = classLoader.loadClass(className).asSubclass(Resource.class);
+			
+			name = config.getString("name");
+			version = config.getString("version");
+			
+			String author = config.getString("authors");
+			authors = new ArrayList<>();
+			String[] tokens = author.split("[,;]");
+			
+			if (tokens.length > 0)
 			{
-				authors.add(a.trim());
+				for (String a : tokens)
+				{
+					authors.add(a.trim());
+				}
 			}
+			else
+			{
+				authors.add(author.trim());
+			}
+			
+			description = config.getString("description");
+			buildNumber = config.getInt("buildNumber");
+			buildDate = config.getString("buildDate");
+			
+			return config;
 		}
-		else
-		{
-			authors.add(author.trim());
-		}
-		
-		description = config.getString("description");
-		buildNumber = config.getInt("buildNumber");
-		buildDate = config.getString("buildDate");
-		
-		return config;
 	}
 	
 	public ResourceType getType()
