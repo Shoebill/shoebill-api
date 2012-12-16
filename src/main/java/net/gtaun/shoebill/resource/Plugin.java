@@ -27,4 +27,16 @@ public abstract class Plugin extends Resource
 	{
 		
 	}
+	
+	@Override
+	public void enable() throws Throwable
+	{
+		super.enable();
+	}
+	
+	@Override
+	public void disable() throws Throwable
+	{
+		super.disable();
+	}
 }
