@@ -60,7 +60,7 @@ public abstract class Resource
 	protected abstract void onEnable() throws Throwable;
 	protected abstract void onDisable() throws Throwable;
 	
-	void enable() throws Throwable
+	protected void enable() throws Throwable
 	{
 		onEnable();
 		isEnabled = true;
@@ -69,7 +69,7 @@ public abstract class Resource
 		eventManager.dispatchEvent(event, getEventManager(), this);
 	}
 	
-	void disable() throws Throwable
+	protected void disable() throws Throwable
 	{
 		ResourceDisableEvent event = new ResourceDisableEvent(this);
 		eventManager.dispatchEvent(event, getEventManager(), this);
