@@ -257,7 +257,12 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	
 	public String toRgbHexString()
 	{
-		return Integer.toHexString(toRgbValue()).toUpperCase();
+		return String.format("%06X", toRgbValue());
+	}
+	
+	public String toEmbeddingString()
+	{
+		return "{" + toRgbHexString() + "}";
 	}
 	
 	public void setValue(int value)
