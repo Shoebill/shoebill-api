@@ -227,12 +227,12 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	
 	public Color(int r, int g, int b)
 	{
-		value = r & 0xFF << 24 | g & 0xFF << 16 | b & 0xFF << 8 | 0xFF;
+		value = (r & 0xFF) << 24 | (g & 0xFF) << 16 | (b & 0xFF) << 8 | 0xFF;
 	}
 	
 	public Color(int r, int g, int b, int a)
 	{
-		value = r & 0xFF << 24 | g & 0xFF << 16 | b & 0xFF << 8 | a & 0xFF;
+		value = (r & 0xFF) << 24 | (g & 0xFF) << 16 | (b & 0xFF) << 8 | a & 0xFF;
 	}
 	
 	public Color(Color color)
@@ -274,37 +274,37 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	
 	public int getR()
 	{
-		return (value & 0xFF00000) >> 24;
+		return value >> 24 & 0xFF;
 	}
 	
 	public void setR(int r)
 	{
-		value = getValue() & 0x00FFFFFF | r & 0xFF << 24;
+		value = (value & 0x00FFFFFF) | (r & 0xFF) << 24;
 	}
 	
 	public int getG()
 	{
-		return (value & 0x00FF0000) >> 16;
+		return value >> 16 & 0xFF;
 	}
 	
 	public void setG(int g)
 	{
-		value = getValue() & 0xFF00FFFF | g & 0xFF << 16;
+		value = (value & 0xFF00FFFF) | (g & 0xFF) << 16;
 	}
 	
 	public int getB()
 	{
-		return (value & 0x0000FF00) >> 8;
+		return value >> 8 & 0xFF;
 	}
 	
 	public void setB(int b)
 	{
-		value = getValue() & 0xFFFF00FF | b & 0xFF << 8;
+		value = (value & 0xFFFF00FF) | (b & 0xFF) << 8;
 	}
 	
 	public int getA()
 	{
-		return value & 0x000000FF;
+		return value & 0xFF;
 	}
 	
 	public void setA(int a)
@@ -321,14 +321,14 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	{
 		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
-		value = r & 0xFF << 24 | g & 0xFF << 16 | b & 0xFF << 8 | 0xFF;
+		value = (r & 0xFF) << 24 | (g & 0xFF) << 16 | (b & 0xFF) << 8 | 0xFF;
 	}
 	
 	public void set(int r, int g, int b, int a)
 	{
 		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
-		value = r & 0xFF << 24 | g & 0xFF << 16 | b & 0xFF << 8 | a & 0xFF;
+		value = (r & 0xFF) << 24 | (g & 0xFF) << 16 | (b & 0xFF) << 8 | a & 0xFF;
 	}
 	
 	public void set(Color color)
@@ -373,7 +373,7 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	public String toString()
 	{
 		ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE);
-		builder.append("value", Integer.toHexString(value));
+		builder.append("value", String.format("%08X", value));
 		builder.append("r", getR());
 		builder.append("g", getG());
 		builder.append("b", getB());
