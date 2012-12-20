@@ -16,6 +16,8 @@
 
 package net.gtaun.shoebill;
 
+import java.lang.ref.Reference;
+
 import net.gtaun.shoebill.proxy.GlobalProxyManager;
 import net.gtaun.shoebill.resource.ResourceManager;
 import net.gtaun.shoebill.service.ServiceStore;
@@ -27,6 +29,16 @@ import net.gtaun.shoebill.service.ServiceStore;
  */
 public interface Shoebill
 {
+	public final class Instance
+	{
+		protected static Reference<? extends Shoebill> shoebillReference;
+		
+		public static Shoebill get()
+		{
+			return shoebillReference.get();
+		}
+	}
+	
 	/**
 	 * Get SA-MP object store.
 	 * 
