@@ -67,5 +67,8 @@ public abstract interface MethodInterceptor
 	short getPriority();
 	Interceptor getInterceptor();
 	
+	void setEnabled(boolean enabled);
+	boolean isEnabled();
+	
 	void cancel();
 }
