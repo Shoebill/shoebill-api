@@ -26,9 +26,25 @@ import net.gtaun.shoebill.object.Player;
  */
 public class DialogCancelEvent extends DialogEvent
 {
-	public DialogCancelEvent(Dialog dialog, Player player)
+	public enum DialogCancelType
+	{
+		CANCEL,
+		OVERRIDE,
+	}
+	
+	
+	private DialogCancelType type;
+	
+	
+	public DialogCancelEvent(Dialog dialog, Player player, DialogCancelType type)
 	{
 		super(dialog, player);
+		this.type = type;
+	}
+	
+	public DialogCancelType getType()
+	{
+		return type;
 	}
 	
 	@Override
