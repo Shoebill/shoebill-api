@@ -169,6 +169,20 @@ public interface SampObjectStore
 	Collection<Player> getPlayers();
 	
 	/**
+	 * Get the collection of the online human players.
+	 * 
+	 * @return Collection of human Players.
+	 */
+	Collection<Player> getHumanPlayers();
+	
+	/**
+	 * Get the collection of the online NPC players.
+	 * 
+	 * @return Collection of NPC Players.
+	 */
+	Collection<Player> getNpcPlayers();
+	
+	/**
 	 * Get the collection of the vehicles that exist.
 	 * 
 	 * @return Collection of Vehicles.

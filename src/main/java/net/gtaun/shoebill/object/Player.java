@@ -187,6 +187,8 @@ public interface Player extends Proxyable
 	boolean isAdmin();
 	boolean isStreamedIn(Player forPlayer);
 	
+	boolean isNpc();
+	
 	void setCheckpoint(Checkpoint checkpoint);
 	void disableCheckpoint();
 	void setRaceCheckpoint(RaceCheckpoint checkpoint);
