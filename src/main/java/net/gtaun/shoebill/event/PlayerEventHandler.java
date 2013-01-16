@@ -25,6 +25,7 @@ import net.gtaun.shoebill.event.dialog.DialogResponseEvent;
 import net.gtaun.shoebill.event.menu.MenuExitedEvent;
 import net.gtaun.shoebill.event.menu.MenuSelectedEvent;
 import net.gtaun.shoebill.event.object.PlayerObjectMovedEvent;
+import net.gtaun.shoebill.event.player.PlayerClickMapEvent;
 import net.gtaun.shoebill.event.player.PlayerClickPlayerEvent;
 import net.gtaun.shoebill.event.player.PlayerClickPlayerTextDrawEvent;
 import net.gtaun.shoebill.event.player.PlayerClickTextDrawEvent;
@@ -115,4 +116,5 @@ public abstract class PlayerEventHandler extends AbstractEventHandler
 	protected void onPlayerEditAttachedObject(PlayerEditAttachedObjectEvent event)			{ }
 	protected void onPlayerSelectObject(PlayerSelectObjectEvent event)						{ }
 	protected void onPlayerSelectPlayerObject(PlayerSelectPlayerObjectEvent event)			{ }
+	protected void onPlayerClickMap(PlayerClickMapEvent event)								{ }
 }
