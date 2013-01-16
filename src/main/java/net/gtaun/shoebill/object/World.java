@@ -53,11 +53,18 @@ public interface World extends Proxyable
 	
 	void showNameTags(boolean enabled);
 	void showPlayerMarkers(PlayerMarkerMode mode);
+	
+	@Deprecated
 	void enableTirePopping(boolean enabled);
+
+	@Deprecated
 	void allowInteriorWeapons(boolean allow);
 	
 	void createExplosion(Location location, int type, float radius);
+	
+	@Deprecated
 	void enableZoneNames(boolean enabled);
+	
 	void usePlayerPedAnims();
 
 	void disableInteriorEnterExits();
