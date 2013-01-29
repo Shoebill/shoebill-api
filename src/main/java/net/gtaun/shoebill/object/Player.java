@@ -198,6 +198,7 @@ public interface Player extends Proxyable
 	void setSkin(int skin);
 
 	WeaponState getWeaponState();
+	WeaponData getWeaponData(int slot);
 	
 	void giveWeapon(WeaponType type, int ammo);
 	void giveWeapon(WeaponData data);
