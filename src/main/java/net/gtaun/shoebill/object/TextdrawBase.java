@@ -53,4 +53,8 @@ public interface TextdrawBase extends Destroyable, Proxyable
 	void setProportional(boolean set);
 	void setSelectable(boolean set);
 	void setText(String text);
+	void setPreviewModel(int modelindex);
+	void setPreviewModelRotation(float rotX, float rotY, float rotZ);
+	void setPreviewModelRotation(float rotX, float rotY, float rotZ, float zoom);
+	void setPreviewVehicleColor(int color1, int color2);
 }

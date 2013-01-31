@@ -56,6 +56,8 @@ public interface World extends Proxyable
 	
 	@Deprecated
 	void enableTirePopping(boolean enabled);
+	
+	void enableVehicleFriendlyFire();
 
 	@Deprecated
 	void allowInteriorWeapons(boolean allow);

@@ -120,6 +120,11 @@ public enum SpecialAction
 	CUFFED					(24),
 	
 	/**
+	 * Will apply a 'carrying' animation to the player
+	 */
+	CARRY					(25),
+	
+	/**
 	 * Will make make the player perform the pissing animation with visible pee
 	 */
 	SPECIAL_ACTION_PISSING	(68);
