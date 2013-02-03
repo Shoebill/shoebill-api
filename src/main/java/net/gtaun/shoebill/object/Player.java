@@ -26,7 +26,7 @@ import net.gtaun.shoebill.constant.ShopName;
 import net.gtaun.shoebill.constant.SpecialAction;
 import net.gtaun.shoebill.constant.SpectateMode;
 import net.gtaun.shoebill.constant.WeaponState;
-import net.gtaun.shoebill.constant.WeaponType;
+import net.gtaun.shoebill.constant.WeaponModel;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
@@ -75,7 +75,7 @@ public interface Player extends Proxyable
 	int getUpdateFrameCount();
 	float getHealth();
 	float getArmour();
-	WeaponType getArmedWeapon();
+	WeaponModel getArmedWeapon();
 	int getArmedWeaponAmmo();
 	int getMoney();
 	int getScore();
@@ -105,7 +105,7 @@ public interface Player extends Proxyable
 	void setCodepage(int codepage);
 	void setName(String name) throws IllegalArgumentException, IllegalLengthException, AlreadyExistException;
 
-	void setSpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skinId, int teamId, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3);
+	void setSpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skinId, int teamId, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3);
 	void setSpawnInfo(Vector3D pos, int interiorId, int worldId, float angle, int skinId, int teamId, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
 	void setSpawnInfo(Location loc, float angle, int skinId, int teamId, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
 	void setSpawnInfo(AngledLocation loc, int skin, int team, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
@@ -114,7 +114,7 @@ public interface Player extends Proxyable
 	void setColor(Color color);
 	void setHealth(float health);
 	void setArmour(float armour);
-	void setWeaponAmmo(WeaponType weapon, int ammo);
+	void setWeaponAmmo(WeaponModel weapon, int ammo);
 	void setMoney(int money);
 	void giveMoney(int money);
 	void setScore(int score);
@@ -145,7 +145,7 @@ public interface Player extends Proxyable
 	
 	void sendChat(Player player, String message);
 	void sendChatToAll(String message);
-	void sendDeathMessage(Player killer, int reason);
+	void sendDeathMessage(Player killer, WeaponModel reason);
 	
 	void sendGameText(int time, int style, String text);
 	void sendGameText(int time, int style, String format, Object... args);
@@ -200,7 +200,7 @@ public interface Player extends Proxyable
 	WeaponState getWeaponState();
 	WeaponData getWeaponData(int slot);
 	
-	void giveWeapon(WeaponType type, int ammo);
+	void giveWeapon(WeaponModel type, int ammo);
 	void giveWeapon(WeaponData data);
 	
 	void resetWeapons();

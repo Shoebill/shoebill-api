@@ -18,7 +18,7 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.constant.WeaponType;
+import net.gtaun.shoebill.constant.WeaponModel;
 import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
 
@@ -55,38 +55,38 @@ public class WeaponData implements Cloneable, Serializable, CanImmutable
 	}
 	
 	
-	private WeaponType type;
+	private WeaponModel model;
 	private int ammo;
 	
 	
 	public WeaponData()
 	{
-		type = WeaponType.NONE;
+		model = WeaponModel.NONE;
 		ammo = 0;
 	}
 	
-	public WeaponData(WeaponType type, int ammo)
+	public WeaponData(WeaponModel type, int ammo)
 	{
-		this.type = type;
+		this.model = type;
 		this.ammo = ammo;
 	}
 	
 	public WeaponData(WeaponData data)
 	{
-		this.type = data.getType();
+		this.model = data.getModel();
 		this.ammo = data.getAmmo();
 	}
 	
-	public WeaponType getType()
+	public WeaponModel getModel()
 	{
-		return type;
+		return model;
 	}
 	
-	public void setType(WeaponType type)
+	public void setModel(WeaponModel model)
 	{
 		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
-		this.type = type;
+		this.model = model;
 	}
 	
 	public int getAmmo()
@@ -101,11 +101,11 @@ public class WeaponData implements Cloneable, Serializable, CanImmutable
 		this.ammo = ammo;
 	}
 	
-	public void set(WeaponType type, int ammo)
+	public void set(WeaponModel type, int ammo)
 	{
 		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
-		setType(type);
+		setModel(type);
 		setAmmo(ammo);
 	}
 	
@@ -113,7 +113,7 @@ public class WeaponData implements Cloneable, Serializable, CanImmutable
 	{
 		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		
-		setType(data.getType());
+		setModel(data.getModel());
 		setAmmo(data.getAmmo());
 	}
 	

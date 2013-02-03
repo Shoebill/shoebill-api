@@ -24,7 +24,7 @@ import java.util.Map;
  * 
  * @author MK124
  */
-public enum WeaponType
+public enum WeaponModel
 {
 	/**
 	 * Unarmed
@@ -287,16 +287,16 @@ public enum WeaponType
 	DISCONNECT				(201,	-1,		0,		"Disconnect");
 	
 	
-	private static final Map<Integer, WeaponType> VALUES = new HashMap<>();
+	private static final Map<Integer, WeaponModel> VALUES = new HashMap<>();
 	
-	public static WeaponType get(int id)
+	public static WeaponModel get(int id)
 	{
 		return VALUES.get(id);
 	}
 	
 	static
 	{
-		for(WeaponType val : values()) VALUES.put(val.id, val);
+		for(WeaponModel val : values()) VALUES.put(val.id, val);
 	}
 	
 	
@@ -306,7 +306,7 @@ public enum WeaponType
 	private final String name;
 	
 	
-	private WeaponType(int id, int slot, int modelId, String name)
+	private WeaponModel(int id, int slot, int modelId, String name)
 	{
 		this.id = id;
 		this.slot = slot;

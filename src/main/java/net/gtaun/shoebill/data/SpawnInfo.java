@@ -18,7 +18,7 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.constant.WeaponType;
+import net.gtaun.shoebill.constant.WeaponModel;
 import net.gtaun.shoebill.util.immutable.CanImmutable;
 import net.gtaun.shoebill.util.immutable.Immutable;
 
@@ -60,7 +60,7 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	private WeaponData weapon1, weapon2, weapon3;
 	
 	
-	public SpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
+	public SpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skin, int team, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
 	{
 		location = new AngledLocation(x, y, z, interiorId, worldId, angle);
 		this.skinId = skin;
@@ -70,7 +70,7 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 		this.weapon3 = new WeaponData(weapon3, ammo3);
 	}
 	
-	public SpawnInfo(Vector3D vec, int interiorId, int worldId, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
+	public SpawnInfo(Vector3D vec, int interiorId, int worldId, float angle, int skin, int team, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
 	{
 		location = new AngledLocation(vec, interiorId, worldId, angle);
 		this.skinId = skin;
@@ -80,7 +80,7 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 		this.weapon3 = new WeaponData(weapon3, ammo3);
 	}
 	
-	public SpawnInfo(Location loc, float angle, int skin, int team, WeaponType weapon1, int ammo1, WeaponType weapon2, int ammo2, WeaponType weapon3, int ammo3)
+	public SpawnInfo(Location loc, float angle, int skin, int team, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
 	{
 		location = new AngledLocation(loc, angle);
 		this.skinId = skin;
