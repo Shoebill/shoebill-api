@@ -59,7 +59,7 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	private int skinId, teamId;
 	private WeaponData weapon1, weapon2, weapon3;
 	
-	
+
 	public SpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skin, int team, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
 	{
 		location = new AngledLocation(x, y, z, interiorId, worldId, angle);
@@ -95,6 +95,46 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 		this.location = new AngledLocation(loc);
 		this.skinId = skin;
 		this.teamId = team;
+		this.weapon1 = new WeaponData(weapon1);
+		this.weapon2 = new WeaponData(weapon2);
+		this.weapon3 = new WeaponData(weapon3);
+	}
+
+	public SpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skin, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
+	{
+		location = new AngledLocation(x, y, z, interiorId, worldId, angle);
+		this.skinId = skin;
+		this.teamId = 255;
+		this.weapon1 = new WeaponData(weapon1, ammo1);
+		this.weapon2 = new WeaponData(weapon2, ammo2);
+		this.weapon3 = new WeaponData(weapon3, ammo3);
+	}
+	
+	public SpawnInfo(Vector3D vec, int interiorId, int worldId, float angle, int skin, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
+	{
+		location = new AngledLocation(vec, interiorId, worldId, angle);
+		this.skinId = skin;
+		this.teamId = 255;
+		this.weapon1 = new WeaponData(weapon1, ammo1);
+		this.weapon2 = new WeaponData(weapon2, ammo2);
+		this.weapon3 = new WeaponData(weapon3, ammo3);
+	}
+	
+	public SpawnInfo(Location loc, float angle, int skin, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
+	{
+		location = new AngledLocation(loc, angle);
+		this.skinId = skin;
+		this.teamId = 255;
+		this.weapon1 = new WeaponData(weapon1, ammo1);
+		this.weapon2 = new WeaponData(weapon2, ammo2);
+		this.weapon3 = new WeaponData(weapon3, ammo3);
+	}
+	
+	public SpawnInfo(AngledLocation loc, int skin, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3)
+	{
+		this.location = new AngledLocation(loc);
+		this.skinId = skin;
+		this.teamId = 255;
 		this.weapon1 = new WeaponData(weapon1);
 		this.weapon2 = new WeaponData(weapon2);
 		this.weapon3 = new WeaponData(weapon3);
