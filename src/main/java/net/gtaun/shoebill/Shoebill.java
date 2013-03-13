@@ -85,4 +85,11 @@ public interface Shoebill
 	 * Reload all.
 	 */
 	void reload();
+	
+	/**
+	 * Causes the run() method of the runnable to be invoked by amx thread at the next process tick.
+	 * 
+	 * @param runnable
+	 */
+	void asyncExec(Runnable runnable);
 }
