@@ -18,6 +18,7 @@ package net.gtaun.shoebill;
 
 import java.lang.ref.Reference;
 
+import net.gtaun.shoebill.amx.AmxInstanceManager;
 import net.gtaun.shoebill.proxy.GlobalProxyManager;
 import net.gtaun.shoebill.resource.ResourceManager;
 import net.gtaun.shoebill.service.ServiceStore;
@@ -52,11 +53,18 @@ public interface Shoebill
 	 * @return SampObjectFactory instance.
 	 */
 	SampObjectFactory getSampObjectFactory();
+
+	/**
+	 * Get AMX instance manager.
+	 * 
+	 * @return AmxInstanceManager instance.
+	 */
+	AmxInstanceManager getAmxInstanceManager();
 	
 	/**
-	 * Get plugin manager.
+	 * Get resource manager.
 	 * 
-	 * @return PluginManager instance.
+	 * @return ResourceManager instance.
 	 */
 	ResourceManager getResourceManager();
 	
