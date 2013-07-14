@@ -282,6 +282,7 @@ public final class VehicleComponentModel
 	
 	public static String getName(int id)
 	{
+		if (id == 0) return "None";
 		VehicleComponentModelData data = VehicleComponentModelData.get(id);
 		return data != null ? data.name : "Unknown";
 	}
@@ -289,7 +290,7 @@ public final class VehicleComponentModel
 	public static String getConstantName(int id)
 	{
 		VehicleComponentModelData data = VehicleComponentModelData.get(id);
-		return data != null ? data.name() : "Unknown";
+		return data != null ? data.name() : "UNKNOWN";
 	}
 	
 	public static VehicleComponentSlot getSlot(int id)
@@ -307,12 +308,23 @@ public final class VehicleComponentModel
 	{
 		return VehicleComponentModelData.getIds(slot);
 	}
-	
+
 	public static Set<Integer> getVehicleSupportedComponments(int vid)
 	{
 		Set<Integer> set = VEHICLE_SUPPORTED_COMPONENTS.get(vid);
 		if (set == null) set = Collections.emptySet();
 		return set;
+	}
+	
+	public static Set<Integer> getSlotSupportedComponents(int vid, VehicleComponentSlot slot)
+	{
+		Set<Integer> set = VEHICLE_SUPPORTED_COMPONENTS.get(vid);
+		if (set == null) set = Collections.emptySet();
+		
+		Set<Integer> ret = new TreeSet<>();
+		for (int cid : set) if (getSlot(cid) == slot) ret.add(cid);
+		
+		return ret;
 	}
 	
 	public static Set<VehicleComponentSlot> getVehicleSupportedSlots(int vid)
