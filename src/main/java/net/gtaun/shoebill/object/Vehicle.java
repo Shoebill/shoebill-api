@@ -43,7 +43,7 @@ public interface Vehicle extends Destroyable, Proxyable
 	
 	VehicleParam getState();
 	VehicleComponent getComponent();
-	public VehicleDamage getDamage();
+	VehicleDamage getDamage();
 	
 	AngledLocation getLocation();
 	void setLocation(float x, float y, float z);
