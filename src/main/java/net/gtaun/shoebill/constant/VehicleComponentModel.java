@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeSet;
 
 public final class VehicleComponentModel
 {
@@ -206,7 +207,7 @@ public final class VehicleComponentModel
 		}
 	}
 	
-	
+
 	private static Map<Integer, Set<Integer>> VEHICLE_SUPPORTED_COMPONENTS = new HashMap<>();
 	static
 	{
@@ -232,6 +233,33 @@ public final class VehicleComponentModel
 		}
 		
 		VEHICLE_SUPPORTED_COMPONENTS = Collections.unmodifiableMap(map);
+	}
+	
+	private static Map<Integer, Set<VehicleComponentSlot>> VEHICLE_SUPPORTED_COMPONENT_SLOTS = new HashMap<>();
+	static
+	{
+		Map<Integer, Set<VehicleComponentSlot>> map = new HashMap<>();
+		for (VehicleComponentModelData data : VehicleComponentModelData.values())
+		{
+			for (int vid : data.supportedVehicleModelIds)
+			{
+				Set<VehicleComponentSlot> slots = map.get(data.slot);
+				if (slots == null)
+				{
+					slots = new TreeSet<>();
+					map.put(vid, slots);
+				}
+				
+				slots.add(data.slot);
+			}
+		}
+		
+		for (Entry<Integer, Set<VehicleComponentSlot>> entry : map.entrySet())
+		{
+			entry.setValue(Collections.unmodifiableSet(entry.getValue()));
+		}
+		
+		VEHICLE_SUPPORTED_COMPONENT_SLOTS = Collections.unmodifiableMap(map);
 	}
 	
 	
@@ -285,6 +313,13 @@ public final class VehicleComponentModel
 		Set<Integer> set = VEHICLE_SUPPORTED_COMPONENTS.get(vid);
 		if (set == null) set = Collections.emptySet();
 		return set;
+	}
+	
+	public static Set<VehicleComponentSlot> getVehicleSupportedSlots(int vid)
+	{
+		Set<VehicleComponentSlot> slots = VEHICLE_SUPPORTED_COMPONENT_SLOTS.get(vid);
+		if (slots == null) slots = Collections.emptySet();
+		return slots;
 	}
 	
 	public static boolean isVehicleSupportAnyComponment(int vid)
