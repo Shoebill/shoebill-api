@@ -243,7 +243,7 @@ public final class VehicleComponentModel
 		{
 			for (int vid : data.supportedVehicleModelIds)
 			{
-				Set<VehicleComponentSlot> slots = map.get(data.slot);
+				Set<VehicleComponentSlot> slots = map.get(vid);
 				if (slots == null)
 				{
 					slots = new TreeSet<>();
