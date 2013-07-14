@@ -287,6 +287,11 @@ public final class VehicleComponentModel
 		return set;
 	}
 	
+	public static boolean isVehicleSupportedAnyComponment(int vid)
+	{
+		return VEHICLE_SUPPORTED_COMPONENTS.get(vid) != null;
+	}
+	
 	public static boolean isVehicleSupported(int vid, int cid)
 	{
 		Set<Integer> set = VEHICLE_SUPPORTED_COMPONENTS.get(vid);
