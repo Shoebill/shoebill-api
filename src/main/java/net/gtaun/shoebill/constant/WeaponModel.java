@@ -284,7 +284,12 @@ public enum WeaponModel
 	/**
 	 * Disconnect (only usable in sendDeathMessage)
 	 */
-	DISCONNECT				(201,	-1,		0,		"Disconnect");
+	DISCONNECT				(201,	-1,		0,		"Disconnect"),
+	
+	/**
+	 * Unknown (only usable in sendDeathMessage)
+	 */
+	UNKNOWN					(255,	-1,		0,		"Unknown");
 	
 	
 	private static final Map<Integer, WeaponModel> VALUES = new HashMap<>();
