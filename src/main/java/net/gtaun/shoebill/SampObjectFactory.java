@@ -16,6 +16,10 @@
 
 package net.gtaun.shoebill;
 
+import java.util.List;
+
+import org.apache.commons.lang3.tuple.Pair;
+
 import net.gtaun.shoebill.constant.RaceCheckpointType;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
@@ -112,7 +116,14 @@ public interface SampObjectFactory
 	Checkpoint createCheckpoint(Radius loc);
 
 	RaceCheckpoint createRaceCheckpoint(float x, float y, float z, float size, RaceCheckpointType type, RaceCheckpoint next);
+	RaceCheckpoint createRaceCheckpoint(float x, float y, float z, float size, RaceCheckpointType type);
 	RaceCheckpoint createRaceCheckpoint(Vector3D pos, float size, RaceCheckpointType type, RaceCheckpoint next);
+	RaceCheckpoint createRaceCheckpoint(Vector3D pos, float size, RaceCheckpointType type);
 	RaceCheckpoint createRaceCheckpoint(Location loc, float size, RaceCheckpointType type, RaceCheckpoint next);
+	RaceCheckpoint createRaceCheckpoint(Location loc, float size, RaceCheckpointType type);
 	RaceCheckpoint createRaceCheckpoint(Radius loc, RaceCheckpointType type, RaceCheckpoint next);
+	RaceCheckpoint createRaceCheckpoint(Radius loc, RaceCheckpointType type);
+
+	List<RaceCheckpoint> createRaceCheckpoints(List<Radius> locations, RaceCheckpointType type);
+	List<RaceCheckpoint> createRaceCheckpoints(List<Pair<Radius, RaceCheckpointType>> pairs);
 }

@@ -26,5 +26,8 @@ import net.gtaun.shoebill.constant.RaceCheckpointType;
 public interface RaceCheckpoint extends Checkpoint
 {
 	RaceCheckpointType getType();
+	void setType(RaceCheckpointType type);
+	
 	RaceCheckpoint getNext();
+	void setNext(RaceCheckpoint next);
 }
