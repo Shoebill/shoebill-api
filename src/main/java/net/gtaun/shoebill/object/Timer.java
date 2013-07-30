@@ -16,14 +16,13 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Timer extends Destroyable, Proxyable
+public interface Timer extends Destroyable
 {
 	public abstract class TimerCallback
 	{
