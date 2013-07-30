@@ -29,7 +29,8 @@ public interface Timer extends Destroyable, Proxyable
 	{
 		public void onStart()						{ }
 		public void onStop()						{ }
-		public void onTick(int factualInterval)		{ }
+		
+		public abstract void onTick(int factualInterval);
 	}
 	
 	
