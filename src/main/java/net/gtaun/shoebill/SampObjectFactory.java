@@ -44,6 +44,7 @@ import net.gtaun.shoebill.object.Textdraw;
 import net.gtaun.shoebill.object.Timer;
 import net.gtaun.shoebill.object.Vehicle;
 import net.gtaun.shoebill.object.Zone;
+import net.gtaun.shoebill.object.Timer.TimerCallback;
 
 /**
  * 
@@ -106,9 +107,11 @@ public interface SampObjectFactory
 	Menu createMenu(String title, int columns, Vector2D pos, float col1Width, float col2Width) throws CreationFailedException;
 	
 	Dialog createDialog() throws CreationFailedException;
-	
+
+	Timer createTimer(int interval, TimerCallback callback);
 	Timer createTimer(int interval);
 	Timer createTimer(int interval, int count);
+	Timer createTimer(int interval, int count, TimerCallback callback);
 	
 	Checkpoint createCheckpoint(float x, float y, float z, float size);
 	Checkpoint createCheckpoint(Vector3D pos, float size);
