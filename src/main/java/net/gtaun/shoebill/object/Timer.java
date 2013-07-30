@@ -25,6 +25,14 @@ import net.gtaun.shoebill.proxy.Proxyable;
  */
 public interface Timer extends Destroyable, Proxyable
 {
+	public abstract class TimerCallback
+	{
+		public void onStart()						{ }
+		public void onStop()						{ }
+		public void onTick(int factualInterval)		{ }
+	}
+	
+	
 	public static final int COUNT_INFINITE = 0;
 	
 	
@@ -37,6 +45,6 @@ public interface Timer extends Destroyable, Proxyable
 	void setCount(int count);
 	void start();
 	void stop();
-	
-	void tick(int realint);
+
+	void setCallback(TimerCallback callback);
 }
