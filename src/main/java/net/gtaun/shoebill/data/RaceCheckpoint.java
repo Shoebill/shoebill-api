@@ -72,7 +72,6 @@ public class RaceCheckpoint extends Checkpoint
 	}
 	
 	
-	
 	private RaceCheckpointType type;
 	private RaceCheckpoint next;
 	

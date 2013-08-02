@@ -87,14 +87,14 @@ public class Checkpoint
 		update();
 	}
 	
-	public float getRadius()
+	public float getSize()
 	{
 		return location.getRadius();
 	}
 	
-	public void setRadius(float radius)
+	public void setSize(float size)
 	{
-		location.setRadius(radius);
+		location.setRadius(size);
 		update();
 	}
 	
