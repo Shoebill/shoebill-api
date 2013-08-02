@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.object;
 
-import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.AngledLocation;
+import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Quaternion;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.data.Velocity;

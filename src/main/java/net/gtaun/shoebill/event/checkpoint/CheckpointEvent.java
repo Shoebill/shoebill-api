@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.checkpoint;
 
-import net.gtaun.shoebill.object.Checkpoint;
+import net.gtaun.shoebill.data.Checkpoint;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Event;
 

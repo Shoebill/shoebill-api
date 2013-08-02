@@ -16,20 +16,13 @@
 
 package net.gtaun.shoebill;
 
-import java.util.List;
-
-import org.apache.commons.lang3.tuple.Pair;
-
-import net.gtaun.shoebill.constant.RaceCheckpointType;
+import net.gtaun.shoebill.data.AngledLocation;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.data.AngledLocation;
-import net.gtaun.shoebill.data.Radius;
 import net.gtaun.shoebill.data.Vector2D;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
-import net.gtaun.shoebill.object.Checkpoint;
 import net.gtaun.shoebill.object.Dialog;
 import net.gtaun.shoebill.object.Label;
 import net.gtaun.shoebill.object.Menu;
@@ -38,13 +31,12 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerLabel;
 import net.gtaun.shoebill.object.PlayerObject;
 import net.gtaun.shoebill.object.PlayerTextdraw;
-import net.gtaun.shoebill.object.RaceCheckpoint;
 import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.shoebill.object.Textdraw;
 import net.gtaun.shoebill.object.Timer;
+import net.gtaun.shoebill.object.Timer.TimerCallback;
 import net.gtaun.shoebill.object.Vehicle;
 import net.gtaun.shoebill.object.Zone;
-import net.gtaun.shoebill.object.Timer.TimerCallback;
 
 /**
  * 
@@ -112,21 +104,4 @@ public interface SampObjectFactory
 	Timer createTimer(int interval, int count);
 	Timer createTimer(int interval, TimerCallback callback);
 	Timer createTimer(int interval);
-	
-	Checkpoint createCheckpoint(float x, float y, float z, float size);
-	Checkpoint createCheckpoint(Vector3D pos, float size);
-	Checkpoint createCheckpoint(Location pos, float size);
-	Checkpoint createCheckpoint(Radius loc);
-
-	RaceCheckpoint createRaceCheckpoint(float x, float y, float z, float size, RaceCheckpointType type, RaceCheckpoint next);
-	RaceCheckpoint createRaceCheckpoint(float x, float y, float z, float size, RaceCheckpointType type);
-	RaceCheckpoint createRaceCheckpoint(Vector3D pos, float size, RaceCheckpointType type, RaceCheckpoint next);
-	RaceCheckpoint createRaceCheckpoint(Vector3D pos, float size, RaceCheckpointType type);
-	RaceCheckpoint createRaceCheckpoint(Location loc, float size, RaceCheckpointType type, RaceCheckpoint next);
-	RaceCheckpoint createRaceCheckpoint(Location loc, float size, RaceCheckpointType type);
-	RaceCheckpoint createRaceCheckpoint(Radius loc, RaceCheckpointType type, RaceCheckpoint next);
-	RaceCheckpoint createRaceCheckpoint(Radius loc, RaceCheckpointType type);
-
-	List<RaceCheckpoint> createRaceCheckpoints(List<Radius> locations, RaceCheckpointType type);
-	List<RaceCheckpoint> createRaceCheckpoints(List<Pair<Radius, RaceCheckpointType>> pairs);
 }
