@@ -1,7 +1,5 @@
 package net.gtaun.shoebill.object;
 
-import java.util.List;
-
 import net.gtaun.shoebill.constant.MapIconStyle;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Vector3D;
