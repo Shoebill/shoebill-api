@@ -19,7 +19,6 @@ package net.gtaun.shoebill.object;
 import net.gtaun.shoebill.constant.CameraCutStyle;
 import net.gtaun.shoebill.constant.DialogStyle;
 import net.gtaun.shoebill.constant.FightStyle;
-import net.gtaun.shoebill.constant.MapIconStyle;
 import net.gtaun.shoebill.constant.PlayerState;
 import net.gtaun.shoebill.constant.RecordType;
 import net.gtaun.shoebill.constant.ShopName;
@@ -224,10 +223,8 @@ public interface Player extends Proxyable
 	void toggleControllable(boolean toggle);
 	void setSpecialAction(SpecialAction action);
 
-	void setMapIcon(int iconId, float x, float y, float z, int markerType, Color color, MapIconStyle style);
-	void setMapIcon(int iconId, Vector3D pos, int markerType, Color color, MapIconStyle style);
+	PlayerMapIcon getMapIcon();
 	
-	void removeMapIcon(int iconId);
 	void enableStuntBonus(boolean enabled);
 	
 	void toggleSpectating(boolean toggle);
