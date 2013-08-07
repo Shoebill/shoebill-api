@@ -121,8 +121,7 @@ public class RaceCheckpoint extends Checkpoint
 	@Override
 	public String toString()
 	{
-		return new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE)
-			.append("type", type).append("next", next).toString();
+		return new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE).append("type", type).toString();
 	}
 	
 	public RaceCheckpointType getType()
