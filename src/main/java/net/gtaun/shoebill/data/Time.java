@@ -36,10 +36,15 @@ public class Time implements Cloneable, Serializable, CanImmutable
 	private static final long serialVersionUID = -2904498722367946789L;
 	
 	
-	private static final class ImmutableTime extends Time implements Immutable
+	public static final class ImmutableTime extends Time implements Immutable
 	{
 		private static final long serialVersionUID = Time.serialVersionUID;
+
 		
+		private ImmutableTime()
+		{
+			
+		}
 		
 		private ImmutableTime(Time time)
 		{

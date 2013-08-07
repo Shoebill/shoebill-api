@@ -37,10 +37,15 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	private static final long serialVersionUID = -1494282877268559489L;
 	
 	
-	private static final class ImmutableSpawnInfo extends SpawnInfo implements Immutable
+	public static final class ImmutableSpawnInfo extends SpawnInfo implements Immutable
 	{
 		private static final long serialVersionUID = SpawnInfo.serialVersionUID;
 		
+
+		private ImmutableSpawnInfo()
+		{
+			
+		}
 		
 		private ImmutableSpawnInfo(SpawnInfo spawnInfo)
 		{
@@ -148,6 +153,11 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 		this.weapon1 = new WeaponData(weapon1);
 		this.weapon2 = new WeaponData(weapon2);
 		this.weapon3 = new WeaponData(weapon3);
+	}
+	
+	public SpawnInfo()
+	{
+		location = new AngledLocation();
 	}
 	
 	public AngledLocation getLocation()

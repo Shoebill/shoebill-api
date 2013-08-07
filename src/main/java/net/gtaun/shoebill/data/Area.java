@@ -36,10 +36,15 @@ public class Area implements Cloneable, Serializable, CanImmutable, RangeCheckab
 	private static final long serialVersionUID = 4319892622317856825L;
 	
 	
-	private static final class ImmutableArea extends Area implements Immutable
+	public static final class ImmutableArea extends Area implements Immutable
 	{
 		private static final long serialVersionUID = Area.serialVersionUID;
 		
+
+		private ImmutableArea()
+		{
+			
+		}
 		
 		private ImmutableArea(Area area)
 		{

@@ -55,7 +55,7 @@ public class RaceCheckpoint extends Checkpoint
 		return checkpoints;
 	}
 	
-	public static  List<RaceCheckpoint> createRaceCheckpoints(List<Pair<Radius, RaceCheckpointType>> pairs)
+	public static List<RaceCheckpoint> createRaceCheckpoints(List<Pair<Radius, RaceCheckpointType>> pairs)
 	{
 		List<RaceCheckpoint> checkpoints = new ArrayList<>(pairs.size());
 		

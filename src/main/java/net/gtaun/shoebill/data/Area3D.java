@@ -36,10 +36,15 @@ public class Area3D extends Area implements Cloneable, Serializable, CanImmutabl
 	private static final long serialVersionUID = 7421659231232420433L;
 	
 	
-	private static final class ImmutableArea3D extends Area3D implements Immutable
+	public static final class ImmutableArea3D extends Area3D implements Immutable
 	{
 		private static final long serialVersionUID = Area3D.serialVersionUID;
 		
+
+		private ImmutableArea3D()
+		{
+			
+		}
 		
 		private ImmutableArea3D(Area3D area3d)
 		{
@@ -76,6 +81,11 @@ public class Area3D extends Area implements Cloneable, Serializable, CanImmutabl
 		super(area);
 		this.minZ = area.getMinZ();
 		this.maxZ = area.getMaxZ();
+	}
+	
+	public Area3D()
+	{
+		
 	}
 	
 	public float getMinZ()

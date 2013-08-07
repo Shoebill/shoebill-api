@@ -37,10 +37,15 @@ public class WeaponData implements Cloneable, Serializable, CanImmutable
 	private static final long serialVersionUID = 8584508544432627380L;
 	
 	
-	private static final class ImmutableWeaponData extends WeaponData implements Immutable
+	public static final class ImmutableWeaponData extends WeaponData implements Immutable
 	{
 		private static final long serialVersionUID = WeaponData.serialVersionUID;
 		
+
+		private ImmutableWeaponData()
+		{
+
+		}
 		
 		private ImmutableWeaponData(WeaponData weaponData)
 		{

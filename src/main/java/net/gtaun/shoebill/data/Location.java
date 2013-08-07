@@ -36,10 +36,15 @@ public class Location extends Vector3D implements Cloneable, Serializable, CanIm
 	private static final long serialVersionUID = 8895946392500802993L;
 	
 	
-	private static final class ImmutableLocation extends Location implements Immutable
+	public static final class ImmutableLocation extends Location implements Immutable
 	{
 		private static final long serialVersionUID = Location.serialVersionUID;
 		
+
+		private ImmutableLocation()
+		{
+
+		}
 		
 		private ImmutableLocation(Location location)
 		{

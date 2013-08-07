@@ -36,10 +36,15 @@ public class AngledLocation extends Location implements Cloneable, Serializable,
 	private static final long serialVersionUID = -6964956260244629027L;
 	
 	
-	private static final class ImmutableAngledLocation extends AngledLocation implements Immutable
+	public static final class ImmutableAngledLocation extends AngledLocation implements Immutable
 	{
 		private static final long serialVersionUID = AngledLocation.serialVersionUID;
 		
+
+		private ImmutableAngledLocation()
+		{
+			
+		}
 		
 		private ImmutableAngledLocation(AngledLocation locationAngle)
 		{

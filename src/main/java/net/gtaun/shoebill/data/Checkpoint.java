@@ -36,7 +36,7 @@ public class Checkpoint
 {
 	private Radius location;
 	
-	
+
 	public Checkpoint(Radius loc)
 	{
 		location = loc.immutable();
@@ -55,6 +55,11 @@ public class Checkpoint
 	public Checkpoint(float x, float y, float z, float size)
 	{
 		this(new Radius(x, y, z, size));
+	}
+	
+	public Checkpoint()
+	{
+		location = new Radius();
 	}
 	
 	

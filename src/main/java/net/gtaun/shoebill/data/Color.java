@@ -199,10 +199,15 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	public static final Color TRANSPARENT =				new Color(0x00000000).immutable();
 	
 	
-	private static final class ImmutableColor extends Color implements Immutable
+	public static final class ImmutableColor extends Color implements Immutable
 	{
 		private static final long serialVersionUID = Color.serialVersionUID;
 		
+
+		private ImmutableColor()
+		{
+
+		}
 		
 		private ImmutableColor(Color color)
 		{
@@ -238,6 +243,11 @@ public class Color implements Cloneable, Serializable, CanImmutable
 	public Color(Color color)
 	{
 		this.value = color.getValue();
+	}
+	
+	public Color()
+	{
+		value = Color.WHITE.getValue();
 	}
 	
 	public int getValue()

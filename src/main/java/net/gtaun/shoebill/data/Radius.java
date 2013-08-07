@@ -36,10 +36,15 @@ public class Radius extends Location implements Cloneable, Serializable, CanImmu
 	private static final long serialVersionUID = -4375366678586498863L;
 	
 	
-	private static final class ImmutableRadius extends Radius implements Immutable
+	public static final class ImmutableRadius extends Radius implements Immutable
 	{
 		private static final long serialVersionUID = Radius.serialVersionUID;
 		
+
+		private ImmutableRadius()
+		{
+			
+		}
 		
 		private ImmutableRadius(Radius locationRadius)
 		{
