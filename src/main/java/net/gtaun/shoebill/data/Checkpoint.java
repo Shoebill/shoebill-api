@@ -94,7 +94,7 @@ public class Checkpoint
 	
 	public float getSize()
 	{
-		return location.getRadius();
+		return getLocation().getRadius();
 	}
 	
 	public void setSize(float size)
