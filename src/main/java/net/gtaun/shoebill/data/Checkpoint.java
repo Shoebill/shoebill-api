@@ -65,13 +65,12 @@ public class Checkpoint
 	
 	public String toString()
 	{
-		return new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE)
-			.append("location", location).toString();
+		return new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE).append("location", location).toString();
 	}
 	
 	public Radius getLocation()
 	{
-		return location.clone();
+		return location.immutable();
 	}
 	
 	public void setLocation(float x, float y, float z)
@@ -117,12 +116,12 @@ public class Checkpoint
 	public boolean isInRange(Player player)
 	{
 		if (player.getCheckpoint() != this) return false;
-		return location.isInRange(player.getLocation());
+		return getLocation().isInRange(player.getLocation());
 	}
 	
 	public boolean isInRange(Vector3D pos)
 	{
-		return location.isInRange(pos);
+		return getLocation().isInRange(pos);
 	}
 	
 	public void update()
