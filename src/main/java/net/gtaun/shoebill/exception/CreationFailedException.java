@@ -35,4 +35,9 @@ public class CreationFailedException extends RuntimeException
 	{
 		super(message);
 	}
+	
+	public CreationFailedException(Throwable throwable)
+	{
+		super(throwable);
+	}
 }
