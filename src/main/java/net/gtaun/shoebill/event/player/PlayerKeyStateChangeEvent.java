@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.shoebill.object.PlayerKeyState;
 
 /**
  * 
@@ -25,17 +26,17 @@ import net.gtaun.shoebill.object.Player;
  */
 public class PlayerKeyStateChangeEvent extends PlayerEvent
 {
-	private int oldKeys;
+	private PlayerKeyState oldState;
 	
 	
-	public PlayerKeyStateChangeEvent(Player player, int oldKeys)
+	public PlayerKeyStateChangeEvent(Player player, PlayerKeyState oldState)
 	{
 		super(player);
-		this.oldKeys = oldKeys;
+		this.oldState = oldState;
 	}
 	
-	public int getOldkeys()
+	public PlayerKeyState getOldState()
 	{
-		return oldKeys;
+		return oldState;
 	}
 }
