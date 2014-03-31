@@ -302,13 +302,13 @@ public final class VehicleModel
 	}
 	
 
-	private static Set<Integer> PRINTJOB_SUPPORTED_VEHICLES;
+	private static Set<Integer> PAINTJOB_SUPPORTED_VEHICLES;
 	static
 	{
 		final int[] VEHICLES = new int[] {483, 562, 562, 565, 559, 561, 560, 575, 534, 567, 536, 535, 576, 558};
-		PRINTJOB_SUPPORTED_VEHICLES = new HashSet<>();
-		for (int id : VEHICLES) PRINTJOB_SUPPORTED_VEHICLES.add(id);
-		PRINTJOB_SUPPORTED_VEHICLES = Collections.unmodifiableSet(PRINTJOB_SUPPORTED_VEHICLES);
+		PAINTJOB_SUPPORTED_VEHICLES = new HashSet<>();
+		for (int id : VEHICLES) PAINTJOB_SUPPORTED_VEHICLES.add(id);
+		PAINTJOB_SUPPORTED_VEHICLES = Collections.unmodifiableSet(PAINTJOB_SUPPORTED_VEHICLES);
 	}
 	
 	
@@ -345,14 +345,14 @@ public final class VehicleModel
 		return VehicleModelData.getIds(type);
 	}
 
-	public Set<Integer> getPrintjobSupportedVehicles()
+	public Set<Integer> getPaintjobSupportedVehicles()
 	{
-		return PRINTJOB_SUPPORTED_VEHICLES;
+		return PAINTJOB_SUPPORTED_VEHICLES;
 	}
 
-	public static boolean isPrintjobSupported(int modelId)
+	public static boolean isPaintjobSupported(int modelId)
 	{
-		return PRINTJOB_SUPPORTED_VEHICLES.contains(modelId);
+		return PAINTJOB_SUPPORTED_VEHICLES.contains(modelId);
 	}
 	
 	
