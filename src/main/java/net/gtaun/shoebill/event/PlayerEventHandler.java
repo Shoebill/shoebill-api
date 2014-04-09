@@ -37,6 +37,7 @@ import net.gtaun.shoebill.event.player.PlayerEditAttachedObjectEvent;
 import net.gtaun.shoebill.event.player.PlayerEditObjectEvent;
 import net.gtaun.shoebill.event.player.PlayerEditPlayerObjectEvent;
 import net.gtaun.shoebill.event.player.PlayerEnterExitModShopEvent;
+import net.gtaun.shoebill.event.player.PlayerGiveDamageEvent;
 import net.gtaun.shoebill.event.player.PlayerInteriorChangeEvent;
 import net.gtaun.shoebill.event.player.PlayerKeyStateChangeEvent;
 import net.gtaun.shoebill.event.player.PlayerKillEvent;
@@ -49,6 +50,7 @@ import net.gtaun.shoebill.event.player.PlayerSpawnEvent;
 import net.gtaun.shoebill.event.player.PlayerStateChangeEvent;
 import net.gtaun.shoebill.event.player.PlayerStreamInEvent;
 import net.gtaun.shoebill.event.player.PlayerStreamOutEvent;
+import net.gtaun.shoebill.event.player.PlayerTakeDamageEvent;
 import net.gtaun.shoebill.event.player.PlayerTextEvent;
 import net.gtaun.shoebill.event.player.PlayerUpdateEvent;
 import net.gtaun.shoebill.event.vehicle.VehicleEnterEvent;
@@ -117,4 +119,6 @@ public abstract class PlayerEventHandler extends AbstractEventHandler
 	protected void onPlayerSelectObject(PlayerSelectObjectEvent event)						{ }
 	protected void onPlayerSelectPlayerObject(PlayerSelectPlayerObjectEvent event)			{ }
 	protected void onPlayerClickMap(PlayerClickMapEvent event)								{ }
+	protected void onPlayerTakeDamage(PlayerTakeDamageEvent event)							{ }
+	protected void onPlayerGiveDamage(PlayerGiveDamageEvent event)							{ }
 }
