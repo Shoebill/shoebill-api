@@ -18,7 +18,7 @@ package net.gtaun.shoebill;
 
 import java.util.Collection;
 
-import net.gtaun.shoebill.object.Dialog;
+import net.gtaun.shoebill.object.DialogId;
 import net.gtaun.shoebill.object.Label;
 import net.gtaun.shoebill.object.Menu;
 import net.gtaun.shoebill.object.Pickup;
@@ -159,7 +159,7 @@ public interface SampObjectStore
 	 * @param id ID of Dialog.
 	 * @return Dialog instance. If not exist, then it return {@code null}.
 	 */
-	Dialog getDialog(int id);
+	DialogId getDialog(int id);
 	
 	/**
 	 * Get the collection of the online players.
@@ -258,7 +258,7 @@ public interface SampObjectStore
 	 * 
 	 * @return Collection of Dialogs.
 	 */
-	Collection<Dialog> getDialogs();
+	Collection<DialogId> getDialogs();
 	
 	/**
 	 * Get the collection of the timers that exist.

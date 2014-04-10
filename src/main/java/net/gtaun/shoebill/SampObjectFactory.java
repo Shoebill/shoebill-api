@@ -23,7 +23,7 @@ import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector2D;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
-import net.gtaun.shoebill.object.Dialog;
+import net.gtaun.shoebill.object.DialogId;
 import net.gtaun.shoebill.object.Label;
 import net.gtaun.shoebill.object.Menu;
 import net.gtaun.shoebill.object.Pickup;
@@ -98,7 +98,7 @@ public interface SampObjectFactory
 	Menu createMenu(String title, int columns, float x, float y, float col1Width, float col2Width) throws CreationFailedException;
 	Menu createMenu(String title, int columns, Vector2D pos, float col1Width, float col2Width) throws CreationFailedException;
 	
-	Dialog createDialog() throws CreationFailedException;
+	DialogId createDialogId() throws CreationFailedException;
 
 	Timer createTimer(int interval, int count, TimerCallback callback);
 	Timer createTimer(int interval, int count);

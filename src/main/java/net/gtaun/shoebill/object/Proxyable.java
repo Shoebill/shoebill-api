@@ -2,5 +2,9 @@ package net.gtaun.shoebill.object;
 
 public interface Proxyable<T>
 {
-	T getPrimitive();
+	@SuppressWarnings("unchecked")
+	default T getPrimitive()
+	{
+		return (T) this;
+	}
 }

@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.dialog;
 
-import net.gtaun.shoebill.object.Dialog;
+import net.gtaun.shoebill.object.DialogId;
 import net.gtaun.shoebill.object.Player;
 
 /**
@@ -36,7 +36,7 @@ public class DialogCancelEvent extends DialogEvent
 	private DialogCancelType type;
 	
 	
-	public DialogCancelEvent(Dialog dialog, Player player, DialogCancelType type)
+	public DialogCancelEvent(DialogId dialog, Player player, DialogCancelType type)
 	{
 		super(dialog, player);
 		this.type = type;

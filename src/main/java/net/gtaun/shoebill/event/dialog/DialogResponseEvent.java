@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.dialog;
 
-import net.gtaun.shoebill.object.Dialog;
+import net.gtaun.shoebill.object.DialogId;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
@@ -32,7 +32,7 @@ public class DialogResponseEvent extends DialogEvent implements Interruptable
 	private String inputText;
 	
 	
-	public DialogResponseEvent(Dialog dialog, Player player, int response, int listitem, String inputtext)
+	public DialogResponseEvent(DialogId dialog, Player player, int response, int listitem, String inputtext)
 	{
 		super(dialog, player);
 		this.dialogResponse = response;

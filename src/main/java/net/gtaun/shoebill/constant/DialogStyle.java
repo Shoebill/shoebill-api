@@ -22,7 +22,7 @@ package net.gtaun.shoebill.constant;
  * @author MK124
  * 
  * @see net.gtaun.shoebill.object.Player#showDialog
- * @see net.gtaun.shoebill.object.Dialog#show
+ * @see net.gtaun.shoebill.object.DialogId#show
  */
 public enum DialogStyle
 {

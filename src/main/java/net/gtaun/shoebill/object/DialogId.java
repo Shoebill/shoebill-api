@@ -23,7 +23,7 @@ import net.gtaun.shoebill.constant.DialogStyle;
  * 
  * @author MK124
  */
-public interface Dialog extends Destroyable, Proxyable<Dialog>
+public interface DialogId extends Destroyable, Proxyable<DialogId>
 {
 	int getId();
 	

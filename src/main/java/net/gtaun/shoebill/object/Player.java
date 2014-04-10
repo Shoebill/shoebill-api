@@ -72,7 +72,7 @@ public interface Player extends Proxyable<Player>
 	String getName();
 	Color getColor();
 
-	int getUpdateFrameCount();
+	int getUpdateCount();
 	float getHealth();
 	float getArmour();
 	WeaponModel getArmedWeapon();
@@ -95,7 +95,7 @@ public interface Player extends Proxyable<Player>
 	Checkpoint getCheckpoint();
 	RaceCheckpoint getRaceCheckpoint();
 	
-	Dialog getDialog();
+	DialogId getDialog();
 	
 	boolean isStuntBonusEnabled();
 	boolean isSpectating();
@@ -248,7 +248,7 @@ public interface Player extends Proxyable<Player>
 	void removeBuilding(int modelId, Vector3D pos, float radius);
 	void removeBuilding(int modelId, Radius loc);
 	
-	void showDialog(Dialog dialog, DialogStyle style, String caption, String text, String button1, String button2);
+	void showDialog(DialogId dialog, DialogStyle style, String caption, String text, String button1, String button2);
 	void cancelDialog();
 	
 	boolean editObject(SampObject object);
