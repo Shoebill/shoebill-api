@@ -17,14 +17,13 @@
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Pickup extends Destroyable, Proxyable
+public interface Pickup extends Destroyable, Proxyable<Pickup>
 {
 	public static final int INVALID_ID = -1;
 	

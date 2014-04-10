@@ -19,14 +19,13 @@ package net.gtaun.shoebill.object;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Label extends Destroyable, Proxyable
+public interface Label extends Destroyable, Proxyable<Label>
 {
 	public static final int INVALID_ID = 0xFFFF;
 	

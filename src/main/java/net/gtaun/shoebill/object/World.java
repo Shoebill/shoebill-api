@@ -19,14 +19,13 @@ package net.gtaun.shoebill.object;
 import net.gtaun.shoebill.constant.PlayerMarkerMode;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.SpawnInfo;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface World extends Proxyable
+public interface World extends Proxyable<World>
 {
 	void setTeamCount(int count);
 	

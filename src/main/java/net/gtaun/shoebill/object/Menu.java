@@ -17,14 +17,13 @@
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.data.Vector2D;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Menu extends Destroyable, Proxyable
+public interface Menu extends Destroyable, Proxyable<Menu>
 {
 	public static final int INVALID_ID = 0xFF;
 	

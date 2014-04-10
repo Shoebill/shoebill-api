@@ -17,14 +17,13 @@
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.constant.DialogStyle;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Dialog extends Destroyable, Proxyable
+public interface Dialog extends Destroyable, Proxyable<Dialog>
 {
 	int getId();
 	

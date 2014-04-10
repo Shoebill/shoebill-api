@@ -20,14 +20,13 @@ import net.gtaun.shoebill.constant.TextDrawAlign;
 import net.gtaun.shoebill.constant.TextDrawFont;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Vector2D;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface TextdrawBase extends Destroyable, Proxyable
+public interface TextdrawBase extends Destroyable, Proxyable<TextdrawBase>
 {
 	public static final int INVALID_ID =		0xFFFF;
 	

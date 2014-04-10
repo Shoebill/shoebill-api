@@ -40,14 +40,13 @@ import net.gtaun.shoebill.data.Velocity;
 import net.gtaun.shoebill.data.WeaponData;
 import net.gtaun.shoebill.exception.AlreadyExistException;
 import net.gtaun.shoebill.exception.IllegalLengthException;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Player extends Proxyable
+public interface Player extends Proxyable<Player>
 {
 	public static final int INVALID_ID =				0xFFFF;
 	public static final int NO_TEAM =					255;

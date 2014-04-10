@@ -24,7 +24,7 @@ import net.gtaun.shoebill.event.resource.ResourceEnableEvent;
 import net.gtaun.shoebill.service.Service;
 import net.gtaun.shoebill.service.ServiceManager;
 import net.gtaun.util.event.EventManager;
-import net.gtaun.util.event.ManagedEventManager;
+import net.gtaun.util.event.EventManagerNode;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +40,8 @@ public abstract class Resource
 	
 	private ResourceDescription description;
 	private Shoebill shoebill;
-	private ManagedEventManager eventManager;
+	private EventManager parentEventManager;
+	private EventManagerNode eventManager;
 	private File dataDir;
 	
 	
@@ -49,11 +50,11 @@ public abstract class Resource
 		
 	}
 	
-	void setContext(ResourceDescription description, Shoebill shoebill, ManagedEventManager eventManager, File dataDir)
+	void setContext(ResourceDescription description, Shoebill shoebill, EventManager parentEventManager, File dataDir)
 	{
 		this.description = description;
 		this.shoebill = shoebill;
-		this.eventManager = eventManager;
+		this.parentEventManager = parentEventManager;
 		this.dataDir = dataDir;
 	}
 	
@@ -64,6 +65,8 @@ public abstract class Resource
 	{
 		onEnable();
 		isEnabled = true;
+		
+		eventManager = parentEventManager.createChildNode();
 		
 		ResourceEnableEvent event = new ResourceEnableEvent(this);
 		eventManager.dispatchEvent(event, getEventManager(), this);
@@ -84,7 +87,8 @@ public abstract class Resource
 			throwable = e;
 		}
 		
-		eventManager.cancelAll();
+		eventManager.destroy();
+		eventManager = null;
 		
 		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
 		serviceManager.unregisterServices(this);

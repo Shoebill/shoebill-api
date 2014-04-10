@@ -21,14 +21,13 @@ import net.gtaun.shoebill.constant.ObjectMaterialTextAlign;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface SampObject extends Destroyable, Proxyable
+public interface SampObject extends Destroyable, Proxyable<SampObject>
 {
 	public static final int INVALID_ID = 0xFFFF;
 	

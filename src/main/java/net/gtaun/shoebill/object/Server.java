@@ -19,14 +19,13 @@ package net.gtaun.shoebill.object;
 import net.gtaun.shoebill.constant.VehicleModelInfoType;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Vector3D;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Server extends Proxyable
+public interface Server extends Proxyable<Server>
 {
 	int getServerCodepage();
 	void setServerCodepage(int codepage);

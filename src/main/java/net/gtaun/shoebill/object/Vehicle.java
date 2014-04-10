@@ -21,14 +21,13 @@ import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Quaternion;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.data.Velocity;
-import net.gtaun.shoebill.proxy.Proxyable;
 
 /**
  * 
  * 
  * @author MK124
  */
-public interface Vehicle extends Destroyable, Proxyable
+public interface Vehicle extends Destroyable, Proxyable<Vehicle>
 {
 	public static final int INVALID_ID = 0xFFFF;
 	
