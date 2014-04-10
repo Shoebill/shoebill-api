@@ -1,5 +1,6 @@
 /**
  * Copyright (C) 2011 JoJLlmAn
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +19,6 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,35 +29,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author JoJLlmAn
  */
-public class Vector3D extends Vector2D implements Cloneable, Serializable, CanImmutable
+public class Vector3D extends Vector2D implements Cloneable, Serializable
 {
 	private static final long serialVersionUID = 8493095902831171278L;
 	
 	
-	public static final class ImmutableVector3D extends Vector3D implements Immutable
-	{
-		private static final long serialVersionUID = Vector3D.serialVersionUID;
-		
-
-		private ImmutableVector3D()
-		{
-			
-		}
-		
-		private ImmutableVector3D(Vector3D vector3d)
-		{
-			super(vector3d);
-		}
-		
-		@Override
-		public ImmutableVector3D clone()
-		{
-			return this;
-		}
-	}
-	
-	
-	private float z;
+	public float z;
 	
 	
 	public Vector3D()
@@ -92,30 +67,23 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, CanIm
 	
 	public void setZ(float z)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.z = z;
 	}
 	
 	public void set(float x, float y, float z)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(x, y);
 		setZ(z);
 	}
 	
 	public void set(Vector2D vec, float z)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(vec);
 		setZ(z);
 	}
 	
 	public void set(Vector3D vec)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(vec);
 		setZ(vec.getZ());
 	}
@@ -142,12 +110,6 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable, CanIm
 	public Vector3D clone()
 	{
 		return (Vector3D) super.clone();
-	}
-	
-	@Override
-	public Vector3D immutable()
-	{
-		return new ImmutableVector3D(this);
 	}
 	
 	@Override

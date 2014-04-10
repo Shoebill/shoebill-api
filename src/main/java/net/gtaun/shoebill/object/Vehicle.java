@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package net.gtaun.shoebill.object;
 
+import java.util.Collection;
+
+import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.AngledLocation;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Quaternion;
@@ -29,6 +32,17 @@ import net.gtaun.shoebill.data.Velocity;
  */
 public interface Vehicle extends Destroyable, Proxyable<Vehicle>
 {
+	public static Vehicle get(int id)
+	{
+		return SampObjectManager.get().getVehicle(id);
+	}
+	
+	public static Collection<Vehicle> get()
+	{
+		return SampObjectManager.get().getVehicles();
+	}
+	
+	
 	public static final int INVALID_ID = 0xFFFF;
 	
 	

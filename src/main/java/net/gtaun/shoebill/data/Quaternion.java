@@ -18,9 +18,6 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,35 +28,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author JoJLlmAn
  */
-public class Quaternion extends Vector3D implements Cloneable, Serializable, CanImmutable
+public class Quaternion extends Vector3D implements Cloneable, Serializable
 {
 	private static final long serialVersionUID = 455013800771095435L;
 	
 	
-	public static final class ImmutableQuaternion extends Quaternion implements Immutable
-	{
-		private static final long serialVersionUID = Quaternion.serialVersionUID;
-		
-
-		private ImmutableQuaternion()
-		{
-
-		}
-		
-		private ImmutableQuaternion(Quaternion quaternions)
-		{
-			super(quaternions);
-		}
-		
-		@Override
-		public ImmutableQuaternion clone()
-		{
-			return this;
-		}
-	}
-	
-	
-	private float w;
+	public float w;
 	
 	
 	public Quaternion()
@@ -97,24 +71,18 @@ public class Quaternion extends Vector3D implements Cloneable, Serializable, Can
 	
 	public void set(float x, float y, float z, float w)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(x, y, z);
 		setW(w);
 	}
 	
 	public void set(Vector3D vec, float w)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(vec);
 		setW(w);
 	}
 	
 	public void set(Quaternion quat)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(quat);
 		setW(quat.getW());
 	}
@@ -196,12 +164,6 @@ public class Quaternion extends Vector3D implements Cloneable, Serializable, Can
 	public Quaternion clone()
 	{
 		return (Quaternion) super.clone();
-	}
-	
-	@Override
-	public Quaternion immutable()
-	{
-		return new ImmutableQuaternion(this);
 	}
 	
 	@Override

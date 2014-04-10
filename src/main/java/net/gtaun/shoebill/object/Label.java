@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package net.gtaun.shoebill.object;
 
+import java.util.Collection;
+
+import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
@@ -27,6 +30,17 @@ import net.gtaun.shoebill.data.Vector3D;
  */
 public interface Label extends Destroyable, Proxyable<Label>
 {
+	public static Label get(int id)
+	{
+		return SampObjectManager.get().getLabel(id);
+	}
+	
+	public static Collection<Player> get()
+	{
+		return SampObjectManager.get().getPlayers();
+	}
+	
+	
 	public static final int INVALID_ID = 0xFFFF;
 	
 	

@@ -18,6 +18,7 @@ package net.gtaun.shoebill.service;
 
 import java.util.Collection;
 
+import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.resource.Resource;
 
 /**
@@ -27,6 +28,12 @@ import net.gtaun.shoebill.resource.Resource;
  */
 public interface ServiceStore
 {
+	public static ServiceStore get()
+	{
+		return Shoebill.get().getServiceStore();
+	}
+	
+	
 	public interface ServiceEntry
 	{
 		Class<? extends Service> getType();

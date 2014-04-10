@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@ package net.gtaun.shoebill.data;
 import java.io.Serializable;
 
 import net.gtaun.shoebill.constant.WeaponModel;
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -32,36 +30,13 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class WeaponData implements Cloneable, Serializable, CanImmutable
+public class WeaponData implements Cloneable, Serializable
 {
 	private static final long serialVersionUID = 8584508544432627380L;
 	
 	
-	public static final class ImmutableWeaponData extends WeaponData implements Immutable
-	{
-		private static final long serialVersionUID = WeaponData.serialVersionUID;
-		
-
-		private ImmutableWeaponData()
-		{
-
-		}
-		
-		private ImmutableWeaponData(WeaponData weaponData)
-		{
-			super(weaponData);
-		}
-		
-		@Override
-		public ImmutableWeaponData clone()
-		{
-			return this;
-		}
-	}
-	
-	
-	private WeaponModel model;
-	private int ammo;
+	public WeaponModel model;
+	public int ammo;
 	
 	
 	public WeaponData()
@@ -89,8 +64,6 @@ public class WeaponData implements Cloneable, Serializable, CanImmutable
 	
 	public void setModel(WeaponModel model)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.model = model;
 	}
 	
@@ -101,23 +74,17 @@ public class WeaponData implements Cloneable, Serializable, CanImmutable
 	
 	public void setAmmo(int ammo)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.ammo = ammo;
 	}
 	
 	public void set(WeaponModel type, int ammo)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		setModel(type);
 		setAmmo(ammo);
 	}
 	
 	public void set(WeaponData data)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		setModel(data.getModel());
 		setAmmo(data.getAmmo());
 	}
@@ -145,12 +112,6 @@ public class WeaponData implements Cloneable, Serializable, CanImmutable
 		{
 			throw new InternalError();
 		}
-	}
-	
-	@Override
-	public WeaponData immutable()
-	{
-		return new ImmutableWeaponData(this);
 	}
 	
 	@Override

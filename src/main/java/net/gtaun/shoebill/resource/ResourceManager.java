@@ -20,6 +20,8 @@ package net.gtaun.shoebill.resource;
 import java.io.File;
 import java.util.Collection;
 
+import net.gtaun.shoebill.Shoebill;
+
 /**
  * 
  * 
@@ -27,6 +29,12 @@ import java.util.Collection;
  */
 public interface ResourceManager
 {
+	public static ResourceManager get()
+	{
+		return Shoebill.get().getResourceManager();
+	}
+	
+	
 	Plugin loadPlugin(String filename);
 	Plugin loadPlugin(File file);
 	

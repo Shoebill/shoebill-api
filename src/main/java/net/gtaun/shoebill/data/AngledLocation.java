@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,6 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,35 +28,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class AngledLocation extends Location implements Cloneable, Serializable, CanImmutable
+public class AngledLocation extends Location implements Cloneable, Serializable
 {
 	private static final long serialVersionUID = -6964956260244629027L;
 	
 	
-	public static final class ImmutableAngledLocation extends AngledLocation implements Immutable
-	{
-		private static final long serialVersionUID = AngledLocation.serialVersionUID;
-		
-
-		private ImmutableAngledLocation()
-		{
-			
-		}
-		
-		private ImmutableAngledLocation(AngledLocation locationAngle)
-		{
-			super(locationAngle);
-		}
-		
-		@Override
-		public ImmutableAngledLocation clone()
-		{
-			return this;
-		}
-	}
-	
-	
-	private float angle;
+	public float angle;
 	
 	
 	public AngledLocation()
@@ -116,63 +90,47 @@ public class AngledLocation extends Location implements Cloneable, Serializable,
 	
 	public void setAngle(float angle)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.angle = angle;
 	}
 	
 	public void set(float x, float y, float z, float angle)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(x, y, z);
 		setAngle(angle);
 	}
 	
 	public void set(float x, float y, float z, int worldId, float angle)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(x, y, z, worldId);
 		this.angle = angle;
 	}
 	
 	public void set(float x, float y, float z, int interiorId, int worldId, float angle)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(x, y, z, interiorId, worldId);
 		this.angle = angle;
 	}
 	
 	public void set(Vector3D pos, float angle)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(pos);
 		setAngle(angle);
 	}
 	
 	public void set(Vector3D pos, int worldId, float angle)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(pos);
 		setAngle(angle);
 	}
 	
 	public void set(Vector3D pos, int interiorId, int worldId, float angle)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(pos, interiorId, worldId);
 		setAngle(angle);
 	}
 	
 	public void set(AngledLocation loc)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(loc);
 		setAngle(loc.getAngle());
 	}
@@ -193,12 +151,6 @@ public class AngledLocation extends Location implements Cloneable, Serializable,
 	public AngledLocation clone()
 	{
 		return (AngledLocation) super.clone();
-	}
-	
-	@Override
-	public AngledLocation immutable()
-	{
-		return new ImmutableAngledLocation(this);
 	}
 	
 	@Override

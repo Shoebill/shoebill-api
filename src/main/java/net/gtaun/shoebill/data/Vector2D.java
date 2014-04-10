@@ -1,5 +1,6 @@
 /**
  * Copyright (C) 2011 JoJLlmAn
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +19,6 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,35 +29,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author JoJLlmAn
  */
-public class Vector2D implements Cloneable, Serializable, CanImmutable
+public class Vector2D implements Cloneable, Serializable
 {
 	private static final long serialVersionUID = 3303330394405245831L;
 	
 	
-	public static final class ImmutableVector2D extends Vector2D implements Immutable
-	{
-		private static final long serialVersionUID = Vector2D.serialVersionUID;
-		
-
-		private ImmutableVector2D()
-		{
-			
-		}
-		
-		private ImmutableVector2D(Vector2D vector2d)
-		{
-			super(vector2d);
-		}
-		
-		@Override
-		public ImmutableVector2D clone()
-		{
-			return this;
-		}
-	}
-	
-	
-	private float x, y;
+	public float x, y;
 	
 	
 	public Vector2D()
@@ -86,8 +61,6 @@ public class Vector2D implements Cloneable, Serializable, CanImmutable
 	
 	public void setX(float x)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.x = x;
 	}
 	
@@ -98,23 +71,17 @@ public class Vector2D implements Cloneable, Serializable, CanImmutable
 	
 	public void setY(float y)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.y = y;
 	}
 	
 	public void set(float x, float y)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		setX(x);
 		setY(y);
 	}
 	
 	public void set(Vector2D vector)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		setX(vector.getX());
 		setY(vector.getY());
 	}
@@ -140,14 +107,8 @@ public class Vector2D implements Cloneable, Serializable, CanImmutable
 		}
 		catch (CloneNotSupportedException e)
 		{
-			throw new InternalError();
+			throw new InternalError(e);
 		}
-	}
-	
-	@Override
-	public Vector2D immutable()
-	{
-		return new ImmutableVector2D(this);
 	}
 	
 	@Override

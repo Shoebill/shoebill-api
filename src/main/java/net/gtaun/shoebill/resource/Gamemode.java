@@ -23,6 +23,12 @@ package net.gtaun.shoebill.resource;
  */
 public abstract class Gamemode extends Resource
 {
+	public static Gamemode get()
+	{
+		return ResourceManager.get().getGamemode();
+	}
+	
+	
 	protected Gamemode()
 	{
 		

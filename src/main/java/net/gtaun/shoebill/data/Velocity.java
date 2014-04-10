@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,6 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,32 +28,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class Velocity extends Vector3D implements Cloneable, Serializable, CanImmutable
+public class Velocity extends Vector3D implements Cloneable, Serializable
 {
 	private static final long serialVersionUID = 6111643976368753336L;
-	
-	
-	public static final class ImmutableVelocity extends Velocity implements Immutable
-	{
-		private static final long serialVersionUID = Velocity.serialVersionUID;
-		
-
-		private ImmutableVelocity()
-		{
-
-		}
-		
-		private ImmutableVelocity(Velocity velocity)
-		{
-			super(velocity);
-		}
-		
-		@Override
-		public ImmutableVelocity clone()
-		{
-			return this;
-		}
-	}
 	
 	
 	public Velocity()
@@ -110,12 +84,6 @@ public class Velocity extends Vector3D implements Cloneable, Serializable, CanIm
 	public Velocity clone()
 	{
 		return (Velocity) super.clone();
-	}
-	
-	@Override
-	public Velocity immutable()
-	{
-		return new ImmutableVelocity(this);
 	}
 	
 	@Override

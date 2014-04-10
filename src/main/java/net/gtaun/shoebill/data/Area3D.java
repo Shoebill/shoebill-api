@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,6 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,35 +28,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class Area3D extends Area implements Cloneable, Serializable, CanImmutable, RangeCheckable3D
+public class Area3D extends Area implements Cloneable, Serializable, RangeCheckable3D
 {
 	private static final long serialVersionUID = 7421659231232420433L;
 	
 	
-	public static final class ImmutableArea3D extends Area3D implements Immutable
-	{
-		private static final long serialVersionUID = Area3D.serialVersionUID;
-		
-
-		private ImmutableArea3D()
-		{
-			
-		}
-		
-		private ImmutableArea3D(Area3D area3d)
-		{
-			super(area3d);
-		}
-		
-		@Override
-		public ImmutableArea3D clone()
-		{
-			return this;
-		}
-	}
-	
-	
-	private float minZ, maxZ;
+	public float minZ, maxZ;
 	
 	
 	public Area3D(float minX, float minY, float minZ, float maxX, float maxY, float maxZ)
@@ -95,8 +69,6 @@ public class Area3D extends Area implements Cloneable, Serializable, CanImmutabl
 	
 	public void setMinZ(float minZ)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.minZ = minZ;
 	}
 	
@@ -107,15 +79,11 @@ public class Area3D extends Area implements Cloneable, Serializable, CanImmutabl
 	
 	public void setMaxZ(float maxZ)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.maxZ = maxZ;
 	}
 	
 	public void set(float minX, float minY, float minZ, float maxX, float maxY, float maxZ)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		setMinX(minX);
 		setMinY(minY);
 		setMinZ(minZ);
@@ -126,8 +94,6 @@ public class Area3D extends Area implements Cloneable, Serializable, CanImmutabl
 	
 	public void set(Area area, float minZ, float maxZ)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(area);
 		
 		setMinZ(minZ);
@@ -136,8 +102,6 @@ public class Area3D extends Area implements Cloneable, Serializable, CanImmutabl
 	
 	public void set(Area3D area)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		setMinX(area.getMinX());
 		setMinY(area.getMinY());
 		setMinZ(area.getMinZ());
@@ -176,12 +140,6 @@ public class Area3D extends Area implements Cloneable, Serializable, CanImmutabl
 	public Area3D clone()
 	{
 		return (Area3D) super.clone();
-	}
-	
-	@Override
-	public Area3D immutable()
-	{
-		return new ImmutableArea3D(this);
 	}
 	
 	@Override

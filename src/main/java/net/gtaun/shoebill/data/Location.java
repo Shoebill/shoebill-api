@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,6 @@ package net.gtaun.shoebill.data;
 
 import java.io.Serializable;
 
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,35 +28,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class Location extends Vector3D implements Cloneable, Serializable, CanImmutable
+public class Location extends Vector3D implements Cloneable, Serializable
 {
 	private static final long serialVersionUID = 8895946392500802993L;
 	
 	
-	public static final class ImmutableLocation extends Location implements Immutable
-	{
-		private static final long serialVersionUID = Location.serialVersionUID;
-		
-
-		private ImmutableLocation()
-		{
-
-		}
-		
-		private ImmutableLocation(Location location)
-		{
-			super(location);
-		}
-		
-		@Override
-		public ImmutableLocation clone()
-		{
-			return this;
-		}
-	}
-	
-	
-	private int interiorId, worldId;
+	public int interiorId, worldId;
 	
 	
 	public Location()
@@ -117,7 +91,6 @@ public class Location extends Vector3D implements Cloneable, Serializable, CanIm
 	
 	public void setInteriorId(int interiorId)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.interiorId = interiorId;
 	}
 	
@@ -128,23 +101,17 @@ public class Location extends Vector3D implements Cloneable, Serializable, CanIm
 	
 	public void setWorldId(int worldId)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.worldId = worldId;
 	}
 	
 	public void set(float x, float y, float z, int worldId)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(x, y, z);
 		setWorldId(worldId);
 	}
 	
 	public void set(float x, float y, float z, int interiorId, int worldId)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(x, y, z);
 		setInteriorId(interiorId);
 		setWorldId(worldId);
@@ -152,16 +119,12 @@ public class Location extends Vector3D implements Cloneable, Serializable, CanIm
 	
 	public void set(Vector3D pos, int worldId)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(pos);
 		setWorldId(worldId);
 	}
 	
 	public void set(Vector3D pos, int interiorId, int worldId)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(pos);
 		setInteriorId(interiorId);
 		setWorldId(worldId);
@@ -169,8 +132,6 @@ public class Location extends Vector3D implements Cloneable, Serializable, CanIm
 	
 	public void set(Location loc)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		super.set(loc);
 		setInteriorId(loc.getInteriorId());
 		setWorldId(loc.getWorldId());
@@ -198,12 +159,6 @@ public class Location extends Vector3D implements Cloneable, Serializable, CanIm
 	public Location clone()
 	{
 		return (Location) super.clone();
-	}
-	
-	@Override
-	public Location immutable()
-	{
-		return new ImmutableLocation(this);
 	}
 	
 	@Override

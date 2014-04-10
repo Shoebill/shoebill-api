@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,36 +29,23 @@ import net.gtaun.shoebill.service.ServiceStore;
  */
 public interface Shoebill
 {
-	public final class Instance
+	public class Instance
 	{
-		protected static Reference<? extends Shoebill> shoebillReference;
-		
-		public static Shoebill get()
-		{
-			return shoebillReference.get();
-		}
+		static Reference<? extends Shoebill> reference = null;
+	}
+
+	public static Shoebill get()
+	{
+		return Instance.reference.get();
 	}
 	
-	/**
-	 * Get SA-MP object store.
-	 * 
-	 * @return SampObjectStore instance.
-	 */
-	SampObjectStore getSampObjectStore();
 	
 	/**
-	 * Get SA-MP object factory.
+	 * Get SA-MP object manager.
 	 * 
-	 * @return SampObjectFactory instance.
+	 * @return SampObjectManager instance.
 	 */
-	SampObjectFactory getSampObjectFactory();
-
-	/**
-	 * Get AMX instance manager.
-	 * 
-	 * @return AmxInstanceManager instance.
-	 */
-	AmxInstanceManager getAmxInstanceManager();
+	SampObjectManager getSampObjectManager();
 	
 	/**
 	 * Get resource manager.
@@ -66,6 +53,13 @@ public interface Shoebill
 	 * @return ResourceManager instance.
 	 */
 	ResourceManager getResourceManager();
+
+	/**
+	 * Get AMX instance manager.
+	 * 
+	 * @return AmxInstanceManager instance.
+	 */
+	AmxInstanceManager getAmxInstanceManager();
 	
 	/**
 	 * Get service store.

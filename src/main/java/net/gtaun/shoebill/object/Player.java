@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package net.gtaun.shoebill.object;
 
+import java.util.Collection;
+
+import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.CameraCutStyle;
 import net.gtaun.shoebill.constant.DialogStyle;
 import net.gtaun.shoebill.constant.FightStyle;
@@ -41,6 +44,8 @@ import net.gtaun.shoebill.data.WeaponData;
 import net.gtaun.shoebill.exception.AlreadyExistException;
 import net.gtaun.shoebill.exception.IllegalLengthException;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 /**
  * 
  * 
@@ -48,6 +53,46 @@ import net.gtaun.shoebill.exception.IllegalLengthException;
  */
 public interface Player extends Proxyable<Player>
 {
+	public static Player get(int id)
+	{
+		return SampObjectManager.get().getPlayer(id);
+	}
+	
+	public static Player get(String name)
+	{
+		return SampObjectManager.get().getPlayer(name.trim());
+	}
+	
+	public static Player getByNameOrId(String nameOrId)
+	{
+		nameOrId = nameOrId.trim();
+		Player player = get(nameOrId);
+		if (player == null && NumberUtils.isDigits(nameOrId)) player = get(NumberUtils.toInt(nameOrId));
+		
+		return player;
+	}
+	
+	/**
+	 * Get the collection of the online human players.
+	 * 
+	 * @return Collection of human Players.
+	 */
+	public static Collection<Player> getHumans()
+	{
+		return SampObjectManager.get().getHumanPlayers();
+	}
+	
+	/**
+	 * Get the collection of the online NPC players.
+	 * 
+	 * @return Collection of NPC Players.
+	 */
+	public static Collection<Player> getNpcs()
+	{
+		return SampObjectManager.get().getNpcPlayers();
+	}
+	
+	
 	public static final int INVALID_ID =				0xFFFF;
 	public static final int NO_TEAM =					255;
 	public static final int MAX_NAME_LENGTH =			24;

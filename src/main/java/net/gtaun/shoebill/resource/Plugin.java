@@ -16,6 +16,8 @@
 
 package net.gtaun.shoebill.resource;
 
+import net.gtaun.shoebill.Shoebill;
+
 /**
  * 
  * 
@@ -23,6 +25,12 @@ package net.gtaun.shoebill.resource;
  */
 public abstract class Plugin extends Resource
 {
+	public static <PluginType extends Plugin> Resource get(Class<Plugin> pluginClass)
+	{
+		return Shoebill.get().getResourceManager().getPlugin(pluginClass);
+	}
+	
+	
 	protected Plugin()
 	{
 		

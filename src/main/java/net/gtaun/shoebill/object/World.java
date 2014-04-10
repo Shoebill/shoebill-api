@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.PlayerMarkerMode;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.SpawnInfo;
@@ -27,6 +28,12 @@ import net.gtaun.shoebill.data.SpawnInfo;
  */
 public interface World extends Proxyable<World>
 {
+	public static World get()
+	{
+		return SampObjectManager.get().getWorld();
+	}
+	
+	
 	void setTeamCount(int count);
 	
 	int addPlayerClass(int modelId, float x, float y, float z, float angle, int weapon1, int ammo1, int weapon2, int ammo2, int weapon3, int ammo3);

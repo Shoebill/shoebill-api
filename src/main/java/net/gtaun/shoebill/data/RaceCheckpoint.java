@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011 JoJLlmAn
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -180,7 +180,7 @@ public class RaceCheckpoint extends Checkpoint
 	@Override
 	public void update()
 	{
-		SampObjectStore store = Shoebill.Instance.get().getSampObjectStore();
+		SampObjectStore store = Shoebill.get().getSampObjectManager();
 		for (Player player : store.getPlayers())
 		{
 			if (player == null) continue;
@@ -191,7 +191,7 @@ public class RaceCheckpoint extends Checkpoint
 	@Override
 	public Collection<Player> getUsingPlayers()
 	{
-		SampObjectStore store = Shoebill.Instance.get().getSampObjectStore();
+		SampObjectStore store = Shoebill.get().getSampObjectManager();
 		Collection<Player> players = new ArrayList<>();
 		for (Player player : store.getPlayers())
 		{

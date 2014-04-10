@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  * @author MK124
  */
 public abstract class Resource
-{
+{	
 	private boolean isEnabled;
 	
 	private ResourceDescription description;

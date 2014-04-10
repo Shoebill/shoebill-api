@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package net.gtaun.shoebill.object;
 
+import java.util.Collection;
+
+import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.ObjectMaterialSize;
 import net.gtaun.shoebill.constant.ObjectMaterialTextAlign;
 import net.gtaun.shoebill.data.Color;
@@ -29,6 +32,17 @@ import net.gtaun.shoebill.data.Vector3D;
  */
 public interface SampObject extends Destroyable, Proxyable<SampObject>
 {
+	public static SampObject get(int id)
+	{
+		return SampObjectManager.get().getObject(id);
+	}
+	
+	public static Collection<SampObject> get()
+	{
+		return SampObjectManager.get().getObjects();
+	}
+	
+	
 	public static final int INVALID_ID = 0xFFFF;
 	
 	

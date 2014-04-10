@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2012-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,10 @@
 
 package net.gtaun.shoebill.object;
 
+import java.util.Collection;
+
+import net.gtaun.shoebill.SampObjectManager;
+
 
 /**
  * 
@@ -24,6 +28,17 @@ package net.gtaun.shoebill.object;
  */
 public interface PlayerTextdraw extends PlayerRelated, TextdrawBase
 {
+	public static PlayerTextdraw get(Player player, int id)
+	{
+		return SampObjectManager.get().getPlayerTextdraw(player, id);
+	}
+	
+	public static Collection<PlayerTextdraw> get(Player player)
+	{
+		return SampObjectManager.get().getPlayerTextdraws(player);
+	}
+	
+	
 	public static final int INVALID_ID =		0xFFFF;
 	
 	

@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011 JoJLlmAn
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class Checkpoint
 
 	public Checkpoint(Radius loc)
 	{
-		location = loc.immutable();
+		location = new Radius(loc);
 	}
 	
 	public Checkpoint(Location pos, float size)
@@ -70,7 +70,7 @@ public class Checkpoint
 	
 	public Radius getLocation()
 	{
-		return location.immutable();
+		return location.clone();
 	}
 	
 	public void setLocation(float x, float y, float z)
@@ -126,7 +126,7 @@ public class Checkpoint
 	
 	public void update()
 	{
-		SampObjectStore store = Shoebill.Instance.get().getSampObjectStore();
+		SampObjectStore store = Shoebill.get().getSampObjectManager();
 		Collection<? extends Player> players = store.getPlayers();
 		for (Player player : players)
 		{
@@ -137,7 +137,7 @@ public class Checkpoint
 	
 	public Collection<Player> getUsingPlayers()
 	{
-		SampObjectStore store = Shoebill.Instance.get().getSampObjectStore();
+		SampObjectStore store = Shoebill.get().getSampObjectManager();
 		Collection<Player> usingPlayers = new ArrayList<>();
 		Collection<Player> players = store.getPlayers();
 		for (Player player : players)

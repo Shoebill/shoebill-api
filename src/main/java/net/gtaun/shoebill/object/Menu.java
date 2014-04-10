@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package net.gtaun.shoebill.object;
 
+import java.util.Collection;
+
+import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Vector2D;
 
 /**
@@ -25,6 +28,17 @@ import net.gtaun.shoebill.data.Vector2D;
  */
 public interface Menu extends Destroyable, Proxyable<Menu>
 {
+	public static Menu get(int id)
+	{
+		return SampObjectManager.get().getMenu(id);
+	}
+	
+	public static Collection<Menu> get()
+	{
+		return SampObjectManager.get().getMenus();
+	}
+	
+	
 	public static final int INVALID_ID = 0xFF;
 	
 	

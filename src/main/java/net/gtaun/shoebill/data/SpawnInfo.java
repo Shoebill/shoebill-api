@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@ package net.gtaun.shoebill.data;
 import java.io.Serializable;
 
 import net.gtaun.shoebill.constant.WeaponModel;
-import net.gtaun.shoebill.util.immutable.CanImmutable;
-import net.gtaun.shoebill.util.immutable.Immutable;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -32,37 +30,14 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * @author MK124
  */
-public class SpawnInfo implements Cloneable, Serializable, CanImmutable
+public class SpawnInfo implements Cloneable, Serializable
 {
 	private static final long serialVersionUID = -1494282877268559489L;
 	
 	
-	public static final class ImmutableSpawnInfo extends SpawnInfo implements Immutable
-	{
-		private static final long serialVersionUID = SpawnInfo.serialVersionUID;
-		
-
-		private ImmutableSpawnInfo()
-		{
-			
-		}
-		
-		private ImmutableSpawnInfo(SpawnInfo spawnInfo)
-		{
-			super(spawnInfo.getLocation().immutable(), spawnInfo.getSkinId(), spawnInfo.getTeamId(), spawnInfo.getWeapon1().immutable(), spawnInfo.getWeapon2().immutable(), spawnInfo.getWeapon3().immutable());
-		}
-		
-		@Override
-		public ImmutableSpawnInfo clone()
-		{
-			return this;
-		}
-	}
-	
-	
-	private AngledLocation location;
-	private int skinId, teamId;
-	private WeaponData weapon1, weapon2, weapon3;
+	public AngledLocation location;
+	public int skinId, teamId;
+	public WeaponData weapon1, weapon2, weapon3;
 	
 
 	public SpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skin, int team, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
@@ -167,8 +142,6 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public void setLocation(AngledLocation loc)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
-		
 		this.location.set(loc);
 	}
 	
@@ -179,7 +152,6 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public void setSkinId(int skinId)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.skinId = skinId;
 	}
 	
@@ -190,7 +162,6 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public void setTeamId(int teamId)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.teamId = teamId;
 	}
 	
@@ -201,7 +172,6 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public void setWeapon1(WeaponData weapon1)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.weapon1 = weapon1;
 	}
 	
@@ -212,7 +182,6 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public void setWeapon2(WeaponData weapon2)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.weapon2 = weapon2;
 	}
 	
@@ -223,7 +192,6 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 	
 	public void setWeapon3(WeaponData weapon3)
 	{
-		if (this instanceof Immutable) throw new UnsupportedOperationException();
 		this.weapon3 = weapon3;
 	}
 	
@@ -250,12 +218,6 @@ public class SpawnInfo implements Cloneable, Serializable, CanImmutable
 		{
 			throw new InternalError();
 		}
-	}
-	
-	@Override
-	public Object immutable()
-	{
-		return new ImmutableSpawnInfo(this);
 	}
 	
 	@Override

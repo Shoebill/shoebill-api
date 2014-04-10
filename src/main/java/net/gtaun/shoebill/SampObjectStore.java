@@ -29,7 +29,6 @@ import net.gtaun.shoebill.object.PlayerTextdraw;
 import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.shoebill.object.Server;
 import net.gtaun.shoebill.object.Textdraw;
-import net.gtaun.shoebill.object.Timer;
 import net.gtaun.shoebill.object.Vehicle;
 import net.gtaun.shoebill.object.World;
 import net.gtaun.shoebill.object.Zone;
@@ -258,12 +257,5 @@ public interface SampObjectStore
 	 * 
 	 * @return Collection of Dialogs.
 	 */
-	Collection<DialogId> getDialogs();
-	
-	/**
-	 * Get the collection of the timers that exist.
-	 * 
-	 * @return Collection of Timers.
-	 */
-	Collection<Timer> getTimers();
+	Collection<DialogId> getDialogIds();
 }

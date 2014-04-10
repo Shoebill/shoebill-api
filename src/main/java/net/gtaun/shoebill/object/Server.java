@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.VehicleModelInfoType;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Vector3D;
@@ -27,6 +28,12 @@ import net.gtaun.shoebill.data.Vector3D;
  */
 public interface Server extends Proxyable<Server>
 {
+	public static Server get()
+	{
+		return SampObjectManager.get().getServer();
+	}
+	
+	
 	int getServerCodepage();
 	void setServerCodepage(int codepage);
 	
