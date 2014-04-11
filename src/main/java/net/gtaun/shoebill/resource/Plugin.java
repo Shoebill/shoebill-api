@@ -25,17 +25,22 @@ import net.gtaun.shoebill.Shoebill;
  */
 public abstract class Plugin extends Resource
 {
+    /**
+     * Gets the Plugin.
+     * @param pluginClass Class Instance of the Plugin
+     * @param <PluginType> Type of the Plugin class.
+     * @return The Plugin
+     */
 	public static <PluginType extends Plugin> Resource get(Class<Plugin> pluginClass)
 	{
 		return Shoebill.get().getResourceManager().getPlugin(pluginClass);
 	}
-	
-	
+
 	protected Plugin()
 	{
 		
 	}
-	
+
 	@Override
 	public void enable() throws Throwable
 	{

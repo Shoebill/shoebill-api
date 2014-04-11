@@ -34,7 +34,11 @@ public enum ResourceType
 	{
 		configFilename = filename;
 	}
-	
+
+    /**
+     * Get the Config File Name.
+     * @return The Config Filename
+     */
 	public String getConfigFilename()
 	{
 		return configFilename;

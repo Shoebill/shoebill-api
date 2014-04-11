@@ -23,6 +23,14 @@ package net.gtaun.shoebill.object;
  */
 public interface Destroyable
 {
+    /**
+     * Destroys the Object
+     */
 	void destroy();
+
+    /**
+     * Checks if the Object is destroyed
+     * @return State of the Object (boolean)
+     */
 	boolean isDestroyed();
 }

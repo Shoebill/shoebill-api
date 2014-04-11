@@ -28,11 +28,20 @@ import net.gtaun.shoebill.data.Vector2D;
  */
 public interface Menu extends Destroyable, Proxyable<Menu>
 {
+    /**
+     * Gets a Menu by its Id
+     * @param id Id of the Menu
+     * @return The Menu
+     */
 	public static Menu get(int id)
 	{
 		return SampObjectManager.get().getMenu(id);
 	}
-	
+
+    /**
+     * Gets all Menus
+     * @return A Collection of all Menus
+     */
 	public static Collection<Menu> get()
 	{
 		return SampObjectManager.get().getMenus();
@@ -40,20 +49,82 @@ public interface Menu extends Destroyable, Proxyable<Menu>
 	
 	
 	public static final int INVALID_ID = 0xFF;
-	
-	
+
+    /**
+     * Gets the Id of the Menu.
+     * @return The Id of the Menu.
+     */
 	int getId();
+
+    /**
+     * Gets the Title of the Menu.
+     * @return The Title of the Menu
+     */
 	String getTitle();
+
+    /**
+     * Get the Column Count.
+     * @return The Columncount
+     */
 	int getColumns();
+
+    /**
+     * Gets the Position of the Menu.
+     * @return The Position of the Menu
+     */
 	Vector2D getPosition();
+
+    /**
+     * Gets the width of Column 1.
+     * @return Width of Column 1
+     */
 	float getColumn1Width();
+    /**
+     * Gets the width of Column 2.
+     * @return Width of Column 2
+     */
 	float getColumn2Width();
+
+    /**
+     * Gets the Column Header.
+     * @return The Column Header
+     */
 	String getColumnHeader();
-	
+
+    /**
+     * Adds a Item
+     * @param column The Column where the Text will be displayed
+     * @param text The displayed Text
+     */
 	void addItem(int column, String text);
+
+    /**
+     * Sets the Column Header
+     * @param column The Column Id
+     * @param text The The displayed Text
+     */
 	void setColumnHeader(int column, String text);
+
+    /**
+     * Disables the Menu
+     */
 	void disable();
+
+    /**
+     * Disables the Row
+     * @param row Rowid
+     */
 	void disableRow(int row);
+
+    /**
+     * Shows the Menu for a specific player
+     * @param player The Player
+     */
 	void show(Player player);
+
+    /**
+     * Hides the menu for a specific player
+     * @param player The Player
+     */
 	void hide(Player player);
 }
