@@ -21,7 +21,7 @@ package net.gtaun.shoebill.constant;
  * 
  * @author MK124
  * 
- * @see net.gtaun.shoebill.object.Player#setMapIcon
+ * @see net.gtaun.shoebill.object.Player#getMapIcon
  */
 public enum MapIconStyle
 {

@@ -83,7 +83,7 @@ public interface Shoebill
 	/**
 	 * Causes the run() method of the runnable to be invoked by amx thread at the next process tick.
 	 * 
-	 * @param runnable
+	 * @param runnable Runnable instance
 	 */
 	void asyncExec(Runnable runnable);
 }

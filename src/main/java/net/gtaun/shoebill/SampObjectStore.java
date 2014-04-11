@@ -114,6 +114,7 @@ public interface SampObjectStore
 	/**
 	 * Get PlayerLabel instance with id.
 	 * 
+	 * @param player Player instance.
 	 * @param id ID of PlayerLabel.
 	 * @return PlayerLabel instance. If not exist, then it return {@code null}.
 	 */
@@ -220,6 +221,7 @@ public interface SampObjectStore
 	/**
 	 * Get the collection of the PlayerLabels that exist.
 	 * 
+	 * @param player Player instance.
 	 * @return Collection of PlayerLabels.
 	 */
 	Collection<PlayerLabel> getPlayerLabels(Player player);
@@ -234,6 +236,7 @@ public interface SampObjectStore
 	/**
 	 * Get the collection of the player textdraws that exist.
 	 * 
+	 * @param player Player instance.
 	 * @return Collection of PlayerTextdraws.
 	 */
 	Collection<PlayerTextdraw> getPlayerTextdraws(Player player);
