@@ -45,8 +45,15 @@ public class ResourceDescription
 	private String description;
 	private int buildNumber;
 	private String buildDate;
-	
-	
+
+    /**
+     * Will create an instance of ResourceDescription with params.
+     * @param type The Resourcetype
+     * @param file The Location of the File to load.
+     * @param classLoader The Classloader
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
 	public ResourceDescription(ResourceType type, File file, ClassLoader classLoader) throws ClassNotFoundException, IOException
 	{
 		this.type = type;
@@ -55,7 +62,14 @@ public class ResourceDescription
 		
 		loadConfig(type.getConfigFilename());
 	}
-	
+
+    /**
+     * Lets you load a Configuration by its Filename
+     * @param configFilename The Filename of the Config
+     * @return The loaded Configuration
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
 	private Configuration loadConfig(String configFilename) throws IOException, ClassNotFoundException
 	{
 		try(JarFile jarFile = new JarFile(file))
@@ -102,47 +116,83 @@ public class ResourceDescription
 			return config;
 		}
 	}
-	
+
+    /**
+     * Gets the ResourceType
+     * @return The ResourceType
+     */
 	public ResourceType getType()
 	{
 		return type;
 	}
-	
+
+    /**
+     * Gets the File of the ResourceDescription instance.
+     * @return The File
+     */
 	public File getFile()
 	{
 		return file;
 	}
-	
+
+    /**
+     * Gets the class of the instance.
+     * @return The Class
+     */
 	public Class<? extends Resource> getClazz()
 	{
 		return clazz;
 	}
-	
+
+    /**
+     * Gets the name of the ResourceDescription.
+     * @return The Name
+     */
 	public String getName()
 	{
 		return name;
 	}
-	
+
+    /**
+     * Gets the version of the ResourceDescription.
+     * @return The Version
+     */
 	public String getVersion()
 	{
 		return version;
 	}
-	
+
+    /**
+     * Gets the List of Authors.
+     * @return A List of Authors
+     */
 	public List<String> getAuthors()
 	{
 		return authors;
 	}
-	
+
+    /**
+     * Gets the Description of the ResourceDescription.
+     * @return The Description
+     */
 	public String getDescription()
 	{
 		return description;
 	}
-	
+
+    /**
+     * Gets the Buildnumber of the ResourceDescription.
+     * @return The Buildnumber
+     */
 	public int getBuildNumber()
 	{
 		return buildNumber;
 	}
-	
+
+    /**
+     * Gets the Builddate.
+     * @return The Builddate
+     */
 	public String getBuildDate()
 	{
 		return buildDate;

@@ -49,7 +49,14 @@ public abstract class Resource
 	{
 		
 	}
-	
+
+    /**
+     * Sets the Context of the Resource instance.
+     * @param description The ResourceDescription instance.
+     * @param shoebill Active Shoebill instance.
+     * @param parentEventManager The parent Eventmanager
+     * @param dataDir The Data Directory
+     */
 	void setContext(ResourceDescription description, Shoebill shoebill, EventManager parentEventManager, File dataDir)
 	{
 		this.description = description;
@@ -57,10 +64,22 @@ public abstract class Resource
 		this.parentEventManager = parentEventManager;
 		this.dataDir = dataDir;
 	}
-	
+
+    /**
+     * Gets called when the Resource is getting enabled.
+     * @throws Throwable
+     */
 	protected abstract void onEnable() throws Throwable;
+
+    /**
+     * Gets called when the Resource is getting unloaded.
+     * @throws Throwable
+     */
 	protected abstract void onDisable() throws Throwable;
-	
+    /**
+     * Gets called when the Resource is getting enabled.
+     * @throws Throwable
+     */
 	protected void enable() throws Throwable
 	{
 		onEnable();
@@ -71,7 +90,10 @@ public abstract class Resource
 		ResourceEnableEvent event = new ResourceEnableEvent(this);
 		eventManager.dispatchEvent(event, getEventManager(), this);
 	}
-	
+    /**
+     * Gets called when the Resource is getting unloaded.
+     * @throws Throwable
+     */
 	protected void disable() throws Throwable
 	{
 		ResourceDisableEvent event = new ResourceDisableEvent(this);
@@ -96,43 +118,78 @@ public abstract class Resource
 		isEnabled = false;
 		if (throwable != null) throw throwable;
 	}
-	
+
+    /**
+     * Checks if the Resource is enabled.
+     * @return The state of the Resource (boolean).
+     */
 	public boolean isEnabled()
 	{
 		return isEnabled;
 	}
-	
+
+    /**
+     * Gets the ResourceDescription of the Resource
+     * @return The ResourceDescription.
+     */
 	public ResourceDescription getDescription()
 	{
 		return description;
 	}
-	
+
+    /**
+     * Gets the active Shoebill instance from the Resource.
+     * @return Shoebill instance.
+     */
 	public Shoebill getShoebill()
 	{
 		return shoebill;
 	}
-	
+
+    /**
+     * Gets the event Manager.
+     * @return The Eventmanager
+     */
 	public EventManager getEventManager()
 	{
 		return eventManager;
 	}
-	
+
+    /**
+     * Gets the Datadir.
+     * @return The Datadir
+     */
 	public File getDataDir()
 	{
 		return dataDir;
 	}
-	
+
+    /**
+     * Gets the Logger
+     * @return The Logger
+     */
 	public Logger getLogger()
 	{
 		return LoggerFactory.getLogger(description.getClazz());
 	}
-	
+
+    /**
+     * Registers a Service
+     * @param type Class instance.
+     * @param service The Service
+     * @param <T> Type of the service
+     */
 	public <T extends Service> void registerService(Class<T> type, T service)
 	{
 		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
 		serviceManager.registerService(this, type, service);
 	}
-	
+
+    /**
+     * Unregisters a Service by its class
+     * @param type The Class instance
+     * @param <T> The Class type
+     */
 	public <T extends Service> void unregisterService(Class<T> type)
 	{
 		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();

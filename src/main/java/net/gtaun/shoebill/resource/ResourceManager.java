@@ -29,20 +29,60 @@ import net.gtaun.shoebill.Shoebill;
  */
 public interface ResourceManager
 {
+    /**
+     *  Get the Resource Manager
+     * @return The Resource Manager
+     */
 	public static ResourceManager get()
 	{
 		return Shoebill.get().getResourceManager();
 	}
-	
-	
+
+    /**
+     * Lets you load a Plugin by its filename.
+     * @param filename The Plugin filename
+     * @return The loaded Plugin
+     */
 	Plugin loadPlugin(String filename);
+
+    /**
+     * Lets you load a Plugin by File.
+     * @param file The File to the Plugin
+     * @return The loaded Plugin
+     */
 	Plugin loadPlugin(File file);
-	
+
+    /**
+     * Lets you unload a Plugin.
+     * @param plugin The Plugin which should be unloaded
+     */
 	void unloadPlugin(Plugin plugin);
-	
+
+    /**
+     * Lets you get a Plugin by its class.
+     * @param cls Class instance of the Plugin.
+     * @param <T> Class type of the Plugin.
+     * @return The found Plugin.
+     */
 	<T extends Plugin> T getPlugin(Class<T> cls);
+
+    /**
+     * Gets a Collection of all loaded Plugins.
+     * @return A Collection of Pluins.
+     */
 	Collection<Plugin> getPlugins();
-	
+
+    /**
+     * Gets the active Gamemode.
+     * @return The active Gamemode
+     */
 	Gamemode getGamemode();
+
+    /**
+     * Gets a Gamemode by its class.
+     * @param cls Class instance of the Gamemode.
+     * @param <T> Class type of the Gamemode.
+     * @return The found Gamemode.
+     */
 	<T extends Gamemode> T getGamemode(Class<T> cls);
 }

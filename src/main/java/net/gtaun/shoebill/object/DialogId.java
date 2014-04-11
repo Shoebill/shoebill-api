@@ -25,8 +25,26 @@ import net.gtaun.shoebill.constant.DialogStyle;
  */
 public interface DialogId extends Destroyable, Proxyable<DialogId>
 {
+    /**
+     * Gets the id of the Dialog
+     * @return The DialogId
+     */
 	int getId();
-	
+
+    /**
+     * Show the Dialog to a Player with Params.
+     * @param player The Player which will see the Dialog
+     * @param style The DialogStyle
+     * @param caption The Caption of the Dialog
+     * @param text The Text in the Dialog
+     * @param button1 The Text of Button 1
+     * @param button2 The Text of Button 2
+     */
 	void show(Player player, DialogStyle style, String caption, String text, String button1, String button2);
+
+    /**
+     * Closes the Dialog of the Player
+     * @param player The Player
+     */
 	void cancel(Player player);
 }
