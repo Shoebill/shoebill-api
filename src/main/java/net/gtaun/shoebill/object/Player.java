@@ -311,5 +311,5 @@ public interface Player extends Proxyable<Player>
 	void selectTextDraw(Color hoverColor);
 	void cancelSelectTextDraw();
 	
-	String getVersion(int playerid);
+	String getVersion();
 }
