@@ -40,7 +40,7 @@ public abstract class Resource
 	
 	private ResourceDescription description;
 	private Shoebill shoebill;
-	private EventManager parentEventManager;
+	private EventManager rootEventManager;
 	private EventManagerNode eventManager;
 	private File dataDir;
 	
@@ -54,14 +54,14 @@ public abstract class Resource
      * Sets the Context of the Resource instance.
      * @param description The ResourceDescription instance.
      * @param shoebill Active Shoebill instance.
-     * @param parentEventManager The parent Eventmanager
+     * @param rootEventManager The parent Eventmanager
      * @param dataDir The Data Directory
      */
-	void setContext(ResourceDescription description, Shoebill shoebill, EventManager parentEventManager, File dataDir)
+	void setContext(ResourceDescription description, Shoebill shoebill, EventManager rootEventManager, File dataDir)
 	{
 		this.description = description;
 		this.shoebill = shoebill;
-		this.parentEventManager = parentEventManager;
+		this.rootEventManager = rootEventManager;
 		this.dataDir = dataDir;
 	}
 
@@ -82,10 +82,10 @@ public abstract class Resource
      */
 	protected void enable() throws Throwable
 	{
+		eventManager = rootEventManager.createChildNode();
+		
 		onEnable();
 		isEnabled = true;
-		
-		eventManager = parentEventManager.createChildNode();
 		
 		ResourceEnableEvent event = new ResourceEnableEvent(this);
 		eventManager.dispatchEvent(event, getEventManager(), this);
