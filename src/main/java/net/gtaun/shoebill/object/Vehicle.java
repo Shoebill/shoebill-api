@@ -50,6 +50,7 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
 	
 	int getId();
 	int getModelId();
+	String getModelName();
 	int getColor1();
 	int getColor2();
 	int getRespawnDelay();
