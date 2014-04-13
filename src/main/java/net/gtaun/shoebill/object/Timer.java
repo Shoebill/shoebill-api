@@ -24,12 +24,13 @@ package net.gtaun.shoebill.object;
  */
 public interface Timer extends Destroyable
 {
-	public abstract class TimerCallback
+	@FunctionalInterface
+	public interface TimerCallback
 	{
-		public void onStart()						{ }
-		public void onStop()						{ }
+		void onTick(int factualInterval);
 		
-		public abstract void onTick(int factualInterval);
+		default void onStart()	{ }
+		default void onStop()	{ }
 	}
 	
 	
