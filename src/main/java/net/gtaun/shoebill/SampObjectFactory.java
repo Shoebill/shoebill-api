@@ -47,7 +47,7 @@ public interface SampObjectFactory
 {
 	// Player createPlayer();
     /**
-     * Create a Vehicle with params. If the Creation fails, it will throw a CreationFailedException.
+     * Create a Vehicle with 1 params. If the Creation fails, it will throw a CreationFailedException.
      *
      * @param modelId Modelid of the Vehicle.
      * @param loc Location where the Vehicle should be.
