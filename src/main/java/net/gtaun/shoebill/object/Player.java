@@ -1218,4 +1218,6 @@ public interface Player extends Proxyable<Player>
      * @return SAMP-Client Version
      */
 	String getVersion();
+	
+	void setChatbubble(String text, Color color, float drawDistance, int expireTime);
 }
