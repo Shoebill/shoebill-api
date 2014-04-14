@@ -23,5 +23,13 @@ package net.gtaun.shoebill.service;
  */
 public interface Service
 {
+	public static <ServiceType extends Service> ServiceType get(Class<ServiceType> type)
+	{
+		return ServiceStore.get().getService(type);
+	}
 	
+	public static <ServiceType extends Service> boolean isAvailable(Class<ServiceType> type)
+	{
+		return ServiceStore.get().isServiceAvailable(type);
+	}
 }

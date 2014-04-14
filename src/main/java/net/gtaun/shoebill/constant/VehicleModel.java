@@ -23,6 +23,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.object.Server;
+
 /**
  * 
  * 
@@ -311,6 +314,11 @@ public final class VehicleModel
 		PAINTJOB_SUPPORTED_VEHICLES = Collections.unmodifiableSet(PAINTJOB_SUPPORTED_VEHICLES);
 	}
 	
+	
+	public static Vector3D getModelInfo(int modelId, VehicleModelInfoType infotype)
+	{
+		return Server.get().getVehicleModelInfo(modelId, infotype);
+	}
 	
 	public static boolean isVaildId(int modelId)
 	{

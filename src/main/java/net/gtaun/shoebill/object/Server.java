@@ -49,7 +49,7 @@ public interface Server extends Proxyable<Server>
 	int getServerVarAsInt(String varname);
 	boolean getServerVarAsBool(String varname);
 	
-	// Global player methods	
+	// Global player methods
 	void sendMessageToAll(Color color, String message);
 	void sendMessageToAll(Color color, String format, Object... args);
 	

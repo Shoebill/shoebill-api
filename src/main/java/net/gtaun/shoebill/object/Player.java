@@ -53,6 +53,37 @@ import org.apache.commons.lang3.math.NumberUtils;
  */
 public interface Player extends Proxyable<Player>
 {
+	public static int getMaxPlayers()
+	{
+		return Server.get().getMaxPlayers();
+	}
+	
+	public static void connectNPC(String name, String script)
+	{
+		Server.get().connectNPC(name, script);
+	}
+	
+	public static void sendMessageToAll(Color color, String message)
+	{
+		Server.get().sendMessageToAll(color, message);
+	}
+	
+	public static void sendMessageToAll(Color color, String format, Object... args)
+	{
+		Server.get().sendMessageToAll(color, format, args);
+	}
+	
+	public static void gameTextToAll(int time, int style, String text)
+	{
+		Server.get().gameTextToAll(time, style, text);
+	}
+	
+	public static void gameTextToAll(int time, int style, String format, Object... args)
+	{
+		Server.get().gameTextToAll(time, style, format, args);
+	}
+	
+	
     /**
      * Gets a Player by its Id
      * @param id Id of the Player
