@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.resource;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -114,6 +115,10 @@ public class ResourceDescription
 			buildDate = config.getString("buildDate");
 			
 			return config;
+		}
+		catch (NullPointerException e)
+		{
+			throw new FileNotFoundException(configFilename);
 		}
 	}
 
