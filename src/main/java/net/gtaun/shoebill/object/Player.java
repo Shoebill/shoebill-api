@@ -83,7 +83,6 @@ public interface Player extends Proxyable<Player>
 		Server.get().gameTextToAll(time, style, format, args);
 	}
 	
-	
     /**
      * Gets a Player by its Id
      * @param id Id of the Player
@@ -116,6 +115,11 @@ public interface Player extends Proxyable<Player>
 		if (player == null && NumberUtils.isDigits(nameOrId)) player = get(NumberUtils.toInt(nameOrId));
 		
 		return player;
+	}
+
+	public static Collection<Player> get()
+	{
+		return SampObjectManager.get().getPlayers();
 	}
 	
 	/**
