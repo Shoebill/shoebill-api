@@ -1219,5 +1219,5 @@ public interface Player extends Proxyable<Player>
      */
 	String getVersion();
 	
-	void setChatbubble(String text, Color color, float drawDistance, int expireTime);
+	void setChatBubble(String text, Color color, float drawDistance, int expireTime);
 }
