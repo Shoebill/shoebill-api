@@ -20,6 +20,7 @@ import java.util.Collection;
 
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Vector2D;
+import net.gtaun.shoebill.exception.CreationFailedException;
 
 /**
  * 
@@ -45,6 +46,35 @@ public interface Menu extends Destroyable, Proxyable<Menu>
 	public static Collection<Menu> get()
 	{
 		return SampObjectManager.get().getMenus();
+	}
+	
+    /**
+     * Create a Menu with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param title The Title of the menu.
+     * @param columns The amount of columns.
+     * @param x X-Pos where the Menu should appear.
+     * @param y Y-Pos where the Menu should appear.
+     * @param col1Width The Columnwidth of column 1.
+     * @param col2Width The Columnwidth of column 2.
+     * @return The created Menu.
+     */
+	public static Menu create(String title, int columns, float x, float y, float col1Width, float col2Width) throws CreationFailedException
+	{
+		return SampObjectManager.get().createMenu(title, columns, x, y, col1Width, col2Width);
+	}
+
+    /**
+     * Create a Menu with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param title The Title of the menu.
+     * @param columns The amount of columns.
+     * @param pos Vector2D-Position where the Menu should appear.
+     * @param col1Width The Columnwidth of column 1.
+     * @param col2Width The Columnwidth of column 2.
+     * @return The created Menu.
+     */
+	public static Menu create(String title, int columns, Vector2D pos, float col1Width, float col2Width) throws CreationFailedException
+	{
+		return SampObjectManager.get().createMenu(title, columns, pos, col1Width, col2Width);
 	}
 	
 	

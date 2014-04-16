@@ -16,10 +16,13 @@
 
 package net.gtaun.shoebill.object;
 
+import java.util.Collection;
+
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.exception.CreationFailedException;
 
 /**
  * 
@@ -37,9 +40,65 @@ public interface Label extends Destroyable, Proxyable<Label>
 	{
 		return SampObjectManager.get().getLabel(id);
 	}
+	
+	public static Collection<Label> get()
+	{
+		return SampObjectManager.get().getLabels();
+	}
 
+    /**
+     * Create a Label with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param text The displayed Text.
+     * @param color The color of the Label.
+     * @param loc Location where the Label should be.
+     * @param drawDistance The Drawdistance of the Label.
+     * @param testLOS If the Label can be seen through objects.
+     * @return The created Label.
+     */
+	public static Label create(String text, Color color, Location loc, float drawDistance, boolean testLOS) throws CreationFailedException
+	{
+		return SampObjectManager.get().createLabel(text, color, loc, drawDistance, testLOS);
+	}
+
+    /**
+     * Create a Label with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param text The displayed Text.
+     * @param color The color of the Label.
+     * @param x X-Pos where the Label should be.
+     * @param y Y-Pos where the Label should be.
+     * @param z Z-Pos where the Label should be.
+     * @param worldId Worldid where the Label should be.
+     * @param drawDistance The Drawdistance of the Label.
+     * @param testLOS If the Label can be seen through objects.
+     * @return The created Label.
+     */
+	public static Label create(String text, Color color, float x, float y, float z, int worldId, float drawDistance, boolean testLOS) throws CreationFailedException
+	{
+		return SampObjectManager.get().createLabel(text, color, x, y, z, worldId, drawDistance, testLOS);
+	}
+
+    /**
+     * Create a Label with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param text The displayed Text.
+     * @param color The color of the Label.
+     * @param pos Vector3D-Pos where the Label should be.
+     * @param worldId Worldid where the Label should be.
+     * @param drawDistance The Drawdistance of the Label.
+     * @param testLOS If the Label can be seen through objects.
+     * @return The created Label.
+     */
+	public static Label create(String text, Color color, Vector3D pos, int worldId, float drawDistance, boolean testLOS) throws CreationFailedException
+	{
+		return SampObjectManager.get().createLabel(text, color, pos, worldId, drawDistance, testLOS);
+	}
+
+	
 	public static final int INVALID_ID = 0xFFFF;
 
+	
     /**
      * Gets the Id of the Label
      * @return The Id of the Label

@@ -95,6 +95,7 @@ public interface SampObjectFactory
 	{
 		return createVehicle(modelId, new AngledLocation(x, y, z, 0, 0, angle), color1, color2, respawnDelay);
 	}
+	
     /**
      * Create a Vehicle with params. If the Creation fails, it will throw a CreationFailedException.
      *
@@ -110,6 +111,7 @@ public interface SampObjectFactory
 	{
 		return createVehicle(modelId, new AngledLocation(pos, 0, 0, angle), color1, color2, respawnDelay);
 	}
+	
     /**
      * Create a Vehicle with params. If the Creation fails, it will throw a CreationFailedException.
      *
@@ -127,6 +129,7 @@ public interface SampObjectFactory
 	{
 		return createVehicle(modelId, new AngledLocation(pos, interiorId, worldId, angle), color1, color2, respawnDelay);
 	}
+	
     /**
      * Create a Vehicle with params. If the Creation fails, it will throw a CreationFailedException.
      *
@@ -142,6 +145,7 @@ public interface SampObjectFactory
 	{
 		return createVehicle(modelId, new AngledLocation(loc, angle), color1, color2, respawnDelay);
 	}
+	
     /**
      * Create a SampObject with params. If the Creation fails, it will throw a CreationFailedException.
      *
@@ -613,7 +617,7 @@ public interface SampObjectFactory
      * @param col2Width The Columnwidth of column 2.
      * @return The created Menu.
      */
-	default Menu createMenu(String title, int columns, Vector2D pos, float col1Width, float col2Width)
+	default Menu createMenu(String title, int columns, Vector2D pos, float col1Width, float col2Width) throws CreationFailedException
 	{
 		return createMenu(title, columns, pos.getX(), pos.getY(), col1Width, col2Width);
 	}
@@ -625,7 +629,7 @@ public interface SampObjectFactory
 	DialogId createDialogId() throws CreationFailedException;
 
     /**
-     * Create a Timer with params. If the Creation fails.
+     * Create a Timer with params.
      * @param interval The interval in miliseconds.
      * @param count How often the Timer will get called.
      * @param callback The callback which will get invoked after the interval.
@@ -634,7 +638,7 @@ public interface SampObjectFactory
 	Timer createTimer(int interval, int count, TimerCallback callback);
 
     /**
-     * Create a Timer with params. If the Creation fails.
+     * Create a Timer with params.
      * @param interval The interval in miliseconds.
      * @param count How often the Timer will get called.
      * @return The created Timer.
@@ -645,7 +649,7 @@ public interface SampObjectFactory
 	}
 
     /**
-     * Create a Timer with params. If the Creation fails.
+     * Create a Timer with params.
      * @param interval The interval in miliseconds.
      * @param callback The callback which will get invoked after the interval.
      * @return The created Timer.
@@ -654,8 +658,9 @@ public interface SampObjectFactory
 	{
 		return createTimer(interval, Timer.COUNT_INFINITE, callback);
 	}
+	
     /**
-     * Create a Timer with params. If the Creation fails.
+     * Create a Timer with params.
      * @param interval The interval in miliseconds.
      * @return The created Timer.
      */

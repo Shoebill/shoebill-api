@@ -16,6 +16,8 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.SampObjectManager;
+
 /**
  * 
  * 
@@ -23,6 +25,51 @@ package net.gtaun.shoebill.object;
  */
 public interface Timer extends Destroyable
 {
+    /**
+     * Create a Timer with params.
+     * @param interval The interval in miliseconds.
+     * @param count How often the Timer will get called.
+     * @param callback The callback which will get invoked after the interval.
+     * @return The created Timer.
+     */
+	public static Timer create(int interval, int count, TimerCallback callback)
+	{
+		return SampObjectManager.get().createTimer(interval, count, callback);
+	}
+
+    /**
+     * Create a Timer with params.
+     * @param interval The interval in miliseconds.
+     * @param count How often the Timer will get called.
+     * @return The created Timer.
+     */
+	public static Timer create(int interval, int count)
+	{
+		return SampObjectManager.get().createTimer(interval, count);
+	}
+
+    /**
+     * Create a Timer with params.
+     * @param interval The interval in miliseconds.
+     * @param callback The callback which will get invoked after the interval.
+     * @return The created Timer.
+     */
+	public static Timer create(int interval, TimerCallback callback)
+	{
+		return SampObjectManager.get().createTimer(interval, callback);
+	}
+	
+    /**
+     * Create a Timer with params.
+     * @param interval The interval in miliseconds.
+     * @return The created Timer.
+     */
+	public static Timer create(int interval)
+	{
+		return SampObjectManager.get().createTimer(interval);
+	}
+	
+	
 	@FunctionalInterface
 	public interface TimerCallback
 	{

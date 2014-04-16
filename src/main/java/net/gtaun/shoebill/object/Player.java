@@ -106,7 +106,7 @@ public interface Player extends Proxyable<Player>
     /**
      * Gets a Player by its name or its Id
      * @param nameOrId The Name or Id
-     * @return
+     * @return The found Player
      */
 	public static Player getByNameOrId(String nameOrId)
 	{
@@ -210,8 +210,8 @@ public interface Player extends Proxyable<Player>
 	int getCodepage();
 
     /**
-     * Gets the IP-Adress of the Player.
-     * @return The IP-Adress
+     * Gets the IP-Address of the Player.
+     * @return The IP-Address
      */
 	String getIp();
 

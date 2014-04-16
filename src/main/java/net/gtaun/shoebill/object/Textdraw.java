@@ -19,7 +19,8 @@ package net.gtaun.shoebill.object;
 import java.util.Collection;
 
 import net.gtaun.shoebill.SampObjectManager;
-
+import net.gtaun.shoebill.data.Vector2D;
+import net.gtaun.shoebill.exception.CreationFailedException;
 
 /**
  * 
@@ -36,6 +37,50 @@ public interface Textdraw extends TextdrawBase
 	public static Collection<Textdraw> get()
 	{
 		return SampObjectManager.get().getTextdraws();
+	}
+	
+    /**
+     * Create a Textdraw with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param x X-Pos where the Textdraw should be.
+     * @param y Y-Pos where the Textdraw should be.
+     * @param text The displayed Text.
+     * @return The created Textdraw.
+     */
+	public static Textdraw create(float x, float y, String text) throws CreationFailedException
+	{
+		return SampObjectManager.get().createTextdraw(x, y, text);
+	}
+
+    /**
+     * Create a Textdraw with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param x X-Pos where the Textdraw should be.
+     * @param y Y-Pos where the Textdraw should be.
+     * @return The created Textdraw.
+     */
+	public static Textdraw create(float x, float y)
+	{
+		return SampObjectManager.get().createTextdraw(x, y);
+	}
+
+    /**
+     * Create a Textdraw with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param pos Vector2D-Position where the Textdraw should be.
+     * @return The created Textdraw.
+     */
+	public static Textdraw create(Vector2D pos)
+	{
+		return SampObjectManager.get().createTextdraw(pos);
+	}
+
+    /**
+     * Create a Textdraw with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param pos Vector2D-Position where the Textdraw should be.
+     * @param text The displayed Text.
+     * @return The created Textdraw.
+     */
+	public static Textdraw create(Vector2D pos, String text)
+	{
+		return SampObjectManager.get().createTextdraw(pos, text);
 	}
 	
 	

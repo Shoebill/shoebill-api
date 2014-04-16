@@ -16,7 +16,9 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.DialogStyle;
+import net.gtaun.shoebill.exception.CreationFailedException;
 
 /**
  * 
@@ -25,6 +27,16 @@ import net.gtaun.shoebill.constant.DialogStyle;
  */
 public interface DialogId extends Destroyable, Proxyable<DialogId>
 {
+    /**
+     * Create a DialogId. If the Creation fails, it will throw a CreationFailedException.
+     * @return The created DialogId.
+     */
+	public static DialogId create() throws CreationFailedException
+	{
+		return SampObjectManager.get().createDialogId();
+	}
+	
+	
     /**
      * Gets the id of the Dialog
      * @return The DialogId

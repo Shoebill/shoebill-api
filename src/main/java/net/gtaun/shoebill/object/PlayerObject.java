@@ -19,6 +19,9 @@ package net.gtaun.shoebill.object;
 import java.util.Collection;
 
 import net.gtaun.shoebill.SampObjectManager;
+import net.gtaun.shoebill.data.Location;
+import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.exception.CreationFailedException;
 
 /**
  * 
@@ -35,6 +38,105 @@ public interface PlayerObject extends SampObject, PlayerRelated
 	public static Collection<PlayerObject> get(Player player)
 	{
 		return SampObjectManager.get().getPlayerObjects(player);
+	}
+
+    /**
+     * Create a SampObject for Player with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param player The Player who sees the Object.
+     * @param modelId Modelid of the Object.
+     * @param loc Location where the Object should be.
+     * @param rot Rotation-Position where the Object should be.
+     * @param drawDistance The Drawdistance of the Object.
+     * @return The created PlayerObject.
+     */
+	public static PlayerObject create(Player player, int modelId, Location loc, Vector3D rot, float drawDistance) throws CreationFailedException
+	{
+		return SampObjectManager.get().createPlayerObject(player, modelId, loc, rot, drawDistance);
+	}
+	
+    /**
+     * Create a SampObject for Player with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param player The Player who sees the Object.
+     * @param modelId Modelid of the Object.
+     * @param x X-Pos where the Object should be.
+     * @param y Y-Pos where the Object should be.
+     * @param z Z-Pos where the Object should be.
+     * @param rx Rotation-X where the Object should be.
+     * @param ry Rotation-Y where the Object should be.
+     * @param rz Rotation-Z where the Object should be.
+     * @return The created PlayerObject.
+     */
+	public static PlayerObject create(Player player, int modelId, float x, float y, float z, float rx, float ry, float rz) throws CreationFailedException
+	{
+		return SampObjectManager.get().createPlayerObject(player, modelId, x, y, z, rx, ry, rz);
+	}
+
+    /**
+     * Create a SampObject for Player with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param player The Player who sees the Object.
+     * @param modelId Modelid of the Object.
+     * @param x X-Pos where the Object should be.
+     * @param y Y-Pos where the Object should be.
+     * @param z Z-Pos where the Object should be.
+     * @param rx Rotation-X where the Object should be.
+     * @param ry Rotation-Y where the Object should be.
+     * @param rz Rotation-Z where the Object should be.
+     * @param drawDistance The Drawdistance of the Object.
+     * @return The created PlayerObject.
+     */
+	public static PlayerObject create(Player player, int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
+	{
+		return SampObjectManager.get().createPlayerObject(player, modelId, x, y, z, rx, ry, rz, drawDistance);
+	}
+
+    /**
+     * Create a SampObject for Player with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param player The Player who sees the Object.
+     * @param modelId Modelid of the Object.
+     * @param loc Location where the Object should be.
+     * @param rx Rotation-X where the Object should be.
+     * @param ry Rotation-Y where the Object should be.
+     * @param rz Rotation-Z where the Object should be.
+     * @return The created PlayerObject.
+     */
+	public static PlayerObject create(Player player, int modelId, Location loc, float rx, float ry, float rz) throws CreationFailedException
+	{
+		return SampObjectManager.get().createPlayerObject(player, modelId, loc, rx, ry, rz);
+	}
+
+    /**
+     * Create a SampObject for Player with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param player The Player who sees the Object.
+     * @param modelId Modelid of the Object.
+     * @param loc Location where the Object should be.
+     * @param rx Rotation-X where the Object should be.
+     * @param ry Rotation-Y where the Object should be.
+     * @param rz Rotation-Z where the Object should be.
+     * @param drawDistance The Drawdistance of the Object.
+     * @return The created PlayerObject.
+     */
+	public static PlayerObject create(Player player, int modelId, Location loc, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
+	{
+		return SampObjectManager.get().createPlayerObject(player, modelId, loc, rx, ry, rz, drawDistance);
+	}
+
+    /**
+     * Create a SampObject for Player with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param player The Player who sees the Object.
+     * @param modelId Modelid of the Object.
+     * @param loc Location where the Object should be.
+     * @param rot Rotation-Position where the Object should be.
+     * @return The created PlayerObject.
+     */
+	public static PlayerObject create(Player player, int modelId, Location loc, Vector3D rot) throws CreationFailedException
+	{
+		return SampObjectManager.get().createPlayerObject(player, modelId, loc, rot);
 	}
 	
 	

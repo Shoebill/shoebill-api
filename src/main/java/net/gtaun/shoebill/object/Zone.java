@@ -22,6 +22,7 @@ import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Area;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.RangeCheckable3D;
+import net.gtaun.shoebill.exception.CreationFailedException;
 
 /**
  * 
@@ -40,6 +41,29 @@ public interface Zone extends Destroyable, Proxyable<Zone>, RangeCheckable3D
 		return SampObjectManager.get().getZones();
 	}
 	
+    /**
+     * Create a Zone with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param minX The Min-X Position of the Zone.
+     * @param minY The Min-Y Position of the Zone.
+     * @param maxX The Max-X Position of the Zone.
+     * @param maxY The Max-Y Position of the Zone.
+     * @return The created Zone.
+     */
+	public static Zone create(float minX, float minY, float maxX, float maxY) throws CreationFailedException
+	{
+		return SampObjectManager.get().createZone(minX, minY, maxX, maxY);
+	}
+
+    /**
+     * Create a Zone with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param area The Area-Position of the Zone.
+     * @return The created Zone.
+     */
+	public static Zone create(Area area) throws CreationFailedException
+	{
+		return SampObjectManager.get().createZone(area);
+	}
+
 	
 	public static final int INVALID_ID = -1;
 	

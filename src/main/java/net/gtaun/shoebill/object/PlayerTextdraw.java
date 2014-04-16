@@ -19,6 +19,8 @@ package net.gtaun.shoebill.object;
 import java.util.Collection;
 
 import net.gtaun.shoebill.SampObjectManager;
+import net.gtaun.shoebill.data.Vector2D;
+import net.gtaun.shoebill.exception.CreationFailedException;
 
 
 /**
@@ -36,6 +38,54 @@ public interface PlayerTextdraw extends PlayerRelated, TextdrawBase
 	public static Collection<PlayerTextdraw> get(Player player)
 	{
 		return SampObjectManager.get().getPlayerTextdraws(player);
+	}
+	
+    /**
+     * Create a Textdraw which is only visible for one player, with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param player The Player who sees the Textdraw.
+     * @param x X-Pos where the Textdraw should be.
+     * @param y Y-Pos where the Textdraw should be.
+     * @param text The displayed Text.
+     * @return The created PlayerTextdraw.
+     */
+	public static PlayerTextdraw create(Player player, float x, float y, String text) throws CreationFailedException
+	{
+		return SampObjectManager.get().createPlayerTextdraw(player, x, y, text);
+	}
+
+    /**
+     * Create a Textdraw which is only visible for one player, with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param player The Player who sees the Textdraw.
+     * @param x X-Pos where the Textdraw should be.
+     * @param y Y-Pos where the Textdraw should be.
+     * @return The created PlayerTextdraw.
+     */
+	public static PlayerTextdraw create(Player player, float x, float y)
+	{
+		return SampObjectManager.get().createPlayerTextdraw(player, x, y);
+	}
+
+    /**
+     * Create a Textdraw which is only visible for one player, with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param player The Player who sees the Textdraw.
+     * @param pos Vector2D-Position where the Textdraw should be.
+     * @return The created PlayerTextdraw.
+     */
+	public static PlayerTextdraw create(Player player, Vector2D pos)
+	{
+		return SampObjectManager.get().createPlayerTextdraw(player, pos);
+	}
+
+    /**
+     * Create a Textdraw which is only visible for one player, with params. If the Creation fails, it will throw a CreationFailedException.
+     * @param player The Player who sees the Textdraw.
+     * @param pos Vector2D-Position where the Textdraw should be.
+     * @param text The displayed Text.
+     * @return The created PlayerTextdraw.
+     */
+	public static PlayerTextdraw create(Player player, Vector2D pos, String text)
+	{
+		return SampObjectManager.get().createPlayerTextdraw(player, pos, text);
 	}
 	
 	
