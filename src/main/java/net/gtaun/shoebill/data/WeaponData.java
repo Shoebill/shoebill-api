@@ -62,6 +62,11 @@ public class WeaponData implements Cloneable, Serializable
 		return model;
 	}
 	
+	public void setModel(int modelId)
+	{
+		this.model = WeaponModel.get(modelId);
+	}
+	
 	public void setModel(WeaponModel model)
 	{
 		this.model = model;
