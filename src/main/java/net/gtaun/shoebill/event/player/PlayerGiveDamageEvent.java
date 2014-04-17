@@ -30,14 +30,16 @@ public class PlayerGiveDamageEvent extends PlayerEvent implements Interruptable
 	private Player victim;
 	private WeaponModel weapon;
 	private float amount;
+	private int bodyPart;
 	
 	
-	public PlayerGiveDamageEvent(Player player, Player victim, float amount, int weaponId)
+	public PlayerGiveDamageEvent(Player player, Player victim, float amount, int weaponId, int bodyPart)
 	{
 		super(player);
 		this.victim = victim;
 		this.amount = amount;
 		this.weapon = WeaponModel.get(weaponId);
+		this.bodyPart = bodyPart;
 	}
 	
 	@Override
@@ -59,5 +61,10 @@ public class PlayerGiveDamageEvent extends PlayerEvent implements Interruptable
 	public WeaponModel getWeapon()
 	{
 		return weapon;
+	}
+	
+	public int getBodyPart()
+	{
+		return bodyPart;
 	}
 }

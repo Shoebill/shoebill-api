@@ -280,6 +280,10 @@ public interface Player extends Proxyable<Player>
      * @return CameraMode from Player
      */
 	int getCameraMode();
+	
+	float getCameraAspectRatio();
+	
+	float getCameraZoom();
 
     /**
      * Gets the Fightstyle of the Player.
@@ -1095,6 +1099,10 @@ public interface Player extends Proxyable<Player>
      */
 	void removeBuilding(int modelId, float x, float y, float z, float radius);
 
+	Vector3D getLastShotOrigin();
+	
+	Vector3D getLastShotHitPosition();
+
     /**
      * Removes a building for the Player
      * @param modelId Objectmodelid
@@ -1223,5 +1231,15 @@ public interface Player extends Proxyable<Player>
      */
 	String getVersion();
 	
+	int getConnectedTime();
+	int getMessagesReceived();
+	int getBytesReceived();
+	int getMessagesSent();
+	int getBytesSent();
+	int getMessagesRecvPerSecond();
+	float getPacketLossPercent();
+	int getConnectionStatus();
+	String getIpPort();
+
 	void setChatBubble(String text, Color color, float drawDistance, int expireTime);
 }
