@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
+import net.gtaun.shoebill.constant.WeaponModel;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
@@ -27,8 +28,8 @@ import net.gtaun.util.event.Interruptable;
 public class PlayerTakeDamageEvent extends PlayerEvent implements Interruptable
 {
 	private Player issuer;
+	private WeaponModel weapon;
 	private float amount;
-	private int weaponId;
 	
 	
 	public PlayerTakeDamageEvent(Player player, Player issuer, float amount, int weaponId)
@@ -36,7 +37,7 @@ public class PlayerTakeDamageEvent extends PlayerEvent implements Interruptable
 		super(player);
 		this.issuer = issuer;
 		this.amount = amount;
-		this.weaponId = weaponId;
+		this.weapon = WeaponModel.get(weaponId);
 	}
 	
 	@Override
@@ -50,13 +51,13 @@ public class PlayerTakeDamageEvent extends PlayerEvent implements Interruptable
 		return issuer;
 	}
 	
+	public WeaponModel getWeapon()
+	{
+		return weapon;
+	}
+	
 	public float getAmount()
 	{
 		return amount;
-	}
-	
-	public int getWeaponId()
-	{
-		return weaponId;
 	}
 }

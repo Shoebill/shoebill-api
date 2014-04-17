@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
+import net.gtaun.shoebill.constant.ClickPlayerSource;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
@@ -27,14 +28,14 @@ import net.gtaun.util.event.Interruptable;
 public class PlayerClickPlayerEvent extends PlayerEvent implements Interruptable
 {
 	private Player clickedPlayer;
-	private int source;
+	private ClickPlayerSource source;
 	
 	
 	public PlayerClickPlayerEvent(Player player, Player clickedPlayer, int source)
 	{
 		super(player);
 		this.clickedPlayer = clickedPlayer;
-		this.source = source;
+		this.source = ClickPlayerSource.SCOREBOARD;
 	}
 	
 	@Override
@@ -48,7 +49,7 @@ public class PlayerClickPlayerEvent extends PlayerEvent implements Interruptable
 		return clickedPlayer;
 	}
 	
-	public int getSource()
+	public ClickPlayerSource getSource()
 	{
 		return source;
 	}

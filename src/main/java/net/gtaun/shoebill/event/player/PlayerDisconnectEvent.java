@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
+import net.gtaun.shoebill.constant.DisconnectReason;
 import net.gtaun.shoebill.object.Player;
 
 /**
@@ -25,16 +26,16 @@ import net.gtaun.shoebill.object.Player;
  */
 public class PlayerDisconnectEvent extends PlayerEvent
 {
-	private int reason;
+	private DisconnectReason reason;
 	
 	
 	public PlayerDisconnectEvent(Player player, int reason)
 	{
 		super(player);
-		this.reason = reason;
+		this.reason = DisconnectReason.get(reason);
 	}
 	
-	public int getReason()
+	public DisconnectReason getReason()
 	{
 		return reason;
 	}

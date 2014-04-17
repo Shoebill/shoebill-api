@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
+import net.gtaun.shoebill.constant.WeaponModel;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
@@ -27,14 +28,14 @@ import net.gtaun.util.event.Interruptable;
 public class PlayerKillEvent extends PlayerEvent implements Interruptable
 {
 	private Player victim;
-	private int reason;
+	private WeaponModel reason;
 	
 	
 	public PlayerKillEvent(Player player, Player victim, int reason)
 	{
 		super(player);
 		this.victim = victim;
-		this.reason = reason;
+		this.reason = WeaponModel.get(reason);
 	}
 	
 	@Override
@@ -48,7 +49,7 @@ public class PlayerKillEvent extends PlayerEvent implements Interruptable
 		return victim;
 	}
 	
-	public int getReason()
+	public WeaponModel getReason()
 	{
 		return reason;
 	}

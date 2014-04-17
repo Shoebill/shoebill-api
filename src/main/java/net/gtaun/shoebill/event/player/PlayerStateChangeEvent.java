@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.event.player;
 
+import net.gtaun.shoebill.constant.PlayerState;
 import net.gtaun.shoebill.object.Player;
 
 /**
@@ -25,16 +26,16 @@ import net.gtaun.shoebill.object.Player;
  */
 public class PlayerStateChangeEvent extends PlayerEvent
 {
-	private int oldState;
+	private PlayerState oldState;
 	
 	
 	public PlayerStateChangeEvent(Player player, int oldState)
 	{
 		super(player);
-		this.oldState = oldState;
+		this.oldState = PlayerState.get(oldState);
 	}
 	
-	public int getOldState()
+	public PlayerState getOldState()
 	{
 		return oldState;
 	}

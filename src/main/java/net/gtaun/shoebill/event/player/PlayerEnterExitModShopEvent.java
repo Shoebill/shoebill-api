@@ -26,14 +26,14 @@ import net.gtaun.util.event.Interruptable;
  */
 public class PlayerEnterExitModShopEvent extends PlayerEvent implements Interruptable
 {
-	private int enterexit;
+	private int enterExit;
 	private int interiorId;
 	
 	
 	public PlayerEnterExitModShopEvent(Player player, int enterexit, int interiorId)
 	{
 		super(player);
-		this.enterexit = enterexit;
+		this.enterExit = enterexit;
 		this.interiorId = interiorId;
 	}
 	
@@ -43,9 +43,9 @@ public class PlayerEnterExitModShopEvent extends PlayerEvent implements Interrup
 		super.interrupt();
 	}
 	
-	public int getEnterexit()
+	public int getEnterExit()
 	{
-		return enterexit;
+		return enterExit;
 	}
 	
 	public int getInteriorId()
