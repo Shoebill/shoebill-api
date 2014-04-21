@@ -31,7 +31,7 @@ public abstract class Plugin extends Resource
      * @param <PluginType> Type of the Plugin class.
      * @return The Plugin
      */
-	public static <PluginType extends Plugin> Resource get(Class<PluginType> pluginClass)
+	public static <PluginType extends Plugin> PluginType get(Class<PluginType> pluginClass)
 	{
 		return Shoebill.get().getResourceManager().getPlugin(pluginClass);
 	}
