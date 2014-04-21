@@ -31,7 +31,17 @@ public abstract class Gamemode extends Resource
 	{
 		return ResourceManager.get().getGamemode();
 	}
-	
+
+	/**
+	 * Gets a Gamemode by its class.
+	 * @param cls Class instance of the Gamemode.
+	 * @param <T> Class type of the Gamemode.
+	 * @return The found Gamemode.
+	 */
+	public static <T extends Gamemode> T getGamemode(Class<T> cls)
+	{
+		return ResourceManager.get().getGamemode(cls);
+	}
 	
 	protected Gamemode()
 	{
