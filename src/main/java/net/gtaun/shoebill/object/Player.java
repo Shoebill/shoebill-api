@@ -251,6 +251,8 @@ public interface Player extends Proxyable<Player>
      */
 	WeaponModel getArmedWeapon();
 
+	void setArmedWeapon(WeaponModel model);
+
     /**
      * Gets the Ammo of the armed Weapon.
      * @return The Ammo of the armed Weapon
@@ -320,6 +322,8 @@ public interface Player extends Proxyable<Player>
      * @return Vehicle which is gettings spectated.
      */
 	Vehicle getSpectatingVehicle();
+
+	float getAngle();
 
     /**
      * Gets the Location of the Player
