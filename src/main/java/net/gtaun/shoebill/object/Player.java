@@ -728,6 +728,13 @@ public interface Player extends Proxyable<Player>
      * @param pos
      */
 	void playSound(int sound, Vector3D pos);
+	
+
+    /**
+     * Plays a sound from the library.
+     * @param sound
+     */
+	void playSound(int sound);
 
     /**
      * Sets the Color of the Players Marker for a specific other Player.
