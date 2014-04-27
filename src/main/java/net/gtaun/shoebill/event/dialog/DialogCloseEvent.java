@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,25 +24,26 @@ import net.gtaun.shoebill.object.Player;
  * 
  * @author MK124
  */
-public class DialogCancelEvent extends DialogEvent
+public class DialogCloseEvent extends DialogEvent
 {
-	public enum DialogCancelType
+	public enum DialogCloseType
 	{
+		RESPOND,
 		CANCEL,
 		OVERRIDE,
 	}
 	
 	
-	private DialogCancelType type;
+	private DialogCloseType type;
 	
 	
-	public DialogCancelEvent(DialogId dialog, Player player, DialogCancelType type)
+	public DialogCloseEvent(DialogId dialog, Player player, DialogCloseType type)
 	{
 		super(dialog, player);
 		this.type = type;
 	}
 	
-	public DialogCancelType getType()
+	public DialogCloseType getType()
 	{
 		return type;
 	}
