@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.resource;
 
-import net.gtaun.shoebill.Shoebill;
+import java.util.Collection;
 
 /**
  * 
@@ -33,7 +33,12 @@ public abstract class Plugin extends Resource
      */
 	public static <PluginType extends Plugin> PluginType get(Class<PluginType> pluginClass)
 	{
-		return Shoebill.get().getResourceManager().getPlugin(pluginClass);
+		return ResourceManager.get().getPlugin(pluginClass);
+	}
+	
+	public static Collection<Plugin> get()
+	{
+		return ResourceManager.get().getPlugins();
 	}
 
 	protected Plugin()
