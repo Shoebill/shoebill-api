@@ -217,7 +217,7 @@ public interface Player extends Proxyable<Player>
 
     /**
      * Gets the name of the Player.
-     * @return
+     * @return The Name
      */
 	String getName();
 
@@ -908,7 +908,7 @@ public interface Player extends Proxyable<Player>
     /**
      * Gets WeaponData by Slotid.
      * @param slot Slotid
-     * @return
+     * @return The WeaponData
      */
 	WeaponData getWeaponData(int slot);
 

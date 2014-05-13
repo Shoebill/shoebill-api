@@ -62,7 +62,7 @@ public class Checkpoint
 		location = new Radius();
 	}
 	
-	
+	@Override
 	public String toString()
 	{
 		return new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE).append("location", location).toString();
