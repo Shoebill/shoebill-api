@@ -24,23 +24,23 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * 
- * 
+ *
+ *
  * @author MK124
  */
 public class Area implements Cloneable, Serializable, RangeCheckable3D
 {
 	private static final long serialVersionUID = 4319892622317856825L;
-	
-	
+
+
 	public float minX, minY, maxX, maxY;
-	
-	
+
+
 	public Area()
 	{
-		
+
 	}
-	
+
 	public Area(float minX, float minY, float maxX, float maxY)
 	{
 		this.minX = minX;
@@ -48,7 +48,7 @@ public class Area implements Cloneable, Serializable, RangeCheckable3D
 		this.maxX = maxX;
 		this.maxY = maxY;
 	}
-	
+
 	public Area(Area area)
 	{
 		this.minX = area.getMinX();
@@ -56,47 +56,47 @@ public class Area implements Cloneable, Serializable, RangeCheckable3D
 		this.maxX = area.getMaxX();
 		this.maxY = area.getMaxY();
 	}
-	
+
 	public float getMinX()
 	{
 		return minX;
 	}
-	
+
 	public void setMinX(float minX)
 	{
 		this.minX = minX;
 	}
-	
+
 	public float getMinY()
 	{
 		return minY;
 	}
-	
+
 	public void setMinY(float minY)
 	{
 		this.minY = minY;
 	}
-	
+
 	public float getMaxX()
 	{
 		return maxX;
 	}
-	
+
 	public void setMaxX(float maxX)
 	{
 		this.maxX = maxX;
 	}
-	
+
 	public float getMaxY()
 	{
 		return maxY;
 	}
-	
+
 	public void setMaxY(float maxY)
 	{
 		this.maxY = maxY;
 	}
-	
+
 	public void set(float minX, float minY, float maxX, float maxY)
 	{
 		setMinX(minX);
@@ -104,7 +104,7 @@ public class Area implements Cloneable, Serializable, RangeCheckable3D
 		setMaxX(maxX);
 		setMaxY(maxY);
 	}
-	
+
 	public void set(Area area)
 	{
 		setMinX(area.getMinX());
@@ -112,12 +112,12 @@ public class Area implements Cloneable, Serializable, RangeCheckable3D
 		setMaxX(area.getMaxX());
 		setMaxY(area.getMaxY());
 	}
-	
+
 	public float area()
 	{
 		return (maxX - minX) * (maxY - minY);
 	}
-	
+
 	public boolean isInRange(Vector2D pos)
 	{
 		float x = pos.getX(), y = pos.getY();
@@ -125,25 +125,25 @@ public class Area implements Cloneable, Serializable, RangeCheckable3D
 		if (y < minY || y > maxY) return false;
 		return true;
 	}
-	
+
 	@Override
 	public boolean isInRange(Vector3D pos)
 	{
-		return isInRange(pos);
+		return isInRange((Vector2D) pos);
 	}
-	
+
 	@Override
 	public int hashCode()
 	{
 		return HashCodeBuilder.reflectionHashCode(275604547, 295075147, this, false);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj)
 	{
 		return EqualsBuilder.reflectionEquals(this, obj, false);
 	}
-	
+
 	@Override
 	public Area clone()
 	{
@@ -156,7 +156,7 @@ public class Area implements Cloneable, Serializable, RangeCheckable3D
 			throw new InternalError();
 		}
 	}
-	
+
 	@Override
 	public String toString()
 	{
