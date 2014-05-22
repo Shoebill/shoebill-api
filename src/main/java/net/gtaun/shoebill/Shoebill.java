@@ -85,5 +85,5 @@ public interface Shoebill
 	 * 
 	 * @param runnable Runnable instance
 	 */
-	void asyncExec(Runnable runnable);
+	void runOnSampThread(Runnable runnable);
 }

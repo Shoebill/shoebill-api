@@ -18,23 +18,23 @@ package net.gtaun.shoebill.event.service;
 
 import net.gtaun.shoebill.resource.Resource;
 import net.gtaun.shoebill.service.Service;
-import net.gtaun.shoebill.service.ServiceStore.ServiceEntry;
+import net.gtaun.shoebill.service.ServiceEntry;
 
 /**
- * 
- * 
+ *
+ *
  * @author MK124
  */
 public class ServiceRegisterEvent extends ServiceEvent
 {
 	private ServiceEntry previousServiceEntry;
-	
-	
+
+
 	public ServiceRegisterEvent(ServiceEntry entry)
 	{
 		this(entry, null);
 	}
-	
+
 	public ServiceRegisterEvent(ServiceEntry entry, ServiceEntry previousEntry)
 	{
 		super(entry);
@@ -45,17 +45,17 @@ public class ServiceRegisterEvent extends ServiceEvent
 	{
 		return getPreviousServiceEntry() != null;
 	}
-	
+
 	public ServiceEntry getPreviousServiceEntry()
 	{
 		return previousServiceEntry;
 	}
-	
+
 	public Resource getPreviousProvider()
 	{
 		return previousServiceEntry.getProvider();
 	}
-	
+
 	public Class<? extends Service> getPreviousType()
 	{
 		return previousServiceEntry.getType();

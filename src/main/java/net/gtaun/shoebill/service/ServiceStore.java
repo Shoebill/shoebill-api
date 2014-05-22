@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2012-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package net.gtaun.shoebill.service;
 import java.util.Collection;
 
 import net.gtaun.shoebill.Shoebill;
-import net.gtaun.shoebill.resource.Resource;
 
 /**
  * 
@@ -31,14 +30,6 @@ public interface ServiceStore
 	public static ServiceStore get()
 	{
 		return Shoebill.get().getServiceStore();
-	}
-	
-	
-	public interface ServiceEntry
-	{
-		Class<? extends Service> getType();
-		Resource getProvider();
-		Service getService();
 	}
 	
 	

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2012-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,7 @@ public abstract class Resource
      * @throws Throwable
      */
 	protected abstract void onDisable() throws Throwable;
+	
     /**
      * Gets called when the Resource is getting enabled.
      * @throws Throwable
@@ -90,6 +91,7 @@ public abstract class Resource
 		ResourceEnableEvent event = new ResourceEnableEvent(this);
 		eventManager.dispatchEvent(event, getEventManager(), this);
 	}
+	
     /**
      * Gets called when the Resource is getting unloaded.
      * @throws Throwable
@@ -113,7 +115,7 @@ public abstract class Resource
 		eventManager = null;
 		
 		ServiceManager serviceManager = (ServiceManager) getShoebill().getServiceStore();
-		serviceManager.unregisterServices(this);
+		serviceManager.unregisterAllServices(this);
 		
 		isEnabled = false;
 		if (throwable != null) throw throwable;

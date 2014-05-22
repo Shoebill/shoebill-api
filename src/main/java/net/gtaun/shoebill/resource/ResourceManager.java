@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011 JoJLlmAn
- * Copyright (C) 2011-2012 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,11 +60,11 @@ public interface ResourceManager
 
     /**
      * Lets you get a Plugin by its class.
-     * @param cls Class instance of the Plugin.
+     * @param pluginClass Class instance of the Plugin.
      * @param <T> Class type of the Plugin.
      * @return The found Plugin.
      */
-	<T extends Plugin> T getPlugin(Class<T> cls);
+	<T extends Plugin> T getPlugin(Class<T> pluginClass);
 
     /**
      * Gets a Collection of all loaded Plugins.
@@ -80,9 +80,9 @@ public interface ResourceManager
 
     /**
      * Gets a Gamemode by its class.
-     * @param cls Class instance of the Gamemode.
+     * @param gamemodeClass Class instance of the Gamemode.
      * @param <T> Class type of the Gamemode.
      * @return The found Gamemode.
      */
-	<T extends Gamemode> T getGamemode(Class<T> cls);
+	<T extends Gamemode> T getGamemode(Class<T> gamemodeClass);
 }

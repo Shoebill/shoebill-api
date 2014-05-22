@@ -45,7 +45,7 @@
 
 	<scm>
 		<url>https://github.com/Shoebill/shoebill-api</url>
-		<connection>https://github.com/Shoebill/shoebill-api.git</connection>
+		<connection>scm:git:https://github.com/Shoebill/shoebill-api.git</connection>
 		<developerConnection>scm:git:git@github.com:Shoebill/shoebill-api.git</developerConnection>
 	</scm>
 

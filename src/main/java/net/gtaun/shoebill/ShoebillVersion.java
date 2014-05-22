@@ -42,7 +42,7 @@ public interface ShoebillVersion
 	 * 
 	 * @return Supported SA-MP version.
 	 */
-	String getSupport();
+	String getSupportedVersion();
 	
 	/**
 	 * Get the build number of the runtime library.

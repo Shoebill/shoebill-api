@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2012-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,13 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.event.service;
+package net.gtaun.shoebill.service;
 
-import net.gtaun.shoebill.service.ServiceEntry;
+import net.gtaun.shoebill.resource.Resource;
 
-/**
- * 
- * 
- * @author MK124
- */
-public class ServiceUnregisterEvent extends ServiceEvent
+public interface ServiceEntry
 {
-	public ServiceUnregisterEvent(ServiceEntry entry)
-	{
-		super(entry);
-	}
+	Class<? extends Service> getType();
+	Resource getProvider();
+	Service getService();
 }

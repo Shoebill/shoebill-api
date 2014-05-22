@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 MK124
+ * Copyright (C) 2012-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,13 +34,13 @@ public abstract class Gamemode extends Resource
 
 	/**
 	 * Gets a Gamemode by its class.
-	 * @param cls Class instance of the Gamemode.
+	 * @param gamemodeClass Class instance of the Gamemode.
 	 * @param <T> Class type of the Gamemode.
 	 * @return The found Gamemode.
 	 */
-	public static <T extends Gamemode> T getGamemode(Class<T> cls)
+	public static <T extends Gamemode> T getGamemode(Class<T> gamemodeClass)
 	{
-		return ResourceManager.get().getGamemode(cls);
+		return ResourceManager.get().getGamemode(gamemodeClass);
 	}
 	
 	protected Gamemode()
