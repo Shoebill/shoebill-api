@@ -83,9 +83,9 @@ public interface Player extends Proxyable<Player>
 		Server.get().gameTextToAll(time, style, format, args);
 	}
 
-	public static void sendDeathMessageToAll(Player killer, Player killee, WeaponModel reason)
+	public static void sendDeathMessageToAll(Player killer, Player victim, WeaponModel reason)
 	{
-		Server.get().sendDeathMessageToAll(killer, killee, reason);
+		Server.get().sendDeathMessageToAll(killer, victim, reason);
 	}
 
     /**
@@ -651,7 +651,7 @@ public interface Player extends Proxyable<Player>
      */
 	void sendChatToAll(String message);
 
-	void sendDeathMessage(Player killer, Player killee, WeaponModel weapon);
+	void sendDeathMessage(Player killer, Player victim, WeaponModel weapon);
 
     /**
      * Sends a Gametext to the Player.
