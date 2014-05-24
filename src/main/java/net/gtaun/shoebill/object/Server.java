@@ -62,7 +62,7 @@ public interface Server extends Proxyable<Server>
      * @param killer Player who killed this player
      * @param reason Deathreason
      */
-	void sendDeathMessageToAll(Player killer, Player killee, WeaponModel reason);
+	void sendDeathMessageToAll(Player killer, Player victim, WeaponModel reason);
 
 	Vector3D getVehicleModelInfo(int modelId, VehicleModelInfoType infotype);
 
