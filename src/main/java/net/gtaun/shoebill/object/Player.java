@@ -47,8 +47,8 @@ import net.gtaun.shoebill.exception.IllegalLengthException;
 import org.apache.commons.lang3.math.NumberUtils;
 
 /**
- * 
- * 
+ *
+ *
  * @author MK124
  */
 public interface Player extends Proxyable<Player>
@@ -57,32 +57,37 @@ public interface Player extends Proxyable<Player>
 	{
 		return Server.get().getMaxPlayers();
 	}
-	
+
 	public static void connectNPC(String name, String script)
 	{
 		Server.get().connectNPC(name, script);
 	}
-	
+
 	public static void sendMessageToAll(Color color, String message)
 	{
 		Server.get().sendMessageToAll(color, message);
 	}
-	
+
 	public static void sendMessageToAll(Color color, String format, Object... args)
 	{
 		Server.get().sendMessageToAll(color, format, args);
 	}
-	
+
 	public static void gameTextToAll(int time, int style, String text)
 	{
 		Server.get().gameTextToAll(time, style, text);
 	}
-	
+
 	public static void gameTextToAll(int time, int style, String format, Object... args)
 	{
 		Server.get().gameTextToAll(time, style, format, args);
 	}
-	
+
+	public static void sendDeathMessageToAll(Player killer, Player killee, WeaponModel reason)
+	{
+		Server.get().sendDeathMessageToAll(killer, killee, reason);
+	}
+
     /**
      * Gets a Player by its Id
      * @param id Id of the Player
@@ -113,7 +118,7 @@ public interface Player extends Proxyable<Player>
 		nameOrId = nameOrId.trim();
 		Player player = get(nameOrId);
 		if (player == null && NumberUtils.isDigits(nameOrId)) player = get(NumberUtils.toInt(nameOrId));
-		
+
 		return player;
 	}
 
@@ -121,32 +126,32 @@ public interface Player extends Proxyable<Player>
 	{
 		return SampObjectManager.get().getPlayers();
 	}
-	
+
 	/**
 	 * Get the collection of the online human players.
-	 * 
+	 *
 	 * @return Collection of human Players.
 	 */
 	public static Collection<Player> getHumans()
 	{
 		return SampObjectManager.get().getHumanPlayers();
 	}
-	
+
 	/**
 	 * Get the collection of the online NPC players.
-	 * 
+	 *
 	 * @return Collection of NPC Players.
 	 */
 	public static Collection<Player> getNpcs()
 	{
 		return SampObjectManager.get().getNpcPlayers();
 	}
-	
-	
+
+
 	public static final int INVALID_ID =				0xFFFF;
 	public static final int NO_TEAM =					255;
 	public static final int MAX_NAME_LENGTH =			24;
-	
+
 	public static final int MAX_CHATBUBBLE_LENGTH =		144;
 
     /**
@@ -282,9 +287,9 @@ public interface Player extends Proxyable<Player>
      * @return CameraMode from Player
      */
 	int getCameraMode();
-	
+
 	float getCameraAspectRatio();
-	
+
 	float getCameraZoom();
 
     /**
@@ -646,12 +651,7 @@ public interface Player extends Proxyable<Player>
      */
 	void sendChatToAll(String message);
 
-    /**
-     * Sends a Death Message to everyone.
-     * @param killer Player who killed this player
-     * @param reason Deathreason
-     */
-	void sendDeathMessage(Player killer, WeaponModel reason);
+	void sendDeathMessage(Player killer, Player killee, WeaponModel weapon);
 
     /**
      * Sends a Gametext to the Player.
@@ -728,7 +728,7 @@ public interface Player extends Proxyable<Player>
      * @param pos
      */
 	void playSound(int sound, Vector3D pos);
-	
+
 
     /**
      * Plays a sound from the library.
@@ -1111,7 +1111,7 @@ public interface Player extends Proxyable<Player>
 	void removeBuilding(int modelId, float x, float y, float z, float radius);
 
 	Vector3D getLastShotOrigin();
-	
+
 	Vector3D getLastShotHitPosition();
 
     /**
@@ -1236,12 +1236,24 @@ public interface Player extends Proxyable<Player>
      */
 	void cancelSelectTextDraw();
 
+	void createExplosion(float x, float y, float z, int type, float radius);
+
+	default void createExplosion(Vector3D pos, int type, float radius)
+	{
+		createExplosion(pos.x, pos.y, pos.z, type, radius);
+	}
+
+	default void createExplosion(Radius pos, int type)
+	{
+		createExplosion(pos.x, pos.y, pos.z, type, pos.radius);
+	}
+
     /**
      * Gets the version of the Players Client.
      * @return SAMP-Client Version
      */
 	String getVersion();
-	
+
 	int getConnectedTime();
 	int getMessagesReceived();
 	int getBytesReceived();
