@@ -34,13 +34,16 @@ import net.gtaun.shoebill.object.PlayerTextdraw;
 import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.shoebill.object.Textdraw;
 import net.gtaun.shoebill.object.Timer;
+import net.gtaun.shoebill.object.DialogId.OnCloseHandler;
+import net.gtaun.shoebill.object.DialogId.OnResponseHandler;
+import net.gtaun.shoebill.object.DialogId.OnShowHandler;
 import net.gtaun.shoebill.object.Timer.TimerCallback;
 import net.gtaun.shoebill.object.Vehicle;
 import net.gtaun.shoebill.object.Zone;
 
 /**
- * 
- * 
+ *
+ *
  * @author MK124
  */
 public interface SampObjectFactory
@@ -95,7 +98,7 @@ public interface SampObjectFactory
 	{
 		return createVehicle(modelId, new AngledLocation(x, y, z, 0, 0, angle), color1, color2, respawnDelay);
 	}
-	
+
     /**
      * Create a Vehicle with params. If the Creation fails, it will throw a CreationFailedException.
      *
@@ -111,7 +114,7 @@ public interface SampObjectFactory
 	{
 		return createVehicle(modelId, new AngledLocation(pos, 0, 0, angle), color1, color2, respawnDelay);
 	}
-	
+
     /**
      * Create a Vehicle with params. If the Creation fails, it will throw a CreationFailedException.
      *
@@ -129,7 +132,7 @@ public interface SampObjectFactory
 	{
 		return createVehicle(modelId, new AngledLocation(pos, interiorId, worldId, angle), color1, color2, respawnDelay);
 	}
-	
+
     /**
      * Create a Vehicle with params. If the Creation fails, it will throw a CreationFailedException.
      *
@@ -145,7 +148,7 @@ public interface SampObjectFactory
 	{
 		return createVehicle(modelId, new AngledLocation(loc, angle), color1, color2, respawnDelay);
 	}
-	
+
     /**
      * Create a SampObject with params. If the Creation fails, it will throw a CreationFailedException.
      *
@@ -626,7 +629,25 @@ public interface SampObjectFactory
      * Create a DialogId. If the Creation fails, it will throw a CreationFailedException.
      * @return The created DialogId.
      */
-	DialogId createDialogId() throws CreationFailedException;
+	default DialogId createDialogId() throws CreationFailedException
+	{
+		return createDialogId(null, null, null);
+	}
+
+    /**
+     * Create a DialogId. If the Creation fails, it will throw a CreationFailedException.
+     * @return The created DialogId.
+     */
+	default DialogId createDialogId(OnResponseHandler onResponse) throws CreationFailedException
+	{
+		return createDialogId(onResponse, null, null);
+	}
+
+    /**
+     * Create a DialogId. If the Creation fails, it will throw a CreationFailedException.
+     * @return The created DialogId.
+     */
+	DialogId createDialogId(OnResponseHandler onResponse, OnShowHandler onShow, OnCloseHandler onClose) throws CreationFailedException;
 
     /**
      * Create a Timer with params.
@@ -658,7 +679,7 @@ public interface SampObjectFactory
 	{
 		return createTimer(interval, Timer.COUNT_INFINITE, callback);
 	}
-	
+
     /**
      * Create a Timer with params.
      * @param interval The interval in miliseconds.

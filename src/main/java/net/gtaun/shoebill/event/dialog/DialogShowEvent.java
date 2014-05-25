@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 MK124
+ * Copyright (C) 2011-2014 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,26 +18,17 @@ package net.gtaun.shoebill.event.dialog;
 
 import net.gtaun.shoebill.object.DialogId;
 import net.gtaun.shoebill.object.Player;
-import net.gtaun.util.event.Interruptable;
 
 /**
  *
  *
  * @author MK124
  */
-public class DialogResponseEvent extends DialogEvent implements Interruptable
+public class DialogShowEvent extends DialogEvent
 {
-	private int response = 0;
-	private int dialogResponse, listitem;
-	private String inputText;
-
-
-	public DialogResponseEvent(DialogId dialog, Player player, int response, int listitem, String inputtext)
+	public DialogShowEvent(DialogId dialog, Player player)
 	{
 		super(dialog, player);
-		this.dialogResponse = response;
-		this.listitem = listitem;
-		this.inputText = inputtext;
 	}
 
 	@Override
@@ -48,27 +39,6 @@ public class DialogResponseEvent extends DialogEvent implements Interruptable
 
 	public void setProcessed()
 	{
-		this.response |= 1;
 		interrupt();
-	}
-
-	public int getResponse()
-	{
-		return response;
-	}
-
-	public int getDialogResponse()
-	{
-		return dialogResponse;
-	}
-
-	public int getListitem()
-	{
-		return listitem;
-	}
-
-	public String getInputText()
-	{
-		return inputText;
 	}
 }
