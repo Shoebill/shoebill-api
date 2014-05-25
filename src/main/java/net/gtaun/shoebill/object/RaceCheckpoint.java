@@ -18,9 +18,12 @@
 package net.gtaun.shoebill.object;
 
 import java.util.Collection;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import net.gtaun.shoebill.constant.RaceCheckpointType;
+import net.gtaun.shoebill.data.Radius;
 
 /**
  *
@@ -29,6 +32,48 @@ import net.gtaun.shoebill.constant.RaceCheckpointType;
  */
 public interface RaceCheckpoint extends Checkpoint
 {
+	public static RaceCheckpoint create(Radius location, RaceCheckpointType type, Supplier<RaceCheckpoint> nextSupplier, Consumer<Player> onEnter, Consumer<Player> onLeave)
+	{
+		return new RaceCheckpoint()
+		{
+			@Override
+			public Radius getLocation()
+			{
+				return location;
+			}
+
+			@Override
+			public RaceCheckpointType getType()
+			{
+				return type;
+			}
+
+			@Override
+			public RaceCheckpoint getNext()
+			{
+				return nextSupplier.get();
+			}
+
+			@Override
+			public void onEnter(Player player)
+			{
+				onEnter.accept(player);
+			}
+
+			@Override
+			public void onLeave(Player player)
+			{
+				onLeave.accept(player);
+			}
+		};
+	}
+
+	public static RaceCheckpoint create(Radius location, RaceCheckpointType type, RaceCheckpoint next, Consumer<Player> onEnter, Consumer<Player> onLeave)
+	{
+		return create(location, type, () -> next, onEnter, onLeave);
+	}
+
+
 	RaceCheckpointType getType();
 	RaceCheckpoint getNext();
 

@@ -19,6 +19,7 @@ package net.gtaun.shoebill.object;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.function.Consumer;
 
 import net.gtaun.shoebill.SampObjectStore;
 import net.gtaun.shoebill.Shoebill;
@@ -32,6 +33,31 @@ import net.gtaun.shoebill.data.Vector3D;
  */
 public interface Checkpoint
 {
+	public static Checkpoint create(Radius location, Consumer<Player> onEnter, Consumer<Player> onLeave)
+	{
+		return new Checkpoint()
+		{
+			@Override
+			public Radius getLocation()
+			{
+				return location;
+			}
+
+			@Override
+			public void onEnter(Player player)
+			{
+				onEnter.accept(player);
+			}
+
+			@Override
+			public void onLeave(Player player)
+			{
+				onLeave.accept(player);
+			}
+		};
+	}
+
+
 	Radius getLocation();
 
 	default void onEnter(Player player)
