@@ -15,116 +15,63 @@
  * limitations under the License.
  */
 
-package net.gtaun.shoebill.data;
+package net.gtaun.shoebill.object;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 import net.gtaun.shoebill.SampObjectStore;
 import net.gtaun.shoebill.Shoebill;
-import net.gtaun.shoebill.object.Player;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import net.gtaun.shoebill.data.Radius;
+import net.gtaun.shoebill.data.Vector3D;
 
 /**
- * 
- * 
+ *
+ *
  * @author JoJLlmAn, MK124
  */
-public class Checkpoint
+public interface Checkpoint
 {
-	private Radius location;
-	
+	Radius getLocation();
 
-	public Checkpoint(Radius loc)
+	default void onEnter(Player player)
 	{
-		location = new Radius(loc);
+
 	}
-	
-	public Checkpoint(Location pos, float size)
+
+	default void onLeave(Player player)
 	{
-		this(new Radius(pos, size));
+
 	}
-	
-	public Checkpoint(Vector3D pos, float size)
-	{
-		this(new Radius(pos, size));
-	}
-	
-	public Checkpoint(float x, float y, float z, float size)
-	{
-		this(new Radius(x, y, z, size));
-	}
-	
-	public Checkpoint()
-	{
-		location = new Radius();
-	}
-	
-	@Override
-	public String toString()
-	{
-		return new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE).append("location", location).toString();
-	}
-	
-	public Radius getLocation()
-	{
-		return location.clone();
-	}
-	
-	public void setLocation(float x, float y, float z)
-	{
-		location.set(x, y, z);
-		update();
-	}
-	
-	public void setLocation(Vector3D pos)
-	{
-		location.set(pos);
-		update();
-	}
-	
-	public void setLocation(Radius loc)
-	{
-		location.set(loc);
-		update();
-	}
-	
-	public float getSize()
+
+	default float getSize()
 	{
 		return getLocation().getRadius();
 	}
-	
-	public void setSize(float size)
-	{
-		location.setRadius(size);
-		update();
-	}
-	
-	public void set(Player player)
+
+	default void set(Player player)
 	{
 		player.setCheckpoint(this);
 	}
-	
-	public void disable(Player player)
+
+	default void disable(Player player)
 	{
 		if (player.getCheckpoint() != this) return;
 		player.setCheckpoint(null);
 	}
-	
-	public boolean isInRange(Player player)
+
+	default boolean isInRange(Player player)
 	{
 		if (player.getCheckpoint() != this) return false;
 		return getLocation().isInRange(player.getLocation());
 	}
-	
-	public boolean isInRange(Vector3D pos)
+
+	default boolean isInRange(Vector3D pos)
 	{
 		return getLocation().isInRange(pos);
 	}
-	
-	public void update()
+
+	default void update()
 	{
 		SampObjectStore store = Shoebill.get().getSampObjectManager();
 		Collection<? extends Player> players = store.getPlayers();
@@ -134,8 +81,8 @@ public class Checkpoint
 			if (player.getCheckpoint() == this) set(player);
 		}
 	}
-	
-	public Collection<Player> getUsingPlayers()
+
+	default Collection<Player> getUsingPlayers()
 	{
 		SampObjectStore store = Shoebill.get().getSampObjectManager();
 		Collection<Player> usingPlayers = new ArrayList<>();
@@ -144,7 +91,7 @@ public class Checkpoint
 		{
 			if (player.getCheckpoint() == this) usingPlayers.add(player);
 		}
-		
+
 		return usingPlayers;
 	}
 }
