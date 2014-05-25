@@ -25,8 +25,8 @@ import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
 
 /**
- * 
- * 
+ *
+ *
  * @author MK124
  */
 public interface Label extends Destroyable, Proxyable<Label>
@@ -40,7 +40,7 @@ public interface Label extends Destroyable, Proxyable<Label>
 	{
 		return SampObjectManager.get().getLabel(id);
 	}
-	
+
 	public static Collection<Label> get()
 	{
 		return SampObjectManager.get().getLabels();
@@ -95,10 +95,10 @@ public interface Label extends Destroyable, Proxyable<Label>
 		return SampObjectManager.get().createLabel(text, color, pos, worldId, drawDistance, testLOS);
 	}
 
-	
+
 	public static final int INVALID_ID = 0xFFFF;
 
-	
+
     /**
      * Gets the Id of the Label
      * @return The Id of the Label
@@ -128,11 +128,13 @@ public interface Label extends Destroyable, Proxyable<Label>
      * @return The Location
      */
 	Location getLocation();
+
     /**
      * Gets the attached Player. If there is no, this Function will return null.
      * @return The attached Player
      */
 	Player getAttachedPlayer();
+
     /**
      * Gets the attached Vehicle. If there is no, this Function will return null.
      * @return The attached Vehicle

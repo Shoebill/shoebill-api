@@ -23,8 +23,8 @@ import net.gtaun.shoebill.data.Vector2D;
 import net.gtaun.shoebill.exception.CreationFailedException;
 
 /**
- * 
- * 
+ *
+ *
  * @author MK124
  */
 public interface Menu extends Destroyable, Proxyable<Menu>
@@ -47,7 +47,7 @@ public interface Menu extends Destroyable, Proxyable<Menu>
 	{
 		return SampObjectManager.get().getMenus();
 	}
-	
+
     /**
      * Create a Menu with params. If the Creation fails, it will throw a CreationFailedException.
      * @param title The Title of the menu.
@@ -76,8 +76,8 @@ public interface Menu extends Destroyable, Proxyable<Menu>
 	{
 		return SampObjectManager.get().createMenu(title, columns, pos, col1Width, col2Width);
 	}
-	
-	
+
+
 	public static final int INVALID_ID = 0xFF;
 
     /**
@@ -109,6 +109,7 @@ public interface Menu extends Destroyable, Proxyable<Menu>
      * @return Width of Column 1
      */
 	float getColumn1Width();
+
     /**
      * Gets the width of Column 2.
      * @return Width of Column 2
