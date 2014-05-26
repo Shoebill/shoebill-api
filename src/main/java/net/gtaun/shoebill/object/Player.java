@@ -17,12 +17,14 @@
 package net.gtaun.shoebill.object;
 
 import java.util.Collection;
+import java.util.List;
 
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.CameraCutStyle;
 import net.gtaun.shoebill.constant.DialogStyle;
 import net.gtaun.shoebill.constant.FightStyle;
 import net.gtaun.shoebill.constant.PlayerState;
+import net.gtaun.shoebill.constant.PlayerVarType;
 import net.gtaun.shoebill.constant.RecordType;
 import net.gtaun.shoebill.constant.ShopName;
 import net.gtaun.shoebill.constant.SpecialAction;
@@ -1263,4 +1265,15 @@ public interface Player extends Proxyable<Player>
 	String getIpPort();
 
 	void setChatBubble(String text, Color color, float drawDistance, int expireTime);
+
+	void setVarInt(String name, int value);
+	int getVarInt(String name);
+	void setVarString(String name, String value);
+	String getVarString(String name);
+	void setVarFloat(String name, float value);
+	float getVarFloat(String name);
+	boolean deleteVar(String name);
+
+	List<String> getVarNames();
+	PlayerVarType getVarType(String name);
 }
