@@ -69,6 +69,16 @@
 			<organizationUrl>https://github.com/Shoebill</organizationUrl>
 			<timezone>+8</timezone>
 		</developer>
+
+        <developer>
+            <name>123marvin123</name>
+            <id>123marvin123</id>
+            <url>https://github.com/123marvin123</url>
+            <email>catboy560@gmail.com</email>
+            <organization>Shoebill</organization>
+            <organizationUrl>https://github.com/Shoebill</organizationUrl>
+            <timezone>+1</timezone>
+        </developer>
 	</developers>
 
 	<ciManagement>

@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.event.vehicle;
 
 import net.gtaun.shoebill.data.Location;
+import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.Vehicle;
 
@@ -29,12 +30,14 @@ public class UnoccupiedVehicleUpdateEvent extends VehicleEvent
 {
 	private Player player;
 	private Location newLocation;
+    private Vector3D velocity;
 
-	public UnoccupiedVehicleUpdateEvent(Vehicle vehicle, Player player, Location newLocation)
+	public UnoccupiedVehicleUpdateEvent(Vehicle vehicle, Player player, Location newLocation, Vector3D velocity)
 	{
 		super(vehicle);
 		this.player = player;
 		this.newLocation = newLocation;
+        this.velocity = velocity;
 	}
 
 	public Player getPlayer()
@@ -46,4 +49,8 @@ public class UnoccupiedVehicleUpdateEvent extends VehicleEvent
 	{
 		return newLocation;
 	}
+
+    public Vector3D getVelocity() {
+        return velocity;
+    }
 }
