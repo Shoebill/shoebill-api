@@ -17,14 +17,10 @@
 
 package net.gtaun.shoebill.constant;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.object.Server;
+
+import java.util.*;
 
 /**
  * 
@@ -271,7 +267,16 @@ public final class VehicleModel
 		{
 			return VALUES.get(value);
 		}
-		
+
+        private static VehicleModelData get(String value, boolean ignoreCase) {
+            return VALUES.entrySet().stream().filter(integerVehicleModelDataEntry -> {
+                if (ignoreCase)
+                    return integerVehicleModelDataEntry.getValue().name.toLowerCase().contains(value.toLowerCase());
+                else
+                    return integerVehicleModelDataEntry.getValue().name.contains(value);
+            }).findFirst().orElse(null).getValue();
+        }
+
 		private static Set<Integer> getIds()
 		{
 			return Collections.unmodifiableSet(VALUES.keySet());
@@ -330,9 +335,16 @@ public final class VehicleModel
 		VehicleModelData data = VehicleModelData.get(modelId);
 		return data != null ? data.name : "Unknown";
 	}
-	
-	public static VehicleType getType(int modelId)
-	{
+
+    public static int getId(String name, boolean ignoreCase) {
+        VehicleModelData data = VehicleModelData.get(name, ignoreCase);
+        if (data == null)
+            return 0;
+        else
+            return data.id;
+    }
+
+    public static VehicleType getType(int modelId) {
 		VehicleModelData data = VehicleModelData.get(modelId);
 		return data != null ? data.type : VehicleType.UNKNOWN;
 	}
