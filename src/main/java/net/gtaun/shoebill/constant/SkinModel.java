@@ -104,7 +104,7 @@ public enum SkinModel {
     WMOTR1(78, "Homeless", Gender.MALE),
     BMOTR1(79, "Homeless", Gender.MALE),
     VBMYBOX(80, "Boxer", Gender.MALE),
-    VWMYBOX(81, "VWMYBOX", Gender.MALE),
+    VWMYBOX(81, "Boxer", Gender.MALE),
     VHMYELV(82, "Black Elvis", Gender.MALE),
     VBMYELV(83, "White Elvis", Gender.MALE),
     VIMYELV(84, "Blue Elvis", Gender.MALE),
@@ -113,7 +113,7 @@ public enum SkinModel {
     VWFYST1(87, "Stripper", Gender.FEMALE),
     WFORI(88, "Normal Ped", Gender.FEMALE),
     WFOST(89, "Normal Ped", Gender.FEMALE),
-    WFYJG(90, "Jogger", Gender.FEMALE),t
+    WFYJG(90, "Jogger", Gender.FEMALE),
     WFYRI(91, "Rich Woman", Gender.FEMALE),
     WFYRO(92, "Rollerskater", Gender.FEMALE),
     WFYST(93, "Normal Ped", Gender.FEMALE),
@@ -327,7 +327,8 @@ public enum SkinModel {
     private int id;
     private Gender gender;
     private String description;
-    SkinModel(int id, String description, Gender gender) {
+
+    private SkinModel(int id, String description, Gender gender) {
         this.id = id;
         this.gender = gender;
         this.description = description;
