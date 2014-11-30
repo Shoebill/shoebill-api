@@ -39,6 +39,6 @@ public class PlayerObjectMovedEvent extends ObjectEvent
 	@Override
 	public PlayerObject getObject()
 	{
-		return getObject();
+		return (PlayerObject) super.getObject();
 	}
 }
