@@ -18,8 +18,11 @@ package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.PlayerMarkerMode;
+import net.gtaun.shoebill.constant.WeaponModel;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.SpawnInfo;
+import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.WeaponData;
 
 /**
  * 
@@ -38,6 +41,10 @@ public interface World extends Proxyable<World>
 	
 	int addPlayerClass(int modelId, float x, float y, float z, float angle, int weapon1, int ammo1, int weapon2, int ammo2, int weapon3, int ammo3);
 	int addPlayerClass(int teamId, int modelId, float x, float y, float z, float angle, int weapon1, int ammo1, int weapon2, int ammo2, int weapon3, int ammo3);
+	int addPlayerClass(int modelId, Vector3D position, float angle, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3);
+	int addPlayerClass(int teamId, int modelId, Vector3D position, float angle, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3);
+	int addPlayerClass(int modelId, Vector3D position, float angle, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
+	int addPlayerClass(int teamId, int modelId, Vector3D position, float angle, WeaponData weapon1, WeaponData weapon2, WeaponData weapon3);
 	int addPlayerClass(SpawnInfo spawnInfo);
 	
 	float getChatRadius();

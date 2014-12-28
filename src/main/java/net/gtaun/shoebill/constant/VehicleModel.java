@@ -269,13 +269,12 @@ public final class VehicleModel
 		}
 
         private static VehicleModelData get(String value, boolean ignoreCase) {
-            Map.Entry<Integer, VehicleModelData> entry = VALUES.entrySet().stream().filter(integerVehicleModelDataEntry -> {
+            return VALUES.entrySet().stream().filter(integerVehicleModelDataEntry -> {
                 if (ignoreCase)
                     return integerVehicleModelDataEntry.getValue().name.toLowerCase().contains(value.toLowerCase());
                 else
                     return integerVehicleModelDataEntry.getValue().name.contains(value);
-            }).findFirst().orElse(null);
-			return (entry == null) ? null : entry.getValue();
+            }).findFirst().orElse(null).getValue();
         }
 
 		private static Set<Integer> getIds()

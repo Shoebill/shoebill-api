@@ -173,6 +173,8 @@ public interface SampObject extends Destroyable, Proxyable<SampObject>
 	void attach(Vehicle vehicle, float x, float y, float z, float rx, float ry, float rz);
 	void attach(Vehicle vehicle, Vector3D offset, Vector3D rot);
 
+	void attachCamera(Player player);
+
 	void setMaterial(int materialIndex, int modelId, String txdName, String textureName, Color materialColor);
 	void setMaterial(int materialIndex, int modelId, String txdName, String textureName);
 	

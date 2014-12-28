@@ -623,6 +623,12 @@ public interface Player extends Proxyable<Player>
      */
 	void setVelocity(Vector3D vel);
 
+	/**
+	 * Send a message to the Player with color white.
+	 * @param message Text of the Message
+	 */
+	void sendMessage(String message);
+
     /**
      * Send a Message to the Player.
      * @param color Color of the Message

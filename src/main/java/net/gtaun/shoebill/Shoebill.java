@@ -38,8 +38,7 @@ public interface Shoebill
 	{
 		return Instance.reference.get();
 	}
-	
-	
+
 	/**
 	 * Get SA-MP object manager.
 	 * 

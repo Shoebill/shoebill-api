@@ -120,7 +120,7 @@ public interface Menu extends Destroyable, Proxyable<Menu>
      * Gets the Column Header.
      * @return The Column Header
      */
-	String getColumnHeader();
+	String[] getColumnHeader();
 
     /**
      * Adds a Item

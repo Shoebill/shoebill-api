@@ -23,5 +23,7 @@ package net.gtaun.shoebill.amx;
  */
 public interface AmxCallable
 {
+	public final int INVALID_CALLABLE = 2147483647;
+	String getName();
 	Object call(Object... args);
 }

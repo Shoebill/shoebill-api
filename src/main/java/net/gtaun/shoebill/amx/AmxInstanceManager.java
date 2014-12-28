@@ -23,7 +23,7 @@ import java.util.Set;
  * 
  * @author MK124
  */
-public interface AmxInstanceManager extends AmxInstance
+public interface AmxInstanceManager
 {
 	Set<AmxInstance> getAmxInstances();
 }

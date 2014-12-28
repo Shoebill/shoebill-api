@@ -327,8 +327,7 @@ public enum SkinModel {
     private int id;
     private Gender gender;
     private String description;
-
-    private SkinModel(int id, String description, Gender gender) {
+    SkinModel(int id, String description, Gender gender) {
         this.id = id;
         this.gender = gender;
         this.description = description;

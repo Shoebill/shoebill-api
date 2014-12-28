@@ -28,8 +28,7 @@ public class PlayerCommandEvent extends PlayerEvent implements Interruptable
 {
 	private int response = 0;
 	private String command;
-	
-	
+
 	public PlayerCommandEvent(Player player, String command)
 	{
 		super(player);
@@ -44,7 +43,7 @@ public class PlayerCommandEvent extends PlayerEvent implements Interruptable
 	
 	public void setProcessed()
 	{
-		this.response |= 1;
+		this.response = 1;
 		interrupt();
 	}
 	

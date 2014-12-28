@@ -95,7 +95,8 @@ public interface Pickup extends Destroyable, Proxyable<Pickup>
 
 	public static final int INVALID_ID = -1;
 
-	
+
+	boolean isStatic();
     /**
      * Gets the Id from the Pickup.
      * @return The Id
