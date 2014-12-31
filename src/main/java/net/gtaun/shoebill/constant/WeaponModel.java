@@ -303,8 +303,21 @@ public enum WeaponModel
 	{
 		for(WeaponModel val : values()) VALUES.put(val.id, val);
 	}
+
+	public static WeaponModel getByName(String name) {
+		return getByName(name, true);
+	}
 	
-	
+	public static WeaponModel getByName(String name, boolean ignoreCase) {
+		Map.Entry<Integer, WeaponModel> entry = VALUES.entrySet().stream()
+				.filter(set -> (ignoreCase) ? set.getValue().getName().equalsIgnoreCase(name) : set.getValue().getName().equals(name))
+				.findAny().orElse(null);
+		if(entry == null)
+			return null;
+		else
+			return entry.getValue();
+	}
+
 	private final int id;
 	private final int slot;
 	private final int modelId;

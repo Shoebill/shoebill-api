@@ -53,6 +53,8 @@ public interface Server extends Proxyable<Server>
 	// Global player methods
 	void sendMessageToAll(Color color, String message);
 	void sendMessageToAll(Color color, String format, Object... args);
+	void sendMessageToAll(String message);
+	void sendMessageToAll(String format, Object... args);
 
 	void gameTextToAll(int time, int style, String text);
 	void gameTextToAll(int time, int style, String format, Object... args);
