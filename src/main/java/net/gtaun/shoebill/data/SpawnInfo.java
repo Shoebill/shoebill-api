@@ -35,9 +35,9 @@ public class SpawnInfo implements Cloneable, Serializable
 	private static final long serialVersionUID = -1494282877268559489L;
 	
 	
-	public AngledLocation location;
-	public int skinId, teamId;
-	public WeaponData weapon1, weapon2, weapon3;
+	public AngledLocation location = new AngledLocation(0, 0, 0, 0);
+	public int skinId = 0, teamId = 0;
+	public WeaponData weapon1 = new WeaponData(WeaponModel.NONE, 0), weapon2 = new WeaponData(WeaponModel.NONE, 0), weapon3 = new WeaponData(WeaponModel.NONE, 0);
 	
 
 	public SpawnInfo(float x, float y, float z, int interiorId, int worldId, float angle, int skin, int team, WeaponModel weapon1, int ammo1, WeaponModel weapon2, int ammo2, WeaponModel weapon3, int ammo3)
