@@ -18,6 +18,7 @@ package net.gtaun.shoebill;
 
 import java.util.Collection;
 
+import net.gtaun.shoebill.data.SpawnInfo;
 import net.gtaun.shoebill.object.DialogId;
 import net.gtaun.shoebill.object.Label;
 import net.gtaun.shoebill.object.Menu;
@@ -261,4 +262,11 @@ public interface SampObjectStore
 	 * @return Collection of Dialogs.
 	 */
 	Collection<DialogId> getDialogIds();
+
+	/**
+	 * Get the collection of the player classes (AddPlayerClass) which exist.
+	 *
+	 * @return Collection of PlayerClasses.
+	 */
+	Collection<SpawnInfo> getPlayerClasses();
 }
