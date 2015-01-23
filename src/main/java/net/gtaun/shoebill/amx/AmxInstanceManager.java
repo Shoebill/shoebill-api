@@ -26,4 +26,5 @@ import java.util.Set;
 public interface AmxInstanceManager
 {
 	Set<AmxInstance> getAmxInstances();
+	Set<AmxHook> getAmxHooks(AmxInstance instance);
 }

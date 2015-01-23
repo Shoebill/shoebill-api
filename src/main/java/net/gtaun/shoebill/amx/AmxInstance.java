@@ -27,6 +27,6 @@ public interface AmxInstance
 	AmxCallable getNative(String name);
 	int getHandle();
 
-	void registerPublic(String name, AmxCallable callable);
-	void registerNative(String name, AmxCallable callable);
+	void hookCallback(String name, AmxHook hook);
+	void hookNative(String name, AmxHook hook);
 }
