@@ -27,7 +27,7 @@ import net.gtaun.shoebill.object.Player;
 public class PlayerDisconnectEvent extends PlayerEvent
 {
 	private DisconnectReason reason;
-	
+	private int ret = 1;
 	
 	public PlayerDisconnectEvent(Player player, int reason)
 	{
@@ -38,5 +38,13 @@ public class PlayerDisconnectEvent extends PlayerEvent
 	public DisconnectReason getReason()
 	{
 		return reason;
+	}
+
+	public void disallow() {
+		this.ret &= 0;
+	}
+
+	public int getResponse() {
+		return ret;
 	}
 }

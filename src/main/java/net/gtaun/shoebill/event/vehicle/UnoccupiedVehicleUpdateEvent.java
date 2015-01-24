@@ -31,6 +31,8 @@ public class UnoccupiedVehicleUpdateEvent extends VehicleEvent
 	private Player player;
 	private Location newLocation;
     private Vector3D velocity;
+	private int ret = 0;
+
 
 	public UnoccupiedVehicleUpdateEvent(Vehicle vehicle, Player player, Location newLocation, Vector3D velocity)
 	{
@@ -53,4 +55,12 @@ public class UnoccupiedVehicleUpdateEvent extends VehicleEvent
     public Vector3D getVelocity() {
         return velocity;
     }
+
+	public void disallow() {
+		this.ret &= 0;
+	}
+
+	public int getResponse() {
+		return ret;
+	}
 }

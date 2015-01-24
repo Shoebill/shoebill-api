@@ -25,8 +25,19 @@ import net.gtaun.shoebill.object.Player;
  */
 public class PlayerConnectEvent extends PlayerEvent
 {
+
+	private int ret = 1;
+
 	public PlayerConnectEvent(Player player)
 	{
 		super(player);
+	}
+
+	public void disallow() {
+		this.ret &= 0;
+	}
+
+	public int getResponse() {
+		return ret;
 	}
 }

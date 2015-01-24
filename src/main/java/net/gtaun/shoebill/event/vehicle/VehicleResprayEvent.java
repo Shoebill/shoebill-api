@@ -26,7 +26,7 @@ import net.gtaun.shoebill.object.Vehicle;
 public class VehicleResprayEvent extends VehicleEvent
 {
 	private int color1, color2;
-	
+	private int ret = 1;
 	
 	public VehicleResprayEvent(Vehicle vehicle, int color1, int color2)
 	{
@@ -43,5 +43,13 @@ public class VehicleResprayEvent extends VehicleEvent
 	public int getColor2()
 	{
 		return color2;
+	}
+
+	public void disallow() {
+		this.ret &= 0;
+	}
+
+	public int getResponse() {
+		return ret;
 	}
 }

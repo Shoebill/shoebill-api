@@ -26,6 +26,8 @@ import net.gtaun.util.event.Interruptable;
  */
 public class PlayerSpawnEvent extends PlayerEvent implements Interruptable
 {
+	private int ret = 1;
+
 	public PlayerSpawnEvent(Player player)
 	{
 		super(player);
@@ -35,5 +37,13 @@ public class PlayerSpawnEvent extends PlayerEvent implements Interruptable
 	public void interrupt()
 	{
 		super.interrupt();
+	}
+
+	public void disallow() {
+		this.ret &= 0;
+	}
+
+	public int getResponse() {
+		return ret;
 	}
 }

@@ -31,7 +31,7 @@ public class PlayerTakeDamageEvent extends PlayerEvent implements Interruptable
 	private WeaponModel weapon;
 	private float amount;
 	private int bodyPart;
-	
+	private int ret;
 	
 	public PlayerTakeDamageEvent(Player player, Player issuer, float amount, int weaponId, int bodypart)
 	{
@@ -66,5 +66,13 @@ public class PlayerTakeDamageEvent extends PlayerEvent implements Interruptable
 	public int getBodyPart()
 	{
 		return bodyPart;
+	}
+
+	public void disallow() {
+		this.ret &= 0;
+	}
+
+	public int getResponse() {
+		return ret;
 	}
 }

@@ -9,6 +9,7 @@ import net.gtaun.util.event.Interruptable;
  */
 public class TrailerUpdateEvent extends VehicleEvent implements Interruptable {
     private Player player;
+    private int ret = 1;
 
     public TrailerUpdateEvent(Vehicle trailer, Player player) {
         super(trailer);
@@ -22,5 +23,13 @@ public class TrailerUpdateEvent extends VehicleEvent implements Interruptable {
     @Override
     public void interrupt() {
         super.interrupt();
+    }
+
+    public void disallow() {
+        this.ret &= 0;
+    }
+
+    public int getResponse() {
+        return ret;
     }
 }

@@ -26,6 +26,7 @@ import net.gtaun.shoebill.object.Vehicle;
 public class VehicleModEvent extends VehicleEvent
 {
 	private int componentId;
+	private int ret = 1;
 	
 	
 	public VehicleModEvent(Vehicle vehicle, int componentId)
@@ -37,5 +38,13 @@ public class VehicleModEvent extends VehicleEvent
 	public int getComponentId()
 	{
 		return componentId;
+	}
+
+	public void disallow() {
+		this.ret &= 0;
+	}
+
+	public int getResponse() {
+		return ret;
 	}
 }

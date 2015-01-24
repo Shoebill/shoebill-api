@@ -27,7 +27,7 @@ import net.gtaun.shoebill.object.PlayerKeyState;
 public class PlayerKeyStateChangeEvent extends PlayerEvent
 {
 	private PlayerKeyState oldState;
-	
+	private int ret = 1;
 	
 	public PlayerKeyStateChangeEvent(Player player, PlayerKeyState oldState)
 	{
@@ -38,5 +38,13 @@ public class PlayerKeyStateChangeEvent extends PlayerEvent
 	public PlayerKeyState getOldState()
 	{
 		return oldState;
+	}
+
+	public void disallow() {
+		this.ret &= 0;
+	}
+
+	public int getResponse() {
+		return ret;
 	}
 }
