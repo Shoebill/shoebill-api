@@ -16,35 +16,15 @@
 
 package net.gtaun.shoebill.object;
 
-import java.util.Collection;
-import java.util.List;
-
 import net.gtaun.shoebill.SampObjectManager;
-import net.gtaun.shoebill.constant.CameraCutStyle;
-import net.gtaun.shoebill.constant.DialogStyle;
-import net.gtaun.shoebill.constant.FightStyle;
-import net.gtaun.shoebill.constant.PlayerState;
-import net.gtaun.shoebill.constant.PlayerVarType;
-import net.gtaun.shoebill.constant.RecordType;
-import net.gtaun.shoebill.constant.ShopName;
-import net.gtaun.shoebill.constant.SpecialAction;
-import net.gtaun.shoebill.constant.SpectateMode;
-import net.gtaun.shoebill.constant.WeaponModel;
-import net.gtaun.shoebill.constant.WeaponState;
-import net.gtaun.shoebill.data.AngledLocation;
-import net.gtaun.shoebill.data.Area;
-import net.gtaun.shoebill.data.Color;
-import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.data.Radius;
-import net.gtaun.shoebill.data.SpawnInfo;
-import net.gtaun.shoebill.data.Time;
-import net.gtaun.shoebill.data.Vector3D;
-import net.gtaun.shoebill.data.Velocity;
-import net.gtaun.shoebill.data.WeaponData;
+import net.gtaun.shoebill.constant.*;
+import net.gtaun.shoebill.data.*;
 import net.gtaun.shoebill.exception.AlreadyExistException;
 import net.gtaun.shoebill.exception.IllegalLengthException;
-
 import org.apache.commons.lang3.math.NumberUtils;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -120,6 +100,29 @@ public interface Player extends Proxyable<Player>
 		if (player == null && NumberUtils.isDigits(nameOrId)) player = get(NumberUtils.toInt(nameOrId));
 
 		return player;
+	}
+
+	/**
+	 * Gets a Player or npc by a part of his name
+	 *
+	 * @param partOfName Part of the name
+	 * @return The found player, or else null
+	 */
+	public static Player getByPartOfName(String partOfName) {
+		partOfName = partOfName.trim();
+		int highestHit = -25;
+		Player highestHitPlayer = null;
+		for (Player player : get()) {
+			String playerName = player.getName();
+			if (playerName.contains(partOfName)) {
+				int result = Math.abs(playerName.compareTo(partOfName));
+				if (highestHitPlayer == null || result < highestHit) {
+					highestHit = result;
+					highestHitPlayer = player;
+				}
+			}
+		}
+		return highestHitPlayer;
 	}
 
 	public static Collection<Player> get()
