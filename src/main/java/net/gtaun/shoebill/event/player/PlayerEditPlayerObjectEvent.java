@@ -32,15 +32,15 @@ public class PlayerEditPlayerObjectEvent extends PlayerEvent implements Interrup
 {
 	private PlayerObject object;
 	private ObjectEditResponse editResponse;
-    private Location oldLocation;
-    private Vector3D oldRotation;
+    private Location newLocation;
+    private Vector3D newRotation;
 
-    public PlayerEditPlayerObjectEvent(Player player, PlayerObject object, ObjectEditResponse response, Location oldLocation, Vector3D oldRotation) {
+    public PlayerEditPlayerObjectEvent(Player player, PlayerObject object, ObjectEditResponse response, Location newLocation, Vector3D newRotation) {
         super(player);
 		this.object = object;
 		this.editResponse = response;
-        this.oldLocation = oldLocation;
-        this.oldRotation = oldRotation;
+        this.newLocation = newLocation;
+        this.newRotation = newRotation;
     }
 	
 	@Override
@@ -54,12 +54,12 @@ public class PlayerEditPlayerObjectEvent extends PlayerEvent implements Interrup
 		return object;
 	}
 
-    public Location getOldLocation() {
-        return oldLocation;
+    public Location getNewLocation() {
+        return newLocation;
     }
 
-    public Vector3D getOldRotation() {
-        return oldRotation;
+    public Vector3D getNewRotation() {
+        return newRotation;
     }
 
     public ObjectEditResponse getEditResponse() {
