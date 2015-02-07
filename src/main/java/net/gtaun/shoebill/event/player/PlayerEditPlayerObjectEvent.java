@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.constant.ObjectEditResponse;
+import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerObject;
 import net.gtaun.util.event.Interruptable;
@@ -30,14 +31,14 @@ public class PlayerEditPlayerObjectEvent extends PlayerEvent implements Interrup
 {
 	private PlayerObject object;
 	private ObjectEditResponse editResponse;
-	
-	
-	public PlayerEditPlayerObjectEvent(Player player, PlayerObject object, ObjectEditResponse response)
-	{
+    private Location oldLocation;
+
+    public PlayerEditPlayerObjectEvent(Player player, PlayerObject object, ObjectEditResponse response, Location oldLocation) {
 		super(player);
 		this.object = object;
 		this.editResponse = response;
-	}
+        this.oldLocation = oldLocation;
+    }
 	
 	@Override
 	public void interrupt()
@@ -49,9 +50,12 @@ public class PlayerEditPlayerObjectEvent extends PlayerEvent implements Interrup
 	{
 		return object;
 	}
-	
-	public ObjectEditResponse getEditResponse()
-	{
+
+    public Location getOldLocation() {
+        return oldLocation;
+    }
+
+    public ObjectEditResponse getEditResponse() {
 		return editResponse;
 	}
 }
