@@ -16,30 +16,15 @@
 
 package net.gtaun.shoebill;
 
-import net.gtaun.shoebill.data.AngledLocation;
-import net.gtaun.shoebill.data.Area;
-import net.gtaun.shoebill.data.Color;
-import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.data.Vector2D;
-import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.*;
+import net.gtaun.shoebill.event.player.PlayerPickupEvent;
 import net.gtaun.shoebill.exception.CreationFailedException;
-import net.gtaun.shoebill.object.DialogId;
-import net.gtaun.shoebill.object.Label;
-import net.gtaun.shoebill.object.Menu;
-import net.gtaun.shoebill.object.Pickup;
-import net.gtaun.shoebill.object.Player;
-import net.gtaun.shoebill.object.PlayerLabel;
-import net.gtaun.shoebill.object.PlayerObject;
-import net.gtaun.shoebill.object.PlayerTextdraw;
-import net.gtaun.shoebill.object.SampObject;
-import net.gtaun.shoebill.object.Textdraw;
-import net.gtaun.shoebill.object.Timer;
+import net.gtaun.shoebill.object.*;
 import net.gtaun.shoebill.object.DialogId.OnCloseHandler;
 import net.gtaun.shoebill.object.DialogId.OnResponseHandler;
 import net.gtaun.shoebill.object.DialogId.OnShowHandler;
 import net.gtaun.shoebill.object.Timer.TimerCallback;
-import net.gtaun.shoebill.object.Vehicle;
-import net.gtaun.shoebill.object.Zone;
+import net.gtaun.util.event.EventHandler;
 
 /**
  *
@@ -371,6 +356,48 @@ public interface SampObjectFactory
 	{
 		return createPickup(modelId, type, new Location(x, y, z));
 	}
+
+    /**
+     * Create a Pickup with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param modelId Modelid of the Pickup.
+     * @param type    Type of the Pickup.
+     * @param loc     Location where the Pickup should be.
+     * @param event   The called event.
+     * @return The created Pickup.
+     */
+    Pickup createPickup(int modelId, int type, Location loc, EventHandler<PlayerPickupEvent> event) throws CreationFailedException;
+
+    /**
+     * Create a Pickup with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param modelId Modelid of the Pickup.
+     * @param type    Type of the Pickup.
+     * @param x       X-Pos where the Pickup should be.
+     * @param y       Y-Pos where the Pickup should be.
+     * @param z       Z-Pos where the Pickup should be.
+     * @param worldId Worldid where the Pickup should be.
+     * @param event   The called event.
+     * @return The created Pickup.
+     */
+    default Pickup createPickup(int modelId, int type, float x, float y, float z, int worldId, EventHandler<PlayerPickupEvent> event) throws CreationFailedException {
+        return createPickup(modelId, type, new Location(x, y, z, worldId), event);
+    }
+
+    /**
+     * Create a Pickup with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param modelId Modelid of the Pickup.
+     * @param type    Type of the Pickup.
+     * @param x       X-Pos where the Pickup should be.
+     * @param y       Y-Pos where the Pickup should be.
+     * @param z       Z-Pos where the Pickup should be.
+     * @param event   The called event
+     * @return The created Pickup.
+     */
+    default Pickup createPickup(int modelId, int type, float x, float y, float z, EventHandler<PlayerPickupEvent> event) throws CreationFailedException {
+        return createPickup(modelId, type, new Location(x, y, z), event);
+    }
 
     /**
      * Create a Label with params. If the Creation fails, it will throw a CreationFailedException.

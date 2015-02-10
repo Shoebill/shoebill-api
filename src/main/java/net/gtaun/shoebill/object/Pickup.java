@@ -16,11 +16,13 @@
 
 package net.gtaun.shoebill.object;
 
-import java.util.Collection;
-
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Location;
+import net.gtaun.shoebill.event.player.PlayerPickupEvent;
 import net.gtaun.shoebill.exception.CreationFailedException;
+import net.gtaun.util.event.EventHandler;
+
+import java.util.Collection;
 
 /**
  * 
@@ -91,9 +93,53 @@ public interface Pickup extends Destroyable, Proxyable<Pickup>
 	{
 		return SampObjectManager.get().createPickup(modelId, type, x, y, z);
 	}
-	
 
-	public static final int INVALID_ID = -1;
+    /**
+     * Create a Pickup with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param modelId Modelid of the Pickup.
+     * @param type    Type of the Pickup.
+     * @param loc     Location where the Pickup should be.
+     * @param event   The called event.
+     * @return The created Pickup.
+     */
+    public static Pickup create(int modelId, int type, Location loc, EventHandler<PlayerPickupEvent> event) throws CreationFailedException {
+        return SampObjectManager.get().createPickup(modelId, type, loc, event);
+    }
+
+    /**
+     * Create a Pickup with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param modelId Modelid of the Pickup.
+     * @param type    Type of the Pickup.
+     * @param x       X-Pos where the Pickup should be.
+     * @param y       Y-Pos where the Pickup should be.
+     * @param z       Z-Pos where the Pickup should be.
+     * @param worldId Worldid where the Pickup should be.
+     * @param event   The called event
+     * @return The created Pickup.
+     */
+    public static Pickup create(int modelId, int type, float x, float y, float z, int worldId, EventHandler<PlayerPickupEvent> event) throws CreationFailedException {
+        return SampObjectManager.get().createPickup(modelId, type, x, y, z, worldId, event);
+    }
+
+    /**
+     * Create a Pickup with params. If the Creation fails, it will throw a CreationFailedException.
+     *
+     * @param modelId Modelid of the Pickup.
+     * @param type    Type of the Pickup.
+     * @param x       X-Pos where the Pickup should be.
+     * @param y       Y-Pos where the Pickup should be.
+     * @param z       Z-Pos where the Pickup should be.
+     * @param event   The called event.
+     * @return The created Pickup.
+     */
+    public static Pickup create(int modelId, int type, float x, float y, float z, EventHandler<PlayerPickupEvent> event) throws CreationFailedException {
+        return SampObjectManager.get().createPickup(modelId, type, x, y, z, event);
+    }
+
+
+    public static final int INVALID_ID = -1;
 
 
 	boolean isStatic();
