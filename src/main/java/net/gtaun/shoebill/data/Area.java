@@ -16,12 +16,12 @@
 
 package net.gtaun.shoebill.data;
 
-import java.io.Serializable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
+import java.io.Serializable;
 
 /**
  *
@@ -32,14 +32,7 @@ public class Area implements Cloneable, Serializable, RangeCheckable3D
 {
 	private static final long serialVersionUID = 4319892622317856825L;
 
-
 	public float minX, minY, maxX, maxY;
-
-
-	public Area()
-	{
-
-	}
 
 	public Area(float minX, float minY, float maxX, float maxY)
 	{

@@ -19,6 +19,7 @@ package net.gtaun.shoebill.object;
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.VehicleModelInfoType;
 import net.gtaun.shoebill.constant.WeaponModel;
+import net.gtaun.shoebill.data.Animation;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Vector3D;
 
@@ -79,4 +80,7 @@ public interface Server extends Proxyable<Server>
 
 	String getPassword();
 	void setPassword(String password);
+
+    Animation getAnimationName(int animationIndex);
+
 }

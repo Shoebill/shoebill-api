@@ -1263,6 +1263,20 @@ public interface Player extends Proxyable<Player>
      */
 	String getVersion();
 
+    /**
+     * Gets the zone name where the player is located in. e.g. Las Venturas
+     *
+     * @return The zone name
+     */
+    LocationZone getMainZoneName();
+
+    /**
+     * Gets the detailed zone name. e.g. The Strip
+     *
+     * @return The detailed zone name
+     */
+    LocationZone getZoneName();
+
 	int getConnectedTime();
 	int getMessagesReceived();
 	int getBytesReceived();
