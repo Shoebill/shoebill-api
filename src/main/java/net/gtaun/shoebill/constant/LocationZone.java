@@ -410,6 +410,10 @@ public class LocationZone {
         return name;
     }
 
+    public Area3D getArea() {
+        return new Area3D(area);
+    }
+
     public static LocationZone getPlayerMainZone(Player player) {
         Vector3D playerLocation = player.getLocation();
         for (LocationZone zone : zones) {
