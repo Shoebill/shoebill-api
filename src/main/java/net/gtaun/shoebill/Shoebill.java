@@ -16,11 +16,11 @@
 
 package net.gtaun.shoebill;
 
-import java.lang.ref.Reference;
-
 import net.gtaun.shoebill.amx.AmxInstanceManager;
 import net.gtaun.shoebill.resource.ResourceManager;
 import net.gtaun.shoebill.service.ServiceStore;
+
+import java.lang.ref.Reference;
 
 /**
  * Shoebill main interface, provides the basic manager instance and functions.
@@ -36,7 +36,8 @@ public interface Shoebill
 
 	public static Shoebill get()
 	{
-		return Instance.reference.get();
+        if (Instance.reference == null) return null;
+        return Instance.reference.get();
 	}
 
 	/**
