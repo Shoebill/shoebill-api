@@ -6,7 +6,7 @@ package net.gtaun.shoebill.data;
  */
 public class Animation {
 
-    protected Animation(String library, String name) {
+    public Animation(String library, String name) {
         this.library = library;
         this.name = name;
     }
