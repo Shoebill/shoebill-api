@@ -17,14 +17,14 @@
 
 package net.gtaun.shoebill.object;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.function.Consumer;
-
 import net.gtaun.shoebill.SampObjectStore;
 import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.data.Radius;
 import net.gtaun.shoebill.data.Vector3D;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.function.Consumer;
 
 /**
  *
@@ -46,14 +46,16 @@ public interface Checkpoint
 			@Override
 			public void onEnter(Player player)
 			{
-				onEnter.accept(player);
-			}
+                if (onEnter != null)
+                    onEnter.accept(player);
+            }
 
 			@Override
 			public void onLeave(Player player)
 			{
-				onLeave.accept(player);
-			}
+                if (onLeave != null)
+                    onLeave.accept(player);
+            }
 		};
 	}
 
