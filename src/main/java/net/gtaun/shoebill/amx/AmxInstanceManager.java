@@ -28,7 +28,9 @@ public interface AmxInstanceManager
 {
 	Set<AmxInstance> getAmxInstances();
 
-	Set<Consumer<AmxCallEvent>> getAmxHooks(AmxInstance instance);
+    Set<AmxHook> getAmxHooks();
 
-	void hook(String name, Consumer<AmxCallEvent> hook, boolean isCallback, Class<?>... parameterTypes);
+    boolean hookCallback(String callbackName, Consumer<AmxCallEvent> hook, String types); //types: "iss" <-- Integer, String, String
+
+    boolean unhookCallback(String callbackName);
 }

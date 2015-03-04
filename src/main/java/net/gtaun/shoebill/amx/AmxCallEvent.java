@@ -10,12 +10,21 @@ public class AmxCallEvent extends Event {
 
     private String functionName;
     private int returnValue = 1;
+    private boolean disallow;
     private Object[] parameters;
 
     public AmxCallEvent(String functionName, Object... parameters) {
         super();
         this.functionName = functionName;
         this.parameters = parameters;
+    }
+
+    public void disallow() {
+        this.disallow = true;
+    }
+
+    public int isDisallow() {
+        return (disallow) ? 1 : 0;
     }
 
     public String getFunctionName() {
