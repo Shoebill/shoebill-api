@@ -327,6 +327,7 @@ public enum SkinModel {
     private int id;
     private Gender gender;
     private String description;
+
     SkinModel(int id, String description, Gender gender) {
         this.id = id;
         this.gender = gender;
@@ -352,5 +353,19 @@ public enum SkinModel {
     public enum Gender {
         MALE,
         FEMALE
+    }
+
+    /**
+     * Gets a Skin by it's id
+     *
+     * @param id ID of the Skin
+     * @return SkinModel (null if not found)
+     */
+    public static SkinModel getById(int id) {
+        for (SkinModel model : values()) {
+            if (model.getId() == id)
+                return model;
+        }
+        return null; //not found
     }
 }

@@ -16,12 +16,12 @@
 
 package net.gtaun.shoebill.data;
 
-import java.io.Serializable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
+import java.io.Serializable;
 
 /**
  * 
@@ -118,6 +118,7 @@ public class Color implements Cloneable, Serializable
 	public static final Color LIGHTSLATEGRAY =			new Color(0x778899FF);
 	public static final Color LIGHTSTEELBLUE =			new Color(0xB0C4DEFF);
 	public static final Color LIGHTYELLOW =				new Color(0xFFFFE0FF);
+	public static final Color LIGHTRED = new Color(0xFF8080FF);
 	public static final Color LIME =					new Color(0x00FF00FF);
 	public static final Color LIMEGREEN =				new Color(0x32CD32FF);
 	public static final Color LINEN =					new Color(0xFAF0E6FF);
