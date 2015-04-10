@@ -350,6 +350,13 @@ public enum SkinModel {
         return SkinModel.class.getEnumConstants();
     }
 
+    public static SkinModel getSkinById(int id) {
+        for (SkinModel model : values())
+            if (model.getId() == id)
+                return model;
+        return null;
+    }
+
     public enum Gender {
         MALE,
         FEMALE

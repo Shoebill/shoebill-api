@@ -22,6 +22,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * 
@@ -195,7 +199,27 @@ public class Color implements Cloneable, Serializable
 	public static final Color YELLOWGREEN =				new Color(0x9ACD32FF);
 	
 	public static final Color TRANSPARENT =				new Color(0x00000000);
-	
+
+	private static final List<Color> allColors = new ArrayList<>();
+
+	static {
+		for (Field colorField : Color.class.getDeclaredFields()) {
+			if (colorField.getType() == Color.class) {
+				try {
+					allColors.add((Color) colorField.get(null));
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+	/**
+	 * @return All declared colors
+	 */
+	public static Collection<Color> getColors() {
+		return new ArrayList<>(allColors);
+	}
 	
 	private int value;
 	
@@ -341,15 +365,14 @@ public class Color implements Cloneable, Serializable
 	}
 	
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE);
 		builder.append("value", String.format("%08X", value));
 		builder.append("r", getR());
 		builder.append("g", getG());
 		builder.append("b", getB());
 		builder.append("a", getA());
-		
+
 		return builder.build();
 	}
 }
