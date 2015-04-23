@@ -2,7 +2,7 @@ package net.gtaun.shoebill.constant;
 
 
 import net.gtaun.shoebill.data.Area3D;
-import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.object.Player;
 
 /**
@@ -389,7 +389,7 @@ public class LocationZone {
         this.area = area;
     }
 
-    private LocationZone(String name, Area3D area, boolean isMainZone) {
+        private LocationZone(String name, Area3D area, boolean isMainZone) {
         this(name, area);
         this.isMainZone = isMainZone;
     }
@@ -402,6 +402,30 @@ public class LocationZone {
         this(name, new Area3D(minX, minY, minZ, maxX, maxY, maxZ), isMainZone);
     }
 
+        public static LocationZone getPlayerMainZone(Player player) {
+                return getMainZone(player.getLocation());
+        }
+
+        public static LocationZone getPlayerZone(Player player) {
+                return getZone(player.getLocation());
+        }
+
+        public static LocationZone getMainZone(Location location) {
+                for (LocationZone zone : zones) {
+                        if (!zone.isMainZone) continue;
+                        if (zone.area.isInRange(location)) return zone;
+                }
+                return null;
+        }
+
+        public static LocationZone getZone(Location location) {
+                for (LocationZone zone : zones) {
+                        if (zone.isMainZone) continue;
+                        if (zone.area.isInRange(location)) return zone;
+                }
+                return null;
+        }
+
     public boolean isMainZone() {
         return isMainZone;
     }
@@ -412,23 +436,5 @@ public class LocationZone {
 
     public Area3D getArea() {
         return new Area3D(area);
-    }
-
-    public static LocationZone getPlayerMainZone(Player player) {
-        Vector3D playerLocation = player.getLocation();
-        for (LocationZone zone : zones) {
-            if (!zone.isMainZone) continue;
-            if (zone.area.isInRange(playerLocation)) return zone;
-        }
-        return null;
-    }
-
-    public static LocationZone getPlayerZone(Player player) {
-        Vector3D playerLocation = player.getLocation();
-        for (LocationZone zone : zones) {
-            if (zone.isMainZone) continue;
-            if (zone.area.isInRange(playerLocation)) return zone;
-        }
-        return null;
     }
 }
