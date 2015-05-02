@@ -16,29 +16,34 @@
 
 package net.gtaun.shoebill.object;
 
-import java.util.Collection;
-
 import net.gtaun.shoebill.SampObjectManager;
-import net.gtaun.shoebill.data.AngledLocation;
-import net.gtaun.shoebill.data.Location;
-import net.gtaun.shoebill.data.Quaternion;
-import net.gtaun.shoebill.data.Vector3D;
-import net.gtaun.shoebill.data.Velocity;
+import net.gtaun.shoebill.data.*;
 import net.gtaun.shoebill.exception.CreationFailedException;
+
+import java.util.Collection;
 
 /**
  * 
  * 
- * @author MK124
+ * @author MK124, 123marvin123
  */
 public interface Vehicle extends Destroyable, Proxyable<Vehicle>
 {
-	public static Vehicle get(int id)
+	static Vehicle get(int id)
 	{
 		return SampObjectManager.get().getVehicle(id);
 	}
-	
-	public static Collection<Vehicle> get()
+
+	/**
+	 * Gets the vehicle's pool size
+	 * @return Vehicle's pool size
+	 */
+	static int getPoolSize()
+	{
+		return SampObjectManager.get().getVehiclePoolSize();
+	}
+
+	static Collection<Vehicle> get()
 	{
 		return SampObjectManager.get().getVehicles();
 	}
@@ -53,7 +58,7 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	public static Vehicle create(int modelId, AngledLocation loc, int color1, int color2, int respawnDelay) throws CreationFailedException
+	static Vehicle create(int modelId, AngledLocation loc, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
 		return SampObjectManager.get().createVehicle(modelId, loc, color1, color2, respawnDelay);
 	}
@@ -73,7 +78,7 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	public static Vehicle create(int modelId, float x, float y, float z, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
+	static Vehicle create(int modelId, float x, float y, float z, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
 		return SampObjectManager.get().createVehicle(modelId, x, y, z, interiorId, worldId, angle, color1, color2, respawnDelay);
 	}
@@ -91,7 +96,7 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	public static Vehicle create(int modelId, float x, float y, float z, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
+	static Vehicle create(int modelId, float x, float y, float z, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
 		return SampObjectManager.get().createVehicle(modelId, x, y, z, angle, color1, color2, respawnDelay);
 	}
@@ -107,7 +112,7 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	public static Vehicle create(int modelId, Vector3D pos, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
+	static Vehicle create(int modelId, Vector3D pos, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
 		return SampObjectManager.get().createVehicle(modelId, pos, angle, color1, color2, respawnDelay);
 	}
@@ -125,7 +130,7 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	public static Vehicle create(int modelId, Vector3D pos, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
+	static Vehicle create(int modelId, Vector3D pos, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
 		return SampObjectManager.get().createVehicle(modelId, pos, interiorId, worldId, angle, color1, color2, respawnDelay);
 	}
@@ -141,13 +146,13 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	public static Vehicle create(int modelId, Location loc, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
+	static Vehicle create(int modelId, Location loc, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
 		return SampObjectManager.get().createVehicle(modelId, loc, angle, color1, color2, respawnDelay);
 	}
 	
 	
-	public static final int INVALID_ID = 0xFFFF;
+	int INVALID_ID = 0xFFFF;
 	
 	
 	boolean isStatic();
@@ -186,20 +191,117 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
 	Velocity getVelocity();
 	void setVelocity(Velocity velocity);
 	void setAngularVelocity(Velocity velocity);
-	
+
+	/**
+	 * Puts a player into that vehicle
+	 * @param player Player to put in
+	 * @param seat Which seat he should sit in
+	 */
 	void putPlayer(Player player, int seat);
+
+	/**
+	 * Checks if a specific player is in the vehicle
+	 * @param player The player to check
+	 * @return If the player is in the vehicle
+	 */
 	boolean isPlayerIn(Player player);
+
+	/**
+	 * Checks if the vehicle is streamed-in for a specific player
+	 * @param forPlayer The player to check
+	 * @return If the vehicle is streamed-in for the player
+	 */
 	boolean isStreamedIn(Player forPlayer);
+
+	/**
+	 * Sets different parameters for a specific player
+	 * @param player Which player should be affected
+	 * @param objective If the objective should be open / closed
+	 * @param doorsLocked If the doors should be locked
+	 */
 	void setParamsForPlayer(Player player, boolean objective, boolean doorsLocked);
+
+	/**
+	 * Destroys and spawns the vehicle
+	 */
 	void respawn();
+
+	/**
+	 * Sets the color of the vehicle (https://wiki.sa-mp.com/wiki/Vehicle_Color_IDs)
+	 * @param color1 First color
+	 * @param color2 Second color
+	 */
 	void setColor(int color1, int color2);
+
+	/**
+	 * Sets the paintjob of the vehicle
+	 * @param paintjobId The paintjobid (https://wiki.sa-mp.com/wiki/Paintjob)
+	 */
 	void setPaintjob(int paintjobId);
-	
+
+	/**
+	 * Gets the trailer that is attached to the vehicle
+	 * @return The attached trailer
+	 */
 	Vehicle getTrailer();
+
+	/**
+	 * Attaches a trailer to the vehicle
+	 * @param trailer The trailer to attach
+	 */
 	void attachTrailer(Vehicle trailer);
+
+	/**
+	 * Detaches a trailer from the vehicle (check with isTrailerAttached())
+	 */
 	void detachTrailer();
-	
+
+	/**
+	 * Checks if any trailer is attached to the vehicle
+	 * @return If there is a trailer attached
+	 */
 	boolean isTrailerAttached();
+
+	/**
+	 * Sets the number plate of the vehicle
+	 * @param number The String to display on the plate
+	 */
 	void setNumberPlate(String number);
+
+	/**
+	 * Sets the health of the vehicle to 1000 and repairs all visual damages
+	 */
 	void repair();
+
+	/**
+	 * Get the state (open or close) of the doors
+	 * This function was introduced in 0.3.7
+	 * @return VehicleState object for the vehicle (doors)
+	 */
+	VehicleState getDoors();
+
+	/**
+	 * Get the state (open or close) of the windows
+	 * This function was introduced in 0.3.7
+	 * @return VehicleState object for the vehicle (windows)
+	 */
+	VehicleState getWindows();
+
+	/**
+	 * Returns the siren state of the vehicle
+	 * @return If the sirens are on (-1 = not activated yet, 0 = off, 1 = on)
+	 */
+	int getSirenState();
+
+	/**
+	 * Sets the vehicle's door state
+	 * @param vehicleState The new state
+	 */
+	void setDoors(VehicleState vehicleState);
+
+	/**
+	 * Sets the vehicle's window state
+	 * @param vehicleState The new state
+	 */
+	void setWindows(VehicleState vehicleState);
 }

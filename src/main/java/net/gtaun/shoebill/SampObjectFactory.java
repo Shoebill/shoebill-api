@@ -716,4 +716,28 @@ public interface SampObjectFactory
 	{
 		return createTimer(interval, Timer.COUNT_INFINITE, null);
 	}
+
+	/**
+	 * Creates a actor with params.
+	 * @param modelid Modelid of the skin
+	 * @param position Where the actor should stand
+	 * @param angle In which angle the actor should stand
+	 * @return The created actor
+	 * @throws CreationFailedException
+	 */
+	Actor createActor(int modelid, Vector3D position, float angle) throws CreationFailedException;
+
+	/**
+	 * Creates a actor with params
+	 * @param modelid Modelid of the skin
+	 * @param x X-Pos where the actor should stand
+	 * @param y Y-Pos where the actor should stand
+	 * @param z Z-Pos where the actor should stand
+	 * @param angle In which angle the actor should stand
+	 * @return The created actor
+	 * @throws CreationFailedException
+	 */
+	default Actor createActor(int modelid, float x, float y, float z, float angle) throws CreationFailedException {
+		return createActor(modelid, new Vector3D(x, y, z), angle);
+	}
 }

@@ -33,39 +33,48 @@ import java.util.List;
  */
 public interface Player extends Proxyable<Player>
 {
-	public static int getMaxPlayers()
+	static int getMaxPlayers()
 	{
 		return Server.get().getMaxPlayers();
 	}
 
-	public static void connectNPC(String name, String script)
+	static void connectNPC(String name, String script)
 	{
 		Server.get().connectNPC(name, script);
 	}
 
-	public static void sendMessageToAll(Color color, String message)
+	static void sendMessageToAll(Color color, String message)
 	{
 		Server.get().sendMessageToAll(color, message);
 	}
 
-	public static void sendMessageToAll(Color color, String format, Object... args)
+	static void sendMessageToAll(Color color, String format, Object... args)
 	{
 		Server.get().sendMessageToAll(color, format, args);
 	}
 
-	public static void gameTextToAll(int time, int style, String text)
+	static void gameTextToAll(int time, int style, String text)
 	{
 		Server.get().gameTextToAll(time, style, text);
 	}
 
-	public static void gameTextToAll(int time, int style, String format, Object... args)
+	static void gameTextToAll(int time, int style, String format, Object... args)
 	{
 		Server.get().gameTextToAll(time, style, format, args);
 	}
 
-	public static void sendDeathMessageToAll(Player killer, Player victim, WeaponModel reason)
+	static void sendDeathMessageToAll(Player killer, Player victim, WeaponModel reason)
 	{
 		Server.get().sendDeathMessageToAll(killer, victim, reason);
+	}
+
+	/**
+	 * Gets the player's pool size
+	 * @return Player's pool size
+	 */
+	static int getPoolSize()
+	{
+		return SampObjectManager.get().getPlayerPoolSize();
 	}
 
     /**
@@ -73,7 +82,7 @@ public interface Player extends Proxyable<Player>
      * @param id Id of the Player
      * @return The found Player
      */
-	public static Player get(int id)
+	static Player get(int id)
 	{
 		return SampObjectManager.get().getPlayer(id);
 	}
@@ -83,7 +92,7 @@ public interface Player extends Proxyable<Player>
      * @param name Name of the Player
      * @return The found Player
      */
-	public static Player get(String name)
+	static Player get(String name)
 	{
 		return SampObjectManager.get().getPlayer(name.trim());
 	}
@@ -93,7 +102,7 @@ public interface Player extends Proxyable<Player>
      * @param nameOrId The Name or Id
      * @return The found Player
      */
-	public static Player getByNameOrId(String nameOrId)
+	static Player getByNameOrId(String nameOrId)
 	{
 		nameOrId = nameOrId.trim();
 		Player player = get(nameOrId);
@@ -108,7 +117,7 @@ public interface Player extends Proxyable<Player>
 	 * @param partOfName Part of the name
 	 * @return The found player, or else null
 	 */
-	public static Player getByPartOfName(String partOfName) {
+	static Player getByPartOfName(String partOfName) {
 		partOfName = partOfName.trim();
 		int highestHit = -25;
 		Player highestHitPlayer = null;
@@ -125,7 +134,7 @@ public interface Player extends Proxyable<Player>
 		return highestHitPlayer;
 	}
 
-	public static Collection<Player> get()
+	static Collection<Player> get()
 	{
 		return SampObjectManager.get().getPlayers();
 	}
@@ -135,7 +144,7 @@ public interface Player extends Proxyable<Player>
 	 *
 	 * @return Collection of human Players.
 	 */
-	public static Collection<Player> getHumans()
+	static Collection<Player> getHumans()
 	{
 		return SampObjectManager.get().getHumanPlayers();
 	}
@@ -145,17 +154,17 @@ public interface Player extends Proxyable<Player>
 	 *
 	 * @return Collection of NPC Players.
 	 */
-	public static Collection<Player> getNpcs()
+	static Collection<Player> getNpcs()
 	{
 		return SampObjectManager.get().getNpcPlayers();
 	}
 
 
-	public static final int INVALID_ID =				0xFFFF;
-	public static final int NO_TEAM =					255;
-	public static final int MAX_NAME_LENGTH =			24;
+	int INVALID_ID =				0xFFFF;
+	int NO_TEAM =					255;
+	int MAX_NAME_LENGTH =			24;
 
-	public static final int MAX_CHATBUBBLE_LENGTH =		144;
+	int MAX_CHATBUBBLE_LENGTH =		144;
 
     /**
      * Gets the Onlinestate
@@ -1299,4 +1308,51 @@ public interface Player extends Proxyable<Player>
 
 	List<String> getVarNames();
 	PlayerVarType getVarType(String name);
+
+	/**
+	 * Sets if the vehicle collision should be disabled
+	 * @param disable If the collision should be disabled
+	 */
+	void disableRemoteVehicleCollisions(boolean disable);
+
+	/**
+	 * Sets if the CameraTarget-Function should be enabled (extra bandwith)
+	 * @param enable If the function should be enabled
+	 */
+	void enablePlayerCameraTarget(boolean enable);
+
+	/**
+	 * Returns the player's targeted actor (null if none)
+	 * You need to call enablePlayerCameraTarget() to use this function
+	 * @return Target actor
+	 */
+	Actor getCameraTargetActor();
+
+	/**
+	 * Returns the player's targeted object (null if none)
+	 * You need to call enablePlayerCameraTarget() to use this function
+	 * @return Target object
+	 */
+	SampObject getCameraTargetObject();
+
+	/**
+	 * Returns the player's targeted player (null if none)
+	 * You need to call enablePlayerCameraTarget() to use this function
+	 * @return Target player
+	 */
+	Player getCameraTargetPlayer();
+
+	/**
+	 * Returns the player's targeted vehicle (null if none)
+	 * You need to call enablePlayerCameraTarget() to use this function
+	 * @return Target vehicle
+	 */
+	Vehicle getCameraTargetVehicle();
+
+	/**
+	 * Returns the player's targeted actor (with weapon, null if none)
+	 * @return Targeted actor (with weapon, not with camera)
+	 */
+	Actor getTargetActor();
+
 }

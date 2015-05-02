@@ -16,12 +16,12 @@
 
 package net.gtaun.shoebill.object;
 
-import java.util.Collection;
-
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
+
+import java.util.Collection;
 
 /**
  * 
@@ -30,12 +30,12 @@ import net.gtaun.shoebill.exception.CreationFailedException;
  */
 public interface PlayerObject extends SampObject, PlayerRelated
 {
-	public static PlayerObject get(Player player, int id)
+	static PlayerObject get(Player player, int id)
 	{
 		return SampObjectManager.get().getPlayerObject(player, id);
 	}
 	
-	public static Collection<PlayerObject> get(Player player)
+	static Collection<PlayerObject> get(Player player)
 	{
 		return SampObjectManager.get().getPlayerObjects(player);
 	}
@@ -50,7 +50,7 @@ public interface PlayerObject extends SampObject, PlayerRelated
      * @param drawDistance The Drawdistance of the Object.
      * @return The created PlayerObject.
      */
-	public static PlayerObject create(Player player, int modelId, Location loc, Vector3D rot, float drawDistance) throws CreationFailedException
+	static PlayerObject create(Player player, int modelId, Location loc, Vector3D rot, float drawDistance) throws CreationFailedException
 	{
 		return SampObjectManager.get().createPlayerObject(player, modelId, loc, rot, drawDistance);
 	}
@@ -68,7 +68,7 @@ public interface PlayerObject extends SampObject, PlayerRelated
      * @param rz Rotation-Z where the Object should be.
      * @return The created PlayerObject.
      */
-	public static PlayerObject create(Player player, int modelId, float x, float y, float z, float rx, float ry, float rz) throws CreationFailedException
+	static PlayerObject create(Player player, int modelId, float x, float y, float z, float rx, float ry, float rz) throws CreationFailedException
 	{
 		return SampObjectManager.get().createPlayerObject(player, modelId, x, y, z, rx, ry, rz);
 	}
@@ -87,7 +87,7 @@ public interface PlayerObject extends SampObject, PlayerRelated
      * @param drawDistance The Drawdistance of the Object.
      * @return The created PlayerObject.
      */
-	public static PlayerObject create(Player player, int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
+	static PlayerObject create(Player player, int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
 	{
 		return SampObjectManager.get().createPlayerObject(player, modelId, x, y, z, rx, ry, rz, drawDistance);
 	}
@@ -103,7 +103,7 @@ public interface PlayerObject extends SampObject, PlayerRelated
      * @param rz Rotation-Z where the Object should be.
      * @return The created PlayerObject.
      */
-	public static PlayerObject create(Player player, int modelId, Location loc, float rx, float ry, float rz) throws CreationFailedException
+	static PlayerObject create(Player player, int modelId, Location loc, float rx, float ry, float rz) throws CreationFailedException
 	{
 		return SampObjectManager.get().createPlayerObject(player, modelId, loc, rx, ry, rz);
 	}
@@ -120,7 +120,7 @@ public interface PlayerObject extends SampObject, PlayerRelated
      * @param drawDistance The Drawdistance of the Object.
      * @return The created PlayerObject.
      */
-	public static PlayerObject create(Player player, int modelId, Location loc, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
+	static PlayerObject create(Player player, int modelId, Location loc, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
 	{
 		return SampObjectManager.get().createPlayerObject(player, modelId, loc, rx, ry, rz, drawDistance);
 	}
@@ -134,11 +134,12 @@ public interface PlayerObject extends SampObject, PlayerRelated
      * @param rot Rotation-Position where the Object should be.
      * @return The created PlayerObject.
      */
-	public static PlayerObject create(Player player, int modelId, Location loc, Vector3D rot) throws CreationFailedException
+	static PlayerObject create(Player player, int modelId, Location loc, Vector3D rot) throws CreationFailedException
 	{
 		return SampObjectManager.get().createPlayerObject(player, modelId, loc, rot);
 	}
 	
 	
-	public static final int INVALID_ID = 0xFFFF;
+	int INVALID_ID = 0xFFFF;
+	void setPlayerObjectNoCameraCol();
 }

@@ -19,7 +19,10 @@ package net.gtaun.shoebill.object;
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.PlayerMarkerMode;
 import net.gtaun.shoebill.constant.WeaponModel;
-import net.gtaun.shoebill.data.*;
+import net.gtaun.shoebill.data.Location;
+import net.gtaun.shoebill.data.SpawnInfo;
+import net.gtaun.shoebill.data.Vector3D;
+import net.gtaun.shoebill.data.WeaponData;
 
 /**
  * 
@@ -87,4 +90,10 @@ public interface World extends Proxyable<World>
 
 	// Global vehicle methods
 	void manualEngineAndLights();
+
+	/**
+	 * Sets the default camera collision behaviour of new objects
+	 * @param disable If new objects should collide with objects
+	 */
+	void setObjectsDefaultCameraCol(boolean disable);
 }

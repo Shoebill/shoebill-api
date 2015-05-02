@@ -16,23 +16,10 @@
 
 package net.gtaun.shoebill;
 
-import java.util.Collection;
-
 import net.gtaun.shoebill.data.SpawnInfo;
-import net.gtaun.shoebill.object.DialogId;
-import net.gtaun.shoebill.object.Label;
-import net.gtaun.shoebill.object.Menu;
-import net.gtaun.shoebill.object.Pickup;
-import net.gtaun.shoebill.object.Player;
-import net.gtaun.shoebill.object.PlayerLabel;
-import net.gtaun.shoebill.object.PlayerObject;
-import net.gtaun.shoebill.object.PlayerTextdraw;
-import net.gtaun.shoebill.object.SampObject;
-import net.gtaun.shoebill.object.Server;
-import net.gtaun.shoebill.object.Textdraw;
-import net.gtaun.shoebill.object.Vehicle;
-import net.gtaun.shoebill.object.World;
-import net.gtaun.shoebill.object.Zone;
+import net.gtaun.shoebill.object.*;
+
+import java.util.Collection;
 
 /**
  * SA-MP object interface, managing all SA-MP objects that exist.
@@ -269,4 +256,36 @@ public interface SampObjectStore
 	 * @return Collection of PlayerClasses.
 	 */
 	Collection<SpawnInfo> getPlayerClasses();
+
+	/**
+	 * Get the collection of actors (CreateActor) which exist.
+	 *
+	 * @return Collection of Actors
+	 */
+	Collection<Actor> getActors();
+
+	/**
+	 * Get the actor with a specific id
+	 * @param id The actor id
+	 * @return Found actor (null is not found)
+	 */
+	Actor getActor(int id);
+
+	/**
+	 * Gets the pool size of the vehicles.
+	 * @return Vehicle's poolsize
+	 */
+	int getVehiclePoolSize();
+
+	/**
+	 * Gets the pool size of the players
+	 * @return Player's poolsize
+	 */
+	int getPlayerPoolSize();
+
+	/**
+	 * Gets the pool size of the actors
+	 * @return Actor's poolsize
+	 */
+	int getActorPoolSize();
 }

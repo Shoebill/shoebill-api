@@ -16,8 +16,6 @@
 
 package net.gtaun.shoebill.object;
 
-import java.util.Collection;
-
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.ObjectMaterialSize;
 import net.gtaun.shoebill.constant.ObjectMaterialTextAlign;
@@ -26,6 +24,8 @@ import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
 
+import java.util.Collection;
+
 /**
  * 
  * 
@@ -33,12 +33,12 @@ import net.gtaun.shoebill.exception.CreationFailedException;
  */
 public interface SampObject extends Destroyable, Proxyable<SampObject>
 {
-	public static SampObject get(int id)
+	static SampObject get(int id)
 	{
 		return SampObjectManager.get().getObject(id);
 	}
 	
-	public static Collection<SampObject> get()
+	static Collection<SampObject> get()
 	{
 		return SampObjectManager.get().getObjects();
 	}
@@ -52,7 +52,7 @@ public interface SampObject extends Destroyable, Proxyable<SampObject>
      * @param drawDistance The Drawdistance of the Object.
      * @return The created SampObject.
      */
-	public static SampObject create(int modelId, Location loc, Vector3D rot, float drawDistance) throws CreationFailedException
+	static SampObject create(int modelId, Location loc, Vector3D rot, float drawDistance) throws CreationFailedException
 	{
 		return SampObjectManager.get().createObject(modelId, loc, rot, drawDistance);
 	}
@@ -69,7 +69,7 @@ public interface SampObject extends Destroyable, Proxyable<SampObject>
      * @param rz Rotation-Z where the Object should be.
      * @return The created SampObject.
      */
-	public static SampObject create(int modelId, float x, float y, float z, float rx, float ry, float rz) throws CreationFailedException
+	static SampObject create(int modelId, float x, float y, float z, float rx, float ry, float rz) throws CreationFailedException
 	{
 		return SampObjectManager.get().createObject(modelId, x, y, z, rx, ry, rz);
 	}
@@ -87,7 +87,7 @@ public interface SampObject extends Destroyable, Proxyable<SampObject>
      * @param drawDistance The Drawdistance of the Object.
      * @return The created SampObject.
      */
-	public static SampObject create(int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
+	static SampObject create(int modelId, float x, float y, float z, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
 	{
 		return SampObjectManager.get().createObject(modelId, x, y, z, rx, ry, rz, drawDistance);
 	}
@@ -102,7 +102,7 @@ public interface SampObject extends Destroyable, Proxyable<SampObject>
      * @param rz Rotation-Z where the Object should be.
      * @return The created SampObject.
      */
-	public static SampObject create(int modelId, Location loc, float rx, float ry, float rz) throws CreationFailedException
+	static SampObject create(int modelId, Location loc, float rx, float ry, float rz) throws CreationFailedException
 	{
 		return SampObjectManager.get().createObject(modelId, loc, rx, ry, rz);
 	}
@@ -118,7 +118,7 @@ public interface SampObject extends Destroyable, Proxyable<SampObject>
      * @param drawDistance The Drawdistance of the Object.
      * @return The created SampObject.
      */
-	public static SampObject create(int modelId, Location loc, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
+	static SampObject create(int modelId, Location loc, float rx, float ry, float rz, float drawDistance) throws CreationFailedException
 	{
 		return SampObjectManager.get().createObject(modelId, loc, rx, ry, rz, drawDistance);
 	}
@@ -131,13 +131,13 @@ public interface SampObject extends Destroyable, Proxyable<SampObject>
      * @param rot Rotation-Position where the Object should be.
      * @return The created SampObject.
      */
-	public static SampObject create(int modelId, Location loc, Vector3D rot) throws CreationFailedException
+	static SampObject create(int modelId, Location loc, Vector3D rot) throws CreationFailedException
 	{
 		return SampObjectManager.get().createObject(modelId, loc, rot);
 	}
 	
 	
-	public static final int INVALID_ID = 0xFFFF;
+	int INVALID_ID = 0xFFFF;
 	
 	
 	int getId();
@@ -180,4 +180,7 @@ public interface SampObject extends Destroyable, Proxyable<SampObject>
 	
 	void setMaterialText(String text, int materialIndex, ObjectMaterialSize materialSize, String fontFace, int fontSize, boolean isBold, Color fontColor, Color backColor, ObjectMaterialTextAlign textAlignment);
 	void setMaterialText(String text);
+
+	//int getObjectModel(); // not needed
+	void setNoCameraCol();
 }
