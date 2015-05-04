@@ -58,9 +58,9 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	static Vehicle create(int modelId, AngledLocation loc, int color1, int color2, int respawnDelay) throws CreationFailedException
+	static Vehicle create(int modelId, AngledLocation loc, int color1, int color2, int respawnDelay, boolean addsiren) throws CreationFailedException
 	{
-		return SampObjectManager.get().createVehicle(modelId, loc, color1, color2, respawnDelay);
+		return SampObjectManager.get().createVehicle(modelId, loc, color1, color2, respawnDelay, addsiren);
 	}
 
     /**
@@ -304,4 +304,11 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
 	 * @param vehicleState The new state
 	 */
 	void setWindows(VehicleState vehicleState);
+
+	/**
+	 * Returns if the vehicle has been initialized with siren (addsiren parameter)
+	 *
+	 * @return If the vehicle has a siren
+	 */
+	boolean hasSiren();
 }

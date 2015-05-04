@@ -44,7 +44,7 @@ public interface SampObjectFactory
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	Vehicle createVehicle(int modelId, AngledLocation loc, int color1, int color2, int respawnDelay) throws CreationFailedException;
+	Vehicle createVehicle(int modelId, AngledLocation loc, int color1, int color2, int respawnDelay, boolean addsiren) throws CreationFailedException;
 
     /**
      * Create a Vehicle with params. If the Creation fails, it will throw a CreationFailedException.
@@ -63,7 +63,7 @@ public interface SampObjectFactory
      */
 	default Vehicle createVehicle(int modelId, float x, float y, float z, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
-		return createVehicle(modelId, new AngledLocation(x, y, z, interiorId, worldId, angle), color1, color2, respawnDelay);
+		return createVehicle(modelId, new AngledLocation(x, y, z, interiorId, worldId, angle), color1, color2, respawnDelay, false);
 	}
 
     /**
@@ -81,7 +81,7 @@ public interface SampObjectFactory
      */
 	default Vehicle createVehicle(int modelId, float x, float y, float z, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
-		return createVehicle(modelId, new AngledLocation(x, y, z, 0, 0, angle), color1, color2, respawnDelay);
+		return createVehicle(modelId, new AngledLocation(x, y, z, 0, 0, angle), color1, color2, respawnDelay, false);
 	}
 
     /**
@@ -97,7 +97,7 @@ public interface SampObjectFactory
      */
 	default Vehicle createVehicle(int modelId, Vector3D pos, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
-		return createVehicle(modelId, new AngledLocation(pos, 0, 0, angle), color1, color2, respawnDelay);
+		return createVehicle(modelId, new AngledLocation(pos, 0, 0, angle), color1, color2, respawnDelay, false);
 	}
 
     /**
@@ -115,7 +115,7 @@ public interface SampObjectFactory
      */
 	default Vehicle createVehicle(int modelId, Vector3D pos, int interiorId, int worldId, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
 	{
-		return createVehicle(modelId, new AngledLocation(pos, interiorId, worldId, angle), color1, color2, respawnDelay);
+		return createVehicle(modelId, new AngledLocation(pos, interiorId, worldId, angle), color1, color2, respawnDelay, false);
 	}
 
     /**
@@ -129,9 +129,9 @@ public interface SampObjectFactory
      * @param respawnDelay The time in seconds when the Vehicle gets respawned if there is no player in it.
      * @return The created Vehicle.
      */
-	default Vehicle createVehicle(int modelId, Location loc, float angle, int color1, int color2, int respawnDelay) throws CreationFailedException
+	default Vehicle createVehicle(int modelId, Location loc, float angle, int color1, int color2, int respawnDelay, boolean addsiren) throws CreationFailedException
 	{
-		return createVehicle(modelId, new AngledLocation(loc, angle), color1, color2, respawnDelay);
+		return createVehicle(modelId, new AngledLocation(loc, angle), color1, color2, respawnDelay, addsiren);
 	}
 
     /**
