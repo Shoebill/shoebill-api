@@ -1354,5 +1354,4 @@ public interface Player extends Proxyable<Player>
 	 * @return Targeted actor (with weapon, not with camera)
 	 */
 	Actor getTargetActor();
-
 }

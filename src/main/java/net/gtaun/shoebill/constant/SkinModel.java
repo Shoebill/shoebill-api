@@ -322,7 +322,20 @@ public enum SkinModel {
     JIZZY(296, "Jizzy B.", Gender.MALE),
     MADDOGG(297, "Madd Dogg", Gender.MALE),
     CAT(298, "Catalina", Gender.FEMALE),
-    CLAUDE(299, "Claude Speed", Gender.MALE);
+    CLAUDE(299, "Claude Speed", Gender.MALE),
+    LAPDNA(300, "Los Santos Police Officer (Without gun holster)", Gender.MALE),
+    SFPDNA(301, "San Fierro Police Officer (Without gun holster)", Gender.MALE),
+    LVPDNA(302, "Las Venturas Police Officer (Without gun holster)", Gender.MALE),
+    LAPDPC(303, "Los Santos Police Officer (Without uniform)", Gender.MALE),
+    LAPDPD(304, "Los Santos Police Officer (Without uniform)", Gender.MALE),
+    LVPDPC(305, "Las Venturas Police Officer (Without uniform)", Gender.MALE),
+    WFYCLPD(306, "Los Santos Police Officer", Gender.FEMALE),
+    VBFYCPD(307, "Los Santos Police Officer", Gender.FEMALE),
+    WFYCLEM(308, "San Fierro Paramedic (Emergency Medical Technician)", Gender.FEMALE),
+    WFYCLLV(309, "Las Venturas Police Officer", Gender.FEMALE),
+    CSHERNA(310, "Country Sheriff (Without hat)", Gender.MALE),
+    DSHERNA(311, "Desert Sheriff (Without hat)", Gender.MALE);
+
     
     private int id;
     private Gender gender;
@@ -355,6 +368,10 @@ public enum SkinModel {
             if (model.getId() == id)
                 return model;
         return null;
+    }
+
+    public static boolean isValidSkinId(int id) {
+        return getSkinById(id) != null;
     }
 
     public enum Gender {

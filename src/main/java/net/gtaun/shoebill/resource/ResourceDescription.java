@@ -16,6 +16,10 @@
 
 package net.gtaun.shoebill.resource;
 
+import net.gtaun.shoebill.util.config.Configuration;
+import net.gtaun.shoebill.util.config.FileConfiguration;
+import net.gtaun.shoebill.util.config.YamlConfiguration;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -24,10 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-
-import net.gtaun.shoebill.util.config.Configuration;
-import net.gtaun.shoebill.util.config.FileConfiguration;
-import net.gtaun.shoebill.util.config.YamlConfiguration;
 
 /**
  * 
