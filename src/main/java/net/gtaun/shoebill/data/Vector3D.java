@@ -93,6 +93,66 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable
 		float dx = pos.getX() - getX(), dy = pos.getY() - getY(), dz = pos.getZ() - getZ();
 		return (float) Math.sqrt(dx*dx + dy*dy + dz*dz);
 	}
+
+	public Vector3D add(float val)
+	{
+		super.add(val);
+		z += val;
+		return this;
+	}
+
+	public Vector3D add(Vector3D vec)
+	{
+		super.add(vec);
+		z += vec.z;
+		return this;
+	}
+
+	public Vector3D minus(float val)
+	{
+		super.add(val);
+		z -= val;
+		return this;
+	}
+	public Vector3D minus(Vector3D vec)
+	{
+		super.minus(vec);
+		z -= vec.z;
+		return this;
+	}
+
+	public Vector3D mul(float val)
+	{
+		super.add(val);
+		z *= val;
+		return this;
+	}
+	public Vector3D mul(Vector3D vec)
+	{
+		super.mul(vec);
+		z *= vec.z;
+		return this;
+	}
+
+	public Vector3D div(float val)
+	{
+		super.add(val);
+		z /= val;
+		return this;
+	}
+	public Vector3D div(Vector3D vec)
+	{
+		super.div(vec);
+		z /= vec.z;
+		return this;
+	}
+
+	public Vector3D blend(Vector3D vec, float factor)
+	{
+		float f = 1.0f-factor;
+		z = z * f + vec.z * factor;
+		return this;
+	}
 	
 	@Override
 	public int hashCode()

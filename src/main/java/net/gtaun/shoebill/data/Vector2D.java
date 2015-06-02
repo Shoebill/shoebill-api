@@ -85,7 +85,68 @@ public class Vector2D implements Cloneable, Serializable
 		setX(vector.getX());
 		setY(vector.getY());
 	}
-	
+
+	public Vector2D add(float val)
+	{
+		x += val;
+		y += val;
+		return this;
+	}
+
+	public Vector2D add(Vector2D vec)
+	{
+		x += vec.x;
+		y += vec.y;
+		return this;
+	}
+
+	public Vector2D minus(float val)
+	{
+		x -= val;
+		y -= val;
+		return this;
+	}
+	public Vector2D minus(Vector2D vec)
+	{
+		x -= vec.x;
+		y -= vec.y;
+		return this;
+	}
+
+	public Vector2D mul(float val)
+	{
+		x *= val;
+		y *= val;
+		return this;
+	}
+	public Vector2D mul(Vector2D vec)
+	{
+		x *= vec.x;
+		y *= vec.y;
+		return this;
+	}
+
+	public Vector2D div(float val)
+	{
+		x /= val;
+		y /= val;
+		return this;
+	}
+	public Vector2D div(Vector2D vec)
+	{
+		x /= vec.x;
+		y /= vec.y;
+		return this;
+	}
+
+	public Vector2D blend(Vector2D vec, float factor)
+	{
+		float f = 1.0f-factor;
+		x = x * f + vec.x * factor;
+		y = y * f + vec.y * factor;
+		return this;
+	}
+
 	@Override
 	public int hashCode()
 	{
