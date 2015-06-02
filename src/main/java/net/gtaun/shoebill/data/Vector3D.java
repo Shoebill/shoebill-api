@@ -149,6 +149,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable
 
 	public Vector3D blend(Vector3D vec, float factor)
 	{
+		super.blend(vec, factor);
 		float f = 1.0f-factor;
 		z = z * f + vec.z * factor;
 		return this;
