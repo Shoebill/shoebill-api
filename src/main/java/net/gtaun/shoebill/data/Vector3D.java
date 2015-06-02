@@ -110,7 +110,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable
 
 	public Vector3D minus(float val)
 	{
-		super.add(val);
+		super.minus(val);
 		z -= val;
 		return this;
 	}
@@ -123,7 +123,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable
 
 	public Vector3D mul(float val)
 	{
-		super.add(val);
+		super.mul(val);
 		z *= val;
 		return this;
 	}
@@ -136,7 +136,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable
 
 	public Vector3D div(float val)
 	{
-		super.add(val);
+		super.div(val);
 		z /= val;
 		return this;
 	}
