@@ -2,6 +2,7 @@ package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.AngledLocation;
+import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
 
 import java.util.Collection;
@@ -13,6 +14,12 @@ import java.util.Collection;
 public interface Actor extends Destroyable {
 
     int INVALID_ACTOR = 65535;
+
+    static Actor create(int modelid, AngledLocation loc) {
+        Actor actor = SampObjectManager.get().createActor(modelid, loc, loc.getAngle());
+        actor.setVirtualWorld(loc.worldId);
+        return actor;
+    }
 
     static Actor create(int modelid, Vector3D position, float angle) {
         return SampObjectManager.get().createActor(modelid, position, angle);
@@ -72,11 +79,67 @@ public interface Actor extends Destroyable {
     AngledLocation getLocation();
 
     /**
+     * Gets the virtual world of the actor
+     *
+     * @return The actor's virtual world
+     */
+    int getVirtualWorld();
+
+    /**
+     * Gets the facing angle of the actor
+     *
+     * @return The actor's facing angle
+     */
+    float getAngle();
+
+    /**
      * Get the current health of the actor
      *
      * @return The actor's health
      */
     float getHealth();
+
+    /**
+     * Sets the actor's location
+     *
+     * @param loc Location
+     */
+    void setLocation(AngledLocation loc);
+
+    /**
+     * Sets the actor's location
+     *
+     * @param loc Location
+     */
+    void setLocation(Location loc);
+
+    /**
+     * Sets the actor's location
+     *
+     * @param pos Position
+     */
+    void setLocation(Vector3D pos);
+
+    /**
+     * Sets the actor's facing angle
+     *
+     * @param angle Facing angle
+     */
+    void setAngle(float angle);
+
+    /**
+     * Sets the actor's virtual world
+     *
+     * @param world WorldID
+     */
+    void setVirtualWorld(int world);
+
+    /**
+     * Sets the actor's health
+     *
+     * @param health Health
+     */
+    void setHealth(float health);
 
     /**
      * Sets the actor's invulnerable state
