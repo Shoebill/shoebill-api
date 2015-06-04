@@ -17,6 +17,8 @@
 package net.gtaun.shoebill.resource;
 
 import java.io.File;
+import java.util.Deque;
+import java.util.LinkedList;
 
 import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.event.resource.ResourceDisableEvent;
@@ -43,6 +45,7 @@ public abstract class Resource
 	private EventManager rootEventManager;
 	private EventManagerNode eventManager;
 	private File dataDir;
+	private Deque<Runnable> onDisableCalls;
 	
 	
 	Resource()
@@ -63,6 +66,7 @@ public abstract class Resource
 		this.shoebill = shoebill;
 		this.rootEventManager = rootEventManager;
 		this.dataDir = dataDir;
+		this.onDisableCalls = new LinkedList<>();
 	}
 
     /**
@@ -105,6 +109,7 @@ public abstract class Resource
 		try
 		{
 			if (isEnabled) onDisable();
+			while (!onDisableCalls.isEmpty()) onDisableCalls.pollLast().run();
 		}
 		catch (Throwable e)
 		{
@@ -119,6 +124,11 @@ public abstract class Resource
 		
 		isEnabled = false;
 		if (throwable != null) throw throwable;
+	}
+
+	public void onDisable(Runnable runnable)
+	{
+		onDisableCalls.offer(runnable);
 	}
 
     /**
