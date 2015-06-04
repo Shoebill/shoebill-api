@@ -16,6 +16,8 @@
 
 package net.gtaun.shoebill.resource;
 
+import org.slf4j.Logger;
+
 /**
  * 
  * 
@@ -41,6 +43,15 @@ public abstract class Gamemode extends Resource
 	public static <T extends Gamemode> T getGamemode(Class<T> gamemodeClass)
 	{
 		return ResourceManager.get().getGamemode(gamemodeClass);
+	}
+
+	/**
+	 * Gets the Gamemode's logger.
+	 * @return Logger
+	 */
+	public static Logger logger()
+	{
+		return get().getLogger();
 	}
 	
 	protected Gamemode()
