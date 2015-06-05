@@ -57,12 +57,12 @@ public interface DialogId extends Destroyable
 
 	public static DialogId create(OnResponseHandler onResponse) throws CreationFailedException
 	{
-		return SampObjectManager.get().createDialogId();
+		return SampObjectManager.get().createDialogId(onResponse);
 	}
 
 	public static DialogId create(OnResponseHandler onResponse, OnShowHandler onShow, OnCloseHandler onClose) throws CreationFailedException
 	{
-		return SampObjectManager.get().createDialogId();
+		return SampObjectManager.get().createDialogId(onResponse, onShow, onClose);
 	}
 
 
