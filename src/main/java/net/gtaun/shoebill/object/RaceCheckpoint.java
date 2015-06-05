@@ -17,13 +17,13 @@
 
 package net.gtaun.shoebill.object;
 
+import net.gtaun.shoebill.constant.RaceCheckpointType;
+import net.gtaun.shoebill.data.Radius;
+
 import java.util.Collection;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
-
-import net.gtaun.shoebill.constant.RaceCheckpointType;
-import net.gtaun.shoebill.data.Radius;
 
 /**
  *

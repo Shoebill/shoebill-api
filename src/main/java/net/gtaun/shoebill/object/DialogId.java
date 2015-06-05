@@ -19,7 +19,6 @@ package net.gtaun.shoebill.object;
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.DialogStyle;
 import net.gtaun.shoebill.event.dialog.DialogCloseEvent;
-import net.gtaun.shoebill.event.dialog.DialogCloseEvent.DialogCloseType;
 import net.gtaun.shoebill.event.dialog.DialogResponseEvent;
 import net.gtaun.shoebill.event.dialog.DialogShowEvent;
 import net.gtaun.shoebill.exception.CreationFailedException;

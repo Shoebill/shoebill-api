@@ -36,9 +36,9 @@
 
 	<repositories>
 		<repository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<id>gtaun-repo-snapshots</id>
+			<name>GTAUN Repo Snapshots</name>
+			<url>http://repo.gtaun.net/content/repositories/snapshots</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>

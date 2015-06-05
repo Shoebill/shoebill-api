@@ -23,9 +23,6 @@ import net.gtaun.shoebill.event.dialog.DialogShowEvent;
 import net.gtaun.shoebill.event.player.PlayerPickupEvent;
 import net.gtaun.shoebill.exception.CreationFailedException;
 import net.gtaun.shoebill.object.*;
-import net.gtaun.shoebill.object.DialogId.OnCloseHandler;
-import net.gtaun.shoebill.object.DialogId.OnResponseHandler;
-import net.gtaun.shoebill.object.DialogId.OnShowHandler;
 import net.gtaun.shoebill.object.Timer.TimerCallback;
 import net.gtaun.util.event.EventHandler;
 

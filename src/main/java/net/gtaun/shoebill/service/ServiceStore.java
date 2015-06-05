@@ -16,9 +16,9 @@
 
 package net.gtaun.shoebill.service;
 
-import java.util.Collection;
-
 import net.gtaun.shoebill.Shoebill;
+
+import java.util.Collection;
 
 /**
  * 

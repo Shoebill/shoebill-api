@@ -16,13 +16,13 @@
 
 package net.gtaun.shoebill.object;
 
-import java.util.Collection;
-
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Color;
 import net.gtaun.shoebill.data.Location;
 import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.exception.CreationFailedException;
+
+import java.util.Collection;
 
 /**
  *

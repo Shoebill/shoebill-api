@@ -16,11 +16,11 @@
 
 package net.gtaun.shoebill.object;
 
-import java.util.Collection;
-
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.data.Vector2D;
 import net.gtaun.shoebill.exception.CreationFailedException;
+
+import java.util.Collection;
 
 /**
  * 
