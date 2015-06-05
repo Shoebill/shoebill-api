@@ -143,14 +143,6 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>new.gtaun</groupId>
-			<artifactId>shoebill-common</artifactId>
-			<version>1.2</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
 	</dependencies>
 
 	<build>
