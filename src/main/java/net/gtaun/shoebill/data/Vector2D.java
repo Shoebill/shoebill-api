@@ -147,6 +147,11 @@ public class Vector2D implements Cloneable, Serializable
 		return this;
 	}
 
+	public String toLegibleString()
+	{
+		return String.format("%f, %f", x, y);
+	}
+
 	@Override
 	public int hashCode()
 	{

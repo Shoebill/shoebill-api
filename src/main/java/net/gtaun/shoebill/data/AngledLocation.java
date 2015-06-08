@@ -134,6 +134,12 @@ public class AngledLocation extends Location implements Cloneable, Serializable
 		super.set(loc);
 		setAngle(loc.getAngle());
 	}
+
+	@Override
+	public String toLegibleString()
+	{
+		return String.format("%f, %f, %f, %i, %i, %f", x, y, z, interiorId, worldId, angle);
+	}
 	
 	@Override
 	public int hashCode()

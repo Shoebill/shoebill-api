@@ -154,7 +154,13 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable
 		z = z * f + vec.z * factor;
 		return this;
 	}
-	
+
+	@Override
+	public String toLegibleString()
+	{
+		return String.format("%f, %f, %f", x, y, z);
+	}
+
 	@Override
 	public int hashCode()
 	{
