@@ -138,7 +138,7 @@ public class AngledLocation extends Location implements Cloneable, Serializable
 	@Override
 	public String toLegibleString()
 	{
-		return String.format("%f, %f, %f, %i, %i, %f", x, y, z, interiorId, worldId, angle);
+		return String.format("%f, %f, %f, %d, %d, %f", x, y, z, interiorId, worldId, angle);
 	}
 	
 	@Override

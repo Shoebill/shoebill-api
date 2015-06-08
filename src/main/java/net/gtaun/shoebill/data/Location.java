@@ -146,7 +146,7 @@ public class Location extends Vector3D implements Cloneable, Serializable
 	@Override
 	public String toLegibleString()
 	{
-		return String.format("%f, %f, %f, %i, %i", x, y, z, interiorId, worldId);
+		return String.format("%f, %f, %f, %d, %d", x, y, z, interiorId, worldId);
 	}
 
 	@Override
