@@ -16,6 +16,8 @@
 
 package net.gtaun.shoebill.amx;
 
+import java.util.function.Function;
+
 /**
  * 
  * 
@@ -25,5 +27,11 @@ public interface AmxInstance
 {
 	AmxCallable getPublic(String name);
 	AmxCallable getNative(String name);
+
+	boolean registerFunction(String name, Function<Object[], Integer> callback, Class... parameterTypes);
+    boolean unregisterFunction(String name);
+    boolean hasRegisteredFunction(String name);
+    int callRegisteredFunction(String name, Object... parameters);
+
 	int getHandle();
 }
