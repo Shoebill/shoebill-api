@@ -325,8 +325,8 @@ public final class VehicleModel
 	{
 		return Server.get().getVehicleModelInfo(modelId, infotype);
 	}
-	
-	public static boolean isVaildId(int modelId)
+
+	public static boolean isValid(int modelId)
 	{
 		return VehicleModelData.get(modelId) != null;
 	}
