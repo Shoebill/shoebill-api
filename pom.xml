@@ -1,16 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
-	</parent>
 
 	<groupId>net.gtaun</groupId>
 	<artifactId>shoebill-api</artifactId>
-	<version>1.2-SNAPSHOT</version>
+	<version>1.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Shoebill API</name>
@@ -36,16 +30,9 @@
 
 	<repositories>
 		<repository>
-			<id>gtaun-repo-snapshots</id>
-			<name>GTAUN Repo Snapshots</name>
-			<url>http://repo.gtaun.net/content/repositories/snapshots</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
+			<id>gtaun-public-repo</id>
+			<name>GTAUN Public Repository</name>
+			<url>http://repo.gtaun.net/content/groups/public</url>
 		</repository>
 	</repositories>
 
@@ -83,15 +70,15 @@
 			<timezone>+8</timezone>
 		</developer>
 
-        <developer>
-            <name>123marvin123</name>
-            <id>123marvin123</id>
-            <url>https://github.com/123marvin123</url>
-            <email>catboy560@gmail.com</email>
-            <organization>Shoebill</organization>
-            <organizationUrl>https://github.com/Shoebill</organizationUrl>
-            <timezone>+1</timezone>
-        </developer>
+		<developer>
+			<name>123marvin123</name>
+			<id>123marvin123</id>
+			<url>https://github.com/123marvin123</url>
+			<email>catboy560@gmail.com</email>
+			<organization>Shoebill</organization>
+			<organizationUrl>https://github.com/Shoebill</organizationUrl>
+			<timezone>+1</timezone>
+		</developer>
 	</developers>
 
 	<ciManagement>
@@ -156,7 +143,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-                    <compilerArgument>-parameters</compilerArgument>
+					<compilerArgument>-parameters</compilerArgument>
 				</configuration>
 			</plugin>
 
