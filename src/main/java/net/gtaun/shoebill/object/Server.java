@@ -86,10 +86,16 @@ public interface Server extends Proxyable<Server>
 	String hashPassword(String password, String salt);
 
 	void setIntVar(String varname, int value);
+
 	void setFloatVar(String varname, float value);
+
 	void setStringVar(String varname, String value);
+
 	int getIntVar(String varname);
+
 	float getFloatVar(String varname);
+
 	String getStringVar(String varname);
+
 	void deleteVar(String varname);
 }
