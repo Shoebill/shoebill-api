@@ -4,7 +4,7 @@
 
 	<groupId>net.gtaun</groupId>
 	<artifactId>shoebill-api</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Shoebill API</name>

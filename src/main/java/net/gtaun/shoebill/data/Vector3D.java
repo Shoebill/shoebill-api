@@ -17,12 +17,12 @@
 
 package net.gtaun.shoebill.data;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
-import java.io.Serializable;
 
 /**
  * 
@@ -154,13 +154,7 @@ public class Vector3D extends Vector2D implements Cloneable, Serializable
 		z = z * f + vec.z * factor;
 		return this;
 	}
-
-	@Override
-	public String toLegibleString()
-	{
-		return String.format("%f, %f, %f", x, y, z);
-	}
-
+	
 	@Override
 	public int hashCode()
 	{

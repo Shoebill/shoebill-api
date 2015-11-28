@@ -18,11 +18,8 @@ package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.SampObjectManager;
 import net.gtaun.shoebill.constant.DialogStyle;
-import net.gtaun.shoebill.event.dialog.DialogCloseEvent;
-import net.gtaun.shoebill.event.dialog.DialogResponseEvent;
-import net.gtaun.shoebill.event.dialog.DialogShowEvent;
+import net.gtaun.shoebill.event.dialog.DialogCloseEvent.DialogCloseType;
 import net.gtaun.shoebill.exception.CreationFailedException;
-import net.gtaun.util.event.EventHandler;
 
 /**
  *
@@ -31,6 +28,24 @@ import net.gtaun.util.event.EventHandler;
  */
 public interface DialogId extends Destroyable
 {
+	@FunctionalInterface
+	public interface OnShowHandler
+	{
+		void onShow(DialogId dialogId, Player player);
+	}
+
+	@FunctionalInterface
+	public interface OnCloseHandler
+	{
+		void onClose(DialogId dialogId, Player player, DialogCloseType type);
+	}
+
+	@FunctionalInterface
+	public interface OnResponseHandler
+	{
+		boolean onResponse(DialogId dialogId, Player player, int response, int listitem, String inputText);
+	}
+
     /**
      * Create a DialogId. If the Creation fails, it will throw a CreationFailedException.
      * @return The created DialogId.
@@ -40,12 +55,12 @@ public interface DialogId extends Destroyable
 		return SampObjectManager.get().createDialogId();
 	}
 
-	public static DialogId create(EventHandler<DialogResponseEvent> onResponse) throws CreationFailedException
+	public static DialogId create(OnResponseHandler onResponse) throws CreationFailedException
 	{
 		return SampObjectManager.get().createDialogId(onResponse);
 	}
 
-	public static DialogId create(EventHandler<DialogResponseEvent> onResponse, EventHandler<DialogShowEvent> onShow, EventHandler<DialogCloseEvent> onClose) throws CreationFailedException
+	public static DialogId create(OnResponseHandler onResponse, OnShowHandler onShow, OnCloseHandler onClose) throws CreationFailedException
 	{
 		return SampObjectManager.get().createDialogId(onResponse, onShow, onClose);
 	}

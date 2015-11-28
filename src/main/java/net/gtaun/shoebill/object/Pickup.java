@@ -100,11 +100,11 @@ public interface Pickup extends Destroyable, Proxyable<Pickup>
      * @param modelId Modelid of the Pickup.
      * @param type    Type of the Pickup.
      * @param loc     Location where the Pickup should be.
-     * @param handler   The called event.
+     * @param event   The called event.
      * @return The created Pickup.
      */
-    public static Pickup create(int modelId, int type, Location loc, EventHandler<PlayerPickupEvent> handler) throws CreationFailedException {
-        return SampObjectManager.get().createPickup(modelId, type, loc, handler);
+    public static Pickup create(int modelId, int type, Location loc, EventHandler<PlayerPickupEvent> event) throws CreationFailedException {
+        return SampObjectManager.get().createPickup(modelId, type, loc, event);
     }
 
     /**
@@ -116,11 +116,11 @@ public interface Pickup extends Destroyable, Proxyable<Pickup>
      * @param y       Y-Pos where the Pickup should be.
      * @param z       Z-Pos where the Pickup should be.
      * @param worldId Worldid where the Pickup should be.
-     * @param handler   The called event
+     * @param event   The called event
      * @return The created Pickup.
      */
-    public static Pickup create(int modelId, int type, float x, float y, float z, int worldId, EventHandler<PlayerPickupEvent> handler) throws CreationFailedException {
-        return SampObjectManager.get().createPickup(modelId, type, x, y, z, worldId, handler);
+    public static Pickup create(int modelId, int type, float x, float y, float z, int worldId, EventHandler<PlayerPickupEvent> event) throws CreationFailedException {
+        return SampObjectManager.get().createPickup(modelId, type, x, y, z, worldId, event);
     }
 
     /**
@@ -131,11 +131,11 @@ public interface Pickup extends Destroyable, Proxyable<Pickup>
      * @param x       X-Pos where the Pickup should be.
      * @param y       Y-Pos where the Pickup should be.
      * @param z       Z-Pos where the Pickup should be.
-     * @param handler   The called event.
+     * @param event   The called event.
      * @return The created Pickup.
      */
-    public static Pickup create(int modelId, int type, float x, float y, float z, EventHandler<PlayerPickupEvent> handler) throws CreationFailedException {
-        return SampObjectManager.get().createPickup(modelId, type, x, y, z, handler);
+    public static Pickup create(int modelId, int type, float x, float y, float z, EventHandler<PlayerPickupEvent> event) throws CreationFailedException {
+        return SampObjectManager.get().createPickup(modelId, type, x, y, z, event);
     }
 
 

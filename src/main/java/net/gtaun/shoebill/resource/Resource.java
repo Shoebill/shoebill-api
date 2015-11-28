@@ -16,6 +16,10 @@
 
 package net.gtaun.shoebill.resource;
 
+import java.io.File;
+import java.util.Deque;
+import java.util.LinkedList;
+
 import net.gtaun.shoebill.Shoebill;
 import net.gtaun.shoebill.event.resource.ResourceDisableEvent;
 import net.gtaun.shoebill.event.resource.ResourceEnableEvent;
@@ -23,12 +27,9 @@ import net.gtaun.shoebill.service.Service;
 import net.gtaun.shoebill.service.ServiceManager;
 import net.gtaun.util.event.EventManager;
 import net.gtaun.util.event.EventManagerNode;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.util.Deque;
-import java.util.LinkedList;
 
 /**
  * 

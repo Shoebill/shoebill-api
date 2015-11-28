@@ -178,14 +178,12 @@ public interface Vehicle extends Destroyable, Proxyable<Vehicle>
 	void setAngle(float angle);
 	
 	Quaternion getRotationQuat();
-
-	int getInterior();
-
-	void setInterior(int interior);
-
-	int getWorld();
-
-	void setWorld(int worldId);
+	
+	int getInteriorId();
+	void setInteriorId(int interiorId);
+	
+	int getWorldId();
+	void setWorldId(int worldId);
 	
 	float getHealth();
 	void setHealth(float health);

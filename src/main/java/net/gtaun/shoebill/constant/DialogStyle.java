@@ -29,32 +29,32 @@ public enum DialogStyle
 	/**
 	 * Message box dialog
 	 */
-	MSGBOX(0),
+    MSGBOX(0),
 
-	/**
+    /**
 	 * Input dialog
 	 */
-	INPUT(1),
+    INPUT(1),
 
-	/**
+    /**
 	 * List dialog
 	 */
-	LIST(2),
+    LIST(2),
 
-	/**
+    /**
 	 * Password input dialog
 	 */
-	PASSWORD(3),
+    PASSWORD(3),
 
-	/**
-	 * Tablist-List dialog
-	 */
-	TABLIST(4),
+    /**
+     * Tablist-List dialog
+     */
+    TABLIST(4),
 
-	/**
-	 * Tablist-List dialog with headers
-	 */
-	TABLIST_HEADERS(5);
+    /**
+     * Tablist-List dialog with headers
+     */
+    TABLIST_HEADERS(5);
 
 
 	

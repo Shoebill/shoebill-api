@@ -16,12 +16,12 @@
 
 package net.gtaun.shoebill.data;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
-import java.io.Serializable;
 
 /**
  * 
@@ -133,12 +133,6 @@ public class AngledLocation extends Location implements Cloneable, Serializable
 	{
 		super.set(loc);
 		setAngle(loc.getAngle());
-	}
-
-	@Override
-	public String toLegibleString()
-	{
-		return String.format("%f, %f, %f, %d, %d, %f", x, y, z, interiorId, worldId, angle);
 	}
 	
 	@Override

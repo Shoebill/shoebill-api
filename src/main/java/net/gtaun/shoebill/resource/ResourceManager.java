@@ -17,10 +17,10 @@
 
 package net.gtaun.shoebill.resource;
 
-import net.gtaun.shoebill.Shoebill;
-
 import java.io.File;
 import java.util.Collection;
+
+import net.gtaun.shoebill.Shoebill;
 
 /**
  * 
