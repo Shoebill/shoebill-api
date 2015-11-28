@@ -25,13 +25,20 @@ import java.util.function.Function;
  */
 public interface AmxInstance
 {
-	AmxCallable getPublic(String name);
-	AmxCallable getNative(String name);
+    static AmxInstance getDefault() {
+        AmxInstanceManager instanceManager = AmxInstanceManager.get();
+        if(instanceManager != null)
+            return instanceManager.getAmxInstances().stream().findFirst().orElse(null);
+        else
+            return null;
+    }
 
-	boolean registerFunction(String name, Function<Object[], Integer> callback, Class... parameterTypes);
+    boolean registerFunction(String name, Function<Object[], Integer> callback, Class... parameterTypes);
     boolean unregisterFunction(String name);
     boolean hasRegisteredFunction(String name);
     int callRegisteredFunction(String name, Object... parameters);
+    AmxCallable getPublic(String name);
+    AmxCallable getNative(String name);
 
 	int getHandle();
 }

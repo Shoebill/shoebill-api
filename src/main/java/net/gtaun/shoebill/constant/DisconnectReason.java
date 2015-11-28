@@ -11,11 +11,9 @@ public enum DisconnectReason
 	{
 		return values() [value];
 	}
-	
-	
+
 	private final int value;
-	
-	
+
 	private DisconnectReason(int value)
 	{
 		this.value = value;

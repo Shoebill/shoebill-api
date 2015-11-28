@@ -17,12 +17,12 @@
 package net.gtaun.shoebill;
 
 import net.gtaun.shoebill.data.*;
+import net.gtaun.shoebill.event.dialog.DialogCloseEvent;
+import net.gtaun.shoebill.event.dialog.DialogResponseEvent;
+import net.gtaun.shoebill.event.dialog.DialogShowEvent;
 import net.gtaun.shoebill.event.player.PlayerPickupEvent;
 import net.gtaun.shoebill.exception.CreationFailedException;
 import net.gtaun.shoebill.object.*;
-import net.gtaun.shoebill.object.DialogId.OnCloseHandler;
-import net.gtaun.shoebill.object.DialogId.OnResponseHandler;
-import net.gtaun.shoebill.object.DialogId.OnShowHandler;
 import net.gtaun.shoebill.object.Timer.TimerCallback;
 import net.gtaun.util.event.EventHandler;
 
@@ -665,7 +665,7 @@ public interface SampObjectFactory
      * Create a DialogId. If the Creation fails, it will throw a CreationFailedException.
      * @return The created DialogId.
      */
-	default DialogId createDialogId(OnResponseHandler onResponse) throws CreationFailedException
+	default DialogId createDialogId(EventHandler<DialogResponseEvent> onResponse) throws CreationFailedException
 	{
 		return createDialogId(onResponse, null, null);
 	}
@@ -674,7 +674,7 @@ public interface SampObjectFactory
      * Create a DialogId. If the Creation fails, it will throw a CreationFailedException.
      * @return The created DialogId.
      */
-	DialogId createDialogId(OnResponseHandler onResponse, OnShowHandler onShow, OnCloseHandler onClose) throws CreationFailedException;
+	DialogId createDialogId(EventHandler<DialogResponseEvent> onResponse, EventHandler<DialogShowEvent> onShow, EventHandler<DialogCloseEvent> onClose) throws CreationFailedException;
 
     /**
      * Create a Timer with params.

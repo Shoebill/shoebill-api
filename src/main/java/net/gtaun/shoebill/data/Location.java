@@ -16,12 +16,12 @@
 
 package net.gtaun.shoebill.data;
 
-import java.io.Serializable;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
+import java.io.Serializable;
 
 /**
  * 
@@ -142,7 +142,13 @@ public class Location extends Vector3D implements Cloneable, Serializable
 		if (loc.interiorId != interiorId || loc.worldId != worldId) return Float.POSITIVE_INFINITY;
 		return super.distance(loc);
 	}
-	
+
+	@Override
+	public String toLegibleString()
+	{
+		return String.format("%f, %f, %f, %d, %d", x, y, z, interiorId, worldId);
+	}
+
 	@Override
 	public int hashCode()
 	{

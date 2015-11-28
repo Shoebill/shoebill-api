@@ -16,6 +16,7 @@
 
 package net.gtaun.shoebill.amx;
 
+import java.lang.ref.Reference;
 import java.util.Set;
 import java.util.function.Consumer;
 
@@ -26,11 +27,21 @@ import java.util.function.Consumer;
  */
 public interface AmxInstanceManager
 {
+    public class Instance
+    {
+        static Reference<? extends AmxInstanceManager> reference = null;
+    }
+
+    public static AmxInstanceManager get()
+    {
+        if (Instance.reference == null) return null;
+        return Instance.reference.get();
+    }
+
 	Set<AmxInstance> getAmxInstances();
 
     Set<AmxHook> getAmxHooks();
 
     boolean hookCallback(String callbackName, Consumer<AmxCallEvent> hook, String types); //types: "iss" <-- Integer, String, String
-
     boolean unhookCallback(String callbackName);
 }
