@@ -47,10 +47,6 @@ public interface Server extends Proxyable<Server>
 	void sendRconCommand(String command);
 	void connectNPC(String name, String script);
 
-	String getServerVarAsString(String varname);
-	int getServerVarAsInt(String varname);
-	boolean getServerVarAsBool(String varname);
-
 	// Global player methods
 	void sendMessageToAll(Color color, String message);
 	void sendMessageToAll(Color color, String format, Object... args);
@@ -85,17 +81,9 @@ public interface Server extends Proxyable<Server>
 
 	String hashPassword(String password, String salt);
 
-	void setIntVar(String varname, int value);
-
-	void setFloatVar(String varname, float value);
-
-	void setStringVar(String varname, String value);
-
 	int getIntVar(String varname);
 
-	float getFloatVar(String varname);
+	boolean getBoolVar(String varname);
 
 	String getStringVar(String varname);
-
-	void deleteVar(String varname);
 }
