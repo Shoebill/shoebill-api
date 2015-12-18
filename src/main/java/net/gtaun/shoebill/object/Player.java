@@ -248,7 +248,7 @@ public interface Player extends Proxyable<Player>
      * Gets the Updatecount of the Player.
      * @return The Updatecount
      */
-	int getUpdateCount();
+	long getUpdateCount();
 
     /**
      * Gets the Health of the Player
