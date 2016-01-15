@@ -39,6 +39,15 @@ public interface AmxInstance
     boolean unregisterFunction(String name);
     boolean hasRegisteredFunction(String name);
     int callRegisteredFunction(String name, Object... parameters);
+
+    default AmxCallable getPublic(String name) {
+        return getPublic(name, ReturnType.INTEGER);
+    }
+
+    default AmxCallable getNative(String name) {
+        return getNative(name, ReturnType.INTEGER);
+    }
+
     AmxCallable getPublic(String name, ReturnType returnType);
     AmxCallable getNative(String name, ReturnType returnType);
 
