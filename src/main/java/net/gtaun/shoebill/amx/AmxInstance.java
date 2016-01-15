@@ -16,6 +16,8 @@
 
 package net.gtaun.shoebill.amx;
 
+import net.gtaun.shoebill.amx.types.ReturnType;
+
 import java.util.function.Function;
 
 /**
@@ -37,8 +39,8 @@ public interface AmxInstance
     boolean unregisterFunction(String name);
     boolean hasRegisteredFunction(String name);
     int callRegisteredFunction(String name, Object... parameters);
-    AmxCallable getPublic(String name);
-    AmxCallable getNative(String name);
+    AmxCallable getPublic(String name, ReturnType returnType);
+    AmxCallable getNative(String name, ReturnType returnType);
 
 	int getHandle();
 }

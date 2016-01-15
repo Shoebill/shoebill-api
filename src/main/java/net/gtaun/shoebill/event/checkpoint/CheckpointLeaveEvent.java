@@ -20,9 +20,12 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerLeaveCheckpoint of Pawn.
  * 
  * @author MK124
+ * @author Marvin Haschker
+ * @see net.gtaun.shoebill.event.checkpoint.CheckpointEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerLeaveCheckpoint">OnPlayerLeaveChechkpoint</a>
  */
 public class CheckpointLeaveEvent extends CheckpointEvent implements Interruptable
 {
@@ -30,13 +33,20 @@ public class CheckpointLeaveEvent extends CheckpointEvent implements Interruptab
 	{
 		super(player, player.getCheckpoint());
 	}
-	
+
+	/**
+	 * Interrupts further execution of this event in Shoebill's responder chain.
+	 */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-	
+
+	/**
+	 * This method is an alias for the interrupt() method.
+     * @see CheckpointLeaveEvent#interrupt()
+	 */
 	public void setProcessed()
 	{
 		interrupt();

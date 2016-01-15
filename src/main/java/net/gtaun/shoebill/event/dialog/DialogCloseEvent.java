@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011-2014 MK124
+ * Copyright (C) 2011-2015 MK124
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import net.gtaun.shoebill.object.Player;
  * 
  * 
  * @author MK124
+ * @author Marvin Haschker
  */
 public class DialogCloseEvent extends DialogEvent
 {
@@ -42,18 +43,28 @@ public class DialogCloseEvent extends DialogEvent
 		super(dialog, player);
 		this.type = type;
 	}
-	
+
+    /**
+     * @return If user pressed Ok, Cancel or the Dialog was overwritten.
+     */
 	public DialogCloseType getType()
 	{
 		return type;
 	}
-	
+
+    /**
+     * This method interrupts the execution of this event in Shoebill's responder chain.
+     */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-	
+
+    /**
+     * This method is an alias for the interrupt() method.
+     * @see DialogCloseEvent#interrupt()
+     */
 	public void setProcessed()
 	{
 		interrupt();

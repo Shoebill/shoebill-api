@@ -23,6 +23,9 @@ import net.gtaun.util.event.Interruptable;
  * 
  * 
  * @author MK124
+ * @author Marvin Haschker
+ * @see net.gtaun.shoebill.event.checkpoint.RaceCheckpointEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerEnterRaceCheckpoint">OnPlayerEnterRaceCheckpoint</a>
  */
 public class RaceCheckpointEnterEvent extends RaceCheckpointEvent implements Interruptable
 {
@@ -36,7 +39,11 @@ public class RaceCheckpointEnterEvent extends RaceCheckpointEvent implements Int
 	{
 		super.interrupt();
 	}
-	
+
+    /**
+     * This method is an alias for the interrupt() method.
+     * @see RaceCheckpointEnterEvent#interrupt()
+     */
 	public void setProcessed()
 	{
 		interrupt();

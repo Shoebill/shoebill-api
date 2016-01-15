@@ -4,8 +4,11 @@ import net.gtaun.shoebill.object.Actor;
 import net.gtaun.shoebill.object.Player;
 
 /**
- * Created by marvin on 01.05.15 in project shoebill-api.
- * Copyright (c) 2015 Marvin Haschker. All rights reserved.
+ * This event represents the OnActorStreamOut event from Pawn.
+ *
+ * @author Marvin Haschker
+ * @see net.gtaun.shoebill.event.actor.ActorEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnActorStreamOut">OnActorStreamOut</a>
  */
 public class ActorStreamOutEvent extends ActorEvent {
 
@@ -16,6 +19,11 @@ public class ActorStreamOutEvent extends ActorEvent {
         this.player = player;
     }
 
+    /**
+     * Returns the player for who the Actor was streamed out.
+     *
+     * @return Player for who the Actor was streamed out
+     */
     public Player getPlayer() {
         return player;
     }

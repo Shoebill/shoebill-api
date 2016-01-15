@@ -21,9 +21,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Event;
 
 /**
- * 
+ * This abstract event is the base class for every Checkpoint event
  * 
  * @author MK124
+ * @author Marvin Haschker
+ * @see net.gtaun.util.event.Event
  */
 public abstract class CheckpointEvent extends Event
 {
@@ -36,12 +38,18 @@ public abstract class CheckpointEvent extends Event
 		this.player = player;
 		this.checkpoint = checkpoint;
 	}
-	
+
+	/**
+	 * @return The associated player for this checkpoint.
+     */
 	public Player getPlayer()
 	{
 		return player;
 	}
-	
+
+	/**
+	 * @return The related checkpoint for this event.
+     */
 	public Checkpoint getCheckpoint()
 	{
 		return checkpoint;

@@ -4,8 +4,10 @@ import net.gtaun.shoebill.object.Actor;
 import net.gtaun.util.event.Event;
 
 /**
- * Created by marvin on 01.05.15 in project shoebill-api.
- * Copyright (c) 2015 Marvin Haschker. All rights reserved.
+ * Base class for all ActorEvents, such as {@link net.gtaun.shoebill.event.actor.ActorStreamInEvent}
+ *
+ * @author Marvin Haschker
+ * @see net.gtaun.util.event.Event
  */
 public abstract class ActorEvent extends Event {
 

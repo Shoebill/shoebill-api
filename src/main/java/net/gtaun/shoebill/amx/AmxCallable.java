@@ -16,6 +16,8 @@
 
 package net.gtaun.shoebill.amx;
 
+import net.gtaun.shoebill.amx.types.ReturnType;
+
 /**
  * 
  * 
@@ -23,7 +25,8 @@ package net.gtaun.shoebill.amx;
  */
 public interface AmxCallable
 {
-	public final int INVALID_CALLABLE = 2147483647;
+	public static final int INVALID_CALLABLE = 2147483647;
 	String getName();
+	ReturnType getReturnType();
 	Object call(Object... args);
 }

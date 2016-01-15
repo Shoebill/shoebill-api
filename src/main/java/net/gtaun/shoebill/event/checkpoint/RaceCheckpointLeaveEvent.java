@@ -30,13 +30,20 @@ public class RaceCheckpointLeaveEvent extends RaceCheckpointEvent implements Int
 	{
 		super(player, player.getRaceCheckpoint());
 	}
-	
+
+    /**
+     * Interrupts further execution of this event in Shoebill's responder chain.
+     */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-	
+
+	/**
+	 * This method is an alias for the interrupt() method.
+     * @see RaceCheckpointLeaveEvent#interrupt()
+	 */
 	public void setProcessed()
 	{
 		interrupt();

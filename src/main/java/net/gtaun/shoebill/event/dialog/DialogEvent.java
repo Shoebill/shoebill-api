@@ -21,9 +21,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Event;
 
 /**
- * 
+ * This class is the base class of every DialogEvent.
  * 
  * @author MK124
+ * @author Marvin Haschker
+ * @see net.gtaun.util.event.Event
  */
 public abstract class DialogEvent extends Event
 {

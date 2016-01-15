@@ -21,27 +21,33 @@ import net.gtaun.shoebill.object.RaceCheckpoint;
 import net.gtaun.util.event.Event;
 
 /**
- * 
+ * This abstract class is the base class for every RaceCheckpointEvent.
  * 
  * @author MK124
+ * @author Marvin Haschker
  */
 public abstract class RaceCheckpointEvent extends Event
 {
 	private Player player;
 	private RaceCheckpoint checkpoint;
-	
-	
+
 	protected RaceCheckpointEvent(Player player, RaceCheckpoint checkpoint)
 	{
 		this.player = player;
 		this.checkpoint = checkpoint;
 	}
-	
+
+    /**
+     * @return The associated player for this checkpoint
+     */
 	public Player getPlayer()
 	{
 		return player;
 	}
-	
+
+    /**
+     * @return The associated Racecheckpoint for this event.
+     */
 	public RaceCheckpoint getCheckpoint()
 	{
 		return checkpoint;

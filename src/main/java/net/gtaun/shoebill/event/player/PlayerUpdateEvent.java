@@ -20,31 +20,44 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
- * 
+ * This event is responsible for the OnPlayerUpdate callback and is called every time a client or player updates the server with their status.
+ * It should not be used very frequently unless you know what it's meant for.
+ *
+ * @author Marvin Haschker
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerUpdate">OnPlayerUpdate</a>
  */
 public class PlayerUpdateEvent extends PlayerEvent implements Interruptable
 {
 	private int response = 1;
-	
-	
+
 	public PlayerUpdateEvent(Player player)
 	{
 		super(player);
 	}
-	
+
+    /**
+     * Interrupts the further execution of this event.
+     */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-	
+
+    /**
+     * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
+     */
 	public void disallow()
 	{
 		this.response &= 0;
 	}
-	
+
+    /**
+     * Returns the current response value
+     * @return Current response value
+     */
 	public int getResponse()
 	{
 		return response;

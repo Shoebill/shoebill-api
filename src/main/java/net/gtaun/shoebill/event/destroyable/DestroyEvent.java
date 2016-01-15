@@ -20,14 +20,16 @@ import net.gtaun.shoebill.object.Destroyable;
 import net.gtaun.util.event.Event;
 
 /**
- * 
+ * This event will be called whenever an internal object is destroyed, such as SampObject or Vehicle.
  * 
  * @author MK124
+ * @author Marvin Haschker
+ * @see net.gtaun.util.event.Event
+ * @see net.gtaun.shoebill.object.Destroyable
  */
 public class DestroyEvent extends Event
 {
 	private Destroyable destroyable;
-	
 	
 	public DestroyEvent(Destroyable destroyable)
 	{
