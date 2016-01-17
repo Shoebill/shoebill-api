@@ -1,5 +1,7 @@
 # shoebill-api
 
+[![Join the chat at https://gitter.im/Shoebill/shoebill-api](https://badges.gitter.im/Shoebill/shoebill-api.svg)](https://gitter.im/Shoebill/shoebill-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](http://ci.gtaun.net/job/shoebill-api/badge/icon)](http://ci.gtaun.net/job/shoebill-api/)
 
 # What is the shoebill-api?
