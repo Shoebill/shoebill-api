@@ -20,9 +20,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerEnterExitModShop of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerEnterExitModShop">OnPlayerEnterExitModShop</a>
  */
 public class PlayerEnterExitModShopEvent extends PlayerEvent implements Interruptable
 {
@@ -37,17 +39,27 @@ public class PlayerEnterExitModShopEvent extends PlayerEvent implements Interrup
 		this.interiorId = interiorId;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-	
+    
+    /**
+     * @return The associated value for this event.
+     */
 	public int getEnterExit()
 	{
 		return enterExit;
 	}
-	
+    
+    /**
+     * @return The associated id of interior for this event.
+     */
 	public int getInteriorId()
 	{
 		return interiorId;

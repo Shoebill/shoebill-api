@@ -19,9 +19,11 @@ package net.gtaun.shoebill.event.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
- * 
+ * This event represents the OnPlayerStreamIn of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerStreamIn">OnPlayerStreamIn</a>
  */
 public class PlayerStreamInEvent extends PlayerEvent
 {
@@ -33,7 +35,10 @@ public class PlayerStreamInEvent extends PlayerEvent
 		super(player);
 		this.forPlayer = forPlayer;
 	}
-	
+    
+    /**
+     * @return The associated Player for this event.
+     */
 	public Player getForPlayer()
 	{
 		return forPlayer;

@@ -21,9 +21,11 @@ import net.gtaun.shoebill.object.PlayerTextdraw;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerClickPlayerTextDraw of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerClickPlayerTextDraw">OnPlayerClickPlayerTextDraw</a>
  */
 public class PlayerClickPlayerTextDrawEvent extends PlayerEvent implements Interruptable
 {
@@ -37,23 +39,38 @@ public class PlayerClickPlayerTextDrawEvent extends PlayerEvent implements Inter
 		this.playerTextdraw = textdraw;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
 	
+	/**
+	 * This method is an alias for the interrupt() method.
+     * @see PlayerClickPlayerTextDrawEvent#interrupt()
+	 */
 	public void setProcessed()
 	{
 		this.response |= 1;
 		interrupt();
 	}
 	
+	/**
+     * Returns the current response value
+     * @return Current response value
+     */
 	public int getResponse()
 	{
 		return response;
 	}
 	
+	/**
+     * @return The associated and clicked PlayerTextdraw for this event.
+     */
 	public PlayerTextdraw getPlayerTextdraw()
 	{
 		return playerTextdraw;

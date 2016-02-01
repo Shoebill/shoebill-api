@@ -21,9 +21,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerClickMap of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerClickMap">OnPlayerClickMap</a>
  */
 public class PlayerClickMapEvent extends PlayerEvent implements Interruptable
 {
@@ -36,12 +38,19 @@ public class PlayerClickMapEvent extends PlayerEvent implements Interruptable
 		position = new Vector3D(x, y, z);
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
 	
+	/**
+	 * @return The associated position of this event
+	 */
 	public Vector3D getPosition()
 	{
 		return position.clone();

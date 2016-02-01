@@ -37,8 +37,9 @@ public class PlayerUpdateEvent extends PlayerEvent implements Interruptable
 		super(player);
 	}
 
-    /**
-     * Interrupts the further execution of this event.
+    /*
+     * (non-Javadoc)
+     * @see net.gtaun.util.event.Event#interrupt()
      */
 	@Override
 	public void interrupt()

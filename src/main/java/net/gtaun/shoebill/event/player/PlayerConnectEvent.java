@@ -19,9 +19,11 @@ package net.gtaun.shoebill.event.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
- * 
+ * This event represents the OnPlayerConnect of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerConnect">OnPlayerConnect</a>
  */
 public class PlayerConnectEvent extends PlayerEvent
 {
@@ -32,11 +34,18 @@ public class PlayerConnectEvent extends PlayerEvent
 	{
 		super(player);
 	}
-
+	
+	/**
+     * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
+     */
 	public void disallow() {
 		this.ret &= 0;
 	}
 
+	/**
+     * Returns the current response value
+     * @return Current response value
+     */
 	public int getResponse() {
 		return ret;
 	}

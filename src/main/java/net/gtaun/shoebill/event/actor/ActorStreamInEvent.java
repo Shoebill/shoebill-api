@@ -20,7 +20,7 @@ public class ActorStreamInEvent extends ActorEvent {
     }
 
     /**
-     * Returns the player for who the actor was streamed in.
+     * Returns the player for whom the actor was streamed in.
      *
      * @return Player for who the actor was streamed in
      */

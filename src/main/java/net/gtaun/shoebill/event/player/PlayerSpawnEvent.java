@@ -20,9 +20,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerSpawn of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerSpawn">OnPlayerSpawn</a>
  */
 public class PlayerSpawnEvent extends PlayerEvent implements Interruptable
 {
@@ -33,16 +35,27 @@ public class PlayerSpawnEvent extends PlayerEvent implements Interruptable
 		super(player);
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-
+	
+	/**
+     * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
+     */
 	public void disallow() {
 		this.ret &= 0;
 	}
 
+	/**
+     * Returns the current response value
+     * @return Current response value
+     */
 	public int getResponse() {
 		return ret;
 	}

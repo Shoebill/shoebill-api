@@ -20,9 +20,11 @@ import net.gtaun.shoebill.constant.PlayerState;
 import net.gtaun.shoebill.object.Player;
 
 /**
- * 
+ * This event represents the OnPlayerStateChange of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerStateChange">OnPlayerStateChange</a>
  */
 public class PlayerStateChangeEvent extends PlayerEvent
 {
@@ -34,7 +36,10 @@ public class PlayerStateChangeEvent extends PlayerEvent
 		super(player);
 		this.oldState = PlayerState.get(oldState);
 	}
-	
+    
+    /**
+     * @return The associated old PlayerState for this event.
+     */
 	public PlayerState getOldState()
 	{
 		return oldState;

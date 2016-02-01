@@ -20,9 +20,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerRequestClass of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerRequestClass">OnPlayerRequestClass</a>
  */
 public class PlayerRequestClassEvent extends PlayerEvent implements Interruptable
 {
@@ -36,22 +38,36 @@ public class PlayerRequestClassEvent extends PlayerEvent implements Interruptabl
 		this.classId = classId;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
 	
+	/**
+     * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
+     */
 	public void disallow()
 	{
 		this.response &= 0;
 	}
-	
+
+	/**
+     * Returns the current response value
+     * @return Current response value
+     */
 	public int getResponse()
 	{
 		return response;
 	}
-	
+    
+    /**
+     * @return The associated id of the requested class for this event.
+     */
 	public int getClassId()
 	{
 		return classId;

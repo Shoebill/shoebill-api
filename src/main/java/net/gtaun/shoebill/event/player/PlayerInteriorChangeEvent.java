@@ -19,9 +19,11 @@ package net.gtaun.shoebill.event.player;
 import net.gtaun.shoebill.object.Player;
 
 /**
- * 
+ * This event represents the OnPlayerInteriorChange of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerInteriorChange">OnPlayerInteriorChange</a>
  */
 public class PlayerInteriorChangeEvent extends PlayerEvent
 {
@@ -33,7 +35,10 @@ public class PlayerInteriorChangeEvent extends PlayerEvent
 		super(player);
 		this.oldInteriorId = oldInteriorId;
 	}
-	
+    
+    /**
+     * @return The associated old id of interior for this event.
+     */
 	public int getOldInteriorId()
 	{
 		return oldInteriorId;

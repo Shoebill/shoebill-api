@@ -46,7 +46,7 @@ public abstract class RaceCheckpointEvent extends Event
 	}
 
     /**
-     * @return The associated Racecheckpoint for this event.
+     * @return The associated RaceCheckpoint for this event.
      */
 	public RaceCheckpoint getCheckpoint()
 	{

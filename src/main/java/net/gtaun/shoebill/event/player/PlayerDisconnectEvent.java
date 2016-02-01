@@ -20,9 +20,11 @@ import net.gtaun.shoebill.constant.DisconnectReason;
 import net.gtaun.shoebill.object.Player;
 
 /**
- * 
+ * This event represents the OnPlayerDisconnect of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerDisconnect">OnPlayerDisconnect</a>
  */
 public class PlayerDisconnectEvent extends PlayerEvent
 {
@@ -34,16 +36,26 @@ public class PlayerDisconnectEvent extends PlayerEvent
 		super(player);
 		this.reason = DisconnectReason.get(reason);
 	}
-	
+    
+    /**
+     * @return The associated DisconnectReason for this event.
+     */
 	public DisconnectReason getReason()
 	{
 		return reason;
 	}
-
+	
+	/**
+     * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
+     */
 	public void disallow() {
 		this.ret &= 0;
 	}
 
+	/**
+     * Returns the current response value
+     * @return Current response value
+     */
 	public int getResponse() {
 		return ret;
 	}
