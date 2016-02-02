@@ -22,9 +22,11 @@ import net.gtaun.shoebill.object.PlayerAttach.PlayerAttachSlot;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerEditAttachedObject of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerEditAttachedObject">OnPlayerEditAttachedObject</a>
  */
 public class PlayerEditAttachedObjectEvent extends PlayerEvent implements Interruptable
 {
@@ -42,29 +44,49 @@ public class PlayerEditAttachedObjectEvent extends PlayerEvent implements Interr
         this.scale = scale;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-	
+    
+    /**
+     * @return The associated slot for whom player the object was attached for this event.
+     */
 	public PlayerAttachSlot getSlot()
 	{
 		return slot;
 	}
-
+    
+    /**
+     * @return The associated offset for this event.
+     */
     public Vector3D getOffset() {
         return offset;
     }
-
+    
+    /**
+     * @return The associated rotation for this event.
+     */
     public Vector3D getRotation() {
         return rotation;
     }
-
+    
+    /**
+     * @return The associated scale for this event.
+     */
     public Vector3D getScale() {
         return scale;
     }
 
+    /**
+     * Returns the current response value
+     * @return Current response value
+     */
     public boolean getResponse() {
         return response;
     }

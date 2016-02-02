@@ -20,9 +20,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerKeyState;
 
 /**
- * 
+ * This event represents the OnPlayerKeyStateChange of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerKeyStateChange">OnPlayerKeyStateChange</a>
  */
 public class PlayerKeyStateChangeEvent extends PlayerEvent
 {
@@ -34,16 +36,26 @@ public class PlayerKeyStateChangeEvent extends PlayerEvent
 		super(player);
 		this.oldState = oldState;
 	}
-	
+    
+    /**
+     * @return The associated old PlayerKeyState for this event.
+     */
 	public PlayerKeyState getOldState()
 	{
 		return oldState;
 	}
-
+	
+	/**
+     * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
+     */
 	public void disallow() {
 		this.ret &= 0;
 	}
 
+	/**
+     * Returns the current response value
+     * @return Current response value
+     */
 	public int getResponse() {
 		return ret;
 	}

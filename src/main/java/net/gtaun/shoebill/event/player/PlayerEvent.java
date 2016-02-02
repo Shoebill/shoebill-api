@@ -20,9 +20,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Event;
 
 /**
- * 
- * 
+ * Base class for all ActorEvents, such as {@link net.gtaun.shoebill.event.player.PlayerStreamInEvent}
+ *
  * @author MK124
+ * @author Marvin Haschker
+ * @see net.gtaun.util.event.Event
  */
 public abstract class PlayerEvent extends Event
 {
@@ -33,7 +35,10 @@ public abstract class PlayerEvent extends Event
 	{
 		this.player = player;
 	}
-	
+    
+    /**
+     * @return The associated Player for this event.
+     */
 	public Player getPlayer()
 	{
 		return player;

@@ -21,9 +21,11 @@ import net.gtaun.shoebill.object.Player;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerDeath of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerDeath">OnPlayerDeath</a>
  */
 public class PlayerDeathEvent extends PlayerEvent implements Interruptable
 {
@@ -38,17 +40,27 @@ public class PlayerDeathEvent extends PlayerEvent implements Interruptable
 		this.reason = reason;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-	
+    
+    /**
+     * @return The associated killer for this event.
+     */
 	public Player getKiller()
 	{
 		return killer;
 	}
-	
+    
+    /**
+     * @return The associated WeaponModel the killer used for this event.
+     */
 	public WeaponModel getReason()
 	{
 		return reason;

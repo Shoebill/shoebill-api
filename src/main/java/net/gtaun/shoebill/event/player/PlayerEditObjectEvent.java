@@ -24,9 +24,11 @@ import net.gtaun.shoebill.object.SampObject;
 import net.gtaun.util.event.Interruptable;
 
 /**
- * 
+ * This event represents the OnPlayerEditObject of Pawn.
  * 
  * @author MK124
+ * @see net.gtaun.shoebill.event.player.PlayerEvent
+ * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerEditObject">OnPlayerEditObject</a>
  */
 public class PlayerEditObjectEvent extends PlayerEvent implements Interruptable
 {
@@ -43,25 +45,41 @@ public class PlayerEditObjectEvent extends PlayerEvent implements Interruptable
         this.newRotation = newRotation;
     }
 	
+    /*
+     * (non-Javadoc)
+     * @see net.gtaun.util.event.Event#interrupt()
+     */
 	@Override
 	public void interrupt()
 	{
 		super.interrupt();
 	}
-	
+    
+    /**
+     * @return The associated SampObject for this event.
+     */
 	public SampObject getObject()
 	{
 		return object;
 	}
-
+    
+    /**
+     * @return The associated new Location for this event.
+     */
     public Location getNewLocation() {
         return newLocation;
     }
-
+    
+    /**
+     * @return The associated new rotation for this event.
+     */
     public Vector3D getNewRotation() {
         return newRotation;
     }
-
+    
+    /**
+     * @return The associated returned object for this event.
+     */
     public ObjectEditResponse getEditResponse() {
 		return editResponse;
 	}
