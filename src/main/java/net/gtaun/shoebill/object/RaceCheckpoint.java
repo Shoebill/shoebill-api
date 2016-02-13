@@ -32,8 +32,7 @@ import java.util.stream.Collectors;
  */
 public interface RaceCheckpoint extends Checkpoint
 {
-	public static RaceCheckpoint create(Radius location, RaceCheckpointType type, Supplier<RaceCheckpoint> nextSupplier, Consumer<Player> onEnter, Consumer<Player> onLeave)
-	{
+    static RaceCheckpoint create(Radius location, RaceCheckpointType type, Supplier<RaceCheckpoint> nextSupplier, Consumer<Player> onEnter, Consumer<Player> onLeave) {
 		return new RaceCheckpoint()
 		{
 			@Override
@@ -43,7 +42,12 @@ public interface RaceCheckpoint extends Checkpoint
 			}
 
 			@Override
-			public RaceCheckpointType getType()
+            public void setLocation(Radius newLocation) {
+                location.set(newLocation);
+            }
+
+            @Override
+            public RaceCheckpointType getType()
 			{
 				return type;
 			}
@@ -68,8 +72,7 @@ public interface RaceCheckpoint extends Checkpoint
 		};
 	}
 
-	public static RaceCheckpoint create(Radius location, RaceCheckpointType type, RaceCheckpoint next, Consumer<Player> onEnter, Consumer<Player> onLeave)
-	{
+    static RaceCheckpoint create(Radius location, RaceCheckpointType type, RaceCheckpoint next, Consumer<Player> onEnter, Consumer<Player> onLeave) {
 		return create(location, type, () -> next, onEnter, onLeave);
 	}
 
@@ -100,11 +103,10 @@ public interface RaceCheckpoint extends Checkpoint
 	@Override
 	default void update()
 	{
-		for (Player player : Player.get())
-		{
-			if (player != null && player.getRaceCheckpoint() == this) set(player);
-		}
-	}
+        Player.get().stream()
+                .filter(player -> player != null && player.getRaceCheckpoint() == this)
+                .forEach(this::set);
+    }
 
 	@Override
 	default Collection<Player> getUsingPlayers()

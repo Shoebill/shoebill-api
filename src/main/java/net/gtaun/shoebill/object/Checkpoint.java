@@ -1,13 +1,13 @@
 /**
  * Copyright (C) 2011 JoJLlmAn
  * Copyright (C) 2011-2014 MK124
- *
+ * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p/>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p/>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,95 +31,85 @@ import java.util.function.Consumer;
  *
  * @author JoJLlmAn, MK124
  */
-public interface Checkpoint
-{
-	public static Checkpoint create(Radius location, Consumer<Player> onEnter, Consumer<Player> onLeave)
-	{
-		return new Checkpoint()
-		{
-			@Override
-			public Radius getLocation()
-			{
-				return location;
-			}
+public interface Checkpoint {
+    static Checkpoint create(Radius location, Consumer<Player> onEnter, Consumer<Player> onLeave) {
+        return new Checkpoint() {
+            @Override
+            public Radius getLocation() {
+                return location;
+            }
 
-			@Override
-			public void onEnter(Player player)
-			{
+            @Override
+            public void setLocation(Radius newLocation) {
+                location.set(newLocation);
+            }
+
+            @Override
+            public void onEnter(Player player) {
                 if (onEnter != null)
                     onEnter.accept(player);
             }
 
-			@Override
-			public void onLeave(Player player)
-			{
+            @Override
+            public void onLeave(Player player) {
                 if (onLeave != null)
                     onLeave.accept(player);
             }
-		};
-	}
+        };
+    }
+
+    static Checkpoint create(Radius location) {
+        return create(location, null, null);
+    }
 
 
-	Radius getLocation();
+    Radius getLocation();
 
-	default void onEnter(Player player)
-	{
+    void setLocation(Radius newLocation);
 
-	}
+    void onEnter(Player player);
 
-	default void onLeave(Player player)
-	{
+    void onLeave(Player player);
 
-	}
+    default float getSize() {
+        return getLocation().getRadius();
+    }
 
-	default float getSize()
-	{
-		return getLocation().getRadius();
-	}
+    default void set(Player player) {
+        player.setCheckpoint(this);
+    }
 
-	default void set(Player player)
-	{
-		player.setCheckpoint(this);
-	}
+    default void disable(Player player) {
+        if (player.getCheckpoint() != this) return;
+        player.setCheckpoint(null);
+    }
 
-	default void disable(Player player)
-	{
-		if (player.getCheckpoint() != this) return;
-		player.setCheckpoint(null);
-	}
+    default boolean isInRange(Player player) {
+        if (player.getCheckpoint() != this) return false;
+        return getLocation().isInRange(player.getLocation());
+    }
 
-	default boolean isInRange(Player player)
-	{
-		if (player.getCheckpoint() != this) return false;
-		return getLocation().isInRange(player.getLocation());
-	}
+    default boolean isInRange(Vector3D pos) {
+        return getLocation().isInRange(pos);
+    }
 
-	default boolean isInRange(Vector3D pos)
-	{
-		return getLocation().isInRange(pos);
-	}
+    default void update() {
+        SampObjectStore store = Shoebill.get().getSampObjectManager();
+        Collection<? extends Player> players = store.getPlayers();
+        for (Player player : players) {
+            if (player == null) continue;
+            if (player.getCheckpoint() == this) set(player);
+        }
+    }
 
-	default void update()
-	{
-		SampObjectStore store = Shoebill.get().getSampObjectManager();
-		Collection<? extends Player> players = store.getPlayers();
-		for (Player player : players)
-		{
-			if (player == null) continue;
-			if (player.getCheckpoint() == this) set(player);
-		}
-	}
+    default Collection<Player> getUsingPlayers() {
+        SampObjectStore store = Shoebill.get().getSampObjectManager();
+        Collection<Player> usingPlayers = new ArrayList<>();
+        Collection<Player> players = store.getPlayers();
+        for (Player player : players) {
+            if (player.getCheckpoint() == this) usingPlayers.add(player);
+        }
 
-	default Collection<Player> getUsingPlayers()
-	{
-		SampObjectStore store = Shoebill.get().getSampObjectManager();
-		Collection<Player> usingPlayers = new ArrayList<>();
-		Collection<Player> players = store.getPlayers();
-		for (Player player : players)
-		{
-			if (player.getCheckpoint() == this) usingPlayers.add(player);
-		}
-
-		return usingPlayers;
-	}
+        return usingPlayers;
+    }
 }
