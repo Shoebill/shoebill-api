@@ -42,6 +42,7 @@ public interface Checkpoint {
             @Override
             public void setLocation(Radius newLocation) {
                 location.set(newLocation);
+                update();
             }
 
             @Override

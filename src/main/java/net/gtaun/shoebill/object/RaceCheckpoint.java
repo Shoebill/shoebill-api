@@ -44,6 +44,7 @@ public interface RaceCheckpoint extends Checkpoint
 			@Override
             public void setLocation(Radius newLocation) {
                 location.set(newLocation);
+                update();
             }
 
             @Override
