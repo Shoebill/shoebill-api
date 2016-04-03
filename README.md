@@ -10,9 +10,9 @@ The shoebill-api project is one part of the whole Shoebill project.
 You can download and browse all the builds from our Jenkins server located at [Jenkins](http://ci.gtaun.net/)
 or directly download the newest version from [here](http://ci.gtaun.net/job/shoebill-api/lastSuccessfulBuild/artifact/target/shoebill-api-1.1-SNAPSHOT.jar)
 
-# Documentation
+# Getting Started & Documentation
 
-You can take a look at our [Github-Wiki](https://github.com/Shoebill/shoebill-api/wiki)
+You should take a look at our [Github-Wiki](https://github.com/Shoebill/shoebill-api/wiki)
 
 # Resources
 
