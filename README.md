@@ -1,4 +1,6 @@
-# shoebill-api
+# Shoebill Framework API
+
+![Shoebill Title Banner](docs/banner.png)
 
 [![Join the chat at https://gitter.im/Shoebill/shoebill-api](https://badges.gitter.im/Shoebill/shoebill-api.svg)](https://gitter.im/Shoebill/shoebill-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
