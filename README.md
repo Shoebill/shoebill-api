@@ -12,7 +12,7 @@ or directly download the newest version from [here](http://ci.gtaun.net/job/shoe
 
 # Getting Started & Documentation
 
-You should take a look at our [Github-Wiki](https://github.com/Shoebill/shoebill-api/wiki)
+You should take a look at our [Github-Wiki](https://github.com/Shoebill/shoebill-api/wiki) and use our [Project Generator](https://github.com/Shoebill/project-generator)
 
 # Resources
 
