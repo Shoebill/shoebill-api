@@ -69,14 +69,14 @@ public interface Shoebill
 	ServiceStore getServiceStore();
 	
 	/**
-	 * Get version information.
+	 * Gets version information.
 	 * 
 	 * @return ShoebillVersion instance.
 	 */
 	ShoebillVersion getVersion();
 	
 	/**
-	 * Reload all.
+	 * Reloads everything.
 	 */
 	void reload();
 	
