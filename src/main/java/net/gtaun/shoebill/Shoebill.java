@@ -76,7 +76,7 @@ public interface Shoebill
 	ShoebillVersion getVersion();
 	
 	/**
-	 * Reload all.
+	 * Reloads everything.
 	 */
 	void reload();
 	
