@@ -19,4 +19,12 @@ public enum ServerVarType {
     public int getValue() {
         return value;
     }
+
+    public static ServerVarType get(int id) {
+        for (ServerVarType type : values()) {
+            if (type.value == id)
+                return type;
+        }
+        return null;
+    }
 }
