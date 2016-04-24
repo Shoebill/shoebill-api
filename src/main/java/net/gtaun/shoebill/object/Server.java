@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.object;
 
 import net.gtaun.shoebill.SampObjectManager;
+import net.gtaun.shoebill.constant.ServerVarType;
 import net.gtaun.shoebill.constant.VehicleModelInfoType;
 import net.gtaun.shoebill.constant.WeaponModel;
 import net.gtaun.shoebill.data.Animation;
@@ -81,9 +82,21 @@ public interface Server extends Proxyable<Server>
 
 	String hashPassword(String password, String salt);
 
-	int getIntVar(String varname);
+	int getConsoleIntVar(String varname);
+	boolean getConsoleBoolVar(String varname);
+	String getConsoleStringVar(String varname);
 
-	boolean getBoolVar(String varname);
+    void setIntVar(String varname, int value);
+    void setFloatVar(String varname, float value);
+    void setStringVar(String varname, String value);
 
-	String getStringVar(String varname);
+    int getIntVar(String varname);
+    float getFloatVar(String varname);
+    String getStringVar(String varname);
+
+    boolean deleteVar(String varname);
+    int getVarsUpperIndex();
+    String getVarNameAtIndex(int index);
+    ServerVarType getVarType(String varname);
+
 }
