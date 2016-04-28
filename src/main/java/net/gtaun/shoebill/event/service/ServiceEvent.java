@@ -26,7 +26,7 @@ import net.gtaun.util.event.Event;
  *
  * @author MK124
  */
-public abstract class ServiceEvent extends Event
+public class ServiceEvent extends Event
 {
 	private ServiceEntry serviceEntry;
 

@@ -25,7 +25,7 @@ import net.gtaun.util.event.Event;
  * 
  * @author MK124
  */
-public abstract class MenuEvent extends Event
+public class MenuEvent extends Event
 {
 	private Menu menu;
 	private Player player;

@@ -24,7 +24,7 @@ import net.gtaun.util.event.Event;
  * 
  * @author MK124
  */
-public abstract class VehicleEvent extends Event
+public class VehicleEvent extends Event
 {
 	private Vehicle vehicle;
 	

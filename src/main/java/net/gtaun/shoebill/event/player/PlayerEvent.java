@@ -26,7 +26,7 @@ import net.gtaun.util.event.Event;
  * @author Marvin Haschker
  * @see net.gtaun.util.event.Event
  */
-public abstract class PlayerEvent extends Event
+public class PlayerEvent extends Event
 {
 	private Player player;
 	

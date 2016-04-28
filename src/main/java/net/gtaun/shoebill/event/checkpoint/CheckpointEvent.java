@@ -27,11 +27,10 @@ import net.gtaun.util.event.Event;
  * @author Marvin Haschker
  * @see net.gtaun.util.event.Event
  */
-public abstract class CheckpointEvent extends Event
+public class CheckpointEvent extends Event
 {
 	private Player player;
 	private Checkpoint checkpoint;
-	
 	
 	protected CheckpointEvent(Player player, Checkpoint checkpoint)
 	{

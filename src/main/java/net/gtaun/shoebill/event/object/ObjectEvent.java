@@ -24,7 +24,7 @@ import net.gtaun.util.event.Event;
  *
  * @author MK124
  */
-public abstract class ObjectEvent extends Event
+public class ObjectEvent extends Event
 {
 	private SampObject object;
 

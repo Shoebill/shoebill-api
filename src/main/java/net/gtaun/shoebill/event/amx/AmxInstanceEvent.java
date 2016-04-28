@@ -9,7 +9,7 @@ import net.gtaun.util.event.Event;
  * @author Marvin Haschker
  * @see net.gtaun.util.event.Event
  */
-public abstract class AmxInstanceEvent extends Event
+public class AmxInstanceEvent extends Event
 {
 	private final AmxInstance amxInstance;
 

@@ -27,7 +27,7 @@ import net.gtaun.util.event.Event;
  * @author Marvin Haschker
  * @see net.gtaun.util.event.Event
  */
-public abstract class DialogEvent extends Event
+public class DialogEvent extends Event
 {
 	private DialogId dialog;
 	private Player player;

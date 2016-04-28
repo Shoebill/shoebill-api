@@ -26,7 +26,7 @@ import net.gtaun.util.event.Event;
  * @author MK124
  * @author Marvin Haschker
  */
-public abstract class RaceCheckpointEvent extends Event
+public class RaceCheckpointEvent extends Event
 {
 	private Player player;
 	private RaceCheckpoint checkpoint;

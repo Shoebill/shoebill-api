@@ -24,7 +24,7 @@ import net.gtaun.util.event.Event;
  * 
  * @author MK124
  */
-public abstract class ResourceEvent extends Event
+public class ResourceEvent extends Event
 {
 	private Resource resource;
 	

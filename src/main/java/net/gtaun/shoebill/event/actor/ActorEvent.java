@@ -9,7 +9,7 @@ import net.gtaun.util.event.Event;
  * @author Marvin Haschker
  * @see net.gtaun.util.event.Event
  */
-public abstract class ActorEvent extends Event {
+public class ActorEvent extends Event {
 
     private Actor actor;
 
