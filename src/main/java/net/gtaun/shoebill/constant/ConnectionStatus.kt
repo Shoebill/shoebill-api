@@ -23,7 +23,7 @@ enum class ConnectionStatus(val id: Int) {
          * Gets a [ConnectionStatus] by its id.
          */
         @JvmStatic
-        override operator fun get(id: Int): ConnectionStatus? = VALUES[id]
+        override operator fun get(value: Int): ConnectionStatus? = VALUES[value]
 
         /**
          * Gets all available [ConnectionStatus]s.

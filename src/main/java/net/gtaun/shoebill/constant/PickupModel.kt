@@ -89,7 +89,7 @@ enum class PickupModel private constructor(val id: Int) {
          * Gets a [PickupModel] by its id.
          */
         @JvmStatic
-        override operator fun get(id: Int): PickupModel? = VALUES[id]
+        override operator fun get(value: Int): PickupModel? = VALUES[value]
 
         /**
          * Gets all available [PickupModel]s.
