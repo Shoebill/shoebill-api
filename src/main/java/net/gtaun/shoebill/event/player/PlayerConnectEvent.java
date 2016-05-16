@@ -25,7 +25,7 @@ import net.gtaun.shoebill.object.Player;
  * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see <a href="https://wiki.sa-mp.com/wiki/OnPlayerConnect">OnPlayerConnect</a>
  */
-public class PlayerConnectEvent extends PlayerEvent
+public class PlayerConnectEvent extends PlayerEvent implements Interruptable
 {
 
 	private int ret = 1;
@@ -40,8 +40,19 @@ public class PlayerConnectEvent extends PlayerEvent
      */
 	public void disallow() {
 		this.ret &= 0;
+		interrupt();
 	}
-
+	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
+	}
+	
 	/**
      * Returns the current response value
      * @return Current response value
