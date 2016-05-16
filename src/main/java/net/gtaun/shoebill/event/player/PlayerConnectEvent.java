@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.event.player;
 
 import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
 
 /**
  * This event represents the OnPlayerConnect of Pawn.
