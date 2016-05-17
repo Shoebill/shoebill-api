@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.vehicle
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.Vehicle
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.Vehicle
 import net.gtaun.shoebill.data.Location
 import net.gtaun.shoebill.data.Vector3D
 
@@ -27,7 +27,7 @@ import net.gtaun.shoebill.data.Vector3D
  * @author JoJLlmAn
  * @author Marvin Haschker
  */
-class UnoccupiedVehicleUpdateEvent(vehicle: Vehicle, val player: Player, val newLocation: Location,
+class UnoccupiedVehicleUpdateEvent(vehicle: Vehicle, val player: Player?, val newLocation: Location,
                                    val velocity: Vector3D) : VehicleEvent(vehicle) {
 
     var response = 0
@@ -35,5 +35,6 @@ class UnoccupiedVehicleUpdateEvent(vehicle: Vehicle, val player: Player, val new
 
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

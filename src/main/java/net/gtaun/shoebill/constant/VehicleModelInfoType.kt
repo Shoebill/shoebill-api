@@ -22,7 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.Server.getVehicleModelInfo
  */
 enum class VehicleModelInfoType private constructor(val value: Int) {
     /**

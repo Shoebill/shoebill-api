@@ -29,6 +29,7 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 class AngledLocation : Location, Cloneable {
 
+    @JvmField
     var angle: Float = 0f
 
     @JvmOverloads
@@ -37,10 +38,13 @@ class AngledLocation : Location, Cloneable {
         this.angle = angle
     }
 
-    constructor(pos: Vector3D, worldId: Int, angle: Float) : this(pos.x, pos.y, pos.z, 0, worldId, angle)
-    constructor(pos: Vector3D, interiorId: Int, worldId: Int, angle: Float) : this(pos.x, pos.y, pos.z, interiorId,
-            worldId, angle)
-    constructor(loc: Location, angle: Float) : this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, angle)
+    @JvmOverloads
+    constructor(pos: Vector3D, interiorId: Int = 0, worldId: Int = 0, angle: Float = 0f) :
+    this(pos.x, pos.y, pos.z, interiorId, worldId, angle)
+
+    @JvmOverloads
+    constructor(loc: Location, angle: Float = 0f) : this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, angle)
+
     constructor(loc: AngledLocation) : this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, loc.angle)
 
     /**
@@ -65,26 +69,16 @@ class AngledLocation : Location, Cloneable {
      */
     fun set(loc: AngledLocation) = set(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, loc.angle)
 
-    override fun toLegibleString(): String {
-        return String.format("%f, %f, %f, %d, %d, %f", x, y, z, interiorId, worldId, angle)
-    }
+    override fun toLegibleString(): String =
+            String.format("%f, %f, %f, %d, %d, %f", x, y, z, interiorId, worldId, angle)
 
-    override fun hashCode(): Int {
-        return HashCodeBuilder.reflectionHashCode(179424691, 198491317, this, false)
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return EqualsBuilder.reflectionEquals(this, other, false)
-    }
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(179424691, 198491317, this, false)
+    override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
 
     /**
-     * Clones the current location into a new object.
+     * Clones the current location into a new one.
      */
-    override fun clone(): AngledLocation {
-        return super<Location>.clone() as AngledLocation
-    }
+    override fun clone(): AngledLocation = super<Location>.clone() as AngledLocation
 
-    override fun toString(): String {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
-    }
+    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

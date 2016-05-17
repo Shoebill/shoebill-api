@@ -22,7 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.PlayerAttach.PlayerAttachSlot
  */
 enum class PlayerAttachBone private constructor(val value: Int) {
     /**

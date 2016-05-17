@@ -29,7 +29,10 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 class Area3D : Area, Cloneable, RangeCheckable3D {
 
+    @JvmField
     var minZ: Float = 0f
+
+    @JvmField
     var maxZ: Float = 0f
 
     /**
@@ -45,7 +48,10 @@ class Area3D : Area, Cloneable, RangeCheckable3D {
         this.maxZ = maxZ
     }
 
-    constructor(area: Area, minZ: Float, maxZ: Float) : this(area.minX, area.minY, minZ, area.maxX, area.maxY, maxZ)
+    @JvmOverloads
+    constructor(area: Area, minZ: Float = 0f, maxZ: Float = 0f) :
+    this(area.minX, area.minY, minZ, area.maxX, area.maxY, maxZ)
+
     constructor(area: Area3D) : this(area.minX, area.minY, area.minZ, area.maxX, area.maxY, area.maxZ)
 
     /**
@@ -84,22 +90,13 @@ class Area3D : Area, Cloneable, RangeCheckable3D {
         return true
     }
 
-    override fun hashCode(): Int {
-        return HashCodeBuilder.reflectionHashCode(256203221, 275604541, this, false)
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return EqualsBuilder.reflectionEquals(this, other, false)
-    }
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(256203221, 275604541, this, false)
+    override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
 
     /**
-     * Copy the area and creates a new object.
+     * Copy the area and creates a new one.
      */
-    override fun clone(): Area3D {
-        return super<Area>.clone() as Area3D
-    }
+    override fun clone(): Area3D = super<Area>.clone() as Area3D
 
-    override fun toString(): String {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
-    }
+    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

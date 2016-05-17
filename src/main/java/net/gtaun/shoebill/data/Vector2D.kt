@@ -29,7 +29,11 @@ import org.apache.commons.lang3.builder.ToStringStyle
  * @author Marvin Haschker
  */
 open class Vector2D : Cloneable {
+
+    @JvmField
     var x: Float = 0f
+
+    @JvmField
     var y: Float = 0f
 
     @JvmOverloads

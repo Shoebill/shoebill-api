@@ -7,6 +7,5 @@ import net.gtaun.shoebill.amx.AmxInstance
  * This can happen when a filterscript is unloaded via the RCON-Console.
  *
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.amx.AmxInstanceEvent
  */
 class AmxUnloadEvent(instance: AmxInstance) : AmxInstanceEvent(instance)

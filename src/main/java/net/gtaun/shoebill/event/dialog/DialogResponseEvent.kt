@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.dialog
 
-import net.gtaun.shoebill.`object`.DialogId
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.DialogId
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Interruptable
 
 /**
@@ -31,10 +31,16 @@ class DialogResponseEvent(dialog: DialogId, player: Player, val dialogResponse: 
     var response = 0
         private set
 
+    /**
+     * This method stops further execution of this event in Shoebill.
+     */
     override fun interrupt() {
         super.interrupt()
     }
 
+    /**
+     * This method is an alias for the [interrupt] method.
+     */
     fun setProcessed() {
         this.response = this.response or 1
         interrupt()

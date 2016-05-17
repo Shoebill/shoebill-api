@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Interruptable
 
 /**
@@ -24,7 +24,6 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerRequestSpawn](https://wiki.sa-mp.com/wiki/OnPlayerRequestSpawn)
  */
 class PlayerRequestSpawnEvent(player: Player) : PlayerEvent(player), Interruptable {
@@ -47,5 +46,6 @@ class PlayerRequestSpawnEvent(player: Player) : PlayerEvent(player), Interruptab
      */
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

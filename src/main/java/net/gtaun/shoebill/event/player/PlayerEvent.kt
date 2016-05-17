@@ -16,15 +16,14 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Event
 
 /**
- * Base class for all ActorEvents, such as [net.gtaun.shoebill.event.player.PlayerStreamInEvent]
+ * Base class for all PlayerEvents.
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.util.event.Event
  */
 open class PlayerEvent protected constructor(
         /**

@@ -1,5 +1,6 @@
 package net.gtaun.shoebill.event.amx
 
+import net.gtaun.shoebill.event.Disallowable
 import net.gtaun.util.event.Event
 
 /**
@@ -7,7 +8,7 @@ import net.gtaun.util.event.Event
  *
  * @author Marvin Haschker
  */
-class AmxCallEvent(
+class AmxCallEvent @JvmOverloads constructor(
         /**
          * The name of the executed function.
          */
@@ -15,13 +16,11 @@ class AmxCallEvent(
         /**
          * The given parameters from the call.
          */
-        val parameters: Array<Any>) : Event() {
+        val parameters: Array<Any>,
+        /**
+         * The return value of the call event.
+         */
+        var returnValue: Int = 1) : Event(), Disallowable {
 
-    var returnValue = 1
-
-    var disallow: Boolean = false
-        private set
-        get
-
-    fun disallow() { this.disallow = true }
+    override var isDisallow: Boolean = false
 }

@@ -29,7 +29,10 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 class Time : Cloneable {
 
+    @JvmField
     var hour: Int
+
+    @JvmField
     var minute: Int
 
     @JvmOverloads

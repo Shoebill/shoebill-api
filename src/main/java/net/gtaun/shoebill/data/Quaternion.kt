@@ -26,7 +26,9 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 class Quaternion : Vector3D, Cloneable {
 
+    @JvmField
     var w: Float = 0f
+
     val conjugate: Quaternion
         get() = Quaternion(-x, -y, -z, w)
 
@@ -34,7 +36,10 @@ class Quaternion : Vector3D, Cloneable {
     constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f, w: Float = 0f) : super(x, y, z) {
         this.w = w
     }
-    constructor(vec: Vector3D, w: Float) : this(vec.x, vec.y, vec.z, w)
+
+    @JvmOverloads
+    constructor(vec: Vector3D, w: Float = 0f) : this(vec.x, vec.y, vec.z, w)
+
     constructor(quaternion: Quaternion) : this(quaternion.x, quaternion.y, quaternion.z, quaternion.w)
 
     /**

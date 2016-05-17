@@ -22,7 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.Player.setShopName
  */
 enum class ShopName private constructor(val value: String) {
     /**
@@ -75,6 +74,5 @@ enum class ShopName private constructor(val value: String) {
          */
         @JvmStatic
         override operator fun get(value: String): ShopName? = VALUES[value]
-
     }
 }

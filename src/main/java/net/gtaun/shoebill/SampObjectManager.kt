@@ -6,7 +6,7 @@ interface SampObjectManager : SampObjectStore, SampObjectFactory {
          * Gets the [SampObjectManager].
          */
         fun get(): SampObjectManager {
-            return Shoebill.get()!!.sampObjectManager
+            return Shoebill.get().sampObjectManager
         }
     }
 }

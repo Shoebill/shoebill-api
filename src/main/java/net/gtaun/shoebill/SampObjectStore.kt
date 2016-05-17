@@ -16,11 +16,11 @@
 
 package net.gtaun.shoebill
 
-import net.gtaun.shoebill.`object`.*
+import net.gtaun.shoebill.entities.*
 import net.gtaun.shoebill.data.SpawnInfo
 
 /**
- * SA-MP object interface, managing all SA-MP objects that exist.
+ * SA-MP testing interface, managing all SA-MP objects that exist.
  *
  * @author MK124
  * @author Marvin Haschker
@@ -104,7 +104,7 @@ interface SampObjectStore {
     /**
      * Gets all available online [Player]s.
      */
-    val players: Collection<Player>
+    val players: MutableList<Player>
 
     /**
      * Gets all available human online [Player]s.
@@ -119,12 +119,12 @@ interface SampObjectStore {
     /**
      * Gets all available [Vehicle]s.
      */
-    val vehicles: Collection<Vehicle>
+    val vehicles: MutableList<Vehicle>
 
     /**
      * Gets all available [SampObject]s.
      */
-    val objects: Collection<SampObject>
+    val objects: MutableList<SampObject>
 
     /**
      * Gets all available [PlayerObject]s from [player].
@@ -134,12 +134,12 @@ interface SampObjectStore {
     /**
      * Gets all available [Pickup]s.
      */
-    val pickups: Collection<Pickup>
+    val pickups: MutableList<Pickup>
 
     /**
      * Gets all available [Label]s.
      */
-    val labels: Collection<Label>
+    val labels: MutableList<Label>
 
     /**
      * Gets all available [PlayerLabel] from [player].
@@ -149,7 +149,7 @@ interface SampObjectStore {
     /**
      * Gets all available [Textdraw]s.
      */
-    val textdraws: Collection<Textdraw>
+    val textdraws: MutableList<Textdraw>
 
     /**
      * Gets all available [PlayerTextdraw]s from [player].
@@ -159,12 +159,12 @@ interface SampObjectStore {
     /**
      * Gets all available [Zone]s.
      */
-    val zones: Collection<Zone>
+    val zones: MutableList<Zone>
 
     /**
      * Gets all available [Menu]s.
      */
-    val menus: Collection<Menu>
+    val menus: MutableList<Menu>
 
     /**
      * Gets all used [DialogId]s.
@@ -174,12 +174,12 @@ interface SampObjectStore {
     /**
      * Gets all registered PlayerClasses in the form of [SpawnInfo].
      */
-    val playerClasses: Collection<SpawnInfo>
+    val playerClasses: MutableList<SpawnInfo>
 
     /**
      * Gets all available [Actor]s.
      */
-    val actors: Collection<Actor>
+    val actors: MutableList<Actor>
 
     /**
      * Gets a [Actor] by it's [id].

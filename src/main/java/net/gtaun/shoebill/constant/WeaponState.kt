@@ -22,7 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.Player.getWeaponState
  */
 enum class WeaponState private constructor(val value: Int) {
     UNKNOWN(-1),

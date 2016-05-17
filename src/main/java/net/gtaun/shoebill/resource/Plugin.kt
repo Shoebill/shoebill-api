@@ -34,7 +34,7 @@ abstract class Plugin protected constructor() : Resource() {
         /**
          * Gets a [Plugin] by it's main class..
          */
-        operator fun <PluginType : Plugin> get(pluginClass: Class<PluginType>): PluginType? =
+        operator fun <PluginType : Plugin> get(pluginClass: Class<out PluginType>): PluginType? =
                 ResourceManager.get().getPlugin(pluginClass)
 
         /**

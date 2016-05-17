@@ -1,6 +1,6 @@
 package net.gtaun.shoebill.constant
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.data.Area3D
 import net.gtaun.shoebill.data.Location
 
@@ -13,12 +13,10 @@ import net.gtaun.shoebill.data.Location
 class LocationZone private constructor(val name: String, val area: Area3D, val mainZone: Boolean) {
 
     private constructor(name: String, minX: Float, minY: Float, minZ: Float, maxX: Float, maxY: Float, maxZ: Float) :
-    this(name, Area3D(minX, minY, minZ, maxX, maxY, maxZ), false) {
-    }
+    this(name, Area3D(minX, minY, minZ, maxX, maxY, maxZ), false)
 
-    private constructor(name: String, minX: Float, minY: Float, minZ: Float, maxX: Float, maxY: Float, maxZ: Float, isMainZone: Boolean) :
-    this(name, Area3D(minX, minY, minZ, maxX, maxY, maxZ), isMainZone) {
-    }
+    private constructor(name: String, minX: Float, minY: Float, minZ: Float, maxX: Float, maxY: Float, maxZ: Float,
+                        isMainZone: Boolean) : this(name, Area3D(minX, minY, minZ, maxX, maxY, maxZ), isMainZone)
 
     companion object : Collectable<LocationZone> {
         private val zones = arrayOf(
@@ -418,17 +416,15 @@ class LocationZone private constructor(val name: String, val area: Area3D, val m
          * Returns the main [LocationZone] (roughly) of a location.
          */
         @JvmStatic
-        fun getMainZone(location: Location): LocationZone? {
-            return zones.filter { it.mainZone == true && it.area.isInRange(location) }.firstOrNull()
-        }
+        fun getMainZone(location: Location): LocationZone? =
+                zones.filter { it.mainZone == true && it.area.isInRange(location) }.firstOrNull()
 
         /**
          * Returns the exact [LocationZone] (city name) of a specific location.
          */
         @JvmStatic
-        fun getZone(location: Location): LocationZone? {
-            return zones.filter { it.mainZone == false && it.area.isInRange(location) }.firstOrNull()
-        }
+        fun getZone(location: Location): LocationZone? =
+                zones.filter { it.mainZone == false && it.area.isInRange(location) }.firstOrNull()
 
         /**
          * Gets all available [LocationZone]s.

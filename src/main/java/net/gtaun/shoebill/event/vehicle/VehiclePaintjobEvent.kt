@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.vehicle
 
-import net.gtaun.shoebill.`object`.Vehicle
+import net.gtaun.shoebill.entities.Vehicle
 
 /**
  * This event will be called when [vehicle] changes it's paintjob.

@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.SampObject
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.SampObject
 import net.gtaun.util.event.Interruptable
 
 /**
@@ -25,12 +25,11 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerSelectObject](https://wiki.sa-mp.com/wiki/OnPlayerSelectObject)
  */
 class PlayerSelectObjectEvent(player: Player,
                               /**
-                               * The associated selected object for this event.
+                               * The associated selected testing for this event.
                                */
                               val `object`: SampObject) : PlayerEvent(player), Interruptable {
 

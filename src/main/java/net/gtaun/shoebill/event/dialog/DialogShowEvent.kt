@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.dialog
 
-import net.gtaun.shoebill.`object`.DialogId
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.DialogId
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event will be called when [dialog] has been showed to the [player].
@@ -27,9 +27,15 @@ import net.gtaun.shoebill.`object`.Player
  */
 class DialogShowEvent(dialog: DialogId, player: Player) : DialogEvent(dialog, player) {
 
+    /**
+     * This method stops further execution of this event in Shoebill.
+     */
     public override fun interrupt() {
         super.interrupt()
     }
 
+    /**
+     * This method is an alias for the [interrupt] method.
+     */
     fun setProcessed() = interrupt()
 }

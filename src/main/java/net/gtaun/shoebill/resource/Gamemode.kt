@@ -30,7 +30,7 @@ abstract class Gamemode protected constructor() : Resource() {
          * Gets the gamemode.
          */
         @JvmStatic
-        fun get(): Gamemode = ResourceManager.get().gamemode
+        fun get(): Gamemode? = ResourceManager.get().gamemode
 
         /**
          * Gets a gamemode by its class.
@@ -42,6 +42,6 @@ abstract class Gamemode protected constructor() : Resource() {
          * Gets the Gamemode's logger.
          */
         @JvmStatic
-        fun logger(): Logger = get().logger
+        fun logger(): Logger? = get()?.logger
     }
 }

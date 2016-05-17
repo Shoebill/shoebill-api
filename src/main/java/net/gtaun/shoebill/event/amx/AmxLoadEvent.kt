@@ -9,6 +9,5 @@ import net.gtaun.shoebill.amx.AmxInstance
  * because Shoebill will be initialized after the Gamemode's Amx file has been loaded.
  *
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.amx.AmxInstanceEvent
  */
 class AmxLoadEvent(instance: AmxInstance) : AmxInstanceEvent(instance)

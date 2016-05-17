@@ -97,8 +97,9 @@ class Color : Cloneable {
         get() = "{$rgbHex}"
 
     constructor(value: Int) { this.value = value }
-    constructor(color: Color) : this(color.value)
-    constructor() : this(Color.WHITE)
+
+    @JvmOverloads
+    constructor(color: Color = Color.WHITE) : this(color.value)
 
     @JvmOverloads
     constructor(r: Int, g: Int, b: Int, a: Int = 255) {
@@ -118,16 +119,11 @@ class Color : Cloneable {
      */
     fun set(color: Color) = set(color.r, color.g, color.b, color.a)
 
-    override fun hashCode(): Int {
-        return HashCodeBuilder.reflectionHashCode(236887699, 256203161, this, false)
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return EqualsBuilder.reflectionEquals(this, other, false)
-    }
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(236887699, 256203161, this, false)
+    override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
 
     /**
-     * Clones the current color and creates a new object.
+     * Clones the current color and creates a new testing.
      */
     public override fun clone(): Color = super.clone() as Color
 
@@ -310,7 +306,7 @@ class Color : Cloneable {
         private val allColors: List<Color>
 
         init {
-            var colors: MutableList<Color> = mutableListOf()
+            val colors: MutableList<Color> = mutableListOf()
             Color::class.java.declaredFields.filter { it.type == Color::class.java }
                     .forEach { colors.add(it.get(null) as Color) }
             allColors = colors

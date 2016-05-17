@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.checkpoint
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.RaceCheckpoint
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.RaceCheckpoint
 import net.gtaun.util.event.Event
 
 /**

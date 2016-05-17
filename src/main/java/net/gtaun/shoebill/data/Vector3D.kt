@@ -30,6 +30,7 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 open class Vector3D : Vector2D, Cloneable {
 
+    @JvmField
     var z: Float = 0f
 
     @JvmOverloads
@@ -37,7 +38,9 @@ open class Vector3D : Vector2D, Cloneable {
         this.z = z
     }
 
-    constructor(vec: Vector2D, z: Float) : this(vec.x, vec.y, z)
+    @JvmOverloads
+    constructor(vec: Vector2D, z: Float = 0f) : this(vec.x, vec.y, z)
+
     constructor(vec: Vector3D) : this(vec.x, vec.y, vec.z)
 
     /**

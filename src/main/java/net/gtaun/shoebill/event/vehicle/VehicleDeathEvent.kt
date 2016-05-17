@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.vehicle
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.Vehicle
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.Vehicle
 import net.gtaun.util.event.Interruptable
 
 /**
@@ -26,7 +26,7 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  */
-class VehicleDeathEvent(vehicle: Vehicle, val killer: Player) : VehicleEvent(vehicle), Interruptable {
+class VehicleDeathEvent(vehicle: Vehicle, val killer: Player?) : VehicleEvent(vehicle), Interruptable {
 
     override fun interrupt() {
         super.interrupt()

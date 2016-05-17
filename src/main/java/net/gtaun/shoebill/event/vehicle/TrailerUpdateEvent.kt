@@ -1,7 +1,7 @@
 package net.gtaun.shoebill.event.vehicle
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.Vehicle
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.Vehicle
 import net.gtaun.util.event.Interruptable
 
 /**
@@ -19,5 +19,6 @@ class TrailerUpdateEvent(trailer: Vehicle, val player: Player) : VehicleEvent(tr
 
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

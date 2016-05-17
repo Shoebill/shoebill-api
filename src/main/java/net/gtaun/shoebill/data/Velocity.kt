@@ -29,21 +29,28 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 class Velocity : Vector3D, Cloneable {
 
+    /**
+     * The two-dimensional speed.
+     */
+    val speed2d: Float
+        get() = Math.sqrt((x * x + y * y).toDouble()).toFloat()
+
+    /**
+     * The three-dimensional speed.
+     */
+    val speed3d: Float
+        get() = Math.sqrt(x * x + y * y + z * z.toDouble()).toFloat()
+
+    val angle2d: Float
+        get() = Math.acos((x / Math.abs(speed2d)).toDouble()).toFloat()
+
+    val angleZ: Float
+        get() = Math.acos((z / Math.abs(speed3d)).toDouble()).toFloat()
+
     @JvmOverloads
     constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f) : super(x, y, z)
+
     constructor(vec: Vector3D) : super(vec)
-
-    /**
-     * Gets the two-dimensional velocity.
-     */
-    fun speed2d(): Float = Math.sqrt((x * x + y * y).toDouble()).toFloat()
-
-    /**
-     * Gets the three-dimensional velocity.
-     */
-    fun speed3d(): Float = Math.sqrt(x * x + y * y + z * z.toDouble()).toFloat()
-    fun angle2d(): Float = Math.acos((x / Math.abs(speed2d())).toDouble()).toFloat()
-    fun angleZ(): Float = Math.acos((z / Math.abs(speed3d())).toDouble()).toFloat()
 
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(413158523, 941083981, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)

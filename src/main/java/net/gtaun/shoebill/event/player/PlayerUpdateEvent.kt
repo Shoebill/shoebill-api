@@ -16,16 +16,15 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Interruptable
 
 /**
- * This event is responsible for the OnPlayerUpdate callback and is called every time a client or player updates the server with their status.
- * It should not be used very frequently unless you know what it's meant for.
+ * This event is responsible for the OnPlayerUpdate callback and is called every time a client or player updates
+ * the server with their status. It should not be used very frequently unless you know what it's meant for.
  *
  * @author Marvin Haschker
  * @author MK124
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerUpdate](https://wiki.sa-mp.com/wiki/OnPlayerUpdate)
  */
 class PlayerUpdateEvent(player: Player) : PlayerEvent(player), Interruptable {
@@ -48,5 +47,6 @@ class PlayerUpdateEvent(player: Player) : PlayerEvent(player), Interruptable {
      */
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

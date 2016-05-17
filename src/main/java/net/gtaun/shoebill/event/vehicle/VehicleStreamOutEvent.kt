@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.vehicle
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.Vehicle
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.Vehicle
 
 /**
  * This event is getting called when [vehicle] is getting streamed out for [player].

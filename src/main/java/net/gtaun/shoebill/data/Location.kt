@@ -29,7 +29,10 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 open class Location : Vector3D, Cloneable {
 
+    @JvmField
     var interiorId: Int = 0
+
+    @JvmField
     var worldId: Int = 0
 
     @JvmOverloads

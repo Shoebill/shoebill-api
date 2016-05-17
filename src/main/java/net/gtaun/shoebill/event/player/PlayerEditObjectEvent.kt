@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.SampObject
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.SampObject
 import net.gtaun.shoebill.constant.ObjectEditResponse
 import net.gtaun.shoebill.data.Location
 import net.gtaun.shoebill.data.Vector3D
@@ -28,7 +28,6 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerEditObject](https://wiki.sa-mp.com/wiki/OnPlayerEditObject)
  */
 class PlayerEditObjectEvent(player: Player,
@@ -37,7 +36,7 @@ class PlayerEditObjectEvent(player: Player,
                              */
                             val `object`: SampObject,
                             /**
-                             * The associated returned object for this event.
+                             * The associated returned testing for this event.
                              */
                             val editResponse: ObjectEditResponse,
                             /**

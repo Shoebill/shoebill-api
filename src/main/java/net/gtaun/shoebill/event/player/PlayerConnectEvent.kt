@@ -16,14 +16,13 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event represents the OnPlayerConnect of Pawn.
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerConnect](https://wiki.sa-mp.com/wiki/OnPlayerConnect)
  */
 class PlayerConnectEvent(player: Player) : PlayerEvent(player) {
@@ -40,5 +39,6 @@ class PlayerConnectEvent(player: Player) : PlayerEvent(player) {
      */
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

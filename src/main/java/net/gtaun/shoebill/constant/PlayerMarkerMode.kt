@@ -22,7 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.World.showPlayerMarkers
  */
 enum class PlayerMarkerMode private constructor(val value: Int) {
     OFF(0),

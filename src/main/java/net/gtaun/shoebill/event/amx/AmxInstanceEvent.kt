@@ -7,7 +7,6 @@ import net.gtaun.util.event.Event
  * This event is used for all AmxEvents and contains a AmxInstance variable.
  *
  * @author Marvin Haschker
- * @see net.gtaun.util.event.Event
  */
 open class AmxInstanceEvent protected constructor(
         /**

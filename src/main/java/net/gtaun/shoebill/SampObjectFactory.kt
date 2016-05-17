@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill
 
-import net.gtaun.shoebill.`object`.*
-import net.gtaun.shoebill.`object`.Timer.TimerCallback
+import net.gtaun.shoebill.entities.*
+import net.gtaun.shoebill.entities.Timer.TimerCallback
 import net.gtaun.shoebill.data.*
 import net.gtaun.shoebill.event.dialog.DialogCloseEvent
 import net.gtaun.shoebill.event.dialog.DialogResponseEvent
@@ -101,27 +101,11 @@ interface SampObjectFactory {
      * @param loc Location where the Label should be.
      * @param drawDistance The Drawdistance of the Label.
      * @param testLOS If the Label can be seen through objects.
-     * @param attachedPlayer The Player where the Label should be attached.
      * @return The created PlayerLabel.
      */
     @Throws(CreationFailedException::class)
     fun createPlayerLabel(player: Player, text: String, color: Color = Color.WHITE, loc: Location = Location(),
-                          drawDistance: Float = 50f, testLOS: Boolean = false, attachedPlayer: Player?): PlayerLabel
-
-    /**
-     * Create a Label which is only visible for one player, with params. If the Creation fails, it will throw a CreationFailedException.
-     * @param player The Player who sees the Label.
-     * @param text The displayed Text.
-     * @param color The color of the Label.
-     * @param loc Location where the Label should be.
-     * @param drawDistance The Drawdistance of the Label.
-     * @param testLOS If the Label can be seen through objects.
-     * @param attachedPlayer The Vehicle where the Label should be attached.
-     * @return The created PlayerLabel.
-     */
-    @Throws(CreationFailedException::class)
-    fun createPlayerLabel(player: Player, text: String, color: Color = Color.WHITE, loc: Location = Location(),
-                          drawDistance: Float = 50f, testLOS: Boolean = false, attachedVehicle: Vehicle?): PlayerLabel
+                          drawDistance: Float = 50f, testLOS: Boolean = false): PlayerLabel
 
     /**
      * Create a Textdraw with params. If the Creation fails, it will throw a CreationFailedException.

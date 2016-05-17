@@ -20,13 +20,12 @@ package net.gtaun.shoebill.constant
 import org.apache.commons.lang3.StringUtils
 
 /**
- * This enum contains the available PlayerKeys that can be received via the PlayerKeyState object. This information
+ * This enum contains the available PlayerKeys that can be received via the PlayerKeyState testing. This information
  * was taken from the offical SA:MP Wikipedia page.
  *
  * @author MK124
  * @author Marvin Haschker
  * @author Meta
- * @see net.gtaun.shoebill.object.PlayerKeyState
  */
 enum class PlayerKey private constructor(val value: Int, private val gameTextKeyOnFootRaw: String?, private val
 gameTextKeyInVehicleRaw: String?) {

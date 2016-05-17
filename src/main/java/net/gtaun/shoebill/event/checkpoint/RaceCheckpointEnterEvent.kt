@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.checkpoint
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Interruptable
 
 /**
@@ -24,7 +24,6 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.checkpoint.RaceCheckpointEvent
  * @see [OnPlayerEnterRaceCheckpoint](https://wiki.sa-mp.com/wiki/OnPlayerEnterRaceCheckpoint)
  */
 class RaceCheckpointEnterEvent(player: Player) : RaceCheckpointEvent(player, player.raceCheckpoint!!), Interruptable {

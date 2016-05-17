@@ -22,8 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.Player.getState
- * @see net.gtaun.shoebill.event.player.PlayerStateChangeEvent
  */
 enum class PlayerState private constructor(val value: Int) {
     /**

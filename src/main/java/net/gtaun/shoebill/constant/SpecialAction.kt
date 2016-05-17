@@ -22,8 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.Player.setSpecialAction
- * @see net.gtaun.shoebill.object.Player.getSpecialAction
  */
 enum class SpecialAction private constructor(val value: Int) {
     /**

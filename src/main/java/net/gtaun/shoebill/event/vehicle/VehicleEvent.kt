@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.vehicle
 
-import net.gtaun.shoebill.`object`.Vehicle
+import net.gtaun.shoebill.entities.Vehicle
 import net.gtaun.util.event.Event
 
 /**

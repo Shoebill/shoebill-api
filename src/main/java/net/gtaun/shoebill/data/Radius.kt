@@ -30,22 +30,23 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 class Radius : Location, Cloneable, RangeCheckable3D {
 
+    @JvmField
     var radius: Float = 0f
 
     @JvmOverloads
-    constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f, interiorId: Int = 0, worldId: Int = 0,
-                radius: Float = 0f) : super(x, y, z, interiorId, worldId) {
+    constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f, radius: Float = 0f, interiorId: Int = 0, worldId: Int =
+    0) : super(x, y, z, interiorId, worldId) {
         this.radius = radius
     }
 
     @JvmOverloads
     constructor(pos: Vector3D, interiorId: Int = 0, worldId: Int = 0, radius: Float = 0f) : this(pos.x, pos.y, pos.z,
-            interiorId, worldId, radius)
+            radius, interiorId, worldId)
 
     @JvmOverloads
-    constructor(loc: Location, radius: Float = 0f) : this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, radius)
+    constructor(loc: Location, radius: Float = 0f) : this(loc.x, loc.y, loc.z, radius, loc.interiorId, loc.worldId)
 
-    constructor(loc: Radius) : this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, loc.radius)
+    constructor(loc: Radius) : this(loc.x, loc.y, loc.z, loc.radius, loc.interiorId, loc.worldId)
 
     /**
      * Sets the location of the radius to [x], [y], [z], [interiorId], [worldId] and [radius].

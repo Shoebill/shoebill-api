@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.PlayerAttach.PlayerAttachSlot
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.PlayerAttach.PlayerAttachSlot
 import net.gtaun.shoebill.data.Vector3D
 import net.gtaun.util.event.Interruptable
 
@@ -26,14 +26,17 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerEditAttachedObject](https://wiki.sa-mp.com/wiki/OnPlayerEditAttachedObject)
  */
 class PlayerEditAttachedObjectEvent(player: Player,
                                     /**
-                                     * The associated slot for whom player the object was attached for this event.
+                                     * The associated slot for whom player the testing was attached for this event.
                                      */
                                     val slot: PlayerAttachSlot,
+                                    /**
+                                     * The response of the event.
+                                     */
+                                    val response: Int,
                                     /**
                                      * The associated offset for this event.
                                      */

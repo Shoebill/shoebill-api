@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.DisconnectReason
 
 /**
@@ -24,7 +24,6 @@ import net.gtaun.shoebill.constant.DisconnectReason
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerDisconnect](https://wiki.sa-mp.com/wiki/OnPlayerDisconnect)
  */
 class PlayerDisconnectEvent(player: Player,
@@ -44,5 +43,6 @@ class PlayerDisconnectEvent(player: Player,
      */
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

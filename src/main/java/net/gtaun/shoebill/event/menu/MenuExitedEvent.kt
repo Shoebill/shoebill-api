@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.menu
 
-import net.gtaun.shoebill.`object`.Menu
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Menu
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Interruptable
 
 /**
@@ -28,9 +28,15 @@ import net.gtaun.util.event.Interruptable
  */
 class MenuExitedEvent(menu: Menu, player: Player) : MenuEvent(menu, player), Interruptable {
 
+    /**
+     * This method stops further execution of this event in Shoebill.
+     */
     override fun interrupt() {
         super.interrupt()
     }
 
+    /**
+     * This method is an alias for the [interrupt] method.
+     */
     fun setProcessed() = interrupt()
 }

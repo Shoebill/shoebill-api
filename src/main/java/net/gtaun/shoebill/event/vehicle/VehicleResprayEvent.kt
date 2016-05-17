@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.vehicle
 
-import net.gtaun.shoebill.`object`.Vehicle
+import net.gtaun.shoebill.entities.Vehicle
 
 /**
  * This event will be called when [vehicle] changes it's color.
@@ -30,5 +30,6 @@ class VehicleResprayEvent(vehicle: Vehicle, val color1: Int, val color2: Int) : 
 
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

@@ -16,15 +16,14 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.PlayerKeyState
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.PlayerKeyState
 
 /**
  * This event represents the OnPlayerKeyStateChange of Pawn.
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerKeyStateChange](https://wiki.sa-mp.com/wiki/OnPlayerKeyStateChange)
  */
 class PlayerKeyStateChangeEvent(player: Player,
@@ -43,5 +42,6 @@ class PlayerKeyStateChangeEvent(player: Player,
      */
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

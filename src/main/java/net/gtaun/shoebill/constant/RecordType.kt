@@ -22,7 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.Player.startRecord
  */
 enum class RecordType private constructor(val value: Int) {
     NONE(0),

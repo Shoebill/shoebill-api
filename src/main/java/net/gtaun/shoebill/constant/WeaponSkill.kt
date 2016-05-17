@@ -17,12 +17,11 @@
 package net.gtaun.shoebill.constant
 
 /**
- * This enum contains the available WeaponSkill field that can be changed via the PlayerWeaponSkill object.
+ * This enum contains the available WeaponSkill field that can be changed via the PlayerWeaponSkill testing.
  * This information was taken from the official SA:MP Wikipedia page.
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.PlayerWeaponSkill
  */
 enum class WeaponSkill private constructor(val value: Int) {
     PISTOL(0),
@@ -51,6 +50,5 @@ enum class WeaponSkill private constructor(val value: Int) {
          */
         @JvmStatic
         override operator fun get(value: Int): WeaponSkill? = VALUES[value]
-
     }
 }

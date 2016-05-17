@@ -29,12 +29,23 @@ import org.apache.commons.lang3.builder.ToStringStyle
  * @author Marvin Haschker
  */
 class SpawnInfo : Cloneable {
+
+    @JvmField
     val location: AngledLocation
 
+    @JvmField
     val skinId: Int
+
+    @JvmField
     val teamId: Int
+
+    @JvmField
     val weapon1: WeaponData
+
+    @JvmField
     val weapon2: WeaponData
+
+    @JvmField
     val weapon3: WeaponData
 
     @JvmOverloads
@@ -61,8 +72,8 @@ class SpawnInfo : Cloneable {
         this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, angle, skin, team, weapon1, weapon2, weapon3)
 
     @JvmOverloads
-    constructor(loc: AngledLocation, skin: Int = 0, team: Int = 0, weapon1: WeaponData = WeaponData(WeaponModel.NONE,
-     0), weapon2: WeaponData = WeaponData(WeaponModel.NONE, 0), weapon3: WeaponData = WeaponData(WeaponModel.NONE, 0)) :
+    constructor(loc: AngledLocation, skin: Int = 0, team: Int = 0, weapon1: WeaponData = WeaponData(),
+                weapon2: WeaponData = WeaponData(), weapon3: WeaponData = WeaponData()) :
         this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, loc.angle, skin, team, weapon1,
                 weapon2, weapon3)
 

@@ -18,12 +18,10 @@ package net.gtaun.shoebill.constant
 
 /**
  * This enum contains the available fightstyles that can be applied to the Player's character. This enum should be
- * used with setFightStyle und getFightStyle.
+ * used with setFightStyle and getFightStyle.
+ *
  * @author MK124
  * @author Marvin Haschker
- *
- * @see net.gtaun.shoebill.object.Player.setFightStyle
- * @see net.gtaun.shoebill.object.Player.getFightStyle
  */
 enum class FightStyle private constructor(val value: Int) {
     NORMAL(4),

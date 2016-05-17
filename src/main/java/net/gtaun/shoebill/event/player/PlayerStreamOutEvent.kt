@@ -16,14 +16,13 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event represents the OnPlayerStreamOut of Pawn.
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerStreamOut](https://wiki.sa-mp.com/wiki/OnPlayerStreamOut)
  */
 class PlayerStreamOutEvent(player: Player,

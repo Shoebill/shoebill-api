@@ -19,6 +19,7 @@ package net.gtaun.shoebill.amx
 import net.gtaun.shoebill.event.amx.AmxCallEvent
 
 import java.lang.ref.Reference
+import java.lang.ref.WeakReference
 import java.util.function.Consumer
 
 /**
@@ -33,21 +34,25 @@ abstract class AmxInstanceManager {
         internal var reference: Reference<out AmxInstanceManager>? = null
     }
 
+    init {
+        Instance.reference = WeakReference(this)
+    }
+
     /**
      * Contains all the registered [AmxInstance] that are available to Shoebill.
      */
-    abstract val amxInstances: MutableSet<AmxInstance>
+    abstract val amxInstances: Set<AmxInstance>
 
     /**
      * Contains all registered hooks in the [AmxInstanceManager].
      */
-    abstract val amxHooks: MutableSet<AmxHook>
+    abstract val amxHooks: Set<AmxHook>
 
     /**
      * Hooks an callback that is triggered from the abstract machine (SA:MP Server) such as OnPlayerConnect or even
      * custom callbacks like OnDynamicObjectMoved (from the Streamer Plugin).
      */
-    abstract fun hookCallback(callbackName: String, hook: Consumer<AmxCallEvent>, types: String): Boolean//types: "iss" <-- Integer, String, String
+    abstract fun hookCallback(callbackName: String, hook: Consumer<AmxCallEvent>, types: String): Boolean
 
     /**
      * Unhooks a registered callback after it has been registered via [hookCallback].
@@ -59,9 +64,6 @@ abstract class AmxInstanceManager {
          * Returns the main instance of the [AmxInstanceManager].
          */
         @JvmStatic
-        fun get(): AmxInstanceManager? {
-            if (Instance.reference == null) return null
-            return Instance.reference!!.get()
-        }
+        fun get(): AmxInstanceManager? = Instance.reference?.get()
     }
 }

@@ -50,6 +50,7 @@ abstract class Resource internal constructor() {
      */
     var shoebill: Shoebill? = null
         private set
+
     private var rootEventManager: EventManager? = null
     private var eventManager: EventManagerNode? = null
     /**
@@ -66,7 +67,8 @@ abstract class Resource internal constructor() {
      * @param rootEventManager The parent Eventmanager
      * @param dataDir The Data Directory
      */
-    internal fun setContext(description: ResourceDescription, shoebill: Shoebill, rootEventManager: EventManager, dataDir: File) {
+    fun setContext(description: ResourceDescription, shoebill: Shoebill, rootEventManager: EventManager, dataDir:
+    File) {
         this.description = description
         this.shoebill = shoebill
         this.rootEventManager = rootEventManager
@@ -93,7 +95,7 @@ abstract class Resource internal constructor() {
      * @throws Throwable
      */
     @Throws(Throwable::class)
-    protected open fun enable() {
+    open fun enable() {
         eventManager = rootEventManager!!.createChildNode()
 
         onEnable()
@@ -108,7 +110,7 @@ abstract class Resource internal constructor() {
      * @throws Throwable
      */
     @Throws(Throwable::class)
-    protected open fun disable() {
+    open fun disable() {
         val event = ResourceDisableEvent(this)
         eventManager!!.dispatchEvent(event, getEventManager(), this)
 

@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.vehicle
 
-import net.gtaun.shoebill.`object`.Vehicle
+import net.gtaun.shoebill.entities.Vehicle
 import net.gtaun.shoebill.constant.VehicleComponentModel
 
 /**
@@ -25,11 +25,12 @@ import net.gtaun.shoebill.constant.VehicleComponentModel
  * @author MK124
  * @author Marvin Haschker
  */
-class VehicleModEvent(vehicle: Vehicle, val component: VehicleComponentModel) : VehicleEvent(vehicle) {
+class VehicleModEvent(vehicle: Vehicle, val component: VehicleComponentModel?) : VehicleEvent(vehicle) {
     var response = 1
         private set
 
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

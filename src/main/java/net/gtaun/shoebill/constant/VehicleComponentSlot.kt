@@ -22,7 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.VehicleComponent
  */
 enum class VehicleComponentSlot private constructor(val value: Int) {
     /**

@@ -24,26 +24,27 @@ import net.gtaun.shoebill.amx.types.ReturnType
  * @author MK124
  * @author Marvin Haschker
  */
-interface AmxCallable {
+abstract class AmxCallable {
     /**
      * The name of the function / callback.
      */
-    val name: String
+    abstract val name: String
 
     /**
      * The type of the return value.
      */
-    val returnType: ReturnType
+    abstract val returnType: ReturnType
 
     /**
      * Calls the function with arguments.
      */
-    fun call(vararg args: Any): Any
+    abstract fun call(vararg args: Any): Any?
 
     companion object {
         /**
          * Invalid callable reference id.
          */
+        @JvmField
         val INVALID_CALLABLE = 2147483647
     }
 }

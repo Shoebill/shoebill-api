@@ -1,7 +1,7 @@
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Actor
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Actor
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.WeaponModel
 
 /**
@@ -9,7 +9,6 @@ import net.gtaun.shoebill.constant.WeaponModel
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerDamageActor](https://wiki.sa-mp.com/wiki/OnPlayerDamageActor)
  */
 class PlayerDamageActorEvent(player: Player,

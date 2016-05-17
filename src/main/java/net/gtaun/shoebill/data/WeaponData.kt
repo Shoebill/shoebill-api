@@ -29,7 +29,11 @@ import org.apache.commons.lang3.builder.ToStringStyle
  * @author Marvin Haschker
  */
 class WeaponData : Cloneable {
+
+    @JvmField
     var model: WeaponModel
+
+    @JvmField
     var ammo: Int
 
     @JvmOverloads
@@ -37,6 +41,7 @@ class WeaponData : Cloneable {
         this.model = type
         this.ammo = ammo
     }
+
     constructor(data: WeaponData) : this(data.model, data.ammo)
 
     /**

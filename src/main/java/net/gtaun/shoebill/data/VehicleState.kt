@@ -7,9 +7,16 @@ package net.gtaun.shoebill.data
  */
 class VehicleState {
 
+    @JvmField
     val driver: Int
+
+    @JvmField
     val passenger: Int
+
+    @JvmField
     val backLeft: Int
+
+    @JvmField
     val backRight: Int
 
     @JvmOverloads

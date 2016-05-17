@@ -16,15 +16,13 @@
 
 package net.gtaun.shoebill.event.destroyable
 
-import net.gtaun.shoebill.`object`.Destroyable
+import net.gtaun.shoebill.entities.Destroyable
 import net.gtaun.util.event.Event
 
 /**
- * This event will be called whenever an internal object is destroyed, such as SampObject or Vehicle.
+ * This event will be called whenever an internal testing is destroyed, such as SampObject or Vehicle.
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.util.event.Event
- * @see net.gtaun.shoebill.object.Destroyable
  */
 class DestroyEvent(val destroyable: Destroyable) : Event()

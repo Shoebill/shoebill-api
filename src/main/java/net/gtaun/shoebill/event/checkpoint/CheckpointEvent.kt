@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.checkpoint
 
-import net.gtaun.shoebill.`object`.Checkpoint
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Checkpoint
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Event
 
 /**
@@ -25,7 +25,6 @@ import net.gtaun.util.event.Event
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.util.event.Event
  */
 open class CheckpointEvent protected constructor(
         /**

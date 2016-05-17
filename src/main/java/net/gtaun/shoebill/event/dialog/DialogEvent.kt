@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.dialog
 
-import net.gtaun.shoebill.`object`.DialogId
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.DialogId
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Event
 
 /**
@@ -25,6 +25,5 @@ import net.gtaun.util.event.Event
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.util.event.Event
  */
 open class DialogEvent protected constructor(val dialog: DialogId, val player: Player) : Event()

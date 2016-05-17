@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.WeaponModel
 import net.gtaun.util.event.Interruptable
 
@@ -25,14 +25,13 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerTakeDamage](https://wiki.sa-mp.com/wiki/OnPlayerTakeDamage)
  */
 class PlayerTakeDamageEvent(player: Player,
                             /**
                              * The associated issuer for this event.
                              */
-                            val issuer: Player,
+                            val issuer: Player?,
                             /**
                              * The associated amount of damage for this event.
                              */
@@ -65,5 +64,6 @@ class PlayerTakeDamageEvent(player: Player,
      */
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 }

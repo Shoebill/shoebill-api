@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.dialog
 
-import net.gtaun.shoebill.`object`.DialogId
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.DialogId
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event will be called when a [dialog] has been closed.

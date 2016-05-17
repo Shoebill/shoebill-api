@@ -29,9 +29,16 @@ import org.apache.commons.lang3.builder.ToStringStyle
  */
 open class Area : Cloneable, RangeCheckable3D {
 
+    @JvmField
     var minX: Float = 0f
+
+    @JvmField
     var minY: Float = 0f
+
+    @JvmField
     var maxX: Float = 0f
+
+    @JvmField
     var maxY: Float = 0f
 
     val area: Float
@@ -72,19 +79,8 @@ open class Area : Cloneable, RangeCheckable3D {
      */
     override fun isInRange(pos: Vector3D): Boolean = isInRange(pos as Vector2D)
 
-    override fun hashCode(): Int {
-        return HashCodeBuilder.reflectionHashCode(275604547, 295075147, this, false)
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return EqualsBuilder.reflectionEquals(this, other, false)
-    }
-
-    public override fun clone(): Area {
-        return super.clone() as Area
-    }
-
-    override fun toString(): String {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
-    }
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(275604547, 295075147, this, false)
+    override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
+    public override fun clone(): Area = super.clone() as Area
+    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

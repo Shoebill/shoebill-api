@@ -22,8 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEditObjectEvent
- * @see net.gtaun.shoebill.event.player.PlayerEditAttachedObjectEvent
  */
 enum class ObjectEditResponse private constructor(val value: Int) {
     /**
@@ -37,7 +35,7 @@ enum class ObjectEditResponse private constructor(val value: Int) {
     FINAL(1),
 
     /**
-     * Player moved the object (edition did not stop at all)
+     * Player moved the testing (edition did not stop at all)
      */
     UPDATE(2);
 

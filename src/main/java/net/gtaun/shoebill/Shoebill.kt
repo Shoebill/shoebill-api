@@ -21,6 +21,7 @@ import net.gtaun.shoebill.resource.ResourceManager
 import net.gtaun.shoebill.service.ServiceStore
 
 import java.lang.ref.Reference
+import java.lang.ref.WeakReference
 
 /**
  * Shoebill main interface, provides the basic manager instance and functions.
@@ -28,49 +29,54 @@ import java.lang.ref.Reference
  * @author MK124
  * @author Marvin Haschker
  */
-interface Shoebill {
+abstract class Shoebill {
 
     object Instance {
         internal var reference: Reference<out Shoebill>? = null
     }
 
+    init {
+        Shoebill.Instance.reference = WeakReference(this)
+    }
+
     /**
-     * The SA-MP object manager.
+     * The SA-MP testing manager.
      */
-    val sampObjectManager: SampObjectManager
+    abstract val sampObjectManager: SampObjectManager
 
     /**
      * The resource manager.
      */
-    val resourceManager: ResourceManager
+    abstract val resourceManager: ResourceManager
 
     /**
      * The AMX instance manager.
      */
-    val amxInstanceManager: AmxInstanceManager
+    abstract val amxInstanceManager: AmxInstanceManager
 
     /**
      * The service store.
      */
-    val serviceStore: ServiceStore
+    abstract val serviceStore: ServiceStore
 
     /**
      * The version information.
      */
-    val version: ShoebillVersion
+    abstract val version: ShoebillVersion
 
     /**
      * Reloads everything.
      */
-    fun reload()
+    abstract fun reload()
 
     /**
      * Causes the run() method of the runnable to be invoked by amx thread at the next process tick.
      * @param runnable Runnable instance
      */
-    fun runOnSampThread(runnable: Runnable)
+    abstract fun runOnSampThread(runnable: Runnable)
 
     companion object {
-        fun get(): Shoebill? = Instance.reference?.get()
+        @JvmStatic
+        fun get(): Shoebill = Instance.reference!!.get()
     }
 }

@@ -28,46 +28,46 @@ import java.io.File
  * @author JoJLlmAn
  * @author Marvin Haschker
  */
-interface ResourceManager {
+abstract class ResourceManager {
 
     /**
      * Lets you load a Plugin by its filename.
      * @param filename The Plugin filename
      * @return The loaded Plugin
      */
-    fun loadPlugin(filename: String): Plugin
+    abstract fun loadPlugin(filename: String): Plugin?
 
     /**
      * Lets you load a Plugin by File.
      * @param file The File to the Plugin
      * @return The loaded Plugin
      */
-    fun loadPlugin(file: File): Plugin
+    abstract fun loadPlugin(file: File): Plugin?
 
     /**
      * Lets you unload a Plugin.
      * @param plugin The Plugin which should be unloaded
      */
-    fun unloadPlugin(plugin: Plugin)
+    abstract fun unloadPlugin(plugin: Plugin)
 
     /**
      * Lets you get a Plugin by its class.
      * @param pluginClass Class instance of the Plugin.
      * @return The found Plugin.
      */
-    fun <T : Plugin> getPlugin(pluginClass: Class<T>): T
+    abstract fun <T : Plugin> getPlugin(pluginClass: Class<out T>): T?
 
     /**
      * Gets a Collection of all loaded Plugins.
      * @return A Collection of Pluins.
      */
-    val plugins: Collection<Plugin>
+    abstract val plugins: Collection<Plugin>
 
     /**
      * Gets the active Gamemode.
      * @return The active Gamemode
      */
-    val gamemode: Gamemode
+    abstract val gamemode: Gamemode?
 
     /**
      * Gets a Gamemode by its class.
@@ -75,15 +75,16 @@ interface ResourceManager {
      * @param  Class type of the Gamemode.
      * @return The found Gamemode.
      */
-    fun <T : Gamemode> getGamemode(gamemodeClass: Class<T>): T
+    abstract fun <T : Gamemode> getGamemode(gamemodeClass: Class<T>): T?
 
     companion object {
         /**
          * Get the Resource Manager
          * @return The Resource Manager
          */
+        @JvmStatic
         fun get(): ResourceManager {
-            return Shoebill.get()!!.resourceManager
+            return Shoebill.get().resourceManager
         }
     }
 }

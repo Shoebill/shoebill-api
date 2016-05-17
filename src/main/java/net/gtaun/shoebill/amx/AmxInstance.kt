@@ -42,7 +42,7 @@ interface AmxInstance {
     /**
      * Checks if the given function has already been registered.
      */
-    fun hasRegisteredFunction(name: String): Boolean
+    fun isFunctionRegistered(name: String): Boolean
 
     /**
      * Calls an registered function by it's name with given parameters.
@@ -52,17 +52,13 @@ interface AmxInstance {
     /**
      * Finds a public function in the context of the loaded amx file.
      */
-    fun getPublic(name: String): AmxCallable? {
-        return getPublic(name, ReturnType.INTEGER)
-    }
+    fun getPublic(name: String): AmxCallable? = getPublic(name, ReturnType.INTEGER)
 
     /**
      * Finds a native function that has been installed into the context of the loaded amx file (e.g. from a native
      * plugin, such as Streamer or FCNPC).
      */
-    fun getNative(name: String): AmxCallable? {
-        return getNative(name, ReturnType.INTEGER)
-    }
+    fun getNative(name: String): AmxCallable? = getNative(name, ReturnType.INTEGER)
 
     /**
      * Finds a public function in the context of the loaded amx file.
@@ -85,8 +81,6 @@ interface AmxInstance {
          * Returns the default (main) amx instance.
          */
         val default: AmxInstance?
-            get() {
-                return AmxInstanceManager.get()?.amxInstances?.firstOrNull()
-            }
+            get() = AmxInstanceManager.get()?.amxInstances?.firstOrNull()
     }
 }

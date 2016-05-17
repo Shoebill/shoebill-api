@@ -1,13 +1,12 @@
 package net.gtaun.shoebill.event.actor
 
-import net.gtaun.shoebill.`object`.Actor
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Actor
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event represents the OnActorStreamIn callback from Pawn.
  *
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.actor.ActorEvent
  * @see [OnActorStreamIn](https://wiki.sa-mp.com/wiki/OnActorStreamIn)
  */
 class ActorStreamInEvent(actor: Actor,

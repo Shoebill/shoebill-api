@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.WeaponModel
 import net.gtaun.util.event.Interruptable
 
@@ -25,14 +25,13 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerKill](https://wiki.sa-mp.com/wiki/OnPlayerKill)
  */
 class PlayerKillEvent(player: Player,
                       /**
                        * The associated victim for this event.
                        */
-                      val victim: Player,
+                      val victim: Player?,
                       /**
                        * The associated used WeaponModel for this event.
                        */

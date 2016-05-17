@@ -22,7 +22,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.SampObject.setMaterialText
  */
 enum class ObjectMaterialSize private constructor(val value: Int) {
     SIZE_32x32(10),

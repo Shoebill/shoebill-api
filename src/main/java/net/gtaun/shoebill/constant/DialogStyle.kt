@@ -21,8 +21,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.Player.showDialog
- * @see net.gtaun.shoebill.object.DialogId.show
  */
 enum class DialogStyle private constructor(val value: Int) {
     /**

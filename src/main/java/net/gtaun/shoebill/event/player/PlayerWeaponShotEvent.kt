@@ -1,8 +1,8 @@
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
-import net.gtaun.shoebill.`object`.PlayerObject
-import net.gtaun.shoebill.`object`.SampObject
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.PlayerObject
+import net.gtaun.shoebill.entities.SampObject
 import net.gtaun.shoebill.constant.BulletHitType
 import net.gtaun.shoebill.constant.WeaponModel
 import net.gtaun.shoebill.data.Vector3D
@@ -13,7 +13,6 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerWeaponShot](https://wiki.sa-mp.com/wiki/OnPlayerWeaponShot)
  */
 class PlayerWeaponShotEvent(player: Player,
@@ -48,6 +47,7 @@ class PlayerWeaponShotEvent(player: Player,
      */
     fun disallow() {
         this.response = this.response and 0
+        interrupt()
     }
 
     /**

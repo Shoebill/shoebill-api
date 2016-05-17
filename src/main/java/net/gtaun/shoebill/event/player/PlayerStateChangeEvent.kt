@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.PlayerState
 
 /**
@@ -24,7 +24,6 @@ import net.gtaun.shoebill.constant.PlayerState
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerStateChange](https://wiki.sa-mp.com/wiki/OnPlayerStateChange)
  */
 class PlayerStateChangeEvent(player: Player,

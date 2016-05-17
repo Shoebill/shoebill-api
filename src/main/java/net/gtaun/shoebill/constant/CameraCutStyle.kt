@@ -21,9 +21,6 @@ package net.gtaun.shoebill.constant
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.object.Player.setCameraLookAt
- * @see net.gtaun.shoebill.object.Player.interpolateCameraPosition
- * @see net.gtaun.shoebill.object.Player.interpolateCameraLookAt
  */
 enum class CameraCutStyle private constructor(val value: Int) {
     /**

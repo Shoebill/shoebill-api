@@ -16,7 +16,7 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.`object`.Player
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.data.Vector3D
 import net.gtaun.util.event.Interruptable
 
@@ -25,7 +25,6 @@ import net.gtaun.util.event.Interruptable
  *
  * @author MK124
  * @author Marvin Haschker
- * @see net.gtaun.shoebill.event.player.PlayerEvent
  * @see [OnPlayerClickMap](https://wiki.sa-mp.com/wiki/OnPlayerClickMap)
  */
 class PlayerClickMapEvent(player: Player, x: Float, y: Float, z: Float) : PlayerEvent(player), Interruptable {

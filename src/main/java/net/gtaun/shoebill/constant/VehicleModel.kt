@@ -18,6 +18,8 @@
 package net.gtaun.shoebill.constant
 
 /**
+ * This enum contains all existing vehicles in GTA: San Andreas, including their specific seat size and type.
+ *
  * @author Meta
  * @author MK124
  */
@@ -257,17 +259,15 @@ enum class VehicleModel private constructor(val id: Int, val modelName: String, 
              */
             @JvmStatic
             @JvmOverloads
-            operator fun get(name: String, ignoreCase: Boolean = true): VehicleModel? {
-                return VALUES.filter { it.value.modelName.equals(name, ignoreCase) }.values.firstOrNull()
-            }
+            operator fun get(name: String, ignoreCase: Boolean = true): VehicleModel? =
+                    VALUES.filter { it.value.modelName.equals(name, ignoreCase) }.values.firstOrNull()
 
             /**
              * Gets all [VehicleModel]s of a specific type.
              */
             @JvmStatic
-            operator fun get(type: VehicleType): Collection<VehicleModel> {
-                return VALUES.filter { it.value.type == type }.values
-            }
+            operator fun get(type: VehicleType): Collection<VehicleModel> =
+                    VALUES.filter { it.value.type == type }.values
 
             private val LANDSTALKER = 400;
             private val BRAVURA = 401;
