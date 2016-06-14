@@ -73,7 +73,7 @@ abstract class Shoebill {
      * Causes the run() method of the runnable to be invoked by amx thread at the next process tick.
      * @param runnable Runnable instance
      */
-    abstract fun runOnSampThread(runnable: Runnable)
+    abstract fun runOnSampThread(runnable: Runnable): Boolean
 
     companion object {
         @JvmStatic

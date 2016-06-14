@@ -27,7 +27,8 @@ import net.gtaun.shoebill.data.Vector3D
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class PlayerAttach : PlayerRelated {
+abstract class PlayerAttach : PlayerRelated, Findable<Int, PlayerAttach.PlayerAttachSlot?>,
+        Collectable<PlayerAttach.PlayerAttachSlot> {
 
     interface PlayerAttachSlot : PlayerRelated {
         val slot: Int

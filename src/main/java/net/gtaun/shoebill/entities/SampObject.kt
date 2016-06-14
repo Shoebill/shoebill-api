@@ -44,10 +44,7 @@ abstract class SampObject : Destroyable, Proxyable<SampObject> {
     abstract val attachedVehicle: Vehicle?
 
     abstract var location: Location
-    abstract fun setLocation(pos: Vector3D)
-
     abstract var rotation: Vector3D
-    abstract fun setRotation(rx: Float, ry: Float, rz: Float)
 
     abstract val isMoving: Boolean
     abstract fun move(x: Float, y: Float, z: Float, speed: Float): Int

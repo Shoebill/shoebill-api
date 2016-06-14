@@ -67,6 +67,11 @@ interface SampObjectStore {
     fun getPickup(id: Int): Pickup?
 
     /**
+     * Get a static pickup with it's id.
+     */
+    fun getStaticPickup(id: Int): Pickup?
+
+    /**
      * Gets a [Label] by it's [id].
      */
     fun getLabel(id: Int): Label?

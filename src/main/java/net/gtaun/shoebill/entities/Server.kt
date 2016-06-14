@@ -82,7 +82,7 @@ abstract class Server : Proxyable<Server> {
     abstract fun deleteVar(varname: String): Boolean
     abstract val varsUpperIndex: Int
     abstract fun getVarNameAtIndex(index: Int): String
-    abstract fun getVarType(varname: String): ServerVarType
+    abstract fun getVarType(varname: String): ServerVarType?
 
     companion object {
 

@@ -64,6 +64,6 @@ abstract class AmxInstanceManager {
          * Returns the main instance of the [AmxInstanceManager].
          */
         @JvmStatic
-        fun get(): AmxInstanceManager? = Instance.reference?.get()
+        fun get(): AmxInstanceManager = Instance.reference!!.get()
     }
 }

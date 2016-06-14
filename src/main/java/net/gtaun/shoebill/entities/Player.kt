@@ -192,7 +192,22 @@ abstract class Player : Proxyable<Player> {
     /**
      * The [AngledLocation] of the [Player]s body.
      */
-    abstract val location: AngledLocation
+    abstract var location: AngledLocation
+
+    /**
+     * The interior of the [Player].
+     */
+    abstract var interior: Int
+
+    /**
+     * The world of the [Player].
+     */
+    abstract var world: Int
+
+    /**
+     * The facing angle of the [Player].
+     */
+    abstract var facingAngle: Float
 
     /**
      * The world bound of the [Player]s [World].
@@ -344,12 +359,6 @@ abstract class Player : Proxyable<Player> {
     abstract fun setLocation(loc: Location)
 
     /**
-     * Sets the [Location] of the [Player].
-     * @param loc AngledLocation
-     */
-    abstract fun setLocation(loc: AngledLocation)
-
-    /**
      * Sets the Location of the Player, and then sets the Z-Position to the nearest Ground.
      * @param x X-Position
      * @param y Y-Position
@@ -374,18 +383,6 @@ abstract class Player : Proxyable<Player> {
      * @param loc AngledLocation
      */
     abstract fun setLocationFindZ(loc: AngledLocation)
-
-    /**
-     * Sets the interior of the [Player].
-     * @param interiorId New Interior id.
-     */
-    abstract fun setInterior(interiorId: Int)
-
-    /**
-     * Sets the virtual world to [worldId].
-     * @param worldId New Virtual World
-     */
-    abstract fun setWorld(worldId: Int)
 
     /**
      * Sends [message] to the [Player].

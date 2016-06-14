@@ -30,4 +30,8 @@ class PlayerStateChangeEvent(player: Player,
                              /**
                               * The associated old PlayerState for this event.
                               */
-                             val oldState: PlayerState) : PlayerEvent(player)
+                             val oldState: PlayerState,
+                             /**
+                              * The associated new PlayerState for this event.
+                              */
+                             val newState: PlayerState = player.state) : PlayerEvent(player)
