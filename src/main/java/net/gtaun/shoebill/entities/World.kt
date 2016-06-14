@@ -101,8 +101,6 @@ abstract class World : Proxyable<World> {
 
     companion object {
         @JvmStatic
-        fun get(): World {
-            return SampObjectManager.get().world
-        }
+        fun get(): World = SampObjectManager.get().world
     }
 }

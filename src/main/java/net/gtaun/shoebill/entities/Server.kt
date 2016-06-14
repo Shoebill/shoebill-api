@@ -90,9 +90,7 @@ abstract class Server : Proxyable<Server> {
          * Gets the [Server] instance.
          */
         @JvmStatic
-        fun get(): Server {
-            return SampObjectManager.get().server
-        }
+        fun get(): Server = SampObjectManager.get().server
     }
 
 }

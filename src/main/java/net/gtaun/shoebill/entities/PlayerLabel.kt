@@ -39,17 +39,14 @@ abstract class PlayerLabel : Label(), PlayerRelated {
          * Gets a [PlayerLabel] from [player] with [id].
          */
         @JvmStatic
-        operator fun get(player: Player, id: Int): PlayerLabel? {
-            return SampObjectManager.get().getPlayerLabel(player, id)
-        }
+        operator fun get(player: Player, id: Int): PlayerLabel? = SampObjectManager.get().getPlayerLabel(player, id)
 
         /**
          * Gets all [PlayerLabel]s from [value].
          */
         @JvmStatic
-        override operator fun get(value: Player): Collection<PlayerLabel> {
-            return SampObjectManager.get().getPlayerLabels(value)
-        }
+        override operator fun get(value: Player): Collection<PlayerLabel> =
+                SampObjectManager.get().getPlayerLabels(value)
 
         /**
          * Create a Label which is only visible for one player, with params. If the Creation fails, it will throw a CreationFailedException.

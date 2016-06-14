@@ -91,8 +91,7 @@ abstract class RaceCheckpoint : Checkpoint() {
          */
         @JvmStatic
         fun create(location: Radius, type: RaceCheckpointType, next: RaceCheckpoint, onEnter: Consumer<Player>,
-                   onLeave: Consumer<Player>): RaceCheckpoint {
-            return create(location, type, Supplier { next }, onEnter, onLeave)
-        }
+                   onLeave: Consumer<Player>): RaceCheckpoint =
+                create(location, type, Supplier { next }, onEnter, onLeave)
     }
 }

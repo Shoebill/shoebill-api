@@ -41,17 +41,13 @@ abstract class PlayerObject : SampObject(), PlayerRelated {
          * Gets a [PlayerObject] from [player] with [id].
          */
         @JvmStatic
-        operator fun get(player: Player, id: Int): PlayerObject? {
-            return SampObjectManager.get().getPlayerObject(player, id)
-        }
+        operator fun get(player: Player, id: Int): PlayerObject? = SampObjectManager.get().getPlayerObject(player, id)
 
         /**
          * Gets all available [PlayerObject]s from [player].
          */
         @JvmStatic
-        operator fun get(player: Player): Collection<PlayerObject> {
-            return SampObjectManager.get().getPlayerObjects(player)
-        }
+        operator fun get(player: Player): Collection<PlayerObject> = SampObjectManager.get().getPlayerObjects(player)
 
         /**
          * Create a SampObject for Player with params. If the Creation fails, it will throw a CreationFailedException.
