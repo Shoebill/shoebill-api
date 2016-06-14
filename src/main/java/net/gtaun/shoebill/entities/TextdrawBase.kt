@@ -19,6 +19,7 @@ package net.gtaun.shoebill.entities
 import net.gtaun.shoebill.constant.TextDrawAlign
 import net.gtaun.shoebill.constant.TextDrawFont
 import net.gtaun.shoebill.data.Color
+import net.gtaun.shoebill.data.ModelRotation
 import net.gtaun.shoebill.data.Vector2D
 
 /**
@@ -27,31 +28,43 @@ import net.gtaun.shoebill.data.Vector2D
  * @author MK124
  * @author Marvin Haschker
  */
-interface TextdrawBase : Destroyable, Proxyable<TextdrawBase> {
-    val id: Int
-    val position: Vector2D
-    var text: String
+abstract class TextdrawBase : Destroyable, Proxyable<TextdrawBase> {
+    abstract val id: Int
+    abstract val position: Vector2D
+    abstract var text: String
 
-    fun setLetterSize(x: Float, y: Float)
-    fun setLetterSize(vec: Vector2D)
+    abstract var letterSize: Vector2D
+    abstract var textSize: Vector2D
+    abstract var alignment: TextDrawAlign
+    abstract var color: Color
+    abstract var isUseBox: Boolean
+    abstract var boxColor: Color
+    abstract var shadowSize: Int
+    abstract var outlineSize: Int
+    abstract var backgroundColor: Color
+    abstract var font: TextDrawFont
+    abstract var isProportional: Boolean
+    abstract var isSelectable: Boolean
+    abstract var previewModel: Int
+    abstract var previewModelRotation: ModelRotation
 
-    fun setTextSize(x: Float, y: Float)
-    fun setTextSize(vec: Vector2D)
+    @JvmOverloads
+    fun setLetterSize(x: Float = letterSize.x, y: Float = letterSize.y) {
+        letterSize = Vector2D(x, y)
+    }
 
-    fun setAlignment(alignment: TextDrawAlign)
-    fun setColor(color: Color)
-    fun setUseBox(use: Boolean)
-    fun setBoxColor(color: Color)
-    fun setShadowSize(size: Int)
-    fun setOutlineSize(size: Int)
-    fun setBackgroundColor(color: Color)
-    fun setFont(font: TextDrawFont)
-    fun setProportional(set: Boolean)
-    fun setSelectable(set: Boolean)
-    fun setPreviewModel(modelindex: Int)
-    fun setPreviewModelRotation(rotX: Float, rotY: Float, rotZ: Float)
-    fun setPreviewModelRotation(rotX: Float, rotY: Float, rotZ: Float, zoom: Float)
-    fun setPreviewVehicleColor(color1: Int, color2: Int)
+    @JvmOverloads
+    fun setTextSize(x: Float = textSize.x, y: Float = textSize.y) {
+        textSize = Vector2D(x, y)
+    }
+
+    @JvmOverloads
+    fun setPreviewModelRotation(rotX: Float = previewModelRotation.x, rotY: Float = previewModelRotation.y, rotZ:
+            Float = previewModelRotation.z, zoom: Float = previewModelRotation.zoom) {
+        previewModelRotation = ModelRotation(rotX, rotY, rotZ, zoom)
+    }
+
+    abstract fun setPreviewVehicleColor(color1: Int, color2: Int)
 
     companion object {
         /**

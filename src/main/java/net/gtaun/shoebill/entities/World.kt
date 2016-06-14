@@ -19,6 +19,7 @@ package net.gtaun.shoebill.entities
 import net.gtaun.shoebill.SampObjectManager
 import net.gtaun.shoebill.constant.PlayerMarkerMode
 import net.gtaun.shoebill.constant.WeaponModel
+import net.gtaun.shoebill.constant.Weather
 import net.gtaun.shoebill.data.Location
 import net.gtaun.shoebill.data.SpawnInfo
 import net.gtaun.shoebill.data.Vector3D
@@ -31,8 +32,6 @@ import net.gtaun.shoebill.data.WeaponData
  * @author Marvin Haschker
  */
 abstract class World : Proxyable<World> {
-
-    abstract fun setTeamCount(count: Int)
 
     abstract fun addPlayerClass(modelId: Int, x: Float, y: Float, z: Float, angle: Float, weapon1: Int, ammo1: Int,
                                 weapon2: Int, ammo2: Int, weapon3: Int, ammo3: Int): Int
@@ -54,11 +53,13 @@ abstract class World : Proxyable<World> {
 
     abstract fun addPlayerClass(spawnInfo: SpawnInfo): Int
 
+    abstract var teamCount: Int
+
     abstract var chatRadius: Float
 
     abstract var playerMarkerRadius: Float
 
-    abstract var weather: Int
+    abstract var weather: Weather
 
     abstract var gravity: Float
 
@@ -67,6 +68,7 @@ abstract class World : Proxyable<World> {
     abstract var nameTagDrawDistance: Float
 
     abstract fun showNameTags(enabled: Boolean)
+
     abstract fun showPlayerMarkers(mode: PlayerMarkerMode)
 
     @Deprecated("")

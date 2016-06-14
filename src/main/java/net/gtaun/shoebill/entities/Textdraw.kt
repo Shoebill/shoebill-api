@@ -28,7 +28,7 @@ import net.gtaun.shoebill.exception.CreationFailedException
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class Textdraw : TextdrawBase {
+abstract class Textdraw : TextdrawBase() {
 
     abstract fun show(player: Player)
     abstract fun hide(player: Player)
@@ -36,7 +36,7 @@ abstract class Textdraw : TextdrawBase {
     abstract fun showForAll()
     abstract fun hideForAll()
 
-    abstract fun isShowed(player: Player): Boolean
+    abstract fun isShownForPlayer(player: Player): Boolean
 
     companion object : Collectable<Textdraw>, Findable<Int, Textdraw> {
 
