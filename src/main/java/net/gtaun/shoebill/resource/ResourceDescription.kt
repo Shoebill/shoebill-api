@@ -16,10 +16,11 @@
 
 package net.gtaun.shoebill.resource
 
-import net.gtaun.shoebill.util.config.Configuration
+import net.gtaun.shoebill.ShoebillMain
 import net.gtaun.shoebill.util.config.YamlConfiguration
+import org.reflections.Reflections
+import org.reflections.util.ConfigurationBuilder
 import java.io.File
-import java.io.FileNotFoundException
 import java.io.IOException
 import java.util.jar.JarFile
 
@@ -86,51 +87,60 @@ constructor(
 
     /**
      * Lets you load a Configuration by its Filename
-     * @param configFilename The Filename of the Config
+     *
      * @return The loaded Configuration
      * @throws IOException
      * @throws ClassNotFoundException
      */
     @Throws(IOException::class, ClassNotFoundException::class)
-    private fun loadConfig(configFilename: String): Configuration {
-        try {
-            JarFile(file).use { jarFile ->
-                val entry = jarFile.getJarEntry(configFilename)
-                val `in` = jarFile.getInputStream(entry)
+    private fun loadConfig(configFilename: String) {
+        val reflections = Reflections(ConfigurationBuilder().addUrls(file.toURI().toURL()))
+        val classes = reflections.getTypesAnnotatedWith(ShoebillMain::class.java)
+        if (classes.size == 1) {
+            clazz = classes.first().asSubclass(Resource::class.java)
+            val annotation = classes.first().getAnnotation(ShoebillMain::class.java)
+            name = annotation.name
+            description = annotation.description
+            version = annotation.version
+            authors = mutableListOf(annotation.author)
+        } else {
+            try {
+                JarFile(file).use { jarFile ->
+                    val entry = jarFile.getJarEntry(configFilename)
+                    val `in` = jarFile.getInputStream(entry)
 
-                val config = YamlConfiguration()
-                config.setDefault("name", "Unnamed")
-                config.setDefault("version", "Unknown")
-                config.setDefault("authors", "Unknown")
-                config.setDefault("description", "")
-                config.setDefault("buildNumber", 0)
-                config.setDefault("buildDate", "Unknown")
+                    val config = YamlConfiguration()
+                    config.setDefault("name", "Unnamed")
+                    config.setDefault("version", "Unknown")
+                    config.setDefault("authors", "Unknown")
+                    config.setDefault("description", "")
+                    config.setDefault("buildNumber", 0)
+                    config.setDefault("buildDate", "Unknown")
 
-                config.read(`in`)
+                    config.read(`in`)
 
-                val className = config.getString("class")
-                clazz = classLoader.loadClass(className).asSubclass(Resource::class.java)
+                    val className = config.getString("class")
+                    clazz = classLoader.loadClass(className).asSubclass(Resource::class.java)
 
-                name = config.getString("name")
-                version = config.getString("version")
+                    name = config.getString("name")
+                    version = config.getString("version")
 
-                val author = config.getString("authors")
-                val tokens = author.split("[,;]".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                    val author = config.getString("authors")
+                    val tokens = author.split("[,;]".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
-                if (tokens.size > 0) {
-                    tokens.forEach { authors.add(it.trim { it <= ' ' }) }
-                } else {
-                    authors.add(author.trim { it <= ' ' })
+                    if (tokens.size > 0) {
+                        tokens.forEach { authors.add(it.trim { it <= ' ' }) }
+                    } else {
+                        authors.add(author.trim { it <= ' ' })
+                    }
+
+                    description = config.getString("description")
+                    buildNumber = Integer.parseInt(config.getString("buildNumber"))
+                    buildDate = config.getString("buildDate")
                 }
-
-                description = config.getString("description")
-                buildNumber = config.getInt("buildNumber")
-                buildDate = config.getString("buildDate")
-
-                return config
+            } catch(e: Exception) {
+                e.printStackTrace()
             }
-        } catch (e: NullPointerException) {
-            throw FileNotFoundException(configFilename)
         }
 
     }
