@@ -122,7 +122,7 @@ abstract class Label : Destroyable, Proxyable<Label> {
          * Gets all available [Label]s.
          */
         @JvmStatic
-        override fun get(): Collection<Label> = SampObjectManager.get().labels
+        override fun get(): Collection<Label> = SampObjectManager.get().labels.filterNotNull()
 
         /**
          * Gets a [Label] by it's [id].

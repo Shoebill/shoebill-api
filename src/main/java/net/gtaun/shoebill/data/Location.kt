@@ -49,8 +49,8 @@ open class Location : Vector3D, Cloneable {
      * Sets the position of the location to [x], [y], [z], [interiorId] and [worldId].
      */
     @JvmOverloads
-    fun set(x: Float = this.x, y: Float = this.y, z: Float = this.z, interiorId: Int = this.interiorId,
-                     worldId: Int = this.worldId) {
+    open fun set(x: Float = this.x, y: Float = this.y, z: Float = this.z, interiorId: Int = this.interiorId,
+                 worldId: Int = this.worldId) {
         super.set(x, y, z)
         this.interiorId = interiorId
         this.worldId = worldId
@@ -60,18 +60,18 @@ open class Location : Vector3D, Cloneable {
      * Sets the position of the location to [pos], [interiorId] and [worldId].
      */
     @JvmOverloads
-    fun set(pos: Vector3D, interiorId: Int = this.interiorId, worldId: Int = this.worldId) =
+    open fun set(pos: Vector3D, interiorId: Int = this.interiorId, worldId: Int = this.worldId) =
             set(pos.x, pos.y, pos.z, interiorId, worldId)
 
     /**
      * Sets the position of the location to [loc].
      */
-    fun set(loc: Location) = set(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId)
+    open fun set(loc: Location) = set(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId)
 
     /**
      * Calculates the distance between the location and [loc].
      */
-    fun distance(loc: Location): Float {
+    open fun distance(loc: Location): Float {
         if (loc.interiorId != interiorId || loc.worldId != worldId) return java.lang.Float.POSITIVE_INFINITY
         return super.distance(loc)
     }

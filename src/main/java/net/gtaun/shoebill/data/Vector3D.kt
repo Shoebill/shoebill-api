@@ -47,7 +47,7 @@ open class Vector3D : Vector2D, Cloneable {
      * Sets the position of the vector to [x], [y], [z].
      */
     @JvmOverloads
-    fun set(x: Float = this.x, y: Float = this.y, z: Float = this.z) {
+    open fun set(x: Float = this.x, y: Float = this.y, z: Float = this.z) {
         super.set(x, y)
         this.z = z
     }
@@ -55,17 +55,17 @@ open class Vector3D : Vector2D, Cloneable {
     /**
      * Sets the position of the vector to [vec] and [z].
      */
-    fun set(vec: Vector2D, z: Float) = set(vec.x, vec.y, z)
+    open fun set(vec: Vector2D, z: Float) = set(vec.x, vec.y, z)
 
     /**
      * Sets the position of the vector to [vec].
      */
-    fun set(vec: Vector3D) = set(vec.x, vec.y, vec.z)
+    open fun set(vec: Vector3D) = set(vec.x, vec.y, vec.z)
 
     /**
      * Calculates the distance between [pos] and the vector.
      */
-    fun distance(pos: Vector3D): Float {
+    open fun distance(pos: Vector3D): Float {
         val dx = pos.x - x
         val dy = pos.y - y
         val dz = pos.z - z
@@ -78,7 +78,7 @@ open class Vector3D : Vector2D, Cloneable {
         return this
     }
 
-    fun add(vec: Vector3D): Vector3D {
+    open fun add(vec: Vector3D): Vector3D {
         super.add(vec)
         z += vec.z
         return this
@@ -102,7 +102,7 @@ open class Vector3D : Vector2D, Cloneable {
         return this
     }
 
-    fun mul(vec: Vector3D): Vector3D {
+    open fun mul(vec: Vector3D): Vector3D {
         super.mul(vec)
         z *= vec.z
         return this
@@ -120,7 +120,7 @@ open class Vector3D : Vector2D, Cloneable {
         return this
     }
 
-    fun blend(vec: Vector3D, factor: Float): Vector3D {
+    open fun blend(vec: Vector3D, factor: Float): Vector3D {
         super.blend(vec, factor)
         val f = 1.0f - factor
         z = z * f + vec.z * factor

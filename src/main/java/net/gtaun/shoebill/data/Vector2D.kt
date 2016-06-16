@@ -48,7 +48,7 @@ open class Vector2D : Cloneable {
      * Sets the position of the vector to [x] and [y].
      */
     @JvmOverloads
-    fun set(x: Float = this.x, y: Float = this.y) {
+    open fun set(x: Float = this.x, y: Float = this.y) {
         this.x = x
         this.y = y
     }
@@ -56,7 +56,7 @@ open class Vector2D : Cloneable {
     /**
      * Sets the position of the vector to [vector].
      */
-    fun set(vector: Vector2D) = set(vector.x, vector.y)
+    open fun set(vector: Vector2D) = set(vector.x, vector.y)
 
     open fun add(`val`: Float): Vector2D {
         x += `val`
@@ -64,7 +64,7 @@ open class Vector2D : Cloneable {
         return this
     }
 
-    fun add(vec: Vector2D): Vector2D {
+    open fun add(vec: Vector2D): Vector2D {
         x += vec.x
         y += vec.y
         return this
@@ -76,7 +76,7 @@ open class Vector2D : Cloneable {
         return this
     }
 
-    operator fun minus(vec: Vector2D): Vector2D {
+    open operator fun minus(vec: Vector2D): Vector2D {
         x -= vec.x
         y -= vec.y
         return this
@@ -88,7 +88,7 @@ open class Vector2D : Cloneable {
         return this
     }
 
-    fun mul(vec: Vector2D): Vector2D {
+    open fun mul(vec: Vector2D): Vector2D {
         x *= vec.x
         y *= vec.y
         return this
@@ -100,13 +100,13 @@ open class Vector2D : Cloneable {
         return this
     }
 
-    operator fun div(vec: Vector2D): Vector2D {
+    open operator fun div(vec: Vector2D): Vector2D {
         x /= vec.x
         y /= vec.y
         return this
     }
 
-    fun blend(vec: Vector2D, factor: Float): Vector2D {
+    open fun blend(vec: Vector2D, factor: Float): Vector2D {
         val f = 1.0f - factor
         x = x * f + vec.x * factor
         y = y * f + vec.y * factor

@@ -57,7 +57,7 @@ abstract class Zone : Destroyable, Proxyable<Zone>, RangeCheckable3D {
         /**
          * Gets all available [Zone]s.
          */
-        override fun get(): Collection<Zone> = SampObjectManager.get().zones
+        override fun get(): Collection<Zone> = SampObjectManager.get().zones.filterNotNull()
 
         /**
          * Create a Zone with params. If the Creation fails, it will throw a CreationFailedException.

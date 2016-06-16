@@ -50,7 +50,7 @@ abstract class Textdraw : TextdrawBase() {
          * Gets all available [Textdraw]s.
          */
         @JvmStatic
-        override fun get(): Collection<Textdraw> = SampObjectManager.get().textdraws
+        override fun get(): Collection<Textdraw> = SampObjectManager.get().textdraws.filterNotNull()
 
         /**
          * Gets a [Textdraw] by it's [id].

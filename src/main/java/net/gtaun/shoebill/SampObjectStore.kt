@@ -109,7 +109,7 @@ interface SampObjectStore {
     /**
      * Gets all available online [Player]s.
      */
-    val players: MutableList<Player>
+    val players: Array<Player?>
 
     /**
      * Gets all available human online [Player]s.
@@ -124,12 +124,12 @@ interface SampObjectStore {
     /**
      * Gets all available [Vehicle]s.
      */
-    val vehicles: MutableList<Vehicle>
+    val vehicles: Array<Vehicle?>
 
     /**
      * Gets all available [SampObject]s.
      */
-    val objects: MutableList<SampObject>
+    val objects: Array<SampObject?>
 
     /**
      * Gets all available [PlayerObject]s from [player].
@@ -139,12 +139,12 @@ interface SampObjectStore {
     /**
      * Gets all available [Pickup]s.
      */
-    val pickups: MutableList<Pickup>
+    val pickups: Array<Pickup?>
 
     /**
      * Gets all available [Label]s.
      */
-    val labels: MutableList<Label>
+    val labels: Array<Label?>
 
     /**
      * Gets all available [PlayerLabel] from [player].
@@ -154,7 +154,7 @@ interface SampObjectStore {
     /**
      * Gets all available [Textdraw]s.
      */
-    val textdraws: MutableList<Textdraw>
+    val textdraws: Array<Textdraw?>
 
     /**
      * Gets all available [PlayerTextdraw]s from [player].
@@ -164,12 +164,12 @@ interface SampObjectStore {
     /**
      * Gets all available [Zone]s.
      */
-    val zones: MutableList<Zone>
+    val zones: Array<Zone?>
 
     /**
      * Gets all available [Menu]s.
      */
-    val menus: MutableList<Menu>
+    val menus: Array<Menu?>
 
     /**
      * Gets all used [DialogId]s.
@@ -179,12 +179,12 @@ interface SampObjectStore {
     /**
      * Gets all registered PlayerClasses in the form of [SpawnInfo].
      */
-    val playerClasses: MutableList<SpawnInfo>
+    val playerClasses: Array<SpawnInfo?>
 
     /**
      * Gets all available [Actor]s.
      */
-    val actors: MutableList<Actor>
+    val actors: Array<Actor?>
 
     /**
      * Gets a [Actor] by it's [id].

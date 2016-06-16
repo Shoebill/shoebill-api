@@ -111,7 +111,7 @@ abstract class Menu : Destroyable, Proxyable<Menu> {
          * Gets all available [Menu]s.
          */
         @JvmStatic
-        override fun get(): Collection<Menu> = SampObjectManager.get().menus
+        override fun get(): Collection<Menu> = SampObjectManager.get().menus.filterNotNull()
 
         /**
          * Gets a [Menu] by it's [id].

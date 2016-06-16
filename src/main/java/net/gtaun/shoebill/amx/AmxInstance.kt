@@ -81,6 +81,6 @@ interface AmxInstance {
          * Returns the default (main) amx instance.
          */
         val default: AmxInstance?
-            get() = AmxInstanceManager.get()?.amxInstances?.firstOrNull()
+            get() = AmxInstanceManager.get().amxInstances.firstOrNull()
     }
 }

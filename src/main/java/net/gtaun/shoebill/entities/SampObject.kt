@@ -85,7 +85,7 @@ abstract class SampObject : Destroyable, Proxyable<SampObject> {
          * Gets all available [SampObject]s.
          */
         @JvmStatic
-        override fun get(): Collection<SampObject> = SampObjectManager.get().objects
+        override fun get(): Collection<SampObject> = SampObjectManager.get().objects.filterNotNull()
 
         /**
          * Gets a [SampObject] by it's [id].

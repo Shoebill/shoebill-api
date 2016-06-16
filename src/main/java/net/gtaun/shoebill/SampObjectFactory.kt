@@ -17,7 +17,6 @@
 package net.gtaun.shoebill
 
 import net.gtaun.shoebill.entities.*
-import net.gtaun.shoebill.entities.Timer.TimerCallback
 import net.gtaun.shoebill.data.*
 import net.gtaun.shoebill.event.dialog.DialogCloseEvent
 import net.gtaun.shoebill.event.dialog.DialogResponseEvent

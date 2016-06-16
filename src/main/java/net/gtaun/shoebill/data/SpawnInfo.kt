@@ -52,7 +52,7 @@ class SpawnInfo : Cloneable {
     constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f, interiorId: Int = 0, worldId: Int = 0, angle: Float = 0f,
                 skin: Int = 0, team: Int = 0, weapon1: WeaponData = WeaponData(), weapon2: WeaponData = WeaponData(),
                 weapon3: WeaponData = WeaponData()) {
-        location = AngledLocation(x, y, z, interiorId, worldId, angle)
+        location = AngledLocation(x, y, z, angle, interiorId, worldId)
         this.skinId = skin
         this.teamId = team
         this.weapon1 = weapon1

@@ -1171,7 +1171,7 @@ abstract class Player : Proxyable<Player> {
          * Gets all available [Player]s.
          */
         @JvmStatic
-        override fun get(): Collection<Player> = SampObjectManager.get().players
+        override fun get(): Collection<Player> = SampObjectManager.get().players.filterNotNull()
 
         /**
          * Gets a [Player] by it's name.

@@ -91,7 +91,7 @@ abstract class Actor : Destroyable {
         @JvmStatic
         @JvmOverloads
         fun create(modelId: Int, x: Float = 0f, y: Float = 0f, z: Float = 0f, angle: Float = 0f,
-                   virtualWorld: Int = 0): Actor = create(modelId, AngledLocation(x, y, z, 0, virtualWorld, angle))
+                   virtualWorld: Int = 0): Actor = create(modelId, AngledLocation(x, y, z, angle, 0, virtualWorld))
 
         /**
          * Creates an actor with the modelId of [modelId] and the position of [position], [angle] and [virtualWorld].
@@ -107,7 +107,7 @@ abstract class Actor : Destroyable {
          * Gets all available [Actor]s.
          */
         @JvmStatic
-        override fun get(): Collection<Actor> = SampObjectManager.get().actors
+        override fun get(): Collection<Actor> = SampObjectManager.get().actors.filterNotNull()
 
         /**
          * Gets an [Actor] by it's [id].

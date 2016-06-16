@@ -174,7 +174,7 @@ abstract class Vehicle : Destroyable, Proxyable<Vehicle> {
          * Gets all available [Vehicle]s.
          */
         @JvmStatic
-        override fun get(): Collection<Vehicle> = SampObjectManager.get().vehicles
+        override fun get(): Collection<Vehicle> = SampObjectManager.get().vehicles.filterNotNull()
 
         /**
          * Gets the vehicle's pool size
@@ -219,7 +219,7 @@ abstract class Vehicle : Destroyable, Proxyable<Vehicle> {
         @JvmOverloads
         fun create(modelId: Int, x: Float, y: Float, z: Float, interiorId: Int = 0, worldId: Int = 0, angle: Float =
         0f, color1: Int = 1, color2: Int = 1, respawnDelay: Int = -1, addSiren: Boolean = false): Vehicle =
-            create(modelId, AngledLocation(x, y, z, interiorId, worldId, angle), color1, color2, respawnDelay, addSiren)
+                create(modelId, AngledLocation(x, y, z, angle, interiorId, worldId), color1, color2, respawnDelay, addSiren)
 
         /**
          * Invalid ID for a [Vehicle].

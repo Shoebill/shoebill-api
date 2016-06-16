@@ -33,19 +33,19 @@ class AngledLocation : Location, Cloneable {
     var angle: Float = 0f
 
     @JvmOverloads
-    constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f, interiorId: Int = 0, worldId: Int = 0, angle: Float = 0f)
+    constructor(x: Float = 0f, y: Float = 0f, z: Float = 0f, angle: Float = 0f, interiorId: Int = 0, worldId: Int = 0)
         : super(x, y, z, interiorId, worldId) {
         this.angle = angle
     }
 
     @JvmOverloads
-    constructor(pos: Vector3D, interiorId: Int = 0, worldId: Int = 0, angle: Float = 0f) :
-    this(pos.x, pos.y, pos.z, interiorId, worldId, angle)
+    constructor(pos: Vector3D, angle: Float = 0f, interiorId: Int = 0, worldId: Int = 0) :
+    this(pos.x, pos.y, pos.z, angle, interiorId, worldId)
 
     @JvmOverloads
-    constructor(loc: Location, angle: Float = 0f) : this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, angle)
+    constructor(loc: Location, angle: Float = 0f) : this(loc.x, loc.y, loc.z, angle, loc.interiorId, loc.worldId)
 
-    constructor(loc: AngledLocation) : this(loc.x, loc.y, loc.z, loc.interiorId, loc.worldId, loc.angle)
+    constructor(loc: AngledLocation) : this(loc.x, loc.y, loc.z, loc.angle, loc.interiorId, loc.worldId)
 
     /**
      * Sets the position of the location to the [x], [y], [z], [interiorId], [worldId] and [angle].

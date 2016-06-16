@@ -69,7 +69,7 @@ abstract class Pickup : Destroyable, Proxyable<Pickup> {
          * Gets all available [Pickup]s.
          */
         @JvmStatic
-        override fun get(): Collection<Pickup> = SampObjectManager.get().pickups
+        override fun get(): Collection<Pickup> = SampObjectManager.get().pickups.filterNotNull()
 
         /**
          * Gets a [Pickup] by it's [id].

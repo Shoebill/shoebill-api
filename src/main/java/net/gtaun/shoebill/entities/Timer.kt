@@ -26,13 +26,6 @@ import net.gtaun.shoebill.SampObjectManager
  */
 abstract class Timer : Destroyable {
 
-    @FunctionalInterface
-    interface TimerCallback {
-        fun onTick(factualInterval: Int)
-        fun onStart()
-        fun onStop()
-    }
-
     abstract var callback: TimerCallback?
 
     abstract var interval: Int
@@ -43,6 +36,12 @@ abstract class Timer : Destroyable {
     abstract fun stop()
 
     companion object {
+
+        /**
+         * Creates a Timer with params.
+         */
+        @JvmStatic
+        fun create(interval: Int, callback: TimerCallback? = null): Timer = create(interval, COUNT_INFINITE, callback)
 
         /**
          * Create a Timer with params.
