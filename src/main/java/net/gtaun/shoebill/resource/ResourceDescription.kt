@@ -17,9 +17,9 @@
 package net.gtaun.shoebill.resource
 
 import net.gtaun.shoebill.ShoebillMain
-import net.gtaun.shoebill.util.config.YamlConfiguration
 import org.reflections.Reflections
 import org.reflections.util.ConfigurationBuilder
+import org.slf4j.LoggerFactory
 import java.io.File
 import java.io.IOException
 import java.util.jar.JarFile
@@ -44,7 +44,7 @@ constructor(
          */
         val type: ResourceType,
         /**
-         * The File of the ResourceDescription instance.
+         * The file of the [ResourceDescription] instance.
          */
         val file: File, private val classLoader: ClassLoader) {
 
@@ -53,30 +53,36 @@ constructor(
      */
     var clazz: Class<out Resource>? = null
         private set
+
     /**
-     * The name of the ResourceDescription.
+     * The name of the resource.
      */
     var name: String? = null
         private set
     /**
-     * The version of the ResourceDescription.
+     * The version of the resource.
      */
     var version: String? = null
         private set
-    var authors: MutableList<String> = mutableListOf()
+
+    /**
+     * The authors of the resource.
+     */
+    var authors: List<String> = listOf()
         private set
+
     /**
      * The description of the ResourceDescription.
      */
     var description: String? = null
         private set
     /**
-     * The Buildnumber of the ResourceDescription.
+     * The build number of the resource.
      */
     var buildNumber: Int = 0
         private set
     /**
-     * The Builddate.
+     * The build date of the resource.
      */
     var buildDate: String? = null
         private set
@@ -96,13 +102,51 @@ constructor(
     private fun loadConfig(configFilename: String) {
         val reflections = Reflections(ConfigurationBuilder().addUrls(file.toURI().toURL()))
         val classes = reflections.getTypesAnnotatedWith(ShoebillMain::class.java)
-        if (classes.size == 1) {
-            clazz = classes.first().asSubclass(Resource::class.java)
-            val annotation = classes.first().getAnnotation(ShoebillMain::class.java)
+        if (classes.size > 0) {
+            val mainClass: Class<out Resource>?
+
+            if (classes.size == 1) mainClass = classes.first().asSubclass(Resource::class.java)
+            else {
+                val sortedClasses = classes.sortedBy { it.getAnnotation(ShoebillMain::class.java).loadPriority }
+                        .filter {
+                            if (type == ResourceType.GAMEMODE) {
+                                try {
+                                    it.asSubclass(Gamemode::class.java); return@filter true
+                                } catch(e: ClassCastException) {
+                                    return@filter false
+                                }
+                            } else {
+                                try {
+                                    it.asSubclass(Plugin::class.java); return@filter true
+                                } catch(e: ClassCastException) {
+                                    return@filter false
+                                }
+                            }
+                        }
+
+
+                mainClass = sortedClasses.first().asSubclass(Resource::class.java)
+                val annotation = mainClass.getAnnotation(ShoebillMain::class.java)
+
+                if (sortedClasses.size > 1) {
+                    LOGGER.info("More than one class was annotated with the @ShoebillMain annotation for file " +
+                            "${file.nameWithoutExtension}.")
+                    LOGGER.info("Shoebill will load class \"${mainClass.name}\" because it has the highest priority " +
+                            "(${annotation.loadPriority}).")
+
+                }
+            }
+            if (mainClass == null) throw ClassNotFoundException("There is no class annotated with the ShoebillMain " +
+                    "interface.")
+
+            val annotation = mainClass.getAnnotation(ShoebillMain::class.java)
             name = annotation.name
             description = annotation.description
             version = annotation.version
-            authors = mutableListOf(annotation.author)
+            authors = getAuthors(annotation.author)
+            buildDate = annotation.buildDate
+            buildNumber = annotation.buildNumber
+            clazz = mainClass
         } else {
             JarFile(file).use { jarFile ->
                 val entry = jarFile.getJarEntry(configFilename)
@@ -124,19 +168,26 @@ constructor(
                 name = config.getString("name")
                 version = config.getString("version")
 
-                val author = config.getString("authors")
-                val tokens = author.split("[,;]".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-
-                if (tokens.size > 0) {
-                    tokens.forEach { authors.add(it.trim { it <= ' ' }) }
-                } else {
-                    authors.add(author.trim { it <= ' ' })
-                }
+                authors = getAuthors(config.getString("authors"))
 
                 description = config.getString("description")
                 buildNumber = Integer.parseInt(config.getString("buildNumber"))
                 buildDate = config.getString("buildDate")
             }
+        }
+    }
+
+    companion object {
+        val LOGGER = LoggerFactory.getLogger("Resource Description")
+
+        private fun getAuthors(author: String): List<String> {
+            val authors = mutableListOf<String>()
+
+            val tokens = author.split("[,;]".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+            if (tokens.size > 0) tokens.forEach { authors.add(it.trim { it <= ' ' }) }
+            else authors.add(author.trim { it <= ' ' })
+
+            return authors
         }
     }
 }

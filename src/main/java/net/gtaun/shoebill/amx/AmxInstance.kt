@@ -27,27 +27,33 @@ import java.util.function.Function
  * @author MK124
  * @author Marvin Haschker
  */
-interface AmxInstance {
+abstract class AmxInstance {
 
     /**
      * Registers a function that can be called from pawn and other native plugins.
      */
-    fun registerFunction(name: String, callback: Function<Array<Any>, Int>, vararg parameterTypes: Class<Any>): Boolean
+    abstract fun registerFunction(name: String, callback: (Array<Any>) -> Int, vararg types: String): Boolean
+
+    /**
+     * Convenient method for the usage of Java instead of Kotlin.
+     */
+    fun registerFunction(name: String, callback: Function<Array<Any>, Int>, vararg types: String): Boolean =
+            registerFunction(name, { callback.apply(it) }, *types)
 
     /**
      * Unregisters a function that had previously been registered.
      */
-    fun unregisterFunction(name: String): Boolean
+    abstract fun unregisterFunction(name: String): Boolean
 
     /**
      * Checks if the given function has already been registered.
      */
-    fun isFunctionRegistered(name: String): Boolean
+    abstract fun isFunctionRegistered(name: String): Boolean
 
     /**
      * Calls an registered function by it's name with given parameters.
      */
-    fun callRegisteredFunction(name: String, vararg parameters: Any): Int
+    abstract fun callRegisteredFunction(name: String, parameters: Array<Any>): Int
 
     /**
      * Finds a public function in the context of the loaded amx file.
@@ -63,23 +69,24 @@ interface AmxInstance {
     /**
      * Finds a public function in the context of the loaded amx file.
      */
-    fun getPublic(name: String, returnType: ReturnType): AmxCallable?
+    abstract fun getPublic(name: String, returnType: ReturnType): AmxCallable?
 
     /**
      * Finds a native function that has been installed into the context of the loaded amx file (e.g. from a native
      * plugin, such as Streamer or FCNPC).
      */
-    fun getNative(name: String, returnType: ReturnType): AmxCallable?
+    abstract fun getNative(name: String, returnType: ReturnType): AmxCallable?
 
     /**
      * Holds the memory address of the Amx-Instance from the SA:MP server.
      */
-    val handle: Int
+    abstract val handle: Int
 
     companion object {
         /**
          * Returns the default (main) amx instance.
          */
+        @JvmStatic
         val default: AmxInstance?
             get() = AmxInstanceManager.get().amxInstances.firstOrNull()
     }

@@ -42,23 +42,24 @@ abstract class Resource internal constructor() {
     /**
      * Gets the ResourceDescription of the Resource
      */
-    var description: ResourceDescription? = null
+    lateinit var description: ResourceDescription
         private set
 
     /**
      * Gets the active Shoebill instance from the Resource.
      */
-    var shoebill: Shoebill? = null
+    lateinit var shoebill: Shoebill
         private set
 
-    private var rootEventManager: EventManager? = null
-    private var eventManager: EventManagerNode? = null
+    lateinit private var rootEventManager: EventManager
+    lateinit private var eventManager: EventManagerNode
     /**
      * Gets the Datadir.
      */
-    var dataDir: File? = null
+    lateinit var dataDir: File
         private set
-    private var onDisableCalls: Deque<Runnable>? = null
+
+    private var onDisableCalls: Deque<Runnable> = LinkedList<Runnable>()
 
     /**
      * Sets the Context of the Resource instance.
@@ -67,13 +68,12 @@ abstract class Resource internal constructor() {
      * @param rootEventManager The parent Eventmanager
      * @param dataDir The Data Directory
      */
-    fun setContext(description: ResourceDescription, shoebill: Shoebill, rootEventManager: EventManager, dataDir:
-    File) {
+    fun setContext(description: ResourceDescription, shoebill: Shoebill, rootEventManager: EventManager,
+                   dataDir: File) {
         this.description = description
         this.shoebill = shoebill
         this.rootEventManager = rootEventManager
         this.dataDir = dataDir
-        this.onDisableCalls = LinkedList<Runnable>()
     }
 
     /**
@@ -96,13 +96,13 @@ abstract class Resource internal constructor() {
      */
     @Throws(Throwable::class)
     open fun enable() {
-        eventManager = rootEventManager!!.createChildNode()
+        eventManager = rootEventManager.createChildNode()
 
         onEnable()
         isEnabled = true
 
         val event = ResourceEnableEvent(this)
-        eventManager!!.dispatchEvent(event, getEventManager(), this)
+        eventManager.dispatchEvent(event, getEventManager(), this)
     }
 
     /**
@@ -112,42 +112,41 @@ abstract class Resource internal constructor() {
     @Throws(Throwable::class)
     open fun disable() {
         val event = ResourceDisableEvent(this)
-        eventManager!!.dispatchEvent(event, getEventManager(), this)
+        eventManager.dispatchEvent(event, getEventManager(), this)
 
         var throwable: Throwable? = null
         try {
             if (isEnabled) onDisable()
-            while (!onDisableCalls!!.isEmpty()) onDisableCalls!!.pollLast().run()
+            while (!onDisableCalls.isEmpty()) onDisableCalls.pollLast().run()
         } catch (e: Throwable) {
             throwable = e
         }
 
-        eventManager!!.destroy()
-        eventManager = null
+        eventManager.destroy()
 
-        val serviceManager = shoebill!!.serviceStore as ServiceManager
+        val serviceManager = shoebill.serviceStore as ServiceManager
         serviceManager.unregisterAllServices(this)
 
         isEnabled = false
         if (throwable != null) throw throwable
     }
 
-    fun onDisable(runnable: Runnable) {
-        onDisableCalls!!.offer(runnable)
+    fun onDisable(action: Runnable) = onDisable { action.run() }
+
+    fun onDisable(action: () -> Unit) {
+        onDisableCalls.offer(Runnable { action() })
     }
 
     /**
      * Gets the event Manager.
      */
-    fun getEventManager(): EventManager {
-        return eventManager!!
-    }
+    fun getEventManager(): EventManager = eventManager
 
     /**
      * Gets the Logger
      */
     val logger: Logger
-        get() = LoggerFactory.getLogger(description!!.clazz)
+        get() = LoggerFactory.getLogger(description.clazz)
 
     /**
      * Registers a Service
@@ -155,7 +154,7 @@ abstract class Resource internal constructor() {
      * @param service The Service
      */
     fun <T : Service> registerService(type: Class<T>, service: T) {
-        val serviceManager = shoebill!!.serviceStore as ServiceManager
+        val serviceManager = shoebill.serviceStore as ServiceManager
         serviceManager.registerService(this, type, service)
     }
 
@@ -164,7 +163,7 @@ abstract class Resource internal constructor() {
      * @param type The Class instance
      */
     fun <T : Service> unregisterService(type: Class<T>) {
-        val serviceManager = shoebill!!.serviceStore as ServiceManager
+        val serviceManager = shoebill.serviceStore as ServiceManager
         serviceManager.unregisterService(this, type)
     }
 }

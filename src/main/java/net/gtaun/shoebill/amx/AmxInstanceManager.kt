@@ -52,7 +52,13 @@ abstract class AmxInstanceManager {
      * Hooks an callback that is triggered from the abstract machine (SA:MP Server) such as OnPlayerConnect or even
      * custom callbacks like OnDynamicObjectMoved (from the Streamer Plugin).
      */
-    abstract fun hookCallback(callbackName: String, hook: Consumer<AmxCallEvent>, types: String): Boolean
+    abstract fun hookCallback(name: String, hook: (AmxCallEvent) -> Unit, vararg types: String): Boolean
+
+    /**
+     * Convenient method for the usage with Java instead of Kotlin.
+     */
+    fun hookCallback(name: String, hook: Consumer<AmxCallEvent>, vararg types: String): Boolean =
+            hookCallback(name, { hook.accept(it) }, *types)
 
     /**
      * Unhooks a registered callback after it has been registered via [hookCallback].

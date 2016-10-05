@@ -12,7 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<kotlin.version>1.0.2</kotlin.version>
+		<kotlin.version>1.0.4</kotlin.version>
 		<dokka.version>0.9.8</dokka.version>
 	</properties>
 
@@ -166,6 +166,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<compilerArgument>-parameters</compilerArgument>
 				</configuration>
 			</plugin>
 

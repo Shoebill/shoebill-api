@@ -73,7 +73,16 @@ abstract class Shoebill {
      * Causes the run() method of the runnable to be invoked by amx thread at the next process tick.
      * @param runnable Runnable instance
      */
-    abstract fun runOnSampThread(runnable: Runnable): Boolean
+    @Deprecated("This function has been renamed to 'runOnMainThread'.", ReplaceWith("runOnMainThread"))
+    fun runOnSampThread(runnable: Runnable): Boolean = runOnMainThread(runnable)
+
+    /**
+     * Causes the run() method of the runnable to be invoked by amx thread at the next process tick.
+     * @param runnable Runnable instance
+     */
+    abstract fun runOnMainThread(runnable: Runnable): Boolean
+
+    fun runOnMainThread(runnable: () -> Unit): Boolean = runOnMainThread(Runnable { runnable.invoke() })
 
     companion object {
         @JvmStatic
