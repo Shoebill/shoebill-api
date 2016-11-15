@@ -16,7 +16,12 @@
 
 package net.gtaun.shoebill.event.player
 
+<<<<<<< HEAD:src/main/java/net/gtaun/shoebill/event/player/PlayerConnectEvent.kt
 import net.gtaun.shoebill.entities.Player
+=======
+import net.gtaun.shoebill.object.Player;
+import net.gtaun.util.event.Interruptable;
+>>>>>>> e6c54ebac8ae868f77c36501ecdff87fd6a68c04:src/main/java/net/gtaun/shoebill/event/player/PlayerConnectEvent.java
 
 /**
  * This event represents the OnPlayerConnect of Pawn.
@@ -25,9 +30,41 @@ import net.gtaun.shoebill.entities.Player
  * @author Marvin Haschker
  * @see [OnPlayerConnect](https://wiki.sa-mp.com/wiki/OnPlayerConnect)
  */
+<<<<<<< HEAD:src/main/java/net/gtaun/shoebill/event/player/PlayerConnectEvent.kt
 class PlayerConnectEvent(player: Player) : PlayerEvent(player) {
 
     /**
+=======
+public class PlayerConnectEvent extends PlayerEvent implements Interruptable
+{
+
+	private int ret = 1;
+
+	public PlayerConnectEvent(Player player)
+	{
+		super(player);
+	}
+	
+	/**
+     * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
+     */
+	public void disallow() {
+		this.ret &= 0;
+		interrupt();
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see net.gtaun.util.event.Event#interrupt()
+	 */
+	@Override
+	public void interrupt()
+	{
+		super.interrupt();
+	}
+	
+	/**
+>>>>>>> e6c54ebac8ae868f77c36501ecdff87fd6a68c04:src/main/java/net/gtaun/shoebill/event/player/PlayerConnectEvent.java
      * Returns the current response value
      * @return Current response value
      */
