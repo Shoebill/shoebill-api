@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class VehicleComponentSlot private constructor(val value: Int) {
+enum class VehicleComponentSlot constructor(val value: Int) {
     /**
      * Spoiler
      */

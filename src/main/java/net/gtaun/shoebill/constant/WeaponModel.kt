@@ -23,10 +23,10 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class WeaponModel private constructor(@JvmField val id: Int,
-                                           @JvmField val slot: WeaponSlot,
-                                           private val modelId: Int,
-                                           @JvmField val modelName: String) {
+enum class WeaponModel constructor(@JvmField val id: Int,
+                                   @JvmField val slot: WeaponSlot,
+                                   private val modelId: Int,
+                                   @JvmField val modelName: String) {
     /**
      * Unarmed
      */

@@ -20,7 +20,7 @@ package net.gtaun.shoebill.resource
  * @author MK124
  * @author Marvin Haschker
  */
-enum class ResourceType private constructor(
+enum class ResourceType constructor(
         /**
          * The Config File Name.
          */

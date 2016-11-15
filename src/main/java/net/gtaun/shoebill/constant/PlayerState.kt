@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class PlayerState private constructor(val value: Int) {
+enum class PlayerState constructor(val value: Int) {
     /**
      * Empty (while initializing)
      */

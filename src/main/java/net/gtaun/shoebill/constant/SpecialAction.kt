@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class SpecialAction private constructor(val value: Int) {
+enum class SpecialAction constructor(val value: Int) {
     /**
      * None
      */

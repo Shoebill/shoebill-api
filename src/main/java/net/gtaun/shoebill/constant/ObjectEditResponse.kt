@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class ObjectEditResponse private constructor(val value: Int) {
+enum class ObjectEditResponse constructor(val value: Int) {
     /**
      * Player cancelled (ESC)
      */

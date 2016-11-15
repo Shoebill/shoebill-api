@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class TextDrawAlign private constructor(val value: Int) {
+enum class TextDrawAlign constructor(val value: Int) {
     LEFT(1),
     CENTER(2),
     RIGHT(3);

@@ -7,7 +7,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class GameTextStyle private constructor(val value: Int) {
+enum class GameTextStyle constructor(val value: Int) {
     NORMALE_MIDDLE(0),
     NORMAL_BOTTOM_RIGHT(1),
     GHETTO_MIDDLE(2),

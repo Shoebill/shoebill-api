@@ -14,11 +14,11 @@ class AmxHook(val name: String, val onCall: (AmxCallEvent) -> Unit, vararg val p
         private set
 
     fun deactivate() {
-        isActivated = false;
+        isActivated = false
     }
 
     fun activate() {
-        isActivated = true;
+        isActivated = true
     }
 
 }

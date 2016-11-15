@@ -19,6 +19,7 @@ package net.gtaun.shoebill
 import net.gtaun.shoebill.amx.AmxInstanceManager
 import net.gtaun.shoebill.resource.ResourceManager
 import net.gtaun.shoebill.service.ServiceStore
+import net.gtaun.util.event.EventManagerRoot
 
 import java.lang.ref.Reference
 import java.lang.ref.WeakReference
@@ -63,6 +64,11 @@ abstract class Shoebill {
      * The version information.
      */
     abstract val version: ShoebillVersion
+
+    /**
+     * General-use EventManager
+     */
+    abstract val eventManager: EventManagerRoot
 
     /**
      * Reloads everything.

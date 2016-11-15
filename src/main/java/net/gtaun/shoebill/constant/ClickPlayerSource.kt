@@ -7,7 +7,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class ClickPlayerSource private constructor(val value: Int) {
+enum class ClickPlayerSource constructor(val value: Int) {
     SCOREBOARD(0);
 
     companion object : Collectable<ClickPlayerSource>, Findable<Int, ClickPlayerSource> {

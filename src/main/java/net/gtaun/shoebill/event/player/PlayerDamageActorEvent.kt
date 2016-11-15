@@ -1,8 +1,8 @@
 package net.gtaun.shoebill.event.player
 
+import net.gtaun.shoebill.constant.WeaponModel
 import net.gtaun.shoebill.entities.Actor
 import net.gtaun.shoebill.entities.Player
-import net.gtaun.shoebill.constant.WeaponModel
 
 /**
  * This event represents the OnPlayerDamageActor of Pawn.
@@ -19,7 +19,7 @@ class PlayerDamageActorEvent(player: Player,
                              /**
                               * The associated amount of damage for this event.
                               */
-                             val amount: Int,
+                             val amount: Float,
                              /**
                               * The associated WeaponModel an issuer used for this event.
                               */

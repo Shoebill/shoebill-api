@@ -25,10 +25,10 @@ package net.gtaun.shoebill.resource
 abstract class Plugin protected constructor() : Resource() {
 
     @Throws(Throwable::class)
-    public override fun enable() = super.enable()
+    override fun enable() = super.enable()
 
     @Throws(Throwable::class)
-    public override fun disable() = super.disable()
+    override fun disable() = super.disable()
 
     companion object {
         /**

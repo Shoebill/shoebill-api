@@ -25,7 +25,7 @@ package net.gtaun.shoebill.constant
  * @author Trojaner25
  * @author Marvin Haschker
  */
-enum class SkinModel private constructor(val id: Int, val description: String, val gender: SkinModel.Gender) {
+enum class SkinModel constructor(val id: Int, val description: String, val gender: SkinModel.Gender) {
     CJ(0, "Carl \"CJ\" Johnson", Gender.MALE),
     TRUTH(1, "The Truth", Gender.MALE),
     MACCER(2, "Maccer", Gender.MALE),

@@ -31,8 +31,8 @@ abstract class Timer : Destroyable {
     abstract var interval: Int
     abstract var count: Int
 
-    var elapsedCounts: Int = 0
-        private set
+    var elapsedCounts: Long = 0
+        protected set
 
     abstract val isRunning: Boolean
 

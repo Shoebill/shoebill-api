@@ -22,7 +22,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class CameraCutStyle private constructor(val value: Int) {
+enum class CameraCutStyle constructor(val value: Int) {
     /**
      * Direct cut
      */

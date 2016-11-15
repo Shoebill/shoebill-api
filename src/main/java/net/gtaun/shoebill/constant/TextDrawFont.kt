@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class TextDrawFont private constructor(val value: Int) {
+enum class TextDrawFont constructor(val value: Int) {
     DIPLOMA(0),
     FONT2(1),
     BANK_GOTHIC(2),

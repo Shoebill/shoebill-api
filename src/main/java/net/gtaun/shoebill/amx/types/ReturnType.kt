@@ -6,7 +6,7 @@ package net.gtaun.shoebill.amx.types
  *
  * @author Marvin Haschker
  */
-enum class ReturnType private constructor(val value: Int) {
+enum class ReturnType constructor(val value: Int) {
     INTEGER(0),
     FLOAT(1),
     STRING(2)

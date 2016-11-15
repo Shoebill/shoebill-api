@@ -52,7 +52,9 @@ abstract class Resource internal constructor() {
         private set
 
     lateinit private var rootEventManager: EventManager
-    lateinit private var eventManager: EventManagerNode
+    lateinit var eventManager: EventManagerNode
+        private set
+
     /**
      * Gets the Datadir.
      */
@@ -102,7 +104,7 @@ abstract class Resource internal constructor() {
         isEnabled = true
 
         val event = ResourceEnableEvent(this)
-        eventManager.dispatchEvent(event, getEventManager(), this)
+        eventManager.dispatchEvent(event, eventManager, this)
     }
 
     /**
@@ -112,7 +114,7 @@ abstract class Resource internal constructor() {
     @Throws(Throwable::class)
     open fun disable() {
         val event = ResourceDisableEvent(this)
-        eventManager.dispatchEvent(event, getEventManager(), this)
+        eventManager.dispatchEvent(event, eventManager, this)
 
         var throwable: Throwable? = null
         try {
@@ -136,11 +138,6 @@ abstract class Resource internal constructor() {
     fun onDisable(action: () -> Unit) {
         onDisableCalls.offer(Runnable { action() })
     }
-
-    /**
-     * Gets the event Manager.
-     */
-    fun getEventManager(): EventManager = eventManager
 
     /**
      * Gets the Logger

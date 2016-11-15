@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class MapIconStyle private constructor(val value: Int) {
+enum class MapIconStyle constructor(val value: Int) {
     /**
      * Display in the player's local area
      */

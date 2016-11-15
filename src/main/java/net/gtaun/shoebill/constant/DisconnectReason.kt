@@ -7,7 +7,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class DisconnectReason private constructor(val value: Int) {
+enum class DisconnectReason constructor(val value: Int) {
     /**
      * The player timed out, and the disconnect was unwanted.
      */

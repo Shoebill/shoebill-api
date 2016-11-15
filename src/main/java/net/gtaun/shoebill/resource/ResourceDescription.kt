@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.resource
 
 import net.gtaun.shoebill.ShoebillMain
+import net.gtaun.shoebill.util.config.YamlConfiguration
 import org.reflections.Reflections
 import org.reflections.util.ConfigurationBuilder
 import org.slf4j.LoggerFactory

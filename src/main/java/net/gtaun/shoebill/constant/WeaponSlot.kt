@@ -6,7 +6,7 @@ package net.gtaun.shoebill.constant
  *
  * @author BigETI
  */
-enum class WeaponSlot private constructor(val slotId: Int, val type: String) {
+enum class WeaponSlot constructor(val slotId: Int, val type: String) {
     INVALID(-1, "Invalid"),
     HAND(0, "Hand"),
     MELEE(1, "Melee"),

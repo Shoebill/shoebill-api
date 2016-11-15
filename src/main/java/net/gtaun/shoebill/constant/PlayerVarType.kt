@@ -7,7 +7,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class PlayerVarType private constructor(val value: Int) {
+enum class PlayerVarType constructor(val value: Int) {
     NONE(0),
     INT(1),
     STRING(2),

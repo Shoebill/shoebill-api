@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class ShopName private constructor(val value: String) {
+enum class ShopName constructor(val value: String) {
     /**
      * Pizza Stack
      */

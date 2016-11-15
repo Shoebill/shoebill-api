@@ -7,7 +7,7 @@ package net.gtaun.shoebill.constant
  * @author Julian Suhl (Spikes)
  * @author Marvin Haschker
  */
-enum class PickupModel private constructor(val id: Int) {
+enum class PickupModel constructor(val id: Int) {
     BRIEFCASE(1210),
     MONEY(1212),
     INFORMATION(1239),

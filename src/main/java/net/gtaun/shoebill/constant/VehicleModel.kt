@@ -23,8 +23,8 @@ package net.gtaun.shoebill.constant
  * @author Meta
  * @author MK124
  */
-enum class VehicleModel private constructor(val id: Int, val modelName: String, val type: VehicleType,
-                                            val seatCount: Int) {
+enum class VehicleModel constructor(val id: Int, val modelName: String, val type: VehicleType,
+                                    val seatCount: Int) {
         LANDSTALKER(400, "Landstalker", VehicleType.CAR, 4),
         BRAVURA(401, "Bravura", VehicleType.CAR, 2),
         BUFFALO(402, "Buffalo", VehicleType.CAR, 2),
