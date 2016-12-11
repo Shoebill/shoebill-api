@@ -59,5 +59,6 @@ enum class MapIconStyle constructor(val value: Int) {
         @JvmStatic
         override fun get(): Collection<MapIconStyle> = VALUES.values
     }
+
 }
 

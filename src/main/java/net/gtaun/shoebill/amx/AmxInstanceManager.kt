@@ -65,6 +65,23 @@ abstract class AmxInstanceManager {
      */
     abstract fun unhookCallback(callbackName: String): Boolean
 
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is AmxInstanceManager) return false
+
+        if (amxInstances != other.amxInstances) return false
+        if (amxHooks != other.amxHooks) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = amxInstances.hashCode()
+        result = 31 * result + amxHooks.hashCode()
+        return result
+    }
+
+
     companion object {
         /**
          * Returns the main instance of the [AmxInstanceManager].

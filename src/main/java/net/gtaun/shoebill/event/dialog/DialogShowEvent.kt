@@ -28,14 +28,8 @@ import net.gtaun.shoebill.entities.Player
 class DialogShowEvent(dialog: DialogId, player: Player) : DialogEvent(dialog, player) {
 
     /**
-     * This method stops further execution of this event in Shoebill.
-     */
-    public override fun interrupt() {
-        super.interrupt()
-    }
-
-    /**
      * This method is an alias for the [interrupt] method.
      */
     fun setProcessed() = interrupt()
+
 }

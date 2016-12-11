@@ -34,4 +34,22 @@ open class RaceCheckpointEvent protected constructor(
         /**
          * The associated RaceCheckpoint for this event.
          */
-        val checkpoint: RaceCheckpoint) : Event()
+        val checkpoint: RaceCheckpoint) : Event() {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is RaceCheckpointEvent) return false
+
+        if (player != other.player) return false
+        if (checkpoint != other.checkpoint) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = player.hashCode()
+        result = 31 * result + checkpoint.hashCode()
+        return result
+    }
+
+}

@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.PlayerState
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event represents the OnPlayerStateChange of Pawn.
@@ -34,4 +34,25 @@ class PlayerStateChangeEvent(player: Player,
                              /**
                               * The associated new PlayerState for this event.
                               */
-                             val newState: PlayerState = player.state) : PlayerEvent(player)
+                             val newState: PlayerState = player.state) : PlayerEvent(player) {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerStateChangeEvent) return false
+        if (!super.equals(other)) return false
+
+        if (oldState != other.oldState) return false
+        if (newState != other.newState) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + oldState.hashCode()
+        result = 31 * result + newState.hashCode()
+        return result
+    }
+
+
+}

@@ -17,7 +17,6 @@
 package net.gtaun.shoebill.event.checkpoint
 
 import net.gtaun.shoebill.entities.Player
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event represents the OnPlayerEnterCheckpoint callback from Pawn.
@@ -26,18 +25,12 @@ import net.gtaun.util.event.Interruptable
  * @author Marvin Haschker
  * @see [OnPlayerEnterCheckpoint](https://wiki.sa-mp.com/wiki/OnPlayerEnterCheckpoint)
  */
-class CheckpointEnterEvent(player: Player) : CheckpointEvent(player, player.checkpoint!!), Interruptable {
-
-    /**
-     * This method stops further execution of this event in Shoebill.
-     */
-    override fun interrupt() {
-        super.interrupt()
-    }
+class CheckpointEnterEvent(player: Player) : CheckpointEvent(player, player.checkpoint!!) {
 
     /**
      * This method is an alias for the interrupt() method.
      * @see CheckpointEnterEvent.interrupt
      */
     fun setProcessed() = interrupt()
+
 }

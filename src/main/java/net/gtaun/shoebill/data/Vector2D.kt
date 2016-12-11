@@ -19,8 +19,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class is for two-dimensional positions and contains a [x] and [y] coordinate.
@@ -117,5 +115,5 @@ open class Vector2D : Cloneable {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(433024253, 472882049, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): Vector2D = super.clone() as Vector2D
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
+
 }

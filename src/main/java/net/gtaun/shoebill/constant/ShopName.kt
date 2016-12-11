@@ -59,7 +59,6 @@ enum class ShopName constructor(val value: String) {
      */
     AMMUNATION5("AMMUN5");
 
-
     companion object : Collectable<ShopName>, Findable<String, ShopName> {
         private val VALUES = values().map { it.value to it }.toMap()
 
@@ -75,4 +74,5 @@ enum class ShopName constructor(val value: String) {
         @JvmStatic
         override operator fun get(value: String): ShopName? = VALUES[value]
     }
+
 }

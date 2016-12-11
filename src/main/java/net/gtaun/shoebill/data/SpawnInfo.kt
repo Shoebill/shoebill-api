@@ -16,11 +16,8 @@
 
 package net.gtaun.shoebill.data
 
-import net.gtaun.shoebill.constant.WeaponModel
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class wraps the SpawnInfo and should be used with addPlayerClass and setPlayerSpawnInfo.
@@ -83,5 +80,5 @@ class SpawnInfo : Cloneable {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(492876847, 715225739, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): SpawnInfo = super.clone() as SpawnInfo
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
+
 }

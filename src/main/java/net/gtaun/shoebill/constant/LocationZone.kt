@@ -1,8 +1,8 @@
 package net.gtaun.shoebill.constant
 
-import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.data.Area3D
 import net.gtaun.shoebill.data.Location
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This class provides zone definitions for the San Andreas map. It can locate the player or a specific locations
@@ -17,6 +17,7 @@ class LocationZone private constructor(val name: String, val area: Area3D, val m
 
     private constructor(name: String, minX: Float, minY: Float, minZ: Float, maxX: Float, maxY: Float, maxZ: Float,
                         isMainZone: Boolean) : this(name, Area3D(minX, minY, minZ, maxX, maxY, maxZ), isMainZone)
+
 
     companion object : Collectable<LocationZone> {
         private val zones = arrayOf(
@@ -433,4 +434,5 @@ class LocationZone private constructor(val name: String, val area: Area3D, val m
         override fun get(): Collection<LocationZone> = zones.asList()
 
     }
+
 }

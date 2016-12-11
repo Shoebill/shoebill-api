@@ -5,4 +5,4 @@ package net.gtaun.shoebill.amx.types
  *
  * @author Marvin Haschker
  */
-class ReferenceFloat(var value: Float)
+data class ReferenceFloat(var value: Float)

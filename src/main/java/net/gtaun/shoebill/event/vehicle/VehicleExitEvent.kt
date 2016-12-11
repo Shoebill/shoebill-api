@@ -18,7 +18,6 @@ package net.gtaun.shoebill.event.vehicle
 
 import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.entities.Vehicle
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event will be called when [player] is exiting [vehicle].
@@ -26,9 +25,23 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  */
-class VehicleExitEvent(vehicle: Vehicle, val player: Player) : VehicleEvent(vehicle), Interruptable {
+class VehicleExitEvent(vehicle: Vehicle, val player: Player) : VehicleEvent(vehicle) {
 
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is VehicleExitEvent) return false
+        if (!super.equals(other)) return false
+
+        if (player != other.player) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + player.hashCode()
+        return result
+    }
+
+
 }

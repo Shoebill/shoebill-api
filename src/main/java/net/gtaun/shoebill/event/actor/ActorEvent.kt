@@ -8,4 +8,19 @@ import net.gtaun.util.event.Event
  *
  * @author Marvin Haschker
  */
-open class ActorEvent(val actor: Actor) : Event()
+open class ActorEvent(val actor: Actor) : Event() {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is ActorEvent) return false
+
+        if (actor != other.actor) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return actor.hashCode()
+    }
+
+}

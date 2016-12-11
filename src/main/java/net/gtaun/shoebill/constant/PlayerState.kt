@@ -74,7 +74,6 @@ enum class PlayerState constructor(val value: Int) {
      */
     SPECTATING(9);
 
-
     companion object : Collectable<PlayerState>, Findable<Int, PlayerState> {
         private val VALUES = values().map { it.value to it }.toMap()
 

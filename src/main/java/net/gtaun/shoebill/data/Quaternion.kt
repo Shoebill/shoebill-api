@@ -18,8 +18,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * @author JoJLlmAn
@@ -123,5 +121,5 @@ class Quaternion : Vector3D, Cloneable {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(295075147, 633910099, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Quaternion = super<Vector3D>.clone() as Quaternion
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
+
 }

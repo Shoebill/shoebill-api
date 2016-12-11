@@ -16,10 +16,9 @@
 
 package net.gtaun.shoebill.event.player
 
+import net.gtaun.shoebill.data.Vector3D
 import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.entities.PlayerAttach.PlayerAttachSlot
-import net.gtaun.shoebill.data.Vector3D
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event represents the OnPlayerEditAttachedObject of Pawn.
@@ -48,13 +47,29 @@ class PlayerEditAttachedObjectEvent(player: Player,
                                     /**
                                      * The associated scale for this event.
                                      */
-                                    val scale: Vector3D) : PlayerEvent(player), Interruptable {
+                                    val scale: Vector3D) : PlayerEvent(player) {
 
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerEditAttachedObjectEvent) return false
+
+        if (slot != other.slot) return false
+        if (response != other.response) return false
+        if (offset != other.offset) return false
+        if (rotation != other.rotation) return false
+        if (scale != other.scale) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = slot.hashCode()
+        result = 31 * result + response
+        result = 31 * result + offset.hashCode()
+        result = 31 * result + rotation.hashCode()
+        result = 31 * result + scale.hashCode()
+        return result
+    }
+
+
 }

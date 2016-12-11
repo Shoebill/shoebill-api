@@ -163,4 +163,6 @@ abstract class Resource internal constructor() {
         val serviceManager = shoebill.serviceStore as ServiceManager
         serviceManager.unregisterService(this, type)
     }
+
+
 }

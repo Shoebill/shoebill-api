@@ -5,25 +5,30 @@ package net.gtaun.shoebill.data
  *
  * @author Marvin Haschker
  */
-class VehicleState {
+class VehicleState @JvmOverloads constructor(@JvmField val driver: Int = 0,
+                                             @JvmField val passenger: Int = 0,
+                                             @JvmField val backLeft: Int = 0,
+                                             @JvmField val backRight: Int = 0) {
 
-    @JvmField
-    val driver: Int
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is VehicleState) return false
 
-    @JvmField
-    val passenger: Int
+        if (driver != other.driver) return false
+        if (passenger != other.passenger) return false
+        if (backLeft != other.backLeft) return false
+        if (backRight != other.backRight) return false
 
-    @JvmField
-    val backLeft: Int
-
-    @JvmField
-    val backRight: Int
-
-    @JvmOverloads
-    constructor(driver: Int = 0, passenger: Int = 0, backLeft: Int = 0, backRight: Int = 0) {
-        this.driver = driver
-        this.passenger = passenger
-        this.backLeft = backLeft
-        this.backRight = backRight
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = driver
+        result = 31 * result + passenger
+        result = 31 * result + backLeft
+        result = 31 * result + backRight
+        return result
+    }
+
+
 }

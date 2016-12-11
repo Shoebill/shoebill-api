@@ -1104,6 +1104,7 @@ abstract class Player : Proxyable<Player> {
      */
     abstract val targetActor: Actor?
 
+
     companion object : Collectable<Player>, Findable<Int, Player> {
 
         /**

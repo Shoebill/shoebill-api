@@ -18,6 +18,7 @@ package net.gtaun.shoebill.event.player
 
 import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.entities.PlayerKeyState
+import net.gtaun.util.event.Disallowable
 
 /**
  * This event represents the OnPlayerKeyStateChange of Pawn.
@@ -30,7 +31,7 @@ class PlayerKeyStateChangeEvent(player: Player,
                                 /**
                                  * The associated old PlayerKeyState for this event.
                                  */
-                                val oldState: PlayerKeyState) : PlayerEvent(player) {
+                                val oldState: PlayerKeyState) : PlayerEvent(player), Disallowable {
     /**
      * The current response value
      */
@@ -40,8 +41,27 @@ class PlayerKeyStateChangeEvent(player: Player,
     /**
      * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
      */
-    fun disallow() {
+    override fun disallow() {
         this.response = this.response and 0
         interrupt()
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerKeyStateChangeEvent) return false
+        if (!super.equals(other)) return false
+
+        if (oldState != other.oldState) return false
+        if (response != other.response) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + oldState.hashCode()
+        result = 31 * result + response
+        return result
+    }
+
 }

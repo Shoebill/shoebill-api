@@ -5,4 +5,4 @@ package net.gtaun.shoebill.amx.types
  *
  * @author Marvin Haschker
  */
-class ReferenceInt(var value: Int)
+data class ReferenceInt(var value: Int)

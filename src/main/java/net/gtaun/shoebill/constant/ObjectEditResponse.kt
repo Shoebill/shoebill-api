@@ -54,4 +54,5 @@ enum class ObjectEditResponse constructor(val value: Int) {
         @JvmStatic
         override fun get(): Collection<ObjectEditResponse> = VALUES.values
     }
+
 }

@@ -48,12 +48,11 @@ abstract class RaceCheckpoint : Checkpoint() {
         return location.isInRange(player.location)
     }
 
-    override fun update() {
-        Player.get().filter { it.raceCheckpoint == this }.forEach { set(it) }
-    }
+    override fun update() =
+            Player.get().filter { it.raceCheckpoint == this }.forEach { set(it) }
 
     override val usingPlayers: Collection<Player>
-        get() = Player.get().filter({ it.raceCheckpoint === this }).toList()
+        get() = Player.get().filter({ it.raceCheckpoint === this })
 
     companion object {
         /**

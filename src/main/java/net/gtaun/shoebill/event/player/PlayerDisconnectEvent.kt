@@ -16,8 +16,9 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.DisconnectReason
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.util.event.Disallowable
 
 /**
  * This event represents the OnPlayerDisconnect of Pawn.
@@ -30,7 +31,7 @@ class PlayerDisconnectEvent(player: Player,
                             /**
                              * The associated DisconnectReason for this event.
                              */
-                            val reason: DisconnectReason) : PlayerEvent(player) {
+                            val reason: DisconnectReason) : PlayerEvent(player), Disallowable {
 
     /**
      * The current response value
@@ -41,8 +42,26 @@ class PlayerDisconnectEvent(player: Player,
     /**
      * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
      */
-    fun disallow() {
+    override fun disallow() {
         this.response = this.response and 0
         interrupt()
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerDisconnectEvent) return false
+
+        if (reason != other.reason) return false
+        if (response != other.response) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = reason.hashCode()
+        result = 31 * result + response
+        return result
+    }
+
+
 }

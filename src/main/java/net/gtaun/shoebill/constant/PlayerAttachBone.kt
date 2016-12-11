@@ -119,7 +119,6 @@ enum class PlayerAttachBone constructor(val value: Int) {
      */
     JAW(18);
 
-
     companion object : Collectable<PlayerAttachBone>, Findable<Int, PlayerAttachBone> {
         private val VALUES = values().map { it.value to it }.toMap()
 
@@ -135,4 +134,5 @@ enum class PlayerAttachBone constructor(val value: Int) {
         @JvmStatic
         override fun get(): Collection<PlayerAttachBone> = VALUES.values
     }
+
 }

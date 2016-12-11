@@ -124,7 +124,6 @@ enum class SpecialAction constructor(val value: Int) {
      */
     SPECIAL_ACTION_PISSING(68);
 
-
     companion object : Collectable<SpecialAction>, Findable<Int, SpecialAction> {
         private val VALUES = values().map { it.value to it }.toMap()
 

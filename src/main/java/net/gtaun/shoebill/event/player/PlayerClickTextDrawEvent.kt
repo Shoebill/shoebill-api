@@ -18,7 +18,6 @@ package net.gtaun.shoebill.event.player
 
 import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.entities.Textdraw
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event represents the OnPlayerClickTextDraw of Pawn.
@@ -31,20 +30,12 @@ class PlayerClickTextDrawEvent(player: Player,
                                /**
                                 * The associated and clicked Textdraw for this event.
                                 */
-                               val textdraw: Textdraw) : PlayerEvent(player), Interruptable {
+                               val textdraw: Textdraw) : PlayerEvent(player) {
     /**
      * The current response value
      */
     var response = 0
         private set
-
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
-    }
 
     /**
      * This method is an alias for the interrupt() method.
@@ -54,4 +45,21 @@ class PlayerClickTextDrawEvent(player: Player,
         this.response = this.response or 1
         interrupt()
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerClickTextDrawEvent) return false
+
+        if (textdraw != other.textdraw) return false
+        if (response != other.response) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = textdraw.hashCode()
+        result = 31 * result + response
+        return result
+    }
+
 }

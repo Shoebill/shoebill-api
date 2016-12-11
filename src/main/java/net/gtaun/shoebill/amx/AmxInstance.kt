@@ -77,6 +77,19 @@ abstract class AmxInstance {
      */
     abstract fun getNative(name: String, returnType: ReturnType): AmxCallable?
 
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is AmxInstance) return false
+
+        if (handle != other.handle) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return handle
+    }
+
     /**
      * Holds the memory address of the Amx-Instance from the SA:MP server.
      */

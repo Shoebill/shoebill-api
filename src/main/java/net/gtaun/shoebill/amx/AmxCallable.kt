@@ -40,6 +40,22 @@ abstract class AmxCallable {
      */
     abstract fun call(vararg args: Any): Any?
 
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is AmxCallable) return false
+
+        if (name != other.name) return false
+        if (returnType != other.returnType) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + returnType.hashCode()
+        return result
+    }
+
     companion object {
         /**
          * Invalid callable reference id.

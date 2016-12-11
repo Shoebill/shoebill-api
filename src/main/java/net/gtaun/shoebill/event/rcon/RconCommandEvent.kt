@@ -17,7 +17,6 @@
 package net.gtaun.shoebill.event.rcon
 
 import net.gtaun.util.event.Event
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event will be called when a RCON-command is executing.
@@ -25,17 +24,30 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  */
-class RconCommandEvent(val command: String) : Event(), Interruptable {
+class RconCommandEvent(val command: String) : Event() {
 
     var response = 0
         private set
-
-    override fun interrupt() {
-        super.interrupt()
-    }
 
     fun setProcessed() {
         this.response = this.response or 1
         interrupt()
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is RconCommandEvent) return false
+
+        if (command != other.command) return false
+        if (response != other.response) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = command.hashCode()
+        result = 31 * result + response
+        return result
+    }
+
 }

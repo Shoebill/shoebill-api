@@ -20,6 +20,7 @@ import net.gtaun.shoebill.ShoebillMain
 import net.gtaun.shoebill.util.config.YamlConfiguration
 import org.reflections.Reflections
 import org.reflections.util.ConfigurationBuilder
+import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.io.File
 import java.io.IOException
@@ -91,6 +92,7 @@ constructor(
     init {
         loadConfig(type.configFilename)
     }
+
 
     /**
      * Lets you load a Configuration by its Filename
@@ -179,13 +181,13 @@ constructor(
     }
 
     companion object {
-        val LOGGER = LoggerFactory.getLogger("Resource Description")
+        val LOGGER: Logger = LoggerFactory.getLogger("Resource Description")
 
         private fun getAuthors(author: String): List<String> {
             val authors = mutableListOf<String>()
 
-            val tokens = author.split("[,;]".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-            if (tokens.size > 0) tokens.forEach { authors.add(it.trim { it <= ' ' }) }
+            val tokens = author.split("[,;]".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()
+            if (tokens.isNotEmpty()) tokens.forEach { authors.add(it.trim { it <= ' ' }) }
             else authors.add(author.trim { it <= ' ' })
 
             return authors

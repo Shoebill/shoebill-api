@@ -24,4 +24,25 @@ import net.gtaun.util.event.Event
  * @author MK124
  * @author Marvin Haschker
  */
-class RconLoginEvent(val ip: String, val password: String, val isSuccess: Boolean) : Event()
+class RconLoginEvent(val ip: String, val password: String, val isSuccess: Boolean) : Event() {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is RconLoginEvent) return false
+
+        if (ip != other.ip) return false
+        if (password != other.password) return false
+        if (isSuccess != other.isSuccess) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = ip.hashCode()
+        result = 31 * result + password.hashCode()
+        result = 31 * result + isSuccess.hashCode()
+        return result
+    }
+
+
+}

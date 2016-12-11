@@ -19,8 +19,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class is made for three-dimensional positions and contains a [x], [y] and [z] coordinate.
@@ -131,5 +129,5 @@ open class Vector3D : Vector2D, Cloneable {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(49979693, 573259433, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Vector3D = super<Vector2D>.clone() as Vector3D
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
+
 }

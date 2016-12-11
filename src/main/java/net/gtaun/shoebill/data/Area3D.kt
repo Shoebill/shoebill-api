@@ -18,8 +18,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class provides an 3D Area implementation with [minX] [minY] [minZ] and [maxX] [maxY] [maxZ].
@@ -97,6 +95,4 @@ class Area3D : Area, Cloneable, RangeCheckable3D {
      * Copy the area and creates a new one.
      */
     override fun clone(): Area3D = super<Area>.clone() as Area3D
-
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

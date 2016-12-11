@@ -18,8 +18,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class provides and area implementation for two-dimensional areas.
@@ -57,7 +55,7 @@ open class Area : Cloneable, RangeCheckable3D {
      * Sets the position of the area to [minX], [minY], [maxX] and [maxY].
      */
     @JvmOverloads
-    fun set(minX: Float = this.minX, minY: Float = this.minY, maxX: Float = this.maxX, maxY: Float = this.maxY) {
+    open fun set(minX: Float = this.minX, minY: Float = this.minY, maxX: Float = this.maxX, maxY: Float = this.maxY) {
         this.minX = minX
         this.minY = minY
         this.maxX = maxX
@@ -67,12 +65,12 @@ open class Area : Cloneable, RangeCheckable3D {
     /**
      * Sets the position of the area to [area].
      */
-    fun set(area: Area) = set(area.minX, area.minY, area.maxX, area.maxY)
+    open fun set(area: Area) = set(area.minX, area.minY, area.maxX, area.maxY)
 
     /**
      * Checks if the [pos] is in the area.
      */
-    fun isInRange(pos: Vector2D): Boolean = pos.x >= minX && pos.x <= maxX && pos.y >= minY && pos.y <= maxY
+    open fun isInRange(pos: Vector2D): Boolean = pos.x >= minX && pos.x <= maxX && pos.y >= minY && pos.y <= maxY
 
     /**
      * Checks if the [pos] is in the area.
@@ -82,5 +80,5 @@ open class Area : Cloneable, RangeCheckable3D {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(275604547, 295075147, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): Area = super.clone() as Area
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
+
 }

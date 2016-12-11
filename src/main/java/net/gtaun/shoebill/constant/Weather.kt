@@ -29,7 +29,6 @@ enum class Weather constructor(val id: Int) {
     SANDSTORM_DESERT(19),
     UNDERWATER(20);
 
-
     companion object : Collectable<Weather>, Findable<Int, Weather> {
         private val VALUES = values().map { it.id to it }.toMap()
 

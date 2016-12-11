@@ -25,4 +25,20 @@ import net.gtaun.util.event.Event
  * @author MK124
  * @author Marvin Haschker
  */
-open class VehicleEvent protected constructor(val vehicle: Vehicle) : Event()
+open class VehicleEvent protected constructor(val vehicle: Vehicle) : Event() {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is VehicleEvent) return false
+
+        if (vehicle != other.vehicle) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return vehicle.hashCode()
+    }
+
+
+}

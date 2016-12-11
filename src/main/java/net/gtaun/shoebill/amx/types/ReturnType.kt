@@ -9,5 +9,6 @@ package net.gtaun.shoebill.amx.types
 enum class ReturnType constructor(val value: Int) {
     INTEGER(0),
     FLOAT(1),
-    STRING(2)
+    STRING(2);
+
 }

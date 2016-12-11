@@ -25,6 +25,7 @@ import org.slf4j.Logger
  * @author Marvin Haschker
  */
 abstract class Gamemode protected constructor() : Resource() {
+
     companion object {
         /**
          * Gets the gamemode.

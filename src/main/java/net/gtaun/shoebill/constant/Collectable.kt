@@ -1,5 +1,5 @@
 package net.gtaun.shoebill.constant
 
-interface Collectable<T> {
+interface Collectable<out T> {
     fun get(): Collection<T>
 }

@@ -25,4 +25,20 @@ import net.gtaun.util.event.Event
  * @author MK124
  * @author Marvin Haschker
  */
-open class ObjectEvent(open val `object`: SampObject) : Event()
+open class ObjectEvent(open val `object`: SampObject) : Event() {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is ObjectEvent) return false
+
+        if (`object` != other.`object`) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return `object`.hashCode()
+    }
+
+
+}

@@ -18,7 +18,6 @@ package net.gtaun.shoebill.event.vehicle
 
 import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.entities.Vehicle
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event will be called when [player] is starting to enter [vehicle].
@@ -26,10 +25,23 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  */
-class VehicleEnterEvent(vehicle: Vehicle, val player: Player, val isPassenger: Boolean) :
-        VehicleEvent(vehicle), Interruptable {
+class VehicleEnterEvent(vehicle: Vehicle, val player: Player, val isPassenger: Boolean) : VehicleEvent(vehicle) {
 
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is VehicleEnterEvent) return false
+
+        if (player != other.player) return false
+        if (isPassenger != other.isPassenger) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = player.hashCode()
+        result = 31 * result + isPassenger.hashCode()
+        return result
+    }
+
+
 }

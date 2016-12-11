@@ -65,4 +65,5 @@ enum class RaceCheckpointType constructor(val value: Int) {
         override operator fun get(value: Int): RaceCheckpointType? = VALUES[value]
 
     }
+
 }

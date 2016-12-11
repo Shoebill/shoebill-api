@@ -16,12 +16,11 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.entities.Player
-import net.gtaun.shoebill.entities.SampObject
 import net.gtaun.shoebill.constant.ObjectEditResponse
 import net.gtaun.shoebill.data.Location
 import net.gtaun.shoebill.data.Vector3D
-import net.gtaun.util.event.Interruptable
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.entities.SampObject
 
 /**
  * This event represents the OnPlayerEditObject of Pawn.
@@ -44,15 +43,29 @@ class PlayerEditObjectEvent(player: Player,
                              */
                             val newLocation: Location,
                             /**
-                             * The associated new rotation for this event.
+                             * The associated new rotat`ion for this event.
                              */
-                            val newRotation: Vector3D) : PlayerEvent(player), Interruptable {
+                            val newRotation: Vector3D) : PlayerEvent(player) {
 
-    /*
-     * (non-Javadoc)
-     * @see net.gtaun.util.event.Event#interrupt()
-     */
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerEditObjectEvent) return false
+
+        if (`object` != other.`object`) return false
+        if (editResponse != other.editResponse) return false
+        if (newLocation != other.newLocation) return false
+        if (newRotation != other.newRotation) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = `object`.hashCode()
+        result = 31 * result + editResponse.hashCode()
+        result = 31 * result + newLocation.hashCode()
+        result = 31 * result + newRotation.hashCode()
+        return result
+    }
+
+
 }

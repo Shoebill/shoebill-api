@@ -81,7 +81,7 @@ abstract class Checkpoint {
      * Gets all [Player]s that use this [Checkpoint] as their active one.
      */
     open val usingPlayers: Collection<Player>
-        get() = Player.get().filter { it.checkpoint == this }.toList()
+        get() = Player.get().filter { it.checkpoint == this }
 
     companion object {
 

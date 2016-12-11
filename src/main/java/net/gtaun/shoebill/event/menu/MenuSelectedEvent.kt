@@ -18,7 +18,6 @@ package net.gtaun.shoebill.event.menu
 
 import net.gtaun.shoebill.entities.Menu
 import net.gtaun.shoebill.entities.Player
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event will be called when the [player] selected a row from the [menu].
@@ -30,17 +29,27 @@ class MenuSelectedEvent(menu: Menu, player: Player,
                         /**
                          * The selected row that has been selected by the [player].
                          */
-                        val row: Int) : MenuEvent(menu, player), Interruptable {
-
-    /**
-     * This method stops further execution of this event in Shoebill.
-     */
-    override fun interrupt() {
-        super.interrupt()
-    }
+                        val row: Int) : MenuEvent(menu, player) {
 
     /**
      * This method is an alias for the [interrupt] method.
      */
     fun setProcessed() = interrupt()
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is MenuSelectedEvent) return false
+        if (!super.equals(other)) return false
+
+        if (row != other.row) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + row
+        return result
+    }
+
 }

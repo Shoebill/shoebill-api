@@ -341,7 +341,7 @@ enum class SkinModel constructor(val id: Int, val description: String, val gende
 
     enum class Gender {
         MALE,
-        FEMALE
+        FEMALE;
     }
 
     companion object : Collectable<SkinModel>, Findable<Int, SkinModel> {

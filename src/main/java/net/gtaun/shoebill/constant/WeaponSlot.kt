@@ -22,8 +22,6 @@ enum class WeaponSlot constructor(val slotId: Int, val type: String) {
     WEARABLE(11, "Wearable"),
     DETONATOR(12, "Detonator");
 
-    override fun toString(): String = this.type
-
     companion object : Collectable<WeaponSlot>, Findable<Int, WeaponSlot> {
         private val VALUES = values().map { it.slotId to it }.toMap()
 
@@ -40,4 +38,5 @@ enum class WeaponSlot constructor(val slotId: Int, val type: String) {
         override operator fun get(value: Int): WeaponSlot? = VALUES[value]
 
     }
+
 }

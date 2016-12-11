@@ -16,9 +16,8 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.ClickPlayerSource
-import net.gtaun.util.event.Interruptable
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event represents the OnPlayerClickPlayer of Pawn.
@@ -31,17 +30,26 @@ class PlayerClickPlayerEvent(player: Player,
                              /**
                               * The clicked player of this event
                               */
-                             val clickedPlayer: Player, source: Int) : PlayerEvent(player), Interruptable {
+                             val clickedPlayer: Player, source: Int) : PlayerEvent(player) {
     /**
      * The associated ClickPlayerSource the player clicked
      */
     val source = ClickPlayerSource[source]
 
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerClickPlayerEvent) return false
+
+        if (clickedPlayer != other.clickedPlayer) return false
+        if (source != other.source) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = clickedPlayer.hashCode()
+        result = 31 * result + (source?.hashCode() ?: 0)
+        return result
+    }
+
 }

@@ -18,8 +18,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class contains coordinates for X, Y, Z, World, Interior and Angle. It also has basic position checking.
@@ -79,6 +77,4 @@ class AngledLocation : Location, Cloneable {
      * Clones the current location into a new one.
      */
     override fun clone(): AngledLocation = super<Location>.clone() as AngledLocation
-
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

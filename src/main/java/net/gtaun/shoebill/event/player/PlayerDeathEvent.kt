@@ -16,8 +16,8 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.WeaponModel
+import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Interruptable
 
 /**
@@ -37,11 +37,20 @@ class PlayerDeathEvent(player: Player,
                         */
                        val reason: WeaponModel) : PlayerEvent(player), Interruptable {
 
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerDeathEvent) return false
+
+        if (killer != other.killer) return false
+        if (reason != other.reason) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = killer?.hashCode() ?: 0
+        result = 31 * result + reason.hashCode()
+        return result
+    }
+
 }

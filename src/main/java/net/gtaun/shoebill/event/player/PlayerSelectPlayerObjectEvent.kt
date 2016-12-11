@@ -18,7 +18,6 @@ package net.gtaun.shoebill.event.player
 
 import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.entities.PlayerObject
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event represents the OnPlayerSelectPlayerObject of Pawn.
@@ -31,13 +30,23 @@ class PlayerSelectPlayerObjectEvent(player: Player,
                                     /**
                                      * The associated selected PlayerObject for this event.
                                      */
-                                    val `object`: PlayerObject) : PlayerEvent(player), Interruptable {
+                                    val `object`: PlayerObject) : PlayerEvent(player) {
 
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerSelectPlayerObjectEvent) return false
+        if (!super.equals(other)) return false
+
+        if (`object` != other.`object`) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + `object`.hashCode()
+        return result
+    }
+
+
 }

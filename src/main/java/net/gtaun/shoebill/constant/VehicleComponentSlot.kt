@@ -94,7 +94,6 @@ enum class VehicleComponentSlot constructor(val value: Int) {
      */
     VENT_LEFT(13);
 
-
     companion object : Collectable<VehicleComponentSlot>, Findable<Int, VehicleComponentSlot> {
         private val VALUES = values().map { it.value to it }.toMap()
 
@@ -110,4 +109,5 @@ enum class VehicleComponentSlot constructor(val value: Int) {
         @JvmStatic
         override operator fun get(value: Int): VehicleComponentSlot? = VALUES[value]
     }
+
 }

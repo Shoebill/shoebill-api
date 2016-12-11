@@ -90,6 +90,7 @@ abstract class Shoebill {
 
     fun runOnMainThread(runnable: () -> Unit): Boolean = runOnMainThread(Runnable { runnable.invoke() })
 
+
     companion object {
         @JvmStatic
         fun get(): Shoebill = Instance.reference!!.get()

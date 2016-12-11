@@ -17,6 +17,7 @@
 package net.gtaun.shoebill.event.player
 
 import net.gtaun.shoebill.entities.Player
+import net.gtaun.util.event.Disallowable
 
 
 /**
@@ -26,9 +27,9 @@ import net.gtaun.shoebill.entities.Player
  * @author Marvin Haschker
  * @see [OnPlayerConnect](https://wiki.sa-mp.com/wiki/OnPlayerConnect)
  */
-class PlayerConnectEvent(player: Player) : PlayerEvent(player) {
-	
-	/**
+class PlayerConnectEvent(player: Player) : PlayerEvent(player), Disallowable {
+
+    /**
      * Returns the current response value
      * @return Current response value
      */
@@ -38,8 +39,22 @@ class PlayerConnectEvent(player: Player) : PlayerEvent(player) {
     /**
      * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
      */
-    fun disallow() {
+    override fun disallow() {
         this.response = this.response and 0
         interrupt()
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerConnectEvent) return false
+
+        if (response != other.response) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return response
+    }
+
 }

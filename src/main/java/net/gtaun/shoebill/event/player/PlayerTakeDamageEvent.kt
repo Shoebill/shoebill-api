@@ -16,9 +16,9 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.WeaponModel
-import net.gtaun.util.event.Interruptable
+import net.gtaun.shoebill.entities.Player
+import net.gtaun.util.event.Disallowable
 
 /**
  * This event represents the OnPlayerTakeDamage of Pawn.
@@ -43,7 +43,7 @@ class PlayerTakeDamageEvent(player: Player,
                             /**
                              * The associated id of hitted bodypart for this event.
                              */
-                            val bodyPart: Int) : PlayerEvent(player), Interruptable {
+                            val bodyPart: Int) : PlayerEvent(player), Disallowable {
 
     /**
      * The current response value
@@ -51,19 +51,37 @@ class PlayerTakeDamageEvent(player: Player,
     var response: Int = 0
         private set
 
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
-    }
-
     /**
      * Disallows the further execution of this event in the whole abstract machine (also Pawn and other Plugins).
      */
-    fun disallow() {
+    override fun disallow() {
         this.response = this.response and 0
         interrupt()
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerTakeDamageEvent) return false
+        if (!super.equals(other)) return false
+
+        if (issuer != other.issuer) return false
+        if (amount != other.amount) return false
+        if (weapon != other.weapon) return false
+        if (bodyPart != other.bodyPart) return false
+        if (response != other.response) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + (issuer?.hashCode() ?: 0)
+        result = 31 * result + amount.hashCode()
+        result = 31 * result + weapon.hashCode()
+        result = 31 * result + bodyPart
+        result = 31 * result + response
+        return result
+    }
+
+
 }

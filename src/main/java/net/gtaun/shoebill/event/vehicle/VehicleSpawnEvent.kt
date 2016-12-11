@@ -17,14 +17,8 @@
 package net.gtaun.shoebill.event.vehicle
 
 import net.gtaun.shoebill.entities.Vehicle
-import net.gtaun.util.event.Interruptable
 
 /**
  * @author MK124
  */
-class VehicleSpawnEvent(vehicle: Vehicle) : VehicleEvent(vehicle), Interruptable {
-
-    override fun interrupt() {
-        super.interrupt()
-    }
-}
+class VehicleSpawnEvent(vehicle: Vehicle) : VehicleEvent(vehicle)

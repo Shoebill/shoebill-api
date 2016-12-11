@@ -29,7 +29,7 @@ import net.gtaun.shoebill.service.ServiceEntry
 class ServiceRegisterEvent @JvmOverloads constructor(
         entry: ServiceEntry, val previousServiceEntry: ServiceEntry? = null) : ServiceEvent(entry) {
 
-    val isReregistering: Boolean
+    val isReRegistering: Boolean
         get() = previousServiceEntry != null
 
     val previousProvider: Resource?
@@ -40,4 +40,22 @@ class ServiceRegisterEvent @JvmOverloads constructor(
 
     val previousService: Service?
         get() = previousServiceEntry?.service
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is ServiceRegisterEvent) return false
+        if (!super.equals(other)) return false
+
+        if (previousServiceEntry != other.previousServiceEntry) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + (previousServiceEntry?.hashCode() ?: 0)
+        return result
+    }
+
+
 }

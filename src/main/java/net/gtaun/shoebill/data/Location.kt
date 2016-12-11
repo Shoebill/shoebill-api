@@ -18,8 +18,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class extends Vector3D and allows you to define a world and interior id.
@@ -80,5 +78,4 @@ open class Location : Vector3D, Cloneable {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(198491329, 217645177, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Location = super<Vector3D>.clone() as Location
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

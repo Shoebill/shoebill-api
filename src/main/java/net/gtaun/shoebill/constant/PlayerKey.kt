@@ -27,8 +27,9 @@ import org.apache.commons.lang3.StringUtils
  * @author Marvin Haschker
  * @author Meta
  */
-enum class PlayerKey constructor(val value: Int, private val gameTextKeyOnFootRaw: String?, private val
-gameTextKeyInVehicleRaw: String?) {
+enum class PlayerKey constructor(val value: Int, private val gameTextKeyOnFootRaw: String?,
+                                 private val gameTextKeyInVehicleRaw: String?) {
+
     ACTION(1, "PED_ANSWER_PHONE", "VEHICLE_FIREWEAPON"),
     CROUCH(2, "PED_DUCK", "VEHICLE_HORN"),
     FIRE(4, "PED_FIREWEAPON", "VEHICLE_FIREWEAPON"),
@@ -63,6 +64,7 @@ gameTextKeyInVehicleRaw: String?) {
         val raw = getGameTextKeyRaw(inVehicle)
         return if (StringUtils.isBlank(raw)) "" else "~k~~$raw~"
     }
+
 
     companion object : Collectable<PlayerKey>, Findable<Int, Collection<PlayerKey>> {
         private val VALUES = values().map { it.name to it }.toMap()

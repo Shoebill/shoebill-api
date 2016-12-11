@@ -51,4 +51,5 @@ enum class WeaponSkill constructor(val value: Int) {
         @JvmStatic
         override operator fun get(value: Int): WeaponSkill? = VALUES[value]
     }
+
 }

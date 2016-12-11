@@ -26,5 +26,6 @@ enum class ResourceType constructor(
          */
         val configFilename: String) {
     PLUGIN("plugin.yml"),
-    GAMEMODE("gamemode.yml")
+    GAMEMODE("gamemode.yml");
+
 }

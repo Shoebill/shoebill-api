@@ -17,7 +17,6 @@
 package net.gtaun.shoebill.event.player
 
 import net.gtaun.shoebill.entities.Player
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event represents the OnPlayerEnterExitModShop of Pawn.
@@ -34,13 +33,23 @@ class PlayerEnterExitModShopEvent(player: Player,
                                   /**
                                    * The associated id of interior for this event.
                                    */
-                                  val interiorId: Int) : PlayerEvent(player), Interruptable {
+                                  val interiorId: Int) : PlayerEvent(player) {
 
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerEnterExitModShopEvent) return false
+
+        if (enterExit != other.enterExit) return false
+        if (interiorId != other.interiorId) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = enterExit
+        result = 31 * result + interiorId
+        return result
+    }
+
+
 }

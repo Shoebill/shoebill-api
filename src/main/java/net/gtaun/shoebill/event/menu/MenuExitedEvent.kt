@@ -18,7 +18,6 @@ package net.gtaun.shoebill.event.menu
 
 import net.gtaun.shoebill.entities.Menu
 import net.gtaun.shoebill.entities.Player
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event will be called when the [menu] has been closed by the [player].
@@ -26,17 +25,11 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  */
-class MenuExitedEvent(menu: Menu, player: Player) : MenuEvent(menu, player), Interruptable {
-
-    /**
-     * This method stops further execution of this event in Shoebill.
-     */
-    override fun interrupt() {
-        super.interrupt()
-    }
+class MenuExitedEvent(menu: Menu, player: Player) : MenuEvent(menu, player) {
 
     /**
      * This method is an alias for the [interrupt] method.
      */
     fun setProcessed() = interrupt()
+
 }

@@ -39,7 +39,6 @@ enum class ObjectMaterialSize constructor(val value: Int) {
     SIZE_512x256(130),
     SIZE_512x512(140);
 
-
     companion object : Collectable<ObjectMaterialSize>, Findable<Int, ObjectMaterialSize> {
         private val VALUES = values().map { it.value to it }.toMap()
 
@@ -55,4 +54,5 @@ enum class ObjectMaterialSize constructor(val value: Int) {
         @JvmStatic
         override fun get(): Collection<ObjectMaterialSize> = VALUES.values
     }
+
 }

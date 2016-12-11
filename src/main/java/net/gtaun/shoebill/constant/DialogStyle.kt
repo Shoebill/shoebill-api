@@ -53,7 +53,6 @@ enum class DialogStyle constructor(val value: Int) {
      */
     TABLIST_HEADERS(5);
 
-
     companion object : Collectable<DialogStyle>, Findable<Int, DialogStyle> {
         private val VALUES = values().map { it.value to it }.toMap()
 

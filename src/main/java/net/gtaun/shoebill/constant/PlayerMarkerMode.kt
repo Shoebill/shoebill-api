@@ -43,4 +43,5 @@ enum class PlayerMarkerMode constructor(val value: Int) {
         @JvmStatic
         override fun get(): Collection<PlayerMarkerMode> = VALUES.values
     }
+
 }

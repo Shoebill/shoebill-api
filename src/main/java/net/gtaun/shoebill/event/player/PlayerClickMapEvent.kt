@@ -16,9 +16,8 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.data.Vector3D
-import net.gtaun.util.event.Interruptable
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event represents the OnPlayerClickMap of Pawn.
@@ -27,18 +26,20 @@ import net.gtaun.util.event.Interruptable
  * @author Marvin Haschker
  * @see [OnPlayerClickMap](https://wiki.sa-mp.com/wiki/OnPlayerClickMap)
  */
-class PlayerClickMapEvent(player: Player, x: Float, y: Float, z: Float) : PlayerEvent(player), Interruptable {
+class PlayerClickMapEvent(player: Player, val position: Vector3D) : PlayerEvent(player) {
 
-    var position: Vector3D = Vector3D(x, y, z)
-        get() = position.clone()
-        private set
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerClickMapEvent) return false
 
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
+        if (position != other.position) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        return position.hashCode()
+    }
+
 
 }

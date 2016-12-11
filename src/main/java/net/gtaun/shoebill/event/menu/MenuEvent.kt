@@ -26,4 +26,23 @@ import net.gtaun.util.event.Event
  * @author MK124
  * @author Marvin Haschker
  */
-open class MenuEvent protected constructor(val menu: Menu, val player: Player) : Event()
+open class MenuEvent protected constructor(val menu: Menu, val player: Player) : Event() {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is MenuEvent) return false
+
+        if (menu != other.menu) return false
+        if (player != other.player) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = menu.hashCode()
+        result = 31 * result + player.hashCode()
+        return result
+    }
+
+
+}

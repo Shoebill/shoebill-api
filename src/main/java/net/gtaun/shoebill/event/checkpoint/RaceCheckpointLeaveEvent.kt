@@ -17,7 +17,6 @@
 package net.gtaun.shoebill.event.checkpoint
 
 import net.gtaun.shoebill.entities.Player
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event will be called when the [player] enters a RaceCheckpoint.
@@ -25,14 +24,7 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  */
-class RaceCheckpointLeaveEvent(player: Player) : RaceCheckpointEvent(player, player.raceCheckpoint!!), Interruptable {
-
-    /**
-     * Interrupts further execution of this event in Shoebill's responder chain.
-     */
-    override fun interrupt() {
-        super.interrupt()
-    }
+class RaceCheckpointLeaveEvent(player: Player) : RaceCheckpointEvent(player, player.raceCheckpoint!!) {
 
     /**
      * This method is an alias for the interrupt() method.

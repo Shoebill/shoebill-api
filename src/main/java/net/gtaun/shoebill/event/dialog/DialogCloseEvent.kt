@@ -18,6 +18,7 @@ package net.gtaun.shoebill.event.dialog
 
 import net.gtaun.shoebill.entities.DialogId
 import net.gtaun.shoebill.entities.Player
+import net.gtaun.shoebill.event.dialog.DialogCloseEvent.DialogCloseType
 
 /**
  * This event will be called when a [dialog] has been closed.
@@ -42,4 +43,18 @@ class DialogCloseEvent(dialog: DialogId, player: Player,
      * @see DialogCloseEvent.interrupt
      */
     fun setProcessed() = interrupt()
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is DialogCloseEvent) return false
+
+        if (type != other.type) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return type.hashCode()
+    }
+
 }

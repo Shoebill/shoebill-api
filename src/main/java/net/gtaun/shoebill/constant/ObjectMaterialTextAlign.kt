@@ -43,4 +43,5 @@ enum class ObjectMaterialTextAlign constructor(val value: Int) {
         @JvmStatic
         override fun get(): Collection<ObjectMaterialTextAlign> = VALUES.values
     }
+
 }

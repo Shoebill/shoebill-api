@@ -28,4 +28,5 @@ enum class PlayerVarType constructor(val value: Int) {
         @JvmStatic
         override operator fun get(value: Int): PlayerVarType? = VALUES[value]
     }
+
 }

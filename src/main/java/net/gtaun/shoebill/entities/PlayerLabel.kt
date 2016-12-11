@@ -17,7 +17,6 @@
 package net.gtaun.shoebill.entities
 
 import net.gtaun.shoebill.SampObjectManager
-import net.gtaun.shoebill.constant.Collectable
 import net.gtaun.shoebill.constant.Findable
 import net.gtaun.shoebill.data.Color
 import net.gtaun.shoebill.data.Location
@@ -28,6 +27,7 @@ import net.gtaun.shoebill.exception.CreationFailedException
  * @author Marvin Haschker
  */
 abstract class PlayerLabel : Label(), PlayerRelated {
+
     companion object : Findable<Player, Collection<PlayerLabel>> {
         /**
          * Invalid ID for a [PlayerLabel].

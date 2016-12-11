@@ -1,7 +1,7 @@
 package net.gtaun.shoebill.constant
 
 /**
- * This enums contains all possbile hit locations of a bullet. This information has been take from the official SA:MP
+ * This enums contains all possible hit locations of a bullet. This information has been take from the official SA:MP
  * Wikipedia page.
  *
  * @author MK124

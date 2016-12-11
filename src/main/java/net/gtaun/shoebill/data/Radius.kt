@@ -18,8 +18,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class extends the [Location] class and adds a [radius] property to it. This class should be used with
@@ -81,5 +79,4 @@ class Radius : Location, Cloneable, RangeCheckable3D {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(160481219, 179424673, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Radius = super<Location>.clone() as Radius
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

@@ -34,4 +34,5 @@ enum class VehicleType(val id: Int) {
         @JvmStatic
         override operator fun get(value: Int): VehicleType? = VALUES[value]
     }
+
 }

@@ -37,4 +37,19 @@ open class ServiceEvent(val serviceEntry: ServiceEntry) : Event() {
 
     val service: Service
         get() = serviceEntry.service
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is ServiceEvent) return false
+
+        if (serviceEntry != other.serviceEntry) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return serviceEntry.hashCode()
+    }
+
+
 }

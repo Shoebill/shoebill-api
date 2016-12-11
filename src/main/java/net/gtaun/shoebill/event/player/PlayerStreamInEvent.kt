@@ -29,4 +29,23 @@ class PlayerStreamInEvent(player: Player,
                           /**
                            * The associated Player for this event.
                            */
-                          val forPlayer: Player) : PlayerEvent(player)
+                          val forPlayer: Player) : PlayerEvent(player) {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerStreamInEvent) return false
+        if (!super.equals(other)) return false
+
+        if (forPlayer != other.forPlayer) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + forPlayer.hashCode()
+        return result
+    }
+
+
+}

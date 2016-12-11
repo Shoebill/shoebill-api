@@ -69,7 +69,6 @@ enum class VehicleModelInfoType constructor(val value: Int) {
      */
     REAR_BUMPER_Z(9);
 
-
     companion object : Collectable<VehicleModelInfoType>, Findable<Int, VehicleModelInfoType> {
         private val VALUES = values().map { it.value to it }.toMap()
 
@@ -85,4 +84,5 @@ enum class VehicleModelInfoType constructor(val value: Int) {
         @JvmStatic
         override operator fun get(value: Int): VehicleModelInfoType? = VALUES[value - 1]
     }
+
 }

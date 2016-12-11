@@ -44,4 +44,5 @@ enum class RecordType constructor(val value: Int) {
         override operator fun get(value: Int): RecordType? = VALUES[value]
 
     }
+
 }

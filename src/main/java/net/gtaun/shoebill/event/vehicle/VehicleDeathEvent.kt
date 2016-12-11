@@ -18,7 +18,6 @@ package net.gtaun.shoebill.event.vehicle
 
 import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.entities.Vehicle
-import net.gtaun.util.event.Interruptable
 
 /**
  * This event will be called when a [Vehicle] has been destroyed.
@@ -26,9 +25,20 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  */
-class VehicleDeathEvent(vehicle: Vehicle, val killer: Player?) : VehicleEvent(vehicle), Interruptable {
+class VehicleDeathEvent(vehicle: Vehicle, val killer: Player?) : VehicleEvent(vehicle) {
 
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is VehicleDeathEvent) return false
+
+        if (killer != other.killer) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        return killer?.hashCode() ?: 0
+    }
+
+
 }

@@ -25,4 +25,5 @@ enum class ClickPlayerSource constructor(val value: Int) {
         @JvmStatic
         override fun get(): Collection<ClickPlayerSource> = VALUES.values
     }
+
 }

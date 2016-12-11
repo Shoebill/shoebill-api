@@ -25,6 +25,29 @@ class PlayerDamageActorEvent(player: Player,
                               */
                              val weapon: WeaponModel,
                              /**
-                              * The associated id of hitted bodypart for this event.
+                              * The associated id of hit bodypart for this event.
                               */
-                             val bodypart: Int) : PlayerEvent(player)
+                             val bodypart: Int) : PlayerEvent(player) {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerDamageActorEvent) return false
+
+        if (actor != other.actor) return false
+        if (amount != other.amount) return false
+        if (weapon != other.weapon) return false
+        if (bodypart != other.bodypart) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = actor.hashCode()
+        result = 31 * result + amount.hashCode()
+        result = 31 * result + weapon.hashCode()
+        result = 31 * result + bodypart
+        return result
+    }
+
+
+}

@@ -19,8 +19,6 @@ package net.gtaun.shoebill.data
 import net.gtaun.shoebill.constant.WeaponModel
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class wraps a [WeaponModel] and some [ammo].
@@ -61,5 +59,4 @@ class WeaponData : Cloneable {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(275604547, 817504253, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): WeaponData = super.clone() as WeaponData
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

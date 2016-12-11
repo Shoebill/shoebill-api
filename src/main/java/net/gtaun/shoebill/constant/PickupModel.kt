@@ -97,4 +97,5 @@ enum class PickupModel constructor(val id: Int) {
         @JvmStatic
         override fun get(): Collection<PickupModel> = VALUES.values
     }
+
 }

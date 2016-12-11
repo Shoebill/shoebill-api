@@ -18,8 +18,6 @@ package net.gtaun.shoebill.data
 
 import org.apache.commons.lang3.builder.EqualsBuilder
 import org.apache.commons.lang3.builder.HashCodeBuilder
-import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.lang3.builder.ToStringStyle
 
 /**
  * This class can calculate a velocity by passing [x], [y] and [z].
@@ -55,5 +53,4 @@ class Velocity : Vector3D, Cloneable {
     override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(413158523, 941083981, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Velocity = super<Vector3D>.clone() as Velocity
-    override fun toString(): String = ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE, false)
 }

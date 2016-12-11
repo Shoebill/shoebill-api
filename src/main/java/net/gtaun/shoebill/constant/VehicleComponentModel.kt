@@ -189,4 +189,5 @@ String, val slot: VehicleComponentSlot, val componentName: String, val supported
         @JvmStatic
         fun doesVehicleSupportAnyComponent(model: VehicleModel): Boolean = get(model).size > 0
     }
+
 }

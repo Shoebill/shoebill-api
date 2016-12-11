@@ -23,7 +23,6 @@ package net.gtaun.shoebill.exception
  * @author Marvin Haschker
  */
 class CreationFailedException : RuntimeException {
-
     @JvmOverloads
     constructor(message: String = "") : super(message)
     constructor(throwable: Throwable) : super(throwable)

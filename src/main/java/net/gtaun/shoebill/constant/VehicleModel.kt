@@ -238,7 +238,6 @@ enum class VehicleModel constructor(val id: Int, val modelName: String, val type
         FARM_PLOW(610, "Farm Plow", VehicleType.TRAILER, 0),
         UTILITY_TRAILER(611, "Utility Trailer", VehicleType.TRAILER, 0);
 
-
         companion object : Collectable<VehicleModel>, Findable<Int, VehicleModel> {
             private val VALUES = values().map { it.id to it }.toMap()
 
@@ -269,4 +268,4 @@ enum class VehicleModel constructor(val id: Int, val modelName: String, val type
             operator fun get(type: VehicleType): Collection<VehicleModel> =
                     VALUES.filter { it.value.type == type }.values
         }
-    }
+}

@@ -5,4 +5,4 @@ package net.gtaun.shoebill.amx.types
  *
  * @author Marvin Haschker
  */
-class ReferenceString @JvmOverloads constructor(var value: String = "", val length: Int)
+data class ReferenceString @JvmOverloads constructor(var value: String = "", val length: Int)

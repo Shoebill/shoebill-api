@@ -16,9 +16,8 @@
 
 package net.gtaun.shoebill.event.player
 
-import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.constant.WeaponModel
-import net.gtaun.util.event.Interruptable
+import net.gtaun.shoebill.entities.Player
 
 /**
  * This event represents the OnPlayerKill of Pawn.
@@ -35,13 +34,25 @@ class PlayerKillEvent(player: Player,
                       /**
                        * The associated used WeaponModel for this event.
                        */
-                      val weapon: WeaponModel) : PlayerEvent(player), Interruptable {
+                      val weapon: WeaponModel) : PlayerEvent(player) {
 
-    /*
-	 * (non-Javadoc)
-	 * @see net.gtaun.util.event.Event#interrupt()
-	 */
-    override fun interrupt() {
-        super.interrupt()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is PlayerKillEvent) return false
+        if (!super.equals(other)) return false
+
+        if (victim != other.victim) return false
+        if (weapon != other.weapon) return false
+
+        return true
     }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + (victim?.hashCode() ?: 0)
+        result = 31 * result + weapon.hashCode()
+        return result
+    }
+
+
 }
