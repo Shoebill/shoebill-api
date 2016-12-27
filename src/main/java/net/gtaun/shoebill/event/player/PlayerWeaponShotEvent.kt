@@ -6,6 +6,7 @@ import net.gtaun.shoebill.data.Vector3D
 import net.gtaun.shoebill.entities.Player
 import net.gtaun.shoebill.entities.PlayerObject
 import net.gtaun.shoebill.entities.SampObject
+import net.gtaun.shoebill.entities.Vehicle
 import net.gtaun.util.event.Disallowable
 
 /**
@@ -68,22 +69,28 @@ class PlayerWeaponShotEvent(player: Player,
 
 
     /**
-     * The associated hitted Player / victim for this event.
+     * The associated Player / victim for this event.
      */
     val hitPlayer: Player?
         get() = Player[hitId]
 
     /**
-     * The associated hitted SampObject for this event.
+     * The associated SampObject for this event.
      */
     val hitObject: SampObject?
         get() = SampObject[hitId]
 
     /**
-     * The associated hitted PlayerObject for this event.
+     * The associated PlayerObject for this event.
      */
     val hitPlayerObject: PlayerObject?
         get() = PlayerObject[player, hitId]
+
+    /**
+     * The associated Vehicle for this event.
+     */
+    val hitVehicle: Vehicle?
+        get() = Vehicle[hitId]
 
 
 }
