@@ -81,7 +81,7 @@ class Color : Cloneable {
     /**
      * The RGB value with the alpha value.
      */
-    val rgbaValue: Int
+    val argbValue: Int
         get() = value and 0xFF shl 24 or (value shr 8)
 
     /**

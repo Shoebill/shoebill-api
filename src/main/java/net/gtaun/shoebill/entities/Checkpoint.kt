@@ -1,6 +1,7 @@
 /**
  * Copyright (C) 2011 JoJLlmAn
  * Copyright (C) 2011-2014 MK124
+ * Copyright (C) 2016 Marvin Haschker
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,12 +23,11 @@ package net.gtaun.shoebill.entities
 
 import net.gtaun.shoebill.data.Radius
 import net.gtaun.shoebill.data.Vector3D
-import java.util.function.Consumer
 
 /**
-
-
- * @author JoJLlmAn, MK124
+ * @author JoJLlmAn
+ * @author MK124
+ * @author Marvin Haschker
  */
 abstract class Checkpoint {
 
@@ -90,7 +90,7 @@ abstract class Checkpoint {
          */
         @JvmStatic
         @JvmOverloads
-        fun create(location: Radius, onEnter: Consumer<Player>? = null, onLeave: Consumer<Player>? = null): Checkpoint {
+        fun create(location: Radius, onEnter: ((Player) -> Unit)? = null, onLeave: ((Player) -> Unit)? = null): Checkpoint {
             return object : Checkpoint() {
                 override var location: Radius
                     get() = location
@@ -100,11 +100,11 @@ abstract class Checkpoint {
                     }
 
                 override fun onEnter(player: Player) {
-                    onEnter?.accept(player)
+                    onEnter?.invoke(player)
                 }
 
                 override fun onLeave(player: Player) {
-                    onLeave?.accept(player)
+                    onLeave?.invoke(player)
                 }
             }
         }
