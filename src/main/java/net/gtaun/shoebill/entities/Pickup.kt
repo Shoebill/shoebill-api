@@ -114,7 +114,6 @@ abstract class Pickup : Entity(), Proxyable<Pickup> {
          */
         @Throws(CreationFailedException::class)
         @JvmStatic
-        @JvmOverloads
         fun create(modelId: Int, type: Int, x: Float, y: Float, z: Float, worldId: Int): Pickup =
                 create(modelId, type, Location(x, y, z, worldId = worldId))
     }

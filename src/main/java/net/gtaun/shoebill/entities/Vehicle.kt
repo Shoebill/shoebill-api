@@ -278,7 +278,7 @@ abstract class Vehicle : Entity(), Proxyable<Vehicle> {
 
     @JvmOverloads
     fun onUpdateDamage(handler: (VehicleUpdateDamageEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
-            onUpdateDamage(EventHandler { handler(it) })
+            onUpdateDamage(EventHandler { handler(it) }, priority)
 
     @JvmOverloads
     fun onUpdate(handler: EventHandler<VehicleUpdateEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
