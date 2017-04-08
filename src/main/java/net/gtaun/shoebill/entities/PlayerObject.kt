@@ -19,7 +19,10 @@ package net.gtaun.shoebill.entities
 import net.gtaun.shoebill.SampObjectManager
 import net.gtaun.shoebill.data.Location
 import net.gtaun.shoebill.data.Vector3D
+import net.gtaun.shoebill.event.sampobject.PlayerObjectMovedEvent
 import net.gtaun.shoebill.exception.CreationFailedException
+import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 
 /**
  * @author MK124
@@ -28,6 +31,17 @@ import net.gtaun.shoebill.exception.CreationFailedException
 abstract class PlayerObject : SampObject(), PlayerRelated {
 
     abstract fun setPlayerObjectNoCameraCol()
+
+    /**
+     * Quick-register Events
+     */
+    @JvmOverloads
+    fun onPlayerObjectMoved(handler: EventHandler<PlayerObjectMovedEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerObjectMovedEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onPlayerObjectMoved(handler: (PlayerObjectMovedEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onPlayerObjectMoved(EventHandler { handler(it) }, priority)
 
     companion object {
 

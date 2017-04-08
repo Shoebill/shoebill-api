@@ -20,7 +20,11 @@ import net.gtaun.shoebill.SampObjectManager
 import net.gtaun.shoebill.constant.Collectable
 import net.gtaun.shoebill.constant.Findable
 import net.gtaun.shoebill.data.Vector2D
+import net.gtaun.shoebill.event.menu.MenuExitedEvent
+import net.gtaun.shoebill.event.menu.MenuSelectedEvent
 import net.gtaun.shoebill.exception.CreationFailedException
+import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 
 /**
  * This class wraps functions and methods for the use of Menus.
@@ -28,7 +32,7 @@ import net.gtaun.shoebill.exception.CreationFailedException
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class Menu : Destroyable, Proxyable<Menu> {
+abstract class Menu : Entity(), Proxyable<Menu> {
 
     /**
      * The internal id of the [Menu].
@@ -98,6 +102,25 @@ abstract class Menu : Destroyable, Proxyable<Menu> {
      * Hides the [Menu] for the [player].
      */
     abstract fun hide(player: Player)
+
+    /**
+     * Quick-register events
+     */
+    @JvmOverloads
+    fun onExited(handler: EventHandler<MenuExitedEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(MenuExitedEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onExited(handler: (MenuExitedEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onExited(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onSelected(handler: EventHandler<MenuSelectedEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(MenuSelectedEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onSelected(handler: (MenuSelectedEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onSelected(EventHandler { handler(it) }, priority)
 
     companion object : Collectable<Menu>, Findable<Int, Menu> {
 

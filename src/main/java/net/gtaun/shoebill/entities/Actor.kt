@@ -5,14 +5,18 @@ import net.gtaun.shoebill.constant.Collectable
 import net.gtaun.shoebill.constant.Findable
 import net.gtaun.shoebill.data.AngledLocation
 import net.gtaun.shoebill.data.Vector3D
+import net.gtaun.shoebill.event.actor.ActorStreamInEvent
+import net.gtaun.shoebill.event.actor.ActorStreamOutEvent
 import net.gtaun.shoebill.exception.CreationFailedException
+import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 
 /**
  * This interfaces provides functions and methods to interact and create [Actor]s.
  *
  * @author Marvin Haschker
  */
-abstract class Actor : Destroyable {
+abstract class Actor : Entity() {
 
     /**
      * The internal id of the actor.
@@ -68,6 +72,25 @@ abstract class Actor : Destroyable {
      * Checks if the actor is streamed-in for [player].
      */
     abstract fun isActorStreamedIn(player: Player): Boolean
+
+    /**
+     * Quick-register events
+     */
+    @JvmOverloads
+    fun onStreamIn(handler: EventHandler<ActorStreamInEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(ActorStreamInEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onStreamIn(handler: (ActorStreamInEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onStreamIn(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onStreamOut(handler: EventHandler<ActorStreamOutEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(ActorStreamOutEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onStreamOut(handler: (ActorStreamOutEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onStreamOut(EventHandler { handler(it) }, priority)
 
     companion object : Collectable<Actor>, Findable<Int, Actor> {
 

@@ -19,8 +19,11 @@ package net.gtaun.shoebill.entities
 import net.gtaun.shoebill.SampObjectManager
 import net.gtaun.shoebill.constant.*
 import net.gtaun.shoebill.data.*
+import net.gtaun.shoebill.event.player.*
 import net.gtaun.shoebill.exception.AlreadyExistException
 import net.gtaun.shoebill.exception.IllegalLengthException
+import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 import org.apache.commons.lang3.math.NumberUtils
 
 /**
@@ -29,7 +32,7 @@ import org.apache.commons.lang3.math.NumberUtils
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class Player : Proxyable<Player> {
+abstract class Player : Proxyable<Player>, Entity() {
 
     /**
      * The OnlineState.
@@ -383,6 +386,12 @@ abstract class Player : Proxyable<Player> {
      * @param loc AngledLocation
      */
     abstract fun setLocationFindZ(loc: AngledLocation)
+
+    /**
+     * Sends [message] to the [Player].
+     * @param message Text of the message.
+     */
+    abstract fun sendMessage(message: String)
 
     /**
      * Sends [message] to the [Player].
@@ -1104,6 +1113,250 @@ abstract class Player : Proxyable<Player> {
      */
     abstract val targetActor: Actor?
 
+    /**
+     * Quick-register Events
+     */
+    @JvmOverloads
+    fun onClickMapEvent(handler: EventHandler<PlayerClickMapEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerClickMapEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onClickPlayer(handler: EventHandler<PlayerClickPlayerEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerClickPlayerEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onClickPlayerTextDraw(handler: EventHandler<PlayerClickPlayerTextDrawEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerClickPlayerTextDrawEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onClickTextDraw(handler: EventHandler<PlayerClickTextDrawEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerClickTextDrawEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onCommand(handler: EventHandler<PlayerCommandEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerCommandEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onConnect(handler: EventHandler<PlayerConnectEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerConnectEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onDamageActor(handler: EventHandler<PlayerDamageActorEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerDamageActorEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onDeath(handler: EventHandler<PlayerDeathEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerDeathEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onDisconnect(handler: EventHandler<PlayerDisconnectEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerDisconnectEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onEditAttachedObject(handler: EventHandler<PlayerEditAttachedObjectEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerEditAttachedObjectEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onEditObject(handler: EventHandler<PlayerEditObjectEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerEditObjectEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onEditPlayerObject(handler: EventHandler<PlayerEditPlayerObjectEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerEditPlayerObjectEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onEnterExitModShop(handler: EventHandler<PlayerEnterExitModShopEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerEnterExitModShopEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onGiveDamage(handler: EventHandler<PlayerGiveDamageEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerGiveDamageEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onInteriorChange(handler: EventHandler<PlayerInteriorChangeEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerInteriorChangeEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onKeyStateChange(handler: EventHandler<PlayerKeyStateChangeEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerKeyStateChangeEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onKill(handler: EventHandler<PlayerKillEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerKillEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onPickup(handler: EventHandler<PlayerPickupEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerPickupEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onRequestClass(handler: EventHandler<PlayerRequestClassEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerRequestClassEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onRequestSpawn(handler: EventHandler<PlayerRequestSpawnEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerRequestSpawnEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onSelectObject(handler: EventHandler<PlayerSelectObjectEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerSelectObjectEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onSelectPlayerObject(handler: EventHandler<PlayerSelectPlayerObjectEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerSelectPlayerObjectEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onSpawn(handler: EventHandler<PlayerSpawnEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerSpawnEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onStateChange(handler: EventHandler<PlayerStateChangeEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerStateChangeEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onStreamIn(handler: EventHandler<PlayerStreamInEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerStreamInEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onStreamOut(handler: EventHandler<PlayerStreamOutEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerStreamOutEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onTakeDamage(handler: EventHandler<PlayerTakeDamageEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerTakeDamageEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onText(handler: EventHandler<PlayerTextEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerTextEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onUpdate(handler: EventHandler<PlayerUpdateEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerUpdateEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onWeaponShot(handler: EventHandler<PlayerWeaponShotEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerWeaponShotEvent::class.java, handler, priority, attention)
+
+    //-----------//-----------//-----------//-----------//-----------//-----------//-----------//-----------//----------
+
+    @JvmOverloads
+    fun onClickMapEvent(handler: (PlayerClickMapEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onClickMapEvent(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onClickPlayer(handler: (PlayerClickPlayerEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onClickPlayer(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onClickPlayerTextDraw(handler: (PlayerClickPlayerTextDrawEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onClickPlayerTextDraw(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onClickTextDraw(handler: (PlayerClickTextDrawEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onClickTextDraw(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onCommand(handler: (PlayerCommandEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onCommand(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onConnect(handler: (PlayerConnectEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onConnect(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onDamageActor(handler: (PlayerDamageActorEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onDamageActor(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onDeath(handler: (PlayerDeathEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onDeath(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onDisconnect(handler: (PlayerDisconnectEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onDisconnect(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onEditAttachedObject(handler: (PlayerEditAttachedObjectEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onEditAttachedObject(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onEditObject(handler: (PlayerEditObjectEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onEditObject(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onEditPlayerObject(handler: (PlayerEditPlayerObjectEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onEditPlayerObject(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onEnterExitModShop(handler: (PlayerEnterExitModShopEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onEnterExitModShop(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onGiveDamage(handler: (PlayerGiveDamageEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onGiveDamage(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onInteriorChange(handler: (PlayerInteriorChangeEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onInteriorChange(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onKeyStateChange(handler: (PlayerKeyStateChangeEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onKeyStateChange(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onKill(handler: (PlayerKillEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onKill(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onPickup(handler: (PlayerPickupEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onPickup(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onRequestClass(handler: (PlayerRequestClassEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onRequestClass(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onRequestSpawn(handler: (PlayerRequestSpawnEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onRequestSpawn(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onSelectObject(handler: (PlayerSelectObjectEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onSelectObject(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onSelectPlayerObject(handler: (PlayerSelectPlayerObjectEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onSelectPlayerObject(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onSpawn(handler: (PlayerSpawnEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onSpawn(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onStateChange(handler: (PlayerStateChangeEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onStateChange(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onStreamIn(handler: (PlayerStreamInEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onStreamIn(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onStreamOut(handler: (PlayerStreamOutEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onStreamOut(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onTakeDamage(handler: (PlayerTakeDamageEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onTakeDamage(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onText(handler: (PlayerTextEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onText(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onUpdate(handler: (PlayerUpdateEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onUpdate(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onWeaponShot(handler: (PlayerWeaponShotEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onWeaponShot(EventHandler { handler(it) }, priority)
 
     companion object : Collectable<Player>, Findable<Int, Player> {
 

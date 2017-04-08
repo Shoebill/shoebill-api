@@ -20,7 +20,10 @@ import net.gtaun.shoebill.SampObjectManager
 import net.gtaun.shoebill.constant.Collectable
 import net.gtaun.shoebill.constant.Findable
 import net.gtaun.shoebill.data.*
+import net.gtaun.shoebill.event.vehicle.*
 import net.gtaun.shoebill.exception.CreationFailedException
+import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 
 /**
  * This class contains functions and methods to handle game vehicles.
@@ -28,7 +31,7 @@ import net.gtaun.shoebill.exception.CreationFailedException
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class Vehicle : Destroyable, Proxyable<Vehicle> {
+abstract class Vehicle : Entity(), Proxyable<Vehicle> {
 
     abstract val isStatic: Boolean
 
@@ -161,6 +164,129 @@ abstract class Vehicle : Destroyable, Proxyable<Vehicle> {
      * If the vehicle has been initialized with a siren.
      */
     abstract fun hasSiren(): Boolean
+
+    /**
+     * Quick-register events
+     */
+    @JvmOverloads
+    fun onTrailerUpdate(handler: EventHandler<TrailerUpdateEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(TrailerUpdateEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onTrailerUpdate(handler: (TrailerUpdateEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onTrailerUpdate(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onUnoccupiedVehicleUpdate(handler: EventHandler<UnoccupiedVehicleUpdateEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(UnoccupiedVehicleUpdateEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onUnoccupiedVehicleUpdate(handler: (UnoccupiedVehicleUpdateEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onUnoccupiedVehicleUpdate(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onCreate(handler: EventHandler<VehicleCreateEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleCreateEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onCreate(handler: (VehicleCreateEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onCreate(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onDeath(handler: EventHandler<VehicleDeathEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleDeathEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onDeath(handler: (VehicleDeathEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onDeath(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onEnter(handler: EventHandler<VehicleEnterEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleEnterEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onEnter(handler: (VehicleEnterEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onEnter(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onExit(handler: EventHandler<VehicleExitEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleExitEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onExit(handler: (VehicleExitEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onExit(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onMod(handler: EventHandler<VehicleModEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleModEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onMod(handler: (VehicleModEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onMod(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onPaintjob(handler: EventHandler<VehiclePaintjobEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehiclePaintjobEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onPaintjob(handler: (VehiclePaintjobEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onPaintjob(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onRespray(handler: EventHandler<VehicleResprayEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleResprayEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onRespray(handler: (VehicleResprayEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onRespray(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onSirenStateChange(handler: EventHandler<VehicleSirenStateChangeEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleSirenStateChangeEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onSirenStateChange(handler: (VehicleSirenStateChangeEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onSirenStateChange(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onSpawn(handler: EventHandler<VehicleSpawnEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleSpawnEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onSpawn(handler: (VehicleSpawnEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onSpawn(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onStreamIn(handler: EventHandler<VehicleStreamInEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleStreamInEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onStreamIn(handler: (VehicleStreamInEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onStreamIn(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onStreamOut(handler: EventHandler<VehicleStreamOutEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleStreamOutEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onStreamOut(handler: (VehicleStreamOutEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onStreamOut(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onUpdateDamage(handler: EventHandler<VehicleUpdateDamageEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleUpdateDamageEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onUpdateDamage(handler: (VehicleUpdateDamageEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onUpdateDamage(EventHandler { handler(it) })
+
+    @JvmOverloads
+    fun onUpdate(handler: EventHandler<VehicleUpdateEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(VehicleUpdateEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onUpdate(handler: (VehicleUpdateEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onUpdate(EventHandler { handler(it) }, priority)
 
     companion object : Collectable<Vehicle>, Findable<Int, Vehicle> {
 

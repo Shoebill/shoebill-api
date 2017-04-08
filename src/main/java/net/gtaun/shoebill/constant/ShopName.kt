@@ -25,6 +25,10 @@ package net.gtaun.shoebill.constant
  */
 enum class ShopName constructor(val value: String) {
     /**
+     * None
+     */
+    NONE(""),
+    /**
      * Pizza Stack
      */
     PIZZA_STACK("FDPIZA"),

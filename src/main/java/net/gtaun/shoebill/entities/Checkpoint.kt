@@ -23,13 +23,17 @@ package net.gtaun.shoebill.entities
 
 import net.gtaun.shoebill.data.Radius
 import net.gtaun.shoebill.data.Vector3D
+import net.gtaun.shoebill.event.checkpoint.CheckpointEnterEvent
+import net.gtaun.shoebill.event.checkpoint.CheckpointLeaveEvent
+import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 
 /**
  * @author JoJLlmAn
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class Checkpoint {
+abstract class Checkpoint : Entity() {
 
     /**
      * The location of the [Checkpoint].
@@ -83,6 +87,25 @@ abstract class Checkpoint {
     open val usingPlayers: Collection<Player>
         get() = Player.get().filter { it.checkpoint == this }
 
+    /**
+     * Quick-register Events
+     */
+    @JvmOverloads
+    fun onEnter(handler: EventHandler<CheckpointEnterEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(CheckpointEnterEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onEnter(handler: (CheckpointEnterEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onEnter(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onLeave(handler: EventHandler<CheckpointLeaveEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(CheckpointLeaveEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onLeave(handler: (CheckpointLeaveEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onLeave(EventHandler { handler(it) }, priority)
+
     companion object {
 
         /**
@@ -92,6 +115,9 @@ abstract class Checkpoint {
         @JvmOverloads
         fun create(location: Radius, onEnter: ((Player) -> Unit)? = null, onLeave: ((Player) -> Unit)? = null): Checkpoint {
             return object : Checkpoint() {
+                override val isDestroyed: Boolean
+                    get() = eventManagerNode.isDestroyed
+
                 override var location: Radius
                     get() = location
                     set(newLocation) {

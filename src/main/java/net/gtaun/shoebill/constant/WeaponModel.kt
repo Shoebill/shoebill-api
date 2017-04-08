@@ -25,7 +25,7 @@ package net.gtaun.shoebill.constant
  */
 enum class WeaponModel constructor(@JvmField val id: Int,
                                    @JvmField val slot: WeaponSlot,
-                                   private val modelId: Int,
+                                   @JvmField val modelId: Int,
                                    @JvmField val modelName: String) {
     /**
      * Unarmed

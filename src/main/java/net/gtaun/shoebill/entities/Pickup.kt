@@ -23,6 +23,7 @@ import net.gtaun.shoebill.data.Location
 import net.gtaun.shoebill.event.player.PlayerPickupEvent
 import net.gtaun.shoebill.exception.CreationFailedException
 import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 
 /**
  * This class wraps functions and methods for the use of [Pickup]s.
@@ -30,7 +31,7 @@ import net.gtaun.util.event.EventHandler
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class Pickup : Destroyable, Proxyable<Pickup> {
+abstract class Pickup : Entity(), Proxyable<Pickup> {
 
     /**
      * If the [Pickup] is static.
@@ -56,6 +57,17 @@ abstract class Pickup : Destroyable, Proxyable<Pickup> {
      * The location of the [Pickup].
      */
     abstract val location: Location
+
+    /**
+     * Quick-register events
+     */
+    @JvmOverloads
+    fun onPickup(handler: EventHandler<PlayerPickupEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(PlayerPickupEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onPickup(handler: (PlayerPickupEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onPickup(EventHandler { handler(it) }, priority)
 
     companion object : Collectable<Pickup>, Findable<Int, Pickup> {
 
@@ -87,9 +99,8 @@ abstract class Pickup : Destroyable, Proxyable<Pickup> {
         @Throws(CreationFailedException::class)
         @JvmStatic
         @JvmOverloads
-        fun create(modelId: Int, type: Int = 1, loc: Location = Location(), handler:
-            EventHandler<PlayerPickupEvent>? = null): Pickup =
-                SampObjectManager.get().createPickup(modelId, type, loc, handler)
+        fun create(modelId: Int, type: Int = 1, loc: Location = Location()): Pickup =
+                SampObjectManager.get().createPickup(modelId, type, loc)
 
         /**
          * Creates a [Pickup] with params. If the Creation fails, it will throw a CreationFailedException.
@@ -104,8 +115,7 @@ abstract class Pickup : Destroyable, Proxyable<Pickup> {
         @Throws(CreationFailedException::class)
         @JvmStatic
         @JvmOverloads
-        fun create(modelId: Int, type: Int, x: Float, y: Float, z: Float, worldId: Int, handler:
-            EventHandler<PlayerPickupEvent>? = null): Pickup =
-                create(modelId, type, Location(x, y, z, worldId = worldId), handler)
+        fun create(modelId: Int, type: Int, x: Float, y: Float, z: Float, worldId: Int): Pickup =
+                create(modelId, type, Location(x, y, z, worldId = worldId))
     }
 }

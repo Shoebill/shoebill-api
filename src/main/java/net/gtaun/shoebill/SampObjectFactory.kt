@@ -16,12 +16,11 @@
 
 package net.gtaun.shoebill
 
-import net.gtaun.shoebill.entities.*
 import net.gtaun.shoebill.data.*
+import net.gtaun.shoebill.entities.*
 import net.gtaun.shoebill.event.dialog.DialogCloseEvent
 import net.gtaun.shoebill.event.dialog.DialogResponseEvent
 import net.gtaun.shoebill.event.dialog.DialogShowEvent
-import net.gtaun.shoebill.event.player.PlayerPickupEvent
 import net.gtaun.shoebill.exception.CreationFailedException
 import net.gtaun.util.event.EventHandler
 
@@ -76,8 +75,7 @@ interface SampObjectFactory {
      * @return The created Pickup.
      */
     @Throws(CreationFailedException::class)
-    fun createPickup(modelId: Int, type: Int = 1, loc: Location = Location(),
-                     event: EventHandler<PlayerPickupEvent>? = null): Pickup
+    fun createPickup(modelId: Int, type: Int = 1, loc: Location = Location()): Pickup
 
     /**
      * Create a Label with params. If the Creation fails, it will throw a CreationFailedException.

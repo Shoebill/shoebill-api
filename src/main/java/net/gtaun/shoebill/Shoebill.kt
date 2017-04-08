@@ -93,6 +93,6 @@ abstract class Shoebill {
 
     companion object {
         @JvmStatic
-        fun get(): Shoebill = Instance.reference!!.get()
+        fun get(): Shoebill = Instance.reference!!.get()!!
     }
 }

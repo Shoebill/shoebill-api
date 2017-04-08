@@ -62,6 +62,9 @@ abstract class RaceCheckpoint : Checkpoint() {
         fun create(location: Radius, type: RaceCheckpointType, nextSupplier: Supplier<RaceCheckpoint>,
                    onEnter: Consumer<Player>, onLeave: Consumer<Player>): RaceCheckpoint {
             return object : RaceCheckpoint() {
+                override val isDestroyed: Boolean
+                    get() = eventManagerNode.isDestroyed
+
                 override var location: Radius
                     get() = location
                     set(newLocation) {

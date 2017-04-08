@@ -38,7 +38,10 @@ abstract class Zone : Destroyable, Proxyable<Zone>, RangeCheckable3D {
     abstract fun show(player: Player, color: Color)
     abstract fun hide(player: Player)
     abstract fun flash(player: Player, color: Color)
+    fun flash(color: Color) = flashForAll(color)
+
     abstract fun stopFlash(player: Player)
+    fun stopFlash() = stopFlashForAll()
 
     abstract fun showForAll(color: Color)
     abstract fun hideForAll()

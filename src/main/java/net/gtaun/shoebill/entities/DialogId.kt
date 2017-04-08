@@ -23,12 +23,13 @@ import net.gtaun.shoebill.event.dialog.DialogResponseEvent
 import net.gtaun.shoebill.event.dialog.DialogShowEvent
 import net.gtaun.shoebill.exception.CreationFailedException
 import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 
 /**
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class DialogId : Destroyable {
+abstract class DialogId : Entity() {
 
     /**
      * Gets the [id] of the dialog.
@@ -51,6 +52,33 @@ abstract class DialogId : Destroyable {
      * Closes the Dialog for the [player].
      */
     abstract fun cancel(player: Player)
+
+    /**
+     * Quick-register Events
+     */
+    @JvmOverloads
+    fun onShow(handler: EventHandler<DialogShowEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(DialogShowEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onShow(handler: (DialogShowEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onShow(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onClose(handler: EventHandler<DialogCloseEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(DialogCloseEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onClose(handler: (DialogCloseEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onClose(EventHandler { handler(it) }, priority)
+
+    @JvmOverloads
+    fun onResponse(handler: EventHandler<DialogResponseEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(DialogResponseEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    fun onResponse(handler: (DialogResponseEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onResponse(EventHandler { handler(it) }, priority)
 
     companion object {
 

@@ -24,7 +24,10 @@ import net.gtaun.shoebill.constant.ObjectMaterialTextAlign
 import net.gtaun.shoebill.data.Color
 import net.gtaun.shoebill.data.Location
 import net.gtaun.shoebill.data.Vector3D
+import net.gtaun.shoebill.event.sampobject.ObjectMovedEvent
 import net.gtaun.shoebill.exception.CreationFailedException
+import net.gtaun.util.event.EventHandler
+import net.gtaun.util.event.HandlerPriority
 
 /**
  * This class contains functions and methods to handle game objects.
@@ -32,7 +35,7 @@ import net.gtaun.shoebill.exception.CreationFailedException
  * @author MK124
  * @author Marvin Haschker
  */
-abstract class SampObject : Destroyable, Proxyable<SampObject> {
+abstract class SampObject : Entity(), Proxyable<SampObject> {
 
     abstract val id: Int
     abstract val modelId: Int
@@ -72,6 +75,18 @@ abstract class SampObject : Destroyable, Proxyable<SampObject> {
 
     //int getObjectModel(); // not needed
     abstract fun setNoCameraCol()
+
+    /**
+     * Quick-register Events
+     */
+    @JvmOverloads
+    open fun onMoved(handler: EventHandler<ObjectMovedEvent>, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            eventManagerNode.registerHandler(ObjectMovedEvent::class.java, handler, priority, attention)
+
+    @JvmOverloads
+    open fun onMoved(handler: (ObjectMovedEvent) -> Unit, priority: HandlerPriority = HandlerPriority.NORMAL) =
+            onMoved(EventHandler { handler(it) }, priority)
+
 
     companion object : Collectable<SampObject>, Findable<Int, SampObject> {
 
