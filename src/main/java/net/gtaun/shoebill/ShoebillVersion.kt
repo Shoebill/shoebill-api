@@ -46,4 +46,9 @@ interface ShoebillVersion {
      * The build date of the runtime library.
      */
     val buildDate: String
+
+    /**
+     * The target Shoebill Api on which the runtime is relying on.
+     */
+    val targetApi: String
 }
