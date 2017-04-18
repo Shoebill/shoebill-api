@@ -26,7 +26,7 @@ import net.gtaun.shoebill.SampObjectManager
  */
 abstract class Timer : Destroyable {
 
-    abstract var callback: TimerCallback?
+    abstract var callback: TimerCallback
 
     abstract var interval: Int
     abstract var count: Int
@@ -42,12 +42,6 @@ abstract class Timer : Destroyable {
     companion object {
 
         /**
-         * Creates a Timer with params.
-         */
-        @JvmStatic
-        fun create(interval: Int, callback: TimerCallback? = null): Timer = create(interval, COUNT_INFINITE, callback)
-
-        /**
          * Create a Timer with params.
          * @param interval The interval in miliseconds.
          * @param count How often the Timer will get called.
@@ -56,7 +50,7 @@ abstract class Timer : Destroyable {
          */
         @JvmStatic
         @JvmOverloads
-        fun create(interval: Int, count: Int = COUNT_INFINITE, callback: TimerCallback? = null): Timer =
+        fun create(interval: Int, count: Int = COUNT_INFINITE, callback: TimerCallback): Timer =
                 SampObjectManager.get().createTimer(interval, count, callback)
 
         @JvmField
