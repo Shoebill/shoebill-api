@@ -160,7 +160,7 @@ interface SampObjectFactory {
      * @param callback The callback which will get invoked after the interval.
      * @return The created Timer.
      */
-    fun createTimer(interval: Int, count: Int = Timer.COUNT_INFINITE, callback: TimerCallback? = null): Timer
+    fun createTimer(interval: Int, count: Int = Timer.COUNT_INFINITE, callback: TimerCallback): Timer
 
     /**
      * Creates a actor with params.
