@@ -6,6 +6,7 @@ import net.gtaun.shoebill.data.Vector3D;
 import net.gtaun.shoebill.object.Player;
 import net.gtaun.shoebill.object.PlayerObject;
 import net.gtaun.shoebill.object.SampObject;
+import net.gtaun.shoebill.object.Vehicle;
 import net.gtaun.util.event.Interruptable;
 
 /**
@@ -107,5 +108,13 @@ public class PlayerWeaponShotEvent extends PlayerEvent implements Interruptable
 	public Vector3D getPosition()
 	{
 		return new Vector3D(position);
+	}
+	
+    /**
+     * @return The associated hitted Vehicle for this event.
+     */
+	public Vehicle getHitVehicle() 
+	{
+		return Vehicle.get(hitId);
 	}
 }
