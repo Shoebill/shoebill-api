@@ -29,6 +29,10 @@ import java.util.Map;
 public enum ShopName
 {
 	/**
+	 * Empty
+	 */
+	NONE			(""),
+	/**
 	 * Pizza Stack
 	 */
 	PIZZA_STACK		("FDPIZA"),
