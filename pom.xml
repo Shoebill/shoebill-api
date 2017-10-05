@@ -16,25 +16,25 @@
 	</properties>
 
 	<distributionManagement>
-		<repository>
-			<id>deployment</id>
-			<name>Releases</name>
-			<url>http://repo.gtaun.net/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>deployment</id>
-			<name>Snapshots</name>
-			<url>http://repo.gtaun.net/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+        <repository>
+            <id>deployment</id>
+            <name>Releases</name>
+            <url>http://repo.sampx.ru/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>deployment</id>
+            <name>Snapshots</name>
+            <url>http://repo.sampx.ru/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    	</distributionManagement>
 
 	<repositories>
-		<repository>
-			<id>gtaun-public-repo</id>
-			<name>GTAUN Public Repository</name>
-			<url>http://repo.gtaun.net/content/groups/public</url>
-		</repository>
-	</repositories>
+        	<repository>
+            		<id>gtaun-public-repo</id>
+            		<name>GTAUN Public Repository</name>
+            		<url>http://repo.sampx.ru/repository/maven-public/</url>
+       		</repository>
+    	</repositories>
 
 	<licenses>
 		<license>
