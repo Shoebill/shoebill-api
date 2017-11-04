@@ -36,21 +36,4 @@ class PlayerDeathEvent(player: Player,
                         * The associated WeaponModel the killer used for this event.
                         */
                        val reason: WeaponModel) : PlayerEvent(player), Interruptable {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerDeathEvent) return false
-
-        if (killer != other.killer) return false
-        if (reason != other.reason) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = killer?.hashCode() ?: 0
-        result = 31 * result + reason.hashCode()
-        return result
-    }
-
 }

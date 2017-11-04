@@ -76,7 +76,8 @@ class Radius : Location, Cloneable, RangeCheckable3D {
         return super.distance(pos) <= radius
     }
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(160481219, 179424673, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(160481219,
+            179424673, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Radius = super<Location>.clone() as Radius
 }

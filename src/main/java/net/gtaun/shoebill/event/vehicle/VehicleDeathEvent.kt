@@ -25,20 +25,4 @@ import net.gtaun.shoebill.entities.Vehicle
  * @author MK124
  * @author Marvin Haschker
  */
-class VehicleDeathEvent(vehicle: Vehicle, val killer: Player?) : VehicleEvent(vehicle) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is VehicleDeathEvent) return false
-
-        if (killer != other.killer) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        return killer?.hashCode() ?: 0
-    }
-
-
-}
+class VehicleDeathEvent(vehicle: Vehicle, val killer: Player?) : VehicleEvent(vehicle)

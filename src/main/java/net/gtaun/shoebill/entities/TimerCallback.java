@@ -4,9 +4,7 @@ package net.gtaun.shoebill.entities;
 public interface TimerCallback {
     void onTick(int factualInterval);
 
-    default void onStart() {
-    }
+    default void onStart() { }
 
-    default void onStop() {
-    }
+    default void onStop() { }
 }

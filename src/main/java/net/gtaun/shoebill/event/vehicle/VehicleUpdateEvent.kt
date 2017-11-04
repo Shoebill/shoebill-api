@@ -25,25 +25,4 @@ import net.gtaun.shoebill.entities.Vehicle
  * @author JoJLlmAn
  * @author Marvin Haschker
  */
-class VehicleUpdateEvent(vehicle: Vehicle, val player: Player, val playerSeat: Int) : VehicleEvent(vehicle) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is VehicleUpdateEvent) return false
-        if (!super.equals(other)) return false
-
-        if (player != other.player) return false
-        if (playerSeat != other.playerSeat) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + player.hashCode()
-        result = 31 * result + playerSeat
-        return result
-    }
-
-
-}
+class VehicleUpdateEvent(vehicle: Vehicle, val player: Player, val playerSeat: Int) : VehicleEvent(vehicle)

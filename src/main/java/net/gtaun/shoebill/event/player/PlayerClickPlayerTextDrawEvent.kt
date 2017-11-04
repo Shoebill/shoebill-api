@@ -46,21 +46,4 @@ class PlayerClickPlayerTextDrawEvent(player: Player,
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerClickPlayerTextDrawEvent) return false
-
-        if (playerTextdraw != other.playerTextdraw) return false
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = playerTextdraw.hashCode()
-        result = 31 * result + response
-        return result
-    }
-
-
 }

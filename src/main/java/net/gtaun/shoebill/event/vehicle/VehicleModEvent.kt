@@ -38,25 +38,4 @@ class VehicleModEvent(vehicle: Vehicle, val player: Player, val component: Vehic
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is VehicleModEvent) return false
-        if (!super.equals(other)) return false
-
-        if (player != other.player) return false
-        if (component != other.component) return false
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + player.hashCode()
-        result = 31 * result + (component?.hashCode() ?: 0)
-        result = 31 * result + response
-        return result
-    }
-
-
 }

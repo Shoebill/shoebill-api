@@ -29,19 +29,4 @@ open class PlayerEvent protected constructor(
         /**
          * The associated Player for this event.
          */
-        val player: Player) : Event() {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerEvent) return false
-
-        if (player != other.player) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        return player.hashCode()
-    }
-
-}
+        val player: Player) : Event()

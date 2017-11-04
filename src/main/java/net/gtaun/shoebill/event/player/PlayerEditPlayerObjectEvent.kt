@@ -45,27 +45,4 @@ class PlayerEditPlayerObjectEvent(player: Player,
                                   /**
                                    * The associated new rotation for this event.
                                    */
-                                  val newRotation: Vector3D) : PlayerEvent(player) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerEditPlayerObjectEvent) return false
-
-        if (`object` != other.`object`) return false
-        if (editResponse != other.editResponse) return false
-        if (newLocation != other.newLocation) return false
-        if (newRotation != other.newRotation) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = `object`.hashCode()
-        result = 31 * result + editResponse.hashCode()
-        result = 31 * result + newLocation.hashCode()
-        result = 31 * result + newRotation.hashCode()
-        return result
-    }
-
-
-}
+                                  val newRotation: Vector3D) : PlayerEvent(player)

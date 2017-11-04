@@ -83,12 +83,13 @@ class Area3D : Area, Cloneable, RangeCheckable3D {
      */
     override fun isInRange(pos: Vector3D): Boolean {
         val z = pos.z
-        if (super.isInRange(pos) == false) return false
+        if (!super.isInRange(pos)) return false
         if (z < minZ || z > maxZ) return false
         return true
     }
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(256203221, 275604541, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(256203221,
+            275604541, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
 
     /**

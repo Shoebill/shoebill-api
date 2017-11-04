@@ -39,25 +39,4 @@ class UnoccupiedVehicleUpdateEvent(vehicle: Vehicle, val player: Player?, val ne
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is UnoccupiedVehicleUpdateEvent) return false
-
-        if (player != other.player) return false
-        if (newLocation != other.newLocation) return false
-        if (velocity != other.velocity) return false
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = player?.hashCode() ?: 0
-        result = 31 * result + newLocation.hashCode()
-        result = 31 * result + velocity.hashCode()
-        result = 31 * result + response
-        return result
-    }
-
-
 }

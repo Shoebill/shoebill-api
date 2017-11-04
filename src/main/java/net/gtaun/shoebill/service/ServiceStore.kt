@@ -32,6 +32,6 @@ interface ServiceStore {
     val serviceEntries: Collection<ServiceEntry>
 
     companion object {
-        fun get(): ServiceStore? = Shoebill.get().serviceStore
+        fun get(): ServiceStore = Shoebill.get().serviceStore
     }
 }

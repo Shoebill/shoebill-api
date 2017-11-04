@@ -43,21 +43,4 @@ class PlayerRequestSpawnEvent(player: Player) : PlayerEvent(player), Disallowabl
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerRequestSpawnEvent) return false
-        if (!super.equals(other)) return false
-
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + response
-        return result
-    }
-
-
 }

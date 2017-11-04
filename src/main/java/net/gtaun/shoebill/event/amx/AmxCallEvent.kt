@@ -31,23 +31,4 @@ class AmxCallEvent @JvmOverloads constructor(
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is AmxCallEvent) return false
-
-        if (functionName != other.functionName) return false
-        if (!Arrays.equals(parameters, other.parameters)) return false
-        if (returnValue != other.returnValue) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = functionName.hashCode()
-        result = 31 * result + Arrays.hashCode(parameters)
-        result = 31 * result + returnValue
-        return result
-    }
-
-
 }

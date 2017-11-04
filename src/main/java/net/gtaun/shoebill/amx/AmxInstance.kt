@@ -100,7 +100,7 @@ abstract class AmxInstance {
          * Returns the default (main) amx instance.
          */
         @JvmStatic
-        val default: AmxInstance?
-            get() = AmxInstanceManager.get().amxInstances.firstOrNull()
+        val default: AmxInstance
+            get() = AmxInstanceManager.get().amxInstances.first()
     }
 }

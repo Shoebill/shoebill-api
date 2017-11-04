@@ -70,7 +70,9 @@ abstract class SampObject : Entity(), Proxyable<SampObject> {
     abstract fun setMaterial(materialIndex: Int, modelId: Int, txdName: String, textureName: String, materialColor: Color)
     abstract fun setMaterial(materialIndex: Int, modelId: Int, txdName: String, textureName: String)
 
-    abstract fun setMaterialText(text: String, materialIndex: Int, materialSize: ObjectMaterialSize, fontFace: String, fontSize: Int, isBold: Boolean, fontColor: Color, backColor: Color, textAlignment: ObjectMaterialTextAlign)
+    abstract fun setMaterialText(text: String, materialIndex: Int, materialSize: ObjectMaterialSize, fontFace: String,
+                                 fontSize: Int, isBold: Boolean, fontColor: Color, backColor: Color,
+                                 textAlignment: ObjectMaterialTextAlign)
     abstract fun setMaterialText(text: String)
 
     //int getObjectModel(); // not needed

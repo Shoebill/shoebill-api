@@ -70,14 +70,15 @@ open class Area : Cloneable, RangeCheckable3D {
     /**
      * Checks if the [pos] is in the area.
      */
-    open fun isInRange(pos: Vector2D): Boolean = pos.x >= minX && pos.x <= maxX && pos.y >= minY && pos.y <= maxY
+    open fun isInRange(pos: Vector2D): Boolean = pos.x in minX..maxX && pos.y >= minY && pos.y <= maxY
 
     /**
      * Checks if the [pos] is in the area.
      */
     override fun isInRange(pos: Vector3D): Boolean = isInRange(pos as Vector2D)
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(275604547, 295075147, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(275604547,
+            295075147, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): Area = super.clone() as Area
 

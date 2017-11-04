@@ -43,31 +43,6 @@ class PlayerWeaponShotEvent(player: Player,
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerWeaponShotEvent) return false
-        if (!super.equals(other)) return false
-
-        if (weapon != other.weapon) return false
-        if (hitType != other.hitType) return false
-        if (hitId != other.hitId) return false
-        if (position != other.position) return false
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + weapon.hashCode()
-        result = 31 * result + hitType.hashCode()
-        result = 31 * result + hitId
-        result = 31 * result + position.hashCode()
-        result = 31 * result + response
-        return result
-    }
-
-
     /**
      * The associated Player / victim for this event.
      */

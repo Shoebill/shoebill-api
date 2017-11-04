@@ -24,5 +24,4 @@ package net.gtaun.shoebill.entities
  */
 interface PlayerRelated {
     val player: Player
-        get
 }

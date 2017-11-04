@@ -118,7 +118,8 @@ class Quaternion : Vector3D, Cloneable {
         return rotated
     }
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(295075147, 633910099, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(295075147,
+            633910099, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Quaternion = super<Vector3D>.clone() as Quaternion
 

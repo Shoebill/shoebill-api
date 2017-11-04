@@ -44,17 +44,4 @@ class PlayerConnectEvent(player: Player) : PlayerEvent(player), Disallowable {
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerConnectEvent) return false
-
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        return response
-    }
-
 }

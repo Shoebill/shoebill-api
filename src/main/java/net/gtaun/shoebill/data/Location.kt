@@ -75,7 +75,8 @@ open class Location : Vector3D, Cloneable {
     }
 
     override fun toLegibleString(): String = String.format("%f, %f, %f, %d, %d", x, y, z, interiorId, worldId)
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(198491329, 217645177, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(198491329,
+            217645177, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Location = super<Vector3D>.clone() as Location
 }

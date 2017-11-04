@@ -47,21 +47,4 @@ class PlayerCommandEvent(player: Player,
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerCommandEvent) return false
-
-        if (command != other.command) return false
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = command.hashCode()
-        result = 31 * result + response
-        return result
-    }
-
-
 }

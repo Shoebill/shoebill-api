@@ -47,29 +47,4 @@ class PlayerEditAttachedObjectEvent(player: Player,
                                     /**
                                      * The associated scale for this event.
                                      */
-                                    val scale: Vector3D) : PlayerEvent(player) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerEditAttachedObjectEvent) return false
-
-        if (slot != other.slot) return false
-        if (response != other.response) return false
-        if (offset != other.offset) return false
-        if (rotation != other.rotation) return false
-        if (scale != other.scale) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = slot.hashCode()
-        result = 31 * result + response
-        result = 31 * result + offset.hashCode()
-        result = 31 * result + rotation.hashCode()
-        result = 31 * result + scale.hashCode()
-        return result
-    }
-
-
-}
+                                    val scale: Vector3D) : PlayerEvent(player)

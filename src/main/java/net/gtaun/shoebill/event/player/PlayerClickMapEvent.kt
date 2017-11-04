@@ -26,20 +26,4 @@ import net.gtaun.shoebill.entities.Player
  * @author Marvin Haschker
  * @see [OnPlayerClickMap](https://wiki.sa-mp.com/wiki/OnPlayerClickMap)
  */
-class PlayerClickMapEvent(player: Player, val position: Vector3D) : PlayerEvent(player) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerClickMapEvent) return false
-
-        if (position != other.position) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        return position.hashCode()
-    }
-
-
-}
+class PlayerClickMapEvent(player: Player, val position: Vector3D) : PlayerEvent(player)

@@ -36,20 +36,4 @@ class PlayerClickPlayerEvent(player: Player,
      */
     val source = ClickPlayerSource[source]
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerClickPlayerEvent) return false
-
-        if (clickedPlayer != other.clickedPlayer) return false
-        if (source != other.source) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = clickedPlayer.hashCode()
-        result = 31 * result + (source?.hashCode() ?: 0)
-        return result
-    }
-
 }

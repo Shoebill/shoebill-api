@@ -45,22 +45,4 @@ class PlayerTextEvent(player: Player,
         interrupt()
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerTextEvent) return false
-        if (!super.equals(other)) return false
-
-        if (text != other.text) return false
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + text.hashCode()
-        result = 31 * result + response
-        return result
-    }
-
 }

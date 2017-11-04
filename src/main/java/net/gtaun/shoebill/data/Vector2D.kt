@@ -112,7 +112,8 @@ open class Vector2D : Cloneable {
     }
 
     open fun toLegibleString(): String = String.format("%f, %f", x, y)
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(433024253, 472882049, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(433024253,
+            472882049, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): Vector2D = super.clone() as Vector2D
 

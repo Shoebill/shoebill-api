@@ -77,7 +77,8 @@ class SpawnInfo : Cloneable {
     constructor(info: SpawnInfo) :
         this(info.location, info.skinId, info.teamId, info.weapon1, info.weapon2, info.weapon3)
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(492876847, 715225739, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(492876847,
+            715225739, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): SpawnInfo = super.clone() as SpawnInfo
 

@@ -41,21 +41,4 @@ class ServiceRegisterEvent @JvmOverloads constructor(
     val previousService: Service?
         get() = previousServiceEntry?.service
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is ServiceRegisterEvent) return false
-        if (!super.equals(other)) return false
-
-        if (previousServiceEntry != other.previousServiceEntry) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + (previousServiceEntry?.hashCode() ?: 0)
-        return result
-    }
-
-
 }

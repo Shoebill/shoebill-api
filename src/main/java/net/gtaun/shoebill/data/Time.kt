@@ -55,7 +55,8 @@ class Time : Cloneable {
      */
     fun set(time: Time) = set(time.hour, time.minute)
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(67867979, 573259391, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(67867979,
+            573259391, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): Time = super.clone() as Time
 

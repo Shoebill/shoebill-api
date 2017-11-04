@@ -37,28 +37,4 @@ class DialogResponseEvent(dialog: DialogId, player: Player, val dialogResponse: 
         this.response = this.response or 1
         interrupt()
     }
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is DialogResponseEvent) return false
-        if (!super.equals(other)) return false
-
-        if (dialogResponse != other.dialogResponse) return false
-        if (listItem != other.listItem) return false
-        if (inputText != other.inputText) return false
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + dialogResponse
-        result = 31 * result + listItem
-        result = 31 * result + inputText.hashCode()
-        result = 31 * result + response
-        return result
-    }
-
-
 }

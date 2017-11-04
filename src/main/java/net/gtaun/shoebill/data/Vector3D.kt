@@ -126,7 +126,8 @@ open class Vector3D : Vector2D, Cloneable {
     }
 
     override fun toLegibleString(): String = String.format("%f, %f, %f", x, y, z)
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(49979693, 573259433, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(49979693,
+            573259433, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Vector3D = super<Vector2D>.clone() as Vector3D
 

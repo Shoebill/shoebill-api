@@ -33,23 +33,4 @@ class PlayerEnterExitModShopEvent(player: Player,
                                   /**
                                    * The associated id of interior for this event.
                                    */
-                                  val interiorId: Int) : PlayerEvent(player) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerEnterExitModShopEvent) return false
-
-        if (enterExit != other.enterExit) return false
-        if (interiorId != other.interiorId) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = enterExit
-        result = 31 * result + interiorId
-        return result
-    }
-
-
-}
+                                  val interiorId: Int) : PlayerEvent(player)

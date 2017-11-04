@@ -23,9 +23,9 @@ package net.gtaun.shoebill.service
 interface Service {
     companion object {
         operator fun <ServiceType : Service> get(type: Class<ServiceType>): ServiceType? =
-                ServiceStore.get()!!.getService(type)
+                ServiceStore.get().getService(type)
 
         fun <ServiceType : Service> isAvailable(type: Class<ServiceType>): Boolean =
-                ServiceStore.get()!!.isServiceAvailable(type)
+                ServiceStore.get().isServiceAvailable(type)
     }
 }

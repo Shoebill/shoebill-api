@@ -15,7 +15,6 @@
 		<kotlin.version>1.1.51</kotlin.version>
 		<dokka.version>0.9.15</dokka.version>
 		<kotlin.compiler.incremental>true</kotlin.compiler.incremental>
-		<build.number>${build.vcs.number}</build.number>
 	</properties>
 
 	<distributionManagement>

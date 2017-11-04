@@ -33,21 +33,4 @@ class RconCommandEvent(val command: String) : Event() {
         this.response = this.response or 1
         interrupt()
     }
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is RconCommandEvent) return false
-
-        if (command != other.command) return false
-        if (response != other.response) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = command.hashCode()
-        result = 31 * result + response
-        return result
-    }
-
 }

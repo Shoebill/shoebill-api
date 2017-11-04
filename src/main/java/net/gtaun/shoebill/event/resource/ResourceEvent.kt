@@ -25,19 +25,4 @@ import net.gtaun.util.event.Event
  * @author MK124
  * @author Marvin Haschker
  */
-open class ResourceEvent protected constructor(val resource: Resource) : Event() {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is ResourceEvent) return false
-
-        if (resource != other.resource) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        return resource.hashCode()
-    }
-
-}
+open class ResourceEvent protected constructor(val resource: Resource) : Event()

@@ -119,7 +119,8 @@ class Color : Cloneable {
      */
     fun set(color: Color) = set(color.r, color.g, color.b, color.a)
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(236887699, 256203161, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(236887699,
+            256203161, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
 
     /**

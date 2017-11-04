@@ -31,7 +31,7 @@ import java.util.function.Consumer
  */
 abstract class AmxInstanceManager {
     object Instance {
-        internal var reference: Reference<out AmxInstanceManager>? = null
+        lateinit internal var reference: Reference<out AmxInstanceManager>
     }
 
     init {
@@ -87,6 +87,6 @@ abstract class AmxInstanceManager {
          * Returns the main instance of the [AmxInstanceManager].
          */
         @JvmStatic
-        fun get(): AmxInstanceManager = Instance.reference!!.get()!!
+        fun get(): AmxInstanceManager = Instance.reference.get()!!
     }
 }

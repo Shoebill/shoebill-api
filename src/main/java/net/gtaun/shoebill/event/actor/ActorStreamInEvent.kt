@@ -13,23 +13,4 @@ class ActorStreamInEvent(actor: Actor,
                          /**
                           * The player for whom the actor was streamed in.
                           */
-                         val player: Player) : ActorEvent(actor) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is ActorStreamInEvent) return false
-        if (!super.equals(other)) return false
-
-        if (player != other.player) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + player.hashCode()
-        return result
-    }
-
-
-}
+                         val player: Player) : ActorEvent(actor)

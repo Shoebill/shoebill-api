@@ -30,23 +30,4 @@ class PlayerSelectObjectEvent(player: Player,
                               /**
                                * The associated selected testing for this event.
                                */
-                              val `object`: SampObject) : PlayerEvent(player) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerSelectObjectEvent) return false
-        if (!super.equals(other)) return false
-
-        if (`object` != other.`object`) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + `object`.hashCode()
-        return result
-    }
-
-
-}
+                              val `object`: SampObject) : PlayerEvent(player)

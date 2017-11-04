@@ -56,7 +56,8 @@ class WeaponData : Cloneable {
      */
     fun set(data: WeaponData) = set(data.model, data.ammo)
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(275604547, 817504253, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(275604547,
+            817504253, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     public override fun clone(): WeaponData = super.clone() as WeaponData
 }

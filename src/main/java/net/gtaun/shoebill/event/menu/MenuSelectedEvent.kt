@@ -36,20 +36,4 @@ class MenuSelectedEvent(menu: Menu, player: Player,
      */
     fun setProcessed() = interrupt()
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is MenuSelectedEvent) return false
-        if (!super.equals(other)) return false
-
-        if (row != other.row) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + row
-        return result
-    }
-
 }

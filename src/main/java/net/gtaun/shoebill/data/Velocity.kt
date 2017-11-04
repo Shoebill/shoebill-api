@@ -50,7 +50,8 @@ class Velocity : Vector3D, Cloneable {
 
     constructor(vec: Vector3D) : super(vec)
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(413158523, 941083981, this, false)
+    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(413158523,
+            941083981, this, false)
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
     override fun clone(): Velocity = super<Vector3D>.clone() as Velocity
 }

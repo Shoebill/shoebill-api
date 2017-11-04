@@ -24,23 +24,4 @@ import net.gtaun.shoebill.entities.Vehicle
  * @author MK124
  * @author Marvin Haschker
  */
-class VehiclePaintjobEvent(vehicle: Vehicle, val paintjobId: Int) : VehicleEvent(vehicle) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is VehiclePaintjobEvent) return false
-        if (!super.equals(other)) return false
-
-        if (paintjobId != other.paintjobId) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + paintjobId
-        return result
-    }
-
-
-}
+class VehiclePaintjobEvent(vehicle: Vehicle, val paintjobId: Int) : VehicleEvent(vehicle)

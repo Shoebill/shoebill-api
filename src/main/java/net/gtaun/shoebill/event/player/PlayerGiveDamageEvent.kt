@@ -42,29 +42,4 @@ class PlayerGiveDamageEvent(player: Player,
                             /**
                              * The associated id of hitted bodypart for this event.
                              */
-                            val bodyPart: Int) : PlayerEvent(player) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerGiveDamageEvent) return false
-        if (!super.equals(other)) return false
-
-        if (victim != other.victim) return false
-        if (amount != other.amount) return false
-        if (weapon != other.weapon) return false
-        if (bodyPart != other.bodyPart) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + victim.hashCode()
-        result = 31 * result + amount.hashCode()
-        result = 31 * result + weapon.hashCode()
-        result = 31 * result + bodyPart
-        return result
-    }
-
-
-}
+                            val bodyPart: Int) : PlayerEvent(player)

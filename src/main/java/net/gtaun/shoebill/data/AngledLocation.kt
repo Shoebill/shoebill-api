@@ -70,7 +70,10 @@ class AngledLocation : Location, Cloneable {
     override fun toLegibleString(): String =
             String.format("%f, %f, %f, %d, %d, %f", x, y, z, interiorId, worldId, angle)
 
-    override fun hashCode(): Int = HashCodeBuilder.reflectionHashCode(179424691, 198491317, this, false)
+    override fun hashCode(): Int =
+            HashCodeBuilder.reflectionHashCode(179424691, 198491317,
+                    this, false)
+
     override fun equals(other: Any?): Boolean = EqualsBuilder.reflectionEquals(this, other, false)
 
     /**

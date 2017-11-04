@@ -26,22 +26,4 @@ import net.gtaun.util.event.Event
  * @author MK124
  * @author Marvin Haschker
  */
-open class DialogEvent protected constructor(val dialog: DialogId, val player: Player) : Event() {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is DialogEvent) return false
-
-        if (dialog != other.dialog) return false
-        if (player != other.player) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = dialog.hashCode()
-        result = 31 * result + player.hashCode()
-        return result
-    }
-
-}
+open class DialogEvent protected constructor(val dialog: DialogId, val player: Player) : Event()

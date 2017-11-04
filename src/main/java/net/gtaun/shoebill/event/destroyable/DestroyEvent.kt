@@ -25,19 +25,4 @@ import net.gtaun.util.event.Event
  * @author MK124
  * @author Marvin Haschker
  */
-class DestroyEvent(val destroyable: Destroyable) : Event() {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is DestroyEvent) return false
-
-        if (destroyable != other.destroyable) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        return destroyable.hashCode()
-    }
-
-}
+class DestroyEvent(val destroyable: Destroyable) : Event()

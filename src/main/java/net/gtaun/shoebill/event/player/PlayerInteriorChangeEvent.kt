@@ -29,23 +29,4 @@ class PlayerInteriorChangeEvent(player: Player,
                                 /**
                                  * The associated old id of interior for this event.
                                  */
-                                val oldInteriorId: Int) : PlayerEvent(player) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerInteriorChangeEvent) return false
-        if (!super.equals(other)) return false
-
-        if (oldInteriorId != other.oldInteriorId) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + oldInteriorId
-        return result
-    }
-
-
-}
+                                val oldInteriorId: Int) : PlayerEvent(player)

@@ -30,23 +30,4 @@ class PlayerPickupEvent(player: Player,
                         /**
                          * The associated Pickup for this event.
                          */
-                        val pickup: Pickup) : PlayerEvent(player) {
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is PlayerPickupEvent) return false
-        if (!super.equals(other)) return false
-
-        if (pickup != other.pickup) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = super.hashCode()
-        result = 31 * result + pickup.hashCode()
-        return result
-    }
-
-
-}
+                        val pickup: Pickup) : PlayerEvent(player)
