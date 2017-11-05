@@ -151,8 +151,9 @@ constructor(
             buildNumber = annotation.buildNumber
             clazz = mainClass
         } else {
+            LOGGER.info("@ShoebillMain interface was not found for ${file.name}. Falling back to gamemode.yml / plugin.yml.")
             JarFile(file).use { jarFile ->
-                val entry = jarFile.getJarEntry(configFilename)
+                val entry = jarFile.getJarEntry(configFilename) ?: throw Exception("$configFilename was not found.")
                 val `in` = jarFile.getInputStream(entry)
 
                 val config = YamlConfiguration()
