@@ -6,7 +6,7 @@ package net.gtaun.shoebill.constant
  *
  * @author Marvin Haschker
  */
-enum class ServerVarType constructor(val value: Int) {
+enum class ServerVarType(val value: Int) {
     NONE(0),
     INTEGER(1),
     STRING(2),

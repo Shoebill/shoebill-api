@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class SpectateMode constructor(val value: Int) {
+enum class SpectateMode(val value: Int) {
     NORMAL(1),
     FIXED(2),
     SIDE(3);

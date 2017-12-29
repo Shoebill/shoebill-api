@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class RaceCheckpointType constructor(val value: Int) {
+enum class RaceCheckpointType(val value: Int) {
     /**
      * Normal
      */

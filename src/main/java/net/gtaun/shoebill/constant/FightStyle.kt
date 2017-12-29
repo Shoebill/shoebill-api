@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class FightStyle constructor(val value: Int) {
+enum class FightStyle(val value: Int) {
     NORMAL(4),
     BOXING(5),
     KUNGFU(6),

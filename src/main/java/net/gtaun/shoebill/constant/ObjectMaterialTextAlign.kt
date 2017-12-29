@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class ObjectMaterialTextAlign constructor(val value: Int) {
+enum class ObjectMaterialTextAlign(val value: Int) {
     LEFT(0),
     CENTER(1),
     RIGHT(2);

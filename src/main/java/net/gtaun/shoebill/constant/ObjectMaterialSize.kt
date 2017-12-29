@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class ObjectMaterialSize constructor(val value: Int) {
+enum class ObjectMaterialSize(val value: Int) {
     SIZE_32x32(10),
     SIZE_64x32(20),
     SIZE_64x64(30),

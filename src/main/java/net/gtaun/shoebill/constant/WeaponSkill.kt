@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class WeaponSkill constructor(val value: Int) {
+enum class WeaponSkill(val value: Int) {
     PISTOL(0),
     PISTOL_SILENCED(1),
     DESERT_EAGLE(2),

@@ -8,7 +8,7 @@ import net.gtaun.shoebill.data.Location
  *
  * @author Julian Suhl (Spikes)
  */
-enum class Interior constructor(val buildingName: String, private val interiorId: Int, private val x: Float,
+enum class Interior(val buildingName: String, private val interiorId: Int, private val x: Float,
                                 private val y: Float, private val z: Float) {
     TWENTYFORSEVEN_1("24/7 1", 17, -25.884498f, -185.868988f, 1003.546875f),
     TWENTYFORSEVEN_2("24/7 2", 10, 6.091179f, -29.271898f, 1003.549438f),
