@@ -70,9 +70,9 @@ open class Vector3D : Vector2D, Cloneable {
         return Math.sqrt(dx * dx + dy * dy + dz * dz.toDouble()).toFloat()
     }
 
-    override fun add(`val`: Float): Vector3D {
-        super.add(`val`)
-        z += `val`
+    override fun add(value: Float): Vector3D {
+        super.add(value)
+        z += value
         return this
     }
 
@@ -82,9 +82,9 @@ open class Vector3D : Vector2D, Cloneable {
         return this
     }
 
-    override fun minus(`val`: Float): Vector3D {
-        super.minus(`val`)
-        z -= `val`
+    override fun minus(value: Float): Vector3D {
+        super.minus(value)
+        z -= value
         return this
     }
 
@@ -94,9 +94,9 @@ open class Vector3D : Vector2D, Cloneable {
         return this
     }
 
-    override fun mul(`val`: Float): Vector3D {
-        super.mul(`val`)
-        z *= `val`
+    override fun mul(value: Float): Vector3D {
+        super.mul(value)
+        z *= value
         return this
     }
 
@@ -106,9 +106,9 @@ open class Vector3D : Vector2D, Cloneable {
         return this
     }
 
-    override fun div(`val`: Float): Vector3D {
-        super.div(`val`)
-        z /= `val`
+    override fun div(value: Float): Vector3D {
+        super.div(value)
+        z /= value
         return this
     }
 

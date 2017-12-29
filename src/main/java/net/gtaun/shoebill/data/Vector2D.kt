@@ -56,9 +56,9 @@ open class Vector2D : Cloneable {
      */
     open fun set(vector: Vector2D) = set(vector.x, vector.y)
 
-    open fun add(`val`: Float): Vector2D {
-        x += `val`
-        y += `val`
+    open fun add(value: Float): Vector2D {
+        x += value
+        y += value
         return this
     }
 
@@ -68,9 +68,9 @@ open class Vector2D : Cloneable {
         return this
     }
 
-    open operator fun minus(`val`: Float): Vector2D {
-        x -= `val`
-        y -= `val`
+    open operator fun minus(value: Float): Vector2D {
+        x -= value
+        y -= value
         return this
     }
 
@@ -80,9 +80,9 @@ open class Vector2D : Cloneable {
         return this
     }
 
-    open fun mul(`val`: Float): Vector2D {
-        x *= `val`
-        y *= `val`
+    open fun mul(value: Float): Vector2D {
+        x *= value
+        y *= value
         return this
     }
 
@@ -92,9 +92,9 @@ open class Vector2D : Cloneable {
         return this
     }
 
-    open operator fun div(`val`: Float): Vector2D {
-        x /= `val`
-        y /= `val`
+    open operator fun div(value: Float): Vector2D {
+        x /= value
+        y /= value
         return this
     }
 
