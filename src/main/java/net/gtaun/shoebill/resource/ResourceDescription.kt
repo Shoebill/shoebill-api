@@ -29,26 +29,19 @@ import java.util.jar.JarFile
 /**
  * @author MK124
  * @author Marvin Haschker
- */
-class ResourceDescription
-/**
- * Will create an instance of ResourceDescription with params.
- * @param type The Resourcetype
- * @param file The Location of the File to load.
- * @param classLoader The Classloader
+ *
+ * @constructor Will create an instance of ResourceDescription with params.
+ *
  * @throws ClassNotFoundException
  * @throws IOException
+ *
+ * @property type The resource type.
+ * @property file The location of the File to load.
+ * @property classLoader The [ClassLoader].
  */
+class ResourceDescription
 @Throws(ClassNotFoundException::class, IOException::class)
-constructor(
-        /**
-         * The ResourceType
-         */
-        val type: ResourceType,
-        /**
-         * The file of the [ResourceDescription] instance.
-         */
-        val file: File, private val classLoader: ClassLoader) {
+constructor(val type: ResourceType, val file: File, private val classLoader: ClassLoader) {
 
     /**
      * The class of the instance.

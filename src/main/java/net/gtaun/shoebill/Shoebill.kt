@@ -66,7 +66,7 @@ abstract class Shoebill {
     abstract val version: ShoebillVersion
 
     /**
-     * General-use EventManager
+     * General-use EventManager.
      */
     abstract val eventManager: EventManagerRoot
 
