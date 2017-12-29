@@ -26,14 +26,10 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerDeath](https://wiki.sa-mp.com/wiki/OnPlayerDeath)
+ *
+ * @property killer The associated killer for this event.
+ * @property reason The associated WeaponModel the killer used for this event.
  */
 class PlayerDeathEvent(player: Player,
-                       /**
-                        * The associated killer for this event.
-                        */
                        val killer: Player?,
-                       /**
-                        * The associated WeaponModel the killer used for this event.
-                        */
-                       val reason: WeaponModel) : PlayerEvent(player), Interruptable {
-}
+                       val reason: WeaponModel) : PlayerEvent(player), Interruptable

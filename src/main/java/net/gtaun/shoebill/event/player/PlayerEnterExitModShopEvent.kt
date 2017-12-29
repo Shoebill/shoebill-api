@@ -24,13 +24,10 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerEnterExitModShop](https://wiki.sa-mp.com/wiki/OnPlayerEnterExitModShop)
+ *
+ * @property enterExit The associated value for this event.
+ * @property interiorId The associated id of interior for this event.
  */
 class PlayerEnterExitModShopEvent(player: Player,
-                                  /**
-                                   * The associated value for this event.
-                                   */
                                   val enterExit: Int,
-                                  /**
-                                   * The associated id of interior for this event.
-                                   */
                                   val interiorId: Int) : PlayerEvent(player)

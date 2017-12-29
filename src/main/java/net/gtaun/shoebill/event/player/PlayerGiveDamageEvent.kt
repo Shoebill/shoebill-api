@@ -25,21 +25,14 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerGiveDamage](https://wiki.sa-mp.com/wiki/OnPlayerGiveDamage)
+ *
+ * @property victim The associated victim for this event.
+ * @property amount The associated amount of damage for this event.
+ * @property weapon The associated used WeaponModel for this event.
+ * @property bodyPart The associated id of hit bodypart for this event.
  */
 class PlayerGiveDamageEvent(player: Player,
-                            /**
-                             * The associated victim for this event.
-                             */
                             val victim: Player,
-                            /**
-                             * The associated amount of damage for this event.
-                             */
                             val amount: Float,
-                            /**
-                             * The associated used WeaponModel for this event.
-                             */
                             val weapon: WeaponModel,
-                            /**
-                             * The associated id of hitted bodypart for this event.
-                             */
                             val bodyPart: Int) : PlayerEvent(player)

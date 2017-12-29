@@ -25,11 +25,10 @@ import net.gtaun.shoebill.event.dialog.DialogCloseEvent.DialogCloseType
  *
  * @author MK124
  * @author Marvin Haschker
+ *
+ * @property type The type of the dialog response (see [DialogCloseType]).
  */
 class DialogCloseEvent(dialog: DialogId, player: Player,
-                       /**
-                        * The type of the dialog response (see [DialogCloseType]).
-                        */
                        val type: DialogCloseEvent.DialogCloseType) : DialogEvent(dialog, player) {
 
     enum class DialogCloseType {

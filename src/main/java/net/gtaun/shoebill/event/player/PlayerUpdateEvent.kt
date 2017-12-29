@@ -30,7 +30,7 @@ import net.gtaun.util.event.Disallowable
 class PlayerUpdateEvent(player: Player) : PlayerEvent(player), Disallowable {
 
     /**
-     * The current response value
+     * The current response value.
      */
     var response = 1
         private set

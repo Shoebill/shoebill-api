@@ -25,9 +25,7 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerPickup](https://wiki.sa-mp.com/wiki/OnPlayerPickup)
+ *
+ * @property pickup The associated Pickup for this event.
  */
-class PlayerPickupEvent(player: Player,
-                        /**
-                         * The associated Pickup for this event.
-                         */
-                        val pickup: Pickup) : PlayerEvent(player)
+class PlayerPickupEvent(player: Player, val pickup: Pickup) : PlayerEvent(player)

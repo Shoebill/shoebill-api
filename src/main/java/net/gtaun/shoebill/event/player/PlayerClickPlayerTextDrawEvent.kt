@@ -25,12 +25,10 @@ import net.gtaun.shoebill.entities.PlayerTextdraw
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerClickPlayerTextDraw](https://wiki.sa-mp.com/wiki/OnPlayerClickPlayerTextDraw)
+ *
+ * @property playerTextdraw The associated and clicked PlayerTextdraw for this event.
  */
-class PlayerClickPlayerTextDrawEvent(player: Player,
-                                     /**
-                                      * The associated and clicked PlayerTextdraw for this event.
-                                      */
-                                     val playerTextdraw: PlayerTextdraw) : PlayerEvent(player) {
+class PlayerClickPlayerTextDrawEvent(player: Player, val playerTextdraw: PlayerTextdraw) : PlayerEvent(player) {
     /**
      * The current response value
      */

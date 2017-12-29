@@ -10,23 +10,14 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerDamageActor](https://wiki.sa-mp.com/wiki/OnPlayerDamageActor)
+ *
+ * @property actor The associated Actor for this event.
+ * @property amount The associated amount of damage for this event.
+ * @property weapon The associated WeaponModel an issuer used for this event.
+ * @property bodypart The associated id of hit bodypart for this event.
  */
 class PlayerDamageActorEvent(player: Player,
-                             /**
-                              * The associated Actor for this event.
-                              */
                              val actor: Actor,
-                             /**
-                              * The associated amount of damage for this event.
-                              */
                              val amount: Float,
-                             /**
-                              * The associated WeaponModel an issuer used for this event.
-                              */
                              val weapon: WeaponModel,
-                             /**
-                              * The associated id of hit bodypart for this event.
-                              */
-                             val bodypart: Int) : PlayerEvent(player) {
-
-}
+                             val bodypart: Int) : PlayerEvent(player)

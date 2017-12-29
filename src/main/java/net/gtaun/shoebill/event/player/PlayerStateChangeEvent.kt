@@ -25,13 +25,10 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerStateChange](https://wiki.sa-mp.com/wiki/OnPlayerStateChange)
+ *
+ * @property oldState The associated old PlayerState for this event.
+ * @property newState The associated new PlayerState for this event.
  */
 class PlayerStateChangeEvent(player: Player,
-                             /**
-                              * The associated old PlayerState for this event.
-                              */
                              val oldState: PlayerState,
-                             /**
-                              * The associated new PlayerState for this event.
-                              */
                              val newState: PlayerState = player.state) : PlayerEvent(player)

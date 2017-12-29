@@ -24,9 +24,7 @@ import net.gtaun.util.event.Event
  *
  * @author MK124
  * @author Marvin Haschker
+ *
+ * @property player The associated Player for this event.
  */
-open class PlayerEvent protected constructor(
-        /**
-         * The associated Player for this event.
-         */
-        val player: Player) : Event()
+open class PlayerEvent protected constructor(val player: Player) : Event()

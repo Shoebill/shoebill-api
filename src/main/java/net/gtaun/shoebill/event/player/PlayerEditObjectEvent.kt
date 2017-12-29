@@ -28,21 +28,14 @@ import net.gtaun.shoebill.entities.SampObject
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerEditObject](https://wiki.sa-mp.com/wiki/OnPlayerEditObject)
+ *
+ * @property object The associated SampObject for this event.
+ * @property editResponse The associated returned testing for this event.
+ * @property newLocation The associated new Location for this event.
+ * @property newRotation The associated new rotation for this event.
  */
 class PlayerEditObjectEvent(player: Player,
-                            /**
-                             * The associated SampObject for this event.
-                             */
                             val `object`: SampObject,
-                            /**
-                             * The associated returned testing for this event.
-                             */
                             val editResponse: ObjectEditResponse,
-                            /**
-                             * The associated new Location for this event.
-                             */
                             val newLocation: Location,
-                            /**
-                             * The associated new rotat`ion for this event.
-                             */
                             val newRotation: Vector3D) : PlayerEvent(player)

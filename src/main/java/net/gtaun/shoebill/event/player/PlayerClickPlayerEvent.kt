@@ -25,14 +25,12 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerClickPlayer](https://wiki.sa-mp.com/wiki/OnPlayerClickPlayer)
+ *
+ * @property clickedPlayer The clicked player of this event.
  */
-class PlayerClickPlayerEvent(player: Player,
-                             /**
-                              * The clicked player of this event
-                              */
-                             val clickedPlayer: Player, source: Int) : PlayerEvent(player) {
+class PlayerClickPlayerEvent(player: Player, val clickedPlayer: Player, source: Int) : PlayerEvent(player) {
     /**
-     * The associated ClickPlayerSource the player clicked
+     * The associated ClickPlayerSource the player clicked.
      */
     val source = ClickPlayerSource[source]
 

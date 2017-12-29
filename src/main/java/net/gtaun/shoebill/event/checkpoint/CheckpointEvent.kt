@@ -21,17 +21,14 @@ import net.gtaun.shoebill.entities.Player
 import net.gtaun.util.event.Event
 
 /**
- * This abstract event is the base class for every Checkpoint event
+ * This abstract event is the base class for every Checkpoint event.
  *
  * @author MK124
  * @author Marvin Haschker
+ *
+ * @property player The associated player for this checkpoint.
+ * @property checkpoint The related checkpoint for this event.
  */
 open class CheckpointEvent protected constructor(
-        /**
-         * The associated player for this checkpoint.
-         */
         val player: Player,
-        /**
-         * The related checkpoint for this event.
-         */
         val checkpoint: Checkpoint) : Event()

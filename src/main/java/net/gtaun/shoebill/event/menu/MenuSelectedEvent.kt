@@ -24,12 +24,10 @@ import net.gtaun.shoebill.entities.Player
  *
  * @author MK124
  * @author Marvin Haschker
+ *
+ * @property row The row that has been selected by the [player].
  */
-class MenuSelectedEvent(menu: Menu, player: Player,
-                        /**
-                         * The selected row that has been selected by the [player].
-                         */
-                        val row: Int) : MenuEvent(menu, player) {
+class MenuSelectedEvent(menu: Menu, player: Player, val row: Int) : MenuEvent(menu, player) {
 
     /**
      * This method is an alias for the [interrupt] method.

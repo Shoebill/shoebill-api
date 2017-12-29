@@ -28,21 +28,14 @@ import net.gtaun.shoebill.entities.PlayerObject
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerEditPlayerObject](https://wiki.sa-mp.com/wiki/OnPlayerEditPlayerObject)
+ *
+ * @property object The associated PlayerObject for this event.
+ * @property editResponse The associated returned testing for this event.
+ * @property newLocation The associated new Location for this event.
+ * @property newRotation The associated new rotation for this event.
  */
 class PlayerEditPlayerObjectEvent(player: Player,
-                                  /**
-                                   * The associated PlayerObject for this event.
-                                   */
                                   val `object`: PlayerObject,
-                                  /**
-                                   * The associated returned testing for this event.
-                                   */
                                   val editResponse: ObjectEditResponse,
-                                  /**
-                                   * The associated new Location for this event.
-                                   */
                                   val newLocation: Location,
-                                  /**
-                                   * The associated new rotation for this event.
-                                   */
                                   val newRotation: Vector3D) : PlayerEvent(player)

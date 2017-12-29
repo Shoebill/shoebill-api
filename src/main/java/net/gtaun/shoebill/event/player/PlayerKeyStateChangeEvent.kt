@@ -26,12 +26,10 @@ import net.gtaun.util.event.Disallowable
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerKeyStateChange](https://wiki.sa-mp.com/wiki/OnPlayerKeyStateChange)
+ *
+ * @property oldState The associated old PlayerKeyState for this event.
  */
-class PlayerKeyStateChangeEvent(player: Player,
-                                /**
-                                 * The associated old PlayerKeyState for this event.
-                                 */
-                                val oldState: PlayerKeyState) : PlayerEvent(player), Disallowable {
+class PlayerKeyStateChangeEvent(player: Player, val oldState: PlayerKeyState) : PlayerEvent(player), Disallowable {
     /**
      * The current response value
      */

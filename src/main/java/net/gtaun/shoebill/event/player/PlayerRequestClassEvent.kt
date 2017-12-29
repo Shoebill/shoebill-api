@@ -25,12 +25,10 @@ import net.gtaun.util.event.Disallowable
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerRequestClass](https://wiki.sa-mp.com/wiki/OnPlayerRequestClass)
+ *
+ * @property classId The associated id of the requested class for this event.
  */
-class PlayerRequestClassEvent(player: Player,
-                              /**
-                               * The associated id of the requested class for this event.
-                               */
-                              val classId: Int) : PlayerEvent(player), Disallowable {
+class PlayerRequestClassEvent(player: Player, val classId: Int) : PlayerEvent(player), Disallowable {
     /**
      * The current response value
      */

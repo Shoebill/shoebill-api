@@ -24,9 +24,7 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerStreamOut](https://wiki.sa-mp.com/wiki/OnPlayerStreamOut)
+ *
+ * @property forPlayer The associated Player for this event.
  */
-class PlayerStreamOutEvent(player: Player,
-                           /**
-                            * The associated Player for this event.
-                            */
-                           val forPlayer: Player) : PlayerEvent(player)
+class PlayerStreamOutEvent(player: Player, val forPlayer: Player) : PlayerEvent(player)

@@ -19,13 +19,10 @@ package net.gtaun.shoebill.resource
 /**
  * @author MK124
  * @author Marvin Haschker
+ *
+ * @property configFilename The name of a resource configuration file.
  */
-enum class ResourceType constructor(
-        /**
-         * The Config File Name.
-         */
-        val configFilename: String) {
+enum class ResourceType(val configFilename: String) {
     PLUGIN("plugin.yml"),
-    GAMEMODE("gamemode.yml");
-
+    GAMEMODE("gamemode.yml")
 }
