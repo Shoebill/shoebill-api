@@ -25,13 +25,10 @@ import net.gtaun.util.event.Event
  *
  * @author MK124
  * @author Marvin Haschker
+ *
+ * @property player The associated player for this checkpoint.
+ * @property checkpoint The associated RaceCheckpoint for this event.
  */
 open class RaceCheckpointEvent protected constructor(
-        /**
-         * The associated player for this checkpoint
-         */
         val player: Player,
-        /**
-         * The associated RaceCheckpoint for this event.
-         */
         val checkpoint: RaceCheckpoint) : Event()

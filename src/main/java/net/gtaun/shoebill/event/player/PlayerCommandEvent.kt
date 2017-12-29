@@ -25,12 +25,10 @@ import net.gtaun.util.event.Interruptable
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerCommandText](https://wiki.sa-mp.com/wiki/OnPlayerCommandText)
+ *
+ * @property command The associated command for this event.
  */
-class PlayerCommandEvent(player: Player,
-                         /**
-                          * The associated command for this event.
-                          */
-                         val command: String) : PlayerEvent(player), Interruptable {
+class PlayerCommandEvent(player: Player, val command: String) : PlayerEvent(player), Interruptable {
     /**
      * Returns the current response value
      * @return Current response value

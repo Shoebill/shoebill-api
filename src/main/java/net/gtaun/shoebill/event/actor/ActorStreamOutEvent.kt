@@ -8,9 +8,7 @@ import net.gtaun.shoebill.entities.Player
  *
  * @author Marvin Haschker
  * @see [OnActorStreamOut](https://wiki.sa-mp.com/wiki/OnActorStreamOut)
+ *
+ * @property player The player for whom the Actor was streamed out.
  */
-class ActorStreamOutEvent(actor: Actor,
-                          /**
-                           * The player for whom the Actor was streamed out.
-                           */
-                          val player: Player) : ActorEvent(actor)
+class ActorStreamOutEvent(actor: Actor, val player: Player) : ActorEvent(actor)

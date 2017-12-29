@@ -25,9 +25,7 @@ import net.gtaun.shoebill.entities.SampObject
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerSelectObject](https://wiki.sa-mp.com/wiki/OnPlayerSelectObject)
+ *
+ * @property object The associated selected testing for this event.
  */
-class PlayerSelectObjectEvent(player: Player,
-                              /**
-                               * The associated selected testing for this event.
-                               */
-                              val `object`: SampObject) : PlayerEvent(player)
+class PlayerSelectObjectEvent(player: Player, val `object`: SampObject) : PlayerEvent(player)

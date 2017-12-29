@@ -24,9 +24,7 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerInteriorChange](https://wiki.sa-mp.com/wiki/OnPlayerInteriorChange)
+ *
+ * @property oldInteriorId The associated old id of interior for this event.
  */
-class PlayerInteriorChangeEvent(player: Player,
-                                /**
-                                 * The associated old id of interior for this event.
-                                 */
-                                val oldInteriorId: Int) : PlayerEvent(player)
+class PlayerInteriorChangeEvent(player: Player, val oldInteriorId: Int) : PlayerEvent(player)

@@ -22,12 +22,10 @@ import net.gtaun.shoebill.entities.PlayerObject
 /**
  * This event represents the OnPlayerSelectPlayerObject of Pawn.
  *
+ * @property object The associated selected PlayerObject for this event.
+ *
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerSelectPlayerObject](https://wiki.sa-mp.com/wiki/OnPlayerSelectPlayerObject)
  */
-class PlayerSelectPlayerObjectEvent(player: Player,
-                                    /**
-                                     * The associated selected PlayerObject for this event.
-                                     */
-                                    val `object`: PlayerObject) : PlayerEvent(player)
+class PlayerSelectPlayerObjectEvent(player: Player, val `object`: PlayerObject) : PlayerEvent(player)

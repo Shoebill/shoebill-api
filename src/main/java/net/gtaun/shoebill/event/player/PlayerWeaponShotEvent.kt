@@ -15,22 +15,19 @@ import net.gtaun.util.event.Disallowable
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerWeaponShot](https://wiki.sa-mp.com/wiki/OnPlayerWeaponShot)
+ *
+ * @property weapon The associated used WeaponModel for this event.
+ * @property hitType The associated BulletHitType for this event.
  */
 class PlayerWeaponShotEvent(player: Player,
-                            /**
-                             * The associated used WeaponModel for this event.
-                             */
                             val weapon: WeaponModel,
-                            /**
-                             * The associated BulletHitType for this event.
-                             */
                             val hitType: BulletHitType,
                             private val hitId: Int,
                             val position: Vector3D) : PlayerEvent(player), Disallowable {
 
 
     /**
-     * The current response value
+     * The current response value.
      */
     var response = 1
         private set

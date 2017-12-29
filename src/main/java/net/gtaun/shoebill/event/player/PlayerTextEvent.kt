@@ -25,14 +25,12 @@ import net.gtaun.util.event.Disallowable
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerText](https://wiki.sa-mp.com/wiki/OnPlayerText)
+ *
+ * @property text The associated entered text for this event.
  */
-class PlayerTextEvent(player: Player,
-                      /**
-                       * The associated entered text for this event.
-                       */
-                      val text: String) : PlayerEvent(player), Disallowable {
+class PlayerTextEvent(player: Player, val text: String) : PlayerEvent(player), Disallowable {
     /**
-     * The current response value
+     * The current response value.
      */
     var response = 1
         private set

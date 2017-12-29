@@ -25,13 +25,8 @@ import net.gtaun.shoebill.entities.Player
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerKill](https://wiki.sa-mp.com/wiki/OnPlayerKill)
+ *
+ * @property victim The associated victim for this event.
+ * @property weapon The associated used WeaponModel for this event.
  */
-class PlayerKillEvent(player: Player,
-                      /**
-                       * The associated victim for this event.
-                       */
-                      val victim: Player?,
-                      /**
-                       * The associated used WeaponModel for this event.
-                       */
-                      val weapon: WeaponModel) : PlayerEvent(player)
+class PlayerKillEvent(player: Player, val victim: Player?, val weapon: WeaponModel) : PlayerEvent(player)

@@ -26,25 +26,16 @@ import net.gtaun.shoebill.entities.PlayerAttach.PlayerAttachSlot
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerEditAttachedObject](https://wiki.sa-mp.com/wiki/OnPlayerEditAttachedObject)
+ *
+ * @property slot The associated slot for whom player the testing was attached for this event.
+ * @property response The response of the event.
+ * @property offset The associated offset for this event.
+ * @property rotation The associated rotation for this event.
+ * @property scale The associated scale for this event.
  */
 class PlayerEditAttachedObjectEvent(player: Player,
-                                    /**
-                                     * The associated slot for whom player the testing was attached for this event.
-                                     */
                                     val slot: PlayerAttachSlot,
-                                    /**
-                                     * The response of the event.
-                                     */
                                     val response: Int,
-                                    /**
-                                     * The associated offset for this event.
-                                     */
                                     val offset: Vector3D,
-                                    /**
-                                     * The associated rotation for this event.
-                                     */
                                     val rotation: Vector3D,
-                                    /**
-                                     * The associated scale for this event.
-                                     */
                                     val scale: Vector3D) : PlayerEvent(player)

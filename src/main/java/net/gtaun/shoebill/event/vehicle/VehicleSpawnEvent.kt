@@ -19,6 +19,8 @@ package net.gtaun.shoebill.event.vehicle
 import net.gtaun.shoebill.entities.Vehicle
 
 /**
+ * This event wil be called when [vehicle] is spawned.
+ *
  * @author MK124
  */
 class VehicleSpawnEvent(vehicle: Vehicle) : VehicleEvent(vehicle)

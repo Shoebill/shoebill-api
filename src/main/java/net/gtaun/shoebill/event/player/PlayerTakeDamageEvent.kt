@@ -26,27 +26,20 @@ import net.gtaun.util.event.Disallowable
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerTakeDamage](https://wiki.sa-mp.com/wiki/OnPlayerTakeDamage)
+ *
+ * @property issuer The associated issuer for this event.
+ * @property amount The associated amount of damage for this event.
+ * @property weapon The associated used WeaponModel of issuer for this event.
+ * @property bodyPart The associated id of hitted bodypart for this event.
  */
 class PlayerTakeDamageEvent(player: Player,
-                            /**
-                             * The associated issuer for this event.
-                             */
                             val issuer: Player?,
-                            /**
-                             * The associated amount of damage for this event.
-                             */
                             val amount: Float,
-                            /**
-                             * The associated used WeaponModel of issuer for this event.
-                             */
                             val weapon: WeaponModel,
-                            /**
-                             * The associated id of hitted bodypart for this event.
-                             */
                             val bodyPart: Int) : PlayerEvent(player), Disallowable {
 
     /**
-     * The current response value
+     * The current response value.
      */
     var response: Int = 0
         private set

@@ -26,11 +26,10 @@ import net.gtaun.util.event.Disallowable
  * @author MK124
  * @author Marvin Haschker
  * @see [OnPlayerDisconnect](https://wiki.sa-mp.com/wiki/OnPlayerDisconnect)
+ *
+ * @property reason The associated DisconnectReason for this event.
  */
 class PlayerDisconnectEvent(player: Player,
-                            /**
-                             * The associated DisconnectReason for this event.
-                             */
                             val reason: DisconnectReason) : PlayerEvent(player), Disallowable {
 
     /**
