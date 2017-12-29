@@ -27,7 +27,7 @@ import org.apache.commons.lang3.StringUtils
  * @author Marvin Haschker
  * @author Meta
  */
-enum class PlayerKey constructor(val value: Int, private val gameTextKeyOnFootRaw: String?,
+enum class PlayerKey(val value: Int, private val gameTextKeyOnFootRaw: String?,
                                  private val gameTextKeyInVehicleRaw: String?) {
 
     ACTION(1, "PED_ANSWER_PHONE", "VEHICLE_FIREWEAPON"),

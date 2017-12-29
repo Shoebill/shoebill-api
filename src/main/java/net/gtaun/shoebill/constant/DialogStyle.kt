@@ -22,7 +22,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class DialogStyle constructor(val value: Int) {
+enum class DialogStyle(val value: Int) {
     /**
      * Message box dialog
      */

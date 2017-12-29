@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.exception
 
 /**
- * This exception will be called when something has an invalid length.
+ * This exception will be thrown when something has an invalid length.
  *
  * @author MK124
  * @author Marvin Haschker

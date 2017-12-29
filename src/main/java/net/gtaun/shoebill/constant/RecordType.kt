@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class RecordType constructor(val value: Int) {
+enum class RecordType(val value: Int) {
     NONE(0),
     DRIVER(1),
     ONFOOT(2);

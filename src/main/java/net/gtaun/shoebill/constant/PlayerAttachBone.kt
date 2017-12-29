@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class PlayerAttachBone constructor(val value: Int) {
+enum class PlayerAttachBone(val value: Int) {
     /**
      * Not usable (will crash the client)
      */

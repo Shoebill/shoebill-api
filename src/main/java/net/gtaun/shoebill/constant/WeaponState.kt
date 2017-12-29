@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class WeaponState constructor(val value: Int) {
+enum class WeaponState(val value: Int) {
     UNKNOWN(-1),
     NO_BULLETS(0),
     LAST_BULLET(1),

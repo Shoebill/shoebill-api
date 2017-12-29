@@ -7,7 +7,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class VehicleComponentModel constructor(val id: Int, val modelName:
+enum class VehicleComponentModel(val id: Int, val modelName:
 String, val slot: VehicleComponentSlot, val componentName: String, val supportedVehicleIds: IntArray) {
     SPOILER_PRO(1000, "spl_b_mar_m", VehicleComponentSlot.SPOILER, "Pro", intArrayOf(589, 492, 516, 404, 547, 489, 405, 421)),
     SPOILER_WIN(1001, "spl_b_bab_m", VehicleComponentSlot.SPOILER, "Win", intArrayOf(496, 401, 518, 527, 415, 585, 546, 410, 603, 426, 436, 405, 580, 439, 550, 549, 420, 540, 529)),

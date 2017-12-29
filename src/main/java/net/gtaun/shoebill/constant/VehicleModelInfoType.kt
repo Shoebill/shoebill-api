@@ -23,7 +23,7 @@ package net.gtaun.shoebill.constant
  * @author MK124
  * @author Marvin Haschker
  */
-enum class VehicleModelInfoType constructor(val value: Int) {
+enum class VehicleModelInfoType(val value: Int) {
     /**
      * Vehicle size
      */

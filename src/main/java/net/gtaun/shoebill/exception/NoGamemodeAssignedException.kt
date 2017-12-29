@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.exception
 
 /**
- * This exception will be called when no gamemode has been assigned to the server.
+ * This exception will be thrown when no gamemode has been assigned to the server.
  *
  * @author MK124
  * @author Marvin Haschker

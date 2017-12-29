@@ -6,7 +6,7 @@ package net.gtaun.shoebill.constant
  *
  * @author Julian Suhl (Spikes)
  */
-enum class Weather constructor(val id: Int) {
+enum class Weather(val id: Int) {
     EXTRASUNNY_LA(0),
     SUNNY_LA(1),
     EXTRASUNNY_SMOG_LA(2),
