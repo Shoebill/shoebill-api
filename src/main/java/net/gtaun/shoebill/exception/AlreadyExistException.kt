@@ -17,7 +17,7 @@
 package net.gtaun.shoebill.exception
 
 /**
- * This exception will be called when something already exists.
+ * This exception will be thrown when something already exists.
  *
  * @author MK124
  * @author Marvin Haschker
